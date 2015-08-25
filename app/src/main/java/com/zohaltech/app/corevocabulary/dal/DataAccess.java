@@ -7,23 +7,35 @@ import android.database.sqlite.SQLiteOpenHelper;
 import com.zohaltech.app.corevocabulary.classes.App;
 import com.zohaltech.app.corevocabulary.classes.CsvReader;
 import com.zohaltech.app.corevocabulary.classes.MyRuntimeException;
+import com.zohaltech.app.corevocabulary.entities.Theme;
 
 import java.io.InputStreamReader;
 
 public class DataAccess extends SQLiteOpenHelper {
-
     public static final String DATABASE_NAME    = "CORE_VOCABULARY";
-    public static final int    DATABASE_VERSION = 1;
+    public static final int    DATABASE_VERSION = 2;
 
     public DataAccess() {
-        super(com.zohaltech.app.corevocabulary.classes.App.context, DATABASE_NAME, null, DATABASE_VERSION);
+        super(App.context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
     @Override
     public void onCreate(SQLiteDatabase database) {
         try {
-
-        } catch (com.zohaltech.app.corevocabulary.classes.MyRuntimeException e) {
+            Themes.insert(new Theme(1, 1, "Education", "ic_education"));
+            Themes.insert(new Theme(2, 2, "Job and Employment", "ic_job"));
+            Themes.insert(new Theme(3, 3, "Media", "ic_media"));
+            Themes.insert(new Theme(4, 4, "Health", "ic_health"));
+            Themes.insert(new Theme(5, 5, "Environment", "ic_environment"));
+            Themes.insert(new Theme(6, 6, "Advertising", "ic_advertising"));
+            Themes.insert(new Theme(7, 7, "Foreign Language", "ic_language"));
+            Themes.insert(new Theme(8, 8, "Urbanisation", "ic_urbanisation"));
+            Themes.insert(new Theme(9, 9, "Crimes and Law", "ic_law"));
+            Themes.insert(new Theme(11, 11, "Sports", "ic_sports"));
+            Themes.insert(new Theme(12, 12, "Space", "ic_space"));
+            Themes.insert(new Theme(13, 13, "Science", "ic_science"));
+            Themes.insert(new Theme(14, 14, "Causes and Results", "ic_causes"));
+        } catch (MyRuntimeException e) {
             e.printStackTrace();
         }
     }
@@ -31,7 +43,6 @@ public class DataAccess extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase database, int oldVersion, int newVersion) {
         try {
-
             onCreate(database);
         } catch (MyRuntimeException e) {
             e.printStackTrace();
@@ -88,7 +99,6 @@ public class DataAccess extends SQLiteOpenHelper {
     }
 
     private void insertDataFromAsset(SQLiteDatabase db, String tableName, String filePathFromAsset, char delimiter) {
-
         InputStreamReader isr;
         try {
             isr = new InputStreamReader(App.context.getAssets().open(filePathFromAsset), "UTF-8");
@@ -107,6 +117,4 @@ public class DataAccess extends SQLiteOpenHelper {
             e.printStackTrace();
         }
     }
-
-
 }

@@ -1,5 +1,44 @@
 package com.zohaltech.app.corevocabulary.activities;
 
+import android.view.MenuItem;
+import android.widget.ListView;
 
-public class ThemesActivity {
+import com.zohaltech.app.corevocabulary.R;
+import com.zohaltech.app.corevocabulary.adapters.ThemeAdaptor;
+import com.zohaltech.app.corevocabulary.dal.Themes;
+import com.zohaltech.app.corevocabulary.entities.Theme;
+
+import java.util.ArrayList;
+
+public class ThemesActivity extends EnhancedActivity {
+    ListView lstPackagesHistories;
+
+    ArrayList<Theme> themes;
+    ThemeAdaptor     adapter;
+
+    @Override
+    void onCreated() {
+        setContentView(R.layout.activity_themes);
+        lstPackagesHistories = (ListView) findViewById(R.id.lstThemes);
+        themes = Themes.select();
+        adapter = new ThemeAdaptor(themes);
+        lstPackagesHistories.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == android.R.id.home) {
+            onBackPressed();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    void onToolbarCreated() {
+        txtToolbarTitle.setText("Themes");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+    }
 }
