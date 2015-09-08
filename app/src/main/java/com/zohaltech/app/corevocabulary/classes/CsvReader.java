@@ -104,13 +104,10 @@ public class CsvReader {
      * Creates a {@link com.csvreader.CsvReader CsvReader} object using a file
      * as the data source.
      *
-     * @param fileName
-     *                The path to the file to use as the data source.
-     * @param delimiter
-     *                The character to use as the column delimiter.
-     * @param charset
-     *                The {@link Charset Charset} to use while
-     *                parsing the data.
+     * @param fileName  The path to the file to use as the data source.
+     * @param delimiter The character to use as the column delimiter.
+     * @param charset   The {@link Charset Charset} to use while
+     *                  parsing the data.
      */
     public CsvReader(String fileName, char delimiter, Charset charset) throws FileNotFoundException {
         if (fileName == null) {
@@ -137,10 +134,8 @@ public class CsvReader {
      * as the data source.&nbsp;Uses ISO-8859-1 as the
      * {@link Charset Charset}.
      *
-     * @param fileName
-     *                The path to the file to use as the data source.
-     * @param delimiter
-     *                The character to use as the column delimiter.
+     * @param fileName  The path to the file to use as the data source.
+     * @param delimiter The character to use as the column delimiter.
      */
     public CsvReader(String fileName, char delimiter) throws FileNotFoundException {
         this(fileName, delimiter, Charset.forName("ISO-8859-1"));
@@ -151,8 +146,7 @@ public class CsvReader {
      * as the data source.&nbsp;Uses a comma as the column delimiter and
      * ISO-8859-1 as the {@link Charset Charset}.
      *
-     * @param fileName
-     *                The path to the file to use as the data source.
+     * @param fileName The path to the file to use as the data source.
      */
     public CsvReader(String fileName) throws FileNotFoundException {
         this(fileName, Letters.COMMA);
@@ -162,10 +156,8 @@ public class CsvReader {
      * Constructs a {@link com.csvreader.CsvReader CsvReader} object using a
      * {@link Reader Reader} object as the data source.
      *
-     * @param inputStream
-     *                The stream to use as the data source.
-     * @param delimiter
-     *                The character to use as the column delimiter.
+     * @param inputStream The stream to use as the data source.
+     * @param delimiter   The character to use as the column delimiter.
      */
     public CsvReader(Reader inputStream, char delimiter) {
         if (inputStream == null) {
@@ -184,8 +176,7 @@ public class CsvReader {
      * {@link Reader Reader} object as the data source.&nbsp;Uses a
      * comma as the column delimiter.
      *
-     * @param inputStream
-     *                The stream to use as the data source.
+     * @param inputStream The stream to use as the data source.
      */
     public CsvReader(Reader inputStream) {
         this(inputStream, Letters.COMMA);
@@ -195,13 +186,10 @@ public class CsvReader {
      * Constructs a {@link com.csvreader.CsvReader CsvReader} object using an
      * {@link InputStream InputStream} object as the data source.
      *
-     * @param inputStream
-     *                The stream to use as the data source.
-     * @param delimiter
-     *                The character to use as the column delimiter.
-     * @param charset
-     *                The {@link Charset Charset} to use while
-     *                parsing the data.
+     * @param inputStream The stream to use as the data source.
+     * @param delimiter   The character to use as the column delimiter.
+     * @param charset     The {@link Charset Charset} to use while
+     *                    parsing the data.
      */
     public CsvReader(InputStream inputStream, char delimiter, Charset charset) {
         this(new InputStreamReader(inputStream, charset), delimiter);
@@ -212,11 +200,9 @@ public class CsvReader {
      * {@link InputStream InputStream} object as the data
      * source.&nbsp;Uses a comma as the column delimiter.
      *
-     * @param inputStream
-     *                The stream to use as the data source.
-     * @param charset
-     *                The {@link Charset Charset} to use while
-     *                parsing the data.
+     * @param inputStream The stream to use as the data source.
+     * @param charset     The {@link Charset Charset} to use while
+     *                    parsing the data.
      */
     public CsvReader(InputStream inputStream, Charset charset) {
         this(new InputStreamReader(inputStream, charset));
@@ -239,7 +225,7 @@ public class CsvReader {
      * from non-textqualified column data. Default is true.
      *
      * @return Whether leading and trailing whitespace characters are being
-     *         trimmed from non-textqualified column data.
+     * trimmed from non-textqualified column data.
      */
     public boolean getTrimWhitespace() {
         return userSettings.TrimWhitespace;
@@ -249,9 +235,8 @@ public class CsvReader {
      * Sets whether leading and trailing whitespace characters should be trimmed
      * from non-textqualified column data or not. Default is true.
      *
-     * @param trimWhitespace
-     *                Whether leading and trailing whitespace characters should
-     *                be trimmed from non-textqualified column data or not.
+     * @param trimWhitespace Whether leading and trailing whitespace characters should
+     *                       be trimmed from non-textqualified column data or not.
      */
     public void setTrimWhitespace(boolean trimWhitespace) {
         userSettings.TrimWhitespace = trimWhitespace;
@@ -270,8 +255,7 @@ public class CsvReader {
     /**
      * Sets the character to use as the column delimiter. Default is comma, ','.
      *
-     * @param delimiter
-     *                The character to use as the column delimiter.
+     * @param delimiter The character to use as the column delimiter.
      */
     public void setDelimiter(char delimiter) {
         userSettings.Delimiter = delimiter;
@@ -284,10 +268,9 @@ public class CsvReader {
     /**
      * Sets the character to use as the record delimiter.
      *
-     * @param recordDelimiter
-     *                The character to use as the record delimiter. Default is
-     *                combination of standard end of line characters for
-     *                Windows, Unix, or Mac.
+     * @param recordDelimiter The character to use as the record delimiter. Default is
+     *                        combination of standard end of line characters for
+     *                        Windows, Unix, or Mac.
      */
     public void setRecordDelimiter(char recordDelimiter) {
         useCustomRecordDelimiter = true;
@@ -306,8 +289,7 @@ public class CsvReader {
     /**
      * Sets the character to use as a text qualifier in the data.
      *
-     * @param textQualifier
-     *                The character to use as a text qualifier in the data.
+     * @param textQualifier The character to use as a text qualifier in the data.
      */
     public void setTextQualifier(char textQualifier) {
         userSettings.TextQualifier = textQualifier;
@@ -325,8 +307,7 @@ public class CsvReader {
     /**
      * Sets whether text qualifiers will be used while parsing or not.
      *
-     * @param useTextQualifier
-     *                Whether to use a text qualifier while parsing or not.
+     * @param useTextQualifier Whether to use a text qualifier while parsing or not.
      */
     public void setUseTextQualifier(boolean useTextQualifier) {
         userSettings.UseTextQualifier = useTextQualifier;
@@ -344,8 +325,7 @@ public class CsvReader {
     /**
      * Sets the character to use as a comment signal.
      *
-     * @param comment
-     *                The character to use as a comment signal.
+     * @param comment The character to use as a comment signal.
      */
     public void setComment(char comment) {
         userSettings.Comment = comment;
@@ -363,9 +343,8 @@ public class CsvReader {
     /**
      * Sets whether comments are being looked for while parsing or not.
      *
-     * @param useComments
-     *                Whether comments are being looked for while parsing or
-     *                not.
+     * @param useComments Whether comments are being looked for while parsing or
+     *                    not.
      */
     public void setUseComments(boolean useComments) {
         userSettings.UseComments = useComments;
@@ -376,7 +355,7 @@ public class CsvReader {
      * qualified data.
      *
      * @return The current way to escape an occurrence of the text qualifier
-     *         inside qualified data.
+     * inside qualified data.
      */
     public int getEscapeMode() {
         return userSettings.EscapeMode;
@@ -386,11 +365,9 @@ public class CsvReader {
      * Sets the current way to escape an occurrence of the text qualifier inside
      * qualified data.
      *
-     * @param escapeMode
-     *                The way to escape an occurrence of the text qualifier
-     *                inside qualified data.
-     * @exception IllegalArgumentException
-     *                    When an illegal value is specified for escapeMode.
+     * @param escapeMode The way to escape an occurrence of the text qualifier
+     *                   inside qualified data.
+     * @throws IllegalArgumentException When an illegal value is specified for escapeMode.
      */
     public void setEscapeMode(int escapeMode) throws IllegalArgumentException {
         if (escapeMode != ESCAPE_MODE_DOUBLED && escapeMode != ESCAPE_MODE_BACKSLASH) {
@@ -459,7 +436,7 @@ public class CsvReader {
      * {@link com.csvreader.CsvReader#readHeaders readHeaders()}.
      *
      * @return The count of headers read in by a previous call to
-     *         {@link com.csvreader.CsvReader#readHeaders readHeaders()}.
+     * {@link com.csvreader.CsvReader#readHeaders readHeaders()}.
      */
     public int getHeaderCount() {
         return headersHolder.Length;
@@ -469,8 +446,7 @@ public class CsvReader {
      * Returns the header values as a string array.
      *
      * @return The header values as a String array.
-     * @exception IOException
-     *                    Thrown if this object has already been closed.
+     * @throws IOException Thrown if this object has already been closed.
      */
     public String[] getHeaders() throws IOException {
         checkClosed();
@@ -517,11 +493,9 @@ public class CsvReader {
     /**
      * Returns the current column value for a given column index.
      *
-     * @param columnIndex
-     *                The index of the column.
+     * @param columnIndex The index of the column.
      * @return The current column value.
-     * @exception IOException
-     *                    Thrown if this object has already been closed.
+     * @throws IOException Thrown if this object has already been closed.
      */
     public String get(int columnIndex) throws IOException {
         checkClosed();
@@ -536,11 +510,9 @@ public class CsvReader {
     /**
      * Returns the current column value for a given column header name.
      *
-     * @param headerName
-     *                The header name of the column.
+     * @param headerName The header name of the column.
      * @return The current column value.
-     * @exception IOException
-     *                    Thrown if this object has already been closed.
+     * @throws IOException Thrown if this object has already been closed.
      */
     public String get(String headerName) throws IOException {
         checkClosed();
@@ -553,10 +525,9 @@ public class CsvReader {
      * of data as the source.&nbsp;Uses ISO-8859-1 as the
      * {@link Charset Charset}.
      *
-     * @param data
-     *                The String of data to use as the source.
+     * @param data The String of data to use as the source.
      * @return A {@link com.csvreader.CsvReader CsvReader} object using the
-     *         String of data as the source.
+     * String of data as the source.
      */
     public static CsvReader parse(String data) {
         if (data == null) {
@@ -570,9 +541,8 @@ public class CsvReader {
      * Reads another record.
      *
      * @return Whether another record was successfully read or not.
-     * @exception IOException
-     *                    Thrown if an error occurs while reading data from the
-     *                    source stream.
+     * @throws IOException Thrown if an error occurs while reading data from the
+     *                     source stream.
      */
     public boolean readRecord() throws IOException {
         checkClosed();
@@ -652,42 +622,42 @@ public class CsvReader {
                                     escapeLength++;
 
                                     switch (escape) {
-                                    case ComplexEscape.UNICODE:
-                                        escapeValue *= (char) 16;
-                                        escapeValue += hexToDec(currentLetter);
+                                        case ComplexEscape.UNICODE:
+                                            escapeValue *= (char) 16;
+                                            escapeValue += hexToDec(currentLetter);
 
-                                        if (escapeLength == 4) {
-                                            readingComplexEscape = false;
-                                        }
+                                            if (escapeLength == 4) {
+                                                readingComplexEscape = false;
+                                            }
 
-                                        break;
-                                    case ComplexEscape.OCTAL:
-                                        escapeValue *= (char) 8;
-                                        escapeValue += (char) (currentLetter - '0');
+                                            break;
+                                        case ComplexEscape.OCTAL:
+                                            escapeValue *= (char) 8;
+                                            escapeValue += (char) (currentLetter - '0');
 
-                                        if (escapeLength == 3) {
-                                            readingComplexEscape = false;
-                                        }
+                                            if (escapeLength == 3) {
+                                                readingComplexEscape = false;
+                                            }
 
-                                        break;
-                                    case ComplexEscape.DECIMAL:
-                                        escapeValue *= (char) 10;
-                                        escapeValue += (char) (currentLetter - '0');
+                                            break;
+                                        case ComplexEscape.DECIMAL:
+                                            escapeValue *= (char) 10;
+                                            escapeValue += (char) (currentLetter - '0');
 
-                                        if (escapeLength == 3) {
-                                            readingComplexEscape = false;
-                                        }
+                                            if (escapeLength == 3) {
+                                                readingComplexEscape = false;
+                                            }
 
-                                        break;
-                                    case ComplexEscape.HEX:
-                                        escapeValue *= (char) 16;
-                                        escapeValue += hexToDec(currentLetter);
+                                            break;
+                                        case ComplexEscape.HEX:
+                                            escapeValue *= (char) 16;
+                                            escapeValue += hexToDec(currentLetter);
 
-                                        if (escapeLength == 2) {
-                                            readingComplexEscape = false;
-                                        }
+                                            if (escapeLength == 2) {
+                                                readingComplexEscape = false;
+                                            }
 
-                                        break;
+                                            break;
                                     }
 
                                     if (!readingComplexEscape) {
@@ -710,79 +680,79 @@ public class CsvReader {
                                     }
                                 } else if (userSettings.EscapeMode == ESCAPE_MODE_BACKSLASH && lastLetterWasEscape) {
                                     switch (currentLetter) {
-                                    case 'n':
-                                        appendLetter(Letters.LF);
-                                        break;
-                                    case 'r':
-                                        appendLetter(Letters.CR);
-                                        break;
-                                    case 't':
-                                        appendLetter(Letters.TAB);
-                                        break;
-                                    case 'b':
-                                        appendLetter(Letters.BACKSPACE);
-                                        break;
-                                    case 'f':
-                                        appendLetter(Letters.FORM_FEED);
-                                        break;
-                                    case 'e':
-                                        appendLetter(Letters.ESCAPE);
-                                        break;
-                                    case 'v':
-                                        appendLetter(Letters.VERTICAL_TAB);
-                                        break;
-                                    case 'a':
-                                        appendLetter(Letters.ALERT);
-                                        break;
-                                    case '0':
-                                    case '1':
-                                    case '2':
-                                    case '3':
-                                    case '4':
-                                    case '5':
-                                    case '6':
-                                    case '7':
-                                        escape = ComplexEscape.OCTAL;
-                                        readingComplexEscape = true;
-                                        escapeLength = 1;
-                                        escapeValue = (char) (currentLetter - '0');
-                                        dataBuffer.ColumnStart = dataBuffer.Position + 1;
-                                        break;
-                                    case 'u':
-                                    case 'x':
-                                    case 'o':
-                                    case 'd':
-                                    case 'U':
-                                    case 'X':
-                                    case 'O':
-                                    case 'D':
-                                        switch (currentLetter) {
-                                        case 'u':
-                                        case 'U':
-                                            escape = ComplexEscape.UNICODE;
+                                        case 'n':
+                                            appendLetter(Letters.LF);
                                             break;
-                                        case 'x':
-                                        case 'X':
-                                            escape = ComplexEscape.HEX;
+                                        case 'r':
+                                            appendLetter(Letters.CR);
                                             break;
-                                        case 'o':
-                                        case 'O':
+                                        case 't':
+                                            appendLetter(Letters.TAB);
+                                            break;
+                                        case 'b':
+                                            appendLetter(Letters.BACKSPACE);
+                                            break;
+                                        case 'f':
+                                            appendLetter(Letters.FORM_FEED);
+                                            break;
+                                        case 'e':
+                                            appendLetter(Letters.ESCAPE);
+                                            break;
+                                        case 'v':
+                                            appendLetter(Letters.VERTICAL_TAB);
+                                            break;
+                                        case 'a':
+                                            appendLetter(Letters.ALERT);
+                                            break;
+                                        case '0':
+                                        case '1':
+                                        case '2':
+                                        case '3':
+                                        case '4':
+                                        case '5':
+                                        case '6':
+                                        case '7':
                                             escape = ComplexEscape.OCTAL;
+                                            readingComplexEscape = true;
+                                            escapeLength = 1;
+                                            escapeValue = (char) (currentLetter - '0');
+                                            dataBuffer.ColumnStart = dataBuffer.Position + 1;
                                             break;
+                                        case 'u':
+                                        case 'x':
+                                        case 'o':
                                         case 'd':
+                                        case 'U':
+                                        case 'X':
+                                        case 'O':
                                         case 'D':
-                                            escape = ComplexEscape.DECIMAL;
+                                            switch (currentLetter) {
+                                                case 'u':
+                                                case 'U':
+                                                    escape = ComplexEscape.UNICODE;
+                                                    break;
+                                                case 'x':
+                                                case 'X':
+                                                    escape = ComplexEscape.HEX;
+                                                    break;
+                                                case 'o':
+                                                case 'O':
+                                                    escape = ComplexEscape.OCTAL;
+                                                    break;
+                                                case 'd':
+                                                case 'D':
+                                                    escape = ComplexEscape.DECIMAL;
+                                                    break;
+                                            }
+
+                                            readingComplexEscape = true;
+                                            escapeLength = 0;
+                                            escapeValue = (char) 0;
+                                            dataBuffer.ColumnStart = dataBuffer.Position + 1;
+
                                             break;
-                                        }
-
-                                        readingComplexEscape = true;
-                                        escapeLength = 0;
-                                        escapeValue = (char) 0;
-                                        dataBuffer.ColumnStart = dataBuffer.Position + 1;
-
-                                        break;
-                                    default:
-                                        break;
+                                        default:
+                                            break;
                                     }
 
                                     lastLetterWasEscape = false;
@@ -919,42 +889,42 @@ public class CsvReader {
                                     escapeLength++;
 
                                     switch (escape) {
-                                    case ComplexEscape.UNICODE:
-                                        escapeValue *= (char) 16;
-                                        escapeValue += hexToDec(currentLetter);
+                                        case ComplexEscape.UNICODE:
+                                            escapeValue *= (char) 16;
+                                            escapeValue += hexToDec(currentLetter);
 
-                                        if (escapeLength == 4) {
-                                            readingComplexEscape = false;
-                                        }
+                                            if (escapeLength == 4) {
+                                                readingComplexEscape = false;
+                                            }
 
-                                        break;
-                                    case ComplexEscape.OCTAL:
-                                        escapeValue *= (char) 8;
-                                        escapeValue += (char) (currentLetter - '0');
+                                            break;
+                                        case ComplexEscape.OCTAL:
+                                            escapeValue *= (char) 8;
+                                            escapeValue += (char) (currentLetter - '0');
 
-                                        if (escapeLength == 3) {
-                                            readingComplexEscape = false;
-                                        }
+                                            if (escapeLength == 3) {
+                                                readingComplexEscape = false;
+                                            }
 
-                                        break;
-                                    case ComplexEscape.DECIMAL:
-                                        escapeValue *= (char) 10;
-                                        escapeValue += (char) (currentLetter - '0');
+                                            break;
+                                        case ComplexEscape.DECIMAL:
+                                            escapeValue *= (char) 10;
+                                            escapeValue += (char) (currentLetter - '0');
 
-                                        if (escapeLength == 3) {
-                                            readingComplexEscape = false;
-                                        }
+                                            if (escapeLength == 3) {
+                                                readingComplexEscape = false;
+                                            }
 
-                                        break;
-                                    case ComplexEscape.HEX:
-                                        escapeValue *= (char) 16;
-                                        escapeValue += hexToDec(currentLetter);
+                                            break;
+                                        case ComplexEscape.HEX:
+                                            escapeValue *= (char) 16;
+                                            escapeValue += hexToDec(currentLetter);
 
-                                        if (escapeLength == 2) {
-                                            readingComplexEscape = false;
-                                        }
+                                            if (escapeLength == 2) {
+                                                readingComplexEscape = false;
+                                            }
 
-                                        break;
+                                            break;
                                     }
 
                                     if (!readingComplexEscape) {
@@ -964,79 +934,79 @@ public class CsvReader {
                                     }
                                 } else if (userSettings.EscapeMode == ESCAPE_MODE_BACKSLASH && lastLetterWasBackslash) {
                                     switch (currentLetter) {
-                                    case 'n':
-                                        appendLetter(Letters.LF);
-                                        break;
-                                    case 'r':
-                                        appendLetter(Letters.CR);
-                                        break;
-                                    case 't':
-                                        appendLetter(Letters.TAB);
-                                        break;
-                                    case 'b':
-                                        appendLetter(Letters.BACKSPACE);
-                                        break;
-                                    case 'f':
-                                        appendLetter(Letters.FORM_FEED);
-                                        break;
-                                    case 'e':
-                                        appendLetter(Letters.ESCAPE);
-                                        break;
-                                    case 'v':
-                                        appendLetter(Letters.VERTICAL_TAB);
-                                        break;
-                                    case 'a':
-                                        appendLetter(Letters.ALERT);
-                                        break;
-                                    case '0':
-                                    case '1':
-                                    case '2':
-                                    case '3':
-                                    case '4':
-                                    case '5':
-                                    case '6':
-                                    case '7':
-                                        escape = ComplexEscape.OCTAL;
-                                        readingComplexEscape = true;
-                                        escapeLength = 1;
-                                        escapeValue = (char) (currentLetter - '0');
-                                        dataBuffer.ColumnStart = dataBuffer.Position + 1;
-                                        break;
-                                    case 'u':
-                                    case 'x':
-                                    case 'o':
-                                    case 'd':
-                                    case 'U':
-                                    case 'X':
-                                    case 'O':
-                                    case 'D':
-                                        switch (currentLetter) {
-                                        case 'u':
-                                        case 'U':
-                                            escape = ComplexEscape.UNICODE;
+                                        case 'n':
+                                            appendLetter(Letters.LF);
                                             break;
-                                        case 'x':
-                                        case 'X':
-                                            escape = ComplexEscape.HEX;
+                                        case 'r':
+                                            appendLetter(Letters.CR);
                                             break;
-                                        case 'o':
-                                        case 'O':
+                                        case 't':
+                                            appendLetter(Letters.TAB);
+                                            break;
+                                        case 'b':
+                                            appendLetter(Letters.BACKSPACE);
+                                            break;
+                                        case 'f':
+                                            appendLetter(Letters.FORM_FEED);
+                                            break;
+                                        case 'e':
+                                            appendLetter(Letters.ESCAPE);
+                                            break;
+                                        case 'v':
+                                            appendLetter(Letters.VERTICAL_TAB);
+                                            break;
+                                        case 'a':
+                                            appendLetter(Letters.ALERT);
+                                            break;
+                                        case '0':
+                                        case '1':
+                                        case '2':
+                                        case '3':
+                                        case '4':
+                                        case '5':
+                                        case '6':
+                                        case '7':
                                             escape = ComplexEscape.OCTAL;
+                                            readingComplexEscape = true;
+                                            escapeLength = 1;
+                                            escapeValue = (char) (currentLetter - '0');
+                                            dataBuffer.ColumnStart = dataBuffer.Position + 1;
                                             break;
+                                        case 'u':
+                                        case 'x':
+                                        case 'o':
                                         case 'd':
+                                        case 'U':
+                                        case 'X':
+                                        case 'O':
                                         case 'D':
-                                            escape = ComplexEscape.DECIMAL;
+                                            switch (currentLetter) {
+                                                case 'u':
+                                                case 'U':
+                                                    escape = ComplexEscape.UNICODE;
+                                                    break;
+                                                case 'x':
+                                                case 'X':
+                                                    escape = ComplexEscape.HEX;
+                                                    break;
+                                                case 'o':
+                                                case 'O':
+                                                    escape = ComplexEscape.OCTAL;
+                                                    break;
+                                                case 'd':
+                                                case 'D':
+                                                    escape = ComplexEscape.DECIMAL;
+                                                    break;
+                                            }
+
+                                            readingComplexEscape = true;
+                                            escapeLength = 0;
+                                            escapeValue = (char) 0;
+                                            dataBuffer.ColumnStart = dataBuffer.Position + 1;
+
                                             break;
-                                        }
-
-                                        readingComplexEscape = true;
-                                        escapeLength = 0;
-                                        escapeValue = (char) 0;
-                                        dataBuffer.ColumnStart = dataBuffer.Position + 1;
-
-                                        break;
-                                    default:
-                                        break;
+                                        default:
+                                            break;
                                     }
 
                                     lastLetterWasBackslash = false;
@@ -1102,7 +1072,7 @@ public class CsvReader {
                 } else {
                     rawRecord = new String(rawBuffer.Buffer, 0, rawBuffer.Position)
                             + new String(dataBuffer.Buffer, dataBuffer.LineStart, dataBuffer.Position
-                                    - dataBuffer.LineStart - 1);
+                            - dataBuffer.LineStart - 1);
                 }
             } else {
                 // for hasMoreData to ever be false, all data would have had to
@@ -1118,9 +1088,8 @@ public class CsvReader {
     }
 
     /**
-     * @exception IOException
-     *                    Thrown if an error occurs while reading data from the
-     *                    source stream.
+     * @throws IOException Thrown if an error occurs while reading data from the
+     *                     source stream.
      */
     private void checkDataLength() throws IOException {
         if (!initialized) {
@@ -1177,9 +1146,8 @@ public class CsvReader {
      * Read the first record of data as column headers.
      *
      * @return Whether the header record was successfully read or not.
-     * @exception IOException
-     *                    Thrown if an error occurs while reading data from the
-     *                    source stream.
+     * @throws IOException Thrown if an error occurs while reading data from the
+     *                     source stream.
      */
     public boolean readHeaders() throws IOException {
         boolean result = readRecord();
@@ -1212,11 +1180,9 @@ public class CsvReader {
     /**
      * Returns the column header value for a given column index.
      *
-     * @param columnIndex
-     *                The index of the header column being requested.
+     * @param columnIndex The index of the header column being requested.
      * @return The value of the column header at the given column index.
-     * @exception IOException
-     *                    Thrown if this object has already been closed.
+     * @throws IOException Thrown if this object has already been closed.
      */
     public String getHeader(int columnIndex) throws IOException {
         checkClosed();
@@ -1246,9 +1212,8 @@ public class CsvReader {
     }
 
     /**
-     * @exception IOException
-     *                    Thrown if a very rare extreme exception occurs during
-     *                    parsing, normally resulting from improper data format.
+     * @throws IOException Thrown if a very rare extreme exception occurs during
+     *                     parsing, normally resulting from improper data format.
      */
     private void endColumn() throws IOException {
         String currentValue = "";
@@ -1331,7 +1296,7 @@ public class CsvReader {
         isQualified[columnsCount] = startedWithQualifier;
 
         currentValue = "";
-        startedWithQualifier=false;
+        startedWithQualifier = false;
         columnsCount++;
     }
 
@@ -1372,9 +1337,8 @@ public class CsvReader {
     }
 
     /**
-     * @exception IOException
-     *                    Thrown if an error occurs while reading data from the
-     *                    source stream.
+     * @throws IOException Thrown if an error occurs while reading data from the
+     *                     source stream.
      */
     private void endRecord() throws IOException {
         // this flag is used as a loop exit condition
@@ -1388,12 +1352,10 @@ public class CsvReader {
     /**
      * Gets the corresponding column index for a given column header name.
      *
-     * @param headerName
-     *                The header name of the column.
+     * @param headerName The header name of the column.
      * @return The column index for the given column header name.&nbsp;Returns
-     *         -1 if not found.
-     * @exception IOException
-     *                    Thrown if this object has already been closed.
+     * -1 if not found.
+     * @throws IOException Thrown if this object has already been closed.
      */
     public int getIndex(String headerName) throws IOException {
         checkClosed();
@@ -1413,9 +1375,8 @@ public class CsvReader {
      * {@link com.csvreader.CsvReader#getCurrentRecord getCurrentRecord()}.
      *
      * @return Whether another record was successfully skipped or not.
-     * @exception IOException
-     *                    Thrown if an error occurs while reading data from the
-     *                    source stream.
+     * @throws IOException Thrown if an error occurs while reading data from the
+     *                     source stream.
      */
     public boolean skipRecord() throws IOException {
         checkClosed();
@@ -1438,9 +1399,8 @@ public class CsvReader {
      * does not do any column delimited parsing.
      *
      * @return Whether a line was successfully skipped or not.
-     * @exception IOException
-     *                    Thrown if an error occurs while reading data from the
-     *                    source stream.
+     * @throws IOException Thrown if an error occurs while reading data from the
+     *                     source stream.
      */
     public boolean skipLine() throws IOException {
         checkClosed();
@@ -1531,8 +1491,7 @@ public class CsvReader {
     }
 
     /**
-     * @exception IOException
-     *                    Thrown if this object has already been closed.
+     * @throws IOException Thrown if this object has already been closed.
      */
     private void checkClosed() throws IOException {
         if (closed) {
@@ -1696,12 +1655,12 @@ public class CsvReader {
 
         public int Length;
 
-        public HashMap<String,Integer> IndexByName;
+        public HashMap<String, Integer> IndexByName;
 
         public HeadersHolder() {
             Headers = null;
             Length = 0;
-            IndexByName = new HashMap<String,Integer>();
+            IndexByName = new HashMap<String, Integer>();
         }
     }
 

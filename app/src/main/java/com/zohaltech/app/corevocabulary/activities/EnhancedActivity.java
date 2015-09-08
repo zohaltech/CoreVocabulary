@@ -1,6 +1,5 @@
 package com.zohaltech.app.corevocabulary.activities;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
@@ -14,25 +13,29 @@ import com.zohaltech.app.corevocabulary.classes.App;
 import com.zohaltech.app.corevocabulary.classes.MyRuntimeException;
 import com.zohaltech.app.corevocabulary.classes.MyUncaughtExceptionHandler;
 
-
 import widgets.MyTextView;
 
-public abstract class EnhancedActivity extends AppCompatActivity {
+public abstract class EnhancedActivity extends AppCompatActivity
+{
 
-    Toolbar  toolbar;
+    Toolbar toolbar;
     TextView txtToolbarTitle;
 
     @Override
-    protected final void onCreate(Bundle savedInstanceState) {
+    protected final void onCreate(Bundle savedInstanceState)
+    {
         overridePendingTransition(R.anim.slide_in_from_right, R.anim.slide_out_to_left);
         super.onCreate(savedInstanceState);
 
         Thread.setDefaultUncaughtExceptionHandler(new MyUncaughtExceptionHandler(this));
         App.currentActivity = this;
 
-        try {
+        try
+        {
             onCreated();
-        } catch (MyRuntimeException e) {
+        }
+        catch (MyRuntimeException e)
+        {
             e.printStackTrace();
         }
         onInitialized();
@@ -40,11 +43,13 @@ public abstract class EnhancedActivity extends AppCompatActivity {
     }
 
     @Override
-    public final void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
+    public final void onCreate(Bundle savedInstanceState, PersistableBundle persistentState)
+    {
         super.onCreate(savedInstanceState, persistentState);
     }
 
-    private void onInitialized() {
+    private void onInitialized()
+    {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_back_white);
         toolbar.setTitle("");
@@ -60,11 +65,13 @@ public abstract class EnhancedActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onBackPressed() {
+    public void onBackPressed()
+    {
         super.onBackPressed();
         overridePendingTransition(R.anim.slide_in_from_left, R.anim.slide_out_to_right);
     }
 
     abstract void onCreated() throws MyRuntimeException;
+
     abstract void onToolbarCreated();
 }
