@@ -16,10 +16,10 @@ public class Notes
     static final String VocabularyId = "VocabularyId";
     static final String Description = "Description";
 
-    static final String CreateTable = "CREATE TABLE " + TableName + " (\n" +
-            Id + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,\n" +
+    static final String CreateTable = "CREATE TABLE " + TableName + " ( " +
+            Id + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
             VocabularyId + " INTEGER , " +
-            Description + " VARCHAR(50);";
+            Description + " VARCHAR(50));";
     static final String DropTable = "Drop Table If Exists " + TableName;
 
     private static ArrayList<Note> select(String whereClause, String[] selectionArgs)

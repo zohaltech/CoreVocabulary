@@ -13,12 +13,12 @@ public class Themes
 {
     static final String TableName = "Themes";
     static final String Id = "Id";
-    static final String Name = "VocabularyId";
-    static final String Level = "Description";
+    static final String Level = "Level";
+    static final String Name = "Name";
     static final String IconName = "IconName";
 
-    static final String CreateTable = "CREATE TABLE " + TableName + " (\n" +
-            Id + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,\n" +
+    static final String CreateTable = "CREATE TABLE " + TableName + " ( " +
+            Id + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
             Level + " INTEGER , " +
             Name + " VARCHAR(50) ," +
             IconName + " VARCHAR(50));";
@@ -77,6 +77,17 @@ public class Themes
 
         DataAccess da = new DataAccess();
         return da.insert(TableName, values);
+    }
+
+    public static ContentValues generate(Theme theme)
+    {
+        ContentValues values = new ContentValues();
+
+        values.put(Level, theme.getLevel());
+        values.put(Name, theme.getName());
+        values.put(IconName, theme.getIconName());
+
+        return values;
     }
 
     public static long update(Theme theme)

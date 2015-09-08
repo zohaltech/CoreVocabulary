@@ -11,14 +11,16 @@ import com.zohaltech.app.corevocabulary.R;
 import com.zohaltech.app.corevocabulary.adapters.DescriptionPagerAdapter;
 import com.zohaltech.app.corevocabulary.classes.App;
 
-public class VocabDescriptionActivity extends EnhancedActivity {
+public class VocabDescriptionActivity extends EnhancedActivity
+{
 
-    PagerSlidingTabStrip    tabOperators;
-    ViewPager               pagerPackages;
+    PagerSlidingTabStrip tabOperators;
+    ViewPager pagerPackages;
     DescriptionPagerAdapter descriptionPagerAdapter;
 
     @Override
-    void onCreated() {
+    void onCreated()
+    {
         setContentView(R.layout.activity_vocab_description);
 
         // Initialize the ViewPager and set an adapter
@@ -30,14 +32,17 @@ public class VocabDescriptionActivity extends EnhancedActivity {
         tabOperators = (PagerSlidingTabStrip) findViewById(R.id.tabDescriptions);
         tabOperators.setViewPager(pagerPackages);
 
-        pagerPackages.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+        pagerPackages.addOnPageChangeListener(new ViewPager.OnPageChangeListener()
+        {
             @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels)
+            {
 
             }
 
             @Override
-            public void onPageSelected(int position) {
+            public void onPageSelected(int position)
+            {
                 ((TextView) ((ViewGroup) tabOperators.getChildAt(0)).getChildAt(0)).setTextColor(getResources().getColor(R.color.divider));
                 ((TextView) ((ViewGroup) tabOperators.getChildAt(0)).getChildAt(1)).setTextColor(getResources().getColor(R.color.divider));
                 ((TextView) ((ViewGroup) tabOperators.getChildAt(0)).getChildAt(2)).setTextColor(getResources().getColor(R.color.divider));
@@ -45,7 +50,8 @@ public class VocabDescriptionActivity extends EnhancedActivity {
             }
 
             @Override
-            public void onPageScrollStateChanged(int state) {
+            public void onPageScrollStateChanged(int state)
+            {
 
             }
         });
@@ -55,26 +61,31 @@ public class VocabDescriptionActivity extends EnhancedActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
         int id = item.getItemId();
-        if (id == android.R.id.home) {
+        if (id == android.R.id.home)
+        {
             onBackPressed();
         }
         return super.onOptionsItemSelected(item);
     }
 
     @Override
-    void onToolbarCreated() {
+    void onToolbarCreated()
+    {
         txtToolbarTitle.setText("خرید بسته");
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
 
-    private void changeTabsFont() {
+    private void changeTabsFont()
+    {
         ViewGroup vg = (ViewGroup) tabOperators.getChildAt(0);
         int tabsCount = vg.getChildCount();
-        for (int j = 0; j < tabsCount; j++) {
+        for (int j = 0; j < tabsCount; j++)
+        {
             TextView textView = (TextView) vg.getChildAt(j);
             textView.setWidth(App.screenWidth / 3);
             textView.setTypeface(App.persianFont);

@@ -17,11 +17,11 @@ public class Examples
     static final String English = "English";
     static final String Persian = "Persian";
 
-    static final String CreateTable = "CREATE TABLE " + TableName + " (\n" +
-            Id + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,\n" +
+    static final String CreateTable = "CREATE TABLE " + TableName + " ( " +
+            Id + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
             VocabularyId + " INTEGER , " +
             English + " VARCHAR(1024) , " +
-            Persian + " VARCHAR(1024);";
+            Persian + " VARCHAR(1024));";
 
     static final String DropTable = "Drop Table If Exists " + TableName;
 

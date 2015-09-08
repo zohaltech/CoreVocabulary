@@ -21,13 +21,13 @@ public class Vocabularies
     static final String Visited = "Visited";
     static final String Learned = "Learned";
 
-    static final String CreateTable = "CREATE TABLE " + TableName + " (\n" +
-            Id + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, \n" +
-            ThemeId + " INTEGER REFERENCES " + Themes.TableName + " (" + Themes.Id + "), \n" +
-            Vocabulary + " VARCHAR(50), \n" +
-            VocabEnglishDef + " VARCHAR(200),\n" +
-            VocabPersianDef + " VARCHAR(200), \n" +
-            Visited + " Boolean, \n" +
+    static final String CreateTable = "CREATE TABLE " + TableName + " ( " +
+            Id + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
+            ThemeId + " INTEGER REFERENCES " + Themes.TableName + " (" + Themes.Id + "), " +
+            Vocabulary + " VARCHAR(50), " +
+            VocabEnglishDef + " VARCHAR(200)," +
+            VocabPersianDef + " VARCHAR(200), " +
+            Visited + " Boolean, " +
             Learned + " Boolean );";
 
     static final String DropTable = "Drop Table If Exists " + TableName;

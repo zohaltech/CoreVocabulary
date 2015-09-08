@@ -24,8 +24,6 @@ public class MainActivity extends EnhancedActivity
 
     private void initialize()
     {
-
-
         btnThemeList = (Button) findViewById(R.id.btnThemeList);
         btnThemeList.setOnClickListener(new View.OnClickListener()
         {
@@ -33,7 +31,7 @@ public class MainActivity extends EnhancedActivity
             public void onClick(View view)
             {
                 Intent intent = new Intent(MainActivity.this, ThemesActivity.class);
-                startActivity(intent);
+                MainActivity.this.startActivity(intent);
             }
         });
     }

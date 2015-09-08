@@ -20,23 +20,29 @@ public class DataAccess extends SQLiteOpenHelper
     }
 
     @Override
-    public void onCreate(SQLiteDatabase database)
+    public void onCreate(SQLiteDatabase db)
     {
         try
         {
-            Themes.insert(new Theme(1, 1, "Education", "ic_education"));
-            Themes.insert(new Theme(2, 2, "Job and Employment", "ic_job"));
-            Themes.insert(new Theme(3, 3, "Media", "ic_media"));
-            Themes.insert(new Theme(4, 4, "Health", "ic_health"));
-            Themes.insert(new Theme(5, 5, "Environment", "ic_environment"));
-            Themes.insert(new Theme(6, 6, "Advertising", "ic_advertising"));
-            Themes.insert(new Theme(7, 7, "Foreign Language", "ic_language"));
-            Themes.insert(new Theme(8, 8, "Urbanisation", "ic_urbanisation"));
-            Themes.insert(new Theme(9, 9, "Crimes and Law", "ic_law"));
-            Themes.insert(new Theme(11, 11, "Sports", "ic_sports"));
-            Themes.insert(new Theme(12, 12, "Space", "ic_space"));
-            Themes.insert(new Theme(13, 13, "Science", "ic_science"));
-            Themes.insert(new Theme(14, 14, "Causes and Results", "ic_causes"));
+            db.execSQL(Themes.CreateTable);
+            db.execSQL(Vocabularies.CreateTable);
+            db.execSQL(Examples.CreateTable);
+            db.execSQL(Notes.CreateTable);
+
+            db.insert(Themes.TableName, null, Themes.generate(new Theme(1, "Education", "ic_education")));
+            db.insert(Themes.TableName, null, Themes.generate(new Theme(2, "Job and Employment", "ic_job")));
+            db.insert(Themes.TableName, null, Themes.generate(new Theme(3, "Media", "ic_media")));
+            db.insert(Themes.TableName, null, Themes.generate(new Theme(4, "Health", "ic_health")));
+            db.insert(Themes.TableName, null, Themes.generate(new Theme(5, "Environment", "ic_environment")));
+            db.insert(Themes.TableName, null, Themes.generate(new Theme(6, "Advertising", "ic_advertising")));
+            db.insert(Themes.TableName, null, Themes.generate(new Theme(7, "Foreign Language", "ic_language")));
+            db.insert(Themes.TableName, null, Themes.generate(new Theme(8, "Urbanisation", "ic_urbanisation")));
+            db.insert(Themes.TableName, null, Themes.generate(new Theme(9, "Crimes and Law", "ic_law")));
+            db.insert(Themes.TableName, null, Themes.generate(new Theme(11, "Sports", "ic_sports")));
+            db.insert(Themes.TableName, null, Themes.generate(new Theme(12, "Space", "ic_space")));
+            db.insert(Themes.TableName, null, Themes.generate(new Theme(13, "Science", "ic_science")));
+            db.insert(Themes.TableName, null, Themes.generate(new Theme(14, "Causes and Results", "ic_causes")));
+
         }
         catch (MyRuntimeException e)
         {
@@ -49,6 +55,11 @@ public class DataAccess extends SQLiteOpenHelper
     {
         try
         {
+            database.execSQL(Themes.DropTable);
+            database.execSQL(Vocabularies.DropTable);
+            database.execSQL(Examples.DropTable);
+            database.execSQL(Notes.DropTable);
+
             onCreate(database);
         }
         catch (MyRuntimeException e)
