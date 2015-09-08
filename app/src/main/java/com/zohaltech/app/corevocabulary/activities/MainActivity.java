@@ -10,24 +10,28 @@ import android.widget.Button;
 import com.zohaltech.app.corevocabulary.R;
 
 
-public class MainActivity extends EnhancedActivity {
+public class MainActivity extends EnhancedActivity
+{
 
     Button btnThemeList;
 
     @Override
-    void onCreated() {
+    void onCreated()
+    {
         setContentView(R.layout.activity_main);
         initialize();
     }
 
-    private void initialize() {
-
+    private void initialize()
+    {
 
 
         btnThemeList = (Button) findViewById(R.id.btnThemeList);
-        btnThemeList.setOnClickListener(new View.OnClickListener() {
+        btnThemeList.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View view) {
+            public void onClick(View view)
+            {
                 Intent intent = new Intent(MainActivity.this, ThemesActivity.class);
                 startActivity(intent);
             }
@@ -35,7 +39,8 @@ public class MainActivity extends EnhancedActivity {
     }
 
     @Override
-    void onToolbarCreated() {
+    void onToolbarCreated()
+    {
         txtToolbarTitle.setText("Core Vocabulary");
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(false);
@@ -43,21 +48,25 @@ public class MainActivity extends EnhancedActivity {
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
         return super.onCreateOptionsMenu(menu);
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_settings)
+        {
 
         }
         return super.onOptionsItemSelected(item);
     }
 
     @Override
-    public void onBackPressed() {
+    public void onBackPressed()
+    {
         //        if ((System.currentTimeMillis() - startTime) > 2000) {
         //            startTime = System.currentTimeMillis();
         //            MyToast.show(getString(R.string.press_back_again_to_exit), Toast.LENGTH_SHORT);
