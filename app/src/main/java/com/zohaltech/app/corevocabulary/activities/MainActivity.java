@@ -6,12 +6,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.zohaltech.app.corevocabulary.R;
-import com.zohaltech.app.corevocabulary.classes.App;
-
-import widgets.MyToast;
+import com.zohaltech.app.corevocabulary.data.SchemaGenerator;
+import com.zohaltech.app.corevocabulary.data.SqliteTypeRegistry;
+import com.zohaltech.app.corevocabulary.data.Table;
+import com.zohaltech.app.corevocabulary.data.exception.NoPrimaryKeyFoundException;
+import com.zohaltech.app.corevocabulary.entities.ThemeObject;
 
 public class MainActivity extends EnhancedActivity {
 
@@ -24,6 +25,19 @@ public class MainActivity extends EnhancedActivity {
     }
 
     private void initialize() {
+        try {
+
+            SchemaGenerator schemaGenerator = new SchemaGenerator();
+            SqliteTypeRegistry typeRegistry = new SqliteTypeRegistry();
+            Table table = new Table(ThemeObject.class, typeRegistry);
+            String result = schemaGenerator.createTable(table);
+            String s="j";
+        } catch (NoPrimaryKeyFoundException e) {
+
+
+        }
+
+
         btnThemeList = (Button) findViewById(R.id.btnThemeList);
         btnThemeList.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,12 +72,12 @@ public class MainActivity extends EnhancedActivity {
 
     @Override
     public void onBackPressed() {
-//        if ((System.currentTimeMillis() - startTime) > 2000) {
-//            startTime = System.currentTimeMillis();
-//            MyToast.show(getString(R.string.press_back_again_to_exit), Toast.LENGTH_SHORT);
-//            //Toast.makeText(App.context, getString(R.string.press_back_again_to_exit), Toast.LENGTH_SHORT).show();
-//        } else {
-//            super.onBackPressed();
-//        }
+        //        if ((System.currentTimeMillis() - startTime) > 2000) {
+        //            startTime = System.currentTimeMillis();
+        //            MyToast.show(getString(R.string.press_back_again_to_exit), Toast.LENGTH_SHORT);
+        //            //Toast.makeText(App.context, getString(R.string.press_back_again_to_exit), Toast.LENGTH_SHORT).show();
+        //        } else {
+        //            super.onBackPressed();
+        //        }
     }
 }

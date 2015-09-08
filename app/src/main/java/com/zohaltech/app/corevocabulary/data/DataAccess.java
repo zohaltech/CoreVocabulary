@@ -1,12 +1,10 @@
-package com.zohaltech.app.corevocabulary.dal;
+package com.zohaltech.app.corevocabulary.data;
 
 import android.content.ContentValues;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.zohaltech.app.corevocabulary.classes.App;
-import com.zohaltech.app.corevocabulary.classes.CsvReader;
-import com.zohaltech.app.corevocabulary.classes.MyRuntimeException;
+import com.zohaltech.app.corevocabulary.classes.*;
 import com.zohaltech.app.corevocabulary.entities.Theme;
 
 import java.io.InputStreamReader;

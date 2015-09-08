@@ -5,7 +5,7 @@ import android.widget.ListView;
 
 import com.zohaltech.app.corevocabulary.R;
 import com.zohaltech.app.corevocabulary.adapters.ThemeAdaptor;
-import com.zohaltech.app.corevocabulary.dal.Themes;
+import com.zohaltech.app.corevocabulary.data.Themes;
 import com.zohaltech.app.corevocabulary.entities.Theme;
 
 import java.util.ArrayList;
@@ -23,7 +23,7 @@ public class ThemesActivity extends EnhancedActivity {
         themes = Themes.select();
         adapter = new ThemeAdaptor(themes);
         lstPackagesHistories.setAdapter(adapter);
-        adapter.notifyDataSetChanged();
+
     }
 
     @Override
