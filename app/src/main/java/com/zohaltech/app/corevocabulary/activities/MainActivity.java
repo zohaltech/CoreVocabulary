@@ -8,11 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.zohaltech.app.corevocabulary.R;
-import com.zohaltech.app.corevocabulary.data.SchemaGenerator;
-import com.zohaltech.app.corevocabulary.data.SqliteTypeRegistry;
-import com.zohaltech.app.corevocabulary.data.Table;
-import com.zohaltech.app.corevocabulary.data.exception.NoPrimaryKeyFoundException;
-import com.zohaltech.app.corevocabulary.entities.ThemeObject;
+
 
 public class MainActivity extends EnhancedActivity {
 
@@ -25,17 +21,7 @@ public class MainActivity extends EnhancedActivity {
     }
 
     private void initialize() {
-        try {
 
-            SchemaGenerator schemaGenerator = new SchemaGenerator();
-            SqliteTypeRegistry typeRegistry = new SqliteTypeRegistry();
-            Table table = new Table(ThemeObject.class, typeRegistry);
-            String result = schemaGenerator.createTable(table);
-            String s="j";
-        } catch (NoPrimaryKeyFoundException e) {
-
-
-        }
 
 
         btnThemeList = (Button) findViewById(R.id.btnThemeList);

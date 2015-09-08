@@ -11,8 +11,9 @@ import android.widget.TextView;
 
 import com.zohaltech.app.corevocabulary.R;
 import com.zohaltech.app.corevocabulary.classes.App;
+import com.zohaltech.app.corevocabulary.classes.MyRuntimeException;
 import com.zohaltech.app.corevocabulary.classes.MyUncaughtExceptionHandler;
-import com.zohaltech.app.corevocabulary.data.exception.NoPrimaryKeyFoundException;
+
 
 import widgets.MyTextView;
 
@@ -31,7 +32,7 @@ public abstract class EnhancedActivity extends AppCompatActivity {
 
         try {
             onCreated();
-        } catch (NoPrimaryKeyFoundException e) {
+        } catch (MyRuntimeException e) {
             e.printStackTrace();
         }
         onInitialized();
@@ -64,6 +65,6 @@ public abstract class EnhancedActivity extends AppCompatActivity {
         overridePendingTransition(R.anim.slide_in_from_left, R.anim.slide_out_to_right);
     }
 
-    abstract void onCreated() throws NoPrimaryKeyFoundException;
+    abstract void onCreated() throws MyRuntimeException;
     abstract void onToolbarCreated();
 }

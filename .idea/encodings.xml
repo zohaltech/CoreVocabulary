@@ -3,12 +3,6 @@
   <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="file://$PROJECT_DIR$/app/src/main/assets" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/zohaltech/app/corevocabulary/activities" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/zohaltech/app/corevocabulary/data/exception/EasyLiteSqlException.java" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/zohaltech/app/corevocabulary/data/exception/IllegalWhereArgumentException.java" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/zohaltech/app/corevocabulary/data/exception/NoPrimaryKeyFoundException.java" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/zohaltech/app/corevocabulary/data/exception/NoSuitablePrimaryKeySuppliedException.java" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/zohaltech/app/corevocabulary/data/exception/NotEntityException.java" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/zohaltech/app/corevocabulary/data/exception/UnAuthorizeGenerationTypeException.java" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/widgets/AnimatedExpandableListView.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/widgets/MyButton.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/widgets/MyEditText.java" charset="UTF-8" />
