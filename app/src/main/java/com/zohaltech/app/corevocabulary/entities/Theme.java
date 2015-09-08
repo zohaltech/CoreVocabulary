@@ -9,8 +9,7 @@ public class Theme
     private String name;
     private String iconName;
 
-    public Theme(int id, int level, String name, String iconName)
-    {
+    public Theme(int id, int level, String name, String iconName){
         this(level, name, iconName);
         this.id = id;
     }
