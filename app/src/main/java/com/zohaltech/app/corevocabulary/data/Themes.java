@@ -69,10 +69,14 @@ public class Themes
 
     public static long insert(Theme theme)
     {
-        ContentValues values = getContentValues(theme);
-
         DataAccess da = new DataAccess();
-        return da.insert(TableName, values);
+        return da.insert(TableName, getContentValues(theme));
+    }
+
+    public static long update(Theme theme)
+    {
+        DataAccess da = new DataAccess();
+        return da.update(TableName, getContentValues(theme), Id + " =? ", new String[]{String.valueOf(theme.getId())});
     }
 
     public static ContentValues getContentValues(Theme theme)
@@ -84,17 +88,5 @@ public class Themes
         values.put(IconName, theme.getIconName());
 
         return values;
-    }
-
-    public static long update(Theme theme)
-    {
-        ContentValues values = new ContentValues();
-
-        values.put(Level, theme.getLevel());
-        values.put(Name, theme.getName());
-        values.put(IconName, theme.getIconName());
-
-        DataAccess da = new DataAccess();
-        return da.update(TableName, values, Id + " =? ", new String[]{String.valueOf(theme.getId())});
     }
 }
