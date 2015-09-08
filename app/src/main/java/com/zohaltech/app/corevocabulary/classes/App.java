@@ -50,9 +50,7 @@ public class App extends Application
         screenWidth = getResources().getDisplayMetrics().widthPixels;
         screenHeight = getResources().getDisplayMetrics().heightPixels;
 
-
         setAppLocal();
-
     }
 
     @Override

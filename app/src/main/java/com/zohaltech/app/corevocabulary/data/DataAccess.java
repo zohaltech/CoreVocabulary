@@ -29,19 +29,19 @@ public class DataAccess extends SQLiteOpenHelper
             db.execSQL(Examples.CreateTable);
             db.execSQL(Notes.CreateTable);
 
-            db.insert(Themes.TableName, null, Themes.generate(new Theme(1, "Education", "ic_education")));
-            db.insert(Themes.TableName, null, Themes.generate(new Theme(2, "Job and Employment", "ic_job")));
-            db.insert(Themes.TableName, null, Themes.generate(new Theme(3, "Media", "ic_media")));
-            db.insert(Themes.TableName, null, Themes.generate(new Theme(4, "Health", "ic_health")));
-            db.insert(Themes.TableName, null, Themes.generate(new Theme(5, "Environment", "ic_environment")));
-            db.insert(Themes.TableName, null, Themes.generate(new Theme(6, "Advertising", "ic_advertising")));
-            db.insert(Themes.TableName, null, Themes.generate(new Theme(7, "Foreign Language", "ic_language")));
-            db.insert(Themes.TableName, null, Themes.generate(new Theme(8, "Urbanisation", "ic_urbanisation")));
-            db.insert(Themes.TableName, null, Themes.generate(new Theme(9, "Crimes and Law", "ic_law")));
-            db.insert(Themes.TableName, null, Themes.generate(new Theme(11, "Sports", "ic_sports")));
-            db.insert(Themes.TableName, null, Themes.generate(new Theme(12, "Space", "ic_space")));
-            db.insert(Themes.TableName, null, Themes.generate(new Theme(13, "Science", "ic_science")));
-            db.insert(Themes.TableName, null, Themes.generate(new Theme(14, "Causes and Results", "ic_causes")));
+            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(1, "Education", "ic_education")));
+            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(2, "Job and Employment", "ic_job")));
+            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(3, "Media", "ic_media")));
+            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(4, "Health", "ic_health")));
+            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(5, "Environment", "ic_environment")));
+            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(6, "Advertising", "ic_advertising")));
+            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(7, "Foreign Language", "ic_language")));
+            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(8, "Urbanisation", "ic_urbanisation")));
+            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(9, "Crimes and Law", "ic_law")));
+            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(11, "Sports", "ic_sports")));
+            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(12, "Space", "ic_space")));
+            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(13, "Science", "ic_science")));
+            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(14, "Causes and Results", "ic_causes")));
 
         }
         catch (MyRuntimeException e)

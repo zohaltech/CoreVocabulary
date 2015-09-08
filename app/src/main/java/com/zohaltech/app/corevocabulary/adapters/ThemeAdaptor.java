@@ -55,6 +55,10 @@ public class ThemeAdaptor extends ArrayAdapter<Theme>
 
         public void fill(final ArrayAdapter<Theme> adapter, final Theme item, final int position)
         {
+            //            int imageId = App.context.getResources().getIdentifier("ic_launcher", "drawable", App.context.getPackageName());
+            //            ImageView img = new ImageView(App.context);
+            //            img.setImageResource(imageId);
+
             if (position % 2 == 1)
             {
                 layoutReport.setBackgroundResource(R.color.primary_lighter);

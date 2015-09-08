@@ -69,17 +69,13 @@ public class Themes
 
     public static long insert(Theme theme)
     {
-        ContentValues values = new ContentValues();
-
-        values.put(Level, theme.getLevel());
-        values.put(Name, theme.getName());
-        values.put(IconName, theme.getIconName());
+        ContentValues values = getContentValues(theme);
 
         DataAccess da = new DataAccess();
         return da.insert(TableName, values);
     }
 
-    public static ContentValues generate(Theme theme)
+    public static ContentValues getContentValues(Theme theme)
     {
         ContentValues values = new ContentValues();
 
