@@ -17,18 +17,18 @@ public class Vocabularies
     static final String ThemeId = "ThemeId";
     static final String Day = "Day";
     static final String Vocabulary = "Vocabulary";
-    static final String VocabEnglishDef = "VocabEnglishDef";
-    static final String VocabPersianDef = "VocabPersianDef";
+    static final String EnglishDef = "EnglishDef";
+    static final String PersianDef = "PersianDef";
     static final String Visited = "Visited";
     static final String Learned = "Learned";
 
     static final String CreateTable = "CREATE TABLE " + TableName + " ( " +
-            Id + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
+            Id + " INTEGER PRIMARY KEY NOT NULL, " +
             ThemeId + " INTEGER REFERENCES " + Themes.TableName + " (" + Themes.Id + "), " +
             Day + " INTEGER, " +
-            Vocabulary + " VARCHAR(50), " +
-            VocabEnglishDef + " VARCHAR(200)," +
-            VocabPersianDef + " VARCHAR(200), " +
+            Vocabulary + " VARCHAR(250), " +
+            EnglishDef + " VARCHAR(1024)," +
+            PersianDef + " VARCHAR(1024), " +
             Visited + " Boolean, " +
             Learned + " Boolean );";
 
@@ -53,8 +53,8 @@ public class Vocabularies
                             cursor.getInt(cursor.getColumnIndex(ThemeId)),
                             cursor.getInt(cursor.getColumnIndex(Day)),
                             cursor.getString(cursor.getColumnIndex(Vocabulary)),
-                            cursor.getString(cursor.getColumnIndex(VocabEnglishDef)),
-                            cursor.getString(cursor.getColumnIndex(VocabPersianDef)),
+                            cursor.getString(cursor.getColumnIndex(EnglishDef)),
+                            cursor.getString(cursor.getColumnIndex(PersianDef)),
                             cursor.getInt(cursor.getColumnIndex(Visited)) == 1,
                             cursor.getInt(cursor.getColumnIndex(Learned)) == 1);
 
@@ -97,11 +97,12 @@ public class Vocabularies
     {
         ContentValues values = new ContentValues();
 
+        values.put(Id, vocabulary.getId());
         values.put(ThemeId, vocabulary.getThemeId());
         values.put(Day, vocabulary.getDay());
         values.put(Vocabulary, vocabulary.getVocabulary());
-        values.put(VocabEnglishDef, vocabulary.getVocabEnglishDef());
-        values.put(VocabPersianDef, vocabulary.getVocabPersianDef());
+        values.put(EnglishDef, vocabulary.getVocabEnglishDef());
+        values.put(PersianDef, vocabulary.getVocabPersianDef());
         values.put(Visited, vocabulary.getVisited());
         values.put(Learned, vocabulary.getLearned());
 

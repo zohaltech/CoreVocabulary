@@ -43,6 +43,10 @@ public class DataAccess extends SQLiteOpenHelper
             db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(13, "Science", "ic_science")));
             db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(14, "Causes and Results", "ic_causes")));
 
+            insertDataFromAsset(db, Vocabularies.TableName, "data/vocabs.csv", ';');
+            insertDataFromAsset(db, Examples.TableName, "data/examples.csv", ';');
+            insertDataFromAsset(db, Notes.TableName, "data/notes.csv", ';');
+
         }
         catch (MyRuntimeException e)
         {

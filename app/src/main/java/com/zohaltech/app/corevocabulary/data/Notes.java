@@ -14,11 +14,13 @@ public class Notes
     static final String TableName = "Notes";
     static final String Id = "Id";
     static final String VocabularyId = "VocabularyId";
+    static final String Ordinal = "Ordinal";
     static final String Description = "Description";
 
     static final String CreateTable = "CREATE TABLE " + TableName + " ( " +
             Id + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
             VocabularyId + " INTEGER , " +
+            Ordinal + " INTEGER , " +
             Description + " VARCHAR(50));";
     static final String DropTable = "Drop Table If Exists " + TableName;
 
@@ -39,6 +41,7 @@ public class Notes
                 {
                     Note note = new Note(cursor.getInt(cursor.getColumnIndex(Id)),
                             cursor.getInt(cursor.getColumnIndex(VocabularyId)),
+                            cursor.getInt(cursor.getColumnIndex(Ordinal)),
                             cursor.getString(cursor.getColumnIndex(Description)));
 
                     noteList.add(note);
@@ -81,6 +84,7 @@ public class Notes
         ContentValues values = new ContentValues();
 
         values.put(VocabularyId, note.getVocabularyId());
+        values.put(Ordinal, note.getOrdinal());
         values.put(Description, note.getDescription());
 
         return values;
