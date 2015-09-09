@@ -5,7 +5,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.zohaltech.app.corevocabulary.fragments.DescriptionFragment;
+import com.zohaltech.app.corevocabulary.fragments.VocabularyDescFragment;
 
 public class DescriptionPagerAdapter extends FragmentPagerAdapter
 {
@@ -33,11 +33,11 @@ public class DescriptionPagerAdapter extends FragmentPagerAdapter
     public Fragment getItem(int position)
     {
         if (position == 0)
-            return DescriptionFragment.newInstance(3);
+            return VocabularyDescFragment.newInstance(3);
         else if (position == 1)
-            return DescriptionFragment.newInstance(2);
+            return VocabularyDescFragment.newInstance(2);
         else
-            return DescriptionFragment.newInstance(1);
+            return VocabularyDescFragment.newInstance(1);
     }
 
     @Override

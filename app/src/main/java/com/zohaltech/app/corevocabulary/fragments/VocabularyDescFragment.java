@@ -8,14 +8,23 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.zohaltech.app.corevocabulary.R;
+import com.zohaltech.app.corevocabulary.entities.Example;
+import com.zohaltech.app.corevocabulary.entities.Note;
+import com.zohaltech.app.corevocabulary.entities.Vocabulary;
 
-public class DescriptionFragment extends Fragment {
+import java.util.List;
+
+public class VocabularyDescFragment extends Fragment {
     public static final String POSITION = "POSITION";
+    Vocabulary    vocabulary;
+    List<Example> examples;
+    List<Note>    notes;
 
-    public static DescriptionFragment newInstance(int position) {
+
+    public static VocabularyDescFragment newInstance(int position) {
         Bundle args = new Bundle();
         args.putInt(POSITION, position);
-        DescriptionFragment fragment = new DescriptionFragment();
+        VocabularyDescFragment fragment = new VocabularyDescFragment();
         fragment.setArguments(args);
         return fragment;
     }

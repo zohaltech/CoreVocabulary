@@ -1,18 +1,15 @@
 package com.zohaltech.app.corevocabulary.entities;
 
-
-public class Vocabulary
-{
-    private int id;
-    private int themeId;
-    private int day;
-    private String vocabulary;
-    private String vocabEnglishDef;
-    private String vocabPersianDef;
+public class Vocabulary {
+    private int     id;
+    private int     themeId;
+    private int     day;
+    private String  vocabulary;
+    private String  vocabEnglishDef;
+    private String  vocabPersianDef;
     private Boolean visited;
 
-    public Vocabulary(int themeId, int day, String vocabulary, String vocabEnglishDef, String vocabPersianDef, Boolean visited, Boolean learned)
-    {
+    public Vocabulary(int themeId, int day, String vocabulary, String vocabEnglishDef, String vocabPersianDef, Boolean visited, Boolean learned) {
         setThemeId(themeId);
         setDay(day);
         setVocabulary(vocabulary);
@@ -22,90 +19,73 @@ public class Vocabulary
         setLearned(learned);
     }
 
-    public Vocabulary(int id, int themeId, int day, String vocabulary, String vocabEnglishDef, String vocabPersianDef, Boolean visited, Boolean learned)
-    {
+    public Vocabulary(int id, int themeId, int day, String vocabulary, String vocabEnglishDef, String vocabPersianDef, Boolean visited, Boolean learned) {
         this(themeId, day, vocabulary, vocabEnglishDef, vocabPersianDef, visited, learned);
         this.id = id;
     }
 
 
-    public int getId()
-    {
+    public int getId() {
         return id;
     }
 
-    public void setId(int id)
-    {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public int getThemeId()
-    {
+    public int getThemeId() {
         return themeId;
     }
 
-    public void setThemeId(int themeId)
-    {
+    public void setThemeId(int themeId) {
         this.themeId = themeId;
     }
 
-    public int getDay()
-    {
+    public int getDay() {
         return day;
     }
 
-    public void setDay(int day)
-    {
+    public void setDay(int day) {
         this.day = day;
     }
 
-    public String getVocabulary()
-    {
+    public String getVocabulary() {
         return vocabulary;
     }
 
-    public void setVocabulary(String vocabulary)
-    {
+    public void setVocabulary(String vocabulary) {
         this.vocabulary = vocabulary;
     }
 
-    public String getVocabEnglishDef()
-    {
+    public String getVocabEnglishDef() {
         return vocabEnglishDef;
     }
 
-    public void setVocabEnglishDef(String vocabEnglishDef)
-    {
+    public void setVocabEnglishDef(String vocabEnglishDef) {
         this.vocabEnglishDef = vocabEnglishDef;
     }
 
-    public String getVocabPersianDef()
-    {
+    public String getVocabPersianDef() {
         return vocabPersianDef;
     }
 
-    public void setVocabPersianDef(String vocabPersianDef)
-    {
+    public void setVocabPersianDef(String vocabPersianDef) {
         this.vocabPersianDef = vocabPersianDef;
     }
 
-    public Boolean getVisited()
-    {
+    public Boolean getVisited() {
         return visited;
     }
 
-    public void setVisited(Boolean visited)
-    {
+    public void setVisited(Boolean visited) {
         this.visited = visited;
     }
 
-    public Boolean getLearned()
-    {
+    public Boolean getLearned() {
         return learned;
     }
 
-    public void setLearned(Boolean learned)
-    {
+    public void setLearned(Boolean learned) {
         this.learned = learned;
     }
 
