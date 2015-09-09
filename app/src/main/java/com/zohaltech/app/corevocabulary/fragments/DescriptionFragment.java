@@ -23,7 +23,6 @@ public class DescriptionFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
@@ -31,7 +30,6 @@ public class DescriptionFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_vocab_description, container, false);
         return view;
     }
-
 
     @Override
     public void onResume() {
