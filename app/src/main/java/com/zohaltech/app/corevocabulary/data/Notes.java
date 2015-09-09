@@ -66,23 +66,23 @@ public class Notes
 
     public static long insert(Note note)
     {
-        ContentValues values = new ContentValues();
-
-        values.put(VocabularyId, note.getVocabularyId());
-        values.put(Description, note.getDescription());
-
         DataAccess da = new DataAccess();
-        return da.insert(TableName, values);
+        return da.insert(TableName, getContentValues(note));
     }
 
     public static long update(Note note)
+    {
+        DataAccess da = new DataAccess();
+        return da.update(TableName, getContentValues(note), Id + " =? ", new String[]{String.valueOf(note.getId())});
+    }
+
+    public static ContentValues getContentValues(Note note)
     {
         ContentValues values = new ContentValues();
 
         values.put(VocabularyId, note.getVocabularyId());
         values.put(Description, note.getDescription());
 
-        DataAccess da = new DataAccess();
-        return da.update(TableName, values, Id + " =? ", new String[]{String.valueOf(note.getId())});
+        return values;
     }
 }

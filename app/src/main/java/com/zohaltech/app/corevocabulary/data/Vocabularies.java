@@ -15,6 +15,7 @@ public class Vocabularies
     static final String TableName = "Vocabularies";
     static final String Id = "Id";
     static final String ThemeId = "ThemeId";
+    static final String Day = "Day";
     static final String Vocabulary = "Vocabulary";
     static final String VocabEnglishDef = "VocabEnglishDef";
     static final String VocabPersianDef = "VocabPersianDef";
@@ -24,6 +25,7 @@ public class Vocabularies
     static final String CreateTable = "CREATE TABLE " + TableName + " ( " +
             Id + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
             ThemeId + " INTEGER REFERENCES " + Themes.TableName + " (" + Themes.Id + "), " +
+            Day + " INTEGER, " +
             Vocabulary + " VARCHAR(50), " +
             VocabEnglishDef + " VARCHAR(200)," +
             VocabPersianDef + " VARCHAR(200), " +
@@ -49,6 +51,7 @@ public class Vocabularies
                 {
                     Vocabulary vocabulary = new Vocabulary(cursor.getInt(cursor.getColumnIndex(Id)),
                             cursor.getInt(cursor.getColumnIndex(ThemeId)),
+                            cursor.getInt(cursor.getColumnIndex(Day)),
                             cursor.getString(cursor.getColumnIndex(Vocabulary)),
                             cursor.getString(cursor.getColumnIndex(VocabEnglishDef)),
                             cursor.getString(cursor.getColumnIndex(VocabPersianDef)),
@@ -80,32 +83,29 @@ public class Vocabularies
 
     public static long insert(Vocabulary vocabulary)
     {
-        ContentValues values = new ContentValues();
-
-        values.put(ThemeId, vocabulary.getThemeId());
-        values.put(Vocabulary, vocabulary.getVocabulary());
-        values.put(VocabEnglishDef, vocabulary.getVocabEnglishDef());
-        values.put(VocabPersianDef, vocabulary.getVocabPersianDef());
-        values.put(Visited, vocabulary.getVisited());
-        values.put(Learned, vocabulary.getLearned());
-
         DataAccess da = new DataAccess();
-        return da.insert(TableName, values);
+        return da.insert(TableName, getContentValues(vocabulary));
     }
 
     public static long update(Vocabulary vocabulary)
     {
+        DataAccess da = new DataAccess();
+        return da.update(TableName, getContentValues(vocabulary), Id + " =? ", new String[]{String.valueOf(vocabulary.getId())});
+    }
+
+    public static ContentValues getContentValues(Vocabulary vocabulary)
+    {
         ContentValues values = new ContentValues();
 
         values.put(ThemeId, vocabulary.getThemeId());
+        values.put(Day, vocabulary.getDay());
         values.put(Vocabulary, vocabulary.getVocabulary());
         values.put(VocabEnglishDef, vocabulary.getVocabEnglishDef());
         values.put(VocabPersianDef, vocabulary.getVocabPersianDef());
         values.put(Visited, vocabulary.getVisited());
         values.put(Learned, vocabulary.getLearned());
 
-        DataAccess da = new DataAccess();
-        return da.update(TableName, values, Id + " =? ", new String[]{String.valueOf(vocabulary.getId())});
+        return values;
     }
 }
 

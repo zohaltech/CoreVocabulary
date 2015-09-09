@@ -70,17 +70,17 @@ public class Examples
 
     public static long insert(Example example)
     {
-        ContentValues values = new ContentValues();
-
-        values.put(VocabularyId, example.getVocabularyId());
-        values.put(English, example.getEnglish());
-        values.put(Persian, example.getPersian());
-
         DataAccess da = new DataAccess();
-        return da.insert(TableName, values);
+        return da.insert(TableName, getContentValues(example));
     }
 
     public static long update(Example example)
+    {
+        DataAccess da = new DataAccess();
+        return da.update(TableName, getContentValues(example), Id + " =? ", new String[]{String.valueOf(example.getId())});
+    }
+
+    public static ContentValues getContentValues(Example example)
     {
         ContentValues values = new ContentValues();
 
@@ -88,7 +88,6 @@ public class Examples
         values.put(English, example.getEnglish());
         values.put(Persian, example.getPersian());
 
-        DataAccess da = new DataAccess();
-        return da.update(TableName, values, Id + " =? ", new String[]{String.valueOf(example.getId())});
+        return values;
     }
 }
