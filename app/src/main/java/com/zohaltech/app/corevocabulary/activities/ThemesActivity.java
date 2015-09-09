@@ -12,8 +12,7 @@ import java.util.ArrayList;
 
 public class ThemesActivity extends EnhancedActivity
 {
-    ListView lstPackagesHistories;
-
+    ListView lstThemes;
     ArrayList<Theme> themes;
     ThemeAdaptor adapter;
 
@@ -21,10 +20,10 @@ public class ThemesActivity extends EnhancedActivity
     void onCreated()
     {
         setContentView(R.layout.activity_themes);
-        lstPackagesHistories = (ListView) findViewById(R.id.lstThemes);
+        lstThemes = (ListView) findViewById(R.id.lstThemes);
         themes = Themes.select();
         adapter = new ThemeAdaptor(themes);
-        lstPackagesHistories.setAdapter(adapter);
+        lstThemes.setAdapter(adapter);
 
     }
 

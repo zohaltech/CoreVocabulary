@@ -1,6 +1,7 @@
 package com.zohaltech.app.corevocabulary.adapters;
 
 
+import android.content.Intent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -8,33 +9,28 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.zohaltech.app.corevocabulary.R;
+import com.zohaltech.app.corevocabulary.activities.VocabulariesActivity;
 import com.zohaltech.app.corevocabulary.classes.App;
 import com.zohaltech.app.corevocabulary.entities.Theme;
 
 import java.util.ArrayList;
 
-public class ThemeAdaptor extends ArrayAdapter<Theme>
-{
+public class ThemeAdaptor extends ArrayAdapter<Theme> {
 
-    public ThemeAdaptor(ArrayList<Theme> themeList)
-    {
+    public ThemeAdaptor(ArrayList<Theme> themeList) {
         super(App.context, R.layout.adaptor_theme, themeList);
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent)
-    {
+    public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder;
 
         Theme item = getItem(position);
-        if (convertView == null)
-        {
+        if (convertView == null) {
             convertView = App.inflater.inflate(R.layout.adaptor_theme, parent, false);
             holder = new ViewHolder(convertView);
             convertView.setTag(holder);
-        }
-        else
-        {
+        } else {
             holder = (ViewHolder) convertView.getTag();
         }
 
@@ -42,33 +38,37 @@ public class ThemeAdaptor extends ArrayAdapter<Theme>
         return convertView;
     }
 
-    private static class ViewHolder
-    {
-        LinearLayout layoutReport;
-        TextView txtThemeName;
+    private static class ViewHolder {
+        LinearLayout layoutTheme;
+        TextView     txtThemeName;
 
-        public ViewHolder(View view)
-        {
-            layoutReport = (LinearLayout) view.findViewById(R.id.layoutTheme);
+        public ViewHolder(View view) {
+            layoutTheme = (LinearLayout) view.findViewById(R.id.layoutTheme);
             txtThemeName = (TextView) view.findViewById(R.id.txtThemeName);
         }
 
-        public void fill(final ArrayAdapter<Theme> adapter, final Theme item, final int position)
-        {
+        public void fill(final ArrayAdapter<Theme> adapter, final Theme item, final int position) {
             //            int imageId = App.context.getResources().getIdentifier("ic_launcher", "drawable", App.context.getPackageName());
             //            ImageView img = new ImageView(App.context);
             //            img.setImageResource(imageId);
 
-            if (position % 2 == 1)
-            {
-                layoutReport.setBackgroundResource(R.color.primary_lighter);
-            }
-            else
-            {
-                layoutReport.setBackgroundResource(R.color.white);
+            if (position % 2 == 1) {
+                layoutTheme.setBackgroundResource(R.color.primary_lighter);
+            } else {
+                layoutTheme.setBackgroundResource(R.color.white);
             }
 
             txtThemeName.setText(item.getName());
+
+
+            layoutTheme.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(App.currentActivity, VocabulariesActivity.class);
+                    intent.putExtra("ThemeId", item.getId());
+                    App.currentActivity.startActivity(intent);
+                }
+            });
         }
     }
 }

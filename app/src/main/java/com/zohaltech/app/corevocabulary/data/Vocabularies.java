@@ -108,6 +108,11 @@ public class Vocabularies
 
         return values;
     }
+
+    public static ArrayList<Vocabulary> getVocabsOfTheme(int themeId){
+        String whereClause = " WHERE " + themeId + " = " + themeId ;
+        return select(whereClause, null);
+    }
 }
 
 
