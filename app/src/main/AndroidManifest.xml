@@ -3,6 +3,8 @@
     package="com.zohaltech.app.corevocabulary"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <uses-permission android:name="android.permission.VIBRATE"/>
+
     <application
         android:name=".classes.App"
         android:allowBackup="true"
@@ -31,6 +33,9 @@
         <activity
             android:name=".activities.VocabulariesActivity"
             android:screenOrientation="portrait"/>
+
+        <service android:name=".classes.AlarmService"/>
+        <receiver android:name=".classes.AlarmReceiver"/>
     </application>
 
 </manifest>

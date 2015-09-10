@@ -2,6 +2,7 @@ package com.zohaltech.app.corevocabulary.classes;
 
 import android.app.Activity;
 import android.app.Application;
+import android.app.NotificationManager;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
@@ -12,21 +13,25 @@ import android.view.LayoutInflater;
 
 import java.util.Locale;
 
-public class App extends Application {
+public class App extends Application
+{
 
-    public static Context           context;
-    public static Activity          currentActivity;
+    public static Context context;
+    public static Activity currentActivity;
     public static SharedPreferences preferences;
-    public static Typeface          englishFont;
-    public static Typeface          persianFont;
-    public static Typeface          persianFontBold;
-    public static Handler           handler;
-    public static LayoutInflater    inflater;
-    public static int               screenWidth;
-    public static int               screenHeight;
-    public static Locale            locale;
+    public static Typeface englishFont;
+    public static Typeface persianFont;
+    public static Typeface persianFontBold;
+    public static Handler handler;
+    public static LayoutInflater inflater;
+    public static int screenWidth;
+    public static int screenHeight;
+    public static Locale locale;
 
-    public static void setAppLocal() {
+    public static NotificationManager notificationManager;
+
+    public static void setAppLocal()
+    {
         locale = new Locale("en");
         Locale.setDefault(locale);
         Configuration config = context.getResources().getConfiguration();
@@ -35,10 +40,12 @@ public class App extends Application {
     }
 
     @Override
-    public void onCreate() {
+    public void onCreate()
+    {
         super.onCreate();
         context = getApplicationContext();
         preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         englishFont = Typeface.createFromAsset(context.getAssets(), "fonts/calibril.ttf");
         persianFont = Typeface.createFromAsset(context.getAssets(), "fonts/byekan.ttf");
         persianFontBold = Typeface.createFromAsset(context.getAssets(), "fonts/byekan.ttf");
@@ -51,7 +58,8 @@ public class App extends Application {
     }
 
     @Override
-    public void onConfigurationChanged(Configuration newConfig) {
+    public void onConfigurationChanged(Configuration newConfig)
+    {
         super.onConfigurationChanged(newConfig);
         Locale.setDefault(locale);
         Configuration config = new Configuration();
