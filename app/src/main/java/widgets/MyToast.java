@@ -1,6 +1,7 @@
 package widgets;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -16,7 +17,8 @@ public class MyToast extends Toast {
 
     private MyToast(Context context) {
         super(context);
-        View layout = App.inflater.inflate(R.layout.my_toast, null);
+        LayoutInflater inflater = LayoutInflater.from(App.context);
+        View layout = inflater.inflate(R.layout.my_toast, null);
         image = (ImageView) layout.findViewById(R.id.image);
         text = (TextView) layout.findViewById(R.id.text);
         setView(layout);

@@ -10,15 +10,13 @@ import com.zohaltech.app.corevocabulary.entities.Theme;
 
 import java.util.ArrayList;
 
-public class ThemesActivity extends EnhancedActivity
-{
-    ListView lstThemes;
+public class ThemesActivity extends EnhancedActivity {
+    ListView         lstThemes;
     ArrayList<Theme> themes;
-    ThemeAdaptor adapter;
+    ThemeAdaptor     adapter;
 
     @Override
-    void onCreated()
-    {
+    void onCreated() {
         setContentView(R.layout.activity_themes);
         lstThemes = (ListView) findViewById(R.id.lstThemes);
         themes = Themes.select();
@@ -28,20 +26,18 @@ public class ThemesActivity extends EnhancedActivity
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item)
-    {
+    public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == android.R.id.home)
-        {
+        if (id == android.R.id.home) {
             onBackPressed();
         }
         return super.onOptionsItemSelected(item);
     }
 
     @Override
-    void onToolbarCreated()
-    {
-        txtToolbarTitle.setText("Themes");
+    void onToolbarCreated() {
+        //txtToolbarTitle.setText("Themes");
+        getSupportActionBar().setTitle("Themes");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
     }

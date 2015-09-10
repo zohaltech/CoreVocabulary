@@ -21,7 +21,6 @@
     </style>
 
     <style name="MyCustomTabTextAppearance" parent="TextAppearance.Design.Tab">
-        <!--<item name="android:textSize">14sp</item>-->
         <item name="android:textColor">?android:textColorSecondary</item>
     </style>
 

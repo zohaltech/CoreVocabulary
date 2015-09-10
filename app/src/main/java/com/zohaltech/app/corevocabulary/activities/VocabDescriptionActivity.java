@@ -68,8 +68,8 @@ public class VocabDescriptionActivity extends EnhancedActivity
     @Override
     void onToolbarCreated()
     {
-        txtToolbarTitle.setText("Vocabulary Description");
-
+        //txtToolbarTitle.setText("Vocabulary Description");
+        getSupportActionBar().setTitle("Vocabulary Description");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
     }

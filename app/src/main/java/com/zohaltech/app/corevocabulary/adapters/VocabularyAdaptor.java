@@ -1,16 +1,20 @@
 package com.zohaltech.app.corevocabulary.adapters;
 
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.zohaltech.app.corevocabulary.R;
 import com.zohaltech.app.corevocabulary.classes.App;
 import com.zohaltech.app.corevocabulary.entities.Vocabulary;
 
 import java.util.ArrayList;
+
+import widgets.MyToast;
 
 public class VocabularyAdaptor extends ArrayAdapter<Vocabulary>
 {
@@ -27,7 +31,8 @@ public class VocabularyAdaptor extends ArrayAdapter<Vocabulary>
         Vocabulary item = getItem(position);
         if (convertView == null)
         {
-            convertView = App.inflater.inflate(R.layout.adaptor_vocabulary, parent, false);
+            LayoutInflater inflater = LayoutInflater.from(App.currentActivity);
+            convertView = inflater.inflate(R.layout.adaptor_vocabulary, null);
             holder = new ViewHolder(convertView);
             convertView.setTag(holder);
         }
@@ -53,15 +58,21 @@ public class VocabularyAdaptor extends ArrayAdapter<Vocabulary>
 
         public void fill(final ArrayAdapter<Vocabulary> adapter, final Vocabulary item, final int position)
         {
-            if (position % 2 == 1)
-            {
-                layoutVocabulary.setBackgroundResource(R.color.primary_lighter);
-            }
-            else
-            {
-                layoutVocabulary.setBackgroundResource(R.color.white);
-            }
+            //if (position % 2 == 1)
+            //{
+            //    layoutVocabulary.setBackgroundResource(R.color.primary_lighter);
+            //}
+            //else
+            //{
+            //    layoutVocabulary.setBackgroundResource(R.color.white);
+            //}
             txtVocabulary.setText(item.getVocabulary());
+            layoutVocabulary.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    MyToast.show(item.getVocabulary(), Toast.LENGTH_SHORT);
+                }
+            });
         }
     }
 }

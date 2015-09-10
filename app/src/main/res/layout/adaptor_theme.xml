@@ -4,15 +4,16 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
     android:orientation="horizontal"
-    android:padding="5dp">
+    android:padding="15dp">
 
-    <widgets.MyTextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="left"
+    <widgets.LatinTextView
         android:id="@+id/txtThemeName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start|center"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="@color/primary_dark_material_light"
-        android:padding="10dp"/>
+        android:textColor="@color/primary_text"/>
+
 </LinearLayout>

@@ -2,6 +2,7 @@ package com.zohaltech.app.corevocabulary.adapters;
 
 
 import android.content.Intent;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -27,7 +28,8 @@ public class ThemeAdaptor extends ArrayAdapter<Theme> {
 
         Theme item = getItem(position);
         if (convertView == null) {
-            convertView = App.inflater.inflate(R.layout.adaptor_theme, parent, false);
+            LayoutInflater inflater = LayoutInflater.from(App.currentActivity);
+            convertView = inflater.inflate(R.layout.adaptor_theme, null);
             holder = new ViewHolder(convertView);
             convertView.setTag(holder);
         } else {
@@ -52,14 +54,13 @@ public class ThemeAdaptor extends ArrayAdapter<Theme> {
             //            ImageView img = new ImageView(App.context);
             //            img.setImageResource(imageId);
 
-            if (position % 2 == 1) {
-                layoutTheme.setBackgroundResource(R.color.primary_lighter);
-            } else {
-                layoutTheme.setBackgroundResource(R.color.white);
-            }
+            //if (position % 2 == 1) {
+            //    layoutTheme.setBackgroundResource(R.color.primary_lighter);
+            //} else {
+            //    layoutTheme.setBackgroundResource(R.color.white);
+            //}
 
             txtThemeName.setText(item.getName());
-
 
             layoutTheme.setOnClickListener(new View.OnClickListener() {
                 @Override

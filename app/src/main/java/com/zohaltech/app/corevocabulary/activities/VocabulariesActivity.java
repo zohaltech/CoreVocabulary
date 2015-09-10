@@ -7,16 +7,15 @@ import android.widget.ListView;
 import com.zohaltech.app.corevocabulary.R;
 import com.zohaltech.app.corevocabulary.adapters.VocabularyAdaptor;
 import com.zohaltech.app.corevocabulary.data.Vocabularies;
-import com.zohaltech.app.corevocabulary.entities.Theme;
 import com.zohaltech.app.corevocabulary.entities.Vocabulary;
 
 import java.util.ArrayList;
 
 public class VocabulariesActivity extends EnhancedActivity {
 
-    ListView          lstVocabularies;
-    ArrayList<Vocabulary>  themeVocabs;
-    VocabularyAdaptor adapter;
+    ListView              lstVocabularies;
+    ArrayList<Vocabulary> themeVocabs;
+    VocabularyAdaptor     adapter;
 
     @Override
     void onCreated() {
@@ -41,7 +40,8 @@ public class VocabulariesActivity extends EnhancedActivity {
 
     @Override
     void onToolbarCreated() {
-        txtToolbarTitle.setText("Vocabularies");
+        //txtToolbarTitle.setText("Vocabularies");
+        getSupportActionBar().setTitle("Vocabularies");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
