@@ -16,7 +16,6 @@ import com.zohaltech.app.corevocabulary.entities.Vocabulary;
 import java.util.ArrayList;
 
 public class VocabularyAdapter extends RecyclerView.Adapter<VocabularyAdapter.ViewHolder> {
-
     Context               context;
     ArrayList<Vocabulary> vocabularies;
 
@@ -57,7 +56,6 @@ public class VocabularyAdapter extends RecyclerView.Adapter<VocabularyAdapter.Vi
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-
         public TextView     txtSection;
         public TextView     txtVocabulary;
 
