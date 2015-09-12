@@ -24,28 +24,10 @@ public class VocabulariesActivity extends EnhancedActivity {
     @Override
     void onCreated() {
         setContentView(R.layout.activity_vocabularies);
-
         recyclerVocabularies = (RecyclerView) findViewById(R.id.recyclerVocabularies);
-        //recyclerVocabularies.addItemDecoration(new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL_LIST));
-        //recyclerVocabularies.addItemDecoration(new RecyclerView.ItemDecoration() {
-        //    @Override
-        //    public void onDraw(Canvas c, RecyclerView parent, RecyclerView.State state) {
-        //        super.onDraw(c, parent, state);
-        //        Paint paint = new Paint();
-        //        paint.setStrokeWidth(1);
-        //        paint.setColor(getResources().getColor(R.color.divider));
-        //        c.drawLine(0, 0, App.screenWidth, App.screenHeight, paint);
-        //    }
-        //});
-
-        // use this setting to improve performance if you know that changes
-        // in content do not change the layout size of the RecyclerView
         recyclerVocabularies.setHasFixedSize(true);
-
-        // use a linear layout manager
         layoutManager = new LinearLayoutManager(this);
         recyclerVocabularies.setLayoutManager(layoutManager);
-
         theme = (Theme) getIntent().getSerializableExtra("THEME");
         vocabularies = Vocabularies.selectByTheme(theme.getId());
         adapter = new VocabularyAdapter(this, vocabularies);

@@ -28,10 +28,6 @@
             android:screenOrientation="portrait"/>
 
         <activity
-            android:name=".activities.ThemesActivity"
-            android:screenOrientation="portrait"/>
-
-        <activity
             android:name=".activities.VocabulariesActivity"
             android:screenOrientation="portrait"/>
 

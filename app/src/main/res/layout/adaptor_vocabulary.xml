@@ -14,7 +14,7 @@
         android:id="@+id/txtSection"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/primary_lighter"
+        android:background="@color/divider"
         android:gravity="start|center"
         android:padding="15dp"
         android:textAppearance="?android:attr/textAppearanceMedium"
