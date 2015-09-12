@@ -3,29 +3,21 @@ package com.zohaltech.app.corevocabulary.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
 
 import com.zohaltech.app.corevocabulary.R;
+import com.zohaltech.app.corevocabulary.adapters.ExampleAdapter;
 import com.zohaltech.app.corevocabulary.data.Examples;
-import com.zohaltech.app.corevocabulary.data.Notes;
-import com.zohaltech.app.corevocabulary.data.Vocabularies;
 import com.zohaltech.app.corevocabulary.entities.Example;
-import com.zohaltech.app.corevocabulary.entities.Note;
-import com.zohaltech.app.corevocabulary.entities.Vocabulary;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class ExamplesFragment extends Fragment {
-
-    public enum Tab {VOCAB, EXAMPLE, NOTE}
-
-    public static final String POSITION = "POSITION";
     public static final String VOCAB_ID = "VOCAB_ID";
-    ListView lstVocabDescriptions;
-
 
     public static VocabularyDescFragment newInstance(int vocabId) {
         Bundle args = new Bundle();
@@ -42,27 +34,17 @@ public class ExamplesFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_vocab_description, container, false);
-
-        lstVocabDescriptions = (ListView) view.findViewById(R.id.lstVocabDescriptions);
+        View view = inflater.inflate(R.layout.fragment_examples, container, false);
+        RecyclerView recyclerExamples = (RecyclerView) view.findViewById(R.id.recyclerExamples);
+        recyclerExamples.setHasFixedSize(true);
+        // use a linear layout manager
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
+        recyclerExamples.setLayoutManager(layoutManager);
 
         int vocabId = getArguments().getInt(VOCAB_ID);
-        int position = getArguments().getInt(POSITION);
-
-        if (position == Tab.VOCAB.ordinal()) {
-
-        } else if (position == Tab.EXAMPLE.ordinal()) {
-
-        } else if (position == Tab.NOTE.ordinal()) {
-
-        }
-
-        Vocabulary vocabulary = Vocabularies.select(vocabId);
-        List<Example> examples = Examples.getExamples(vocabId);
-        List<Note> notes = Notes.getNotes(vocabId);
-
-
-        // dataPackages = new HashMap<>();
+        ArrayList<Example> examples = Examples.getExamples(vocabId);
+        ExampleAdapter adapter = new ExampleAdapter(getActivity(), examples);
+        recyclerExamples.setAdapter(adapter);
         return view;
     }
 

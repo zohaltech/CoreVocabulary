@@ -1,4 +1,4 @@
-package com.zohaltech.app.corevocabulary.model;
+package com.zohaltech.app.corevocabulary.classes;
 
 public class NavDrawerItem {
 
@@ -6,7 +6,6 @@ public class NavDrawerItem {
     private String title;
 
     public NavDrawerItem() {
-
     }
 
     public NavDrawerItem(boolean showNotify, String title) {

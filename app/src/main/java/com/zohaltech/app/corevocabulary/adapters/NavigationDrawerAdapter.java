@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 
 import com.zohaltech.app.corevocabulary.R;
-import com.zohaltech.app.corevocabulary.model.NavDrawerItem;
+import com.zohaltech.app.corevocabulary.classes.NavDrawerItem;
 
 import java.util.Collections;
 import java.util.List;
