@@ -55,8 +55,6 @@ public class ThemeAdapter extends RecyclerView.Adapter<ThemeAdapter.ViewHolder> 
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-
-        public LinearLayout layoutTheme;
         public TextView     txtTheme;
 
         public ViewHolder(View view) {
