@@ -30,7 +30,6 @@ public class ThemesFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
@@ -55,4 +54,6 @@ public class ThemesFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
     }
+
+    
 }

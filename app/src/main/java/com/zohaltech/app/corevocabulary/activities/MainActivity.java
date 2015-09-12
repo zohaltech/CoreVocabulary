@@ -7,6 +7,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.zohaltech.app.corevocabulary.R;
 import com.zohaltech.app.corevocabulary.fragments.DrawerFragment;
@@ -14,22 +15,19 @@ import com.zohaltech.app.corevocabulary.fragments.FriendsFragment;
 import com.zohaltech.app.corevocabulary.fragments.ThemesFragment;
 import com.zohaltech.app.corevocabulary.fragments.MessagesFragment;
 
+import widgets.MyToast;
+
 
 public class MainActivity extends EnhancedActivity implements DrawerFragment.FragmentDrawerListener {
 
     //private Toolbar        mToolbar;
     private DrawerFragment drawerFragment;
+    long startTime;
 
     @Override
     protected void onCreated() {
         setContentView(R.layout.activity_main);
-
-        //mToolbar = (Toolbar) findViewById(R.id.toolbar);
-        //
-        //setSupportActionBar(mToolbar);
-        //getSupportActionBar().setDisplayShowHomeEnabled(true);
-
-
+        startTime = System.currentTimeMillis() - 5000;
     }
 
     @Override
@@ -104,6 +102,17 @@ public class MainActivity extends EnhancedActivity implements DrawerFragment.Fra
 
             // set the toolbar title
             getSupportActionBar().setTitle(title);
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        if ((System.currentTimeMillis() - startTime) > 2000) {
+            startTime = System.currentTimeMillis();
+            MyToast.show(getString(R.string.press_back_again_to_exit), Toast.LENGTH_SHORT);
+
+        } else {
+            finish();
         }
     }
 }
