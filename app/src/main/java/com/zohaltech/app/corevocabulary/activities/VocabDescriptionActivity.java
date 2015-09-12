@@ -37,7 +37,7 @@ public class VocabDescriptionActivity extends EnhancedActivity {
         notes = Notes.getNotes(vocabularyId);
 
         ArrayList<String> tabTitles = new ArrayList<>();
-        tabTitles.add("Meanings");
+        tabTitles.add("Definition");
         tabTitles.add("Examples");
         if (notes.size() > 0) {
             tabTitles.add("Notes");
@@ -59,12 +59,7 @@ public class VocabDescriptionActivity extends EnhancedActivity {
 
             @Override
             public void onPageSelected(int position) {
-                ((TextView) ((ViewGroup) tabCategories.getChildAt(0)).getChildAt(0)).setTextColor(getResources().getColor(R.color.primary_light));
-                ((TextView) ((ViewGroup) tabCategories.getChildAt(0)).getChildAt(1)).setTextColor(getResources().getColor(R.color.primary_light));
-                if (tabCount == 3) {
-                    ((TextView) ((ViewGroup) tabCategories.getChildAt(0)).getChildAt(2)).setTextColor(getResources().getColor(R.color.primary_light));
-                }
-                ((TextView) ((ViewGroup) tabCategories.getChildAt(0)).getChildAt(position)).setTextColor(getResources().getColor(R.color.white));
+                changeTabTitleColors(position);
             }
 
             @Override
@@ -74,7 +69,16 @@ public class VocabDescriptionActivity extends EnhancedActivity {
         });
 
         changeTabsFont();
-        pagerCategories.setCurrentItem(0);
+        changeTabTitleColors(0);
+    }
+
+    private void changeTabTitleColors(int position) {
+        ((TextView) ((ViewGroup) tabCategories.getChildAt(0)).getChildAt(0)).setTextColor(getResources().getColor(R.color.primary_light));
+        ((TextView) ((ViewGroup) tabCategories.getChildAt(0)).getChildAt(1)).setTextColor(getResources().getColor(R.color.primary_light));
+        if (tabCount == 3) {
+            ((TextView) ((ViewGroup) tabCategories.getChildAt(0)).getChildAt(2)).setTextColor(getResources().getColor(R.color.primary_light));
+        }
+        ((TextView) ((ViewGroup) tabCategories.getChildAt(0)).getChildAt(position)).setTextColor(getResources().getColor(R.color.white));
     }
 
     @Override
@@ -100,7 +104,7 @@ public class VocabDescriptionActivity extends EnhancedActivity {
             TextView textView = (TextView) vg.getChildAt(j);
             textView.setWidth(App.screenWidth / tabCount);
             textView.setTypeface(App.persianFont);
-            textView.setTextColor(getResources().getColor(R.color.divider));
+            textView.setTextColor(getResources().getColor(R.color.primary_light));
             textView.setTextSize(14);
         }
     }
