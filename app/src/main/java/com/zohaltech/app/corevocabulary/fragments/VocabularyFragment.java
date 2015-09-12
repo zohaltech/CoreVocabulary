@@ -18,17 +18,17 @@ import com.zohaltech.app.corevocabulary.entities.Vocabulary;
 
 import java.util.List;
 
-public class VocabularyDescFragment extends Fragment {
+public class VocabularyFragment extends Fragment {
 
     public enum Tab {VOCAB, EXAMPLE, NOTE}
+
     public static final String POSITION = "POSITION";
     public static final String VOCAB_ID = "VOCAB_ID";
     ListView lstVocabDescriptions;
 
 
-    public static VocabularyDescFragment newInstance(int position, int vocabId) {
+    public static VocabularyDescFragment newInstance(int vocabId) {
         Bundle args = new Bundle();
-        args.putInt(POSITION, position);
         args.putInt(VOCAB_ID, vocabId);
         VocabularyDescFragment fragment = new VocabularyDescFragment();
         fragment.setArguments(args);
@@ -49,11 +49,11 @@ public class VocabularyDescFragment extends Fragment {
         int vocabId = getArguments().getInt(VOCAB_ID);
         int position = getArguments().getInt(POSITION);
 
-        if(position==Tab.VOCAB.ordinal()){
+        if (position == Tab.VOCAB.ordinal()) {
 
-        }else if(position==Tab.EXAMPLE.ordinal()){
+        } else if (position == Tab.EXAMPLE.ordinal()) {
 
-        }else if(position==Tab.NOTE.ordinal()){
+        } else if (position == Tab.NOTE.ordinal()) {
 
         }
 

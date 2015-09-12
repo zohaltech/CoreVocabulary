@@ -5,17 +5,21 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.zohaltech.app.corevocabulary.fragments.VocabularyDescFragment;
+import com.zohaltech.app.corevocabulary.fragments.ExamplesFragment;
+import com.zohaltech.app.corevocabulary.fragments.NotesFragment;
+import com.zohaltech.app.corevocabulary.fragments.VocabularyFragment;
 
 import java.util.ArrayList;
 
 public class DescriptionPagerAdapter extends FragmentPagerAdapter {
 
     private ArrayList<String> tabTitles;//= new String[]{"Meanings", "Examples", "Notes"};
+    private int               vocabId;
 
-    public DescriptionPagerAdapter(FragmentManager fm, ArrayList<String>  tabTitles) {
+    public DescriptionPagerAdapter(FragmentManager fm, ArrayList<String> tabTitles, int vocabId) {
         super(fm);
         this.tabTitles = tabTitles;
+        this.vocabId = vocabId;
     }
 
     @Override
@@ -31,17 +35,17 @@ public class DescriptionPagerAdapter extends FragmentPagerAdapter {
     @Override
     public Fragment getItem(int position) {
         if (position == 0)
-            return VocabularyDescFragment.newInstance(3);
+            return VocabularyFragment.newInstance(vocabId);
         else if (position == 1)
-            return VocabularyDescFragment.newInstance(2);
+            return ExamplesFragment.newInstance(vocabId);
         else
-            return VocabularyDescFragment.newInstance(1);
+            return NotesFragment.newInstance(vocabId);
     }
 
     @Override
     public CharSequence getPageTitle(int position) {
         // Generate title based on item position
-       // return tabTitles[position];
+        // return tabTitles[position];
         return tabTitles.get(position);
     }
 }
