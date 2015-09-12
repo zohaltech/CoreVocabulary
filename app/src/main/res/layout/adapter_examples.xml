@@ -5,31 +5,25 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/divider"/>
 
     <widgets.LatinTextView
-        android:id="@+id/txtSection"
+        android:id="@+id/txtExample"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/divider"
+        android:background="@color/primary_lighter"
         android:gravity="start|center"
         android:padding="15dp"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="@color/primary"
-        />
+        android:textColor="@color/primary"/>
 
     <widgets.LatinTextView
-        android:id="@+id/txtVocabulary"
+        android:id="@+id/txtExamplePersian"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?attr/selectableItemBackground"
         android:gravity="start|center"
         android:padding="15dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="@color/primary_text"
-        />
+        android:textColor="@color/primary_text"/>
 
 </LinearLayout>

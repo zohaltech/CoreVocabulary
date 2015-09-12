@@ -57,6 +57,15 @@ public class Themes {
         return select("", null);
     }
 
+    public static Theme select(long themeId) {
+        ArrayList<Theme> themes = select("Where " + Id + " = ? ", new String[]{String.valueOf(themeId)});
+        if (themes.size() == 1) {
+            return themes.get(0);
+        } else {
+            return null;
+        }
+    }
+
     public static long insert(Theme theme) {
         DataAccess da = new DataAccess();
         return da.insert(TableName, getContentValues(theme));

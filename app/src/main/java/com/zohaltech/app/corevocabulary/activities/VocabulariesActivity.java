@@ -1,33 +1,38 @@
 package com.zohaltech.app.corevocabulary.activities;
 
 
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
-import android.widget.ListView;
 
 import com.zohaltech.app.corevocabulary.R;
-import com.zohaltech.app.corevocabulary.adapters.VocabularyAdaptor;
+import com.zohaltech.app.corevocabulary.adapters.VocabularyAdapter;
 import com.zohaltech.app.corevocabulary.data.Vocabularies;
+import com.zohaltech.app.corevocabulary.entities.Theme;
 import com.zohaltech.app.corevocabulary.entities.Vocabulary;
 
 import java.util.ArrayList;
 
 public class VocabulariesActivity extends EnhancedActivity {
 
-    ListView              lstVocabularies;
-    ArrayList<Vocabulary> themeVocabs;
-    VocabularyAdaptor     adapter;
+    private RecyclerView               recyclerVocabularies;
+    private ArrayList<Vocabulary>      vocabularies;
+    private VocabularyAdapter          adapter;
+    private Theme                      theme;
+    private RecyclerView.LayoutManager layoutManager;
 
     @Override
     void onCreated() {
         setContentView(R.layout.activity_vocabularies);
-        int themeId = getIntent().getIntExtra("ThemeId", 0);
-        themeVocabs = Vocabularies.getVocabs(themeId);
-
-        lstVocabularies = (ListView) findViewById(R.id.lstVocabularies);
-        adapter = new VocabularyAdaptor(themeVocabs);
-        lstVocabularies.setAdapter(adapter);
+        recyclerVocabularies = (RecyclerView) findViewById(R.id.recyclerVocabularies);
+        recyclerVocabularies.setHasFixedSize(true);
+        layoutManager = new LinearLayoutManager(this);
+        recyclerVocabularies.setLayoutManager(layoutManager);
+        theme = (Theme) getIntent().getSerializableExtra("THEME");
+        vocabularies = Vocabularies.selectByTheme(theme.getId());
+        adapter = new VocabularyAdapter(this, vocabularies);
+        recyclerVocabularies.setAdapter(adapter);
     }
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -41,7 +46,7 @@ public class VocabulariesActivity extends EnhancedActivity {
     @Override
     void onToolbarCreated() {
         //txtToolbarTitle.setText("Vocabularies");
-        getSupportActionBar().setTitle("Vocabularies");
+        getSupportActionBar().setTitle(theme.getName());
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
     }

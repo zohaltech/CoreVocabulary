@@ -8,27 +8,19 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
 
 import com.zohaltech.app.corevocabulary.R;
-import com.zohaltech.app.corevocabulary.adapters.VocabDefinitionAdapter;
-import com.zohaltech.app.corevocabulary.data.Vocabularies;
-import com.zohaltech.app.corevocabulary.entities.Vocabulary;
+import com.zohaltech.app.corevocabulary.adapters.ExampleAdapter;
+import com.zohaltech.app.corevocabulary.data.Examples;
+import com.zohaltech.app.corevocabulary.entities.Example;
 
 import java.util.ArrayList;
 
-public class VocabularyDescFragment extends Fragment {
-
-    public enum Tab {VOCAB, EXAMPLE, NOTE}
-
-    public static final String POSITION = "POSITION";
+public class ExamplesFragment extends Fragment {
     public static final String VOCAB_ID = "VOCAB_ID";
-    ListView lstVocabDescriptions;
 
-
-    public static VocabularyDescFragment newInstance(int position, int vocabId) {
+    public static VocabularyDescFragment newInstance(int vocabId) {
         Bundle args = new Bundle();
-        args.putInt(POSITION, position);
         args.putInt(VOCAB_ID, vocabId);
         VocabularyDescFragment fragment = new VocabularyDescFragment();
         fragment.setArguments(args);
@@ -42,18 +34,17 @@ public class VocabularyDescFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_vocab_definition, container, false);
-        RecyclerView recyclerDefinition = (RecyclerView) view.findViewById(R.id.recyclerDefinition);
-        recyclerDefinition.setHasFixedSize(true);
+        View view = inflater.inflate(R.layout.fragment_examples, container, false);
+        RecyclerView recyclerExamples = (RecyclerView) view.findViewById(R.id.recyclerExamples);
+        recyclerExamples.setHasFixedSize(true);
         // use a linear layout manager
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
-        recyclerDefinition.setLayoutManager(layoutManager);
+        recyclerExamples.setLayoutManager(layoutManager);
 
         int vocabId = getArguments().getInt(VOCAB_ID);
-        ArrayList<Vocabulary> vocabularies = new ArrayList<>();
-        vocabularies.add(Vocabularies.select(vocabId));
-        VocabDefinitionAdapter adapter = new VocabDefinitionAdapter(getActivity(), vocabularies);
-        recyclerDefinition.setAdapter(adapter);
+        ArrayList<Example> examples = Examples.getExamples(vocabId);
+        ExampleAdapter adapter = new ExampleAdapter(getActivity(), examples);
+        recyclerExamples.setAdapter(adapter);
         return view;
     }
 

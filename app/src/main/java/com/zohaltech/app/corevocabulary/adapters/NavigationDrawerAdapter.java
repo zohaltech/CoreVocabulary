@@ -1,4 +1,4 @@
-package com.zohaltech.app.corevocabulary.adapter;
+package com.zohaltech.app.corevocabulary.adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 
 import com.zohaltech.app.corevocabulary.R;
-import com.zohaltech.app.corevocabulary.model.NavDrawerItem;
+import com.zohaltech.app.corevocabulary.classes.NavDrawerItem;
 
 import java.util.Collections;
 import java.util.List;
