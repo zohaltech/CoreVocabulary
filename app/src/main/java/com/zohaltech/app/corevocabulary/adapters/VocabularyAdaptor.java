@@ -34,6 +34,9 @@ public class VocabularyAdaptor extends ArrayAdapter<Vocabulary> {
             holder = (ViewHolder) convertView.getTag();
         }
 
+
+
+
         holder.fill(this, item, position);
         return convertView;
     }
