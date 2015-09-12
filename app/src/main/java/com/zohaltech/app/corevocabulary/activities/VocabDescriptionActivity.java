@@ -23,6 +23,7 @@ public class VocabDescriptionActivity extends EnhancedActivity {
     DescriptionPagerAdapter descriptionPagerAdapter;
     ArrayList<Example>      examples;
     ArrayList<Note>         notes;
+    int tabCount = 2;
 
     @Override
     void onCreated() {
@@ -37,11 +38,10 @@ public class VocabDescriptionActivity extends EnhancedActivity {
 
         ArrayList<String> tabTitles = new ArrayList<>();
         tabTitles.add("Meanings");
-        if (examples.size() > 0) {
-            tabTitles.add("Examples");
-        }
+        tabTitles.add("Examples");
         if (notes.size() > 0) {
             tabTitles.add("Notes");
+            tabCount = 3;
         }
 
         descriptionPagerAdapter = new DescriptionPagerAdapter(getSupportFragmentManager(), tabTitles, vocabularyId);
@@ -59,9 +59,11 @@ public class VocabDescriptionActivity extends EnhancedActivity {
 
             @Override
             public void onPageSelected(int position) {
-                ((TextView) ((ViewGroup) tabCategories.getChildAt(0)).getChildAt(0)).setTextColor(getResources().getColor(R.color.divider));
-                ((TextView) ((ViewGroup) tabCategories.getChildAt(0)).getChildAt(1)).setTextColor(getResources().getColor(R.color.divider));
-                ((TextView) ((ViewGroup) tabCategories.getChildAt(0)).getChildAt(2)).setTextColor(getResources().getColor(R.color.divider));
+                ((TextView) ((ViewGroup) tabCategories.getChildAt(0)).getChildAt(0)).setTextColor(getResources().getColor(R.color.primary_light));
+                ((TextView) ((ViewGroup) tabCategories.getChildAt(0)).getChildAt(1)).setTextColor(getResources().getColor(R.color.primary_light));
+                if (tabCount == 3) {
+                    ((TextView) ((ViewGroup) tabCategories.getChildAt(0)).getChildAt(2)).setTextColor(getResources().getColor(R.color.primary_light));
+                }
                 ((TextView) ((ViewGroup) tabCategories.getChildAt(0)).getChildAt(position)).setTextColor(getResources().getColor(R.color.white));
             }
 
@@ -86,7 +88,6 @@ public class VocabDescriptionActivity extends EnhancedActivity {
 
     @Override
     void onToolbarCreated() {
-        //txtToolbarTitle.setText("Vocabulary Description");
         getSupportActionBar().setTitle("Vocabulary Description");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -97,7 +98,7 @@ public class VocabDescriptionActivity extends EnhancedActivity {
         int tabsCount = vg.getChildCount();
         for (int j = 0; j < tabsCount; j++) {
             TextView textView = (TextView) vg.getChildAt(j);
-            textView.setWidth(App.screenWidth / 3);
+            textView.setWidth(App.screenWidth / tabCount);
             textView.setTypeface(App.persianFont);
             textView.setTextColor(getResources().getColor(R.color.divider));
             textView.setTextSize(14);

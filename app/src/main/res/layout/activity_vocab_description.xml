@@ -5,13 +5,21 @@
               android:layout_height="match_parent"
               android:orientation="vertical">
 
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
     <com.astuetz.PagerSlidingTabStrip
         android:id="@+id/tabDescriptions"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:background="@color/primary"
         app:pstsIndicatorColor="@color/white"
-        app:pstsIndicatorHeight="6dp"/>
+        app:pstsIndicatorHeight="6dp"
+        app:pstsDividerColor="@color/primary"
+        app:pstsTextAllCaps="false"/>
 
     <android.support.v4.view.ViewPager
         android:id="@+id/pagerDescItems"
@@ -19,4 +27,5 @@
         android:layout_height="0px"
         android:layout_weight="1"
         android:background="@android:color/white"/>
+
 </LinearLayout>

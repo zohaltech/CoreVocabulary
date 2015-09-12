@@ -29,17 +29,17 @@ public class LatinTextView extends AppCompatTextView {
         setLineSpacing(1f, 1.2f);
     }
 
-    @Override
-    public void setTypeface(Typeface tf) {
-        super.setTypeface(App.englishFont);
-    }
-
-    @Override
-    public void setTypeface(Typeface tf, int style) {
-        if (style == Typeface.BOLD) {
-            super.setTypeface(App.englishFontBold);
-        } else {
-            super.setTypeface(App.englishFont);
-        }
-    }
+    //@Override
+    //public void setTypeface(Typeface tf) {
+    //    super.setTypeface(App.englishFont);
+    //}
+    //
+    //@Override
+    //public void setTypeface(Typeface tf, int style) {
+    //    if (style == Typeface.BOLD) {
+    //        super.setTypeface(App.englishFontBold);
+    //    } else {
+    //        super.setTypeface(App.englishFont);
+    //    }
+    //}
 }
