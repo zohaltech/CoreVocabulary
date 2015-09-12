@@ -1,4 +1,4 @@
-package com.zohaltech.app.corevocabulary.adapter;
+package com.zohaltech.app.corevocabulary.adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;

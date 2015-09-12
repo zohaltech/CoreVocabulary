@@ -16,7 +16,7 @@ import android.view.ViewGroup;
 
 
 import com.zohaltech.app.corevocabulary.R;
-import com.zohaltech.app.corevocabulary.adapter.NavigationDrawerAdapter;
+import com.zohaltech.app.corevocabulary.adapters.NavigationDrawerAdapter;
 import com.zohaltech.app.corevocabulary.model.NavDrawerItem;
 
 import java.util.ArrayList;

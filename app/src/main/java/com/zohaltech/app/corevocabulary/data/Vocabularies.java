@@ -71,6 +71,20 @@ public class Vocabularies {
         return select("", null);
     }
 
+    public static Vocabulary select(long vocabularyId) {
+        ArrayList<Vocabulary> vocabularies = select("Where " + Id + " = ? ", new String[]{String.valueOf(vocabularyId)});
+        if (vocabularies.size() == 1) {
+            return vocabularies.get(0);
+        } else {
+            return null;
+        }
+    }
+
+    public static ArrayList<Vocabulary> selectByTheme(long themeId) {
+        String whereClause = " WHERE " + themeId + " = " + themeId;
+        return select(whereClause, null);
+    }
+
     public static long insert(Vocabulary vocabulary) {
         DataAccess da = new DataAccess();
         return da.insert(TableName, getContentValues(vocabulary));
@@ -94,11 +108,6 @@ public class Vocabularies {
         values.put(Learned, vocabulary.getLearned());
 
         return values;
-    }
-
-    public static ArrayList<Vocabulary> getVocabs(int themeId) {
-        String whereClause = " WHERE " + themeId + " = " + themeId;
-        return select(whereClause, null);
     }
 }
 

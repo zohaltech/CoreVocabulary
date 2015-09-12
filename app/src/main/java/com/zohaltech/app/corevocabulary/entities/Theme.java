@@ -1,6 +1,8 @@
 package com.zohaltech.app.corevocabulary.entities;
 
-public class Theme {
+import java.io.Serializable;
+
+public class Theme implements Serializable{
     private int    id;
     private int    level;
     private String name;

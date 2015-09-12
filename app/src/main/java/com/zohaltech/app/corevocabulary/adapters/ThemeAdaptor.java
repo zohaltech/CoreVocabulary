@@ -66,7 +66,7 @@ public class ThemeAdaptor extends ArrayAdapter<Theme> {
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(App.currentActivity, VocabulariesActivity.class);
-                    intent.putExtra("ThemeId", item.getId());
+                    intent.putExtra("THEME", item);
                     App.currentActivity.startActivity(intent);
                 }
             });
