@@ -19,10 +19,10 @@ import java.util.ArrayList;
 public class ExamplesFragment extends Fragment {
     public static final String VOCAB_ID = "VOCAB_ID";
 
-    public static VocabularyDescFragment newInstance(int vocabId) {
+    public static ExamplesFragment newInstance(int vocabId) {
         Bundle args = new Bundle();
         args.putInt(VOCAB_ID, vocabId);
-        VocabularyDescFragment fragment = new VocabularyDescFragment();
+        ExamplesFragment fragment = new ExamplesFragment();
         fragment.setArguments(args);
         return fragment;
     }
