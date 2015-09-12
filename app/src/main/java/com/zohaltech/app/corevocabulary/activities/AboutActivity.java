@@ -40,7 +40,7 @@ public class AboutActivity extends EnhancedActivity {
         final String email = "info@zohaltech.com";
         final String marketUri = "bazaar://details?id=" + getPackageName();
 
-//        txtVersion.setText(getString(R.string.version) + BuildConfig.VERSION_NAME);
+        //        txtVersion.setText(getString(R.string.version) + BuildConfig.VERSION_NAME);
 
         btnShare.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,7 +58,7 @@ public class AboutActivity extends EnhancedActivity {
         btnFeedback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto", email, null));
+                Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts("Mail to", email, null));
                 intent.putExtra(Intent.EXTRA_SUBJECT, getResources().getString(R.string.feedback_subject));
                 startActivity(Intent.createChooser(intent, getResources().getString(R.string.feedback_title)));
             }
@@ -72,7 +72,7 @@ public class AboutActivity extends EnhancedActivity {
                 if (!myStartActivity(intent)) {
                     intent.setData(Uri.parse(marketWebsiteUri));
                     if (!myStartActivity(intent)) {
-                        MyToast.show(String.format(getResources().getString(R.string.could_not_open_market), "Bazaar", "Bazaar"), Toast.LENGTH_SHORT);
+                        MyToast.show(getResources().getString(R.string.could_not_open_market), Toast.LENGTH_SHORT);
                     }
                 }
             }
@@ -81,7 +81,7 @@ public class AboutActivity extends EnhancedActivity {
         layoutWebsite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Helper.goToWebsite("http://zohaltech.com");
+                //                Helper.goToWebsite("http://zohaltech.com");
             }
         });
     }
@@ -109,7 +109,7 @@ public class AboutActivity extends EnhancedActivity {
 
     @Override
     void onToolbarCreated() {
-//                ToolbarTitle.setText(getString(R.string.about));
+        //                ToolbarTitle.setText(getString(R.string.about));
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
