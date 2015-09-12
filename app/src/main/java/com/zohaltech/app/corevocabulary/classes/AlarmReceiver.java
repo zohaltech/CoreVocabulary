@@ -42,6 +42,6 @@ public class AlarmReceiver extends BroadcastReceiver
 
         App.notificationManager.notify(reminder.getTime().intValue(), builder.build());
 
-        ReminderManager.setNextReminder(reminder.getId());
+        ReminderManager.setNextReminder(context, reminder.getId());
     }
 }
