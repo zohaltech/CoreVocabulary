@@ -19,17 +19,17 @@
         android:padding="15dp"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="@color/primary"
-        android:text="Day"/>
+        />
 
     <widgets.LatinTextView
         android:id="@+id/txtVocabulary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
         android:gravity="start|center"
         android:padding="15dp"
-        android:background="?attr/selectableItemBackground"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="@color/primary_text"
-        android:text="vocab"/>
+        />
 
 </LinearLayout>
