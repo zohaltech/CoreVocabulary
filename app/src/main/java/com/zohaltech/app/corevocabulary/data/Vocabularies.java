@@ -71,6 +71,22 @@ public class Vocabularies {
         return select("", null);
     }
 
+    public static Vocabulary getNextVocabulary(int vocabularyId)
+    {
+
+        ArrayList<Vocabulary> selectedVocabulary = select(" Where Id " + " >? " + vocabularyId, null, " Limit 1");
+        if (selectedVocabulary.size() == 0)
+        {
+            return null;
+        }
+        else
+        {
+            return selectedVocabulary.get(0);
+        }
+    }
+
+    public static long insert(Vocabulary vocabulary)
+    {
     public static Vocabulary select(long vocabularyId) {
         ArrayList<Vocabulary> vocabularies = select("Where " + Id + " = ? ", new String[]{String.valueOf(vocabularyId)});
         if (vocabularies.size() == 1) {
@@ -97,7 +113,6 @@ public class Vocabularies {
 
     public static ContentValues getContentValues(Vocabulary vocabulary) {
         ContentValues values = new ContentValues();
-
         values.put(Id, vocabulary.getId());
         values.put(ThemeId, vocabulary.getThemeId());
         values.put(Day, vocabulary.getDay());
@@ -106,8 +121,12 @@ public class Vocabularies {
         values.put(PersianDef, vocabulary.getVocabPersianDef());
         values.put(Visited, vocabulary.getVisited());
         values.put(Learned, vocabulary.getLearned());
-
         return values;
+    }
+
+    public static ArrayList<Vocabulary> getVocabs(int themeId) {
+        String whereClause = " WHERE " + themeId + " = " + themeId;
+        return select(whereClause, null);
     }
 }
 

@@ -41,7 +41,6 @@ public class AlarmService extends IntentService
         AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
 
         Intent intent = new Intent(this, AlarmReceiver.class);
-
         intent.putExtra("reminder", reminder);
 
         PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
