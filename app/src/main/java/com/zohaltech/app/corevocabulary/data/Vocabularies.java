@@ -97,7 +97,6 @@ public class Vocabularies {
 
     public static ContentValues getContentValues(Vocabulary vocabulary) {
         ContentValues values = new ContentValues();
-
         values.put(Id, vocabulary.getId());
         values.put(ThemeId, vocabulary.getThemeId());
         values.put(Day, vocabulary.getDay());
@@ -106,7 +105,6 @@ public class Vocabularies {
         values.put(PersianDef, vocabulary.getVocabPersianDef());
         values.put(Visited, vocabulary.getVisited());
         values.put(Learned, vocabulary.getLearned());
-
         return values;
     }
 }
