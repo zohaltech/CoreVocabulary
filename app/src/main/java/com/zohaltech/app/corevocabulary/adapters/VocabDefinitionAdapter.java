@@ -14,7 +14,6 @@ import com.zohaltech.app.corevocabulary.entities.Vocabulary;
 import java.util.ArrayList;
 
 public class VocabDefinitionAdapter extends RecyclerView.Adapter<VocabDefinitionAdapter.ViewHolder> {
-
     Context               context;
     ArrayList<Vocabulary> vocabularies;
 
@@ -32,21 +31,10 @@ public class VocabDefinitionAdapter extends RecyclerView.Adapter<VocabDefinition
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         final Vocabulary vocabulary = vocabularies.get(position);
-        //        if (position % 6 == 0) {
-        //            holder.txtSection.setVisibility(View.VISIBLE);
-        //            holder.txtSection.setText("Day " + vocabulary.getDay());
-        //        } else {
-        //            holder.txtSection.setVisibility(View.GONE);
-        //        }
-        //        holder.txtVocabulary.setText(vocabulary.getVocabulary());
-        //        holder.txtVocabulary.setOnClickListener(new View.OnClickListener() {
-        //            @Override
-        //            public void onClick(View v) {
-        //                Intent intent = new Intent(App.currentActivity, VocabDescriptionActivity.class);
-        //                intent.putExtra("VocabularyId", vocabulary.getId());
-        //                App.currentActivity.startActivity(intent);
-        //            }
-        //        });
+        holder.txtVocabulary.setText(vocabulary.getVocabulary());
+        holder.txtVocabEnglishDefinition.setText(vocabulary.getVocabEnglishDef());
+        holder.txtVocabPersianMeaning.setText(vocabulary.getVocabPersianDef());
+
     }
 
     @Override
@@ -55,14 +43,15 @@ public class VocabDefinitionAdapter extends RecyclerView.Adapter<VocabDefinition
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-
-        public TextView txtSection;
         public TextView txtVocabulary;
+        public TextView txtVocabEnglishDefinition;
+        public TextView txtVocabPersianMeaning;
 
         public ViewHolder(View view) {
             super(view);
-            txtSection = (TextView) view.findViewById(R.id.txtSection);
             txtVocabulary = (TextView) view.findViewById(R.id.txtVocabulary);
+            txtVocabEnglishDefinition = (TextView) view.findViewById(R.id.txtVocabEnglishDefinition);
+            txtVocabPersianMeaning = (TextView) view.findViewById(R.id.txtVocabPersianMeaning);
         }
     }
 }

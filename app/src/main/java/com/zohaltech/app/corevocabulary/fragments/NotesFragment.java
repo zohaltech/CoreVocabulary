@@ -3,34 +3,26 @@ package com.zohaltech.app.corevocabulary.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
 
 import com.zohaltech.app.corevocabulary.R;
-import com.zohaltech.app.corevocabulary.data.Examples;
+import com.zohaltech.app.corevocabulary.adapters.NoteAdapter;
 import com.zohaltech.app.corevocabulary.data.Notes;
-import com.zohaltech.app.corevocabulary.data.Vocabularies;
-import com.zohaltech.app.corevocabulary.entities.Example;
 import com.zohaltech.app.corevocabulary.entities.Note;
-import com.zohaltech.app.corevocabulary.entities.Vocabulary;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class NotesFragment extends Fragment {
-
-    public enum Tab {VOCAB, EXAMPLE, NOTE}
-
-    public static final String POSITION = "POSITION";
     public static final String VOCAB_ID = "VOCAB_ID";
-    ListView lstVocabDescriptions;
 
-
-    public static VocabularyDescFragment newInstance(int vocabId) {
+    public static NotesFragment newInstance(int vocabId) {
         Bundle args = new Bundle();
         args.putInt(VOCAB_ID, vocabId);
-        VocabularyDescFragment fragment = new VocabularyDescFragment();
+        NotesFragment fragment = new NotesFragment();
         fragment.setArguments(args);
         return fragment;
     }
@@ -42,27 +34,18 @@ public class NotesFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_vocab_description, container, false);
-
-        lstVocabDescriptions = (ListView) view.findViewById(R.id.lstVocabDescriptions);
+        View view = inflater.inflate(R.layout.fragment_notes, container, false);
+        RecyclerView recyclerNotes = (RecyclerView) view.findViewById(R.id.recyclerNotes);
+        recyclerNotes.setHasFixedSize(true);
+        // use a linear layout manager
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
+        recyclerNotes.setLayoutManager(layoutManager);
 
         int vocabId = getArguments().getInt(VOCAB_ID);
-        int position = getArguments().getInt(POSITION);
+        ArrayList<Note> notes = Notes.getNotes(vocabId);
+        NoteAdapter adapter = new NoteAdapter(getActivity(), notes);
+        recyclerNotes.setAdapter(adapter);
 
-        if (position == Tab.VOCAB.ordinal()) {
-
-        } else if (position == Tab.EXAMPLE.ordinal()) {
-
-        } else if (position == Tab.NOTE.ordinal()) {
-
-        }
-
-        Vocabulary vocabulary = Vocabularies.select(vocabId);
-        List<Example> examples = Examples.getExamples(vocabId);
-        List<Note> notes = Notes.getNotes(vocabId);
-
-
-        // dataPackages = new HashMap<>();
         return view;
     }
 
