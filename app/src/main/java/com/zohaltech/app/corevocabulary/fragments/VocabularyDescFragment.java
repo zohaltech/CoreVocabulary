@@ -13,12 +13,11 @@ import com.zohaltech.app.corevocabulary.entities.Example;
 import com.zohaltech.app.corevocabulary.entities.Note;
 import com.zohaltech.app.corevocabulary.entities.Vocabulary;
 
-import java.util.HashMap;
 import java.util.List;
 
 public class VocabularyDescFragment extends Fragment {
     public static final String POSITION = "POSITION";
-    ListView lstVocabDescriptions;
+    ListView      lstVocabDescriptions;
     Vocabulary    vocabulary;
     List<Example> examples;
     List<Note>    notes;
@@ -42,7 +41,7 @@ public class VocabularyDescFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_vocab_description, container, false);
 
         lstVocabDescriptions = (ListView) view.findViewById(R.id.lstVocabDescriptions);
-       // dataPackages = new HashMap<>();
+        // dataPackages = new HashMap<>();
         return view;
     }
 
