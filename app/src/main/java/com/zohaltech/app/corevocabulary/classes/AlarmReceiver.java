@@ -34,6 +34,7 @@ public class AlarmReceiver extends BroadcastReceiver
                         .setDefaults(Notification.DEFAULT_VIBRATE)
                         .setAutoCancel(true);
 
+
         Intent resultIntent = new Intent(context, MainActivity.class);
         resultIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
         PendingIntent resultPendingIntent = PendingIntent.getActivity(context, 0, resultIntent, PendingIntent.FLAG_UPDATE_CURRENT);
