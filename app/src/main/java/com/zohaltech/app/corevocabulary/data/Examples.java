@@ -84,7 +84,7 @@ public class Examples {
     }
 
     public static ArrayList<Example> getExamples(int vocabId) {
-        String whereClause = " WHERE " + vocabId + " = " + vocabId;
+        String whereClause = " WHERE " + VocabularyId + " = " + vocabId;
         return select(whereClause, null);
     }
 }

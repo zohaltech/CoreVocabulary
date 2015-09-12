@@ -15,22 +15,18 @@ import java.util.ArrayList;
 
 public class VocabulariesActivity extends EnhancedActivity {
 
-    private RecyclerView               recyclerVocabularies;
-    private ArrayList<Vocabulary>      vocabularies;
-    private VocabularyAdapter          adapter;
-    private Theme                      theme;
-    private RecyclerView.LayoutManager layoutManager;
+    private Theme theme;
 
     @Override
     void onCreated() {
         setContentView(R.layout.activity_vocabularies);
-        recyclerVocabularies = (RecyclerView) findViewById(R.id.recyclerVocabularies);
+        RecyclerView recyclerVocabularies = (RecyclerView) findViewById(R.id.recyclerVocabularies);
         recyclerVocabularies.setHasFixedSize(true);
-        layoutManager = new LinearLayoutManager(this);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerVocabularies.setLayoutManager(layoutManager);
         theme = (Theme) getIntent().getSerializableExtra("THEME");
-        vocabularies = Vocabularies.selectByTheme(theme.getId());
-        adapter = new VocabularyAdapter(this, vocabularies);
+        ArrayList<Vocabulary> vocabularies = Vocabularies.selectByTheme(theme.getId());
+        VocabularyAdapter adapter = new VocabularyAdapter(this, vocabularies);
         recyclerVocabularies.setAdapter(adapter);
     }
 
