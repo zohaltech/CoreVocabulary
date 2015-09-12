@@ -20,5 +20,14 @@
     <string name="hello_world">Hello World!</string>
     <string name="drawer_open">Open</string>
     <string name="drawer_close">Close</string>
+    <string name="copyright">Copyright © 2015 ZohalTech</string>
+    <string name="all_rights">All Rights Reserved</string>
+
+    <string name="share_title">Share with friends</string>
+    <string name="feedback_subject">Core Vocabulary feedback</string>
+    <string name="feedback_title">suggestions and comments</string>
+
+    <string name="sharing_message">The very best app to improve your english download it now from below link</string>
+    <string name="could_not_open_market" formatted="false">Couldn't find %s app on your device, Please install %s first</string>
 
 </resources>
