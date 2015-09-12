@@ -7,35 +7,36 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.zohaltech.app.corevocabulary.R;
 import com.zohaltech.app.corevocabulary.activities.VocabDescriptionActivity;
 import com.zohaltech.app.corevocabulary.classes.App;
-import com.zohaltech.app.corevocabulary.entities.Example;
 import com.zohaltech.app.corevocabulary.entities.Vocabulary;
 
 import java.util.ArrayList;
 
-public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ViewHolder> {
+public class VocabDefinitionAdapter extends RecyclerView.Adapter<VocabDefinitionAdapter.ViewHolder> {
 
-    Context            context;
-    ArrayList<Example> examples;
+    Context               context;
+    ArrayList<Vocabulary> vocabularies;
 
-    public ExampleAdapter(Context context, ArrayList<Example> examples) {
+    public VocabDefinitionAdapter(Context context, ArrayList<Vocabulary> vocabularies) {
         this.context = context;
-        this.examples = examples;
+        this.vocabularies = vocabularies;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.adapter_examples, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.adaptor_vocabulary, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        final Example example = examples.get(position);
+        final Vocabulary vocabulary = vocabularies.get(position);
 //        if (position % 6 == 0) {
 //            holder.txtSection.setVisibility(View.VISIBLE);
 //            holder.txtSection.setText("Day " + vocabulary.getDay());
@@ -55,13 +56,13 @@ public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ViewHold
 
     @Override
     public int getItemCount() {
-        return examples.size();
+        return vocabularies.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
-        public TextView txtSection;
-        public TextView txtVocabulary;
+        public TextView     txtSection;
+        public TextView     txtVocabulary;
 
         public ViewHolder(View view) {
             super(view);
