@@ -4,7 +4,7 @@ import android.view.MenuItem;
 import android.widget.ListView;
 
 import com.zohaltech.app.corevocabulary.R;
-import com.zohaltech.app.corevocabulary.adapters.ThemeAdaptor;
+import com.zohaltech.app.corevocabulary.adapters.ThemeAdapter;
 import com.zohaltech.app.corevocabulary.data.Themes;
 import com.zohaltech.app.corevocabulary.entities.Theme;
 
@@ -13,14 +13,14 @@ import java.util.ArrayList;
 public class ThemesActivity extends EnhancedActivity {
     ListView         lstThemes;
     ArrayList<Theme> themes;
-    ThemeAdaptor     adapter;
+    ThemeAdapter     adapter;
 
     @Override
     void onCreated() {
         setContentView(R.layout.activity_themes);
         lstThemes = (ListView) findViewById(R.id.lstThemes);
         themes = Themes.select();
-        adapter = new ThemeAdaptor(themes);
+        adapter = new ThemeAdapter(themes);
         lstThemes.setAdapter(adapter);
 
     }

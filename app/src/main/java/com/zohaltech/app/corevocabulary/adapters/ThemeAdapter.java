@@ -16,9 +16,9 @@ import com.zohaltech.app.corevocabulary.entities.Theme;
 
 import java.util.ArrayList;
 
-public class ThemeAdaptor extends ArrayAdapter<Theme> {
+public class ThemeAdapter extends ArrayAdapter<Theme> {
 
-    public ThemeAdaptor(ArrayList<Theme> themeList) {
+    public ThemeAdapter(ArrayList<Theme> themeList) {
         super(App.context, R.layout.adaptor_theme, themeList);
     }
 

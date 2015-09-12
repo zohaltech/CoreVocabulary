@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.zohaltech.app.corevocabulary.R;
-import com.zohaltech.app.corevocabulary.adapters.ThemeAdaptor;
+import com.zohaltech.app.corevocabulary.adapters.ThemeAdapter;
 import com.zohaltech.app.corevocabulary.data.Themes;
 import com.zohaltech.app.corevocabulary.entities.Theme;
 
@@ -20,7 +20,7 @@ public class ThemesFragment extends Fragment {
 
     ListView         lstPackagesHistories;
     ArrayList<Theme> themes;
-    ThemeAdaptor     adapter;
+    ThemeAdapter     adapter;
 
     public ThemesFragment() {
     }
@@ -37,7 +37,7 @@ public class ThemesFragment extends Fragment {
 
         lstPackagesHistories = (ListView) rootView.findViewById(R.id.lstThemes);
         themes = Themes.select();
-        adapter = new ThemeAdaptor(themes);
+        adapter = new ThemeAdapter(themes);
         lstPackagesHistories.setAdapter(adapter);
 
         return rootView;

@@ -44,7 +44,7 @@ public class VocabDescriptionActivity extends EnhancedActivity {
             tabTitles.add("Notes");
         }
 
-        descriptionPagerAdapter = new DescriptionPagerAdapter(getSupportFragmentManager(),tabTitles );
+        descriptionPagerAdapter = new DescriptionPagerAdapter(getSupportFragmentManager(),tabTitles,vocabularyId );
         pagerCategories.setAdapter(descriptionPagerAdapter);
 
         // Bind the tabCategories to the ViewPager
