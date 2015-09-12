@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteDatabase;
 
 import com.zohaltech.app.corevocabulary.classes.MyRuntimeException;
 import com.zohaltech.app.corevocabulary.entities.Example;
+import com.zohaltech.app.corevocabulary.entities.Note;
 
 import java.util.ArrayList;
 
@@ -80,5 +81,10 @@ public class Examples {
         values.put(Persian, example.getPersian());
 
         return values;
+    }
+
+    public static ArrayList<Example> getExamples(int vocabId) {
+        String whereClause = " WHERE " + vocabId + " = " + vocabId;
+        return select(whereClause, null);
     }
 }

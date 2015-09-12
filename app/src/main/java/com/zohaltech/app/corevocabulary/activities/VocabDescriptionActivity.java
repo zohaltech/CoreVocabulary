@@ -10,12 +10,19 @@ import com.astuetz.PagerSlidingTabStrip;
 import com.zohaltech.app.corevocabulary.R;
 import com.zohaltech.app.corevocabulary.adapters.DescriptionPagerAdapter;
 import com.zohaltech.app.corevocabulary.classes.App;
+import com.zohaltech.app.corevocabulary.data.Examples;
+import com.zohaltech.app.corevocabulary.data.Notes;
+import com.zohaltech.app.corevocabulary.entities.Example;
+import com.zohaltech.app.corevocabulary.entities.Note;
 
-public class VocabDescriptionActivity extends EnhancedActivity
-{
+import java.util.ArrayList;
+
+public class VocabDescriptionActivity extends EnhancedActivity {
     PagerSlidingTabStrip    tabCategories;
     ViewPager               pagerCategories;
     DescriptionPagerAdapter descriptionPagerAdapter;
+    ArrayList<Example>      examples;
+    ArrayList<Note>         notes;
 
     @Override
     void onCreated() {
@@ -23,7 +30,21 @@ public class VocabDescriptionActivity extends EnhancedActivity
 
         // Initialize the ViewPager and set an adapter
         pagerCategories = (ViewPager) findViewById(R.id.pagerDescItems);
-        descriptionPagerAdapter = new DescriptionPagerAdapter(getSupportFragmentManager());
+
+        int vocabularyId = getIntent().getIntExtra("VocabularyId", 0);
+        examples = Examples.getExamples(vocabularyId);
+        notes = Notes.getNotes(vocabularyId);
+
+        ArrayList<String> tabTitles = new ArrayList<>();
+        tabTitles.add("Meanings");
+        if (examples.size() > 0) {
+            tabTitles.add("Examples");
+        }
+        if (notes.size() > 0) {
+            tabTitles.add("Notes");
+        }
+
+        descriptionPagerAdapter = new DescriptionPagerAdapter(getSupportFragmentManager(),tabTitles );
         pagerCategories.setAdapter(descriptionPagerAdapter);
 
         // Bind the tabCategories to the ViewPager
@@ -55,31 +76,26 @@ public class VocabDescriptionActivity extends EnhancedActivity
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item)
-    {
+    public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == android.R.id.home)
-        {
+        if (id == android.R.id.home) {
             onBackPressed();
         }
         return super.onOptionsItemSelected(item);
     }
 
     @Override
-    void onToolbarCreated()
-    {
+    void onToolbarCreated() {
         //txtToolbarTitle.setText("Vocabulary Description");
         getSupportActionBar().setTitle("Vocabulary Description");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
 
-    private void changeTabsFont()
-    {
+    private void changeTabsFont() {
         ViewGroup vg = (ViewGroup) tabCategories.getChildAt(0);
         int tabsCount = vg.getChildCount();
-        for (int j = 0; j < tabsCount; j++)
-        {
+        for (int j = 0; j < tabsCount; j++) {
             TextView textView = (TextView) vg.getChildAt(j);
             textView.setWidth(App.screenWidth / 3);
             textView.setTypeface(App.persianFont);

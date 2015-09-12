@@ -21,7 +21,7 @@ public class VocabulariesActivity extends EnhancedActivity {
     void onCreated() {
         setContentView(R.layout.activity_vocabularies);
         int themeId = getIntent().getIntExtra("ThemeId", 0);
-        themeVocabs = Vocabularies.getVocabsOfTheme(themeId);
+        themeVocabs = Vocabularies.getVocabs(themeId);
 
         lstVocabularies = (ListView) findViewById(R.id.lstVocabularies);
         adapter = new VocabularyAdaptor(themeVocabs);

@@ -76,4 +76,9 @@ public class Notes {
 
         return values;
     }
+
+    public static ArrayList<Note> getNotes(int vocabId) {
+        String whereClause = " WHERE " + vocabId + " = " + vocabId;
+        return select(whereClause, null);
+    }
 }
