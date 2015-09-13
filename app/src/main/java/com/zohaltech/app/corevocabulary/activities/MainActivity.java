@@ -22,6 +22,7 @@ public class MainActivity extends EnhancedActivity implements DrawerFragment.Fra
 
     private DrawerFragment drawerFragment;
     long startTime;
+    boolean searchShown;
 
     @Override
     protected void onCreated() {
@@ -46,42 +47,44 @@ public class MainActivity extends EnhancedActivity implements DrawerFragment.Fra
         getSupportActionBar().setTitle("Themes");
     }
 
-    //@Override
-    //public boolean onCreateOptionsMenu(Menu menu) {
-    //    // Inflate the menu; this adds items to the action bar if it is present.
-    //    getMenuInflater().inflate(R.menu.menu_main, menu);
-    //
-    //    return true;
-    //}
-    //
-    //@Override
-    //public boolean onOptionsItemSelected(MenuItem item) {
-    //    // Handle action bar item clicks here. The action bar will
-    //    // automatically handle clicks on the Home/Up button, so long
-    //    // as you specify a parent activity in AndroidManifest.xml.
-    //    int id = item.getItemId();
-    //
-    //    //noinspection SimplifiableIfStatement
-    //    if (id == R.id.action_settings) {
-    //        //App.setAppLocal(App.LANG_FARSI);
-    //        //finish();
-    //        //Intent intent = new Intent(MainActivity.this, MainActivity.class);
-    //        //startActivity(intent);
-    //        return true;
-    //    }
-    //
-    //    return super.onOptionsItemSelected(item);
-    //}
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.actionSearch) {
+            //App.setAppLocal(App.LANG_FARSI);
+            //finish();
+            //Intent intent = new Intent(MainActivity.this, MainActivity.class);
+            //startActivity(intent);
+            searchShown = true;
+            getSupportActionBar().setTitle("");
+            drawerFragment.setMenuVisibility(false);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
 
     @Override
     public void onDrawerItemSelected(View view, int position) {
         //displayView(position);
     }
 
-
     @Override
     public void onBackPressed() {
-        if ((System.currentTimeMillis() - startTime) > 2000) {
+        if (searchShown){
+            getSupportActionBar().setDisplayShowHomeEnabled(false);
+            drawerFragment.setMenuVisibility(true);
+            getSupportActionBar().setTitle("Themes");
+        }
+        else if ((System.currentTimeMillis() - startTime) > 2000) {
             startTime = System.currentTimeMillis();
             MyToast.show(getString(R.string.press_back_again_to_exit), Toast.LENGTH_SHORT);
 

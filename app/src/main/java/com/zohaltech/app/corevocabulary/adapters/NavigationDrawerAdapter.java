@@ -14,7 +14,7 @@ import com.zohaltech.app.corevocabulary.classes.NavDrawerItem;
 import java.util.Collections;
 import java.util.List;
 
-public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDrawerAdapter.MyViewHolder> {
+public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDrawerAdapter.ViewHolder> {
     List<NavDrawerItem> items = Collections.emptyList();
     private LayoutInflater inflater;
     private Context        context;
@@ -25,20 +25,20 @@ public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDraw
         this.items = items;
     }
 
-    public void delete(int position) {
-        items.remove(position);
-        notifyItemRemoved(position);
-    }
+    //public void delete(int position) {
+    //    items.remove(position);
+    //    notifyItemRemoved(position);
+    //}
 
     @Override
-    public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = inflater.inflate(R.layout.nav_drawer_row, parent, false);
-        MyViewHolder holder = new MyViewHolder(view);
+        ViewHolder holder = new ViewHolder(view);
         return holder;
     }
 
     @Override
-    public void onBindViewHolder(MyViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, int position) {
         NavDrawerItem current = items.get(position);
         holder.title.setText(current.getTitle());
     }
@@ -48,10 +48,10 @@ public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDraw
         return items.size();
     }
 
-    class MyViewHolder extends RecyclerView.ViewHolder {
+    class ViewHolder extends RecyclerView.ViewHolder {
         TextView title;
 
-        public MyViewHolder(View itemView) {
+        public ViewHolder(View itemView) {
             super(itemView);
             title = (TextView) itemView.findViewById(R.id.title);
         }
