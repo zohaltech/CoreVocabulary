@@ -2,6 +2,7 @@ package com.zohaltech.app.corevocabulary.activities;
 
 import android.app.SearchManager;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -28,14 +29,16 @@ import java.util.ArrayList;
 import widgets.MyToast;
 
 
-public class MainActivity extends EnhancedActivity implements DrawerFragment.FragmentDrawerListener {
+public class MainActivity extends EnhancedActivity implements DrawerFragment.FragmentDrawerListener
+{
 
     private DrawerFragment drawerFragment;
     long startTime;
     boolean searchShown;
 
     @Override
-    protected void onCreated() {
+    protected void onCreated()
+    {
         setContentView(R.layout.activity_main);
         startTime = System.currentTimeMillis() - 5000;
 
@@ -47,7 +50,8 @@ public class MainActivity extends EnhancedActivity implements DrawerFragment.Fra
     }
 
     @Override
-    void onToolbarCreated() {
+    void onToolbarCreated()
+    {
         drawerFragment = (DrawerFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_navigation_drawer);
         drawerFragment.setUp(R.id.fragment_navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout), toolbar);
         drawerFragment.setDrawerListener(this);
@@ -59,46 +63,56 @@ public class MainActivity extends EnhancedActivity implements DrawerFragment.Fra
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         final SearchView searchView = (SearchView) MenuItemCompat.getActionView(menu.findItem(R.id.action_search));
         searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
         searchView.setLayoutParams(new Toolbar.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
 
-        searchView.setOnCloseListener(new SearchView.OnCloseListener() {
+        searchView.setOnCloseListener(new SearchView.OnCloseListener()
+        {
             @Override
-            public boolean onClose() {
+            public boolean onClose()
+            {
                 MyToast.show("closed", Toast.LENGTH_SHORT);
                 displayView(0);
                 return false;
             }
         });
 
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener()
+        {
             @Override
-            public boolean onQueryTextSubmit(String query) {
+            public boolean onQueryTextSubmit(String query)
+            {
                 MyToast.show("query text submit", Toast.LENGTH_SHORT);
                 // todo : get result
                 return false;
             }
 
             @Override
-            public boolean onQueryTextChange(String newText) {
+            public boolean onQueryTextChange(String newText)
+            {
                 return false;
             }
         });
 
-        searchView.setOnClickListener(new View.OnClickListener() {
+        searchView.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
                 MyToast.show("click", Toast.LENGTH_SHORT);
             }
         });
 
-        searchView.setOnSearchClickListener(new View.OnClickListener() {
+        searchView.setOnSearchClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
                 MyToast.show("search click", Toast.LENGTH_SHORT);
                 //todo : load search fragment
                 displayView(1);
@@ -109,10 +123,12 @@ public class MainActivity extends EnhancedActivity implements DrawerFragment.Fra
         return true;
     }
 
-    private void displayView(int position) {
+    private void displayView(int position)
+    {
         Fragment fragment = null;
         String title = getString(R.string.app_name);
-        switch (position) {
+        switch (position)
+        {
             case 0:
                 fragment = new ThemesFragment();
                 title = "Themes";
@@ -125,7 +141,8 @@ public class MainActivity extends EnhancedActivity implements DrawerFragment.Fra
                 break;
         }
 
-        if (fragment != null) {
+        if (fragment != null)
+        {
             FragmentManager fragmentManager = getSupportFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
             fragmentTransaction.replace(R.id.container_body, fragment);
@@ -137,7 +154,8 @@ public class MainActivity extends EnhancedActivity implements DrawerFragment.Fra
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
         int id = item.getItemId();
 
         //if (id == R.id.action_search) {
@@ -158,16 +176,25 @@ public class MainActivity extends EnhancedActivity implements DrawerFragment.Fra
     }
 
     @Override
-    public void onDrawerItemSelected(View view, int position) {
-        //displayView(position);
+    public void onDrawerItemSelected(View view, int position)
+    {
+        if (position == 2)
+        {
+            Intent intent = new Intent(this, SettingsActivity.class);
+            MainActivity.this.startActivity(intent);
+        }
     }
 
     @Override
-    public void onBackPressed() {
-        if ((System.currentTimeMillis() - startTime) > 2000) {
+    public void onBackPressed()
+    {
+        if ((System.currentTimeMillis() - startTime) > 2000)
+        {
             startTime = System.currentTimeMillis();
             MyToast.show(getString(R.string.press_back_again_to_exit), Toast.LENGTH_SHORT);
-        } else {
+        }
+        else
+        {
             finish();
         }
     }
