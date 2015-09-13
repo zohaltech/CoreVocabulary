@@ -113,6 +113,13 @@ public class Vocabularies
         return select(whereClause, null, "");
     }
 
+
+    public static ArrayList<Vocabulary> search(String searchText)
+    {
+        String whereClause = " Where " + Vocabulary + " like  %'" + searchText +"'%";
+        return select(whereClause, null, "");
+    }
+
     public static long insert(Vocabulary vocabulary)
     {
         DataAccess da = new DataAccess();

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <widgets.MyEditText
+        android:id="@+id/editTextSearch"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="right"
+        android:maxLength="100"
+        android:text="book"
+        android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+    <widgets.MyButton
+        android:id="@+id/btnSearch"
+        style="@style/FormButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-->"
+        android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerSearchResults"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"/>
+
+</LinearLayout>
