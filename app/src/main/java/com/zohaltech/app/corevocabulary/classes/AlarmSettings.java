@@ -1,6 +1,6 @@
 package com.zohaltech.app.corevocabulary.classes;
 
-public class Settings
+public class AlarmSettings
 {
     private String startTime;
     private int intervals;

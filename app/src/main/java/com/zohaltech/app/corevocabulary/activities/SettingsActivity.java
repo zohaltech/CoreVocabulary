@@ -7,12 +7,10 @@ import android.widget.EditText;
 
 import com.zohaltech.app.corevocabulary.R;
 import com.zohaltech.app.corevocabulary.classes.ReminderManager;
-import com.zohaltech.app.corevocabulary.classes.Settings;
+import com.zohaltech.app.corevocabulary.classes.AlarmSettings;
 
 public class SettingsActivity extends EnhancedActivity
 {
-    public static int lastVocabularyId = 0;
-
     @Override
     void onCreated()
     {
@@ -49,13 +47,13 @@ public class SettingsActivity extends EnhancedActivity
                         chkFr.isChecked()};
 
 
-                Settings settings = new Settings();
+                AlarmSettings settings = new AlarmSettings();
                 settings.setCurrentVocabularyId(0);
                 settings.setWeekdays(days);
                 settings.setStartTime(startTime.getText().toString());
                 settings.setIntervals(Integer.parseInt(intervals.getText().toString()));
 
-                ReminderManager.setNextReminder(SettingsActivity.this, lastVocabularyId++);
+                ReminderManager.setNextReminder(SettingsActivity.this, settings.getCurrentVocabularyId());
             }
         });
     }

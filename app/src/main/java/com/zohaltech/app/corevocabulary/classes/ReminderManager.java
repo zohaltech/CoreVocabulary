@@ -40,7 +40,7 @@ public class ReminderManager
         Vocabulary nextVocabulary = Vocabularies.selectNextVocabulary(vocabularyId);
         if (nextVocabulary != null)
         {
-            Settings setting = getSettings();
+            AlarmSettings setting = getSettings();
             Calendar calendar = Calendar.getInstance();
             calendar.add(Calendar.MINUTE, setting.getIntervals());
 
@@ -70,12 +70,12 @@ public class ReminderManager
         }
     }
 
-    private static Settings getSettings()
+    private static AlarmSettings getSettings()
     {
         boolean[] weekdays = new boolean[7];
         weekdays[0] = weekdays[3] = weekdays[4] = true;
 
-        Settings settings = new Settings();
+        AlarmSettings settings = new AlarmSettings();
 
         settings.setIntervals(1);
         settings.setStartTime("18:00");
