@@ -5,6 +5,18 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
+    <widgets.MyButton
+        android:id="@+id/btnSpeechUS"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="US"/>
+
+    <widgets.MyButton
+        android:id="@+id/btnSpeechUK"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="UK"/>
+
 
     <widgets.LatinTextView
         android:id="@+id/txtVocabulary"

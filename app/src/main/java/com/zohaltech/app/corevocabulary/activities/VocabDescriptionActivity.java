@@ -17,7 +17,7 @@ import com.zohaltech.app.corevocabulary.entities.Note;
 
 import java.util.ArrayList;
 
-public class VocabDescriptionActivity extends EnhancedActivity {
+public class VocabDescriptionActivity extends EnhancedActivity  {
     public static final String INIT_MODE_KEY      = "INIT_MODE";
     public static final String MODE_SEARCH_RESULT = "MODE_SEARCH_RESULT";
     public static final String MODE_VIEW          = "MODE_VIEW";

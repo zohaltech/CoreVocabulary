@@ -1,5 +1,6 @@
 package com.zohaltech.app.corevocabulary.activities;
 
+
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
@@ -10,13 +11,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.zohaltech.app.corevocabulary.BuildConfig;
 import com.zohaltech.app.corevocabulary.R;
 
 import widgets.MyToast;
 
-
-public class AboutActivity extends EnhancedActivity {
+public class BookmarksActivity extends EnhancedActivity {
 
     TextView     txtVersion;
     Button       btnShare;
@@ -26,7 +25,7 @@ public class AboutActivity extends EnhancedActivity {
 
     @Override
     void onCreated() {
-        setContentView(R.layout.activity_about);
+        setContentView(R.layout.activity_bookmarks);
 
         txtVersion = (TextView) findViewById(R.id.txtVersion);
         btnShare = (Button) findViewById(R.id.btnShare);
@@ -107,8 +106,6 @@ public class AboutActivity extends EnhancedActivity {
 
     @Override
     void onToolbarCreated() {
-        //                ToolbarTitle.setText(getString(R.string.about));
-
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
     }

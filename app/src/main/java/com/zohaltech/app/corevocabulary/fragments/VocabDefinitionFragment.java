@@ -2,22 +2,26 @@ package com.zohaltech.app.corevocabulary.fragments;
 
 
 import android.os.Bundle;
+import android.speech.tts.TextToSpeech;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 
 import com.zohaltech.app.corevocabulary.R;
-import com.zohaltech.app.corevocabulary.adapters.VocabDefinitionAdapter;
 import com.zohaltech.app.corevocabulary.data.Vocabularies;
 import com.zohaltech.app.corevocabulary.entities.Vocabulary;
 
-import java.util.ArrayList;
-
-public class VocabDefinitionFragment extends Fragment {
+public class VocabDefinitionFragment extends Fragment implements
+                                                      TextToSpeech.OnInitListener {
     public static final String VOCAB_ID = "VOCAB_ID";
+    private Button btnSpeechUS;
+    private Button btnSpeechUK;
+    TextView txtVocabulary;
+    TextView txtVocabEnglishDefinition;
+    TextView txtVocabPersianMeaning;
 
     public static VocabDefinitionFragment newInstance(int vocabId) {
         Bundle args = new Bundle();
@@ -35,17 +39,35 @@ public class VocabDefinitionFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_vocab_definition, container, false);
-        RecyclerView recyclerDefinition = (RecyclerView) view.findViewById(R.id.recyclerDefinition);
-        recyclerDefinition.setHasFixedSize(true);
-        // use a linear layout manager
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
-        recyclerDefinition.setLayoutManager(layoutManager);
+
+        txtVocabulary = (TextView) view.findViewById(R.id.txtVocabulary);
+        txtVocabEnglishDefinition = (TextView) view.findViewById(R.id.txtVocabEnglishDefinition);
+        txtVocabPersianMeaning = (TextView) view.findViewById(R.id.txtVocabPersianMeaning);
+        btnSpeechUS = (Button) view.findViewById(R.id.btnSpeechUS);
+        btnSpeechUK = (Button) view.findViewById(R.id.btnSpeechUK);
 
         int vocabId = getArguments().getInt(VOCAB_ID);
-        ArrayList<Vocabulary> vocabularies = new ArrayList<>();
-        vocabularies.add(Vocabularies.select(vocabId));
-        VocabDefinitionAdapter adapter = new VocabDefinitionAdapter(getActivity(), vocabularies);
-        recyclerDefinition.setAdapter(adapter);
+        Vocabulary vocabulary = Vocabularies.select(vocabId);
+
+        assert vocabulary != null;
+        txtVocabulary.setText(vocabulary.getVocabulary());
+        txtVocabEnglishDefinition.setText(vocabulary.getVocabEnglishDef());
+        txtVocabPersianMeaning.setText(vocabulary.getVocabPersianDef());
+
+        btnSpeechUK.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        btnSpeechUS.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
 
         return view;
     }
@@ -58,5 +80,10 @@ public class VocabDefinitionFragment extends Fragment {
     @Override
     public void onDetach() {
         super.onDetach();
+    }
+
+    @Override
+    public void onInit(int status) {
+
     }
 }

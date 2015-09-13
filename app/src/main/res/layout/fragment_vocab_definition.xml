@@ -1,14 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-               android:layout_width="match_parent"
-               android:layout_height="match_parent"
-               android:orientation="vertical">
 
-
-<android.support.v7.widget.RecyclerView
-    android:id="@+id/recyclerDefinition"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:scrollbars="vertical"/>
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <widgets.MyButton
+        android:id="@+id/btnSpeechUS"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="US"/>
+
+    <widgets.MyButton
+        android:id="@+id/btnSpeechUK"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="UK"/>
+
+
+    <widgets.LatinTextView
+        android:id="@+id/txtVocabulary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primary_lighter"
+        android:gravity="start|center"
+        android:padding="15dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/primary"/>
+
+    <widgets.LatinTextView
+        android:id="@+id/txtVocabEnglishDefinition"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:gravity="start|center"
+        android:padding="15dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/primary_text"/>
+
+    <widgets.MyTextView
+        android:id="@+id/txtVocabPersianMeaning"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:gravity="start|center"
+        android:padding="15dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/primary_text"/>
 
 </LinearLayout>
+    <!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:orientation="vertical">-->
+
+    <!--&lt;!&ndash;<android.support.v7.widget.RecyclerView&ndash;&gt;-->
+    <!--&lt;!&ndash;android:id="@+id/recyclerDefinition"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_height="match_parent"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:scrollbars="vertical"/>&ndash;&gt;-->
+
+    <!--</LinearLayout>-->
