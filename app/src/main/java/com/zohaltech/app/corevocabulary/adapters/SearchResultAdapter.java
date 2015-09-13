@@ -19,12 +19,12 @@ import java.util.ArrayList;
 public class SearchResultAdapter extends RecyclerView.Adapter<SearchResultAdapter.ViewHolder> {
     Context               context;
     ArrayList<Vocabulary> vocabularies;
-    String searchText;
+    String                searchText;
 
-    public SearchResultAdapter(Context context, ArrayList<Vocabulary> vocabularies,String searchText) {
+    public SearchResultAdapter(Context context, ArrayList<Vocabulary> vocabularies, String searchText) {
         this.context = context;
         this.vocabularies = vocabularies;
-        this.searchText=searchText;
+        this.searchText = searchText;
     }
 
     @Override
@@ -42,7 +42,9 @@ public class SearchResultAdapter extends RecyclerView.Adapter<SearchResultAdapte
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(App.currentActivity, VocabDescriptionActivity.class);
-                intent.putExtra("VocabularyId", vocabulary.getId());
+                intent.putExtra(VocabDescriptionActivity.VOCAB_ID, vocabulary.getId());
+                intent.putExtra(VocabDescriptionActivity.INIT_MODE_KEY, VocabDescriptionActivity.MODE_SEARCH_RESULT);
+                intent.putExtra(VocabDescriptionActivity.SEARCH_TEXT, searchText);
                 App.currentActivity.startActivity(intent);
             }
         });

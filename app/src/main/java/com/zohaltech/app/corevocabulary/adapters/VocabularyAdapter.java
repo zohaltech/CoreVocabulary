@@ -44,7 +44,8 @@ public class VocabularyAdapter extends RecyclerView.Adapter<VocabularyAdapter.Vi
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(App.currentActivity, VocabDescriptionActivity.class);
-                intent.putExtra("VocabularyId", vocabulary.getId());
+                intent.putExtra(VocabDescriptionActivity.VOCAB_ID, vocabulary.getId());
+                intent.putExtra(VocabDescriptionActivity.INIT_MODE_KEY, VocabDescriptionActivity.MODE_VIEW);
                 App.currentActivity.startActivity(intent);
             }
         });
