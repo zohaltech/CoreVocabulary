@@ -17,11 +17,10 @@ import com.zohaltech.app.corevocabulary.entities.Vocabulary;
 public class VocabDefinitionFragment extends Fragment implements
                                                       TextToSpeech.OnInitListener {
     public static final String VOCAB_ID = "VOCAB_ID";
-    private Button btnSpeechUS;
-    private Button btnSpeechUK;
     TextView txtVocabulary;
     TextView txtVocabEnglishDefinition;
     TextView txtVocabPersianMeaning;
+    private TextToSpeech textToSpeech;
 
     public static VocabDefinitionFragment newInstance(int vocabId) {
         Bundle args = new Bundle();
@@ -43,11 +42,13 @@ public class VocabDefinitionFragment extends Fragment implements
         txtVocabulary = (TextView) view.findViewById(R.id.txtVocabulary);
         txtVocabEnglishDefinition = (TextView) view.findViewById(R.id.txtVocabEnglishDefinition);
         txtVocabPersianMeaning = (TextView) view.findViewById(R.id.txtVocabPersianMeaning);
-        btnSpeechUS = (Button) view.findViewById(R.id.btnSpeechUS);
-        btnSpeechUK = (Button) view.findViewById(R.id.btnSpeechUK);
+        Button btnSpeechUS = (Button) view.findViewById(R.id.btnSpeechUS);
+        Button btnSpeechUK = (Button) view.findViewById(R.id.btnSpeechUK);
 
         int vocabId = getArguments().getInt(VOCAB_ID);
         Vocabulary vocabulary = Vocabularies.select(vocabId);
+
+        textToSpeech = new TextToSpeech(getActivity(), this);
 
         assert vocabulary != null;
         txtVocabulary.setText(vocabulary.getVocabulary());

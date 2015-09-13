@@ -160,6 +160,8 @@ public class Vocabularies {
         values.put(Learned, vocabulary.getLearned());
         return values;
     }
+
+    private void s(){}
 }
 
 
