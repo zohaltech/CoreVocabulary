@@ -4,6 +4,7 @@ package com.zohaltech.app.corevocabulary.fragments;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,8 @@ import android.widget.TextView;
 import com.zohaltech.app.corevocabulary.R;
 import com.zohaltech.app.corevocabulary.data.Vocabularies;
 import com.zohaltech.app.corevocabulary.entities.Vocabulary;
+
+import java.util.Locale;
 
 public class VocabDefinitionFragment extends Fragment implements
                                                       TextToSpeech.OnInitListener {
@@ -58,14 +61,16 @@ public class VocabDefinitionFragment extends Fragment implements
         btnSpeechUK.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                textToSpeech.setLanguage(Locale.US);
+                speakOut();
             }
         });
 
         btnSpeechUS.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                textToSpeech.setLanguage(Locale.US);
+                speakOut();
             }
         });
 
@@ -85,6 +90,25 @@ public class VocabDefinitionFragment extends Fragment implements
 
     @Override
     public void onInit(int status) {
+        if (status == TextToSpeech.SUCCESS) {
 
+            int result = textToSpeech.setLanguage(Locale.US);
+
+            if (result == TextToSpeech.LANG_MISSING_DATA
+                || result == TextToSpeech.LANG_NOT_SUPPORTED) {
+                Log.e("TTS", "This Language is not supported");
+            } else {
+                speakOut();
+            }
+
+        } else {
+            Log.e("TTS", " Failed!");
+        }
+
+    }
+
+    private void speakOut() {
+        String text = txtVocabulary.getText().toString();
+        textToSpeech.speak(text, TextToSpeech.QUEUE_FLUSH, null);
     }
 }
