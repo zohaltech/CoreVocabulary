@@ -62,10 +62,12 @@ public class MainActivity extends EnhancedActivity implements DrawerFragment.Fra
             //finish();
             //Intent intent = new Intent(MainActivity.this, MainActivity.class);
             //startActivity(intent);
-            searchShown = true;
-            getSupportActionBar().setTitle("");
-            drawerFragment.setMenuVisibility(false);
-            getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+            //searchShown = true;
+            //getSupportActionBar().setTitle("");
+            //drawerFragment.setMenuVisibility(false);
+            //getSupportActionBar().setDisplayShowHomeEnabled(true);
+
             return true;
         }
 
@@ -79,12 +81,13 @@ public class MainActivity extends EnhancedActivity implements DrawerFragment.Fra
 
     @Override
     public void onBackPressed() {
-        if (searchShown){
-            getSupportActionBar().setDisplayShowHomeEnabled(false);
-            drawerFragment.setMenuVisibility(true);
-            getSupportActionBar().setTitle("Themes");
-        }
-        else if ((System.currentTimeMillis() - startTime) > 2000) {
+        //if (searchShown){
+        //    getSupportActionBar().setDisplayShowHomeEnabled(false);
+        //    drawerFragment.setMenuVisibility(true);
+        //    getSupportActionBar().setTitle("Themes");
+        //}
+        //else
+        if ((System.currentTimeMillis() - startTime) > 2000) {
             startTime = System.currentTimeMillis();
             MyToast.show(getString(R.string.press_back_again_to_exit), Toast.LENGTH_SHORT);
 
