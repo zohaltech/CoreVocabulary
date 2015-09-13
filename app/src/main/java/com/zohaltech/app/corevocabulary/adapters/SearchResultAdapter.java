@@ -19,10 +19,12 @@ import java.util.ArrayList;
 public class SearchResultAdapter extends RecyclerView.Adapter<SearchResultAdapter.ViewHolder> {
     Context               context;
     ArrayList<Vocabulary> vocabularies;
+    String searchText;
 
-    public SearchResultAdapter(Context context, ArrayList<Vocabulary> vocabularies) {
+    public SearchResultAdapter(Context context, ArrayList<Vocabulary> vocabularies,String searchText) {
         this.context = context;
         this.vocabularies = vocabularies;
+        this.searchText=searchText;
     }
 
     @Override
