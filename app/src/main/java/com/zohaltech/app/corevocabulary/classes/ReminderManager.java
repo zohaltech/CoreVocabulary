@@ -5,6 +5,7 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 
+import com.google.gson.Gson;
 import com.zohaltech.app.corevocabulary.data.Vocabularies;
 import com.zohaltech.app.corevocabulary.entities.Vocabulary;
 
@@ -40,9 +41,18 @@ public class ReminderManager
         Vocabulary nextVocabulary = Vocabularies.selectNextVocabulary(vocabularyId);
         if (nextVocabulary != null)
         {
-            AlarmSettings setting = getSettings();
+            Gson gson = new Gson();
+            String alarmJson = App.preferences.getString("alarm_settings", null);
+
+            if (alarmJson == null || alarmJson.equals(""))
+            {
+                return;
+            }
+
+            AlarmSettings alarmSettings = gson.fromJson(alarmJson, AlarmSettings.class);
+
             Calendar calendar = Calendar.getInstance();
-            calendar.add(Calendar.MINUTE, setting.getIntervals());
+            calendar.add(Calendar.MINUTE, alarmSettings.getIntervals());
 
             int today = Calendar.DAY_OF_WEEK;
             int nextDay = 1;
@@ -50,7 +60,7 @@ public class ReminderManager
 
             for (int j = 0; j < 7; j++)
             {
-                if (setting.getWeekdays()[(today + j) % 7])
+                if (alarmSettings.getWeekdays()[(today + j) % 7])
                 {
                     nextDay = j;
                     break;
@@ -70,17 +80,4 @@ public class ReminderManager
         }
     }
 
-    private static AlarmSettings getSettings()
-    {
-        boolean[] weekdays = new boolean[7];
-        weekdays[0] = weekdays[3] = weekdays[4] = true;
-
-        AlarmSettings settings = new AlarmSettings();
-
-        settings.setIntervals(1);
-        settings.setStartTime("18:00");
-        settings.setWeekdays(weekdays);
-
-        return settings;
-    }
 }
