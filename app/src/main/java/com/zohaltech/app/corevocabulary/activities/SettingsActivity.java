@@ -5,9 +5,11 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 
+import com.google.gson.Gson;
 import com.zohaltech.app.corevocabulary.R;
-import com.zohaltech.app.corevocabulary.classes.ReminderManager;
 import com.zohaltech.app.corevocabulary.classes.AlarmSettings;
+import com.zohaltech.app.corevocabulary.classes.App;
+import com.zohaltech.app.corevocabulary.classes.ReminderManager;
 
 public class SettingsActivity extends EnhancedActivity
 {
@@ -15,7 +17,6 @@ public class SettingsActivity extends EnhancedActivity
     void onCreated()
     {
         setContentView(R.layout.activity_settings);
-
         initialise();
     }
 
@@ -27,8 +28,9 @@ public class SettingsActivity extends EnhancedActivity
             @Override
             public void onClick(View v)
             {
-                EditText intervals = (EditText) findViewById(R.id.btnStartTime);
-                Button startTime = (Button) findViewById(R.id.edtAlarmIntervals);
+                EditText startVocabularyNo = (EditText) findViewById(R.id.edtStartVocabularyNo);
+                EditText intervals = (EditText) findViewById(R.id.edtAlarmIntervals);
+                Button startTime = (Button) findViewById(R.id.btnStartTime);
                 CheckBox chkSa = (CheckBox) findViewById(R.id.chkSa);
                 CheckBox chkSu = (CheckBox) findViewById(R.id.chkSu);
                 CheckBox chkMa = (CheckBox) findViewById(R.id.chkMa);
@@ -46,12 +48,15 @@ public class SettingsActivity extends EnhancedActivity
                         chkTh.isChecked(),
                         chkFr.isChecked()};
 
-
                 AlarmSettings settings = new AlarmSettings();
-                settings.setCurrentVocabularyId(0);
-                settings.setWeekdays(days);
-                settings.setStartTime(startTime.getText().toString());
+
+                settings.setCurrentVocabularyId(Integer.parseInt(startVocabularyNo.getText().toString()));
                 settings.setIntervals(Integer.parseInt(intervals.getText().toString()));
+                settings.setStartTime(startTime.getText().toString());
+                settings.setWeekdays(days);
+
+                Gson gson = new Gson();
+                App.preferences.edit().putString("alarm_settings", gson.toJson(settings)).apply();
 
                 ReminderManager.setNextReminder(SettingsActivity.this, settings.getCurrentVocabularyId());
             }

@@ -2,6 +2,7 @@ package com.zohaltech.app.corevocabulary.classes;
 
 public class AlarmSettings
 {
+
     private String startTime;
     private int intervals;
     private int currentVocabularyId;
@@ -46,6 +47,5 @@ public class AlarmSettings
     {
         this.weekdays = weekdays;
     }
-
 
 }

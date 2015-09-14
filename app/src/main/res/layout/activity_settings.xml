@@ -41,6 +41,39 @@
                         <widgets.MyTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:text="Start Vocabulary:"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            tools:ignore="HardcodedText"/>
+
+                        <widgets.MyEditText
+                            android:id="@+id/edtStartVocabularyNo"
+                            android:layout_width="64dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:maxLength="3"
+                            android:text="0"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            tools:ignore="HardcodedText"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@android:drawable/divider_horizontal_bright"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:orientation="horizontal">
+
+                        <widgets.MyTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:text="Intervals: "
                             android:textAppearance="?android:attr/textAppearanceMedium"
                             tools:ignore="HardcodedText"/>
@@ -58,17 +91,6 @@
 
 
                         <widgets.MyTextView
-                            android:id="@+id/txtPackageValidPeriod"
-                            android:layout_width="64dp"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:inputType="number"
-                            android:maxLength="3"
-                            android:text="30"
-                            android:textAppearance="?android:attr/textAppearanceMedium"
-                            tools:ignore="HardcodedText"/>
-
-                        <widgets.MyTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
@@ -78,7 +100,6 @@
 
 
                     </LinearLayout>
-
 
                     <LinearLayout
                         android:layout_width="match_parent"
