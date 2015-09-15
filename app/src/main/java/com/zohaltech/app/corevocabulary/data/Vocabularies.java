@@ -94,7 +94,7 @@ public class Vocabularies
         }
     }
 
-    public static Vocabulary selectNextVocabulary(long vocabularyId)
+    public static Vocabulary next(long vocabularyId)
     {
         ArrayList<Vocabulary> selectedVocabulary = select(" Where Id " + " > " + vocabularyId, null, " Limit 1");
         if (selectedVocabulary.size() == 0)

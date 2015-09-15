@@ -36,7 +36,14 @@
             android:screenOrientation="portrait"/>
 
         <receiver android:name=".classes.AlarmReceiver"/>
-
+        <receiver
+            android:name=".classes.BootReceiver"
+            android:enabled="true">
+            <intent-filter android:priority="999">
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.QUICKBOOT_POWERON"/>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

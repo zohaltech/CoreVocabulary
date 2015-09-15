@@ -15,10 +15,9 @@ public class AlarmReceiver extends BroadcastReceiver
     @Override
     public void onReceive(Context context, Intent intent)
     {
-        Reminder reminder = (Reminder) intent.getSerializableExtra("reminder");
-
-
         int lockScreenVisibility = android.support.v4.app.NotificationCompat.VISIBILITY_SECRET;
+
+        Reminder reminder = (Reminder) intent.getSerializableExtra("reminder");
 
         android.support.v4.app.NotificationCompat.Builder builder =
                 new android.support.v4.app.NotificationCompat.Builder(context)
@@ -42,6 +41,6 @@ public class AlarmReceiver extends BroadcastReceiver
 
         App.notificationManager.notify(reminder.getTime().intValue(), builder.build());
 
-        ReminderManager.setNextReminder(context, reminder.getId());
+        ReminderManager.setReminder(context, reminder.getId());
     }
 }
