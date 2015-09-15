@@ -4,16 +4,14 @@ public class ReminderSettings
 {
     private String startTime;
     private int intervals;
-    private long vocabularyId;
-    private boolean remindToday;
+    private Reminder reminder;
     private boolean[] weekdays = new boolean[7];
 
-    public ReminderSettings(String startTime, int intervals, int vocabularyId, boolean remindToday, boolean[] weekdays)
+    public ReminderSettings(String startTime, int intervals, Reminder reminder, boolean[] weekdays)
     {
         this.startTime = startTime;
         this.intervals = intervals;
-        this.vocabularyId = vocabularyId;
-        this.remindToday = remindToday;
+        this.reminder = reminder;
         this.weekdays = weekdays;
     }
 
@@ -37,24 +35,14 @@ public class ReminderSettings
         this.intervals = intervals;
     }
 
-    public long getVocabularyId()
+    public Reminder getReminder()
     {
-        return vocabularyId;
+        return reminder;
     }
 
-    public void setVocabularyId(long vocabularyId)
+    public void setReminder(Reminder reminder)
     {
-        this.vocabularyId = vocabularyId;
-    }
-
-    public boolean isRemindToday()
-    {
-        return remindToday;
-    }
-
-    public void setRemindToday(boolean remindToday)
-    {
-        this.remindToday = remindToday;
+        this.reminder = reminder;
     }
 
     public boolean[] getWeekdays()

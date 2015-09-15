@@ -109,7 +109,7 @@ public class Vocabularies
 
     public static ArrayList<Vocabulary> selectByTheme(long themeId)
     {
-        String whereClause = " Where " + themeId + " = " + themeId;
+        String whereClause = " Where " + ThemeId + " = " + themeId;
         return select(whereClause, null, "");
     }
 

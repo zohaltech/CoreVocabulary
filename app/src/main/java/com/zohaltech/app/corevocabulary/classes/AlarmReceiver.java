@@ -39,8 +39,8 @@ public class AlarmReceiver extends BroadcastReceiver
         PendingIntent resultPendingIntent = PendingIntent.getActivity(context, 0, resultIntent, PendingIntent.FLAG_UPDATE_CURRENT);
         builder.setContentIntent(resultPendingIntent);
 
-        App.notificationManager.notify(reminder.getTime().intValue(), builder.build());
+        App.notificationManager.notify((int) reminder.getTime().getTime(), builder.build());
 
-        ReminderManager.setReminder(context, reminder.getId());
+        ReminderManager.setReminder(reminder.getId());
     }
 }

@@ -1,15 +1,16 @@
 package com.zohaltech.app.corevocabulary.classes;
 
 import java.io.Serializable;
+import java.util.Date;
 
 public class Reminder implements Serializable
 {
     private int Id;
-    private Long Time;
+    private Date Time;
     private String Title;
     private String Message;
 
-    public Reminder(int id, Long time, String title, String message)
+    public Reminder(int id, Date time, String title, String message)
     {
         setId(id);
         setTime(time);
@@ -27,12 +28,12 @@ public class Reminder implements Serializable
         Id = id;
     }
 
-    public Long getTime()
+    public Date getTime()
     {
         return Time;
     }
 
-    public void setTime(Long time)
+    public void setTime(Date time)
     {
         Time = time;
     }
