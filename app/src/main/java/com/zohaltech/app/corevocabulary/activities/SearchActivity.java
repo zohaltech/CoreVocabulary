@@ -22,10 +22,14 @@ public class SearchActivity extends EnhancedActivity {
 
     private EditText editTextSearch;
     private Button   btnSearch;
+    public static final String SEARCH_TEXT        = "SEARCH_TEXT";
 
     @Override
     void onCreated() {
         setContentView(R.layout.activity_search);
+
+        String searchText = getIntent().getStringExtra(SEARCH_TEXT);
+        search(searchText);
 
         editTextSearch = (EditText) findViewById(R.id.editTextSearch);
         btnSearch = (Button) findViewById(R.id.btnSearch);

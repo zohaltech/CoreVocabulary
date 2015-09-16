@@ -61,7 +61,7 @@ public class VocabDefinitionFragment extends Fragment implements
         btnSpeechUK.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                textToSpeech.setLanguage(Locale.US);
+                textToSpeech.setLanguage(Locale.UK);
                 speakOut();
             }
         });
@@ -73,7 +73,6 @@ public class VocabDefinitionFragment extends Fragment implements
                 speakOut();
             }
         });
-
 
         return view;
     }
@@ -104,7 +103,6 @@ public class VocabDefinitionFragment extends Fragment implements
         } else {
             Log.e("TTS", " Failed!");
         }
-
     }
 
     private void speakOut() {

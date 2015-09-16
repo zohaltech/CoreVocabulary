@@ -20,7 +20,6 @@ import com.zohaltech.app.corevocabulary.entities.Vocabulary;
 import java.util.ArrayList;
 
 public class ThemeAdapter extends RecyclerView.Adapter<ThemeAdapter.ViewHolder> {
-
     Context          context;
     ArrayList<Theme> themes;
 

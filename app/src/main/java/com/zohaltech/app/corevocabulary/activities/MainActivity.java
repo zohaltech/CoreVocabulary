@@ -15,9 +15,13 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.zohaltech.app.corevocabulary.R;
+import com.zohaltech.app.corevocabulary.data.Vocabularies;
+import com.zohaltech.app.corevocabulary.entities.Vocabulary;
 import com.zohaltech.app.corevocabulary.fragments.DrawerFragment;
 import com.zohaltech.app.corevocabulary.fragments.FriendsFragment;
 import com.zohaltech.app.corevocabulary.fragments.ThemesFragment;
+
+import java.util.ArrayList;
 
 import widgets.MyToast;
 
@@ -68,36 +72,37 @@ public class MainActivity extends EnhancedActivity {
             }
         });
 
-        searchManager.setOnCancelListener(new SearchManager.OnCancelListener() {
-            @Override
-            public void onCancel() {
-                displayView(0);
-                MyToast.show("cancel", Toast.LENGTH_SHORT);
-            }
-        });
-
-        searchManager.setOnDismissListener(new SearchManager.OnDismissListener() {
-            @Override
-            public void onDismiss() {
-                displayView(0);
-                MyToast.show("dismiss", Toast.LENGTH_SHORT);
-            }
-        });
-
-        searchView.setOnCloseListener(new SearchView.OnCloseListener() {
-            @Override
-            public boolean onClose() {
-                MyToast.show("closed", Toast.LENGTH_SHORT);
-                displayView(0);
-                return false;
-            }
-        });
+//        searchManager.setOnCancelListener(new SearchManager.OnCancelListener() {
+//            @Override
+//            public void onCancel() {
+//                displayView(0);
+//                MyToast.show("cancel", Toast.LENGTH_SHORT);
+//            }
+//        });
+//
+//        searchManager.setOnDismissListener(new SearchManager.OnDismissListener() {
+//            @Override
+//            public void onDismiss() {
+//                displayView(0);
+//                MyToast.show("dismiss", Toast.LENGTH_SHORT);
+//            }
+//        });
+//
+//        searchView.setOnCloseListener(new SearchView.OnCloseListener() {
+//            @Override
+//            public boolean onClose() {
+//                MyToast.show("closed", Toast.LENGTH_SHORT);
+//                displayView(0);
+//                return false;
+//            }
+//        });
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 MyToast.show("query text submit", Toast.LENGTH_SHORT);
                 // todo : get result
+                ArrayList<Vocabulary> vocabularies= Vocabularies.search(query);
                 return false;
             }
 
@@ -119,7 +124,7 @@ public class MainActivity extends EnhancedActivity {
             public void onClick(View v) {
                 MyToast.show("search click", Toast.LENGTH_SHORT);
                 //todo : load search fragment
-                displayView(1);
+                //displayView(1);
             }
         });
 
