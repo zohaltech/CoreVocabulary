@@ -191,9 +191,15 @@ public class Vocabularies
         return values;
     }
 
-    private void s()
-    {
+    public static void resetLearningProcess(){
+        ContentValues values = new ContentValues();
+        values.put(Learned, 0);
+        DataAccess db = new DataAccess();
+
+        db.update(TableName,values,null,null);
     }
+
+
 }
 
 

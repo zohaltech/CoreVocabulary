@@ -101,6 +101,7 @@ public class MainActivity extends EnhancedActivity {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 MyToast.show("query text submit", Toast.LENGTH_SHORT);
+
                 // todo : get result
                 ArrayList<Vocabulary> vocabularies= Vocabularies.search(query);
                 return false;
