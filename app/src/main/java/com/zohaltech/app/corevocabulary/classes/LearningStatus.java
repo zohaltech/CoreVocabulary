@@ -6,14 +6,14 @@ import com.zohaltech.app.corevocabulary.entities.Vocabulary;
 
 import java.util.ArrayList;
 
-class LearningStatus {
+public class LearningStatus {
     private int vocabIndex;
     private int progress;
     private int dayIndex;
     private int dayCount;
     private int vocabCount;
 
-    static LearningStatus getLearningStatusByTheme(int themeId) {
+  public static LearningStatus getLearningStatusByTheme(int themeId) {
         LearningStatus learningStatus = new LearningStatus();
         ReminderSettings settings = ReminderManager.getReminderSettings();
 

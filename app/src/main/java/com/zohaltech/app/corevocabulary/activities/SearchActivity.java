@@ -10,7 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.zohaltech.app.corevocabulary.R;
-import com.zohaltech.app.corevocabulary.adapters.SearchResultAdapter;
+import com.zohaltech.app.corevocabulary.adapters.SearchAdapter;
 import com.zohaltech.app.corevocabulary.data.Vocabularies;
 import com.zohaltech.app.corevocabulary.entities.Vocabulary;
 
@@ -47,13 +47,13 @@ public class SearchActivity extends EnhancedActivity {
             MyToast.show("Hoyy ..., Please enter a world", Toast.LENGTH_SHORT, R.drawable.ic_warning_white);
             return;
         }
-        RecyclerView recyclerSearchResults = (RecyclerView) findViewById(R.id.recyclerSearchResults);
+        RecyclerView recyclerSearchResults = (RecyclerView) findViewById(R.id.recyclerSearch);
         recyclerSearchResults.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerSearchResults.setLayoutManager(layoutManager);
 
         ArrayList<Vocabulary> vocabularies = Vocabularies.search(searchText);
-        SearchResultAdapter adapter = new SearchResultAdapter(this, vocabularies, searchText);
+        SearchAdapter adapter = new SearchAdapter(this, vocabularies);
         recyclerSearchResults.setAdapter(adapter);
     }
 

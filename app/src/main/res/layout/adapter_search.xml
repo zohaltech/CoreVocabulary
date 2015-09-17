@@ -5,7 +5,6 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-
     <widgets.LatinTextView
         android:id="@+id/txtSearchResult"
         android:layout_width="match_parent"

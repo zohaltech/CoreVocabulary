@@ -15,13 +15,9 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.zohaltech.app.corevocabulary.R;
-import com.zohaltech.app.corevocabulary.data.Vocabularies;
-import com.zohaltech.app.corevocabulary.entities.Vocabulary;
 import com.zohaltech.app.corevocabulary.fragments.DrawerFragment;
-import com.zohaltech.app.corevocabulary.fragments.FriendsFragment;
+import com.zohaltech.app.corevocabulary.fragments.SearchFragment;
 import com.zohaltech.app.corevocabulary.fragments.ThemesFragment;
-
-import java.util.ArrayList;
 
 import widgets.MyToast;
 
@@ -31,6 +27,7 @@ public class MainActivity extends EnhancedActivity {
     long startTime;
     private DrawerLayout   drawerLayout;
     private DrawerFragment drawerFragment;
+    private Fragment       fragment;
 
     @Override
     protected void onCreated() {
@@ -72,60 +69,54 @@ public class MainActivity extends EnhancedActivity {
             }
         });
 
-//        searchManager.setOnCancelListener(new SearchManager.OnCancelListener() {
-//            @Override
-//            public void onCancel() {
-//                displayView(0);
-//                MyToast.show("cancel", Toast.LENGTH_SHORT);
-//            }
-//        });
-//
-//        searchManager.setOnDismissListener(new SearchManager.OnDismissListener() {
-//            @Override
-//            public void onDismiss() {
-//                displayView(0);
-//                MyToast.show("dismiss", Toast.LENGTH_SHORT);
-//            }
-//        });
-//
-//        searchView.setOnCloseListener(new SearchView.OnCloseListener() {
-//            @Override
-//            public boolean onClose() {
-//                MyToast.show("closed", Toast.LENGTH_SHORT);
-//                displayView(0);
-//                return false;
-//            }
-//        });
+        //        searchManager.setOnCancelListener(new SearchManager.OnCancelListener() {
+        //            @Override
+        //            public void onCancel() {
+        //                displayView(0);
+        //                MyToast.show("cancel", Toast.LENGTH_SHORT);
+        //            }
+        //        });
+        //
+        //        searchManager.setOnDismissListener(new SearchManager.OnDismissListener() {
+        //            @Override
+        //            public void onDismiss() {
+        //                displayView(0);
+        //                MyToast.show("dismiss", Toast.LENGTH_SHORT);
+        //            }
+        //        });
+        //
+        //        searchView.setOnCloseListener(new SearchView.OnCloseListener() {
+        //            @Override
+        //            public boolean onClose() {
+        //                MyToast.show("closed", Toast.LENGTH_SHORT);
+        //                displayView(0);
+        //                return false;
+        //            }
+        //        });
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                MyToast.show("query text submit", Toast.LENGTH_SHORT);
-
-                // todo : get result
-                ArrayList<Vocabulary> vocabularies= Vocabularies.search(query);
+                //if (fragment != null && fragment.getTag().equals(getResources().getString(R.string.title_search))) {
+                //if (fragment != null && fragment instanceof SearchFragment) {
+                //    ((SearchFragment) fragment).search(query);
+                //}
                 return false;
             }
 
             @Override
             public boolean onQueryTextChange(String newText) {
+                if (fragment != null && fragment instanceof SearchFragment) {
+                    ((SearchFragment) fragment).search(newText);
+                }
                 return false;
-            }
-        });
-
-        searchView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                MyToast.show("click", Toast.LENGTH_SHORT);
             }
         });
 
         searchView.setOnSearchClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MyToast.show("search click", Toast.LENGTH_SHORT);
-                //todo : load search fragment
-                //displayView(1);
+                displayView(1);
             }
         });
 
@@ -133,16 +124,16 @@ public class MainActivity extends EnhancedActivity {
     }
 
     private void displayView(int position) {
-        Fragment fragment = null;
+        fragment = null;
         String title = getString(R.string.app_name);
         switch (position) {
             case 0:
                 fragment = new ThemesFragment();
-                title = "Themes";
+                title = getString(R.string.title_themes);
                 break;
             case 1:
-                fragment = new FriendsFragment();
-                title = getString(R.string.title_friends);
+                fragment = new SearchFragment();
+                title = getString(R.string.title_search);
                 break;
             default:
                 break;
@@ -151,7 +142,7 @@ public class MainActivity extends EnhancedActivity {
         if (fragment != null) {
             FragmentManager fragmentManager = getSupportFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.container_body, fragment);
+            fragmentTransaction.replace(R.id.container_body, fragment, title);
             //fragmentTransaction.addToBackStack(title);
             fragmentTransaction.commit();
 

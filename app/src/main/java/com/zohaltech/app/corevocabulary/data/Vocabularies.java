@@ -119,12 +119,13 @@ public class Vocabularies
         String query = "SELECT DISTINCT v.* FROM " + TableName + " v\n" +
                 "INNER JOIN " + Examples.TableName + " e\n" +
                 "ON v.Id=e." + Examples.VocabularyId + "\n" +
-                "INNER JOIN " + Notes.TableName + " n\n" +
+                "LEFT JOIN " + Notes.TableName + " n\n" +
                 "ON v.Id=n." + Notes.VocabularyId + "\n" +
-                "WHERE v." + EnglishDef + " LIKE '%" + searchText + "%'\n" +
+                "WHERE v." + Vocabulary + " LIKE '%" + searchText + "%'\n" +
+                "OR v." + EnglishDef + "  LIKE '%" + searchText + "%'\n" +
                 "OR v." + PersianDef + "  LIKE '%" + searchText + "%'\n" +
                 "OR e." + Examples.English + " LIKE '%" + searchText + "%'\n" +
-                "OR e." + Examples.Persian + " LIKE'%" + searchText + "%'\n" +
+                "OR e." + Examples.Persian + " LIKE '%" + searchText + "%'\n" +
                 "OR n." + Notes.Description + " LIKE '%" + searchText + "%'";
 
         ArrayList<Vocabulary> vocabularies = new ArrayList<>();
