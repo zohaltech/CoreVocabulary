@@ -2,15 +2,22 @@ package com.zohaltech.app.corevocabulary.classes;
 
 public class ReminderSettings
 {
+    public enum Status
+    {
+        STOP, RUNNING, PAUSE, FINISHED
+    }
+
     private String startTime;
     private int intervals;
+    private Status status;
     private Reminder reminder;
-    private boolean[] weekdays = new boolean[7];
+    private boolean[] weekdays;
 
-    public ReminderSettings(String startTime, int intervals, Reminder reminder, boolean[] weekdays)
+    public ReminderSettings(String startTime, int intervals, Reminder reminder, Status status, boolean[] weekdays)
     {
         this.startTime = startTime;
         this.intervals = intervals;
+        this.status = status;
         this.reminder = reminder;
         this.weekdays = weekdays;
     }
@@ -33,6 +40,16 @@ public class ReminderSettings
     public void setIntervals(int intervals)
     {
         this.intervals = intervals;
+    }
+
+    public Status getStatus()
+    {
+        return status;
+    }
+
+    public void setStatus(Status status)
+    {
+        this.status = status;
     }
 
     public Reminder getReminder()

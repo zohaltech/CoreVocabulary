@@ -20,6 +20,40 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/btnStop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Stop"
+                    tools:ignore="HardcodedText"/>
+
+                <Button
+                    android:id="@+id/btnStart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Start"
+                    tools:ignore="HardcodedText"/>
+
+                <Button
+                    android:id="@+id/btnPause"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Pause"
+                    tools:ignore="HardcodedText"/>
+
+                <Button
+                    android:id="@+id/btnRestart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="RESTART"
+                    tools:ignore="HardcodedText"/>
+
+            </LinearLayout>
+
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -52,7 +86,7 @@
                             android:gravity="center"
                             android:inputType="number"
                             android:maxLength="3"
-                            android:text="0"
+                            android:text="1"
                             android:textAppearance="?android:attr/textAppearanceMedium"
                             tools:ignore="HardcodedText"/>
 
@@ -126,7 +160,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:inputType="text"
-                            android:text="12:30"
+                            android:text="08:00"
                             android:textAppearance="?android:attr/textAppearanceMedium"
                             tools:ignore="HardcodedText"/>
 
@@ -212,17 +246,10 @@
                 android:layout_height="wrap_content">
 
                 <Button
-                    android:id="@+id/btnSetNextAlarm"
+                    android:id="@+id/btnGetStatus"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="Apply"
-                    tools:ignore="HardcodedText"/>
-
-                <Button
-                    android:id="@+id/btnGetLastAlarm"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="GET LAST ALARM"
+                    android:text="GET STATUS"
                     tools:ignore="HardcodedText"/>
             </LinearLayout>
         </LinearLayout>

@@ -26,7 +26,7 @@ public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDraw
     }
 
     //public void delete(int position) {
-    //    items.remove(position);
+    //    items.removeAlarm(position);
     //    notifyItemRemoved(position);
     //}
 

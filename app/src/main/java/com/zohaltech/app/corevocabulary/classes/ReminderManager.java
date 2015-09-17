@@ -16,91 +16,15 @@ public class ReminderManager
 {
     private static String REMINDER_SETTINGS = "reminder_settings";
 
-    public static ReminderSettings getReminderSettings()
-    {
-        Gson gson = new Gson();
-        String alarmJson = App.preferences.getString(REMINDER_SETTINGS, null);
-
-        if (alarmJson == null || alarmJson.equals(""))
-        {
-            Calendar calendar = Calendar.getInstance();
-            Vocabulary vocabulary = Vocabularies.select(1);
-            assert vocabulary != null;
-            Reminder reminder = new Reminder(vocabulary.getId(), calendar.getTime(), vocabulary.getVocabulary(), vocabulary.getVocabEnglishDef());
-            return new ReminderSettings("18:00", 45, reminder, new boolean[]{true, true, true, true, true, true, true});
-        }
-
-        return gson.fromJson(alarmJson, ReminderSettings.class);
-    }
-
-    public static void setReminderSettings(ReminderSettings settings)
-    {
-        Gson gson = new Gson();
-        App.preferences.edit().putString(REMINDER_SETTINGS, gson.toJson(settings)).apply();
-    }
-
-    private static void add(Context context, Reminder reminder)
-    {
-        AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
-
-        Intent intent = new Intent(context, AlarmReceiver.class);
-        intent.putExtra("reminder", reminder);
-
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(context, reminder.getId(), intent, PendingIntent.FLAG_UPDATE_CURRENT);
-        alarmManager.set(AlarmManager.RTC_WAKEUP, reminder.getTime().getTime(), pendingIntent);
-
-    }
-
-    public static void remove(long vocabularyId)
-    {
-        AlarmManager alarmManager = (AlarmManager) App.context.getSystemService(Context.ALARM_SERVICE);
-
-        Intent intent = new Intent(App.context, AlarmReceiver.class);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(App.context, ((int) vocabularyId), intent, PendingIntent.FLAG_UPDATE_CURRENT);
-
-        alarmManager.cancel(pendingIntent);
-    }
-
-    // this method is meant to be called just by AlarmReceiver class!
-    public static void setReminder(int currentVocabularyId)
-    {
-        Vocabulary current = Vocabularies.select(currentVocabularyId);
-        if (current == null)
-        {
-            // exception occurred.
-            return;
-        }
-
-        Vocabulary next = Vocabularies.next(currentVocabularyId);
-        if (next == null)
-        {
-            // The end! provide subscriber with a proper message.
-            return;
-        }
-
-        if (current.getDay() == next.getDay())
-        {
-            Calendar calendar = Calendar.getInstance();
-            ReminderSettings settings = getReminderSettings();
-            calendar.add(Calendar.MINUTE, settings.getIntervals());
-
-            Reminder reminder = new Reminder(next.getId(), calendar.getTime(), next.getVocabulary(), next.getVocabEnglishDef());
-            settings.setReminder(reminder);
-            setReminderSettings(settings);
-
-            add(App.context, new Reminder(next.getId(), calendar.getTime(), next.getVocabulary(), next.getVocabEnglishDef()));
-
-        }
-        else
-        {
-            setReminder();
-        }
-    }
-
-    public static void setReminder()
+    public static void resume()
     {
         ReminderSettings settings = getReminderSettings();
         if (settings == null)
+        {
+            return;
+        }
+
+        if (settings.getStatus() != ReminderSettings.Status.RUNNING)
         {
             return;
         }
@@ -131,7 +55,119 @@ public class ReminderManager
         settings.getReminder().setTime(alarmTime);
         ReminderManager.setReminderSettings(settings);
 
-        add(App.context, new Reminder(vocabulary.getId(), alarmTime, vocabulary.getVocabulary(), vocabulary.getVocabEnglishDef()));
+        addAlarm(App.context, new Reminder(vocabulary.getId(), alarmTime, vocabulary.getVocabulary(), vocabulary.getVocabEnglishDef()));
+    }
+
+    public static void pause()
+    {
+        ReminderSettings settings = getReminderSettings();
+        if (settings == null)
+        {
+            return;
+        }
+
+        if (settings.getReminder() != null)
+        {
+            removeAlarm(settings.getReminder().getId());
+        }
+
+        settings.setStatus(ReminderSettings.Status.PAUSE);
+        setReminderSettings(settings);
+    }
+
+    public static void stop()
+    {
+        ReminderSettings settings = getReminderSettings();
+        if (settings == null)
+        {
+            return;
+        }
+
+        if (settings.getReminder() != null)
+        {
+            removeAlarm(settings.getReminder().getId());
+        }
+
+        settings.setStatus(ReminderSettings.Status.STOP);
+        settings.setReminder(null);
+        setReminderSettings(settings);
+    }
+
+    public static ReminderSettings getReminderSettings()
+    {
+        Gson gson = new Gson();
+        String alarmJson = App.preferences.getString(REMINDER_SETTINGS, null);
+
+        if (alarmJson == null || alarmJson.equals(""))
+        {
+            return new ReminderSettings("12:00", 30, null, ReminderSettings.Status.STOP, new boolean[]{true, false, true, false, true, false, false});
+        }
+
+        return gson.fromJson(alarmJson, ReminderSettings.class);
+    }
+
+    public static void setReminderSettings(ReminderSettings settings)
+    {
+        Gson gson = new Gson();
+        App.preferences.edit().putString(REMINDER_SETTINGS, gson.toJson(settings)).apply();
+    }
+
+    private static void addAlarm(Context context, Reminder reminder)
+    {
+        AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+
+        Intent intent = new Intent(context, AlarmReceiver.class);
+        intent.putExtra("reminder", reminder);
+
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(context, reminder.getId(), intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        alarmManager.set(AlarmManager.RTC_WAKEUP, reminder.getTime().getTime(), pendingIntent);
+
+    }
+
+    private static void removeAlarm(long vocabularyId)
+    {
+        AlarmManager alarmManager = (AlarmManager) App.context.getSystemService(Context.ALARM_SERVICE);
+
+        Intent intent = new Intent(App.context, AlarmReceiver.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(App.context, ((int) vocabularyId), intent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+        alarmManager.cancel(pendingIntent);
+    }
+
+    // this method is meant to be called just by AlarmReceiver class!
+    public static void resume(int currentVocabularyId)
+    {
+        Vocabulary current = Vocabularies.select(currentVocabularyId);
+        if (current == null)
+        {
+            // exception occurred.
+            return;
+        }
+
+        Vocabulary next = Vocabularies.next(currentVocabularyId);
+        if (next == null)
+        {
+            // The end! provide subscriber with a proper message.
+            return;
+        }
+
+        if (current.getDay() == next.getDay())
+        {
+            Calendar calendar = Calendar.getInstance();
+            ReminderSettings settings = getReminderSettings();
+            calendar.add(Calendar.MINUTE, settings.getIntervals());
+
+            Reminder reminder = new Reminder(next.getId(), calendar.getTime(), next.getVocabulary(), next.getVocabEnglishDef());
+            settings.setReminder(reminder);
+            setReminderSettings(settings);
+
+            addAlarm(App.context, new Reminder(next.getId(), calendar.getTime(), next.getVocabulary(), next.getVocabEnglishDef()));
+
+        }
+        else
+        {
+            resume();
+        }
     }
 
     private static int[] getStartTimeSegments(String time)
