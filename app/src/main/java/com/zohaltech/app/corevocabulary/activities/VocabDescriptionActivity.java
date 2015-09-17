@@ -19,10 +19,10 @@ import java.util.ArrayList;
 
 public class VocabDescriptionActivity extends EnhancedActivity  {
     public static final String INIT_MODE_KEY      = "INIT_MODE";
-    public static final String MODE_SEARCH_RESULT = "MODE_SEARCH_RESULT";
+    //public static final String MODE_SEARCH_RESULT = "MODE_SEARCH_RESULT";
     public static final String MODE_VIEW          = "MODE_VIEW";
     public static final String VOCAB_ID           = "VOCAB_ID";
-    public static final String SEARCH_TEXT        = "SEARCH_TEXT";
+    //public static final String SEARCH_TEXT        = "SEARCH_TEXT";
 
     PagerSlidingTabStrip    tabCategories;
     ViewPager               pagerCategories;
@@ -38,11 +38,11 @@ public class VocabDescriptionActivity extends EnhancedActivity  {
         // Initialize the ViewPager and set an adapter
         pagerCategories = (ViewPager) findViewById(R.id.pagerDescItems);
 
-        String initMode = getIntent().getStringExtra(INIT_MODE_KEY);
-        if (initMode.equals(MODE_SEARCH_RESULT)) {
-            String searchText = getIntent().getStringExtra(SEARCH_TEXT);
-            highlightSearchText(searchText);
-        }
+        //String initMode = getIntent().getStringExtra(INIT_MODE_KEY);
+        //if (initMode.equals(MODE_SEARCH_RESULT)) {
+        //    String searchText = getIntent().getStringExtra(SEARCH_TEXT);
+        //    highlightSearchText(searchText);
+        //}
 
         int vocabularyId = getIntent().getIntExtra(VOCAB_ID, 0);
         examples = Examples.getExamples(vocabularyId);
