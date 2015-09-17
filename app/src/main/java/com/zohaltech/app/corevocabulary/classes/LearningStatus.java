@@ -6,15 +6,14 @@ import com.zohaltech.app.corevocabulary.entities.Vocabulary;
 
 import java.util.ArrayList;
 
-public class LearningStatus {
-    private int totalVocabIndex;
-    private int themeVocabIndex;
-    private int totalDayIndex;
-    private int themeDayIndex;
+class LearningStatus {
+    private int vocabIndex;
+    private int progress;
+    private int dayIndex;
+    private int dayCount;
     private int vocabCount;
 
-
-    public static LearningStatus getLearningStatusByTheme(int themeId) {
+    static LearningStatus getLearningStatusByTheme(int themeId) {
         Reminder reminder = ReminderManager.getReminderSettings().getReminder();
         if (reminder == null) {
             return null;
@@ -24,68 +23,70 @@ public class LearningStatus {
         assert currentVocab != null;
 
         ArrayList<Vocabulary> vocabularies = Vocabularies.selectByTheme(themeId);
-        int themeVocabIndex = vocabularies.indexOf(currentVocab) + 1;
-        int totalDayIndex = 0;
-
-        if (themeId < 11) {
-            totalDayIndex = (themeId - 1) * 6 + currentVocab.getDay();
-        } else if (themeId == 11) {
-            totalDayIndex = (9 * 6) + 4 + currentVocab.getDay();
-        } else if (themeId >= 12) {
-            totalDayIndex = (9 * 6) + 6 + currentVocab.getDay();
-        }
+        int vocabIndex = vocabularies.indexOf(currentVocab) + 1;
 
         LearningStatus learningStatus = new LearningStatus();
-        learningStatus.setTotalDayIndex(currentVocabId);
-        learningStatus.setVocabCount(432);
-        learningStatus.setThemeDayIndex(currentVocab.getDay());
-        learningStatus.setThemeVocabIndex(themeVocabIndex);
-        learningStatus.setTotalDayIndex(totalDayIndex);
+
+        if (themeId != 10 && themeId != 11) {
+            learningStatus.setProgress((vocabIndex / 36) * 100);
+            learningStatus.setDayCount(6);
+            learningStatus.setVocabCount(36);
+
+        } else if (themeId == 10) {
+            learningStatus.setProgress((vocabIndex / 24) * 100);
+            learningStatus.setDayCount(4);
+            learningStatus.setVocabCount(24);
+        } else {
+            learningStatus.setProgress((vocabIndex / 12) * 100);
+            learningStatus.setDayCount(4);
+            learningStatus.setVocabCount(12);
+        }
 
         return learningStatus;
     }
 
-
     public void learningStatus() {
     }
 
-    public int getTotalVocabIndex() {
-        return totalVocabIndex;
+    public int getVocabIndex() {
+        return vocabIndex;
     }
 
-    public void setTotalVocabIndex(int totalVocabIndex) {
-        this.totalVocabIndex = totalVocabIndex;
+    private void setVocabIndex(int vocabIndex) {
+        this.vocabIndex = vocabIndex;
     }
 
-    public int getThemeVocabIndex() {
-        return themeVocabIndex;
+    public int getProgress() {
+        return progress;
     }
 
-    public void setThemeVocabIndex(int themeVocabIndex) {
-        this.themeVocabIndex = themeVocabIndex;
+    private void setProgress(int progress) {
+        this.progress = progress;
     }
 
-    public int getTotalDayIndex() {
-        return totalDayIndex;
+    public int getDayIndex() {
+        return dayIndex;
     }
 
-    public void setTotalDayIndex(int totalDayIndex) {
-        this.totalDayIndex = totalDayIndex;
+    private void setDayIndex(int dayIndex) {
+        this.dayIndex = dayIndex;
     }
 
-    public int getThemeDayIndex() {
-        return themeDayIndex;
+    public int getDayCount() {
+        return dayCount;
     }
 
-    public void setThemeDayIndex(int themeDayIndex) {
-        this.themeDayIndex = themeDayIndex;
+    private void setDayCount(int dayCount) {
+        this.dayCount = dayCount;
     }
 
     public int getVocabCount() {
         return vocabCount;
     }
 
-    public void setVocabCount(int vocabCount) {
+    private void setVocabCount(int vocabCount) {
         this.vocabCount = vocabCount;
     }
+
+
 }
