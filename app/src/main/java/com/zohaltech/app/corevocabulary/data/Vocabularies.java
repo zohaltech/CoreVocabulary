@@ -198,8 +198,6 @@ public class Vocabularies
 
         db.update(TableName,values,null,null);
     }
-
-
 }
 
 
