@@ -17,26 +17,10 @@ class LearningStatus {
         LearningStatus learningStatus = new LearningStatus();
         ReminderSettings settings = ReminderManager.getReminderSettings();
 
-        if (settings.getStatus() == ReminderSettings.Status.FINISHED) {
-            learningStatus.setProgress(100);
-            if (themeId != 10 && themeId != 11) {
-                learningStatus.setDayCount(6);
-                learningStatus.setVocabCount(36);
-
-            } else if (themeId == 10) {
-                learningStatus.setDayCount(4);
-                learningStatus.setVocabCount(24);
-            } else {
-                learningStatus.setDayCount(4);
-                learningStatus.setVocabCount(12);
-            }
-        }
-
         Reminder reminder = settings.getReminder();
         if (reminder == null) {
             return null;
         }
-
 
         int currentVocabId = reminder.getId();
         Vocabulary currentVocab = Vocabularies.select(currentVocabId);
@@ -44,22 +28,15 @@ class LearningStatus {
 
         ArrayList<Vocabulary> vocabularies = Vocabularies.selectByTheme(themeId);
         int vocabIndex = vocabularies.indexOf(currentVocab) + 1;
+        int vocabCount = vocabularies.size();
 
+        if (settings.getStatus() == ReminderSettings.Status.FINISHED) {
+            learningStatus.setProgress(100);
+        } else
+            learningStatus.setProgress((vocabIndex / vocabCount) * 100);
 
-        if (themeId != 10 && themeId != 11) {
-            learningStatus.setProgress((vocabIndex / 36) * 100);
-            learningStatus.setDayCount(6);
-            learningStatus.setVocabCount(36);
-
-        } else if (themeId == 10) {
-            learningStatus.setProgress((vocabIndex / 24) * 100);
-            learningStatus.setDayCount(4);
-            learningStatus.setVocabCount(24);
-        } else {
-            learningStatus.setProgress((vocabIndex / 12) * 100);
-            learningStatus.setDayCount(4);
-            learningStatus.setVocabCount(12);
-        }
+        learningStatus.setDayCount(vocabCount / 6);
+        learningStatus.setVocabCount(vocabCount);
 
         return learningStatus;
     }
