@@ -15,6 +15,7 @@ import com.zohaltech.app.corevocabulary.data.Vocabularies;
 import com.zohaltech.app.corevocabulary.entities.Vocabulary;
 
 import java.util.Calendar;
+import java.util.Date;
 
 public class SettingsActivity extends EnhancedActivity
 {
@@ -70,14 +71,27 @@ public class SettingsActivity extends EnhancedActivity
             public void onClick(View v)
             {
                 ReminderSettings settings = ReminderManager.getReminderSettings();
+                String status = settings.getStatus().toString();
                 if (settings.getReminder() != null)
                 {
-                    Toast.makeText(SettingsActivity.this, "Status:" + settings.getStatus().toString() + "\nAlarm Time:" + settings.getReminder().getTime().toString(), Toast.LENGTH_LONG).show();
+                    Date time = settings.getReminder().getTime();
+                    String remindTime = (time == null ? "Not Set" : time.toString());
+                    Toast.makeText(SettingsActivity.this, "Status:" + status + "\n Alarm Time: " + remindTime, Toast.LENGTH_LONG).show();
                 }
                 else
                 {
-                    Toast.makeText(SettingsActivity.this, "Status:" + settings.getStatus().toString() + "\n No Reminder", Toast.LENGTH_LONG).show();
+                    Toast.makeText(SettingsActivity.this, "Status:" + status + "\n No Reminder", Toast.LENGTH_LONG).show();
                 }
+            }
+        });
+
+
+        btnStart.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                start();
             }
         });
 
@@ -87,42 +101,6 @@ public class SettingsActivity extends EnhancedActivity
             public void onClick(View v)
             {
                 ReminderManager.pause();
-                bind();
-            }
-        });
-
-        btnStart.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                ReminderSettings settings = ReminderManager.getReminderSettings();
-
-                boolean[] days = {
-                        chkSu.isChecked(),
-                        chkMo.isChecked(),
-                        chkTu.isChecked(),
-                        chkWe.isChecked(),
-                        chkTh.isChecked(),
-                        chkFr.isChecked(),
-                        chkSa.isChecked()};
-
-                Vocabulary vocabulary = Vocabularies.select(Integer.parseInt(edtStartVocabularyNo.getText().toString()));
-                Calendar calendar = Calendar.getInstance();
-
-                if (vocabulary == null)
-                {
-                    return;
-                }
-
-                settings.setStartTime(edtStartTime.getText().toString());
-                settings.setIntervals(Integer.parseInt(edtAlarmIntervals.getText().toString()));
-                settings.setReminder(new Reminder(vocabulary.getId(), calendar.getTime(), vocabulary.getVocabulary(), vocabulary.getVocabEnglishDef()));
-                settings.setWeekdays(days);
-                settings.setStatus(ReminderSettings.Status.RUNNING);
-                ReminderManager.setReminderSettings(settings);
-                ReminderManager.resume();
-
                 bind();
             }
         });
@@ -137,6 +115,47 @@ public class SettingsActivity extends EnhancedActivity
             }
         });
 
+        btnRestart.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                start();
+            }
+        });
+
+    }
+
+    private void start()
+    {
+        ReminderSettings settings = ReminderManager.getReminderSettings();
+
+        boolean[] days = {
+                chkSu.isChecked(),
+                chkMo.isChecked(),
+                chkTu.isChecked(),
+                chkWe.isChecked(),
+                chkTh.isChecked(),
+                chkFr.isChecked(),
+                chkSa.isChecked()};
+
+        Vocabulary vocabulary = Vocabularies.select(Integer.parseInt(edtStartVocabularyNo.getText().toString()));
+        if (vocabulary == null)
+        {
+            return;
+        }
+
+        Calendar calendar = Calendar.getInstance();
+        settings.setReminder(new Reminder(vocabulary.getId(), calendar.getTime(), vocabulary.getVocabulary(), vocabulary.getVocabEnglishDef(), true));
+        settings.setStartTime(edtStartTime.getText().toString());
+        settings.setIntervals(Integer.parseInt(edtAlarmIntervals.getText().toString()));
+        settings.setWeekdays(days);
+        settings.setStatus(ReminderSettings.Status.RUNNING);
+        ReminderManager.setReminderSettings(settings);
+
+        ReminderManager.start();
+
+        bind();
     }
 
     private void bind()
@@ -170,7 +189,7 @@ public class SettingsActivity extends EnhancedActivity
         edtAlarmIntervals.setText(String.valueOf(settings.getIntervals()));
         if (settings.getReminder() != null)
         {
-            edtStartVocabularyNo.setText(String.valueOf(settings.getReminder().getId()));
+            edtStartVocabularyNo.setText(String.valueOf(settings.getReminder().getVocabularyId()));
         }
         boolean[] days = settings.getWeekdays();
 

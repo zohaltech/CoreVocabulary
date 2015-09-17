@@ -5,56 +5,68 @@ import java.util.Date;
 
 public class Reminder implements Serializable
 {
-    private int Id;
-    private Date Time;
-    private String Title;
-    private String Message;
+    private int vocabularyId;
+    private Date time;
+    private String title;
+    private String message;
+    private boolean triggerNext;
 
-    public Reminder(int id, Date time, String title, String message)
+    public Reminder(int vocabularyId, Date time, String title, String message, boolean triggerNext)
     {
-        setId(id);
+        setVocabularyId(vocabularyId);
         setTime(time);
         setTitle(title);
         setMessage(message);
+        setTriggerNext(triggerNext);
     }
 
-    public int getId()
+    public int getVocabularyId()
     {
-        return Id;
+        return vocabularyId;
     }
 
-    public void setId(int id)
+    public void setVocabularyId(int vocabularyId)
     {
-        Id = id;
+        this.vocabularyId = vocabularyId;
     }
 
     public Date getTime()
     {
-        return Time;
+        return time;
     }
 
     public void setTime(Date time)
     {
-        Time = time;
+        this.time = time;
     }
 
     public String getTitle()
     {
-        return Title;
+        return title;
     }
 
     public void setTitle(String title)
     {
-        Title = title;
+        this.title = title;
     }
 
     public String getMessage()
     {
-        return Message;
+        return message;
     }
 
     public void setMessage(String message)
     {
-        Message = message;
+        this.message = message;
+    }
+
+    public boolean doesTriggersNext()
+    {
+        return triggerNext;
+    }
+
+    public void setTriggerNext(boolean triggerNext)
+    {
+        this.triggerNext = triggerNext;
     }
 }

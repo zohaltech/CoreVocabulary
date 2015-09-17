@@ -11,17 +11,21 @@ import com.zohaltech.app.corevocabulary.entities.Theme;
 
 import java.io.InputStreamReader;
 
-public class DataAccess extends SQLiteOpenHelper {
-    public static final String DATABASE_NAME    = "CORE_VOCABULARY";
-    public static final int    DATABASE_VERSION = 6;
+public class DataAccess extends SQLiteOpenHelper
+{
+    public static final String DATABASE_NAME = "CORE_VOCABULARY";
+    public static final int DATABASE_VERSION = 6;
 
-    public DataAccess() {
+    public DataAccess()
+    {
         super(App.context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
     @Override
-    public void onCreate(SQLiteDatabase db) {
-        try {
+    public void onCreate(SQLiteDatabase db)
+    {
+        try
+        {
             db.execSQL(Themes.CreateTable);
             db.execSQL(Vocabularies.CreateTable);
             db.execSQL(Examples.CreateTable);
@@ -45,90 +49,117 @@ public class DataAccess extends SQLiteOpenHelper {
             insertDataFromAsset(db, Examples.TableName, "data/examples.csv", ';');
             insertDataFromAsset(db, Notes.TableName, "data/notes.csv", ';');
 
-        } catch (MyRuntimeException e) {
+        }
+        catch (MyRuntimeException e)
+        {
             e.printStackTrace();
         }
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase database, int oldVersion, int newVersion) {
-        try {
+    public void onUpgrade(SQLiteDatabase database, int oldVersion, int newVersion)
+    {
+        try
+        {
             database.execSQL(Themes.DropTable);
             database.execSQL(Vocabularies.DropTable);
             database.execSQL(Examples.DropTable);
             database.execSQL(Notes.DropTable);
 
             onCreate(database);
-        } catch (MyRuntimeException e) {
+        }
+        catch (MyRuntimeException e)
+        {
             e.printStackTrace();
         }
     }
 
     @Override
-    public synchronized void close() {
+    public synchronized void close()
+    {
         super.close();
     }
 
-    public SQLiteDatabase getReadableDB() {
+    public SQLiteDatabase getReadableDB()
+    {
         return this.getReadableDatabase();
     }
 
-    public SQLiteDatabase getWritableDB() {
+    public SQLiteDatabase getWritableDB()
+    {
         return this.getWritableDatabase();
     }
 
-    public long insert(String table, ContentValues values) {
+    public long insert(String table, ContentValues values)
+    {
         long result = 0;
-        try {
+        try
+        {
             SQLiteDatabase db = this.getWritableDB();
             result = db.insert(table, null, values);
             db.close();
-        } catch (MyRuntimeException e) {
+        }
+        catch (MyRuntimeException e)
+        {
             e.printStackTrace();
         }
         return result;
     }
 
-    public long update(String table, ContentValues values, String whereClause, String[] selectionArgs) {
+    public long update(String table, ContentValues values, String whereClause, String[] selectionArgs)
+    {
         long result = 0;
-        try {
+        try
+        {
             SQLiteDatabase db = this.getWritableDB();
             result = db.update(table, values, whereClause, selectionArgs);
             db.close();
-        } catch (MyRuntimeException e) {
+        }
+        catch (MyRuntimeException e)
+        {
             e.printStackTrace();
         }
         return result;
     }
 
-    public long delete(String table, String whereClause, String[] selectionArgs) {
+    public long delete(String table, String whereClause, String[] selectionArgs)
+    {
         long result = 0;
-        try {
+        try
+        {
             SQLiteDatabase db = this.getWritableDB();
             result = db.delete(table, whereClause, selectionArgs);
             db.close();
-        } catch (MyRuntimeException e) {
+        }
+        catch (MyRuntimeException e)
+        {
             e.printStackTrace();
         }
         return result;
     }
 
-    private void insertDataFromAsset(SQLiteDatabase db, String tableName, String filePathFromAsset, char delimiter) {
+    private void insertDataFromAsset(SQLiteDatabase db, String tableName, String filePathFromAsset, char delimiter)
+    {
         InputStreamReader isr;
-        try {
+        try
+        {
             isr = new InputStreamReader(App.context.getAssets().open(filePathFromAsset), "UTF-8");
 
             CsvReader csvReader = new CsvReader(isr, delimiter);
             csvReader.readHeaders();
-            while (csvReader.readRecord()) {
+            while (csvReader.readRecord())
+            {
                 ContentValues values = new ContentValues();
-                for (int i = 0; i < csvReader.getHeaderCount(); i++) {
+                for (int i = 0; i < csvReader.getHeaderCount(); i++)
+                {
                     values.put(csvReader.getHeader(i), csvReader.get(csvReader.getHeader(i)));
                 }
                 db.insert(tableName, null, values);
             }
             csvReader.close();
-        } catch (Exception e) {
+        }
+        catch (Exception e)
+        {
             e.printStackTrace();
         }
     }

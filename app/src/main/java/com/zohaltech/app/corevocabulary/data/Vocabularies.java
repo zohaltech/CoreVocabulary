@@ -81,6 +81,14 @@ public class Vocabularies
         return select("", null, "");
     }
 
+    public static ArrayList<Vocabulary> selectSiblings(long vocabularyId)
+    {
+        Vocabulary vocabulary = select(vocabularyId);
+        assert vocabulary != null;
+
+        return select("Where " + ThemeId + " = ? AND " + Day + " = ? ", new String[]{"" + vocabulary.getThemeId(), vocabulary.getDay() + ""}, "");
+    }
+
     public static Vocabulary select(long vocabularyId)
     {
         ArrayList<Vocabulary> vocabularies = select("Where " + Id + " = ? ", new String[]{String.valueOf(vocabularyId)}, "");
@@ -112,7 +120,6 @@ public class Vocabularies
         String whereClause = " Where " + ThemeId + " = " + themeId;
         return select(whereClause, null, "");
     }
-
 
     public static ArrayList<Vocabulary> search(String searchText)
     {
@@ -192,12 +199,13 @@ public class Vocabularies
         return values;
     }
 
-    public static void resetLearningProcess(){
+    public static void resetLearnedVocabularies()
+    {
         ContentValues values = new ContentValues();
         values.put(Learned, 0);
         DataAccess db = new DataAccess();
 
-        db.update(TableName,values,null,null);
+        db.update(TableName, values, null, null);
     }
 }
 
