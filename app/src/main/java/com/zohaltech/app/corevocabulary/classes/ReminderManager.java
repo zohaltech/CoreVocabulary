@@ -16,7 +16,7 @@ import java.util.Date;
 public class ReminderManager
 {
     private static String REMINDER_SETTINGS = "reminder_settings";
-    private static String LAST_REMINDER = "last_notified_reminder";
+    private static String LAST_REMINDER = "last_reminder";
 
     // this method is meant to be called just by AlarmReceiver class!
     public static void setImmediateReminder(int currentVocabularyId)
@@ -186,6 +186,7 @@ public class ReminderManager
 
     public static void stop()
     {
+        setLastReminder(null);
         ReminderSettings settings = getReminderSettings();
         if (settings == null)
         {
