@@ -18,7 +18,6 @@ public class BookmarksActivity extends EnhancedActivity {
     void onCreated() {
         setContentView(R.layout.activity_bookmarks);
 
-
         RecyclerView recyclerBookmarks = (RecyclerView) findViewById(R.id.recyclerBookmarks);
         recyclerBookmarks.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
@@ -27,9 +26,7 @@ public class BookmarksActivity extends EnhancedActivity {
         ArrayList<Vocabulary> vocabularies = Vocabularies.selectBookmarks();
         VocabularyAdapter adapter = new VocabularyAdapter(this, vocabularies, false);
         recyclerBookmarks.setAdapter(adapter);
-
     }
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
