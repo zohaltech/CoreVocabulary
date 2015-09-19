@@ -17,41 +17,47 @@ public class LearningStatus {
         LearningStatus learningStatus = new LearningStatus();
         ReminderSettings settings = ReminderManager.getReminderSettings();
 
-        Reminder reminder = ReminderManager.getLastReminder();
-        if (reminder == null) {
+        if (settings == null) {
             return null;
-        }
-
-        int currentVocabId = reminder.getVocabularyId();
-
-//        if (currentVocabId == 0)
-//            return null;
-        Vocabulary currentVocab = Vocabularies.select(currentVocabId);
-        assert currentVocab != null;
-
-        ArrayList<Vocabulary> vocabularies = Vocabularies.selectByTheme(themeId);
-        // int vocabIndex = vocabularies.indexOf(currentVocab) + 1;
-        int vocabIndex = indexOf(currentVocab, vocabularies) + 1;
-        int vocabCount = vocabularies.size();
-
-        if (settings.getStatus() == ReminderSettings.Status.FINISHED) {
-            learningStatus.setProgress(100);
-            learningStatus.setDayIndex(vocabCount / 6);
-            learningStatus.setDayCount(currentVocab.getDay());
-            learningStatus.setVocabCount(vocabCount);
-            learningStatus.setVocabIndex(vocabCount);
         } else {
-            learningStatus.setProgress(vocabIndex * 100 / vocabCount);
-            learningStatus.setDayCount(vocabCount / 6);
-            learningStatus.setVocabCount(vocabCount);
-            learningStatus.setDayIndex(currentVocab.getDay());
-            learningStatus.setVocabIndex(vocabIndex);
+            ArrayList<Vocabulary> vocabularies = Vocabularies.selectByTheme(themeId);
+            int vocabCount = vocabularies.size();
+            Reminder reminder = ReminderManager.getLastReminder();
+            if (reminder != null) {
+
+                int currentVocabId = reminder.getVocabularyId();
+
+                //        if (currentVocabId == 0)
+                //            return null;
+                Vocabulary currentVocab = Vocabularies.select(currentVocabId);
+                assert currentVocab != null;
+
+                // int vocabIndex = vocabularies.indexOf(currentVocab) + 1;
+                int vocabIndex = indexOf(currentVocab, vocabularies) + 1;
+
+                if (settings.getStatus() == ReminderSettings.Status.FINISHED) {
+                    learningStatus.setProgress(100);
+                    learningStatus.setDayIndex(vocabCount / 6);
+                    learningStatus.setDayCount(currentVocab.getDay());
+                    learningStatus.setVocabCount(vocabCount);
+                    learningStatus.setVocabIndex(vocabCount);
+                } else {
+                    learningStatus.setProgress(vocabIndex * 100 / vocabCount);
+                    learningStatus.setDayCount(vocabCount / 6);
+                    learningStatus.setVocabCount(vocabCount);
+                    learningStatus.setDayIndex(currentVocab.getDay());
+                    learningStatus.setVocabIndex(vocabIndex);
+                }
+            } else {
+                learningStatus.setProgress(0);
+                learningStatus.setDayCount(vocabCount / 6);
+                learningStatus.setVocabCount(vocabCount);
+                learningStatus.setDayIndex(0);
+                learningStatus.setVocabIndex(0);
+            }
         }
 
         return learningStatus;
-    }
-
-    public void learningStatus() {
     }
 
     private static int indexOf(Vocabulary vocabulary, ArrayList<Vocabulary> elementData) {
