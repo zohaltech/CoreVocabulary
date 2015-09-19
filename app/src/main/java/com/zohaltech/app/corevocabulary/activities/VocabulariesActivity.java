@@ -24,6 +24,7 @@ public class VocabulariesActivity extends EnhancedActivity {
         recyclerVocabularies.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerVocabularies.setLayoutManager(layoutManager);
+        //recyclerVocabularies.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
         theme = (Theme) getIntent().getSerializableExtra("THEME");
         ArrayList<Vocabulary> vocabularies = Vocabularies.selectByTheme(theme.getId());
         VocabularyAdapter adapter = new VocabularyAdapter(this, vocabularies);

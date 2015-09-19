@@ -8,19 +8,19 @@ import android.util.AttributeSet;
 import com.zohaltech.app.corevocabulary.classes.App;
 
 
-public class MyTextView extends AppCompatTextView {
+public class PersianTextView extends AppCompatTextView {
 
-    public MyTextView(Context context) {
+    public PersianTextView(Context context) {
         super(context);
         initialize();
     }
 
-    public MyTextView(Context context, AttributeSet attrs) {
+    public PersianTextView(Context context, AttributeSet attrs) {
         super(context, attrs);
         initialize();
     }
 
-    public MyTextView(Context context, AttributeSet attrs, int defStyle) {
+    public PersianTextView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         initialize();
     }

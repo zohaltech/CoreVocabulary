@@ -1,6 +1,7 @@
 package com.zohaltech.app.corevocabulary.activities;
 
 
+import android.graphics.Typeface;
 import android.support.v4.view.ViewPager;
 import android.view.MenuItem;
 import android.view.ViewGroup;
@@ -12,20 +13,23 @@ import com.zohaltech.app.corevocabulary.adapters.DescriptionPagerAdapter;
 import com.zohaltech.app.corevocabulary.classes.App;
 import com.zohaltech.app.corevocabulary.data.Examples;
 import com.zohaltech.app.corevocabulary.data.Notes;
+import com.zohaltech.app.corevocabulary.data.Vocabularies;
 import com.zohaltech.app.corevocabulary.entities.Example;
 import com.zohaltech.app.corevocabulary.entities.Note;
 
 import java.util.ArrayList;
 
-public class VocabDescriptionActivity extends EnhancedActivity  {
-    public static final String INIT_MODE_KEY      = "INIT_MODE";
+public class VocabDescriptionActivity extends EnhancedActivity {
+    public static final String INIT_MODE_KEY = "INIT_MODE";
     //public static final String MODE_SEARCH_RESULT = "MODE_SEARCH_RESULT";
-    public static final String MODE_VIEW          = "MODE_VIEW";
-    public static final String VOCAB_ID           = "VOCAB_ID";
+    public static final String MODE_VIEW     = "MODE_VIEW";
+    public static final String VOCAB_ID      = "VOCAB_ID";
     //public static final String SEARCH_TEXT        = "SEARCH_TEXT";
 
-    PagerSlidingTabStrip    tabCategories;
-    ViewPager               pagerCategories;
+    TextView             txtVocabulary;
+    PagerSlidingTabStrip tabCategories;
+    ViewPager            pagerCategories;
+
     DescriptionPagerAdapter descriptionPagerAdapter;
     ArrayList<Example>      examples;
     ArrayList<Note>         notes;
@@ -35,16 +39,14 @@ public class VocabDescriptionActivity extends EnhancedActivity  {
     void onCreated() {
         setContentView(R.layout.activity_vocab_description);
 
-        // Initialize the ViewPager and set an adapter
+        txtVocabulary = (TextView) findViewById(R.id.txtVocabulary);
+        tabCategories = (PagerSlidingTabStrip) findViewById(R.id.tabDescriptions);
         pagerCategories = (ViewPager) findViewById(R.id.pagerDescItems);
 
-        //String initMode = getIntent().getStringExtra(INIT_MODE_KEY);
-        //if (initMode.equals(MODE_SEARCH_RESULT)) {
-        //    String searchText = getIntent().getStringExtra(SEARCH_TEXT);
-        //    highlightSearchText(searchText);
-        //}
-
         int vocabularyId = getIntent().getIntExtra(VOCAB_ID, 0);
+
+        txtVocabulary.setText(Vocabularies.select(vocabularyId).getVocabulary());
+
         examples = Examples.getExamples(vocabularyId);
         notes = Notes.getNotes(vocabularyId);
 
@@ -60,7 +62,6 @@ public class VocabDescriptionActivity extends EnhancedActivity  {
         pagerCategories.setAdapter(descriptionPagerAdapter);
 
         // Bind the tabCategories to the ViewPager
-        tabCategories = (PagerSlidingTabStrip) findViewById(R.id.tabDescriptions);
         tabCategories.setViewPager(pagerCategories);
 
         pagerCategories.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -85,12 +86,12 @@ public class VocabDescriptionActivity extends EnhancedActivity  {
     }
 
     private void changeTabTitleColors(int position) {
-        ((TextView) ((ViewGroup) tabCategories.getChildAt(0)).getChildAt(0)).setTextColor(getResources().getColor(R.color.primary_light));
-        ((TextView) ((ViewGroup) tabCategories.getChildAt(0)).getChildAt(1)).setTextColor(getResources().getColor(R.color.primary_light));
+        ((TextView) ((ViewGroup) tabCategories.getChildAt(0)).getChildAt(0)).setTextColor(getResources().getColor(R.color.secondary_text));
+        ((TextView) ((ViewGroup) tabCategories.getChildAt(0)).getChildAt(1)).setTextColor(getResources().getColor(R.color.secondary_text));
         if (tabCount == 3) {
-            ((TextView) ((ViewGroup) tabCategories.getChildAt(0)).getChildAt(2)).setTextColor(getResources().getColor(R.color.primary_light));
+            ((TextView) ((ViewGroup) tabCategories.getChildAt(0)).getChildAt(2)).setTextColor(getResources().getColor(R.color.secondary_text));
         }
-        ((TextView) ((ViewGroup) tabCategories.getChildAt(0)).getChildAt(position)).setTextColor(getResources().getColor(R.color.white));
+        ((TextView) ((ViewGroup) tabCategories.getChildAt(0)).getChildAt(position)).setTextColor(getResources().getColor(R.color.primary_text));
     }
 
     @Override
@@ -115,8 +116,8 @@ public class VocabDescriptionActivity extends EnhancedActivity  {
         for (int j = 0; j < tabsCount; j++) {
             TextView textView = (TextView) vg.getChildAt(j);
             textView.setWidth(App.screenWidth / tabCount);
-            textView.setTypeface(App.persianFont);
-            textView.setTextColor(getResources().getColor(R.color.primary_light));
+            textView.setTypeface(App.englishFont);
+            textView.setTextColor(getResources().getColor(R.color.secondary_text));
             textView.setTextSize(14);
         }
     }
