@@ -155,14 +155,23 @@
                             android:textAppearance="?android:attr/textAppearanceMedium"
                             tools:ignore="HardcodedText"/>
 
-                        <EditText
-                            android:id="@+id/edtStartTime"
+                        <!--<EditText-->
+                            <!--android:id="@+id/edtStartTime"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:inputType="text"-->
+                            <!--android:text="08:00"-->
+                            <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
+                            <!--tools:ignore="HardcodedText"/>-->
+
+                        <widgets.MyButton
+                            android:id="@+id/btnStartTime"
+                            style="@style/FormButton"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:inputType="text"
-                            android:text="08:00"
-                            android:textAppearance="?android:attr/textAppearanceMedium"
-                            tools:ignore="HardcodedText"/>
+                            android:minWidth="72dp"
+                            android:text="02:00"
+                            android:textAppearance="?android:attr/textAppearanceMedium"/>
 
                     </LinearLayout>
 

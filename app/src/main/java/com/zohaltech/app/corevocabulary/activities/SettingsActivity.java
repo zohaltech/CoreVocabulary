@@ -8,6 +8,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.zohaltech.app.corevocabulary.R;
+import com.zohaltech.app.corevocabulary.classes.App;
+import com.zohaltech.app.corevocabulary.classes.DialogManager;
 import com.zohaltech.app.corevocabulary.classes.Reminder;
 import com.zohaltech.app.corevocabulary.classes.ReminderSettings;
 import com.zohaltech.app.corevocabulary.classes.ReminderManager;
@@ -29,12 +31,13 @@ public class SettingsActivity extends EnhancedActivity
 
     EditText edtStartVocabularyNo;
     EditText edtAlarmIntervals;
-    EditText edtStartTime;
+    //EditText edtStartTime;
 
     Button btnStart;
     Button btnStop;
     Button btnPause;
     Button btnRestart;
+    Button btnStartTime;
 
     @Override
     void onCreated()
@@ -47,7 +50,7 @@ public class SettingsActivity extends EnhancedActivity
     {
         edtStartVocabularyNo = (EditText) findViewById(R.id.edtStartVocabularyNo);
         edtAlarmIntervals = (EditText) findViewById(R.id.edtAlarmIntervals);
-        edtStartTime = (EditText) findViewById(R.id.edtStartTime);
+        btnStartTime = (Button) findViewById(R.id.btnStartTime);
 
         chkSa = (CheckBox) findViewById(R.id.chkSa);
         chkSu = (CheckBox) findViewById(R.id.chkSu);
@@ -124,6 +127,29 @@ public class SettingsActivity extends EnhancedActivity
             }
         });
 
+        btnStartTime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (btnStartTime.getText().length() > 0) {
+                    int hour = Integer.valueOf(btnStartTime.getText().toString().substring(0, 2));
+                    int minute = Integer.valueOf(btnStartTime.getText().toString().substring(3, 5));
+                    DialogManager.showTimePickerDialog(App.currentActivity, "", hour, minute, new Runnable() {
+                        @Override
+                        public void run() {
+                            btnStartTime.setText(DialogManager.timeResult);
+                        }
+                    });
+                } else {
+                    DialogManager.showTimePickerDialog(App.currentActivity, "", 12, 0, new Runnable() {
+                        @Override
+                        public void run() {
+                            btnStartTime.setText(DialogManager.timeResult);
+                        }
+                    });
+                }
+            }
+        });
+
     }
 
     private void start()
@@ -147,7 +173,7 @@ public class SettingsActivity extends EnhancedActivity
 
         Calendar calendar = Calendar.getInstance();
         settings.setReminder(new Reminder(vocabulary.getId(), calendar.getTime(), vocabulary.getVocabulary(), vocabulary.getVocabEnglishDef(), true));
-        settings.setStartTime(edtStartTime.getText().toString());
+        settings.setStartTime(btnStartTime.getText().toString());
         settings.setIntervals(Integer.parseInt(edtAlarmIntervals.getText().toString()));
         settings.setWeekdays(days);
         settings.setStatus(ReminderSettings.Status.RUNNING);
@@ -185,7 +211,7 @@ public class SettingsActivity extends EnhancedActivity
             btnRestart.setVisibility(View.VISIBLE);
         }
 
-        edtStartTime.setText(settings.getStartTime());
+        btnStartTime.setText(settings.getStartTime());
         edtAlarmIntervals.setText(String.valueOf(settings.getIntervals()));
         if (settings.getReminder() != null)
         {
