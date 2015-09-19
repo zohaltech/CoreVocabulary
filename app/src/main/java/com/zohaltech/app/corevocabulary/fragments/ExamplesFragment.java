@@ -37,10 +37,7 @@ public class ExamplesFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_examples, container, false);
         RecyclerView recyclerExamples = (RecyclerView) view.findViewById(R.id.recyclerExamples);
         recyclerExamples.setHasFixedSize(true);
-        // use a linear layout manager
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
-        recyclerExamples.setLayoutManager(layoutManager);
-
+        recyclerExamples.setLayoutManager(new LinearLayoutManager(getActivity()));
         int vocabId = getArguments().getInt(VOCAB_ID);
         ArrayList<Example> examples = Examples.getExamples(vocabId);
         ExampleAdapter adapter = new ExampleAdapter(getActivity(), examples);

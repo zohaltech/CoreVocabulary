@@ -9,9 +9,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.zohaltech.app.corevocabulary.R;
+import com.zohaltech.app.corevocabulary.classes.Helper;
 
 import widgets.MySnackbar;
 
@@ -79,7 +79,7 @@ public class AboutActivity extends EnhancedActivity {
         layoutWebsite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //                Helper.goToWebsite("http://zohaltech.com");
+                Helper.goToWebsite("http://zohaltech.com");
             }
         });
     }
@@ -107,8 +107,7 @@ public class AboutActivity extends EnhancedActivity {
 
     @Override
     void onToolbarCreated() {
-        //                ToolbarTitle.setText(getString(R.string.about));
-
+        getSupportActionBar().setTitle("About");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
     }

@@ -1,6 +1,5 @@
 package com.zohaltech.app.corevocabulary.fragments;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -19,10 +18,9 @@ import java.util.ArrayList;
 
 public class ThemesFragment extends Fragment {
 
-    RecyclerView     recyclerThemes;
-    ArrayList<Theme> themes;
-    ThemeAdapter     adapter;
-    private RecyclerView.LayoutManager layoutManager;
+    RecyclerView recyclerThemes;
+    ArrayList<Theme> themes = new ArrayList<>();
+    ThemeAdapter adapter;
 
     public ThemesFragment() {
     }
@@ -37,11 +35,19 @@ public class ThemesFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_themes, container, false);
         recyclerThemes = (RecyclerView) rootView.findViewById(R.id.recyclerThemes);
         recyclerThemes.setHasFixedSize(true);
-        layoutManager = new LinearLayoutManager(getActivity());
-        recyclerThemes.setLayoutManager(layoutManager);
-        themes = Themes.select();
+        recyclerThemes.setLayoutManager(new LinearLayoutManager(getActivity()));
+        themes.addAll(Themes.select());
+        //adapter.notifyDataSetChanged();
         adapter = new ThemeAdapter(getActivity(), themes);
         recyclerThemes.setAdapter(adapter);
         return rootView;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        themes.clear();
+        themes.addAll(Themes.select());
+        adapter.notifyDataSetChanged();
     }
 }

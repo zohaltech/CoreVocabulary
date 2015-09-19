@@ -65,7 +65,7 @@ public class CircleProgress extends ImageView {
         arcForegroundPaint.setStyle(Style.STROKE);
 
         textPaint = new Paint();
-        textPaint.setColor(context.getResources().getColor(R.color.primary_dark));
+        textPaint.setColor(context.getResources().getColor(R.color.primary));
         textPaint.setAntiAlias(true);
         textPaint.setTextAlign(Align.CENTER);
         textPaint.setStyle(Style.FILL_AND_STROKE);

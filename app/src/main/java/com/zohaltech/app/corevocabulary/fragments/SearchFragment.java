@@ -33,8 +33,7 @@ public class SearchFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_search, container, false);
         recyclerSearch = (RecyclerView) rootView.findViewById(R.id.recyclerSearch);
         recyclerSearch.setHasFixedSize(true);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
-        recyclerSearch.setLayoutManager(layoutManager);
+        recyclerSearch.setLayoutManager(new LinearLayoutManager(getActivity()));
         vocabularies.clear();
         adapter = new VocabularyAdapter(getActivity(), vocabularies, false);
         recyclerSearch.setAdapter(adapter);

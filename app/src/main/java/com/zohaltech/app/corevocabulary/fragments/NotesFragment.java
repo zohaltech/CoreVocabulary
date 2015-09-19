@@ -37,10 +37,7 @@ public class NotesFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_notes, container, false);
         RecyclerView recyclerNotes = (RecyclerView) view.findViewById(R.id.recyclerNotes);
         recyclerNotes.setHasFixedSize(true);
-        // use a linear layout manager
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
-        recyclerNotes.setLayoutManager(layoutManager);
-
+        recyclerNotes.setLayoutManager(new LinearLayoutManager(getActivity()));
         int vocabId = getArguments().getInt(VOCAB_ID);
         ArrayList<Note> notes = Notes.getNotes(vocabId);
         NoteAdapter adapter = new NoteAdapter(getActivity(), notes);
