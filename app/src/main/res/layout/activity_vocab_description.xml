@@ -11,14 +11,35 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+    <widgets.LatinTextView
+        android:id="@+id/txtVocabulary"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@color/grey_lighter"
+        android:gravity="start|center"
+        android:padding="10dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/primary"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@null"
+            android:background="@drawable/rating"/>
+
+    </LinearLayout>
+
     <com.astuetz.PagerSlidingTabStrip
         android:id="@+id/tabDescriptions"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:background="@color/primary"
-        app:pstsIndicatorColor="@color/white"
-        app:pstsIndicatorHeight="6dp"
-        app:pstsDividerColor="@color/primary"
+        android:layout_height="36dp"
+        app:pstsIndicatorHeight="4dp"
         app:pstsTextAllCaps="false"/>
 
     <android.support.v4.view.ViewPager

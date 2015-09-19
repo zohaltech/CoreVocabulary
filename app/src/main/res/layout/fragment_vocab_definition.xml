@@ -18,17 +18,6 @@
         android:layout_height="wrap_content"
         android:text="UK"/>
 
-
-    <widgets.LatinTextView
-        android:id="@+id/txtVocabulary"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/primary_lighter"
-        android:gravity="start|center"
-        android:padding="15dp"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="@color/primary"/>
-
     <widgets.LatinTextView
         android:id="@+id/txtVocabEnglishDefinition"
         android:layout_width="match_parent"
@@ -36,16 +25,18 @@
         android:background="?attr/selectableItemBackground"
         android:gravity="start|center"
         android:padding="15dp"
+        android:text="Place a premium on something"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="@color/primary_text"/>
 
-    <widgets.MyTextView
+    <widgets.PersianTextView
         android:id="@+id/txtVocabPersianMeaning"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?attr/selectableItemBackground"
         android:gravity="start|center"
         android:padding="15dp"
+        android:text="Place a premium on something else"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="@color/primary_text"/>
 

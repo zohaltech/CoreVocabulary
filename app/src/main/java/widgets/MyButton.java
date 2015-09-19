@@ -25,17 +25,17 @@ public class MyButton extends AppCompatButton
         super(context, attrs, defStyle);
     }
 
-    @Override
-    public void setTypeface(Typeface tf) {
-        super.setTypeface(App.persianFont);
-    }
-
-    @Override
-    public void setTypeface(Typeface tf, int style) {
-        if (style == Typeface.BOLD) {
-            super.setTypeface(App.persianFontBold);
-        } else {
-            super.setTypeface(App.persianFont);
-        }
-    }
+    //@Override
+    //public void setTypeface(Typeface tf) {
+    //    super.setTypeface(App.persianFont);
+    //}
+    //
+    //@Override
+    //public void setTypeface(Typeface tf, int style) {
+    //    if (style == Typeface.BOLD) {
+    //        super.setTypeface(App.persianFontBold);
+    //    } else {
+    //        super.setTypeface(App.persianFont);
+    //    }
+    //}
 }

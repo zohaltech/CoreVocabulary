@@ -21,9 +21,10 @@
         android:background="@color/divider"
         android:gravity="start|center"
         android:padding="15dp"
+        android:singleLine="true"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="@color/primary"
-        />
+        android:textStyle="bold"/>
 
     <widgets.LatinTextView
         android:id="@+id/txtVocabulary"
@@ -33,7 +34,6 @@
         android:gravity="start|center"
         android:padding="15dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="@color/primary_text"
-        />
+        android:textColor="@color/primary_text"/>
 
 </LinearLayout>

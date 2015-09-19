@@ -1,12 +1,13 @@
 package com.zohaltech.app.corevocabulary.adapters;
 
-
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.Transformation;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -21,6 +22,9 @@ import java.util.ArrayList;
 import widgets.CircleProgress;
 
 public class ThemeAdapter extends RecyclerView.Adapter<ThemeAdapter.ViewHolder> {
+
+    private static final long DURATION = 300;
+
     Context                         context;
     ArrayList<Theme>                themes;
     ArrayList<ProgressDetailStatus> progressDetailStatuses;
@@ -36,7 +40,7 @@ public class ThemeAdapter extends RecyclerView.Adapter<ThemeAdapter.ViewHolder> 
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.adaptor_theme, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.adapter_theme, parent, false);
         return new ViewHolder(view);
     }
 
@@ -53,8 +57,9 @@ public class ThemeAdapter extends RecyclerView.Adapter<ThemeAdapter.ViewHolder> 
             }
         });
 
-        //holder.circleProgress.setLayoutParams(new LinearLayout.LayoutParams(holder.circleProgress.getHeight(), holder.circleProgress.getHeight()));
+        //holder.layoutProgressDetail.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 1));
         holder.layoutProgressDetail.setVisibility(View.GONE);
+        //collapse(holder.layoutProgressDetail);
 
         LearningStatus status = LearningStatus.getLearningStatusByTheme(theme.getId());
         if (status != null) {
@@ -75,32 +80,117 @@ public class ThemeAdapter extends RecyclerView.Adapter<ThemeAdapter.ViewHolder> 
                 @Override
                 public void onClick(View v) {
 
-                    for (int i = 0; i < themes.size(); i++) {
-                        if (position != i) {
-                            progressDetailStatuses.get(i).visible = false;
-                        }
-                    }
+                    //for (int i = 0; i < themes.size(); i++) {
+                    //    if (position != i) {
+                    //        progressDetailStatuses.get(i).visible = false;
+                    //    }
+                    //}
 
-                    notifyDataSetChanged();
+                    //notifyDataSetChanged();
 
                     ProgressDetailStatus status = progressDetailStatuses.get(position);
                     if (status.visible) {
-                        holder.layoutProgressDetail.setVisibility(View.GONE);
+                        collapse(holder.layoutProgressDetail);
+                        App.handler.postDelayed(new Runnable()
+                        {
+                            @Override
+                            public void run()
+                            {
+                                holder.layoutProgressDetail.setVisibility(View.GONE);
+                            }
+                        }, DURATION);
                         status.visible = false;
                     } else {
                         holder.layoutProgressDetail.setVisibility(View.VISIBLE);
+                        //ViewCompat.animate(holder.layoutProgressDetail).scaleYBy(12).setDuration(1000).start();
+                        expand(holder.layoutProgressDetail);
                         status.visible = true;
                     }
                 }
             });
         } else {
             holder.layoutCircleProgress.setVisibility(View.GONE);
+            holder.layoutProgressDetail.setVisibility(View.GONE);
         }
+    }
+
+    @Override
+    public void onAttachedToRecyclerView(RecyclerView recyclerView) {
+        super.onAttachedToRecyclerView(recyclerView);
+    }
+
+    @Override
+    public void onViewAttachedToWindow(ViewHolder holder) {
+        super.onViewAttachedToWindow(holder);
     }
 
     @Override
     public int getItemCount() {
         return themes.size();
+    }
+
+    public static void expand(final View v)
+    {
+        v.measure(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        final int targetHeight = v.getMeasuredHeight();
+
+        v.getLayoutParams().height = 0;
+        v.setVisibility(View.VISIBLE);
+        Animation a = new Animation()
+        {
+            @Override
+            protected void applyTransformation(float interpolatedTime, Transformation t)
+            {
+                v.getLayoutParams().height = interpolatedTime == 1
+                                             ? ViewGroup.LayoutParams.WRAP_CONTENT
+                                             : (int) (targetHeight * interpolatedTime);
+                v.requestLayout();
+            }
+
+            @Override
+            public boolean willChangeBounds()
+            {
+                return true;
+            }
+        };
+
+        // 1dp/ms
+        //        a.setDuration((int) (targetHeight / v.getContext().getResources().getDisplayMetrics().density));
+        a.setDuration(DURATION);
+        v.startAnimation(a);
+    }
+
+    public static void collapse(final View v)
+    {
+        final int initialHeight = v.getMeasuredHeight();
+
+        Animation a = new Animation()
+        {
+            @Override
+            protected void applyTransformation(float interpolatedTime, Transformation t)
+            {
+                if (interpolatedTime == 1)
+                {
+                    v.setVisibility(View.GONE);
+                }
+                else
+                {
+                    v.getLayoutParams().height = initialHeight - (int) (initialHeight * interpolatedTime);
+                    v.requestLayout();
+                }
+            }
+
+            @Override
+            public boolean willChangeBounds()
+            {
+                return true;
+            }
+        };
+
+        // 1dp/ms
+        //        a.setDuration((int) (initialHeight / v.getContext().getResources().getDisplayMetrics().density));
+        a.setDuration(DURATION);
+        v.startAnimation(a);
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {

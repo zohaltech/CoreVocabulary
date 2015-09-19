@@ -1,6 +1,7 @@
 package com.zohaltech.app.corevocabulary.fragments;
 
 
+import android.os.Build;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.support.v4.app.Fragment;
@@ -20,10 +21,12 @@ import java.util.Locale;
 public class VocabDefinitionFragment extends Fragment implements
                                                       TextToSpeech.OnInitListener {
     public static final String VOCAB_ID = "VOCAB_ID";
-    TextView txtVocabulary;
     TextView txtVocabEnglishDefinition;
     TextView txtVocabPersianMeaning;
+
+    private Vocabulary vocabulary;
     private TextToSpeech textToSpeech;
+
 
     public static VocabDefinitionFragment newInstance(int vocabId) {
         Bundle args = new Bundle();
@@ -42,19 +45,17 @@ public class VocabDefinitionFragment extends Fragment implements
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_vocab_definition, container, false);
 
-        txtVocabulary = (TextView) view.findViewById(R.id.txtVocabulary);
         txtVocabEnglishDefinition = (TextView) view.findViewById(R.id.txtVocabEnglishDefinition);
         txtVocabPersianMeaning = (TextView) view.findViewById(R.id.txtVocabPersianMeaning);
         Button btnSpeechUS = (Button) view.findViewById(R.id.btnSpeechUS);
         Button btnSpeechUK = (Button) view.findViewById(R.id.btnSpeechUK);
 
         int vocabId = getArguments().getInt(VOCAB_ID);
-        Vocabulary vocabulary = Vocabularies.select(vocabId);
+        vocabulary = Vocabularies.select(vocabId);
 
         textToSpeech = new TextToSpeech(getActivity(), this);
 
         assert vocabulary != null;
-        txtVocabulary.setText(vocabulary.getVocabulary());
         txtVocabEnglishDefinition.setText(vocabulary.getVocabEnglishDef());
         txtVocabPersianMeaning.setText(vocabulary.getVocabPersianDef());
 
@@ -96,9 +97,10 @@ public class VocabDefinitionFragment extends Fragment implements
             if (result == TextToSpeech.LANG_MISSING_DATA
                 || result == TextToSpeech.LANG_NOT_SUPPORTED) {
                 Log.e("TTS", "This Language is not supported");
-            } else {
-                speakOut();
             }
+            //else {
+            //    speakOut();
+            //}
 
         } else {
             Log.e("TTS", " Failed!");
@@ -106,7 +108,10 @@ public class VocabDefinitionFragment extends Fragment implements
     }
 
     private void speakOut() {
-        String text = txtVocabulary.getText().toString();
-        textToSpeech.speak(text, TextToSpeech.QUEUE_FLUSH, null);
+        if(Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
+            textToSpeech.speak(vocabulary.getVocabulary(), TextToSpeech.QUEUE_FLUSH, null);
+        } else{
+            textToSpeech.speak(vocabulary.getVocabulary(), TextToSpeech.QUEUE_FLUSH, null, null);
+        }
     }
 }
