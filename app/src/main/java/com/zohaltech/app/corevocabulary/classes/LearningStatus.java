@@ -23,6 +23,9 @@ public class LearningStatus {
         }
 
         int currentVocabId = reminder.getVocabularyId();
+
+        if(currentVocabId==0)
+            return null;
         Vocabulary currentVocab = Vocabularies.select(currentVocabId);
         assert currentVocab != null;
 
