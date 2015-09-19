@@ -14,24 +14,29 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:gravity="center">
 
-    <widgets.LatinTextView
-        android:id="@+id/txtVocabulary"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:background="@color/grey_lighter"
-        android:gravity="start|center"
-        android:padding="10dp"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="@color/primary"/>
-
-        <RadioButton
-            android:layout_width="wrap_content"
+        <widgets.LatinTextView
+            android:id="@+id/txtVocabulary"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/grey_lighter"
+            android:gravity="start|center"
+            android:padding="5dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/primary"/>
+
+        <widgets.MyCheckBox
+            android:id="@+id/chkBookmark"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackground"
             android:button="@null"
-            android:background="@drawable/rating"/>
+            android:gravity="center"
+            android:drawableTop="@drawable/bookmark"
+            android:padding="5dp"/>
 
     </LinearLayout>
 

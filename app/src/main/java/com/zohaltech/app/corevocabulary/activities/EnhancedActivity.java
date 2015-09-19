@@ -51,6 +51,7 @@ public abstract class EnhancedActivity extends AppCompatActivity {
     public void onBackPressed() {
         super.onBackPressed();
         overridePendingTransition(R.anim.slide_in_from_left, R.anim.slide_out_to_right);
+
     }
 
     abstract void onCreated();

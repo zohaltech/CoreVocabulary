@@ -2,6 +2,7 @@ package com.zohaltech.app.corevocabulary.activities;
 
 import android.app.SearchManager;
 import android.content.Context;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -12,19 +13,19 @@ import android.support.v7.widget.SearchView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import com.zohaltech.app.corevocabulary.R;
 import com.zohaltech.app.corevocabulary.fragments.DrawerFragment;
 import com.zohaltech.app.corevocabulary.fragments.SearchFragment;
 import com.zohaltech.app.corevocabulary.fragments.ThemesFragment;
 
-import widgets.MyToast;
+import widgets.MySnackbar;
 
 
 public class MainActivity extends EnhancedActivity {
 
     long startTime;
+    //CoordinatorLayout snackbarPosition;
     private DrawerLayout   drawerLayout;
     private DrawerFragment drawerFragment;
     private Fragment       fragment;
@@ -37,6 +38,7 @@ public class MainActivity extends EnhancedActivity {
 
     @Override
     void onToolbarCreated() {
+        //snackbarPosition = (CoordinatorLayout) findViewById(R.id.snackbarPosition);
         drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
         drawerFragment = (DrawerFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_navigation_drawer);
         drawerFragment.setUp(drawerLayout, toolbar);
@@ -179,9 +181,9 @@ public class MainActivity extends EnhancedActivity {
             drawerLayout.closeDrawer(GravityCompat.START);
         } else if ((System.currentTimeMillis() - startTime) > 2000) {
             startTime = System.currentTimeMillis();
-            MyToast.show(getString(R.string.press_back_again_to_exit), Toast.LENGTH_SHORT);
+            MySnackbar.show(drawerLayout, getString(R.string.press_back_again_to_exit), Snackbar.LENGTH_SHORT);
         } else {
-            finish();
+            super.onBackPressed();
         }
     }
 }

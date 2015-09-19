@@ -13,8 +13,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.zohaltech.app.corevocabulary.R;
+import com.zohaltech.app.corevocabulary.activities.AboutActivity;
 import com.zohaltech.app.corevocabulary.activities.SettingsActivity;
-import com.zohaltech.app.corevocabulary.adapters.NavigationDrawerAdapter;
 
 public class DrawerFragment extends Fragment {
 
@@ -24,7 +24,7 @@ public class DrawerFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_navigation_drawer, container, false);
+        return inflater.inflate(R.layout.fragment_drawer, container, false);
     }
 
     @Override
@@ -35,9 +35,13 @@ public class DrawerFragment extends Fragment {
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem) {
                 switch (menuItem.getItemId()){
-                    case R.id.nav_home:
+                    case R.id.nav_scheduler:
                         Intent intent = new Intent(getActivity(), SettingsActivity.class);
                         startActivity(intent);
+                        break;
+                    case R.id.nav_about:
+                        Intent intent1 = new Intent(getActivity(), AboutActivity.class);
+                        startActivity(intent1);
                         break;
                 }
                 drawerLayout.closeDrawers();

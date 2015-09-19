@@ -8,10 +8,13 @@
     <color name="shadow">#67000000</color>
     <color name="primary">#E91E63</color>
     <color name="primary_dark">#C2185B</color>
+    <color name="primary_darker">#580d2b</color>
     <color name="primary_light">#F8BBD0</color>
     <color name="primary_lighter">#f8e6ef</color>
     <color name="accent">#FF4081</color>
     <color name="accent_dark">#af2e57</color>
+    <!--<color name="accent">#b140e9</color>-->
+    <!--<color name="accent_dark">#8028ac</color>-->
     <color name="primary_text">#212121</color>
     <color name="secondary_text">#727272</color>
     <color name="divider">#e1e1e1</color>

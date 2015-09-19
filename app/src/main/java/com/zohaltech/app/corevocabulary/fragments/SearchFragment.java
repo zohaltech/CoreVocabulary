@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.zohaltech.app.corevocabulary.R;
-import com.zohaltech.app.corevocabulary.adapters.SearchAdapter;
+import com.zohaltech.app.corevocabulary.adapters.VocabularyAdapter;
 import com.zohaltech.app.corevocabulary.data.Vocabularies;
 import com.zohaltech.app.corevocabulary.entities.Vocabulary;
 
@@ -18,8 +18,7 @@ import java.util.ArrayList;
 public class SearchFragment extends Fragment {
     RecyclerView recyclerSearch;
     ArrayList<Vocabulary> vocabularies = new ArrayList<>();
-    SearchAdapter adapter;
-    private RecyclerView.LayoutManager layoutManager;
+    VocabularyAdapter adapter;
 
     public SearchFragment() {
     }
@@ -34,10 +33,10 @@ public class SearchFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_search, container, false);
         recyclerSearch = (RecyclerView) rootView.findViewById(R.id.recyclerSearch);
         recyclerSearch.setHasFixedSize(true);
-        layoutManager = new LinearLayoutManager(getActivity());
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
         recyclerSearch.setLayoutManager(layoutManager);
         vocabularies.clear();
-        adapter = new SearchAdapter(getActivity(), vocabularies);
+        adapter = new VocabularyAdapter(getActivity(), vocabularies, false);
         recyclerSearch.setAdapter(adapter);
         return rootView;
     }

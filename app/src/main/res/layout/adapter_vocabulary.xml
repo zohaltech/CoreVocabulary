@@ -5,26 +5,31 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginStart="10dp"
-        android:background="@color/divider"/>
-
     <widgets.LatinTextView
         android:id="@+id/txtSection"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/divider"
         android:gravity="start|center"
-        android:padding="15dp"
+        android:paddingRight="15dp"
+        android:paddingLeft="15dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
         android:singleLine="true"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="@color/primary"
-        android:textStyle="bold"/>
+        android:text="Day 1"/>
+
+    <LinearLayout
+        android:id="@+id/layoutDivider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginStart="10dp"
+        android:background="@color/divider"
+        android:orientation="horizontal"/>
 
     <widgets.LatinTextView
         android:id="@+id/txtVocabulary"
@@ -34,6 +39,7 @@
         android:gravity="start|center"
         android:padding="15dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="@color/primary_text"/>
+        android:textColor="@color/primary_text"
+        android:text="Place a premium on something"/>
 
 </LinearLayout>

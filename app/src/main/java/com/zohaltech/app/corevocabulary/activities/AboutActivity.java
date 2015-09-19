@@ -3,6 +3,7 @@ package com.zohaltech.app.corevocabulary.activities;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
+import android.support.design.widget.Snackbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -10,10 +11,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.zohaltech.app.corevocabulary.BuildConfig;
 import com.zohaltech.app.corevocabulary.R;
 
-import widgets.MyToast;
+import widgets.MySnackbar;
 
 
 public class AboutActivity extends EnhancedActivity {
@@ -70,7 +70,7 @@ public class AboutActivity extends EnhancedActivity {
                 if (!myStartActivity(intent)) {
                     intent.setData(Uri.parse(marketWebsiteUri));
                     if (!myStartActivity(intent)) {
-                        MyToast.show(getResources().getString(R.string.could_not_open_market), Toast.LENGTH_SHORT);
+                        MySnackbar.show(layoutWebsite, getString(R.string.could_not_open_market), Snackbar.LENGTH_SHORT);
                     }
                 }
             }

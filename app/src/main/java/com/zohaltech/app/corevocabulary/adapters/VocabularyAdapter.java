@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.zohaltech.app.corevocabulary.R;
@@ -28,7 +29,7 @@ public class VocabularyAdapter extends RecyclerView.Adapter<VocabularyAdapter.Vi
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.adaptor_vocabulary, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.adapter_vocabulary, parent, false);
         return new ViewHolder(view);
     }
 
@@ -38,8 +39,10 @@ public class VocabularyAdapter extends RecyclerView.Adapter<VocabularyAdapter.Vi
         if (showExtra && position % 6 == 0) {
             holder.txtSection.setVisibility(View.VISIBLE);
             holder.txtSection.setText("Day " + vocabulary.getDay());
+            holder.layoutDivider.setVisibility(View.GONE);
         } else {
             holder.txtSection.setVisibility(View.GONE);
+            holder.layoutDivider.setVisibility(View.VISIBLE);
         }
         holder.txtVocabulary.setText(vocabulary.getVocabulary());
         holder.txtVocabulary.setOnClickListener(new View.OnClickListener() {
@@ -61,10 +64,12 @@ public class VocabularyAdapter extends RecyclerView.Adapter<VocabularyAdapter.Vi
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public TextView txtSection;
         public TextView txtVocabulary;
+        LinearLayout layoutDivider;
 
         public ViewHolder(View view) {
             super(view);
             txtSection = (TextView) view.findViewById(R.id.txtSection);
+            layoutDivider = (LinearLayout) view.findViewById(R.id.layoutDivider);
             txtVocabulary = (TextView) view.findViewById(R.id.txtVocabulary);
         }
     }

@@ -1,10 +1,10 @@
 package com.zohaltech.app.corevocabulary.activities;
 
 
-import android.graphics.Typeface;
 import android.support.v4.view.ViewPager;
 import android.view.MenuItem;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import com.astuetz.PagerSlidingTabStrip;
@@ -27,6 +27,7 @@ public class VocabDescriptionActivity extends EnhancedActivity {
     //public static final String SEARCH_TEXT        = "SEARCH_TEXT";
 
     TextView             txtVocabulary;
+    CheckBox             chkBookmark;
     PagerSlidingTabStrip tabCategories;
     ViewPager            pagerCategories;
 
@@ -40,6 +41,7 @@ public class VocabDescriptionActivity extends EnhancedActivity {
         setContentView(R.layout.activity_vocab_description);
 
         txtVocabulary = (TextView) findViewById(R.id.txtVocabulary);
+        chkBookmark = (CheckBox) findViewById(R.id.chkBookmark);
         tabCategories = (PagerSlidingTabStrip) findViewById(R.id.tabDescriptions);
         pagerCategories = (ViewPager) findViewById(R.id.pagerDescItems);
 

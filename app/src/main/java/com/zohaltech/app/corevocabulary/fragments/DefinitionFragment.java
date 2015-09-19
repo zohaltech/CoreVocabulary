@@ -18,7 +18,7 @@ import com.zohaltech.app.corevocabulary.entities.Vocabulary;
 
 import java.util.Locale;
 
-public class VocabDefinitionFragment extends Fragment implements
+public class DefinitionFragment extends Fragment implements
                                                       TextToSpeech.OnInitListener {
     public static final String VOCAB_ID = "VOCAB_ID";
     TextView txtVocabEnglishDefinition;
@@ -28,10 +28,10 @@ public class VocabDefinitionFragment extends Fragment implements
     private TextToSpeech textToSpeech;
 
 
-    public static VocabDefinitionFragment newInstance(int vocabId) {
+    public static DefinitionFragment newInstance(int vocabId) {
         Bundle args = new Bundle();
         args.putInt(VOCAB_ID, vocabId);
-        VocabDefinitionFragment fragment = new VocabDefinitionFragment();
+        DefinitionFragment fragment = new DefinitionFragment();
         fragment.setArguments(args);
         return fragment;
     }
@@ -43,7 +43,7 @@ public class VocabDefinitionFragment extends Fragment implements
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_vocab_definition, container, false);
+        View view = inflater.inflate(R.layout.fragment_definition, container, false);
 
         txtVocabEnglishDefinition = (TextView) view.findViewById(R.id.txtVocabEnglishDefinition);
         txtVocabPersianMeaning = (TextView) view.findViewById(R.id.txtVocabPersianMeaning);
