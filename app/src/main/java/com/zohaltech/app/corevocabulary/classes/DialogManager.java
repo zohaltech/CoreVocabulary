@@ -9,6 +9,7 @@ import com.rey.material.app.TimePickerDialog;
 import java.text.SimpleDateFormat;
 
 public final class DialogManager {
+
     public static String timeResult;
 
     public static void showTimePickerDialog(Activity activity

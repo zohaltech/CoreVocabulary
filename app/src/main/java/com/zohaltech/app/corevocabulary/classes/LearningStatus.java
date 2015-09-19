@@ -17,20 +17,20 @@ public class LearningStatus {
         LearningStatus learningStatus = new LearningStatus();
         ReminderSettings settings = ReminderManager.getReminderSettings();
 
-        Reminder reminder = settings.getReminder();
+        Reminder reminder = ReminderManager.getLastReminder();
         if (reminder == null) {
             return null;
         }
 
         int currentVocabId = reminder.getVocabularyId();
 
-        if(currentVocabId==0)
-            return null;
+//        if (currentVocabId == 0)
+//            return null;
         Vocabulary currentVocab = Vocabularies.select(currentVocabId);
         assert currentVocab != null;
 
         ArrayList<Vocabulary> vocabularies = Vocabularies.selectByTheme(themeId);
-       // int vocabIndex = vocabularies.indexOf(currentVocab) + 1;
+        // int vocabIndex = vocabularies.indexOf(currentVocab) + 1;
         int vocabIndex = indexOf(currentVocab, vocabularies) + 1;
         int vocabCount = vocabularies.size();
 
@@ -54,14 +54,14 @@ public class LearningStatus {
     public void learningStatus() {
     }
 
-    private  static int indexOf(Vocabulary vocabulary, ArrayList<Vocabulary> elementData) {
+    private static int indexOf(Vocabulary vocabulary, ArrayList<Vocabulary> elementData) {
         if (vocabulary == null) {
             for (int i = 0; i < elementData.size(); i++)
-                if (elementData.get(i) ==null)
+                if (elementData.get(i) == null)
                     return i;
         } else {
             for (int i = 0; i < elementData.size(); i++)
-                if (vocabulary.getId()==(elementData.get(i).getId()))
+                if (vocabulary.getId() == (elementData.get(i).getId()))
                     return i;
         }
         return -1;
