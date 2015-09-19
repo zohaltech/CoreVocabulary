@@ -19,7 +19,7 @@ public class ReminderManager
     private static String LAST_REMINDER = "last_reminder";
 
     // this method is meant to be called just by AlarmReceiver class!
-    public static void setImmediateReminder(int currentVocabularyId)
+    public static void setImmediateReminder(int currentVocabularyId, boolean doesTriggersNext)
     {
         Vocabulary current = Vocabularies.select(currentVocabularyId);
         if (current == null)
@@ -30,6 +30,11 @@ public class ReminderManager
 
         current.setLearned(true);
         Vocabularies.update(current);
+
+        if (!doesTriggersNext)
+        {
+            return;
+        }
 
         ReminderSettings settings = ReminderManager.getReminderSettings();
 
@@ -234,6 +239,7 @@ public class ReminderManager
 
     public static void setLastReminder(Reminder reminder)
     {
+        //        Vocabularies.update(reminder.getVocabularyId());
         Gson gson = new Gson();
         App.preferences.edit().putString(LAST_REMINDER, gson.toJson(reminder)).apply();
     }
