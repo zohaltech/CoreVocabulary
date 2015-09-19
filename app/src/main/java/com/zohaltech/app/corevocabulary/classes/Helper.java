@@ -17,6 +17,7 @@ import java.math.BigDecimal;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
@@ -38,6 +39,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
+import java.util.Objects;
 
 
 public final class Helper {
@@ -86,26 +88,6 @@ public final class Helper {
     }
 
 
-    public static Operator getOperator() {
-        Operator operator = Operator.NO_SIM;
-        try {
-            TelephonyManager tm = (TelephonyManager) App.context.getSystemService(Context.TELEPHONY_SERVICE);
-            String simOperatorName = tm.getSimOperatorName().toUpperCase();
-            if (simOperatorName.toUpperCase().compareTo("IR-MCI") == 0 || simOperatorName.compareTo("IR-TCI") == 0) {
-                operator = Operator.MCI;
-            } else if (simOperatorName.toUpperCase().compareTo("RIGHTEL") == 0) {
-                operator = Operator.RIGHTELL;
-            } else if (simOperatorName.toUpperCase().compareTo("IRANCELL") == 0) {
-                operator = Operator.IRANCELL;
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        return operator;
-    }
-
-
     public static BigDecimal round(float d, int decimalPlace) {
         BigDecimal bd = new BigDecimal(Float.toString(d));
         bd = bd.setScale(decimalPlace, BigDecimal.ROUND_HALF_UP);
@@ -137,10 +119,16 @@ public final class Helper {
         vibrator.vibrate(500);
     }
 
-    public enum Operator {
-        MCI,
-        IRANCELL,
-        RIGHTELL,
-        NO_SIM
+    public static int indexOf(Object o, ArrayList<Object> elementData) {
+        if (o == null) {
+            for (int i = 0; i < elementData.size(); i++)
+                if (elementData.get(i) ==null)
+                    return i;
+        } else {
+            for (int i = 0; i < elementData.size(); i++)
+                if (o.equals(elementData.get(i)))
+                    return i;
+        }
+        return -1;
     }
 }
