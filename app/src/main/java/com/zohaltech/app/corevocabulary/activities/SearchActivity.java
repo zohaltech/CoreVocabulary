@@ -1,16 +1,12 @@
 package com.zohaltech.app.corevocabulary.activities;
 
-
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
 
 import com.zohaltech.app.corevocabulary.R;
-import com.zohaltech.app.corevocabulary.adapters.SearchAdapter;
+import com.zohaltech.app.corevocabulary.adapters.VocabularyAdapter;
 import com.zohaltech.app.corevocabulary.data.Vocabularies;
 import com.zohaltech.app.corevocabulary.entities.Vocabulary;
 
@@ -19,10 +15,7 @@ import java.util.ArrayList;
 import widgets.MyToast;
 
 public class SearchActivity extends EnhancedActivity {
-
-    private EditText editTextSearch;
-    private Button   btnSearch;
-    public static final String SEARCH_TEXT        = "SEARCH_TEXT";
+    public static final String SEARCH_TEXT = "SEARCH_TEXT";
 
     @Override
     void onCreated() {
@@ -30,16 +23,6 @@ public class SearchActivity extends EnhancedActivity {
 
         String searchText = getIntent().getStringExtra(SEARCH_TEXT);
         search(searchText);
-
-        editTextSearch = (EditText) findViewById(R.id.editTextSearch);
-        btnSearch = (Button) findViewById(R.id.btnSearch);
-
-        btnSearch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                search(editTextSearch.getText().toString());
-            }
-        });
     }
 
     private void search(String searchText) {
@@ -53,7 +36,7 @@ public class SearchActivity extends EnhancedActivity {
         recyclerSearchResults.setLayoutManager(layoutManager);
 
         ArrayList<Vocabulary> vocabularies = Vocabularies.search(searchText);
-        SearchAdapter adapter = new SearchAdapter(this, vocabularies);
+        VocabularyAdapter adapter = new VocabularyAdapter(this, vocabularies, false);
         recyclerSearchResults.setAdapter(adapter);
     }
 
@@ -68,7 +51,6 @@ public class SearchActivity extends EnhancedActivity {
 
     @Override
     void onToolbarCreated() {
-        //txtToolbarTitle.setText("Vocabularies");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
     }

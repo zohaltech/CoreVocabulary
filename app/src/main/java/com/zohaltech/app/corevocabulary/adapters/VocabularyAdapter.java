@@ -18,10 +18,12 @@ import java.util.ArrayList;
 public class VocabularyAdapter extends RecyclerView.Adapter<VocabularyAdapter.ViewHolder> {
     Context               context;
     ArrayList<Vocabulary> vocabularies;
+    Boolean               showExtra;
 
-    public VocabularyAdapter(Context context, ArrayList<Vocabulary> vocabularies) {
+    public VocabularyAdapter(Context context, ArrayList<Vocabulary> vocabularies, Boolean showExtra) {
         this.context = context;
         this.vocabularies = vocabularies;
+        this.showExtra = showExtra;
     }
 
     @Override
@@ -33,7 +35,7 @@ public class VocabularyAdapter extends RecyclerView.Adapter<VocabularyAdapter.Vi
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         final Vocabulary vocabulary = vocabularies.get(position);
-        if (position % 6 == 0) {
+        if (showExtra && position % 6 == 0) {
             holder.txtSection.setVisibility(View.VISIBLE);
             holder.txtSection.setText("Day " + vocabulary.getDay());
         } else {
@@ -57,8 +59,8 @@ public class VocabularyAdapter extends RecyclerView.Adapter<VocabularyAdapter.Vi
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView     txtSection;
-        public TextView     txtVocabulary;
+        public TextView txtSection;
+        public TextView txtVocabulary;
 
         public ViewHolder(View view) {
             super(view);
