@@ -17,7 +17,7 @@ public class Vocabularies {
     static final String Vocabulary = "Vocabulary";
     static final String EnglishDef = "EnglishDef";
     static final String PersianDef = "PersianDef";
-    static final String Visited    = "Visited";
+    static final String Learned    = "Learned";
     static final String Bookmarked = "Bookmarked";
 
     static final String CreateTable = "CREATE TABLE " + TableName + " ( " +
@@ -27,7 +27,7 @@ public class Vocabularies {
                                       Vocabulary + " VARCHAR(250), " +
                                       EnglishDef + " VARCHAR(1024)," +
                                       PersianDef + " VARCHAR(1024), " +
-                                      Visited + " Boolean, " +
+                                      Learned + " Boolean, " +
                                       Bookmarked + " Boolean );";
 
     static final String DropTable = "Drop Table If Exists " + TableName;
@@ -49,7 +49,7 @@ public class Vocabularies {
                                                            cursor.getString(cursor.getColumnIndex(Vocabulary)),
                                                            cursor.getString(cursor.getColumnIndex(EnglishDef)),
                                                            cursor.getString(cursor.getColumnIndex(PersianDef)),
-                                                           cursor.getInt(cursor.getColumnIndex(Visited)) == 1,
+                                                           cursor.getInt(cursor.getColumnIndex(Learned)) == 1,
                                                            cursor.getInt(cursor.getColumnIndex(Bookmarked)) == 1);
 
                     vocabularies.add(vocabulary);
@@ -132,7 +132,7 @@ public class Vocabularies {
                                                            cursor.getString(cursor.getColumnIndex(Vocabulary)),
                                                            cursor.getString(cursor.getColumnIndex(EnglishDef)),
                                                            cursor.getString(cursor.getColumnIndex(PersianDef)),
-                                                           cursor.getInt(cursor.getColumnIndex(Visited)) == 1,
+                                                           cursor.getInt(cursor.getColumnIndex(Learned)) == 1,
                                                            cursor.getInt(cursor.getColumnIndex(Bookmarked)) == 1);
                     vocabularies.add(vocabulary);
                 } while (cursor.moveToNext());
@@ -166,14 +166,14 @@ public class Vocabularies {
         values.put(Vocabulary, vocabulary.getVocabulary());
         values.put(EnglishDef, vocabulary.getVocabEnglishDef());
         values.put(PersianDef, vocabulary.getVocabPersianDef());
-        values.put(Visited, vocabulary.getBookmarked());
+        values.put(Learned, vocabulary.getBookmarked());
         values.put(Bookmarked, vocabulary.getLearned());
         return values;
     }
 
     public static void resetLearnedVocabularies() {
         ContentValues values = new ContentValues();
-        values.put(Bookmarked, 0);
+        values.put(Learned, 0);
         DataAccess db = new DataAccess();
 
         db.update(TableName, values, null, null);
