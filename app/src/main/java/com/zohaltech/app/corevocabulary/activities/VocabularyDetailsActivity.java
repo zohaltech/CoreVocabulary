@@ -1,10 +1,14 @@
 package com.zohaltech.app.corevocabulary.activities;
 
 
+import android.support.design.widget.Snackbar;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBar;
 import android.view.MenuItem;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.astuetz.PagerSlidingTabStrip;
@@ -16,16 +20,20 @@ import com.zohaltech.app.corevocabulary.data.Notes;
 import com.zohaltech.app.corevocabulary.data.Vocabularies;
 import com.zohaltech.app.corevocabulary.entities.Example;
 import com.zohaltech.app.corevocabulary.entities.Note;
+import com.zohaltech.app.corevocabulary.entities.Vocabulary;
 
 import java.util.ArrayList;
 
-public class VocabDescriptionActivity extends EnhancedActivity {
+import widgets.MySnackbar;
+
+public class VocabularyDetailsActivity extends EnhancedActivity {
     public static final String INIT_MODE_KEY = "INIT_MODE";
     //public static final String MODE_SEARCH_RESULT = "MODE_SEARCH_RESULT";
     public static final String MODE_VIEW     = "MODE_VIEW";
     public static final String VOCAB_ID      = "VOCAB_ID";
     //public static final String SEARCH_TEXT        = "SEARCH_TEXT";
 
+    LinearLayout         layoutRoot;
     TextView             txtVocabulary;
     CheckBox             chkBookmark;
     PagerSlidingTabStrip tabCategories;
@@ -34,12 +42,14 @@ public class VocabDescriptionActivity extends EnhancedActivity {
     DescriptionPagerAdapter descriptionPagerAdapter;
     ArrayList<Example>      examples;
     ArrayList<Note>         notes;
+    Vocabulary              vocabulary;
     int tabCount = 2;
 
     @Override
     void onCreated() {
-        setContentView(R.layout.activity_vocab_description);
+        setContentView(R.layout.activity_vocabulary_details);
 
+        layoutRoot = (LinearLayout) findViewById(R.id.layoutRoot);
         txtVocabulary = (TextView) findViewById(R.id.txtVocabulary);
         chkBookmark = (CheckBox) findViewById(R.id.chkBookmark);
         tabCategories = (PagerSlidingTabStrip) findViewById(R.id.tabDescriptions);
@@ -47,7 +57,26 @@ public class VocabDescriptionActivity extends EnhancedActivity {
 
         int vocabularyId = getIntent().getIntExtra(VOCAB_ID, 0);
 
-        txtVocabulary.setText(Vocabularies.select(vocabularyId).getVocabulary());
+        vocabulary = Vocabularies.select(vocabularyId);
+        assert vocabulary != null;
+        txtVocabulary.setText(vocabulary.getVocabulary());
+
+        chkBookmark.setChecked(vocabulary.getBookmarked());
+
+        chkBookmark.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                boolean bookmarked = chkBookmark.isChecked();
+                vocabulary.setBookmarked(bookmarked);
+                if (Vocabularies.update(vocabulary) > 0) {
+                    if (bookmarked) {
+                        MySnackbar.show(layoutRoot, "Vocabulary added to bookmarks", Snackbar.LENGTH_SHORT);
+                    } else {
+                        MySnackbar.show(layoutRoot, "Vocabulary removed from bookmarks", Snackbar.LENGTH_SHORT);
+                    }
+                }
+            }
+        });
 
         examples = Examples.getExamples(vocabularyId);
         notes = Notes.getNotes(vocabularyId);
@@ -69,7 +98,6 @@ public class VocabDescriptionActivity extends EnhancedActivity {
         pagerCategories.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
             }
 
             @Override
@@ -79,7 +107,6 @@ public class VocabDescriptionActivity extends EnhancedActivity {
 
             @Override
             public void onPageScrollStateChanged(int state) {
-
             }
         });
 
@@ -107,9 +134,12 @@ public class VocabDescriptionActivity extends EnhancedActivity {
 
     @Override
     void onToolbarCreated() {
-        getSupportActionBar().setTitle("Vocabulary Description");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setTitle("Vocabulary Details");
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setDisplayShowHomeEnabled(true);
+        }
     }
 
     private void changeTabsFont() {

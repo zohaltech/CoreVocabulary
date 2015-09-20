@@ -9,6 +9,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
 import android.support.v7.widget.SearchView;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -25,9 +26,7 @@ import widgets.MySnackbar;
 public class MainActivity extends EnhancedActivity {
 
     long startTime;
-    //CoordinatorLayout snackbarPosition;
     private DrawerLayout   drawerLayout;
-    private DrawerFragment drawerFragment;
     private Fragment       fragment;
 
     @Override
@@ -38,9 +37,8 @@ public class MainActivity extends EnhancedActivity {
 
     @Override
     void onToolbarCreated() {
-        //snackbarPosition = (CoordinatorLayout) findViewById(R.id.snackbarPosition);
         drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
-        drawerFragment = (DrawerFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_navigation_drawer);
+        DrawerFragment drawerFragment = (DrawerFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_navigation_drawer);
         drawerFragment.setUp(drawerLayout, toolbar);
         drawerFragment.setMenuVisibility(true);
         displayView(0);
@@ -71,38 +69,9 @@ public class MainActivity extends EnhancedActivity {
             }
         });
 
-        //        searchManager.setOnCancelListener(new SearchManager.OnCancelListener() {
-        //            @Override
-        //            public void onCancel() {
-        //                displayView(0);
-        //                MyToast.show("cancel", Toast.LENGTH_SHORT);
-        //            }
-        //        });
-        //
-        //        searchManager.setOnDismissListener(new SearchManager.OnDismissListener() {
-        //            @Override
-        //            public void onDismiss() {
-        //                displayView(0);
-        //                MyToast.show("dismiss", Toast.LENGTH_SHORT);
-        //            }
-        //        });
-        //
-        //        searchView.setOnCloseListener(new SearchView.OnCloseListener() {
-        //            @Override
-        //            public boolean onClose() {
-        //                MyToast.show("closed", Toast.LENGTH_SHORT);
-        //                displayView(0);
-        //                return false;
-        //            }
-        //        });
-
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                //if (fragment != null && fragment.getTag().equals(getResources().getString(R.string.title_search))) {
-                //if (fragment != null && fragment instanceof SearchFragment) {
-                //    ((SearchFragment) fragment).search(query);
-                //}
                 return false;
             }
 
@@ -148,32 +117,12 @@ public class MainActivity extends EnhancedActivity {
             //fragmentTransaction.addToBackStack(title);
             fragmentTransaction.commit();
 
-            // set the toolbar title
-            getSupportActionBar().setTitle(title);
+            ActionBar actionBar = getSupportActionBar();
+            if (actionBar != null) {
+                actionBar.setTitle(title);
+            }
         }
     }
-
-    //@Override
-    //public boolean onOptionsItemSelected(MenuItem item) {
-    //    int id = item.getItemId();
-    //
-    //    //if (id == R.id.home) {
-    //    //    MyToast.show("HOME",Toast.LENGTH_SHORT);
-    //    //    //App.setAppLocal(App.LANG_FARSI);
-    //    //    //finish();
-    //    //    //Intent intent = new Intent(MainActivity.this, MainActivity.class);
-    //    //    //startActivity(intent);
-    //    //
-    //    //    //searchShown = true;
-    //    //    //getSupportActionBar().setTitle("");
-    //    //    //drawerFragment.setMenuVisibility(false);
-    //    //    //getSupportActionBar().setDisplayShowHomeEnabled(true);
-    //    //
-    //    //    return true;
-    //    //}
-    //
-    //    return super.onOptionsItemSelected(item);
-    //}
 
     @Override
     public void onBackPressed() {

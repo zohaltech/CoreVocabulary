@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.VocabDescriptionActivity"
+            android:name=".activities.VocabularyDetailsActivity"
             android:screenOrientation="portrait"/>
         <activity
             android:name=".activities.AboutActivity"
@@ -33,6 +33,12 @@
             android:screenOrientation="portrait"/>
         <activity
             android:name=".activities.SettingsActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activities.HelpActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activities.BookmarksActivity"
             android:screenOrientation="portrait"/>
 
         <receiver android:name=".classes.AlarmReceiver"/>

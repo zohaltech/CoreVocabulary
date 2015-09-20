@@ -27,8 +27,8 @@ public class Vocabularies {
                                       Vocabulary + " VARCHAR(250), " +
                                       EnglishDef + " VARCHAR(1024)," +
                                       PersianDef + " VARCHAR(1024), " +
-                                      Learned + " Boolean, " +
-                                      Bookmarked + " Boolean );";
+                                      Learned + " Boolean DEFAULT (0), " +
+                                      Bookmarked + " Boolean DEFAULT (0) );";
 
     static final String DropTable = "Drop Table If Exists " + TableName;
 
@@ -78,7 +78,7 @@ public class Vocabularies {
     }
 
     public static ArrayList<Vocabulary> selectBookmarks() {
-        return select("Where " + Bookmarked + " = ?  ", new String[]{"1"}, "");
+        return select("Where " + Bookmarked + " = ? ", new String[]{"1"}, "");
     }
 
     public static Vocabulary select(long vocabularyId) {
@@ -155,7 +155,7 @@ public class Vocabularies {
 
     public static long update(Vocabulary vocabulary) {
         DataAccess da = new DataAccess();
-        return da.update(TableName, getContentValues(vocabulary), Id + " =? ", new String[]{String.valueOf(vocabulary.getId())});
+        return da.update(TableName, getContentValues(vocabulary), Id + " = ? ", new String[]{String.valueOf(vocabulary.getId())});
     }
 
     public static ContentValues getContentValues(Vocabulary vocabulary) {
@@ -166,8 +166,8 @@ public class Vocabularies {
         values.put(Vocabulary, vocabulary.getVocabulary());
         values.put(EnglishDef, vocabulary.getVocabEnglishDef());
         values.put(PersianDef, vocabulary.getVocabPersianDef());
-        values.put(Learned, vocabulary.getBookmarked());
-        values.put(Bookmarked, vocabulary.getLearned());
+        values.put(Learned, vocabulary.getLearned());
+        values.put(Bookmarked, vocabulary.getBookmarked());
         return values;
     }
 

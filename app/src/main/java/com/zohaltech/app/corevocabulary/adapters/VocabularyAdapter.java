@@ -10,7 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.zohaltech.app.corevocabulary.R;
-import com.zohaltech.app.corevocabulary.activities.VocabDescriptionActivity;
+import com.zohaltech.app.corevocabulary.activities.VocabularyDetailsActivity;
 import com.zohaltech.app.corevocabulary.classes.App;
 import com.zohaltech.app.corevocabulary.entities.Vocabulary;
 
@@ -48,9 +48,9 @@ public class VocabularyAdapter extends RecyclerView.Adapter<VocabularyAdapter.Vi
         holder.txtVocabulary.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(App.currentActivity, VocabDescriptionActivity.class);
-                intent.putExtra(VocabDescriptionActivity.VOCAB_ID, vocabulary.getId());
-                intent.putExtra(VocabDescriptionActivity.INIT_MODE_KEY, VocabDescriptionActivity.MODE_VIEW);
+                Intent intent = new Intent(App.currentActivity, VocabularyDetailsActivity.class);
+                intent.putExtra(VocabularyDetailsActivity.VOCAB_ID, vocabulary.getId());
+                intent.putExtra(VocabularyDetailsActivity.INIT_MODE_KEY, VocabularyDetailsActivity.MODE_VIEW);
                 App.currentActivity.startActivity(intent);
             }
         });

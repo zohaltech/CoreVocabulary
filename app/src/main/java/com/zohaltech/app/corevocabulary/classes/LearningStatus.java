@@ -17,9 +17,7 @@ public class LearningStatus {
         LearningStatus learningStatus = new LearningStatus();
         ReminderSettings settings = ReminderManager.getReminderSettings();
 
-        if (settings == null) {
-            return null;
-        } else {
+        if (settings.getStatus() != ReminderSettings.Status.STOP) {
             ArrayList<Vocabulary> vocabularies = Vocabularies.selectByTheme(themeId);
             int vocabCount = vocabularies.size();
             Reminder reminder = ReminderManager.getLastReminder();
@@ -38,23 +36,25 @@ public class LearningStatus {
                 if (settings.getStatus() == ReminderSettings.Status.FINISHED) {
                     learningStatus.setProgress(100);
                     learningStatus.setDayIndex(vocabCount / 6);
-                    learningStatus.setDayCount(currentVocab.getDay());
-                    learningStatus.setVocabCount(vocabCount);
+                    learningStatus.setDayCount(vocabCount / 6);
                     learningStatus.setVocabIndex(vocabCount);
+                    learningStatus.setVocabCount(vocabCount);
                 } else {
                     learningStatus.setProgress(vocabIndex * 100 / vocabCount);
-                    learningStatus.setDayCount(vocabCount / 6);
-                    learningStatus.setVocabCount(vocabCount);
                     learningStatus.setDayIndex(currentVocab.getDay());
+                    learningStatus.setDayCount(vocabCount / 6);
                     learningStatus.setVocabIndex(vocabIndex);
+                    learningStatus.setVocabCount(vocabCount);
                 }
             } else {
                 learningStatus.setProgress(0);
-                learningStatus.setDayCount(vocabCount / 6);
-                learningStatus.setVocabCount(vocabCount);
                 learningStatus.setDayIndex(0);
+                learningStatus.setDayCount(vocabCount / 6);
                 learningStatus.setVocabIndex(0);
+                learningStatus.setVocabCount(vocabCount);
             }
+        } else {
+            return null;
         }
 
         return learningStatus;

@@ -8,8 +8,7 @@ import android.content.Context;
 import android.content.Intent;
 
 import com.zohaltech.app.corevocabulary.R;
-import com.zohaltech.app.corevocabulary.activities.MainActivity;
-import com.zohaltech.app.corevocabulary.activities.VocabDescriptionActivity;
+import com.zohaltech.app.corevocabulary.activities.VocabularyDetailsActivity;
 
 public class AlarmReceiver extends BroadcastReceiver
 {
@@ -33,9 +32,9 @@ public class AlarmReceiver extends BroadcastReceiver
                         .setDefaults(Notification.DEFAULT_VIBRATE)
                         .setAutoCancel(true);
 
-        Intent resultIntent = new Intent(context, VocabDescriptionActivity.class);
+        Intent resultIntent = new Intent(context, VocabularyDetailsActivity.class);
         resultIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-        resultIntent.putExtra(VocabDescriptionActivity.VOCAB_ID, reminder.getVocabularyId());
+        resultIntent.putExtra(VocabularyDetailsActivity.VOCAB_ID, reminder.getVocabularyId());
 
         PendingIntent resultPendingIntent = PendingIntent.getActivity(context, 0, resultIntent, PendingIntent.FLAG_UPDATE_CURRENT);
         builder.setContentIntent(resultPendingIntent);

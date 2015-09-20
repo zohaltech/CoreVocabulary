@@ -14,6 +14,8 @@ import android.view.ViewGroup;
 
 import com.zohaltech.app.corevocabulary.R;
 import com.zohaltech.app.corevocabulary.activities.AboutActivity;
+import com.zohaltech.app.corevocabulary.activities.BookmarksActivity;
+import com.zohaltech.app.corevocabulary.activities.HelpActivity;
 import com.zohaltech.app.corevocabulary.activities.SettingsActivity;
 
 public class DrawerFragment extends Fragment {
@@ -34,14 +36,23 @@ public class DrawerFragment extends Fragment {
         navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem) {
+                Intent intent = null;
                 switch (menuItem.getItemId()){
                     case R.id.nav_scheduler:
-                        Intent intent = new Intent(getActivity(), SettingsActivity.class);
+                        intent = new Intent(getActivity(), SettingsActivity.class);
+                        startActivity(intent);
+                        break;
+                    case R.id.nav_bookmarks:
+                        intent = new Intent(getActivity(), BookmarksActivity.class);
+                        startActivity(intent);
+                        break;
+                    case R.id.nav_help:
+                        intent = new Intent(getActivity(), HelpActivity.class);
                         startActivity(intent);
                         break;
                     case R.id.nav_about:
-                        Intent intent1 = new Intent(getActivity(), AboutActivity.class);
-                        startActivity(intent1);
+                        intent = new Intent(getActivity(), AboutActivity.class);
+                        startActivity(intent);
                         break;
                 }
                 drawerLayout.closeDrawers();

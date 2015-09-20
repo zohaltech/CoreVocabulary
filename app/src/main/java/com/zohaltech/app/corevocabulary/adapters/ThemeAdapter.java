@@ -38,6 +38,59 @@ public class ThemeAdapter extends RecyclerView.Adapter<ThemeAdapter.ViewHolder> 
         }
     }
 
+    public static void expand(final View v) {
+        v.measure(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        final int targetHeight = v.getMeasuredHeight();
+
+        v.getLayoutParams().height = 0;
+        v.setVisibility(View.VISIBLE);
+        Animation a = new Animation() {
+            @Override
+            protected void applyTransformation(float interpolatedTime, Transformation t) {
+                v.getLayoutParams().height = interpolatedTime == 1
+                                             ? ViewGroup.LayoutParams.WRAP_CONTENT
+                                             : (int) (targetHeight * interpolatedTime);
+                v.requestLayout();
+            }
+
+            @Override
+            public boolean willChangeBounds() {
+                return true;
+            }
+        };
+
+        // 1dp/ms
+        //        a.setDuration((int) (targetHeight / v.getContext().getResources().getDisplayMetrics().density));
+        a.setDuration(DURATION);
+        v.startAnimation(a);
+    }
+
+    public static void collapse(final View v) {
+        final int initialHeight = v.getMeasuredHeight();
+
+        Animation a = new Animation() {
+            @Override
+            protected void applyTransformation(float interpolatedTime, Transformation t) {
+                if (interpolatedTime == 1) {
+                    v.setVisibility(View.GONE);
+                } else {
+                    v.getLayoutParams().height = initialHeight - (int) (initialHeight * interpolatedTime);
+                    v.requestLayout();
+                }
+            }
+
+            @Override
+            public boolean willChangeBounds() {
+                return true;
+            }
+        };
+
+        // 1dp/ms
+        //        a.setDuration((int) (initialHeight / v.getContext().getResources().getDisplayMetrics().density));
+        a.setDuration(DURATION);
+        v.startAnimation(a);
+    }
+
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.adapter_theme, parent, false);
@@ -91,11 +144,9 @@ public class ThemeAdapter extends RecyclerView.Adapter<ThemeAdapter.ViewHolder> 
                     ProgressDetailStatus status = progressDetailStatuses.get(position);
                     if (status.visible) {
                         collapse(holder.layoutProgressDetail);
-                        App.handler.postDelayed(new Runnable()
-                        {
+                        App.handler.postDelayed(new Runnable() {
                             @Override
-                            public void run()
-                            {
+                            public void run() {
                                 holder.layoutProgressDetail.setVisibility(View.GONE);
                             }
                         }, DURATION);
@@ -111,6 +162,7 @@ public class ThemeAdapter extends RecyclerView.Adapter<ThemeAdapter.ViewHolder> 
         } else {
             holder.layoutCircleProgress.setVisibility(View.GONE);
             holder.layoutProgressDetail.setVisibility(View.GONE);
+            progressDetailStatuses.set(position, new ProgressDetailStatus(position, false));
         }
     }
 
@@ -127,70 +179,6 @@ public class ThemeAdapter extends RecyclerView.Adapter<ThemeAdapter.ViewHolder> 
     @Override
     public int getItemCount() {
         return themes.size();
-    }
-
-    public static void expand(final View v)
-    {
-        v.measure(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        final int targetHeight = v.getMeasuredHeight();
-
-        v.getLayoutParams().height = 0;
-        v.setVisibility(View.VISIBLE);
-        Animation a = new Animation()
-        {
-            @Override
-            protected void applyTransformation(float interpolatedTime, Transformation t)
-            {
-                v.getLayoutParams().height = interpolatedTime == 1
-                                             ? ViewGroup.LayoutParams.WRAP_CONTENT
-                                             : (int) (targetHeight * interpolatedTime);
-                v.requestLayout();
-            }
-
-            @Override
-            public boolean willChangeBounds()
-            {
-                return true;
-            }
-        };
-
-        // 1dp/ms
-        //        a.setDuration((int) (targetHeight / v.getContext().getResources().getDisplayMetrics().density));
-        a.setDuration(DURATION);
-        v.startAnimation(a);
-    }
-
-    public static void collapse(final View v)
-    {
-        final int initialHeight = v.getMeasuredHeight();
-
-        Animation a = new Animation()
-        {
-            @Override
-            protected void applyTransformation(float interpolatedTime, Transformation t)
-            {
-                if (interpolatedTime == 1)
-                {
-                    v.setVisibility(View.GONE);
-                }
-                else
-                {
-                    v.getLayoutParams().height = initialHeight - (int) (initialHeight * interpolatedTime);
-                    v.requestLayout();
-                }
-            }
-
-            @Override
-            public boolean willChangeBounds()
-            {
-                return true;
-            }
-        };
-
-        // 1dp/ms
-        //        a.setDuration((int) (initialHeight / v.getContext().getResources().getDisplayMetrics().density));
-        a.setDuration(DURATION);
-        v.startAnimation(a);
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {

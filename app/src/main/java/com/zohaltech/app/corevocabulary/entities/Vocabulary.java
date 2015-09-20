@@ -7,19 +7,20 @@ public class Vocabulary {
     private String  vocabulary;
     private String  vocabEnglishDef;
     private String  vocabPersianDef;
+    private Boolean learned;
     private Boolean bookmarked;
 
-    public Vocabulary(int themeId, int day, String vocabulary, String vocabEnglishDef, String vocabPersianDef, Boolean bookmarked, Boolean learned) {
+    public Vocabulary(int themeId, int day, String vocabulary, String vocabEnglishDef, String vocabPersianDef, Boolean learned, Boolean bookmarked) {
         setThemeId(themeId);
         setDay(day);
         setVocabulary(vocabulary);
         setVocabEnglishDef(vocabEnglishDef);
         setVocabPersianDef(vocabPersianDef);
-        setBookmarked(bookmarked);
         setLearned(learned);
+        setBookmarked(bookmarked);
     }
 
-    public Vocabulary(int id, int themeId, int day, String vocabulary, String vocabEnglishDef, String vocabPersianDef, Boolean bookmarked, Boolean learned) {
+    public Vocabulary(int id, int themeId, int day, String vocabulary, String vocabEnglishDef, String vocabPersianDef, Boolean learned, Boolean bookmarked) {
         this(themeId, day, vocabulary, vocabEnglishDef, vocabPersianDef, bookmarked, learned);
         this.id = id;
     }
@@ -73,14 +74,6 @@ public class Vocabulary {
         this.vocabPersianDef = vocabPersianDef;
     }
 
-    public Boolean getBookmarked() {
-        return bookmarked;
-    }
-
-    public void setBookmarked(Boolean bookmarked) {
-        this.bookmarked = bookmarked;
-    }
-
     public Boolean getLearned() {
         return learned;
     }
@@ -89,6 +82,11 @@ public class Vocabulary {
         this.learned = learned;
     }
 
-    private Boolean learned;
+    public Boolean getBookmarked() {
+        return bookmarked;
+    }
 
+    public void setBookmarked(Boolean bookmarked) {
+        this.bookmarked = bookmarked;
+    }
 }
