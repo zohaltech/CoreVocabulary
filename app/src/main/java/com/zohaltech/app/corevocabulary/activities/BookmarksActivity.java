@@ -45,6 +45,8 @@ public class BookmarksActivity extends EnhancedActivity {
                 }
             }
         });
+
+        adapter.notifyDataSetChanged();
     }
 
     @Override
