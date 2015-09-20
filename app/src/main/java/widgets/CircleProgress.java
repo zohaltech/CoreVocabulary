@@ -13,7 +13,7 @@ import com.zohaltech.app.corevocabulary.R;
 
 public class CircleProgress extends ImageView {
 
-    private static final int START_ANGLE = 0;
+    private static final int START_ANGLE = 90;
     private static final int SWEEP_ANGLE = 360;
     Context context;
 

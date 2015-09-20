@@ -148,7 +148,7 @@ public class VocabularyDetailsActivity extends EnhancedActivity {
         for (int j = 0; j < tabsCount; j++) {
             TextView textView = (TextView) vg.getChildAt(j);
             textView.setWidth(App.screenWidth / tabCount);
-            textView.setTypeface(App.englishFont);
+            //textView.setTypeface(App.englishFont);
             textView.setTextColor(getResources().getColor(R.color.secondary_text));
             textView.setTextSize(14);
         }

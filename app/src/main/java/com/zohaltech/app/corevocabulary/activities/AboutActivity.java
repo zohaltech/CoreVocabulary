@@ -57,7 +57,7 @@ public class AboutActivity extends EnhancedActivity {
         btnFeedback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts("Mail to", email, null));
+                Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto", email, null));
                 intent.putExtra(Intent.EXTRA_SUBJECT, getResources().getString(R.string.feedback_subject));
                 startActivity(Intent.createChooser(intent, getResources().getString(R.string.feedback_title)));
             }

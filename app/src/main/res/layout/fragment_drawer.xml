@@ -1,36 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              xmlns:app="http://schemas.android.com/apk/res-auto"
               android:background="@color/white"
               android:orientation="vertical">
 
     <LinearLayout
         android:id="@+id/nav_header_container"
         android:layout_width="match_parent"
-        android:layout_height="140dp"
-        android:background="@drawable/repeating_pattern">
+        android:layout_height="150dp"
+        android:background="@color/primary_dark"
+        android:gravity="center"
+        android:orientation="horizontal">
 
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:scaleType="centerInside"
-            android:src="@drawable/ic_drawer"/>
+            android:src="@drawable/ic_core"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center|left"
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp">
+
+            <widgets.LatinTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Core"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/white"/>
+
+            <widgets.LatinTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vocabulary"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/white"/>
+
+        </LinearLayout>
 
     </LinearLayout>
 
-    <!--<android.support.v7.widget.RecyclerView-->
-        <!--android:id="@+id/drawerList"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_marginTop="15dp"/>-->
-
     <android.support.design.widget.NavigationView
         android:id="@+id/navView"
-        android:layout_height="match_parent"
         android:layout_width="wrap_content"
+        android:layout_height="match_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
         app:menu="@menu/menu_drawer"/>
