@@ -1,11 +1,34 @@
 package com.zohaltech.app.corevocabulary.entities;
 
+import com.zohaltech.app.corevocabulary.classes.CoreSec;
+
 public class Example {
     private int    id;
     private int    vocabularyId;
     private int    ordinal;
     private String English;
     private String Persian;
+
+    private String encEnglish;
+    private String encPersian;
+
+
+    public Example(int id, int vocabularyId, int ordinal, String english, String persian,
+                   String encEnglish, String encPersian) {
+        this(vocabularyId, ordinal, english, persian, encEnglish, encPersian);
+        this.id = id;
+    }
+
+    public Example(int vocabularyId, int ordinal, String english, String persian,
+                   String encEnglish, String encPersian) {
+        setVocabularyId(vocabularyId);
+        setOrdinal(ordinal);
+        setEnglish(english);
+        setPersian(persian);
+
+        setEncPersian(encPersian);
+        setEncEnglish(encEnglish);
+    }
 
     public Example(int id, int vocabularyId, int ordinal, String english, String persian) {
         this(vocabularyId, ordinal, english, persian);
@@ -57,5 +80,29 @@ public class Example {
 
     public void setPersian(String persian) {
         Persian = persian;
+    }
+
+    public String getEncEnglish() {
+        return CoreSec.decrypt(encEnglish);
+    }
+
+    public String getEncEnglish1() {
+        return encEnglish;
+    }
+
+    public void setEncEnglish(String encEnglish) {
+        this.encEnglish = encEnglish;
+    }
+
+    public String getEncPersian() {
+        return CoreSec.decrypt(encPersian);
+    }
+
+    public String getEncPersian1() {
+        return encPersian;
+    }
+
+    public void setEncPersian(String encPersian) {
+        this.encPersian = encPersian;
     }
 }

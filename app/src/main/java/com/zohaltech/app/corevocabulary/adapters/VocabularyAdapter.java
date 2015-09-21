@@ -44,7 +44,8 @@ public class VocabularyAdapter extends RecyclerView.Adapter<VocabularyAdapter.Vi
             holder.txtSection.setVisibility(View.GONE);
             holder.layoutDivider.setVisibility(View.VISIBLE);
         }
-        holder.txtVocabulary.setText(vocabulary.getVocabulary());
+        //holder.txtVocabulary.setText(vocabulary.getVocabulary());
+        holder.txtVocabulary.setText(vocabulary.getEncVocab());
         holder.txtVocabulary.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

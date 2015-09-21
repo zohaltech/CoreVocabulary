@@ -100,7 +100,8 @@ public class ThemeAdapter extends RecyclerView.Adapter<ThemeAdapter.ViewHolder> 
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position) {
         final Theme theme = themes.get(position);
-        holder.txtTheme.setText(theme.getName());
+        //holder.txtTheme.setText(theme.getName());
+        holder.txtTheme.setText(theme.getEncName());
         holder.txtTheme.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -132,14 +133,6 @@ public class ThemeAdapter extends RecyclerView.Adapter<ThemeAdapter.ViewHolder> 
             holder.layoutCircleProgress.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
-                    //for (int i = 0; i < themes.size(); i++) {
-                    //    if (position != i) {
-                    //        progressDetailStatuses.get(i).visible = false;
-                    //    }
-                    //}
-
-                    //notifyDataSetChanged();
 
                     ProgressDetailStatus status = progressDetailStatuses.get(position);
                     if (status.visible) {

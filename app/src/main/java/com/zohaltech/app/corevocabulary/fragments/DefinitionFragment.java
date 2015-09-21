@@ -56,8 +56,10 @@ public class DefinitionFragment extends Fragment implements
         textToSpeech = new TextToSpeech(getActivity(), this);
 
         assert vocabulary != null;
-        txtVocabEnglishDefinition.setText(vocabulary.getVocabEnglishDef());
-        txtVocabPersianMeaning.setText(vocabulary.getVocabPersianDef());
+//        txtVocabEnglishDefinition.setText(vocabulary.getVocabEnglishDef());
+//        txtVocabPersianMeaning.setText(vocabulary.getVocabPersianDef());
+        txtVocabEnglishDefinition.setText(vocabulary.getEncEngDef());
+        txtVocabPersianMeaning.setText(vocabulary.getEncPersianDef());
 
         btnSpeechUK.setOnClickListener(new View.OnClickListener() {
             @Override
