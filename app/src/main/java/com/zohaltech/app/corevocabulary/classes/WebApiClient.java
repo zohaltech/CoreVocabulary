@@ -5,6 +5,8 @@ import android.util.Log;
 
 import com.zohaltech.app.corevocabulary.BuildConfig;
 import com.zohaltech.app.corevocabulary.R;
+import com.zohaltech.app.corevocabulary.data.SystemSettings;
+import com.zohaltech.app.corevocabulary.entities.SystemSetting;
 
 
 import org.apache.http.HttpResponse;
@@ -33,61 +35,61 @@ public class WebApiClient {
     }
 
     public void postSubscriberData(final PostAction action) {
-//        Thread thread = new Thread(new Runnable() {
-//            @Override
-//            public void run() {
-//                try {
-//                    SystemSetting setting = SystemSettings.getCurrentSettings();
-//                    JSONObject jsonObject = new JSONObject();
-//
-//                    if (action == PostAction.INSTALL) {
-//                        if (!setting.getInstalled()) {
-//                            if (ConnectionManager.getInternetStatus() == ConnectionManager.InternetStatus.Connected) {
-//                                jsonObject.accumulate("SecurityKey", ConstantParams.getApiSecurityKey());
-//                                jsonObject.accumulate("AppId", 1);
-//                                jsonObject.accumulate("DeviceId", Helper.getDeviceId());
-//                                jsonObject.accumulate("DeviceBrand", Build.MANUFACTURER);
-//                                jsonObject.accumulate("DeviceModel", Build.MODEL);
-//                                jsonObject.accumulate("AndroidVersion", Build.VERSION.RELEASE);
-//                                jsonObject.accumulate("ApiVersion", Build.VERSION.SDK_INT);
-//                                jsonObject.accumulate("OperatorId", Helper.getOperator().ordinal());
-//                                jsonObject.accumulate("IsPurchased", false);
-//                                jsonObject.accumulate("MarketId", App.market);
-//                                jsonObject.accumulate("AppVersion", BuildConfig.VERSION_CODE);
-//                                setJsonObject(jsonObject);
-//                                Boolean result = post(getJsonObject());
-//                                setting.setInstalled(result);
-//                                SystemSettings.update(setting);
-//                            }
-//                        }
-//                    } else {
-//                        if (!setting.getRegistered()) {
-//                            if (ConnectionManager.getInternetStatus() == ConnectionManager.InternetStatus.Connected) {
-//                                jsonObject.accumulate("SecurityKey", ConstantParams.getApiSecurityKey());
-//                                jsonObject.accumulate("AppId", 1);
-//                                jsonObject.accumulate("DeviceId", Helper.getDeviceId());
-//                                jsonObject.accumulate("DeviceBrand", Build.MANUFACTURER);
-//                                jsonObject.accumulate("DeviceModel", Build.MODEL);
-//                                jsonObject.accumulate("AndroidVersion", Build.VERSION.RELEASE);
-//                                jsonObject.accumulate("ApiVersion", Build.VERSION.SDK_INT);
-//                                jsonObject.accumulate("OperatorId", Helper.getOperator().ordinal());
-//                                jsonObject.accumulate("IsPurchased", true);
-//                                jsonObject.accumulate("MarketId", App.market);
-//                                jsonObject.accumulate("AppVersion", BuildConfig.VERSION_CODE);
-//                                setJsonObject(jsonObject);
-//                                Boolean result = post(getJsonObject());
-//                                setting.setRegistered(result);
-//                                SystemSettings.update(setting);
-//                            }
-//                        }
-//                    }
-//                } catch (Exception e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//        });
-//
-//        thread.start();
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    SystemSetting setting = SystemSettings.getCurrentSettings();
+                    JSONObject jsonObject = new JSONObject();
+
+                    if (action == PostAction.INSTALL) {
+                        if (!setting.getInstalled()) {
+                            if (ConnectionManager.getInternetStatus() == ConnectionManager.InternetStatus.Connected) {
+                                jsonObject.accumulate("SecurityKey", ConstantParams.getApiSecurityKey());
+                                jsonObject.accumulate("AppId", 1);
+                                jsonObject.accumulate("DeviceId", Helper.getDeviceId());
+                                jsonObject.accumulate("DeviceBrand", Build.MANUFACTURER);
+                                jsonObject.accumulate("DeviceModel", Build.MODEL);
+                                jsonObject.accumulate("AndroidVersion", Build.VERSION.RELEASE);
+                                jsonObject.accumulate("ApiVersion", Build.VERSION.SDK_INT);
+                                jsonObject.accumulate("OperatorId", Helper.getOperator().ordinal());
+                                jsonObject.accumulate("IsPurchased", false);
+                                jsonObject.accumulate("MarketId", App.market);
+                                jsonObject.accumulate("AppVersion", BuildConfig.VERSION_CODE);
+                                setJsonObject(jsonObject);
+                                Boolean result = post(getJsonObject());
+                                setting.setInstalled(result);
+                                SystemSettings.update(setting);
+                            }
+                        }
+                    } else {
+                        if (!setting.getPremiumVersion()) {
+                            if (ConnectionManager.getInternetStatus() == ConnectionManager.InternetStatus.Connected) {
+                                jsonObject.accumulate("SecurityKey", ConstantParams.getApiSecurityKey());
+                                jsonObject.accumulate("AppId", 1);
+                                jsonObject.accumulate("DeviceId", Helper.getDeviceId());
+                                jsonObject.accumulate("DeviceBrand", Build.MANUFACTURER);
+                                jsonObject.accumulate("DeviceModel", Build.MODEL);
+                                jsonObject.accumulate("AndroidVersion", Build.VERSION.RELEASE);
+                                jsonObject.accumulate("ApiVersion", Build.VERSION.SDK_INT);
+                                jsonObject.accumulate("OperatorId", Helper.getOperator().ordinal());
+                                jsonObject.accumulate("IsPurchased", true);
+                                jsonObject.accumulate("MarketId", App.market);
+                                jsonObject.accumulate("AppVersion", BuildConfig.VERSION_CODE);
+                                setJsonObject(jsonObject);
+                                Boolean result = post(getJsonObject());
+                                setting.setPremiumVersion(result);
+                                SystemSettings.update(setting);
+                            }
+                        }
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        thread.start();
     }
 
     private Boolean post(JSONObject jsonObject) {

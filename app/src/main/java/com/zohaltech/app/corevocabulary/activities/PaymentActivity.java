@@ -3,22 +3,19 @@ package com.zohaltech.app.corevocabulary.activities;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.util.Log;
-import android.widget.Toast;
 
-import com.zohaltech.app.corevocabulary.R;
 import com.zohaltech.app.corevocabulary.classes.App;
-import com.zohaltech.app.corevocabulary.classes.LicenseManager;
 import com.zohaltech.app.corevocabulary.classes.MyRuntimeException;
 import com.zohaltech.app.corevocabulary.classes.WebApiClient;
+import com.zohaltech.app.corevocabulary.data.SystemSettings;
+import com.zohaltech.app.corevocabulary.entities.SystemSetting;
 import com.zohaltech.app.corevocabulary.util.IabHelper;
 import com.zohaltech.app.corevocabulary.util.IabResult;
 import com.zohaltech.app.corevocabulary.util.Inventory;
 import com.zohaltech.app.corevocabulary.util.Purchase;
 
 
-
 public abstract class PaymentActivity extends EnhancedActivity {
-
     private final String PAY_LOAD    = "SIGMA_ANDROID_APP";
     private final String TAG         = "SIGMA_TAG";
     private final String SKU_PREMIUM = "PREMIUM";
@@ -26,7 +23,8 @@ public abstract class PaymentActivity extends EnhancedActivity {
     String responseMessage = "ارتقای برنامه با مشکل مواجه شد";
     private ProgressDialog progressDialog;
     private boolean mIsPremium = false;
-    private IabHelper mHelper;
+    private IabHelper     mHelper;
+    private SystemSetting setting;
 
     private IabHelper.QueryInventoryFinishedListener mGotInventoryListener = new IabHelper.QueryInventoryFinishedListener() {
         public void onQueryInventoryFinished(IabResult result, Inventory inventory) {
@@ -42,7 +40,7 @@ public abstract class PaymentActivity extends EnhancedActivity {
 
                 // update UI accordingly
                 if (mIsPremium) {
-                    LicenseManager.registerLicense();
+                    SystemSettings.register(setting);
                     updateUiToPremiumVersion();
                     setWaitScreen(false);
                 }
@@ -66,7 +64,7 @@ public abstract class PaymentActivity extends EnhancedActivity {
                     complain("خطا در ورود به حساب کاربری " + App.marketName);
                 } else {
                     // give user access to premium content and update the UI
-                    LicenseManager.registerLicense();
+                    SystemSettings.register(setting);
                     //MyToast.show(responseMessage, Toast.LENGTH_LONG);
                     updateUiToPremiumVersion();
                     WebApiClient.sendUserData(WebApiClient.PostAction.REGISTER);
@@ -78,7 +76,9 @@ public abstract class PaymentActivity extends EnhancedActivity {
 
     @Override
     void onCreated() {
-        if (LicenseManager.getLicenseStatus() != LicenseManager.Status.REGISTERED) {
+        setting = SystemSettings.getCurrentSettings();
+        // if (LicenseManager.getLicenseStatus() != LicenseManager.Status.REGISTERED) { comment for JanJan
+        if (!setting.getPremiumVersion()) {
             try {
                 mHelper = new IabHelper(this, App.marketPublicKey);
                 //Log.d(TAG, "Starting setup.");
@@ -168,7 +168,7 @@ public abstract class PaymentActivity extends EnhancedActivity {
             e.printStackTrace();
             setWaitScreen(false);
             updateUiToTrialVersion();
-         //   MyToast.show("خطا در ارتباط با " + App.marketName + "، لطفا بعدا دوباره تلاش کنید", Toast.LENGTH_SHORT, R.drawable.ic_warning_white);
+            //   MyToast.show("خطا در ارتباط با " + App.marketName + "، لطفا بعدا دوباره تلاش کنید", Toast.LENGTH_SHORT, R.drawable.ic_warning_white);
         }
     }
 
