@@ -14,12 +14,14 @@ public class Themes {
     static final String Id        = "Id";
     static final String Level     = "Level";
     static final String Name      = "Name";
+    static final String EncName      = "EncName";
     static final String IconName  = "IconName";
 
     static final String CreateTable = "CREATE TABLE " + TableName + " ( " +
                                       Id + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
                                       Level + " INTEGER , " +
                                       Name + " VARCHAR(50) ," +
+                                      EncName + " VARCHAR(500) ," +
                                       IconName + " VARCHAR(50));";
     static final String DropTable   = "Drop Table If Exists " + TableName;
 
@@ -37,6 +39,7 @@ public class Themes {
                     Theme theme = new Theme(cursor.getInt(cursor.getColumnIndex(Id)),
                                             cursor.getInt(cursor.getColumnIndex(Level)),
                                             cursor.getString(cursor.getColumnIndex(Name)),
+                                            cursor.getString(cursor.getColumnIndex(EncName)),
                                             cursor.getString(cursor.getColumnIndex(IconName)));
 
                     themeList.add(theme);
@@ -81,6 +84,7 @@ public class Themes {
 
         values.put(Level, theme.getLevel());
         values.put(Name, theme.getName());
+        values.put(EncName, theme.getEncName1());
         values.put(IconName, theme.getIconName());
 
         return values;

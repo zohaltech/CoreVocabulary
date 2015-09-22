@@ -16,9 +16,17 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.zohaltech.app.corevocabulary.R;
+import com.zohaltech.app.corevocabulary.classes.App;
+import com.zohaltech.app.corevocabulary.classes.CoreSec;
+import com.zohaltech.app.corevocabulary.data.Examples;
+import com.zohaltech.app.corevocabulary.data.Vocabularies;
+import com.zohaltech.app.corevocabulary.entities.Example;
+import com.zohaltech.app.corevocabulary.entities.Vocabulary;
 import com.zohaltech.app.corevocabulary.fragments.DrawerFragment;
 import com.zohaltech.app.corevocabulary.fragments.SearchFragment;
 import com.zohaltech.app.corevocabulary.fragments.ThemesFragment;
+
+import java.util.ArrayList;
 
 import widgets.MySnackbar;
 
@@ -26,13 +34,16 @@ import widgets.MySnackbar;
 public class MainActivity extends EnhancedActivity {
 
     long startTime;
-    private DrawerLayout   drawerLayout;
-    private Fragment       fragment;
+    private DrawerLayout drawerLayout;
+    private Fragment     fragment;
 
     @Override
     protected void onCreated() {
         setContentView(R.layout.activity_main);
         startTime = System.currentTimeMillis() - 5000;
+
+        if (!App.preferences.getBoolean("Encoded", false))
+            EncryptVocabs();
     }
 
     @Override
@@ -134,5 +145,52 @@ public class MainActivity extends EnhancedActivity {
         } else {
             super.onBackPressed();
         }
+    }
+
+
+    private void EncryptVocabs() {
+        ArrayList<Vocabulary> vocabularies = Vocabularies.select();
+        ArrayList<Example> examples = Examples.select();
+
+        for (Vocabulary vocabulary : vocabularies) {
+            try {
+                vocabulary.setEncVocab(CoreSec.encrypt(vocabulary.getVocabulary()));
+                vocabulary.setEncPersianDef(CoreSec.encrypt(vocabulary.getVocabPersianDef()));
+                vocabulary.setEncEngDef(CoreSec.encrypt(vocabulary.getVocabEnglishDef()));
+
+                Vocabularies.update(vocabulary);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        //        for (Vocabulary vocabulary : vocabularies) {
+        //            try {
+        //
+        //                String voc = decrypt(vocabulary.getEncVocab1());
+        //                String p = decrypt(vocabulary.getEncPersianDef1());
+        //
+        //                //                        String voc = java.net.URLDecoder.decode(new String(xsamCrypt.decrypt(vocabulary.getEncVocab1())),"UTF-8");
+        //                //                        String p =  java.net.URLDecoder.decode(new String(xsamCrypt.decrypt(vocabulary.getEncPersianDef1())),"UTF-8");
+        //                //                vocabulary.setEncVocab(XsamCrypt.bytesToHex(xsamCrypt.encrypt(vocabulary.getVocabulary())));
+        //                //                vocabulary.setEncPersianDef(XsamCrypt.bytesToHex(xsamCrypt.encrypt(vocabulary.getVocabPersianDef())));
+        //                //                vocabulary.setEncEngDef(XsamCrypt.bytesToHex(xsamCrypt.encrypt(vocabulary.getVocabEnglishDef())));
+        //
+        //                Vocabularies.update(vocabulary);
+        //
+        //            } catch (Exception e) {
+        //                e.printStackTrace();
+        //            }
+        //        }
+        for (Example example : examples) {
+            try {
+                example.setEncEnglish(CoreSec.encrypt(example.getEnglish()));
+                example.setEncPersian(CoreSec.encrypt(example.getPersian()));
+
+                Examples.update(example);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        App.preferences.edit().putBoolean("Encoded", true).apply();
     }
 }

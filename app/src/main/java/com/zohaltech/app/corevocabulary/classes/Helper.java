@@ -1,16 +1,11 @@
 package com.zohaltech.app.corevocabulary.classes;
 
-/**
- * Created by Me on 9/12/2015.
- */
-
 import android.content.Context;
 import android.content.Intent;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Vibrator;
-import android.support.v4.app.FragmentActivity;
 import android.telephony.TelephonyManager;
 
 import java.math.BigDecimal;
@@ -22,28 +17,34 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
-import android.content.Context;
-import android.content.Intent;
-import android.media.Ringtone;
-import android.media.RingtoneManager;
-import android.net.Uri;
-import android.os.Vibrator;
-import android.support.v4.app.FragmentActivity;
-import android.telephony.TelephonyManager;
-
-
-import java.math.BigDecimal;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Locale;
-import java.util.Objects;
-
 
 public final class Helper {
 
+    public enum Operator {
+        MCI,
+        IRANCELL,
+        RIGHTELL,
+        NO_SIM
+    }
+
+    public static Operator getOperator() {
+        Operator operator = Operator.NO_SIM;
+        try {
+            TelephonyManager tm = (TelephonyManager) App.context.getSystemService(Context.TELEPHONY_SERVICE);
+            String simOperatorName = tm.getSimOperatorName().toUpperCase();
+            if (simOperatorName.toUpperCase().compareTo("IR-MCI") == 0 || simOperatorName.compareTo("IR-TCI") == 0) {
+                operator = Operator.MCI;
+            } else if (simOperatorName.toUpperCase().compareTo("RIGHTEL") == 0) {
+                operator = Operator.RIGHTELL;
+            } else if (simOperatorName.toUpperCase().compareTo("IRANCELL") == 0) {
+                operator = Operator.IRANCELL;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return operator;
+    }
 
     public static String getCurrentDateTime() {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss", Locale.getDefault());
@@ -122,7 +123,7 @@ public final class Helper {
     public static int indexOf(Object o, ArrayList<Object> elementData) {
         if (o == null) {
             for (int i = 0; i < elementData.size(); i++)
-                if (elementData.get(i) ==null)
+                if (elementData.get(i) == null)
                     return i;
         } else {
             for (int i = 0; i < elementData.size(); i++)

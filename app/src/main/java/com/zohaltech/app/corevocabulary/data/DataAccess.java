@@ -7,6 +7,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 import com.zohaltech.app.corevocabulary.classes.App;
 import com.zohaltech.app.corevocabulary.classes.CsvReader;
 import com.zohaltech.app.corevocabulary.classes.MyRuntimeException;
+import com.zohaltech.app.corevocabulary.classes.CoreSec;
+import com.zohaltech.app.corevocabulary.classes.XsamCrypt;
 import com.zohaltech.app.corevocabulary.entities.Theme;
 
 import java.io.InputStreamReader;
@@ -14,7 +16,7 @@ import java.io.InputStreamReader;
 public class DataAccess extends SQLiteOpenHelper
 {
     public static final String DATABASE_NAME = "CORE_VOCABULARY";
-    public static final int DATABASE_VERSION = 9;
+    public static final int DATABASE_VERSION = 17;
 
     public DataAccess()
     {
@@ -31,19 +33,32 @@ public class DataAccess extends SQLiteOpenHelper
             db.execSQL(Examples.CreateTable);
             db.execSQL(Notes.CreateTable);
 
-            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(1, "Education", "ic_education")));
-            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(2, "Job and Employment", "ic_job")));
-            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(3, "Media", "ic_media")));
-            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(4, "Health", "ic_health")));
-            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(5, "Environment", "ic_environment")));
-            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(6, "Advertising", "ic_advertising")));
-            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(7, "Foreign Language", "ic_language")));
-            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(8, "Urbanisation", "ic_urbanisation")));
-            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(9, "Crimes and Law", "ic_law")));
-            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(11, "Sports", "ic_sports")));
-            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(12, "Space", "ic_space")));
-            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(13, "Science", "ic_science")));
-            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(14, "Causes and Results", "ic_causes")));
+//            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(1, "Education",, "ic_education")));
+//            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(2, "Job and Employment", "ic_job")));
+//            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(3, "Media", "ic_media")));
+//            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(4, "Health", "ic_health")));
+//            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(5, "Environment", "ic_environment")));
+//            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(6, "Advertising", "ic_advertising")));
+//            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(7, "Foreign Language", "ic_language")));
+//            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(8, "Urbanisation", "ic_urbanisation")));
+//            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(9, "Crimes and Law", "ic_law")));
+//            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(11, "Sports", "ic_sports")));
+//            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(12, "Space", "ic_space")));
+//            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(13, "Science", "ic_science")));
+//            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(14, "Causes and Results", "ic_causes")));
+
+            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(1, "Education", CoreSec.encrypt("Education"), "ic_education")));
+            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(2, "Job and Employment",  CoreSec.encrypt("Job and Employment"), "ic_job")));
+            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(3, "Media", CoreSec.encrypt("Media"), "ic_media")));
+            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(4, "Health", CoreSec.encrypt("Health") ,"ic_health")));
+            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(5, "Environment", CoreSec.encrypt("Environment") ,"ic_environment")));
+            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(6, "Advertising", CoreSec.encrypt("Advertising") ,"ic_advertising")));
+            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(8, "Urbanisation", CoreSec.encrypt("Urbanisation"), "ic_urbanisation")));
+            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(9, "Crimes and Law", CoreSec.encrypt("Crimes and Law"), "ic_law")));
+            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(11, "Sports", CoreSec.encrypt("Sports"), "ic_sports")));
+            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(12, "Space", CoreSec.encrypt("Space"), "ic_space")));
+            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(13, "Science", CoreSec.encrypt("Science"), "ic_science")));
+            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(14, "Causes and Results", CoreSec.encrypt("Causes and Results"), "ic_causes")));
 
             insertDataFromAsset(db, Vocabularies.TableName, "data/vocabs.csv", ';');
             insertDataFromAsset(db, Examples.TableName, "data/examples.csv", ';');
@@ -52,6 +67,8 @@ public class DataAccess extends SQLiteOpenHelper
         }
         catch (MyRuntimeException e)
         {
+            e.printStackTrace();
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -163,4 +180,6 @@ public class DataAccess extends SQLiteOpenHelper
             e.printStackTrace();
         }
     }
+
+
 }

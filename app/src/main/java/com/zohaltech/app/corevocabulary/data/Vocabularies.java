@@ -20,6 +20,11 @@ public class Vocabularies {
     static final String Learned    = "Learned";
     static final String Bookmarked = "Bookmarked";
 
+    static final String EncVocab      = "EncVocab";
+    static final String EncEngDef     = "EncEngDef";
+    static final String EncPersianDef = "EncPersianDef";
+
+
     static final String CreateTable = "CREATE TABLE " + TableName + " ( " +
                                       Id + " INTEGER PRIMARY KEY NOT NULL, " +
                                       ThemeId + " INTEGER REFERENCES " + Themes.TableName + " (" + Themes.Id + "), " +
@@ -27,6 +32,9 @@ public class Vocabularies {
                                       Vocabulary + " VARCHAR(250), " +
                                       EnglishDef + " VARCHAR(1024)," +
                                       PersianDef + " VARCHAR(1024), " +
+                                      EncVocab + " VARCHAR(1024), " +
+                                      EncEngDef + " VARCHAR(1024), " +
+                                      EncPersianDef + " VARCHAR(1024), " +
                                       Learned + " Boolean DEFAULT (0), " +
                                       Bookmarked + " Boolean DEFAULT (0) );";
 
@@ -50,7 +58,10 @@ public class Vocabularies {
                                                            cursor.getString(cursor.getColumnIndex(EnglishDef)),
                                                            cursor.getString(cursor.getColumnIndex(PersianDef)),
                                                            cursor.getInt(cursor.getColumnIndex(Learned)) == 1,
-                                                           cursor.getInt(cursor.getColumnIndex(Bookmarked)) == 1);
+                                                           cursor.getInt(cursor.getColumnIndex(Bookmarked)) == 1,
+                                                           cursor.getString(cursor.getColumnIndex(EncVocab)),
+                                                           cursor.getString(cursor.getColumnIndex(EncEngDef)),
+                                                           cursor.getString(cursor.getColumnIndex(EncPersianDef)));
 
                     vocabularies.add(vocabulary);
                 } while (cursor.moveToNext());
@@ -133,7 +144,10 @@ public class Vocabularies {
                                                            cursor.getString(cursor.getColumnIndex(EnglishDef)),
                                                            cursor.getString(cursor.getColumnIndex(PersianDef)),
                                                            cursor.getInt(cursor.getColumnIndex(Learned)) == 1,
-                                                           cursor.getInt(cursor.getColumnIndex(Bookmarked)) == 1);
+                                                           cursor.getInt(cursor.getColumnIndex(Bookmarked)) == 1,
+                                                           cursor.getString(cursor.getColumnIndex(EncVocab)),
+                                                           cursor.getString(cursor.getColumnIndex(EncEngDef)),
+                                                           cursor.getString(cursor.getColumnIndex(EncPersianDef)));
                     vocabularies.add(vocabulary);
                 } while (cursor.moveToNext());
             }
@@ -168,6 +182,11 @@ public class Vocabularies {
         values.put(PersianDef, vocabulary.getVocabPersianDef());
         values.put(Learned, vocabulary.getLearned());
         values.put(Bookmarked, vocabulary.getBookmarked());
+
+
+        values.put(EncVocab, vocabulary.getEncVocab1());
+        values.put(EncEngDef, vocabulary.getEncEngDef1());
+        values.put(EncPersianDef, vocabulary.getEncPersianDef1());
         return values;
     }
 
