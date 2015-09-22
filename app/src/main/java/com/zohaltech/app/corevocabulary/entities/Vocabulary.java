@@ -46,13 +46,13 @@ public class Vocabulary {
 
     public Vocabulary(int id, int themeId, int day, String vocabulary, String vocabEnglishDef, String vocabPersianDef, Boolean learned, Boolean bookmarked
             , String encVocab, String encEngDef, String encPersianDef) {
-        this(themeId, day, vocabulary, vocabEnglishDef, vocabPersianDef, bookmarked, learned,
+        this(themeId, day, vocabulary, vocabEnglishDef, vocabPersianDef, learned, bookmarked,
              encVocab, encEngDef, encPersianDef);
         this.id = id;
     }
 
     public Vocabulary(int id, int themeId, int day, String vocabulary, String vocabEnglishDef, String vocabPersianDef, Boolean learned, Boolean bookmarked) {
-        this(themeId, day, vocabulary, vocabEnglishDef, vocabPersianDef, bookmarked, learned);
+        this(themeId, day, vocabulary, vocabEnglishDef, vocabPersianDef, learned, bookmarked);
         this.id = id;
     }
 
