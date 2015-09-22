@@ -103,7 +103,6 @@ public abstract class PaymentActivity extends EnhancedActivity {
 
     @Override
     void onToolbarCreated() {
-
     }
 
     @Override
@@ -168,7 +167,7 @@ public abstract class PaymentActivity extends EnhancedActivity {
             e.printStackTrace();
             setWaitScreen(false);
             updateUiToTrialVersion();
-            //   MyToast.show("خطا در ارتباط با " + App.marketName + "، لطفا بعدا دوباره تلاش کنید", Toast.LENGTH_SHORT, R.drawable.ic_warning_white);
+            // MyToast.show("خطا در ارتباط با " + App.marketName + "، لطفا بعدا دوباره تلاش کنید", Toast.LENGTH_SHORT, R.drawable.ic_warning_white);
         }
     }
 
