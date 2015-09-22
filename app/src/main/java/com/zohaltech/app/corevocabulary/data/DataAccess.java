@@ -33,10 +33,6 @@ public class DataAccess extends SQLiteOpenHelper
             db.execSQL(Examples.CreateTable);
             db.execSQL(Notes.CreateTable);
 
-            XsamCrypt xsamCrypt = new XsamCrypt();
-
-
-
 //            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(1, "Education",, "ic_education")));
 //            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(2, "Job and Employment", "ic_job")));
 //            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(3, "Media", "ic_media")));
@@ -50,7 +46,6 @@ public class DataAccess extends SQLiteOpenHelper
 //            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(12, "Space", "ic_space")));
 //            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(13, "Science", "ic_science")));
 //            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(14, "Causes and Results", "ic_causes")));
-
 
             db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(1, "Education", CoreSec.encrypt("Education"), "ic_education")));
             db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(2, "Job and Employment",  CoreSec.encrypt("Job and Employment"), "ic_job")));
