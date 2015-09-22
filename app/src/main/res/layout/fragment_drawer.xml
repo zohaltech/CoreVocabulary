@@ -10,7 +10,7 @@
         android:id="@+id/nav_header_container"
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:background="@color/primary_dark"
+        android:background="@drawable/drawer_header_bg"
         android:gravity="center"
         android:orientation="horizontal">
 
