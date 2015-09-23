@@ -67,12 +67,7 @@ public class ReminderManager
         }
     }
 
-    public static void start()
-    {
-        start(true);
-    }
-
-    private static void start(boolean isResume)
+    public static void start(boolean isResume)
     {
         ReminderSettings settings = getReminderSettings();
         if (settings == null)
