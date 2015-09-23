@@ -16,7 +16,7 @@ import java.io.InputStreamReader;
 public class DataAccess extends SQLiteOpenHelper
 {
     public static final String DATABASE_NAME = "CORE_VOCABULARY";
-    public static final int DATABASE_VERSION = 17;
+    public static final int DATABASE_VERSION = 19;
 
     public DataAccess()
     {
@@ -63,6 +63,8 @@ public class DataAccess extends SQLiteOpenHelper
             insertDataFromAsset(db, Vocabularies.TableName, "data/vocabs.csv", ';');
             insertDataFromAsset(db, Examples.TableName, "data/examples.csv", ';');
             insertDataFromAsset(db, Notes.TableName, "data/notes.csv", ';');
+
+            App.preferences.edit().putBoolean("Encoded", false).apply();
 
         }
         catch (MyRuntimeException e)
