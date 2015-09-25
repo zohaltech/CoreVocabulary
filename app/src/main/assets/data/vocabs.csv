@@ -144,7 +144,7 @@ Id;ThemeId;Day;Vocabulary;EnglishDef;PersianDef
 143;4;6;Overeating;to eat too much, or eat more than is healthy;پرخوری
 144;4;6;Boost;to increase or improve something and make it more successful;بهتر کردن و بهبود بخشیدن چیزی
 145;5;1;Environmentally-friendly;earth-friendly or not harmful to the environment;سازگار با محیط زیست
-146;5;1;. Environmentally-damaging;Harmful for the environment;مضر برای محیط زیست. 
+146;5;1;Environmentally-damaging;Harmful for the environment;مضر برای محیط زیست.
 147;5;1;Pay off;if something you do pays off, it is successful or has a good result;جواب دادن، نتیجه موفق دادن.
 148;5;1;Revamp;to renovate, revise, or restructure;بازسازی کردن و بهبود بخشیدن
 149;5;1;Degradation;the process by which something changes to a worse condition;فرسایش، تخریب
@@ -333,7 +333,7 @@ Id;ThemeId;Day;Vocabulary;EnglishDef;PersianDef
 332;10;2; Fan / Supporter;someone who likes a particular sports team, and often goes to watch them play.;طرفدار
 333;10;2;Performance-enhancing drugs;drugs that are used illegally by people competing in sports events to improve their performance;داروهای افزایش دهنده کارایی
 334;10;2;Workout;a period of physical exercise, especially as training for a sport;تمرین ورزشی
-335;10;2;Vigorous/Strenuous exercise;hard physical exercies;تمرین سخت ورزشی
+335;10;2;Vigorous/Strenuous exercise;hard physical exercise;تمرین سخت ورزشی
 336;10;2;Gentle/Light exercise;not extreme, or strong exercise;تمرین ورزشی سبک
 337;10;3;To make money;to earn or get money;پول درآوردن
 338;10;3;Payment;an amount of money that has been or must be paid;پرداختی
