@@ -644,7 +644,7 @@ VocabularyId;Ordinal;English;Persian
 324;1;Road regulations should be reassesssed and revised regularly so as to combat road offences more effectively. ;قوانین جاده ای باید به صورت منظم مورد ارزیابی مجدد و بازنویسی قرار بگیرد تا با جرایم جاده ای  به صورت موثرتری برخورد شود. 
 324;2;The possession of stolen property is a criminal offence.;مالکیت وسایل دزدی یک جرم حقوقی است. 
 325;1;The Olympics appeal to global audiences with displaying athletic skills and competitive spirit. ;المپیک با نمایش مهارت های ورزشی و روحیه رقابتی برای تماشاچیان جذاب است. 
-325;2;If you want me to play, I will, but I'm not very athletic.;اگر می خواهید من بازی می کند ولی من زیاد ورزشکار نیستم. 
+325;2;If you want me to play, I will, but I'm not very athletic.;اگر می خواهید من بازی می کنم ولی من زیاد ورزشکار نیستم.
 326;1;Keen rivalry and high level of competition are the attractions of the Olympic Games. ;رقابت شدید و سطح بالای رقابت، جذابیت های بازی های المپیک هستند.  
 326;2;The two players have developed a friendly rivalry.;دو بازیکن یک رقابت دوستانه را بوجود آورده اند. 
 327;1;People, especially young males, are in need of some form of outlet for their energy and emotion related with sports. ;مردم، علی الخصوص مردان، به نوعی تخلیه انرژی و احساسات مربوط به ورزش نیاز دارند. 
@@ -665,7 +665,7 @@ VocabularyId;Ordinal;English;Persian
 336;1;Gentle exercise can be beneficial for older people.;ورزش سبک می تواند برای افراد پیرتر مفید باشد
 337;1;Professional athletes are making too much money in a society where salaries and wages are traditionally based on the value of work.;ورزشکاران حرفه ای در جامعه ای پول زیادی درمی آورند که در آن حقوق ها و دستمزدها به صورت سنتی بسته به ارزش کار آنهاست. 
 337;2;His one aim in life was to make money.;هدف اصلی او در زندگی پول درآوردن بود. 
-338;1;ayment is received for a service, therefore professional sports are a business.;پرداختی برای یک سرویس داده می شود، بنابراین ورزش های حرفه ای یک تجارت به حساب می آیند. 
+338;1;Payment is received for a service, therefore professional sports are a business.;پرداختی برای یک سرویس داده می شود، بنابراین ورزش های حرفه ای یک تجارت به حساب می آیند.
 339;1;These athletes sometimes go through life-threatening injuries for the love of the game.;این ورزشکاران گاهی به عشق بازی، به جراحت های تهدیدکننده جان دچار می شوند. 
 340;1;Signing contracts with athletes for enormous amounts of money has downsides too.;امضاء قرارداد با ورزشکاران برای مقادیر زیاد پول عیوبی نیز دارد. 
 340;2;Digital cell phones offer more security, but the downside is that they have less power.;موبایل های دیجیتال امنیت بیشتری را ارائه می دهند، اما عیب آنها این است که قدرت کمتری دارند. 
@@ -680,7 +680,9 @@ VocabularyId;Ordinal;English;Persian
 345;2;She wanted to escape the monotony of her everyday life.;او می خواست از یکنواختی زندگی روزمره اش بگریزد. 
 346;1;Sport helps us to keep fit.;ورزش کمک می کند تا ما خوش اندام بمانیم. 
 346;2;She bought a bright red sports car.;او یک ماشین ورزشی قرمز روشن خرید
-346;3;He does all types of sport. ;او تمام انواع ورزش ها را انجام می دهد. 
+346;3;He does all types of sport. ;او تمام انواع ورزش ها را انجام می دهد.
+347;1;If we banned dangerous and violent sports, we would be moving one step forward in improving mankind. ;اگر ما ورزش های خطرناک را قدغن کنیم، یک قدم به سمت پیشرفت بشریت خواهیم برداشت.
+347;2;The discovery of penicillin was a major step forward in the treatment of infections. ;کشف پنی سیلین یک گام بزرگ به سمت درمان عفونت ها بود.
 367;1;If we banned dangerous and violent sports, we would be moving one step forward in improving mankind.;اگر ما ورزش های خطرناک را قدغن کنیم، یک قدم به سمت پیشرفت بشریت خواهیم برداشت
 367;2;The discovery of penicillin was a major step forward in the treatment of infections.;کشف پنی سیلین یک گام بزرگ به سمت درمان عفونت ها بود. 
 348;1;Why do boxing matches, for instance, attract such universal interest?;چرا به عنوان مثال، مسافقات بکس چنین علاقه جهانی کسب کرده است؟

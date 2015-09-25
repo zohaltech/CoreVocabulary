@@ -6,17 +6,29 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <widgets.MyButton
-        android:id="@+id/btnSpeechUS"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="US"/>
 
-    <widgets.MyButton
-        android:id="@+id/btnSpeechUK"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="UK"/>
+        android:orientation="horizontal">
+
+
+        <widgets.MyButton
+            android:id="@+id/btnSpeechUS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="US"/>
+
+        <widgets.MyButton
+            android:id="@+id/btnSpeechUK"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="UK"/>
+
+
+    </LinearLayout>
+
+
 
     <widgets.LatinTextView
         android:id="@+id/txtVocabEnglishDefinition"

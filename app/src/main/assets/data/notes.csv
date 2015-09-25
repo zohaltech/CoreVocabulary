@@ -187,7 +187,7 @@ VocabularyId;Ordinal;Description
 232;2;وقتی می گوییم چیزی indigenous to جایی یا کسی است، یعنی اصل آن برای آنجاست. |Blueberries are indigenous to America.|
 234;1;روف اضافه قابل استفاده برای این کلمه merge into و merge with هستند. اولین عبارت یعنی "پیوستن به" و دومین عبارت یعنی "ترکیب شدن با" 
 234;2;از فعل  immigrate (مهاجرت کردن به یک کشور جدید) معمولاً استفاده نمی شود. به جای آن از فعل emigrate و یا اسم های آن immigrant (مهاجر) و immigration (مهاجرت) استفاده کنید. همچنین توجه کنید که فعل migrate هم به معنی "کوچ کردن" بیشتر در مورد پرنده ها و یا افراد زمانی استفاده می شود که مرتب از جایی به جایی دیگر برای غذا یا مکان زندگی کوچ کنند. ||How do birds know when to migrate and how do they find their way back home?|There were no jobs back home so we decided to emigrate.|When jobs became scarce, the number of new immigrants suddenly decreased.|Immigration has decreased in recent years.|
-241;1;در نوشته ها برای تنوع می توانید از Holidaymaking به معنی "توریسم" و از Holidaymaker به معنی "توریست" استفاده کنید. 
+241;1;در نوشته ها برای تنوع می توانید از Holidaymaking به معنی "توریسم" و از Holidaymaker به معنی "توریست" استفاده کنید.
 251;1;توجه داشته باشید که بعد از این ترکیب اگر قرار باشد از فعل استفاده شود، باید این فعل ing باشد: look forward to doing something
 253;1;عبارت economic climate را می توانید در حالت رسمی تر به جای economic conditions به معنی "شرایط اقتصادی" بکار ببرید. 
 256;1;به جای government می توانید برای تنوع از state هم استفاده کنید. 
@@ -207,14 +207,15 @@ VocabularyId;Ordinal;Description
 300;1;توجه داشته باشید که کلمه upbringing (تربیت) و فعل آن: bring up (تربیت کردن) در مورد تربیت و شکل دهی رفتار کودکان درحین رشد کردن استفاده می شود و به معنی پرورش دادن (grow up) نیست. 
 312;1;robbery سرقت از بانک و مکان های بزرگ و مهم است، در حالیکه burglary سرقت از خانه و ماشین. 
 325;1;وقتی می گوییم something appeals to someone یعنی "آن کس از آن چیز خوشش می آید". این دو عبارت را با هم مقایسه کنید:|Something appeals to someone.|Someone likes something. |
-326;2;از کلمه rival می توانید به معنی "رقیب" استفاده کنید. 
-329;3;عبارت cease to do something یعنی "انجام کاری را متوقف کردن". از این عبارت می توانید به جای stop to do something استفاده کنید. 
-330;4;به تفاوت دو کلمه spectator و audience توجه کنید:|Spectator: تماشاچیان حاضر در رویدادهای ورزشی |Audience: تماشاچیان و حضار حاضر در برنامه های سرگرمی و اجراها|
-338;5;Payment پولی است که برای چیزی داده می شود، درحالیکه Fee پولی است که به یک دکتر، وکیل و ... داده میشود. |I had to get rid of the car because I couldn't keep up the payments.|The fee for one hour's private tuition is $60.|
-346;6;همانطوریکه می بینید فعل participate به معنی "شرکت کردن در یک رویداد یا فعالیت" است و باید حرف اضافه in بگیرد. در حالیکه attend به معنی "شرکت کردن در یک کلاس یا یک جلسه" بوده و نیاز به حرف اضافه ندارد. 
-346;7;کلمه sport وقتی به نوع ورزش اشاره داشته می شود قابل شمارش است اما در حالت کلی غیرقابل شمارش خواهد بود. |Cricket is a very popular sport in Yorkshire.|I'm not very good at sport.|
-346;8;وقتی می خواهید از این کلمه قبل از یک اسم دیگر استفاده کنید (ورزشی) حتماً از sports استفاده کنید:|a sports centre|a sports club|sports equipment|sports injuries|
-346;9;به عنوان فعل برای sport از do استفاده می شود، نه make:|Do you do any sport at school?|
+326;1;از کلمه rival می توانید به معنی "رقیب" استفاده کنید.
+329;1;عبارت cease to do something یعنی "انجام کاری را متوقف کردن". از این عبارت می توانید به جای stop to do something استفاده کنید.
+330;1;به تفاوت دو کلمه spectator و audience توجه کنید:|Spectator: تماشاچیان حاضر در رویدادهای ورزشی |Audience: تماشاچیان و حضار حاضر در برنامه های سرگرمی و اجراها|
+338;1; معنای Payment پولی است که برای چیزی داده می شود، درحالیکه Fee پولی است که به یک دکتر، وکیل و ... داده میشود. |I had to get rid of the car because I couldn't keep up the payments.|The fee for one hour's private tuition is $60.|
+343;1;همانطوریکه می بینید فعل participate به معنی "شرکت کردن در یک رویداد یا فعالیت" است و باید حرف اضافه in بگیرد. در حالیکه attend به معنی "شرکت کردن در یک کلاس یا یک جلسه" بوده و نیاز به حرف اضافه ندارد.
+343;2;همانطوریکه در مثال اول می بینید هرگاه از کلمه ای مثل someone استفاده می کنید، در ادامه اگر جایی نیاز به خطاب به آن داشتید، در نوشته های رسمی به جای he/she از they استفاده می کنیم.
+346;1;کلمه sport وقتی به نوع ورزش اشاره داشته می شود قابل شمارش است اما در حالت کلی غیرقابل شمارش خواهد بود. |Cricket is a very popular sport in Yorkshire.|I'm not very good at sport.|
+346;2;وقتی می خواهید از این کلمه قبل از یک اسم دیگر استفاده کنید (ورزشی) حتماً از sports استفاده کنید:|a sports centre|a sports club|sports equipment|sports injuries|
+346;3;به عنوان فعل برای sport از do استفاده می شود، نه make:|Do you do any sport at school?|
 355;1;وقتی منظور فضا (بیرون زمین) است، space بدون the می آید. The space به معنی فضای جایی است. 
 380;1;این کلمه همیشه به صورت جمع است و فعل جمع هم می گیرد. 
 405;1;از فعل Cause معمولاً برای چیزهای بد استفاده می شود. مثلاً: |High fat diets can cause heart disease.

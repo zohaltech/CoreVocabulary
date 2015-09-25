@@ -56,7 +56,7 @@ public class Vocabularies {
                                                            cursor.getInt(cursor.getColumnIndex(Day)),
                                                            cursor.getString(cursor.getColumnIndex(Vocabulary)),
                                                            cursor.getString(cursor.getColumnIndex(EnglishDef)),
-                                                           cursor.getString(cursor.getColumnIndex(PersianDef)),
+                                                           cursor.getString(cursor.getColumnIndex(PersianDef)).replace('|','\n'),
                                                            cursor.getInt(cursor.getColumnIndex(Learned)) == 1,
                                                            cursor.getInt(cursor.getColumnIndex(Bookmarked)) == 1,
                                                            cursor.getString(cursor.getColumnIndex(EncVocab)),
