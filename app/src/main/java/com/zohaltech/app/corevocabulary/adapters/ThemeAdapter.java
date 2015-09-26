@@ -2,6 +2,7 @@ package com.zohaltech.app.corevocabulary.adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.design.widget.Snackbar;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.view.animation.Animation;
 import android.view.animation.Transformation;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
@@ -22,6 +24,7 @@ import com.zohaltech.app.corevocabulary.entities.Theme;
 import java.util.ArrayList;
 
 import widgets.CircleProgress;
+import widgets.MySnackbar;
 
 public class ThemeAdapter extends RecyclerView.Adapter<ThemeAdapter.ViewHolder> {
 
@@ -106,7 +109,7 @@ public class ThemeAdapter extends RecyclerView.Adapter<ThemeAdapter.ViewHolder> 
     public void onBindViewHolder(final ViewHolder holder, final int position) {
         final Theme theme = themes.get(position);
         //holder.txtTheme.setText(theme.getName());
-        holder.imgTheme.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, App.screenHeight / 3));
+        holder.imgTheme.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, App.screenHeight / 3));
         //App.handler.post(new Runnable() {
         //    public void run() {
         //        holder.imgTheme.setImageResource(context.getResources().getIdentifier(theme.getIconName(), "drawable", context.getPackageName()));
@@ -114,17 +117,29 @@ public class ThemeAdapter extends RecyclerView.Adapter<ThemeAdapter.ViewHolder> 
         //});
         final int imageId = context.getResources().getIdentifier(theme.getIconName(), "drawable", context.getPackageName());
         Picasso.with(context).load(imageId).placeholder(R.drawable.placeholder).into(holder.imgTheme);
-        //imageLoader.displayImage("drawable://" + imageId, holder.imgTheme);
 
         holder.txtTheme.setText(theme.getEncName());
-        holder.layoutRoot.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(App.currentActivity, VocabulariesActivity.class);
-                intent.putExtra("THEME", theme);
-                App.currentActivity.startActivity(intent);
-            }
-        });
+
+        boolean isPremium = true;
+        if (position == 0 || isPremium) {
+            holder.imgPremium.setVisibility(View.GONE);
+            holder.layoutRoot.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(App.currentActivity, VocabulariesActivity.class);
+                    intent.putExtra("THEME", theme);
+                    App.currentActivity.startActivity(intent);
+                }
+            });
+        } else {
+            holder.imgPremium.setVisibility(View.VISIBLE);
+            holder.layoutRoot.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    MySnackbar.show(v, "Pleas buy premium version", Snackbar.LENGTH_SHORT);
+                }
+            });
+        }
 
         //holder.layoutProgressDetail.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 1));
         holder.layoutProgressDetail.setVisibility(View.GONE);
@@ -194,6 +209,7 @@ public class ThemeAdapter extends RecyclerView.Adapter<ThemeAdapter.ViewHolder> 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public LinearLayout   layoutRoot;
         public ImageView      imgTheme;
+        public ImageView      imgPremium;
         public TextView       txtTheme;
         public CircleProgress circleProgress;
         public LinearLayout   layoutDivider;
@@ -206,6 +222,7 @@ public class ThemeAdapter extends RecyclerView.Adapter<ThemeAdapter.ViewHolder> 
             super(view);
             layoutRoot = (LinearLayout) view.findViewById(R.id.layoutRoot);
             imgTheme = (ImageView) view.findViewById(R.id.imgTheme);
+            imgPremium = (ImageView) view.findViewById(R.id.imgPremium);
             txtTheme = (TextView) view.findViewById(R.id.txtTheme);
             layoutDivider = (LinearLayout) view.findViewById(R.id.layoutDivider);
             layoutCircleProgress = (LinearLayout) view.findViewById(R.id.layoutCircleProgress);
