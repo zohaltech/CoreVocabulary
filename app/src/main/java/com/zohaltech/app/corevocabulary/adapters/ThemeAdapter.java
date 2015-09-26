@@ -113,7 +113,7 @@ public class ThemeAdapter extends RecyclerView.Adapter<ThemeAdapter.ViewHolder> 
         //    }
         //});
         final int imageId = context.getResources().getIdentifier(theme.getIconName(), "drawable", context.getPackageName());
-        Picasso.with(context).load(imageId).into(holder.imgTheme);
+        Picasso.with(context).load(imageId).placeholder(R.drawable.placeholder).into(holder.imgTheme);
         //imageLoader.displayImage("drawable://" + imageId, holder.imgTheme);
 
         holder.txtTheme.setText(theme.getEncName());
