@@ -73,7 +73,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/divider"
+                android:background="@color/green_light"
                 android:orientation="horizontal">
 
                 <widgets.LatinTextView
