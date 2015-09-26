@@ -37,7 +37,7 @@ public class DataAccess extends SQLiteOpenHelper {
             db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(7, "Foreign Languages and Travel", CoreSec.encrypt("Foreign Languages and Travel"), "foreign_language")));
             db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(8, "Urbanisation and City Life", CoreSec.encrypt("Urbanisation and City Life"), "urbanisation")));
             db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(9, "Ethical Issues – Crimes and Laws", CoreSec.encrypt("Ethical Issues – Crimes and Laws"), "law")));
-            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(10, "Sports", CoreSec.encrypt("Sports"), "sports")));
+            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(10, "Sports", CoreSec.encrypt("Sports"), "sport")));
             db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(11, "Space Research", CoreSec.encrypt("Space Research"), "space")));
             db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(12, "Science", CoreSec.encrypt("Science"), "science")));
             db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(13, "Collocations for Causes and Results", CoreSec.encrypt("Collocations for Causes and Results"), "causes")));
