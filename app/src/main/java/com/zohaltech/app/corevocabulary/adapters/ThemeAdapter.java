@@ -8,9 +8,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.Transformation;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
 import com.zohaltech.app.corevocabulary.R;
 import com.zohaltech.app.corevocabulary.activities.VocabulariesActivity;
 import com.zohaltech.app.corevocabulary.classes.App;
@@ -101,8 +103,17 @@ public class ThemeAdapter extends RecyclerView.Adapter<ThemeAdapter.ViewHolder> 
     public void onBindViewHolder(final ViewHolder holder, final int position) {
         final Theme theme = themes.get(position);
         //holder.txtTheme.setText(theme.getName());
+        holder.imgTheme.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, App.screenHeight / 3));
+        //App.handler.post(new Runnable() {
+        //    public void run() {
+        //        holder.imgTheme.setImageResource(context.getResources().getIdentifier(theme.getIconName(), "drawable", context.getPackageName()));
+        //    }
+        //});
+        int imageId = context.getResources().getIdentifier(theme.getIconName(), "drawable", context.getPackageName());
+        Picasso.with(context).load(imageId).into(holder.imgTheme);
+
         holder.txtTheme.setText(theme.getEncName());
-        holder.txtTheme.setOnClickListener(new View.OnClickListener() {
+        holder.layoutRoot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(App.currentActivity, VocabulariesActivity.class);
@@ -117,6 +128,7 @@ public class ThemeAdapter extends RecyclerView.Adapter<ThemeAdapter.ViewHolder> 
 
         LearningStatus status = LearningStatus.getLearningStatusByTheme(theme.getId());
         if (status != null) {
+            holder.layoutDivider.setVisibility(View.VISIBLE);
             holder.layoutCircleProgress.setVisibility(View.VISIBLE);
 
             holder.circleProgress.setProgress(status.getProgress());
@@ -153,6 +165,7 @@ public class ThemeAdapter extends RecyclerView.Adapter<ThemeAdapter.ViewHolder> 
                 }
             });
         } else {
+            holder.layoutDivider.setVisibility(View.GONE);
             holder.layoutCircleProgress.setVisibility(View.GONE);
             holder.layoutProgressDetail.setVisibility(View.GONE);
             progressDetailStatuses.set(position, new ProgressDetailStatus(position, false));
@@ -175,8 +188,11 @@ public class ThemeAdapter extends RecyclerView.Adapter<ThemeAdapter.ViewHolder> 
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
+        public LinearLayout   layoutRoot;
+        public ImageView      imgTheme;
         public TextView       txtTheme;
         public CircleProgress circleProgress;
+        public LinearLayout   layoutDivider;
         public LinearLayout   layoutCircleProgress;
         public LinearLayout   layoutProgressDetail;
         public TextView       txtDayProgress;
@@ -184,7 +200,10 @@ public class ThemeAdapter extends RecyclerView.Adapter<ThemeAdapter.ViewHolder> 
 
         public ViewHolder(View view) {
             super(view);
+            layoutRoot = (LinearLayout) view.findViewById(R.id.layoutRoot);
+            imgTheme = (ImageView) view.findViewById(R.id.imgTheme);
             txtTheme = (TextView) view.findViewById(R.id.txtTheme);
+            layoutDivider = (LinearLayout) view.findViewById(R.id.layoutDivider);
             layoutCircleProgress = (LinearLayout) view.findViewById(R.id.layoutCircleProgress);
             circleProgress = (CircleProgress) view.findViewById(R.id.circleProgress);
             layoutProgressDetail = (LinearLayout) view.findViewById(R.id.layoutProgressDetail);

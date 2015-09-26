@@ -12,7 +12,8 @@
         android:layout_height="150dp"
         android:background="@drawable/drawer_header_bg"
         android:gravity="center"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:clickable="true">
 
         <ImageView
             android:layout_width="wrap_content"

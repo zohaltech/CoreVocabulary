@@ -20,7 +20,7 @@ public class AlarmReceiver extends BroadcastReceiver
 
         android.support.v4.app.NotificationCompat.Builder builder =
                 new android.support.v4.app.NotificationCompat.Builder(context)
-                        .setSmallIcon(R.drawable.ic_add_white)
+                        .setSmallIcon(R.drawable.ic_bookmark)
                         .setContentTitle(reminder.getTitle())
                         .setContentText(reminder.getMessage())
                         .setShowWhen(true)
