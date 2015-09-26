@@ -14,7 +14,7 @@ import java.io.InputStreamReader;
 
 public class DataAccess extends SQLiteOpenHelper {
     public static final String DATABASE_NAME    = "CORE_VOCABULARY";
-    public static final int    DATABASE_VERSION = 36;
+    public static final int    DATABASE_VERSION = 37;
 
     public DataAccess() {
         super(App.context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -28,33 +28,19 @@ public class DataAccess extends SQLiteOpenHelper {
             db.execSQL(Examples.CreateTable);
             db.execSQL(Notes.CreateTable);
 
-            //            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(1, "Education",, "ic_education")));
-            //            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(2, "Job and Employment", "ic_job")));
-            //            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(3, "Media", "ic_media")));
-            //            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(4, "Health", "ic_health")));
-            //            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(5, "Environment", "ic_environment")));
-            //            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(6, "Advertising", "ic_advertising")));
-            //            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(7, "Foreign Language", "ic_language")));
-            //            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(8, "Urbanisation", "ic_urbanisation")));
-            //            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(9, "Crimes and Law", "ic_law")));
-            //            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(11, "Sports", "ic_sports")));
-            //            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(12, "Space", "ic_space")));
-            //            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(13, "Science", "ic_science")));
-            //            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(14, "Causes and Results", "ic_causes")));
-
-            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(1, "Education", CoreSec.encrypt("Education"), "ic_education")));
-            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(2, "Job and Employment", CoreSec.encrypt("Job and Employment"), "ic_job")));
-            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(3, "Media", CoreSec.encrypt("Media"), "ic_media")));
-            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(4, "Health", CoreSec.encrypt("Health"), "ic_health")));
-            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(5, "Environment", CoreSec.encrypt("Environment"), "ic_environment")));
-            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(6, "Advertising", CoreSec.encrypt("Advertising"), "ic_advertising")));
-            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(7, "Foreign Languages and Travel", CoreSec.encrypt("Foreign Languages and Travel"), "ic_foreign_language")));
-            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(8, "Urbanisation and City Life", CoreSec.encrypt("Urbanisation and City Life"), "ic_urbanisation")));
-            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(9, "Ethical Issues – Crimes and Laws", CoreSec.encrypt("Ethical Issues – Crimes and Laws"), "ic_law")));
-            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(10, "Sports", CoreSec.encrypt("Sports"), "ic_sports")));
-            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(11, "Space Research", CoreSec.encrypt("Space Research"), "ic_space")));
-            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(12, "Science", CoreSec.encrypt("Science"), "ic_science")));
-            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(13, "Collocations for Causes and Results", CoreSec.encrypt("Collocations for Causes and Results"), "ic_causes")));
+            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(1, "Education", CoreSec.encrypt("Education"), "education")));
+            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(2, "Job and Employment", CoreSec.encrypt("Job and Employment"), "job")));
+            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(3, "Media", CoreSec.encrypt("Media"), "media")));
+            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(4, "Health", CoreSec.encrypt("Health"), "health")));
+            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(5, "Environment", CoreSec.encrypt("Environment"), "environment")));
+            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(6, "Advertising", CoreSec.encrypt("Advertising"), "advertising")));
+            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(7, "Foreign Languages and Travel", CoreSec.encrypt("Foreign Languages and Travel"), "foreign_language")));
+            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(8, "Urbanisation and City Life", CoreSec.encrypt("Urbanisation and City Life"), "urbanisation")));
+            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(9, "Ethical Issues – Crimes and Laws", CoreSec.encrypt("Ethical Issues – Crimes and Laws"), "law")));
+            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(10, "Sports", CoreSec.encrypt("Sports"), "sports")));
+            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(11, "Space Research", CoreSec.encrypt("Space Research"), "space")));
+            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(12, "Science", CoreSec.encrypt("Science"), "science")));
+            db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(13, "Collocations for Causes and Results", CoreSec.encrypt("Collocations for Causes and Results"), "causes")));
 
             insertDataFromAsset(db, Vocabularies.TableName, "data/vocabs.csv", ';');
             insertDataFromAsset(db, Examples.TableName, "data/examples.csv", ';');
@@ -63,8 +49,6 @@ public class DataAccess extends SQLiteOpenHelper {
             App.preferences.edit().putBoolean("Encoded", false).apply();
 
         } catch (MyRuntimeException e) {
-            e.printStackTrace();
-        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -151,6 +135,4 @@ public class DataAccess extends SQLiteOpenHelper {
             e.printStackTrace();
         }
     }
-
-
 }

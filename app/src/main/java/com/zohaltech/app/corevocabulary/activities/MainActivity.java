@@ -42,8 +42,8 @@ public class MainActivity extends EnhancedActivity {
         setContentView(R.layout.activity_main);
         startTime = System.currentTimeMillis() - 5000;
 
-        if (App.preferences.getBoolean("Encoded", false))
-            EncryptVocabs();
+//       if (App.preferences.getBoolean("Encoded", false))
+//            EncryptVocabs();
     }
 
     @Override
