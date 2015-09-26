@@ -12,7 +12,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.squareup.picasso.Picasso;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.zohaltech.app.corevocabulary.R;
 import com.zohaltech.app.corevocabulary.activities.VocabulariesActivity;
 import com.zohaltech.app.corevocabulary.classes.App;
@@ -109,8 +110,17 @@ public class ThemeAdapter extends RecyclerView.Adapter<ThemeAdapter.ViewHolder> 
         //        holder.imgTheme.setImageResource(context.getResources().getIdentifier(theme.getIconName(), "drawable", context.getPackageName()));
         //    }
         //});
-        int imageId = context.getResources().getIdentifier(theme.getIconName(), "drawable", context.getPackageName());
-        Picasso.with(context).load(imageId).into(holder.imgTheme);
+        final int imageId = context.getResources().getIdentifier(theme.getIconName(), "drawable", context.getPackageName());
+        //Picasso.with(context).load(imageId).into(holder.imgTheme);
+        ImageLoader imageLoader = ImageLoader.getInstance();
+        imageLoader.init(ImageLoaderConfiguration.createDefault(context));
+        imageLoader.displayImage("drawable://" + imageId, holder.imgTheme);
+        //holder.imgTheme.post(new Runnable() {
+        //    @Override
+        //    public void run() {
+        //        holder.imgTheme.setImageResource(imageId);
+        //    }
+        //});
 
         holder.txtTheme.setText(theme.getEncName());
         holder.layoutRoot.setOnClickListener(new View.OnClickListener() {
