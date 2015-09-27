@@ -14,7 +14,7 @@ import java.io.InputStreamReader;
 
 public class DataAccess extends SQLiteOpenHelper {
     public static final String DATABASE_NAME    = "CORE_VOCABULARY";
-    public static final int    DATABASE_VERSION = 51;
+    public static final int    DATABASE_VERSION = 60;
 
     public DataAccess() {
         super(App.context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -27,6 +27,7 @@ public class DataAccess extends SQLiteOpenHelper {
             db.execSQL(Vocabularies.CreateTable);
             db.execSQL(Examples.CreateTable);
             db.execSQL(Notes.CreateTable);
+            db.execSQL(SystemSettings.CreateTable);
 
             db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(1, "Education", CoreSec.encrypt("Education"), "education")));
             db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(2, "Job and Employment", CoreSec.encrypt("Job and Employment"), "job")));
@@ -46,6 +47,10 @@ public class DataAccess extends SQLiteOpenHelper {
             insertDataFromAsset(db, Examples.TableName, "data/examples.csv", ';');
             insertDataFromAsset(db, Notes.TableName, "data/notes.csv", ';');
 
+            ContentValues systemSettingsValues = new ContentValues();
+            systemSettingsValues.put(SystemSettings.Installed, 0);
+            db.insert(SystemSettings.TableName, null, systemSettingsValues);
+
             App.preferences.edit().putBoolean("Encoded", false).apply();
 
         } catch (MyRuntimeException e) {
@@ -60,6 +65,7 @@ public class DataAccess extends SQLiteOpenHelper {
             database.execSQL(Vocabularies.DropTable);
             database.execSQL(Examples.DropTable);
             database.execSQL(Notes.DropTable);
+            database.execSQL(SystemSettings.DropTable);
 
             onCreate(database);
         } catch (MyRuntimeException e) {

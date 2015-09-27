@@ -5,6 +5,7 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.zohaltech.app.corevocabulary.classes.Helper;
 import com.zohaltech.app.corevocabulary.classes.MyRuntimeException;
 import com.zohaltech.app.corevocabulary.entities.SystemSetting;
 
@@ -20,7 +21,7 @@ public class SystemSettings {
     static final String CreateTable = "CREATE TABLE " + TableName + " (" +
                                       Id + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
                                       Installed + " BOOLEAN NOT NULL, " +
-                                      PremiumVersion + " BOOLEAN NOT NULL); ";
+                                      PremiumVersion + " VARCHAR(100) ); ";
     static final String DropTable   = "Drop Table If Exists " + TableName;
 
     private static ArrayList<SystemSetting> select(String whereClause, String[] selectionArgs) {
@@ -36,7 +37,7 @@ public class SystemSettings {
                 do {
                     SystemSetting systemSetting = new SystemSetting(cursor.getInt(cursor.getColumnIndex(Id)),
                                                                     cursor.getInt(cursor.getColumnIndex(Installed)) == 1,
-                                                                    cursor.getInt(cursor.getColumnIndex(PremiumVersion)) == 1);
+                                                                    cursor.getString(cursor.getColumnIndex(PremiumVersion)));
                     settings.add(systemSetting);
                 } while (cursor.moveToNext());
             }
@@ -56,14 +57,14 @@ public class SystemSettings {
         ContentValues values = new ContentValues();
 
         values.put(Installed, setting.getInstalled() ? 1 : 0);
-        values.put(PremiumVersion, setting.getPremiumVersion() ? 1 : 0);
+        values.put(PremiumVersion, setting.getPremiumVersion());
 
         DataAccess da = new DataAccess();
         return da.update(TableName, values, Id + " = ? ", new String[]{String.valueOf(setting.getId())});
     }
 
     public static void register(SystemSetting setting){
-        setting.setPremiumVersion(true);
+        setting.setPremiumVersion(Helper.hashString(Helper.getDeviceId()));
         update(setting);
     }
 

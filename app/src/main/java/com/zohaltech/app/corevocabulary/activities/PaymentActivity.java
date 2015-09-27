@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.util.Log;
 
 import com.zohaltech.app.corevocabulary.classes.App;
+import com.zohaltech.app.corevocabulary.classes.Helper;
 import com.zohaltech.app.corevocabulary.classes.MyRuntimeException;
 import com.zohaltech.app.corevocabulary.classes.WebApiClient;
 import com.zohaltech.app.corevocabulary.data.SystemSettings;
@@ -78,7 +79,7 @@ public abstract class PaymentActivity extends EnhancedActivity {
     void onCreated() {
         setting = SystemSettings.getCurrentSettings();
         // if (LicenseManager.getLicenseStatus() != LicenseManager.Status.REGISTERED) { comment for JanJan
-        if (!setting.getPremiumVersion()) {
+        if (!setting.getPremiumVersion().equals(Helper.hashString(Helper.getDeviceId()))) {
             try {
                 mHelper = new IabHelper(this, App.marketPublicKey);
                 //Log.d(TAG, "Starting setup.");
