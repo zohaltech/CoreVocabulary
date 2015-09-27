@@ -53,6 +53,7 @@ public class SystemSetting {
     }
 
     public boolean isPremium(){
+        // TODO: 2015/09/27
         return true;
         //return getPremiumVersion() != null && getPremiumVersion().equals(Helper.hashString(Helper.getDeviceId()));
     }
