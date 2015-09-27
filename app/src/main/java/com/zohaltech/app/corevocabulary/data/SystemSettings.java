@@ -57,14 +57,14 @@ public class SystemSettings {
         ContentValues values = new ContentValues();
 
         values.put(Installed, setting.getInstalled() ? 1 : 0);
-        values.put(PremiumVersion, setting.getPremiumVersion());
+        values.put(PremiumVersion, setting.getPremium());
 
         DataAccess da = new DataAccess();
         return da.update(TableName, values, Id + " = ? ", new String[]{String.valueOf(setting.getId())});
     }
 
     public static void register(SystemSetting setting){
-        setting.setPremiumVersion(Helper.hashString(Helper.getDeviceId()));
+        setting.setPremium(Helper.hashString(Helper.getDeviceId()));
         update(setting);
     }
 

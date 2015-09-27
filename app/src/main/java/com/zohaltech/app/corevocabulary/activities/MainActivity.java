@@ -47,7 +47,7 @@ public class MainActivity extends EnhancedActivity {
 //        SystemSetting setting=SystemSettings.getCurrentSettings();
 //        SystemSettings.register(setting);
 //
-//        if(setting.getPremiumVersion().equals(Helper.hashString(Helper.getDeviceId()))){
+//        if(setting.getPremium().equals(Helper.hashString(Helper.getDeviceId()))){
 //            String s;
 //        }
 

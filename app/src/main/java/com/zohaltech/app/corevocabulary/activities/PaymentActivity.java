@@ -79,7 +79,7 @@ public abstract class PaymentActivity extends EnhancedActivity {
     void onCreated() {
         setting = SystemSettings.getCurrentSettings();
         // if (LicenseManager.getLicenseStatus() != LicenseManager.Status.REGISTERED) { comment for JanJan
-        if (!setting.getPremiumVersion().equals(Helper.hashString(Helper.getDeviceId()))) {
+        if (!setting.getPremium().equals(Helper.hashString(Helper.getDeviceId()))) {
             try {
                 mHelper = new IabHelper(this, App.marketPublicKey);
                 //Log.d(TAG, "Starting setup.");
