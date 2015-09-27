@@ -2,11 +2,11 @@ package com.zohaltech.app.corevocabulary.adapters;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -40,12 +40,16 @@ public class VocabularyAdapter extends RecyclerView.Adapter<VocabularyAdapter.Vi
         if (showExtra && position % 6 == 0) {
             holder.txtSection.setVisibility(View.VISIBLE);
             holder.txtSection.setText("DAY " + vocabulary.getDay());
-            //holder.layoutDivider.setVisibility(View.GONE);
         } else {
             holder.txtSection.setVisibility(View.GONE);
-            //holder.layoutDivider.setVisibility(View.VISIBLE);
         }
-        //holder.txtVocabulary.setText(vocabulary.getVocabulary());
+
+        if (vocabulary.getLearned()) {
+            holder.imgLearned.setVisibility(View.VISIBLE);
+        } else {
+            holder.imgLearned.setVisibility(View.GONE);
+        }
+
         holder.txtVocabulary.setText(vocabulary.getEncVocab());
         holder.layoutVocabulary.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,17 +68,17 @@ public class VocabularyAdapter extends RecyclerView.Adapter<VocabularyAdapter.Vi
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView txtSection;
-        public LinearLayout layoutVocabulary;
-        public TextView txtVocabulary;
-        //public LinearLayout layoutDivider;
+        public TextView  txtSection;
+        public TextView  txtVocabulary;
+        public ImageView imgLearned;
+        LinearLayout layoutVocabulary;
 
         public ViewHolder(View view) {
             super(view);
             txtSection = (TextView) view.findViewById(R.id.txtSection);
             layoutVocabulary = (LinearLayout) view.findViewById(R.id.layoutVocabulary);
-            //layoutDivider = (LinearLayout) view.findViewById(R.id.layoutDivider);
             txtVocabulary = (TextView) view.findViewById(R.id.txtVocabulary);
+            imgLearned = (ImageView) view.findViewById(R.id.imgLearned);
         }
     }
 }
