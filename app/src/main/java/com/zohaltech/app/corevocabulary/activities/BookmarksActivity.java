@@ -4,7 +4,6 @@ package com.zohaltech.app.corevocabulary.activities;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
@@ -18,7 +17,9 @@ import java.util.ArrayList;
 public class BookmarksActivity extends EnhancedActivity {
 
     RecyclerView recyclerBookmarks;
-    TextView txtNothingFound;
+    TextView     txtNothingFound;
+    ArrayList<Vocabulary> vocabularies = new ArrayList<>();
+    VocabularyAdapter adapter;
 
     @Override
     void onCreated() {
@@ -30,8 +31,8 @@ public class BookmarksActivity extends EnhancedActivity {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerBookmarks.setLayoutManager(layoutManager);
         
-        ArrayList<Vocabulary> vocabularies = Vocabularies.selectBookmarks();
-        final VocabularyAdapter adapter = new VocabularyAdapter(this, vocabularies, false);
+        //vocabularies = Vocabularies.selectBookmarks();
+        adapter = new VocabularyAdapter(this, vocabularies, false);
         recyclerBookmarks.setAdapter(adapter);
 
         adapter.registerAdapterDataObserver(new RecyclerView.AdapterDataObserver() {
@@ -46,7 +47,16 @@ public class BookmarksActivity extends EnhancedActivity {
             }
         });
 
+        //adapter.notifyDataSetChanged();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        vocabularies.clear();
+        vocabularies.addAll(Vocabularies.selectBookmarks());
         adapter.notifyDataSetChanged();
+
     }
 
     @Override

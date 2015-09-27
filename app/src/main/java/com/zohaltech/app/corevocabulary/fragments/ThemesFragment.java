@@ -37,7 +37,6 @@ public class ThemesFragment extends Fragment {
         recyclerThemes.setHasFixedSize(true);
         recyclerThemes.setLayoutManager(new LinearLayoutManager(getActivity()));
         themes.addAll(Themes.select());
-        //adapter.notifyDataSetChanged();
         adapter = new ThemeAdapter(getActivity(), themes);
         recyclerThemes.setAdapter(adapter);
         return rootView;

@@ -81,16 +81,6 @@ public class DefinitionFragment extends Fragment implements
     }
 
     @Override
-    public void onResume() {
-        super.onResume();
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-    }
-
-    @Override
     public void onInit(int status) {
         if (status == TextToSpeech.SUCCESS) {
 

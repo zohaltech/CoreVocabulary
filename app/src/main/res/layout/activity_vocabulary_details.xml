@@ -27,7 +27,7 @@
             android:gravity="start|center"
             android:padding="5dp"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@color/primary"/>
+            android:textColor="@color/green_dark"/>
 
         <widgets.MyCheckBox
             android:id="@+id/chkBookmark"

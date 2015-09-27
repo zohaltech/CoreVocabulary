@@ -45,14 +45,4 @@ public class NotesFragment extends Fragment {
 
         return view;
     }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-    }
 }
