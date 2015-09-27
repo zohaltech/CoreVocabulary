@@ -11,14 +11,14 @@
         android:layout_height="wrap_content"
         android:background="@color/divider"
         android:gravity="start|center"
-        android:paddingRight="15dp"
-        android:paddingLeft="15dp"
-        android:paddingTop="5dp"
         android:paddingBottom="5dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="5dp"
         android:singleLine="true"
+        android:text="Day 1"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="@color/primary"
-        android:text="Day 1"/>
+        android:textColor="@color/primary"/>
 
     <LinearLayout
         android:id="@+id/layoutDivider"
@@ -34,25 +34,27 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center">
+        android:gravity="center"
+        android:orientation="horizontal">
 
-    <widgets.LatinTextView
-        android:id="@+id/txtVocabulary"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="?attr/selectableItemBackground"
-        android:gravity="start|center"
-        android:padding="15dp"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="@color/primary_text"
-        android:text="Place a premium on something"/>
+        <widgets.LatinTextView
+            android:id="@+id/txtVocabulary"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackground"
+            android:gravity="start|center"
+            android:padding="15dp"
+            android:text="Place a premium on something"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/primary_text"/>
 
         <ImageView
             android:id="@+id/imgLearned"
             android:layout_width="wrap_content"
+            android:padding="10dp"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_done_white"/>
+            android:src="@drawable/ic_done_green"/>
 
     </LinearLayout>
 
