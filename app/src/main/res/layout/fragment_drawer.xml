@@ -6,52 +6,14 @@
               android:background="@color/white"
               android:orientation="vertical">
 
-    <LinearLayout
-        android:id="@+id/nav_header_container"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:background="@drawable/drawer_header_bg"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:clickable="true">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:scaleType="centerInside"
-            android:src="@drawable/ic_core"/>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center|left"
-            android:orientation="vertical"
-            android:layout_marginLeft="10dp">
-
-            <widgets.LatinTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Core"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@color/white"/>
-
-            <widgets.LatinTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Vocabulary"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/white"/>
-
-        </LinearLayout>
-
-    </LinearLayout>
-
     <android.support.design.widget.NavigationView
         android:id="@+id/navView"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
+        app:elevation="1dp"
+        app:headerLayout="@layout/drawer_header"
         app:menu="@menu/menu_drawer"/>
 
 </LinearLayout>

@@ -26,7 +26,7 @@ public class PersianTextView extends AppCompatTextView {
     }
 
     private void initialize() {
-        setLineSpacing(1f, 1.2f);
+        setLineSpacing(1f, 1.5f);
     }
 
     @Override
