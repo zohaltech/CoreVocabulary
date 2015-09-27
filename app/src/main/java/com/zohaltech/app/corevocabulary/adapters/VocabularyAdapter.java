@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -45,6 +46,13 @@ public class VocabularyAdapter extends RecyclerView.Adapter<VocabularyAdapter.Vi
             holder.layoutDivider.setVisibility(View.VISIBLE);
         }
         //holder.txtVocabulary.setText(vocabulary.getVocabulary());
+
+        if (vocabulary.getLearned()) {
+            holder.imgLearned.setVisibility(View.VISIBLE);
+        } else {
+            holder.imgLearned.setVisibility(View.GONE);
+        }
+
         holder.txtVocabulary.setText(vocabulary.getEncVocab());
         holder.txtVocabulary.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,8 +71,9 @@ public class VocabularyAdapter extends RecyclerView.Adapter<VocabularyAdapter.Vi
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView txtSection;
-        public TextView txtVocabulary;
+        public TextView  txtSection;
+        public TextView  txtVocabulary;
+        public ImageView imgLearned;
         LinearLayout layoutDivider;
 
         public ViewHolder(View view) {
@@ -72,6 +81,7 @@ public class VocabularyAdapter extends RecyclerView.Adapter<VocabularyAdapter.Vi
             txtSection = (TextView) view.findViewById(R.id.txtSection);
             layoutDivider = (LinearLayout) view.findViewById(R.id.layoutDivider);
             txtVocabulary = (TextView) view.findViewById(R.id.txtVocabulary);
+            imgLearned = (ImageView) view.findViewById(R.id.imgLearned);
         }
     }
 }
