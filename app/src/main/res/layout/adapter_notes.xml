@@ -9,7 +9,6 @@
         android:id="@+id/txtNote"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="end"
         android:padding="15dp"
         android:text="نکات"
         android:textAppearance="?android:attr/textAppearanceMedium"
