@@ -21,6 +21,7 @@ public class AboutActivity extends EnhancedActivity {
 
     TextView     txtVersion;
     Button       btnShare;
+    Button       btnProducts;
     Button       btnFeedback;
     Button       btnRate;
     LinearLayout layoutWebsite;
@@ -31,6 +32,7 @@ public class AboutActivity extends EnhancedActivity {
 
         txtVersion = (TextView) findViewById(R.id.txtVersion);
         btnShare = (Button) findViewById(R.id.btnShare);
+        btnProducts = (Button) findViewById(R.id.btnProducts);
         btnFeedback = (Button) findViewById(R.id.btnFeedback);
         btnRate = (Button) findViewById(R.id.btnRate);
         layoutWebsite = (LinearLayout) findViewById(R.id.layoutWebsite);
@@ -51,6 +53,13 @@ public class AboutActivity extends EnhancedActivity {
                 intent.setType("text/plain");
                 intent.putExtra(Intent.EXTRA_TEXT, message);
                 startActivity(Intent.createChooser(intent, getResources().getString(R.string.share_title)));
+            }
+        });
+
+        btnProducts.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //todo : go to developers page on market
             }
         });
 
