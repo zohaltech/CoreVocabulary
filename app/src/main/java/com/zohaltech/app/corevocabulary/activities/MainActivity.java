@@ -68,7 +68,7 @@ public class MainActivity extends PaymentActivity {
 
     @Override
     void updateUiToTrialVersion() {
-
+        //nothing
     }
 
     @Override
