@@ -1,5 +1,6 @@
 package com.zohaltech.app.corevocabulary.fragments;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -16,6 +17,7 @@ import com.zohaltech.app.corevocabulary.R;
 import com.zohaltech.app.corevocabulary.activities.AboutActivity;
 import com.zohaltech.app.corevocabulary.activities.BookmarksActivity;
 import com.zohaltech.app.corevocabulary.activities.HelpActivity;
+import com.zohaltech.app.corevocabulary.activities.MainActivity;
 import com.zohaltech.app.corevocabulary.activities.SettingsActivity;
 import com.zohaltech.app.corevocabulary.data.SystemSettings;
 import com.zohaltech.app.corevocabulary.entities.SystemSetting;
@@ -36,11 +38,7 @@ public class DrawerFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         navView = (NavigationView) view.findViewById(R.id.navView);
 
-        final MenuItem buyItem = navView.getMenu().findItem(R.id.nav_buy);
-        final SystemSetting systemSetting = SystemSettings.getCurrentSettings();
-        if (systemSetting.isPremium()) {
-            buyItem.setVisible(false);
-        }
+        updateUi();
 
         navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -61,8 +59,9 @@ public class DrawerFragment extends Fragment {
                         break;
                     case R.id.nav_buy:
                         //todo : open market to buy premium version
-                        SystemSettings.register(systemSetting);
-                        buyItem.setVisible(false);
+                        ((MainActivity)getActivity()).pay();
+                        //SystemSettings.register(systemSetting);
+                        //buyItem.setVisible(false);
                         break;
                     case R.id.nav_about:
                         intent = new Intent(getActivity(), AboutActivity.class);
@@ -73,6 +72,14 @@ public class DrawerFragment extends Fragment {
                 return false;
             }
         });
+    }
+
+    public void updateUi() {
+        final MenuItem buyItem = navView.getMenu().findItem(R.id.nav_buy);
+        final SystemSetting systemSetting = SystemSettings.getCurrentSettings();
+        if (systemSetting.isPremium()) {
+            buyItem.setVisible(false);
+        }
     }
 
     public void setUp(DrawerLayout drawerLayout, final Toolbar toolbar) {

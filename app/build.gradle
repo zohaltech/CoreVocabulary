@@ -10,8 +10,8 @@ android {
         applicationId "com.zohaltech.app.corevocabulary"
         minSdkVersion 9
         targetSdkVersion 22
-        versionCode 101
-        versionName "1.01"
+        versionCode 100
+        versionName "1.00"
         multiDexEnabled true
     }
     buildTypes {
@@ -32,5 +32,4 @@ dependencies {
     compile 'com.google.code.gson:gson:2.2.4'
     compile 'com.github.rey5137:material:1.2.1'
     compile 'com.squareup.picasso:picasso:2.5.2'
-//    compile files('src/main/libs/universal-image-loader-1.9.4.jar')
 }

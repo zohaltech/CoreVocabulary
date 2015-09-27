@@ -35,10 +35,12 @@ public class MainActivity extends PaymentActivity {
 
     long startTime;
     private DrawerLayout drawerLayout;
+    private DrawerFragment drawerFragment;
     private Fragment     fragment;
 
     @Override
     protected void onCreated() {
+        super.onCreated();
         setContentView(R.layout.activity_main);
         startTime = System.currentTimeMillis() - 5000;
         //        SystemSetting setting=SystemSettings.getCurrentSettings();
@@ -55,7 +57,7 @@ public class MainActivity extends PaymentActivity {
     @Override
     void onToolbarCreated() {
         drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
-        DrawerFragment drawerFragment = (DrawerFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_navigation_drawer);
+        drawerFragment = (DrawerFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_navigation_drawer);
         drawerFragment.setUp(drawerLayout, toolbar);
         drawerFragment.setMenuVisibility(true);
         displayView(0);
@@ -63,7 +65,10 @@ public class MainActivity extends PaymentActivity {
 
     @Override
     void updateUiToPremiumVersion() {
-
+        if (drawerFragment != null){
+            drawerFragment.updateUi();
+        }
+        displayView(0);
     }
 
     @Override
