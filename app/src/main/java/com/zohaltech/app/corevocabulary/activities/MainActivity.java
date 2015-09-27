@@ -43,7 +43,7 @@ public class MainActivity extends EnhancedActivity {
         startTime = System.currentTimeMillis() - 5000;
 
         //if (App.preferences.getBoolean("Encoded", false))
-        //  EncryptVocabs();
+        EncryptVocabs();
     }
 
     @Override

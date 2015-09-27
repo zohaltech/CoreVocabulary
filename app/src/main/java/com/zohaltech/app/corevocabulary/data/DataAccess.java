@@ -8,13 +8,14 @@ import com.zohaltech.app.corevocabulary.classes.App;
 import com.zohaltech.app.corevocabulary.classes.CoreSec;
 import com.zohaltech.app.corevocabulary.classes.CsvReader;
 import com.zohaltech.app.corevocabulary.classes.MyRuntimeException;
+import com.zohaltech.app.corevocabulary.entities.SystemSetting;
 import com.zohaltech.app.corevocabulary.entities.Theme;
 
 import java.io.InputStreamReader;
 
 public class DataAccess extends SQLiteOpenHelper {
     public static final String DATABASE_NAME    = "CORE_VOCABULARY";
-    public static final int    DATABASE_VERSION = 51;
+    public static final int    DATABASE_VERSION = 58;
 
     public DataAccess() {
         super(App.context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -27,6 +28,7 @@ public class DataAccess extends SQLiteOpenHelper {
             db.execSQL(Vocabularies.CreateTable);
             db.execSQL(Examples.CreateTable);
             db.execSQL(Notes.CreateTable);
+            db.execSQL(SystemSettings.CreateTable);
 
             db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(1, "Education", CoreSec.encrypt("Education"), "education")));
             db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(2, "Job and Employment", CoreSec.encrypt("Job and Employment"), "job")));
@@ -60,6 +62,7 @@ public class DataAccess extends SQLiteOpenHelper {
             database.execSQL(Vocabularies.DropTable);
             database.execSQL(Examples.DropTable);
             database.execSQL(Notes.DropTable);
+            database.execSQL(SystemSettings.DropTable);
 
             onCreate(database);
         } catch (MyRuntimeException e) {

@@ -4,14 +4,14 @@ package com.zohaltech.app.corevocabulary.entities;
 public class SystemSetting {
     private int     id;
     private Boolean installed;
-    private Boolean premiumVersion;
+    private String premiumVersion;
 
-    public SystemSetting(Boolean installed, Boolean premiumVersion) {
+    public SystemSetting(Boolean installed, String premiumVersion) {
         setInstalled(installed);
         setPremiumVersion(premiumVersion);
     }
 
-    public SystemSetting(int id, Boolean installed, Boolean premiumVersion) {
+    public SystemSetting(int id, Boolean installed, String premiumVersion) {
         this(installed, premiumVersion);
         this.id = id;
     }
@@ -32,11 +32,11 @@ public class SystemSetting {
         this.installed = installed;
     }
 
-    public Boolean getPremiumVersion() {
+    public String getPremiumVersion() {
         return premiumVersion;
     }
 
-    public void setPremiumVersion(Boolean premiumVersion) {
+    public void setPremiumVersion(String premiumVersion) {
         this.premiumVersion = premiumVersion;
     }
 }
