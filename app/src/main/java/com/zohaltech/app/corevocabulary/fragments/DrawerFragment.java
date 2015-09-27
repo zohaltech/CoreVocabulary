@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
@@ -24,8 +23,8 @@ import com.zohaltech.app.corevocabulary.entities.SystemSetting;
 public class DrawerFragment extends Fragment {
 
     NavigationView navView;
-    private ActionBarDrawerToggle   mDrawerToggle;
     DrawerLayout drawerLayout;
+    private ActionBarDrawerToggle mDrawerToggle;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -37,9 +36,9 @@ public class DrawerFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         navView = (NavigationView) view.findViewById(R.id.navView);
 
-        MenuItem buyItem = navView.getMenu().findItem(R.id.nav_buy);
-        SystemSetting systemSetting = SystemSettings.getCurrentSettings();
-        if (systemSetting.isPremium()){
+        final MenuItem buyItem = navView.getMenu().findItem(R.id.nav_buy);
+        final SystemSetting systemSetting = SystemSettings.getCurrentSettings();
+        if (systemSetting.isPremium()) {
             buyItem.setVisible(false);
         }
 
@@ -47,7 +46,7 @@ public class DrawerFragment extends Fragment {
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem) {
                 Intent intent;
-                switch (menuItem.getItemId()){
+                switch (menuItem.getItemId()) {
                     case R.id.nav_scheduler:
                         intent = new Intent(getActivity(), SettingsActivity.class);
                         startActivity(intent);
@@ -61,7 +60,9 @@ public class DrawerFragment extends Fragment {
                         startActivity(intent);
                         break;
                     case R.id.nav_buy:
-                        //todo : purchase
+                        //todo : open market to buy premium version
+                        SystemSettings.register(systemSetting);
+                        buyItem.setVisible(false);
                         break;
                     case R.id.nav_about:
                         intent = new Intent(getActivity(), AboutActivity.class);

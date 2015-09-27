@@ -19,6 +19,8 @@ import com.zohaltech.app.corevocabulary.R;
 import com.zohaltech.app.corevocabulary.activities.VocabulariesActivity;
 import com.zohaltech.app.corevocabulary.classes.App;
 import com.zohaltech.app.corevocabulary.classes.LearningStatus;
+import com.zohaltech.app.corevocabulary.data.SystemSettings;
+import com.zohaltech.app.corevocabulary.entities.SystemSetting;
 import com.zohaltech.app.corevocabulary.entities.Theme;
 
 import java.util.ArrayList;
@@ -120,8 +122,8 @@ public class ThemeAdapter extends RecyclerView.Adapter<ThemeAdapter.ViewHolder> 
 
         holder.txtTheme.setText(theme.getEncName());
 
-        boolean isPremium = true;
-        if (position == 0 || isPremium) {
+        SystemSetting setting = SystemSettings.getCurrentSettings();
+        if (position == 0 || setting.isPremium()) {
             holder.imgPremium.setVisibility(View.GONE);
             holder.layoutRoot.setOnClickListener(new View.OnClickListener() {
                 @Override
