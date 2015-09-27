@@ -31,8 +31,6 @@ public class AboutActivity extends EnhancedActivity {
         tabCategories = (PagerSlidingTabStrip) findViewById(R.id.tabAboutItems);
         pagerCategories = (ViewPager) findViewById(R.id.pagerAboutItems);
 
-
-
         aboutPagerAdapter = new AboutPagerAdapter(getSupportFragmentManager());
         pagerCategories.setAdapter(aboutPagerAdapter);
 
@@ -73,7 +71,6 @@ public class AboutActivity extends EnhancedActivity {
         return super.onOptionsItemSelected(item);
     }
 
-
     private void changeTabsFont() {
         ViewGroup vg = (ViewGroup) tabCategories.getChildAt(0);
         int tabsCount = vg.getChildCount();
@@ -84,6 +81,7 @@ public class AboutActivity extends EnhancedActivity {
             textView.setTextSize(16);
         }
     }
+
     @Override
     void onToolbarCreated() {
         ActionBar actionBar = getSupportActionBar();
