@@ -15,12 +15,14 @@ public class SystemSettings {
     static final String TableName      = "SystemSettings";
     static final String Id             = "Id";
     static final String Installed      = "Installed";
+    static final String Premium        = "Premium";
     static final String PremiumVersion = "PremiumVersion";
 
 
     static final String CreateTable = "CREATE TABLE " + TableName + " (" +
                                       Id + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
                                       Installed + " BOOLEAN NOT NULL, " +
+                                      Premium + " BOOLEAN NOT NULL, " +
                                       PremiumVersion + " VARCHAR(100) ); ";
     static final String DropTable   = "Drop Table If Exists " + TableName;
 
@@ -37,6 +39,7 @@ public class SystemSettings {
                 do {
                     SystemSetting systemSetting = new SystemSetting(cursor.getInt(cursor.getColumnIndex(Id)),
                                                                     cursor.getInt(cursor.getColumnIndex(Installed)) == 1,
+                                                                    cursor.getInt(cursor.getColumnIndex(Premium)) == 1,
                                                                     cursor.getString(cursor.getColumnIndex(PremiumVersion)));
                     settings.add(systemSetting);
                 } while (cursor.moveToNext());
@@ -57,14 +60,15 @@ public class SystemSettings {
         ContentValues values = new ContentValues();
 
         values.put(Installed, setting.getInstalled() ? 1 : 0);
-        values.put(PremiumVersion, setting.getPremium());
+        values.put(Premium, setting.getPremium() ? 1 : 0);
+        values.put(PremiumVersion, setting.getPremiumVersion());
 
         DataAccess da = new DataAccess();
         return da.update(TableName, values, Id + " = ? ", new String[]{String.valueOf(setting.getId())});
     }
 
-    public static void register(SystemSetting setting){
-        setting.setPremium(Helper.hashString(Helper.getDeviceId()));
+    public static void register(SystemSetting setting) {
+        setting.setPremiumVersion(Helper.hashString(Helper.getDeviceId()));
         update(setting);
     }
 

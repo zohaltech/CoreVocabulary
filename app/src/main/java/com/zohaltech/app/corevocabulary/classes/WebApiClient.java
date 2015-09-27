@@ -63,7 +63,7 @@ public class WebApiClient {
                             }
                         }
                     } else {
-                        if (!setting.getPremium().equals(Helper.hashString(Helper.getDeviceId()))) {
+                        if (!setting.getPremium()) {
                             if (ConnectionManager.getInternetStatus() == ConnectionManager.InternetStatus.Connected) {
                                 jsonObject.accumulate("SecurityKey", ConstantParams.getApiSecurityKey());
                                 jsonObject.accumulate("AppId", 1);
@@ -78,7 +78,7 @@ public class WebApiClient {
                                 jsonObject.accumulate("AppVersion", BuildConfig.VERSION_CODE);
                                 setJsonObject(jsonObject);
                                 Boolean result = post(getJsonObject());
-                                setting.setPremium(Helper.hashString(Helper.getDeviceId()));
+                                setting.setPremium(result);
                                 SystemSettings.update(setting);
                             }
                         }

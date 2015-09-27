@@ -14,7 +14,7 @@ import java.io.InputStreamReader;
 
 public class DataAccess extends SQLiteOpenHelper {
     public static final String DATABASE_NAME    = "CORE_VOCABULARY";
-    public static final int    DATABASE_VERSION = 60;
+    public static final int    DATABASE_VERSION = 64;
 
     public DataAccess() {
         super(App.context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -49,6 +49,7 @@ public class DataAccess extends SQLiteOpenHelper {
 
             ContentValues systemSettingsValues = new ContentValues();
             systemSettingsValues.put(SystemSettings.Installed, 0);
+            systemSettingsValues.put(SystemSettings.Premium, 0);
             db.insert(SystemSettings.TableName, null, systemSettingsValues);
 
             App.preferences.edit().putBoolean("Encoded", false).apply();

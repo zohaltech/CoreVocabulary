@@ -1,20 +1,19 @@
 package com.zohaltech.app.corevocabulary.entities;
 
 
-import com.zohaltech.app.corevocabulary.classes.Helper;
-
 public class SystemSetting {
     private int     id;
     private Boolean installed;
-    private String  premium;
+    private Boolean premium;
+    private String premiumVersion;
 
-    public SystemSetting(Boolean installed, String premium) {
+    public SystemSetting(Boolean installed,Boolean premium, String premiumVersion) {
         setInstalled(installed);
-        setPremium(premium);
+        setPremiumVersion(premiumVersion);
     }
 
-    public SystemSetting(int id, Boolean installed, String premium) {
-        this(installed, premium);
+    public SystemSetting(int id, Boolean installed,Boolean premium, String premiumVersion) {
+        this(installed,premium, premiumVersion);
         this.id = id;
     }
 
@@ -34,15 +33,19 @@ public class SystemSetting {
         this.installed = installed;
     }
 
-    public String getPremium() {
+    public String getPremiumVersion() {
+        return premiumVersion;
+    }
+
+    public void setPremiumVersion(String premiumVersion) {
+        this.premiumVersion = premiumVersion;
+    }
+
+    public Boolean getPremium() {
         return premium;
     }
 
-    public void setPremium(String premium) {
+    public void setPremium(Boolean premium) {
         this.premium = premium;
-    }
-
-    public boolean isPremium(){
-        return getPremium() != null && getPremium().equals(Helper.hashString(Helper.getDeviceId()));
     }
 }

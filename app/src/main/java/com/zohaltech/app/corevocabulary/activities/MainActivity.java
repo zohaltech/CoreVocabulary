@@ -52,7 +52,7 @@ public class MainActivity extends EnhancedActivity {
 //        }
 
         //if (App.preferences.getBoolean("Encoded", false))
-       /// EncryptVocabs();
+       EncryptVocabs();
     }
 
     @Override
