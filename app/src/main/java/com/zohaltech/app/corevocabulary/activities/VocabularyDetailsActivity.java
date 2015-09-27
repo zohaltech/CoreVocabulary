@@ -154,7 +154,5 @@ public class VocabularyDetailsActivity extends EnhancedActivity {
         }
     }
 
-    private void highlightSearchText(String searchText) {
 
-    }
 }

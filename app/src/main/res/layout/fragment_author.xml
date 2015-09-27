@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+
+    <widgets.LatinTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hamed Mohammad Hosseini has been a very active language instructor since 2001.
+With a Bachelor's degree in Electronics and a Master’s degree in TEFL from a prestigious university in Canada, he is more than qualified to run almost all types of language courses. However, to further his career he has participated in different workshops such one held by Sussex Downs. He has also passed some courses held for IELTS examiner candidates.
+He is the author of Listening Techniques for IELTS book and at present he is the manager of VIP-Talk Language Institute."
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/primary_dark_material_light"/>
+
+
+</LinearLayout>
