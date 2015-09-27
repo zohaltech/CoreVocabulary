@@ -21,7 +21,7 @@ public class SystemSettings {
     static final String CreateTable = "CREATE TABLE " + TableName + " (" +
                                       Id + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
                                       Installed + " BOOLEAN NOT NULL, " +
-                                      PremiumVersion + " VARCHAR(50) ); ";
+                                      PremiumVersion + " VARCHAR(100) ); ";
     static final String DropTable   = "Drop Table If Exists " + TableName;
 
     private static ArrayList<SystemSetting> select(String whereClause, String[] selectionArgs) {

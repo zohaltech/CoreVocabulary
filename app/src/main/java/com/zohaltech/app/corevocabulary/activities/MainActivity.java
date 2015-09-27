@@ -18,9 +18,12 @@ import android.view.View;
 import com.zohaltech.app.corevocabulary.R;
 import com.zohaltech.app.corevocabulary.classes.App;
 import com.zohaltech.app.corevocabulary.classes.CoreSec;
+import com.zohaltech.app.corevocabulary.classes.Helper;
 import com.zohaltech.app.corevocabulary.data.Examples;
+import com.zohaltech.app.corevocabulary.data.SystemSettings;
 import com.zohaltech.app.corevocabulary.data.Vocabularies;
 import com.zohaltech.app.corevocabulary.entities.Example;
+import com.zohaltech.app.corevocabulary.entities.SystemSetting;
 import com.zohaltech.app.corevocabulary.entities.Vocabulary;
 import com.zohaltech.app.corevocabulary.fragments.DrawerFragment;
 import com.zohaltech.app.corevocabulary.fragments.SearchFragment;
@@ -41,9 +44,15 @@ public class MainActivity extends EnhancedActivity {
     protected void onCreated() {
         setContentView(R.layout.activity_main);
         startTime = System.currentTimeMillis() - 5000;
+//        SystemSetting setting=SystemSettings.getCurrentSettings();
+//        SystemSettings.register(setting);
+//
+//        if(setting.getPremiumVersion().equals(Helper.hashString(Helper.getDeviceId()))){
+//            String s;
+//        }
 
         //if (App.preferences.getBoolean("Encoded", false))
-        EncryptVocabs();
+       /// EncryptVocabs();
     }
 
     @Override

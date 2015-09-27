@@ -9,9 +9,6 @@ import android.os.Vibrator;
 import android.telephony.TelephonyManager;
 
 import java.math.BigDecimal;
-import java.math.BigInteger;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -136,20 +133,16 @@ public final class Helper {
         return -1;
     }
 
-    public static String hashString(String plaintext){
-        MessageDigest m = null;
+    public static String hashString(String plaintext) {
         try {
-            m = MessageDigest.getInstance("MD5");
-            m.reset();
-            m.update(plaintext.getBytes());
-            byte[] digest = m.digest();
-            BigInteger bigInt = new BigInteger(1,digest);
-            String hashtext = bigInt.toString(16);
-            // Now we need to zero pad it if you actually want the full 32 chars.
-            while(hashtext.length() < 32 ){
-                hashtext = "0"+hashtext;
+            java.security.MessageDigest md = java.security.MessageDigest.getInstance("MD5");
+            byte[] array = md.digest(plaintext.getBytes());
+            StringBuilder sb = new StringBuilder();
+            for (byte anArray : array) {
+                sb.append(Integer.toHexString((anArray & 0xFF) | 0x100).substring(1, 3));
             }
-        } catch (NoSuchAlgorithmException e) {
+            return sb.toString();
+        } catch (java.security.NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
         return null;
