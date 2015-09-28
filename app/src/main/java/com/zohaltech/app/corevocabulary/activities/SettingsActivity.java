@@ -249,7 +249,6 @@ public class SettingsActivity extends EnhancedActivity {
     protected void onActivityResult(final int requestCode, final int resultCode, final Intent intent) {
         if (resultCode == Activity.RESULT_OK && requestCode == 5) {
             Uri uri = intent.getParcelableExtra(RingtoneManager.EXTRA_RINGTONE_PICKED_URI);
-
             if (uri != null) {
                 Ringtone ringtone = RingtoneManager.getRingtone(this, uri);
                 String title = ringtone.getTitle(this);

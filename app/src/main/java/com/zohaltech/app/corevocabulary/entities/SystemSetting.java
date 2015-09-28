@@ -18,6 +18,7 @@ public class SystemSetting {
         setPremium(premium);
         setPremiumVersion(premiumVersion);
         setAlarmRingingTone(alarmRingingTone);
+        setRingingToneUri(ringingToneUri);
         setVibrateInAlarms(vibrateInAlarms);
         setSoundInAlarms(soundInAlarms);
     }

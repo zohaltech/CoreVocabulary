@@ -29,15 +29,19 @@ public class AlarmReceiver extends BroadcastReceiver {
                         .setPriority(android.support.v4.app.NotificationCompat.PRIORITY_DEFAULT)
                         .setVisibility(lockScreenVisibility)
                         .setColor(App.context.getResources().getColor(R.color.primary))
-                       // .setDefaults(Notification.DEFAULT_VIBRATE | Notification.DEFAULT_SOUND)
-                        //.setDefaults(Notification.DEFAULT_VIBRATE)
+
                         .setAutoCancel(true);
 
+        SystemSetting setting = SystemSettings.getCurrentSettings();
+        if (setting.getRingingToneUri() == null) {
+            builder.setDefaults(Notification.DEFAULT_VIBRATE | Notification.DEFAULT_SOUND);
+            builder.setDefaults(Notification.DEFAULT_VIBRATE);
+        }
         Notification notification = builder.build();
 
-        SystemSetting setting = SystemSettings.getCurrentSettings();
-      //  if (setting.getRingingToneUri() != null)
+        if (setting.getRingingToneUri() != null) {
             notification.sound = Uri.parse(setting.getRingingToneUri());
+        }
 
         Intent resultIntent = new Intent(context, VocabularyDetailsActivity.class);
         resultIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
