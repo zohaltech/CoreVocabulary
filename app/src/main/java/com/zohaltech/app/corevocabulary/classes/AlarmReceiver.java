@@ -1,6 +1,5 @@
 package com.zohaltech.app.corevocabulary.classes;
 
-
 import android.app.Notification;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
@@ -30,16 +29,13 @@ public class AlarmReceiver extends BroadcastReceiver {
                         .setVisibility(lockScreenVisibility)
                         .setDefaults(Notification.DEFAULT_VIBRATE)
                         .setColor(App.context.getResources().getColor(R.color.primary))
-
                         .setAutoCancel(true);
 
         SystemSetting setting = SystemSettings.getCurrentSettings();
         if (setting.getRingingToneUri() == null) {
             builder.setDefaults(Notification.DEFAULT_VIBRATE | Notification.DEFAULT_SOUND);
-
         }
         Notification notification = builder.build();
-
         if (setting.getRingingToneUri() != null) {
             notification.sound = Uri.parse(setting.getRingingToneUri());
         }
