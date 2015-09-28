@@ -45,7 +45,7 @@ public class ThemeAdapter extends RecyclerView.Adapter<ThemeAdapter.ViewHolder> 
             progressDetailStatuses.add(new ProgressDetailStatus(i, false));
         }
         //imageLoader = ImageLoader.getInstance();
-        //imageLoader.init(ImageLoaderConfiguration.createDefault(context));
+        //imageLoader.init(ImageLoaderConfiguration.createDefault(activity));
     }
 
     public static void expand(final View v) {
@@ -110,15 +110,41 @@ public class ThemeAdapter extends RecyclerView.Adapter<ThemeAdapter.ViewHolder> 
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position) {
         final Theme theme = themes.get(position);
-        //holder.txtTheme.setText(theme.getName());
         holder.imgTheme.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, App.screenHeight / 3));
-        //App.handler.post(new Runnable() {
-        //    public void run() {
-        //        holder.imgTheme.setImageResource(context.getResources().getIdentifier(theme.getIconName(), "drawable", context.getPackageName()));
-        //    }
-        //});
-        final int imageId = context.getResources().getIdentifier(theme.getIconName(), "drawable", context.getPackageName());
-        Picasso.with(context).load(imageId).placeholder(R.drawable.placeholder).into(holder.imgTheme);
+
+        //final int imageId = context.getResources().getIdentifier(theme.getIconName(), "drawable", context.getPackageName());
+        //Picasso.with(context).load(imageId).into(holder.imgTheme);
+
+        if (position == 0){
+            Picasso.with(context).load(R.drawable.education).into(holder.imgTheme);
+        } else if (position == 1){
+            Picasso.with(context).load(R.drawable.job).into(holder.imgTheme);
+        }else if (position == 2){
+            Picasso.with(context).load(R.drawable.media).into(holder.imgTheme);
+        }else if (position == 3){
+            Picasso.with(context).load(R.drawable.health).into(holder.imgTheme);
+        }else if (position == 4){
+            Picasso.with(context).load(R.drawable.environment).into(holder.imgTheme);
+        }else if (position == 5){
+            Picasso.with(context).load(R.drawable.advertising).into(holder.imgTheme);
+        }else if (position == 6){
+            Picasso.with(context).load(R.drawable.foreign_language).into(holder.imgTheme);
+        }else if (position == 7){
+            Picasso.with(context).load(R.drawable.urbanisation).into(holder.imgTheme);
+        }else if (position == 8){
+            Picasso.with(context).load(R.drawable.law).into(holder.imgTheme);
+        }else if (position == 9){
+            Picasso.with(context).load(R.drawable.sport).into(holder.imgTheme);
+        }else if (position == 10){
+            Picasso.with(context).load(R.drawable.space).into(holder.imgTheme);
+        }else if (position == 11){
+            Picasso.with(context).load(R.drawable.science).into(holder.imgTheme);
+        }else if (position == 12){
+            Picasso.with(context).load(R.drawable.causes).into(holder.imgTheme);
+        }
+
+
+        //new ImageLoaderTask(holder.imgTheme).execute(imageId);
 
         holder.txtTheme.setText(theme.getEncName());
 
@@ -244,4 +270,30 @@ public class ThemeAdapter extends RecyclerView.Adapter<ThemeAdapter.ViewHolder> 
             this.visible = visible;
         }
     }
+
+    //private class ImageLoaderTask extends AsyncTask<Integer, Void, Bitmap> {
+    //
+    //    ImageView imageView;
+    //
+    //    public ImageLoaderTask(ImageView imageView) {
+    //        this.imageView = imageView;
+    //    }
+    //
+    //    @Override
+    //    protected void onPreExecute() {
+    //        imageView.setImageBitmap(null);
+    //    }
+    //
+    //    @Override
+    //    protected Bitmap doInBackground(Integer... params) {
+    //        //return decodeSampledBitmapFromResource(activity.getResources(), params[0], App.screenWidth, App.screenHeight / 3);
+    //        return BitmapFactory.decodeResource(context.getResources(), params[0]);
+    //    }
+    //
+    //    @Override
+    //    protected void onPostExecute(Bitmap bitmap) {
+    //        //super.onPostExecute(bitmap);
+    //        imageView.setImageBitmap(bitmap);
+    //    }
+    //}
 }

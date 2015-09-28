@@ -34,7 +34,7 @@ public class ThemesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_themes, container, false);
         recyclerThemes = (RecyclerView) rootView.findViewById(R.id.recyclerThemes);
-        recyclerThemes.setHasFixedSize(true);
+        //recyclerThemes.setHasFixedSize(true);
         recyclerThemes.setLayoutManager(new LinearLayoutManager(getActivity()));
         themes.addAll(Themes.select());
         adapter = new ThemeAdapter(getActivity(), themes);
