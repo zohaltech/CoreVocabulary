@@ -28,6 +28,7 @@ public class AlarmReceiver extends BroadcastReceiver {
                         .setOngoing(false)
                         .setPriority(android.support.v4.app.NotificationCompat.PRIORITY_DEFAULT)
                         .setVisibility(lockScreenVisibility)
+                        .setDefaults(Notification.DEFAULT_VIBRATE)
                         .setColor(App.context.getResources().getColor(R.color.primary))
 
                         .setAutoCancel(true);
@@ -35,7 +36,7 @@ public class AlarmReceiver extends BroadcastReceiver {
         SystemSetting setting = SystemSettings.getCurrentSettings();
         if (setting.getRingingToneUri() == null) {
             builder.setDefaults(Notification.DEFAULT_VIBRATE | Notification.DEFAULT_SOUND);
-            builder.setDefaults(Notification.DEFAULT_VIBRATE);
+
         }
         Notification notification = builder.build();
 
