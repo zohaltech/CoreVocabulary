@@ -18,10 +18,7 @@ public class AboutActivity extends EnhancedActivity {
     PagerSlidingTabStrip tabCategories;
     ViewPager            pagerCategories;
     LinearLayout layoutRoot;
-
     AboutPagerAdapter aboutPagerAdapter;
-
-    int tabCount = 2;
 
     @Override
     void onCreated() {
@@ -33,6 +30,7 @@ public class AboutActivity extends EnhancedActivity {
 
         aboutPagerAdapter = new AboutPagerAdapter(getSupportFragmentManager());
         pagerCategories.setAdapter(aboutPagerAdapter);
+
 
         // Bind the tabCategories to the ViewPager
         tabCategories.setViewPager(pagerCategories);

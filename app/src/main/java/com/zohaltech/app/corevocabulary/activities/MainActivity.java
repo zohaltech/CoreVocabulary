@@ -51,7 +51,7 @@ public class MainActivity extends PaymentActivity {
         //        }
 
         //if (App.preferences.getBoolean("Encoded", false))
-        //EncryptVocabs();
+      //EncryptVocabs();
     }
 
     @Override
