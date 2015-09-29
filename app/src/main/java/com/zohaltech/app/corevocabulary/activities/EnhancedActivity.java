@@ -7,7 +7,6 @@ import android.view.MenuItem;
 
 import com.zohaltech.app.corevocabulary.R;
 import com.zohaltech.app.corevocabulary.classes.App;
-import com.zohaltech.app.corevocabulary.classes.MyUncaughtExceptionHandler;
 
 public abstract class EnhancedActivity extends AppCompatActivity {
 

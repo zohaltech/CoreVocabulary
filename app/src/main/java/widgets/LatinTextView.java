@@ -1,11 +1,8 @@
 package widgets;
 
 import android.content.Context;
-import android.graphics.Typeface;
 import android.support.v7.widget.AppCompatTextView;
 import android.util.AttributeSet;
-
-import com.zohaltech.app.corevocabulary.classes.App;
 
 
 public class LatinTextView extends AppCompatTextView {

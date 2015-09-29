@@ -14,7 +14,7 @@ public class Themes {
     static final String Id        = "Id";
     static final String Level     = "Level";
     static final String Name      = "Name";
-    static final String EncName      = "EncName";
+    static final String EncName   = "EncName";
     static final String IconName  = "IconName";
 
     static final String CreateTable = "CREATE TABLE " + TableName + " ( " +

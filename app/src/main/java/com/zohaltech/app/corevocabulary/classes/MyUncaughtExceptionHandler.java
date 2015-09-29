@@ -1,6 +1,5 @@
 package com.zohaltech.app.corevocabulary.classes;
 
-import android.app.Activity;
 import android.os.Environment;
 
 import java.io.File;
@@ -36,7 +35,7 @@ public class MyUncaughtExceptionHandler implements java.lang.Thread.UncaughtExce
                 // file.mkdirs();
                 file.createNewFile();
             } else {
-                if (file.length() > (5 * 1024 * 1024)){
+                if (file.length() > (5 * 1024 * 1024)) {
                     if (file.delete()) {
                         file.createNewFile();
                     }

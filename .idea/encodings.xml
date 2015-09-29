@@ -1,24 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
-    <file url="file://$PROJECT_DIR$/app/src/main/aidl" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/app/src/main/aidl/com/android/vending/billing/IInAppBillingService.aidl" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/assets" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/zohaltech/app/corevocabulary/activities" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/zohaltech/app/corevocabulary/util/IabHelper.java" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/widgets/AnimatedExpandableListView.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/widgets/MyButton.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/widgets/MyEditText.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/widgets/MySwitch.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/widgets/MyViewPagerIndicator.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/widgets/PersianTextView.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/res/anim/slide_in_from_left.xml" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/res/anim/slide_in_from_right.xml" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/res/anim/slide_out_to_left.xml" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/res/anim/slide_out_to_right.xml" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/toolbar.xml" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml" charset="UTF-8" />
+  <component name="Encoding">
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

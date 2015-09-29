@@ -3,7 +3,7 @@ package com.zohaltech.app.corevocabulary.classes;
 public class NavDrawerItem {
 
     private boolean showNotify;
-    private String title;
+    private String  title;
 
     public NavDrawerItem() {
     }

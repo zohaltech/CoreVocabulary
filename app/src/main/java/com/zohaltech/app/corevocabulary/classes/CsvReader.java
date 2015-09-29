@@ -613,7 +613,7 @@ public class CsvReader {
                                     if (currentLetter == userSettings.Delimiter) {
                                         endColumn();
                                     } else if ((!useCustomRecordDelimiter && (currentLetter == Letters.CR || currentLetter == Letters.LF))
-                                            || (useCustomRecordDelimiter && currentLetter == userSettings.RecordDelimiter)) {
+                                               || (useCustomRecordDelimiter && currentLetter == userSettings.RecordDelimiter)) {
                                         endColumn();
 
                                         endRecord();
@@ -766,7 +766,7 @@ public class CsvReader {
                                         if (currentLetter == userSettings.Delimiter) {
                                             endColumn();
                                         } else if ((!useCustomRecordDelimiter && (currentLetter == Letters.CR || currentLetter == Letters.LF))
-                                                || (useCustomRecordDelimiter && currentLetter == userSettings.RecordDelimiter)) {
+                                                   || (useCustomRecordDelimiter && currentLetter == userSettings.RecordDelimiter)) {
                                             endColumn();
 
                                             endRecord();
@@ -792,17 +792,17 @@ public class CsvReader {
                                     dataBuffer.Position++;
 
                                     if (userSettings.SafetySwitch
-                                            && dataBuffer.Position - dataBuffer.ColumnStart + columnBuffer.Position > 100000) {
+                                        && dataBuffer.Position - dataBuffer.ColumnStart + columnBuffer.Position > 100000) {
                                         close();
 
                                         throw new IOException(
                                                 "Maximum column length of 100,000 exceeded in column "
-                                                        + NumberFormat.getIntegerInstance().format(columnsCount)
-                                                        + " in record "
-                                                        + NumberFormat.getIntegerInstance().format(currentRecord)
-                                                        + ". Set the SafetySwitch property to false"
-                                                        + " if you're expecting column lengths greater than 100,000 characters to"
-                                                        + " avoid this error.");
+                                                + NumberFormat.getIntegerInstance().format(columnsCount)
+                                                + " in record "
+                                                + NumberFormat.getIntegerInstance().format(currentRecord)
+                                                + ". Set the SafetySwitch property to false"
+                                                + " if you're expecting column lengths greater than 100,000 characters to"
+                                                + " avoid this error.");
                                     }
                                 }
                             } // end else
@@ -827,11 +827,11 @@ public class CsvReader {
 
                         lastLetter = currentLetter;
                     } else if (!useCustomRecordDelimiter
-                            && (currentLetter == Letters.CR || currentLetter == Letters.LF)) {
+                               && (currentLetter == Letters.CR || currentLetter == Letters.LF)) {
                         // this will skip blank lines
                         if (startedColumn
-                                || columnsCount > 0
-                                || (!userSettings.SkipEmptyRecords && (currentLetter == Letters.CR || lastLetter != Letters.CR))) {
+                            || columnsCount > 0
+                            || (!userSettings.SkipEmptyRecords && (currentLetter == Letters.CR || lastLetter != Letters.CR))) {
                             endColumn();
 
                             endRecord();
@@ -848,7 +848,7 @@ public class CsvReader {
 
                         skipLine();
                     } else if (userSettings.TrimWhitespace
-                            && (currentLetter == Letters.SPACE || currentLetter == Letters.TAB)) {
+                               && (currentLetter == Letters.SPACE || currentLetter == Letters.TAB)) {
                         // do nothing, this will trim leading whitespace
                         // for both text qualified columns and non
 
@@ -878,7 +878,7 @@ public class CsvReader {
                                 }
 
                                 if (!userSettings.UseTextQualifier && userSettings.EscapeMode == ESCAPE_MODE_BACKSLASH
-                                        && currentLetter == Letters.BACKSLASH) {
+                                    && currentLetter == Letters.BACKSLASH) {
                                     if (lastLetterWasBackslash) {
                                         lastLetterWasBackslash = false;
                                     } else {
@@ -1014,7 +1014,7 @@ public class CsvReader {
                                     if (currentLetter == userSettings.Delimiter) {
                                         endColumn();
                                     } else if ((!useCustomRecordDelimiter && (currentLetter == Letters.CR || currentLetter == Letters.LF))
-                                            || (useCustomRecordDelimiter && currentLetter == userSettings.RecordDelimiter)) {
+                                               || (useCustomRecordDelimiter && currentLetter == userSettings.RecordDelimiter)) {
                                         endColumn();
 
                                         endRecord();
@@ -1031,17 +1031,17 @@ public class CsvReader {
                                     dataBuffer.Position++;
 
                                     if (userSettings.SafetySwitch
-                                            && dataBuffer.Position - dataBuffer.ColumnStart + columnBuffer.Position > 100000) {
+                                        && dataBuffer.Position - dataBuffer.ColumnStart + columnBuffer.Position > 100000) {
                                         close();
 
                                         throw new IOException(
                                                 "Maximum column length of 100,000 exceeded in column "
-                                                        + NumberFormat.getIntegerInstance().format(columnsCount)
-                                                        + " in record "
-                                                        + NumberFormat.getIntegerInstance().format(currentRecord)
-                                                        + ". Set the SafetySwitch property to false"
-                                                        + " if you're expecting column lengths greater than 100,000 characters to"
-                                                        + " avoid this error.");
+                                                + NumberFormat.getIntegerInstance().format(columnsCount)
+                                                + " in record "
+                                                + NumberFormat.getIntegerInstance().format(currentRecord)
+                                                + ". Set the SafetySwitch property to false"
+                                                + " if you're expecting column lengths greater than 100,000 characters to"
+                                                + " avoid this error.");
                                     }
                                 }
                             } // end else
@@ -1068,11 +1068,11 @@ public class CsvReader {
             if (hasMoreData) {
                 if (rawBuffer.Position == 0) {
                     rawRecord = new String(dataBuffer.Buffer, dataBuffer.LineStart, dataBuffer.Position
-                            - dataBuffer.LineStart - 1);
+                                                                                    - dataBuffer.LineStart - 1);
                 } else {
                     rawRecord = new String(rawBuffer.Buffer, 0, rawBuffer.Position)
-                            + new String(dataBuffer.Buffer, dataBuffer.LineStart, dataBuffer.Position
-                            - dataBuffer.LineStart - 1);
+                                + new String(dataBuffer.Buffer, dataBuffer.LineStart, dataBuffer.Position
+                                                                                      - dataBuffer.LineStart - 1);
                 }
             } else {
                 // for hasMoreData to ever be false, all data would have had to
@@ -1095,7 +1095,7 @@ public class CsvReader {
         if (!initialized) {
             if (fileName != null) {
                 inputStream = new BufferedReader(new InputStreamReader(new FileInputStream(fileName), charset),
-                        StaticSettings.MAX_FILE_BUFFER_SIZE);
+                                                 StaticSettings.MAX_FILE_BUFFER_SIZE);
             }
 
             charset = null;
@@ -1107,7 +1107,7 @@ public class CsvReader {
         if (userSettings.CaptureRawRecord && dataBuffer.Count > 0) {
             if (rawBuffer.Buffer.length - rawBuffer.Position < dataBuffer.Count - dataBuffer.LineStart) {
                 int newLength = rawBuffer.Buffer.length
-                        + Math.max(dataBuffer.Count - dataBuffer.LineStart, rawBuffer.Buffer.length);
+                                + Math.max(dataBuffer.Count - dataBuffer.LineStart, rawBuffer.Buffer.length);
 
                 char[] holder = new char[newLength];
 
@@ -1117,7 +1117,7 @@ public class CsvReader {
             }
 
             System.arraycopy(dataBuffer.Buffer, dataBuffer.LineStart, rawBuffer.Buffer, rawBuffer.Position,
-                    dataBuffer.Count - dataBuffer.LineStart);
+                             dataBuffer.Count - dataBuffer.LineStart);
 
             rawBuffer.Position += dataBuffer.Count - dataBuffer.LineStart;
         }
@@ -1226,13 +1226,13 @@ public class CsvReader {
 
                     if (userSettings.TrimWhitespace && !startedWithQualifier) {
                         while (lastLetter >= dataBuffer.ColumnStart
-                                && (dataBuffer.Buffer[lastLetter] == Letters.SPACE || dataBuffer.Buffer[lastLetter] == Letters.TAB)) {
+                               && (dataBuffer.Buffer[lastLetter] == Letters.SPACE || dataBuffer.Buffer[lastLetter] == Letters.TAB)) {
                             lastLetter--;
                         }
                     }
 
                     currentValue = new String(dataBuffer.Buffer, dataBuffer.ColumnStart, lastLetter
-                            - dataBuffer.ColumnStart + 1);
+                                                                                         - dataBuffer.ColumnStart + 1);
                 }
             } else {
                 updateCurrentValue();
@@ -1241,7 +1241,7 @@ public class CsvReader {
 
                 if (userSettings.TrimWhitespace && !startedWithQualifier) {
                     while (lastLetter >= 0
-                            && (columnBuffer.Buffer[lastLetter] == Letters.SPACE || columnBuffer.Buffer[lastLetter] == Letters.SPACE)) {
+                           && (columnBuffer.Buffer[lastLetter] == Letters.SPACE || columnBuffer.Buffer[lastLetter] == Letters.SPACE)) {
                         lastLetter--;
                     }
                 }
@@ -1258,9 +1258,9 @@ public class CsvReader {
             close();
 
             throw new IOException("Maximum column count of 100,000 exceeded in record "
-                    + NumberFormat.getIntegerInstance().format(currentRecord)
-                    + ". Set the SafetySwitch property to false"
-                    + " if you're expecting more than 100,000 columns per record to" + " avoid this error.");
+                                  + NumberFormat.getIntegerInstance().format(currentRecord)
+                                  + ". Set the SafetySwitch property to false"
+                                  + " if you're expecting more than 100,000 columns per record to" + " avoid this error.");
         }
 
         // check to see if our current holder array for
@@ -1318,7 +1318,7 @@ public class CsvReader {
         if (startedColumn && dataBuffer.ColumnStart < dataBuffer.Position) {
             if (columnBuffer.Buffer.length - columnBuffer.Position < dataBuffer.Position - dataBuffer.ColumnStart) {
                 int newLength = columnBuffer.Buffer.length
-                        + Math.max(dataBuffer.Position - dataBuffer.ColumnStart, columnBuffer.Buffer.length);
+                                + Math.max(dataBuffer.Position - dataBuffer.ColumnStart, columnBuffer.Buffer.length);
 
                 char[] holder = new char[newLength];
 
@@ -1328,7 +1328,7 @@ public class CsvReader {
             }
 
             System.arraycopy(dataBuffer.Buffer, dataBuffer.ColumnStart, columnBuffer.Buffer, columnBuffer.Position,
-                    dataBuffer.Position - dataBuffer.ColumnStart);
+                             dataBuffer.Position - dataBuffer.ColumnStart);
 
             columnBuffer.Position += dataBuffer.Position - dataBuffer.ColumnStart;
         }

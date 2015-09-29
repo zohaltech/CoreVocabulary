@@ -37,7 +37,7 @@ public class Notes {
                     Note note = new Note(cursor.getInt(cursor.getColumnIndex(Id)),
                                          cursor.getInt(cursor.getColumnIndex(VocabularyId)),
                                          cursor.getInt(cursor.getColumnIndex(Ordinal)),
-                                         cursor.getString(cursor.getColumnIndex(Description)).replace('|','\n'));
+                                         cursor.getString(cursor.getColumnIndex(Description)).replace('|', '\n'));
 
                     noteList.add(note);
                 } while (cursor.moveToNext());

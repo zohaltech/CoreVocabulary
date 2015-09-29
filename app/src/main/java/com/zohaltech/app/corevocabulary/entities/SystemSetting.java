@@ -12,7 +12,7 @@ public class SystemSetting {
     private Boolean soundInAlarms;
 
 
-    public SystemSetting(Boolean installed, Boolean premium, String premiumVersion,String ringingToneUri,
+    public SystemSetting(Boolean installed, Boolean premium, String premiumVersion, String ringingToneUri,
                          String alarmRingingTone, Boolean vibrateInAlarms, Boolean soundInAlarms) {
         setInstalled(installed);
         setPremium(premium);
@@ -23,9 +23,9 @@ public class SystemSetting {
         setSoundInAlarms(soundInAlarms);
     }
 
-    public SystemSetting(int id, Boolean installed, Boolean premium, String premiumVersion,String ringingToneUri,
+    public SystemSetting(int id, Boolean installed, Boolean premium, String premiumVersion, String ringingToneUri,
                          String alarmRingingTone, Boolean vibrateInAlarms, Boolean soundInAlarms) {
-        this(installed, premium, premiumVersion,ringingToneUri, alarmRingingTone, vibrateInAlarms, soundInAlarms);
+        this(installed, premium, premiumVersion, ringingToneUri, alarmRingingTone, vibrateInAlarms, soundInAlarms);
         this.id = id;
     }
 

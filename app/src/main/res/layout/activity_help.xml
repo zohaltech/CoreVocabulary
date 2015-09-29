@@ -10,9 +10,26 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-    <widgets.LatinTextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Help Content"/>
+        android:layout_height="match_parent">
+
+        <!--<widgets.LatinTextView-->
+        <!--android:id="@+id/txtHelpEnglish"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:text="@string/help_english"/>-->
+
+        <widgets.PersianTextView
+            android:id="@+id/txtHelpPersian"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:padding="10dp"
+            android:text="@string/help_persian"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/primary_text"/>
+
+    </ScrollView>
 
 </LinearLayout>

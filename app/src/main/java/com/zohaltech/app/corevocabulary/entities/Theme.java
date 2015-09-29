@@ -4,7 +4,7 @@ import com.zohaltech.app.corevocabulary.classes.CoreSec;
 
 import java.io.Serializable;
 
-public class Theme implements Serializable{
+public class Theme implements Serializable {
     private int    id;
     private int    level;
     private String name;
@@ -12,12 +12,12 @@ public class Theme implements Serializable{
     private String encName;
     private String iconName;
 
-    public Theme(int id, int level, String name,String encName, String iconName) {
-        this(level, name,encName, iconName);
+    public Theme(int id, int level, String name, String encName, String iconName) {
+        this(level, name, encName, iconName);
         this.id = id;
     }
 
-    public Theme(int level, String name,String encName, String iconName) {
+    public Theme(int level, String name, String encName, String iconName) {
         setLevel(level);
         setName(name);
         setIconName(iconName);

@@ -17,8 +17,8 @@ public class AboutActivity extends EnhancedActivity {
 
     PagerSlidingTabStrip tabCategories;
     ViewPager            pagerCategories;
-    LinearLayout layoutRoot;
-    AboutPagerAdapter aboutPagerAdapter;
+    LinearLayout         layoutRoot;
+    AboutPagerAdapter    aboutPagerAdapter;
 
     @Override
     void onCreated() {

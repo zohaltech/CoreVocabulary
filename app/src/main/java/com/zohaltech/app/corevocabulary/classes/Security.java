@@ -3,31 +3,24 @@ package com.zohaltech.app.corevocabulary.classes;
 
 import android.util.Base64;
 
-public class Security
-{
-    public static String decodeBase64(String text)
-    {
+public class Security {
+    public static String decodeBase64(String text) {
         String result = "";
-        try
-        {
+        try {
             byte[] data = Base64.decode(text, Base64.DEFAULT);
             result = new String(data, "UTF-8");
-        } catch (Exception ex)
-        {
+        } catch (Exception ex) {
             ex.printStackTrace();
         }
         return result;
     }
 
-    public static String encodeBase64(String text)
-    {
+    public static String encodeBase64(String text) {
         String result = "";
-        try
-        {
+        try {
             byte[] data = text.getBytes("UTF-8");
             result = Base64.encodeToString(data, Base64.DEFAULT);
-        } catch (Exception ex)
-        {
+        } catch (Exception ex) {
             ex.printStackTrace();
         }
         return result;

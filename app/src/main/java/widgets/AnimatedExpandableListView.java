@@ -587,9 +587,9 @@ public class AnimatedExpandableListView extends ExpandableListView {
     }
 
     private static class ExpandAnimation extends Animation {
-        private int baseHeight;
-        private int delta;
-        private View view;
+        private int       baseHeight;
+        private int       delta;
+        private View      view;
         private GroupInfo groupInfo;
 
         private ExpandAnimation(View v, int startHeight, int endHeight, GroupInfo info) {

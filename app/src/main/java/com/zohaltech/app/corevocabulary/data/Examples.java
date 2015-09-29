@@ -6,7 +6,6 @@ import android.database.sqlite.SQLiteDatabase;
 
 import com.zohaltech.app.corevocabulary.classes.MyRuntimeException;
 import com.zohaltech.app.corevocabulary.entities.Example;
-import com.zohaltech.app.corevocabulary.entities.Note;
 
 import java.util.ArrayList;
 
@@ -18,8 +17,8 @@ public class Examples {
     static final String English      = "English";
     static final String Persian      = "Persian";
 
-    static final String EncEnglish      = "EncEnglish";
-    static final String EncPersian      = "EncPersian";
+    static final String EncEnglish = "EncEnglish";
+    static final String EncPersian = "EncPersian";
 
     static final String CreateTable = "CREATE TABLE " + TableName + " ( " +
                                       Id + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +

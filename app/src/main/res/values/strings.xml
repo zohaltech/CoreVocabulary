@@ -1,47 +1,33 @@
 <resources>
     <string name="app_name">Core Vocabulary</string>
-
-    <string name="nav_item_home">Home</string>
-    <string name="nav_item_friends">Friends</string>
-    <string name="nav_item_notifications">Messages</string>
-
-    <!-- navigation drawer item labels  -->
-    <string-array name="nav_drawer_labels">
-        <item>@string/nav_item_home</item>
-        <item>@string/nav_item_friends</item>
-        <item>@string/nav_item_notifications</item>
-    </string-array>
-
-    <string name="title_messages">Messages</string>
-    <string name="title_friends">Friends</string>
     <string name="title_themes">Themes</string>
-    <string name="about">About</string>
     <string name="action_search">Search</string>
-    <string name="hello_world">Hello World!</string>
     <string name="drawer_open">Open</string>
     <string name="drawer_close">Close</string>
     <string name="copyright">Copyright © 2015 ZohalTech</string>
     <string name="all_rights">All Rights Reserved</string>
-
     <string name="share_title">Share with friends</string>
     <string name="feedback_subject">Core Vocabulary Feedback</string>
     <string name="feedback_title">Feedback</string>
-
     <string name="sharing_message">The very best app to improve your english download it now from below link</string>
     <string name="could_not_open_market">Could not find Bazaar app on your device, Please install Bazaar first</string>
     <string name="press_back_again_to_exit">Press back again to exit</string>
     <string name="title_activity_settings">Settings</string>
     <string name="title_search">Search</string>
-
     <string name="bare_sala">MIHNMA0GCSqGSIb3DQEBAQUAA4G7ADCBtwKBrwDEZZ4jpPHrnb/I+16h4DRUB0u13UCme31/0Jz+b4enw1xUmMmvlduzZUTruV1fM8bH14gEBMvOIt+g7u0AhejrfYXavhE/R3JrNq+TuZTrKuO73MpO1aaeiuYmsuA1wcN7fP5akffu/1HSqAj4s0F7fArJRZeiGnEb7ApTBFlGLg/o4groUZZwF3f1abFEcC9wM+HfGuiUZdKDTKkT3XyVzPcsvnrjMODiPeFsTH8CAwEAAQ==</string>
     <string name="nice_ass">MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCC3hfXAyBj1bnrlNilrtdW4U1qkI8FP27usDKinH9w/XQddtbyn/yY+Qpgi9rZqGEiy8g7jqZr6YZAM3hJCB4V6dvZPwdHmF2AgtbQJQGYbk4lfhfzQl+UGUtsRJtiaPoJZ7ZTYFlqlAz0tRR83w5y0NdkHyqnaJYyOBvI9jgmXwIDAQAB</string>
     <string name="doozlu_bala">MIGeMA0GCSqGSIb3DQEBAQUAA4GMADCBiAKBgKecP8gZbs4/jVxq41Szt7Ba1SL+k4nwfrJ24RMTKhQekzGqJWt5OaEGO5lprEA2drkcmJfd47IROHh4RB41ipd/ou0WO5liKA0p7qB9ZbXjL2Yavd6ESfJGUnKqJrPUUuPNI1gUfv9JsccAQoyaEfJ6xdrDuNgdFlOOcmShJDJ5AgMBAAE=</string>
     <string name="host_name">http://zohaltech.com/api/app/post</string>
     <string name="jan">8F2CF4F0C905</string>
-    <string name="doosh">sys</string>
-    <string name="topol">/.vps/</string>
     <string name="sdj">f77995466a906864</string>
     <string name="mongol">a052108fcc1c4fc5</string>
-    <string name="goon">7sc450he388f1c2c</string>
-
+    <string name="hamed">Hamed has been a very active language instructor since 2001. With a Bachelor\'s degree in Electronics and a Master’s degree in TEFL from a prestigious university in Canada, he is more than qualified to run almost all types of language courses. However, to further his career he has participated in different workshops such one held by Sussex Downs. He has also passed some courses held for IELTS examiner candidates. He is the author of Listening Techniques for IELTS book and at present he is the manager of VIP-Talk Language Institute.</string>
+    <string name="help_english">Welcome to Core Vocabulary A) In this simple and elegantly designed application you are going to get familiar with the most commonly used words and idioms in different contexts. B) Select a theme to get started. Though there is no dependencies between themes, we recommend studying them in the order specified. C) Every theme is divided into some days. You are supposed to learn six words in a single day. D) And every vocabulary has English and Persian Descriptions (definitions) plus enough examples to help you better grasp the usage of that word. E) Auto Learning: You can easily set a scheduler to remind you words that you should learn in selected weekdays.</string>
+    <string name="help_persian">به Core Vocabulary خوش آمدید.\n
+- در این اپلیکیشن ساده و جذاب قرار است پرکاربردترین لغات و اصطلاحاتی که در موضوعات مختلف استفاده می ‌شوند را یاد بگیرید که در این برنامه به آن ها Theme میگوییم.\n
+- برای شروع یکی از Theme ها را انتخاب کنید. هیچگونه وابستگی بین Theme ها وجود ندارد ولی پیشنهاد میکنیم آنها را به ترتیبی که تعبیه شده مطالعه نمایید.\n
+- آموزش هر واژه شامل تعاریف انگلیسی و فارسی بهمراه مثال‌ها و نکات مربوط برای درک کاربردهای آن می ‌باشد.\n
+- دسته بندی موضوعی لغات، به تقویت مهارتهای Speaking و Writing کمک شایانی می کند.\n
+- متد آموزشی به این گونه است که هر Theme به چندین روز تقسیم شده است و برای هر روز 6 واژه و اصطلاح تعیین شده است. برای پیروی از این متد آموزشی، میبایست هر روز و یا یک روز در میان، 6 لغت از یک تم را با یک فاصله زمانی و نه پشت سر هم مطالعه کنید.\n
+- آموزش خودکار: برای سادگی روند یادگیری امکانی در برنامه تعبیه شده است که در آن شما میتوانید روزهای مطالعه، ساعت شروع و فاصله زمانی بین یادآوری را تنظیم کنید، با این کار لغت ها به صورت خودکار و در زمان های تعیین شده به شما یادآوری می شوند و در نوار اعلان نمایش داده می شوند.</string>
 </resources>

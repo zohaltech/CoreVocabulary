@@ -34,9 +34,9 @@ import widgets.MySnackbar;
 public class MainActivity extends PaymentActivity {
 
     long startTime;
-    private DrawerLayout drawerLayout;
+    private DrawerLayout   drawerLayout;
     private DrawerFragment drawerFragment;
-    private Fragment     fragment;
+    private Fragment       fragment;
 
     @Override
     protected void onCreated() {
@@ -51,7 +51,7 @@ public class MainActivity extends PaymentActivity {
         //        }
 
         //if (App.preferences.getBoolean("Encoded", false))
-      EncryptVocabs();
+        //EncryptVocabs();
     }
 
     @Override
@@ -65,7 +65,7 @@ public class MainActivity extends PaymentActivity {
 
     @Override
     void updateUiToPremiumVersion() {
-        if (drawerFragment != null){
+        if (drawerFragment != null) {
             drawerFragment.updateUi();
         }
         displayView(0);

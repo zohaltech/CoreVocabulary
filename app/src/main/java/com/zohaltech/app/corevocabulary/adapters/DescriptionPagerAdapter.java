@@ -5,9 +5,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import com.zohaltech.app.corevocabulary.fragments.DefinitionFragment;
 import com.zohaltech.app.corevocabulary.fragments.ExamplesFragment;
 import com.zohaltech.app.corevocabulary.fragments.NotesFragment;
-import com.zohaltech.app.corevocabulary.fragments.DefinitionFragment;
 
 import java.util.ArrayList;
 

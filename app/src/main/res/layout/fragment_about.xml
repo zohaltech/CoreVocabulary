@@ -126,7 +126,6 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="@color/primary_text"/>
 
-
             <widgets.LatinTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

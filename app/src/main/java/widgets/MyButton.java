@@ -1,27 +1,20 @@
 package widgets;
 
 import android.content.Context;
-import android.graphics.Typeface;
 import android.support.v7.widget.AppCompatButton;
 import android.util.AttributeSet;
 
-import com.zohaltech.app.corevocabulary.classes.App;
 
-
-public class MyButton extends AppCompatButton
-{
-    public MyButton(Context context)
-    {
+public class MyButton extends AppCompatButton {
+    public MyButton(Context context) {
         super(context);
     }
 
-    public MyButton(Context context, AttributeSet attrs)
-    {
+    public MyButton(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public MyButton(Context context, AttributeSet attrs, int defStyle)
-    {
+    public MyButton(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
     }
 

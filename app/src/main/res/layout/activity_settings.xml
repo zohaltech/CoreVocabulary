@@ -156,13 +156,13 @@
                             tools:ignore="HardcodedText"/>
 
                         <!--<EditText-->
-                            <!--android:id="@+id/edtStartTime"-->
-                            <!--android:layout_width="wrap_content"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:inputType="text"-->
-                            <!--android:text="08:00"-->
-                            <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
-                            <!--tools:ignore="HardcodedText"/>-->
+                        <!--android:id="@+id/edtStartTime"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:inputType="text"-->
+                        <!--android:text="08:00"-->
+                        <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
+                        <!--tools:ignore="HardcodedText"/>-->
 
                         <widgets.MyButton
                             android:id="@+id/btnStartTime"
@@ -247,34 +247,31 @@
                     </LinearLayout>
 
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="start"
-                    android:orientation="horizontal">
-
-                    <widgets.LatinTextView
-                        android:id="@+id/twAlarmSound"
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="diling-dling.mp3"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        tools:ignore="HardcodedText"/>
+                        android:gravity="start"
+                        android:orientation="horizontal">
 
-                    <widgets.MyButton
-                        android:id="@+id/btnSelectTone"
-                        style="@style/FormButton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:minWidth="72dp"
-                        android:text="Select ringigtone"
-                        android:textAppearance="?android:attr/textAppearanceMedium"/>
+                        <widgets.LatinTextView
+                            android:id="@+id/twAlarmSound"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="diling-dling.mp3"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            tools:ignore="HardcodedText"/>
+
+                        <widgets.MyButton
+                            android:id="@+id/btnSelectTone"
+                            style="@style/FormButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:minWidth="72dp"
+                            android:text="Select ringigtone"
+                            android:textAppearance="?android:attr/textAppearanceMedium"/>
 
 
-
-                </LinearLayout>
-
-
+                    </LinearLayout>
 
 
                 </LinearLayout>

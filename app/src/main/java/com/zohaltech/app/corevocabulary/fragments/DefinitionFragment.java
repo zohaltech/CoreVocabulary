@@ -19,12 +19,12 @@ import com.zohaltech.app.corevocabulary.entities.Vocabulary;
 import java.util.Locale;
 
 public class DefinitionFragment extends Fragment implements
-                                                      TextToSpeech.OnInitListener {
+                                                 TextToSpeech.OnInitListener {
     public static final String VOCAB_ID = "VOCAB_ID";
     TextView txtVocabEnglishDefinition;
     TextView txtVocabPersianMeaning;
 
-    private Vocabulary vocabulary;
+    private Vocabulary   vocabulary;
     private TextToSpeech textToSpeech;
 
 
@@ -56,8 +56,8 @@ public class DefinitionFragment extends Fragment implements
         textToSpeech = new TextToSpeech(getActivity(), this);
 
         assert vocabulary != null;
-//        txtVocabEnglishDefinition.setText(vocabulary.getVocabEnglishDef());
-//        txtVocabPersianMeaning.setText(vocabulary.getVocabPersianDef());
+        //        txtVocabEnglishDefinition.setText(vocabulary.getVocabEnglishDef());
+        //        txtVocabPersianMeaning.setText(vocabulary.getVocabPersianDef());
         txtVocabEnglishDefinition.setText(vocabulary.getEncEngDef());
         txtVocabPersianMeaning.setText(vocabulary.getEncPersianDef());
 
@@ -100,9 +100,9 @@ public class DefinitionFragment extends Fragment implements
     }
 
     private void speakOut() {
-        if(Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
             textToSpeech.speak(vocabulary.getVocabulary(), TextToSpeech.QUEUE_FLUSH, null);
-        } else{
+        } else {
             textToSpeech.speak(vocabulary.getVocabulary(), TextToSpeech.QUEUE_FLUSH, null, null);
         }
     }

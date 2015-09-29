@@ -1,6 +1,5 @@
 package com.zohaltech.app.corevocabulary.fragments;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -25,7 +24,7 @@ import com.zohaltech.app.corevocabulary.entities.SystemSetting;
 public class DrawerFragment extends Fragment {
 
     NavigationView navView;
-    DrawerLayout drawerLayout;
+    DrawerLayout   drawerLayout;
     private ActionBarDrawerToggle mDrawerToggle;
 
     @Override
@@ -59,7 +58,7 @@ public class DrawerFragment extends Fragment {
                         break;
                     case R.id.nav_buy:
                         //todo : open market to buy premium version
-                        ((MainActivity)getActivity()).pay();
+                        ((MainActivity) getActivity()).pay();
                         //SystemSettings.register(systemSetting);
                         //buyItem.setVisible(false);
                         break;
