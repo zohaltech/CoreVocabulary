@@ -17,6 +17,7 @@
     <!--<color name="accent_dark">#8028ac</color>-->
     <color name="primary_text">#212121</color>
     <color name="secondary_text">#727272</color>
+    <color name="disable_text">#aeaeae</color>
     <color name="divider">#e1e1e1</color>
 
     <color name="green">#4CAF50</color>

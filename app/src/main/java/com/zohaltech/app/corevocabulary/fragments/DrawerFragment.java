@@ -17,7 +17,7 @@ import com.zohaltech.app.corevocabulary.activities.AboutActivity;
 import com.zohaltech.app.corevocabulary.activities.BookmarksActivity;
 import com.zohaltech.app.corevocabulary.activities.HelpActivity;
 import com.zohaltech.app.corevocabulary.activities.MainActivity;
-import com.zohaltech.app.corevocabulary.activities.SettingsActivity;
+import com.zohaltech.app.corevocabulary.activities.SchedulerActivity;
 import com.zohaltech.app.corevocabulary.data.SystemSettings;
 import com.zohaltech.app.corevocabulary.entities.SystemSetting;
 
@@ -45,7 +45,7 @@ public class DrawerFragment extends Fragment {
                 Intent intent;
                 switch (menuItem.getItemId()) {
                     case R.id.nav_scheduler:
-                        intent = new Intent(getActivity(), SettingsActivity.class);
+                        intent = new Intent(getActivity(), SchedulerActivity.class);
                         startActivity(intent);
                         break;
                     case R.id.nav_bookmarks:

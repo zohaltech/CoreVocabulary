@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 public class DescriptionPagerAdapter extends FragmentPagerAdapter {
 
-    private ArrayList<String> tabTitles;//= new String[]{"Meanings", "Examples", "Notes"};
+    private ArrayList<String> tabTitles;
     private int               vocabId;
 
     public DescriptionPagerAdapter(FragmentManager fm, ArrayList<String> tabTitles, int vocabId) {
@@ -44,8 +44,6 @@ public class DescriptionPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public CharSequence getPageTitle(int position) {
-        // Generate title based on item position
-        // return tabTitles[position];
         return tabTitles.get(position);
     }
 }

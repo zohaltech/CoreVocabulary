@@ -28,7 +28,7 @@ import com.zohaltech.app.corevocabulary.entities.Vocabulary;
 import java.util.Calendar;
 import java.util.Date;
 
-public class SettingsActivity extends EnhancedActivity {
+public class SchedulerActivity extends EnhancedActivity {
     CheckBox chkSa;
     CheckBox chkSu;
     CheckBox chkMo;
@@ -85,9 +85,9 @@ public class SettingsActivity extends EnhancedActivity {
                 if (settings.getReminder() != null) {
                     Date time = settings.getReminder().getTime();
                     String remindTime = (time == null ? "Not Set" : time.toString());
-                    Toast.makeText(SettingsActivity.this, "Status:" + status + "\n Alarm Time: " + remindTime, Toast.LENGTH_LONG).show();
+                    Toast.makeText(SchedulerActivity.this, "Status:" + status + "\n Alarm Time: " + remindTime, Toast.LENGTH_LONG).show();
                 } else {
-                    Toast.makeText(SettingsActivity.this, "Status:" + status + "\n No Reminder", Toast.LENGTH_LONG).show();
+                    Toast.makeText(SchedulerActivity.this, "Status:" + status + "\n No Reminder", Toast.LENGTH_LONG).show();
                 }
             }
         });

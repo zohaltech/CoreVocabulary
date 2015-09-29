@@ -190,59 +190,108 @@
 
                         <CheckBox
                             android:id="@+id/chkSu"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:background="?attr/selectableItemBackground"
+                            android:button="@null"
                             android:gravity="center"
-                            android:text="Su"
-                            tools:ignore="HardcodedText"/>
+                            android:padding="10dp"
+                            android:text="SU"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textColor="@drawable/day"
+                            tools:ignore="HardcodedText"
+                            android:textStyle="bold"
+                            android:layout_weight="1"/>
 
                         <CheckBox
                             android:id="@+id/chkMo"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:background="?attr/selectableItemBackground"
+                            android:button="@null"
                             android:gravity="center"
-                            android:text="M"
-                            tools:ignore="HardcodedText"/>
+                            android:padding="10dp"
+                            android:text="MO"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textColor="@drawable/day"
+                            tools:ignore="HardcodedText"
+                            android:textStyle="bold"
+                            android:layout_weight="1"/>
 
                         <CheckBox
                             android:id="@+id/chkTu"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:background="?attr/selectableItemBackground"
+                            android:button="@null"
                             android:gravity="center"
-                            android:text="Tu"
-                            tools:ignore="HardcodedText"/>
+                            android:padding="10dp"
+                            android:text="TU"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textColor="@drawable/day"
+                            tools:ignore="HardcodedText"
+                            android:textStyle="bold"
+                            android:layout_weight="1"/>
 
                         <CheckBox
                             android:id="@+id/chkWe"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:background="?attr/selectableItemBackground"
+                            android:button="@null"
                             android:gravity="center"
-                            android:text="W"
-                            tools:ignore="HardcodedText"/>
+                            android:padding="10dp"
+                            android:text="WE"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textColor="@drawable/day"
+                            tools:ignore="HardcodedText"
+                            android:textStyle="bold"
+                            android:layout_weight="1"/>
 
                         <CheckBox
                             android:id="@+id/chkTh"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:background="?attr/selectableItemBackground"
+                            android:button="@null"
                             android:gravity="center"
-                            android:text="Th"
-                            tools:ignore="HardcodedText"/>
+                            android:padding="10dp"
+                            android:text="TH"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textColor="@drawable/day"
+                            tools:ignore="HardcodedText"
+                            android:textStyle="bold"
+                            android:layout_weight="1"/>
 
                         <CheckBox
                             android:id="@+id/chkFr"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:background="?attr/selectableItemBackground"
+                            android:button="@null"
                             android:gravity="center"
-                            android:text="F"
-                            tools:ignore="HardcodedText"/>
+                            android:padding="10dp"
+                            android:text="FR"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textColor="@drawable/day"
+                            tools:ignore="HardcodedText"
+                            android:textStyle="bold"
+                            android:layout_weight="1"/>
 
                         <CheckBox
                             android:id="@+id/chkSa"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:background="?attr/selectableItemBackground"
+                            android:button="@null"
                             android:gravity="center"
-                            android:text="Sa"
-                            tools:ignore="HardcodedText"/>
+                            android:padding="10dp"
+                            android:text="SA"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textColor="@drawable/day"
+                            tools:ignore="HardcodedText"
+                            android:textStyle="bold"
+                            android:layout_weight="1"/>
 
                     </LinearLayout>
 
