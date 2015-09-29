@@ -34,9 +34,9 @@ import widgets.MySnackbar;
 public class MainActivity extends PaymentActivity {
 
     long startTime;
-    private DrawerLayout   drawerLayout;
+    private DrawerLayout drawerLayout;
     private DrawerFragment drawerFragment;
-    private Fragment       fragment;
+    private Fragment     fragment;
 
     @Override
     protected void onCreated() {
@@ -51,7 +51,7 @@ public class MainActivity extends PaymentActivity {
         //        }
 
         //if (App.preferences.getBoolean("Encoded", false))
-        //EncryptVocabs();
+     // EncryptVocabs();
     }
 
     @Override
@@ -65,7 +65,7 @@ public class MainActivity extends PaymentActivity {
 
     @Override
     void updateUiToPremiumVersion() {
-        if (drawerFragment != null) {
+        if (drawerFragment != null){
             drawerFragment.updateUi();
         }
         displayView(0);
@@ -169,49 +169,49 @@ public class MainActivity extends PaymentActivity {
     }
 
 
-    private void EncryptVocabs() {
-        ArrayList<Vocabulary> vocabularies = Vocabularies.select();
-        ArrayList<Example> examples = Examples.select();
-
-        for (Vocabulary vocabulary : vocabularies) {
-            try {
-                vocabulary.setEncVocab(CoreSec.encrypt(vocabulary.getVocabulary()));
-                vocabulary.setEncPersianDef(CoreSec.encrypt(vocabulary.getVocabPersianDef()));
-                vocabulary.setEncEngDef(CoreSec.encrypt(vocabulary.getVocabEnglishDef()));
-
-                Vocabularies.update(vocabulary);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-        //        for (Vocabulary vocabulary : vocabularies) {
-        //            try {
-        //
-        //                String voc = decrypt(vocabulary.getEncVocab1());
-        //                String p = decrypt(vocabulary.getEncPersianDef1());
-        //
-        //                //                        String voc = java.net.URLDecoder.decode(new String(xsamCrypt.decrypt(vocabulary.getEncVocab1())),"UTF-8");
-        //                //                        String p =  java.net.URLDecoder.decode(new String(xsamCrypt.decrypt(vocabulary.getEncPersianDef1())),"UTF-8");
-        //                //                vocabulary.setEncVocab(XsamCrypt.bytesToHex(xsamCrypt.encrypt(vocabulary.getVocabulary())));
-        //                //                vocabulary.setEncPersianDef(XsamCrypt.bytesToHex(xsamCrypt.encrypt(vocabulary.getVocabPersianDef())));
-        //                //                vocabulary.setEncEngDef(XsamCrypt.bytesToHex(xsamCrypt.encrypt(vocabulary.getVocabEnglishDef())));
-        //
-        //                Vocabularies.update(vocabulary);
-        //
-        //            } catch (Exception e) {
-        //                e.printStackTrace();
-        //            }
-        //        }
-        for (Example example : examples) {
-            try {
-                example.setEncEnglish(CoreSec.encrypt(example.getEnglish()));
-                example.setEncPersian(CoreSec.encrypt(example.getPersian()));
-
-                Examples.update(example);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-        App.preferences.edit().putBoolean("Encoded", true).apply();
-    }
+//    private void EncryptVocabs() {
+//        ArrayList<Vocabulary> vocabularies = Vocabularies.select();
+//        ArrayList<Example> examples = Examples.select();
+//
+//        for (Vocabulary vocabulary : vocabularies) {
+//            try {
+//                vocabulary.setEncVocab(CoreSec.encrypt(vocabulary.getVocabulary()));
+//                vocabulary.setEncPersianDef(CoreSec.encrypt(vocabulary.getVocabPersianDef()));
+//                vocabulary.setEncEngDef(CoreSec.encrypt(vocabulary.getVocabEnglishDef()));
+//
+//                Vocabularies.update(vocabulary);
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
+//        }
+//        //        for (Vocabulary vocabulary : vocabularies) {
+//        //            try {
+//        //
+//        //                String voc = decrypt(vocabulary.getEncVocab1());
+//        //                String p = decrypt(vocabulary.getEncPersianDef1());
+//        //
+//        //                //                        String voc = java.net.URLDecoder.decode(new String(xsamCrypt.decrypt(vocabulary.getEncVocab1())),"UTF-8");
+//        //                //                        String p =  java.net.URLDecoder.decode(new String(xsamCrypt.decrypt(vocabulary.getEncPersianDef1())),"UTF-8");
+//        //                //                vocabulary.setEncVocab(XsamCrypt.bytesToHex(xsamCrypt.encrypt(vocabulary.getVocabulary())));
+//        //                //                vocabulary.setEncPersianDef(XsamCrypt.bytesToHex(xsamCrypt.encrypt(vocabulary.getVocabPersianDef())));
+//        //                //                vocabulary.setEncEngDef(XsamCrypt.bytesToHex(xsamCrypt.encrypt(vocabulary.getVocabEnglishDef())));
+//        //
+//        //                Vocabularies.update(vocabulary);
+//        //
+//        //            } catch (Exception e) {
+//        //                e.printStackTrace();
+//        //            }
+//        //        }
+//        for (Example example : examples) {
+//            try {
+//                example.setEncEnglish(CoreSec.encrypt(example.getEnglish()));
+//                example.setEncPersian(CoreSec.encrypt(example.getPersian()));
+//
+//                Examples.update(example);
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
+//        }
+//        App.preferences.edit().putBoolean("Encoded", true).apply();
+//    }
 }

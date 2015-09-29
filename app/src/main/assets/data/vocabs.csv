@@ -1,433 +1,2142 @@
 Id;ThemeId;Day;Vocabulary;EnglishDef;PersianDef
-1;1;1;Place a premium on something;to consider one quality or type of thing as being much more important than others.;چیزی را مهمتر از چیزهای دیگر دانستن 
-2;1;1;Range from something to something;to include a variety of different things or people.;از ... گرفته تا ...
-3;1;1;Dabble in;to do something or be involved in something in a way that is not very serious.;چیزی را سرسری یادگرفتن  یا انجام دادن
-4;1;1;Take in something;Learn;یاد گرفتن
-5;1;1;Versatile;someone who is versatile has many different skills.;ماهر در زمینه های مختلف
-6;1;1;An array of;a group of people or things, especially one that is large or impressive;تعداد زیادی ...
-7;1;2;To keep abreast of something;to make sure that you know all the most recent facts or information about a particular subject or situation;همگام شدن یا اطلاع یافتن از آخرین اطلاعات چیزی
-8;1;2;state-of-the-art;using the most modern and recently developed methods, materials, or knowledge.;طبق آخرین روش ها
-9;1;2;Commitment;the hard work and loyalty that someone gives to an organization, or an activity.;تعهد
-10;1;2;To lag behind;to move or develop more slowly than others.;عقب ماندن
-11;1;2;In succession;happening one after the other without anything different happening in between.;به صورت متوالی
-12;1;2;Interpersonal;relating to relationships between people;بین افراد، میان فردی
-13;1;3;Self-directed;responsible for organizing your own work rather than getting instructions from other people;فرد خودکار 
-14;1;3;Vocation;a particular type of work that you feel is right for you.;حرفه مناسب
-15;1;3;Academic;a teacher in a college or university.;مدرس و استاد دانشگاه
-16;1;3;Excel at/in something;to do something very well, or much better than most people;درچیزی برتر از بقیه بودن
-17;1;3;To be heavily loaded with something;to have a lot of work to do;بسیار درگیر چیزی بودن یا به خاطر چیزی سرشلوغی داشتن
-18;1;3;Extracurricular;extracurricular activities are not part of the course that a student is doing at a school or college;فوق برنامه
-19;1;4;To suspend;to officially stop something from continuing, especially for a short time;معلق کردن، برای مدتی متوقف کردن
-20;1;4;Undertake something/Undertake to do something;accept that you are responsible for a piece of work, and start to do it/ to promise or agree to do something.;کاری را تقبل کردن/تقبل کردن انجام کاری
-21;1;4;Shake confidence;to make someone feel less confident, less sure about their beliefs etc.;از بین بردن اعتماد به نفس
-22;1;4;Career;a job or profession that you have been trained for, and which you do for a long period of your life.;شغلی که برای آن آموزش دیده و یا مدت زمان طولانی انجام می دهید. 
-23;1;4;Aptitude;natural ability or skill;مهارت یا توانایی ذاتی
-24;1;4;Disengage from;to stop being involved or interested in something;دوربودن از کاری
-25;1;5;Private School;a school that is not supported by government money, where education must be paid for by the children's parents;مدرسه غیرانتفاعی
-26;1;5;Outperform;to be more successful than someone or something else.;بهتر و موفق تر از کسی یا چیزی بودن
-27;1;5;Foster;to help a skill, feeling, and idea develop over a period of time;بهبود بخشیدن یک مهارت، یک حس و یا یک ایده 
-28;1;5;Tuition (fee);the money you pay for being taught;شهریه
-29;1;5;Well-mannered;talking and behaving in a polite way;خوش رفتار
-30;1;5;School age;the age at which a child is old enough to go to school;سن مدرسه
-31;1;6;Well-rounded education;well-rounded education or experience of life is complete and varied.;آموزش جامع
-32;1;6;Competence;the ability to do something well.;صلاحیت و شایستگی
-33;1;6;Core subjects;subjects that have to be studied at a school or college;درس های اصلی
-34;1;6;Hardworking;working with a lot of effort;سخت کوش، سخت کوشی
-35;1;6;Fail to do something;to not succeed in achieving something;نتوانستن
-36;1;6;Acquire knowledge;gain knowledge;کسب دانش
-37;2;1;Extrinsic;coming from outside;بیرونی
-38;2;1;Perk;something that you get legally from your work in addition to your wages, such as goods, meals, or a car;مزایای شغلی
-39;2;1;Self-image;the idea that you have of yourself, especially of your abilities, character, and appearance;تصویر از خود
-40;2;1;Outlook (on something);Your general attitude to something;نگرش
-41;2;1;Downsize;if a company or organization downsizes, it reduces the number of people it employs in order to reduce costs.;تعدیل نیرو
-42;2;1;Redundant;if you are redundant, your employer no longer has a job for you;نیروی تعدیل شده
-43;2;2;Job-hopping;leaving the current employer for another employment opportunity. In this fast-changing world, job hopping is not a rare scene. ;تغییر مرتب شغل
-44;2;2;Jobholder;a person who has a regular or steady jo;کارمند
-45;2;2;Job/Career Prospect;Chances for future success in your job;موفقیت آینده شغلی
-46;2;2;Keen competition;a situation in which people compete strongly.;رقابت شدید
-47;2;2;Stable job;a job that you do not change for a long time. ;شغل همیشگی
-48;2;2;Complacent /kәm’pleisәnt/;pleased with a situation, especially something you have achieved, so that you stop trying to improve or change things;دارای رضایت کاذب، به صورتیکه نیاز به تغییر یا بهترشدن را احساس نکند (معنی منفی دارد)
-49;2;3;Take the initiative;If you take the initiative, you are in a position to control a situation and decide what to do next.;ابتکار عمل به خرج دادن و کاری را شروع کردن
-50;2;3;Economic;relating to trade, industry, and the management of money;اقتصادی
-51;2;3;Work ethic;a belief in the moral value and importance of work;اخلاق کاری
-52;2;3;Manual job/occupation;manual work involves using your hands or your physical strength rather than your mind;کار یدی
-53;2;3;Demanding;needing a lot of ability, effort, or skill;کار سخت و پرمهارت
-54;2;3;Unsocial hours;If you work unsocial hours, you work during the night or very early in the morning when most people do not have to work;خارج از ساعات اداری
-55;2;4;pay rise/pay raise;an increase in the amount of money you are paid for doing your job;افزایش حقوق
-56;2;4;Well-being;a feeling of being comfortable, healthy, and happy ;رضایت و سلامت
-57;2;4;Labour;all the people who work for a company or in a country;کارمندان، نیروی کار
-58;2;4;Productivity;the rate at which goods are produced, and the amount produced, especially in relation to the work, time, and money needed to produce them;راندمان
-59;2;4; Strain/Stress;continuous feelings of worry about your work or personal life, that prevent you from relaxing which is usually caused by having to deal with a problem or work too hard over a long period of time;استرس
-60;2;4;Workload;the amount of work that a person or organization has to do;بار شغلی
-61;2;5;Bankruptcy;the state when someone is judged to be unable to pay their debts by a court of law, and their money and possessions are shared among the people and businesses that they owe money to.;ورشکستگی
-62;2;5;Deadline;a date or time by which you have to do or complete something;فرجه
-63;2;5;Keep ahead in/at…;making progress and being successful in your job, education etc.;پیشرفت و موفقیت در کار و تحصیل ...
-64;2;5;Changeover;a change from one activity, system, or way of working to anotherchangeover (from something) to something ;تغییر در یک سیستم یا طرز کار
-65;2;5;Take an approach to;Take a method of doing something or dealing with a problem;رویکرد و راهکاری را اتخاذ کردن
-66;2;5;Job security;confidence that the job would continue;امنیت شغلی
-67;2;6;Unemployment;the people in a particular country or area who cannot get a job;بیکاری
-68;2;6;Unskilled;an unskilled worker has not been trained for a particular type of job;بدون مهارت، بدون سابقه کار
-69;2;6;Take on somebody;to employ someone;استخدام کردن
-70;2;6;Employable;having skills or qualities that are necessary to get a job.;واجدالشرایط برای استخدام
-71;2;6;Unqualified;not having the right knowledge, experience, or education to do something.;فاقد صلاحیت
-72;2;6;High/low status;your social or professional rank or position, considered in relation to other people.;سطح بالا/پایین
-73;3;1;The Media;all the organizations, such as television, radio, and newspapers, that provide news and information for the public, or the people who do this work;رسانه ها
-74;3;1;Obsolete;no longer useful, because something newer and better has been invented;از مد افتاده
-75;3;1;Means of;a way of doing or achieving something;وسیله ...
-76;3;1;Access;the right to enter a place, use something, see someone etc;دسترسی، دسترسی داشتن به
-77;3;1;Portable;able to be carried or moved easily;قابل حمل
-78;3;1;The advent of something;the time when something first begins to be widely use.;ظهور چیزی
-79;3;2;Convey;to communicate or express something, with or without using words;رساندن، نقل کردن
-80;3;2;Hi-tech/High-tech;using high technology ;دارای تکنولوژی بالا
-81;3;2;Prevalence;Being common at a particular time, in a particular place, or among a particular group of people;شیوع
-82;3;2;Censor;to examine books, films, letters etc. to remove anything that is considered offensive, morally harmful, or politically dangerous etc.;سانسور کردن
-83;3;2;Audience;the people who watch or listen to a particular programme, or who see or hear a particular artist's, writer's etc work;مخاطب، مخاطبین
-84;3;2;Broadcast;to send out radio or television programmes.;پخش کردن از رادیو و تلویزیون. 
-85;3;3;Educational;teaching you something you did not know before.;آموزنده
-86;3;3;Pervasive;existing everywhere. ;فراگیر
-87;3;3;Isolated;feeling alone and unable to meet or speak to other people;منزوی
-88;3;3;To be exposed to;not to be protected against;در معرض چیزی بودن
-89;3;3;Traumatised;to be badly shocked and affected by something for a very long time.;آسیب روحی دیدن
-90;3;3;Forewarn;to warn someone about something dangerous, unpleasant, or unexpected before it happens;از قبل اطلاع دادن
-91;3;4;Spare time;time when you are not working.;اوقات فراغت
-92;3;4;Regulate;to control an activity or process, especially by rules.;تنظیم کردن
-93;3;4;Demand;to ask for something very firmly, especially because you think you have a right to do this.;نیاز داشتن، تقاضا دادن
-94;3;4;Be common/standard/normal practice;to be the usual and accepted way of doing something;رویه معمول شدن
-95;3;4;Commercial;an advertisement on television or radio.;تبلیغ تلویزیون و رادیو
-96;3;4;Stifle /’staifel/;To stop something from happening or developing.;خفه کردن، خاموش کردن
-97;3;5;Dependent (on/upon);needing someone or something in order to exist, be successful, be healthy etc.;وابسته (به)
-98;3;5;Content with;happy and satisfied with;خوشحال و راضی از
-99;3;5;Cut somebody/something off;to separate something by cutting it away from the main part;کسی/چیزی را از اصل خود جدا کردن
-100;3;5;Communication;the process by which people exchange information or express their thoughts and feelings.;ارتباطات
-101;3;5;Change beyond recognition;change completely;بیش از حد تصور تغییر کردن
-102;3;5;Conceivable;able to be believed or imagined.;قابل تصور
-103;3;6;Freedom of expression/speech;the right to say what you think without being punished;آزادی بیان
-104;3;6;Abuse position;to deliberately use position for the wrong purpose or for your own advantage.;سوء استفاده از مقام
-105;3;6;Exercise;to use a power, right, or quality that you have.;استفاده از حق یا قدرتی که دارید.
-106;3;6;For the good of somebody/something;in order to help someone or improve a situation.;برای منفعت ...
-107;3;6;The entertainment industry;things such as films, television, performances etc. that are intended to amuse or interest people.;صنعت تفریح و سرگرمی
-108;3;6;The common good;the advantage of everyone;منفعت عموم
-109;4;1;To be/come under fire;to be severely criticized. ;تحت فشار یا انتقاد شدید بودن
-110;4;1;Cuisine;a particular style of cooking;دستور پخت
-111;4;1;Reliance on/upon;Dependence, when someone or something is dependent on someone or something else.;وابستگی به
-112;4;1;Diverse;very different from each other;خیلی متفاوت از یکدیگر
-113;4;1;Obesity;Being very fat in a way that is unhealthy.;چاقی
-114;4;1;Unify;if you unify two or more parts or things, or if they unify, they are combined to make a single unit.;یکی کردن، متحد کردن
-115;4;2;Senior citizen;someone who is over 60 years old or who is retired;سالخورده، مسن
-116;4;2;Burden;something difficult or worrying that you are responsible for;بار
-117;4;2;Age;to start looking older or to make someone or something look older;پیر شدن
-118;4;2;To be desperate to do something;needing or wanting something very much;به شدت نیاز داشتن
-119;4;2;Voluntary work/service;work that is done by people who do it because they want to, and who are not paid;خدمات/کار داوطلبانه
-120;4;2;Life expectancy;the length of time that a person or animal is expected to live.;انتظار عمر
-121;4;3;Recreation;an activity that you do for pleasure or amusement;تفریح
-122;4;3;Immune system;the system by which your body protects itself against disease;سیستم ایمنی
-123;4;3;Balanced diet;A diet that is healthy because it contains the right foods in the right amounts;رژیم غذایی معتدل
-124;4;3;Precaution;something you do in order to prevent something dangerous or unpleasant from happening;پیشگیری
-125;4;3;Vigorous exercise;the exercise which needs a lot of energy and strength. ;ورزش سخت
-126;4;3;Stamina;physical or mental strength that lets you continue doing something for a long time without getting tired. ;استقامت
-127;4;4;Fast-paced;including a lot of different things happening quickly;همراه با اتفاقات متعدد
-128;4;4;Distress;a feeling of extreme unhappiness ;پریشانی و ناراحتی شدید
-129;4;4;Unmanageable;difficult to control or deal with;غیرقابل مدیریت
-130;4;4;Handle something;to deal with a situation or problem by behaving in a particular way and making particular decisions;از عهده چیزی برآمدن
-131;4;4;Sound (adj.);sensible and likely to produce the right results opposite poor;منطقی و معقول
-132;4;4;Block out;to stop yourself thinking about something or remembering it.;فکری را از سر خود دور کردن
-133;4;5;In moderation;if you do something in moderation, such as drinking alcohol or eating certain foods, you do not do it too much.;به حد اعتدال، به اندازه
-134;4;5;Mineral;a substance that is formed naturally in the earth, such as coal, salt, stone, or gold. Minerals can be dug out of the ground and used.;مواد معدنی
-135;4;5;Intake;the amount of food, drink etc that you take into your body ;خوراک، میزان غذای دریافتی
-136;4;5;Organic food;food that is produced without using harmful chemicals;غذاهای سالم
-137;4;5;Rigorous;very complete, severe and strict;شدید، سخت و کامل
-138;4;5;Fad;something that people like or do for a short time, or that is fashionable for a short time; مد زودگذر
-139;4;6;State;The physical or mental condition that someone or something is in.;حالت، شرایط
-140;4;6;Sociable;someone who is sociable is friendly and enjoys being with other people;خوش مشرب، اجتماعی
-141;4;6;Cut back on;to eat, drink, or use less of something, especially in order to improve your health;کمتر خوردن و نوشیدن برای حفظ سلامتی
-142;4;6;Unwind /Unwaind/ (past: unwound);to relax and stop feeling anxious ;استراحت کردن
-143;4;6;Overeating;to eat too much, or eat more than is healthy;پرخوری
-144;4;6;Boost;to increase or improve something and make it more successful;بهتر کردن و بهبود بخشیدن چیزی
-145;5;1;Environmentally-friendly;earth-friendly or not harmful to the environment;سازگار با محیط زیست
-146;5;1;Environmentally-damaging;Harmful for the environment;مضر برای محیط زیست.
-147;5;1;Pay off;if something you do pays off, it is successful or has a good result;جواب دادن، نتیجه موفق دادن.
-148;5;1;Revamp;to renovate, revise, or restructure;بازسازی کردن و بهبود بخشیدن
-149;5;1;Degradation;the process by which something changes to a worse condition;فرسایش، تخریب
-150;5;1;Deterioration;Becoming worse. ;بدتر شدن، زوال
-151;5;2;Use up;to use all of something. ;چیزی را تمام کردن، همه چیزی را استفاده کردن
-152;5;2;Noise pollution;very loud or continuous noise which is considered unpleasant and harmful to people;آلودگی صوتی
-153;5;2;The neighborhood;the area around you or around a particular place, or the people who live there.;همسایگی
-154;5;2;Replace something with something;to remove someone from their job or something from its place, and put a new person or thing there;چیزی را جایگزین چیز دیگر کردن
-155;5;2;Optimal;the best or most suitable;بهینه
-156;5;2;Restriction;a rule or law that limits or controls what people can do;محدودیت
-157;5;3;Fossil fuels;a fuel such as coal or oil that is produced by the very gradual decaying of animals or plants over millions of years. ;سوخت فسیلی
-158;5;3;Greenhouse gas;a gas that is thought to trap heat above the Earth and cause the greenhouse effect.;گازهای گلخانه ای
-159;5;3;Renewable energy;renewable energy replaces itself naturally, or is easily replaced because there is a large supply of it.;انرژی تجدیدپذیر
-160;5;3;Carpool;if a group of people carpool, they travel together to work, school etc in one car and share the cost;مسافرت چند سرنشینی
-161;5;3;Be hard on something;to have a bad effect on something;اثر بدی داشتن برروی…
-162;5;3;Dispose of something;to get rid of something, especially something that is difficult to get rid of.;امهاء چیزی، از شر چیزی خلاص شدن
-163;5;4;Leftover something;remaining after all the rest has been used, taken, or eaten;باقیمانده، پسماند
-164;5;4;Pesticide;a chemical substance used to kill insects and small animals that destroy crops;آفت کش
-165;5;4;Fertilizer;a substance that is put on the soil to make plants grow;کود
-166;5;4;Destructive;causing damage to people or things;مخرب
-167;5;4;Obsession with;an extreme unhealthy interest in something or worry about something, which stops you from thinking about anything else;عقده، علاقه ناسالم
-168;5;4;Cure-all;something that people think will cure any problem or illness;علاج هر درد، راهکار قطعی
-169;5;5;Habitat;the natural home of a plant or animal.;محل زندگی
-170;5;5;Endangered species;a type of animal that is likely to stop existing completely, for example because of hunting, pollution, or humans damaging its habitat.;گونه های درمعرض خطر
-171;5;5;Extinction;a situation in which all of a type of animal die and there are no more left.The white rhino is close to extinction;انقراض
-172;5;5;Desertification;technical the process by which useful land, especially farmland, changes into desert because of climate change or overgrazing.;بیابان زایی
-173;5;5;Deforestation;a situation in which most of the trees in an area are cut down or destroyed, resulting in great damage to the environment.;جنگل زدایی
-174;5;5;Overpopulation;a situation in which too many people live in a particular place.;جمعیت بیش از اندازه
-175;5;6;GM (genetically modified);genetically modified foods or plants have had their genetic structure changed so that they are not affected by particular diseases or harmful insects;غذاهای اصلاح شده ژنتیکی
-176;5;6;Unpredictable;changing a lot so it is impossible to know what will happen;پیش بینی نشده
-177;5;6;Incompatible (with);two things that are incompatible are of different types and so cannot ;ناسازگار با
-178;5;6;Reserve of;a supply of something kept to be used if it is needed;ذخیره...
-179;5;6;Pollution;harmful chemicals, gases, or waste materials from factories, cars, etc, that have ;آلودگی
-180;5;6;Soil erosion;the process by which soil is gradually destroyed by wind or rain.;فرسایش خاک
-181;6;1;Advertising;the activity or business of advertising things on television, in newspapers etc. ;صنعت تبلیغات
-182;6;1;Exaggerated;emphasized;اغراق شده
-183;6;1;Attribute;a quality or feature, especially one that is considered to be good or useful;صفات خوب
-184;6;1;Susceptible to;likely to suffer from a particular illness or be affected by a particular problem;درمعرض چیزی بودن
-185;6;1;Branded;a branded product is made by a well-known company and has the company's name on it;مارکدار (همیشه بعد از آن اسم می آید)
-186;6;1;Take something into consideration;to remember to think about something important when you are making a decision or judgment.;چیزی را درنظر گرفتن
-187;6;2;To grab someone’s attention;to get someone's attention ;توجه کسی را جلب کردن
-188;6;2;Receptive to;willing to consider new ideas or listen to someone else's opinions;پذیرای...
-189;6;2;Liable for;legally responsible for the cost of something;مسئول...
-190;6;2;Misguided;misled;گمراه شده
-191;6;2;Manipulate someone to do something;to make someone think and behave exactly as you want them to, by skilfully deceiving or influencing them.;کسی را برای انجام کاری یا رفتاری اغوا کردن.
-192;6;2;Turnover;the rate at which a particular kind of goods is sold;میزان فروش
-193;6;3;Inferior;not good, or not as good as something else;کم کیفیت
-194;6;3;be vulnerable to something;someone who is vulnerable can be easily harmed or hurt;آسیب پذیر
-195;6;3;Impulsive;someone who is impulsive does things without considering the possible dangers or problems first;کسی که بدون فکر و آنی تصمیم می گیرد
-196;6;3;Dominate;to control someone or something or to have more importance than other people or things;چیره شدن
-197;6;3;Promotion;an activity intended to help sell a product, or the product that is being promoted ;تبلیغ محصول
-198;6;3;Soar;to increase quickly to a high level;افزایش دادن، افزایش یافتن
-199;6;4;Target;to make something have an effect on a particular limited group or area ;هدف قرار دادن
-200;6;4;Disregarding;ignoring;صرفنظر از
-201;6;4;Best-seller;a popular product, especially a book, which many people buy;پرفروش
-202;6;4;Tempt;to try to persuade someone to do something by making it seem attractive;وسوسه کردن 
-203;6;4;Spur;to encourage someone or make them want to do something;کسی را تشویق کردن
-204;6;4;Stay alert;giving all your attention to what is happening, being said etc;هوشیار بودن
-205;6;5;Acquisitive;wanting to have and keep a lot of possessions;مال اندوز
-206;6;5;Keep up with;try to have the same new, impressive possessions that other people have;چشم و هم چشمی کردن، سعی در رسیدن به کسی
-207;6;5;Affluent;having plenty of money, nice houses, expensive things etc;ثروتمند، غنی
-208;6;5;Consumer goods;goods that people buy for their own use, rather than goods bought by businesses and organizations;کالاهای مصرفی
-209;6;5;Set out to do something;to start doing something or making plans to do something in order to achieve a particular result;کاری را با منظور خاصی شروع کردن
-210;6;5;Last;to continue to exist, be effective, or remain in good condition for a long time.;دوام آوردن
-211;6;6;Built-in obsolescence;when a product is designed so that it will soon become unfashionable or impossible to use and will need replacing.;از مد افتادگی برنامه ریزی شده
-212;6;6;Replacement;when you get something that is newer or better than the one you had before ;تعویض، جایگزین
-213;6;6;The brain drain;a movement of highly skilled or professional people from their own country to a country where they can earn more money;فرار مغزها
-214;6;6;Customer Services;the part of a company or business that deals with questions, problems etc that customers have.;خدمات مشتری
-215;6;6;After-sales service;help that a company gives to customers in the period after they have bought a product, for example repairing any faults in the product or giving advice on how to use it;خدمات پس از فروش
-216;6;6;Unsatisfied;not pleased because you want something to be better.;ناراضی
-217;7;1;Globalisation;the process of making something such as a business operate in a lot of different countries all around the world, or the result of this.;جهانی سازی
-218;7;1;Transnational;involving more than one country or existing in more than one country.;چندملیتی
-219;7;1;Mutual;mutual feelings such as respect, trust, or hatred are feelings that two or more people have for each other;متقابل 
-220;7;1;Inhabitants;one of the people who live in a particular place. ;ساکنین
-221;7;1;Win over someone;to get someone's support or friendship by persuading them or being nice to them ;پشتیبانی کسی را کسب کردن
-222;7;1;Relation;official connections between countries, companies, organizations etc;ارتباط
-223;7;2;Conventions;behaviour and attitudes that most people in a society consider to be normal and right;عرف، آداب و رسوم
-224;7;2;Arise;if a problem, conflict or difficult situation arises, it begins to happen;ناشی شدن، رخ دادن
-225;7;2;Demise of;the end of something that used to exist.;مرگ...، از بین رفتن…
-226;7;2;Yield;to produce a result, answer, or piece of information.;نتیجه دادن
-227;7;2;Time-honoured + noun;a time-honoured method or custom is one that has existed for a long time.;یک روش یا سنت قدیمی
-228;7;2;Undermine;to gradually make someone or something less strong or effective.;کم کم از بین بردن
-229;7;3;Incentive;something that encourages you to work harder, start a new activity etc ;انگیزه
-230;7;3;Destination;the place that someone or something is going to;مقصد
-231;7;3;Flock;if people flock to a place, they go there in large numbers because something interesting or exciting is happening there;هجوم بردن به جایی (معنی مثبت)
-232;7;3;Indigenous;indigenous people or things have always been in the place where they are, rather than being brought there from somewhere;بومی
-233;7;3;Cultural heritage;ideas, customs etc that have existed in a particular society for a long time ;میراث فرهنگی
-234;7;3;Merge into;if two things merge, or if one thing merges into another, you cannot clearly see them, hear them etc as separate things ;ادغام شدن با
-235;7;4;Culture Shock;The feeling of being confused or anxious that you get when you visit a foreign country or a place that is very different from the one you are used to ;شوک فرهنگی
-236;7;4;Adopt;to choose a new country, custom etc, especially to replace a previous one;پذیرفتن یک فرهنگ یا آداب و رسوم
-237;7;4;Barrier;a rule, problem etc that prevents people from doing something, or limits what they can do.;سد، مانع
-238;7;4;Endanger;to put someone or something in danger of being hurt, damaged, or destroyed;به خطر انداختن
-239;7;4;Minority;a small group of people or things within a much larger group;اقلیت
-240;7;4;Cultural/Linguistic Diversity;the fact of including many different types of cultures or languages;تنوع فرهنگی/زبانی
-241;7;5;Holidaymaking;tourism;صنعت توریست
-242;7;5;Social Order;the social situation at a particular time;شرایط اجتماعی موجود
-243;7;5;Social norms;generally accepted standards of social behaviour;هنجارهای اجتماعی
-244;7;5;Alienate someone from something;to make it difficult for someone to belong to a particular group or to feel comfortable with a particular person;کسی را از چیزی جدا کردن
-245;7;5;Homogenous;consisting of people or things that are all of the same type;یک دست، همگن
-246;7;5;Frontier;the border of a country.;مرز
-247;7;6;Anthropology;the scientific study of people, their societies, and their cultures.;انسان شناسی
-248;7;6;Think nothing of doing something;to think that a particular activity is normal or easy, even though other people think it is unusual or difficult.;کاری را ساده و عادی دانستن
-249;7;6;Mar;to make something less attractive or enjoyable;از بین بردن جذابیت چیزی
-250;7;6;Deprive somebody of something;to prevent someone from having something, especially something that they need or should have.;کسی را از چیزی محروم کردن
-251;7;6;Look forward to something;to be excited and pleased about something that is going to happen. ;در انتظار چیزی بودن
-252;7;6;Weary;very tired or bored, especially because you have been doing something for a long time.;خسته
-253;8;1;To be on a tight budget;if you are on a tight budget, you do not have much money to spend.;مشکل بودجه داشتن
-254;8;1;The private sector;the industries and services in a country that are owned and run by private companies, and not by the government;بخش خصوصی
-255;8;1;At the mercy of somebody/something;unable to do anything to protect yourself from someone or something.;تحت کنترل چیزی بودن و از خود کنترل نداشتن
-256;8;1;Cityscape;the way a city looks, or the way it looks from a particular place;ظاهر شهر
-257;8;1;Housing;the houses or conditions that people live in;مسکن
-258;8;1;The housing/property etc market;the total amount of trade in selling and buying houses.   ;بازار مسکن
-259;8;2;Pedestrian precinct;an area of a town where people can walk and shop, and where cars are not allowed;منطقه عابرین پیاده
-260;8;2;Prohibit somebody from doing something;to say that an action is illegal or not allowed;کسی را از انجام کاری قدغن کردن
-261;8;2;Ban somebody from doing something (Banned/Banning);to say that something must not be done, seen, used etc;کسی را از انجام کاری قدغن کردن 
-262;8;2;Fumes;strong-smelling gas or smoke that is unpleasant to breathe in.;دود
-263;8;2;Measure;an action, especially an official one, that is intended to deal with a particular problem ;راهکار
-264;8;2;Residential area;part of a town consists of private houses, with no offices or factories;منطقه مسکونی
-265;8;3;Zone;a large area that is different from other areas around it in some way.;محدوده
-266;8;3;Scheme;an official plan that is intended to help people in some way, for example by providing education or training;طرح
-267;8;3;Upgrade;to improve something and make it more modern, especially in order to provide a better service;بهبود بخشیدن، مدرن کردن
-268;8;3;Public transport;buses, trains etc that are available for everyone to use;حمل و نقل عمومی
-269;8;3;Affordable;inexpensive; reasonably priced.;با قیمت متعادل
-270;8;3;Gridlock;situation in which streets in a city are so full of cars that they cannot move;راهبندان
-271;8;4;Urban;relating to towns and cities;شهری
-272;8;4;Inner city;the part near the middle of a city, especially where the buildings are in a bad condition and the people are poor. ;مرکز فقیر و قدیمی شهر
-273;8;4;Infrastructure;the basic systems and structures that a country or organization needs in order to work properly, for example roads, railways, banks etc.;امکانات زیرساختی
-274;8;4;Amenities;something that makes a place comfortable or easy to live in.;امکانات یک مکان
-275;8;4;Quality of life;how good or bad your life is, shown for example by whether or not you are happy, healthy, able to do what you want etc;کیفیت زندگی
-276;8;4;Outskirts;The parts of a town or city that are furthest from the centre;حومه شهر
-277;8;5;Ubiquitous;seeming to be everywhere - sometimes used humorously: ;موجود در همه جا
-278;8;5;With ease;if you do something with ease, it is very easy for you to do it, easily.;به راحتی
-279;8;5;Expansion;when something increases in size, range, amount etc.;گسترش
-280;8;5;The volume of traffic;the amount of traffic.;حجم ترافیک
-281;8;5;Sprawl;a large area of buildings that are spread out in an untidy and unattractive way.;ساختمان های بی نظم
-282;8;5;Relocate;if a person or business relocates, or if they are relocated, they move to a different place;جابجا شدن
-283;8;6;Overstaffed;overstaffed company, organization etc has more workers than it needs ≠ understaffed;دارای نیروی کار بیش از نیاز
-284;8;6;Imbalance;lack of a fair or correct balance between two things, which results in problems or unfairness synonym inequality;عدم تعادل
-285;8;6;Disadvantaged;having social problems, such as a lack of money or education, which make it difficult for you to succeed.;محروم
-286;8;6;In the race of/for;a situation in which people are competing with each other to win a prize or obtain a position of power;در رقابت برای رسیدن به
-287;8;6;Satisfying;making you feel pleased and happy, especially because you have got what you wanted ≠ unsatisfying.;رضایت بخش
-288;8;6;Address a problem/question/issue etc;if you address a problem, you start trying to solve it;حل یک مشکل یا مسئله
-289;9;1;Juvenile delinquent;a child or young person who behaves in a criminal way, Young offender;مجرم جوان
-290;9;1;Aggressive;behaving in an angry, threatening way, as if you want to fight or attack someone;خشن
-291;9;1;Culprit;the person who is guilty of a crime or doing something wrong ;مقصر، مجرم
-292;9;1;Neglected;not being paid attention;نادیده گرفته شده
-293;9;1;Upsurge in;a sudden increase;افزایش ناگهانی
-294;9;1;Be oriented to/towards/around something/somebody;to give a lot of attention to one type of activity or one type of person;هدایت شده به سمت چیزی یا کسی
-295;9;2;Law-offender;someone who violates the law      ;مجرم
-296;9;2;Formative years;the period when someone's character develops;سالهای شکل گیری شخصیتی
-297;9;2;Gatekeeper;One who monitors or oversees the actions of others.;مسئول نظارت
-298;9;2;Role Model;someone whose behaviour, attitudes etc people try to copy because they admire them.;الگوی رفتاری
-299;9;2;Replica of;an exact copy of something;نسخه
-300;9;2;Upbringing;the way that your parents care for you and teach you to behave when you are growing up;تربیت
-301;9;3;Crime rate;The amount of illegal activities;میزان جرم و جنایت
-302;9;3;Fuel;to make something, especially something bad, increase or become stronger;باعث افزایش چیزی بد شدن
-303;9;3;Alert somebody to something;to make someone realize something important or dangerous;اخطار دادن در مورد چیزی
-304;9;3;Fall prey to someone/something;if someone falls prey to someone or something bad, they are harmed or affected by them.;به طعمه افتادن
-305;9;3;Tackle/Combat/Fight crime;To do something in order to reduce the crime rate;مبارزه با جرم و جنایات
-306;9;3;Tough laws;very strict or firm laws  ≠ lax laws;قوانین سختگیرانه
-307;9;4;Petty Crime;crime that is not very serious;جرم کوچک
-308;9;4;Law-abiding;respectful of the law and obeying it;تابع قانون
-309;9;4;Imprisonment;the state of being in prison, or the time someone spends there.;حبس
-310;9;4;Rehabilitate;to help someone to live a healthy, useful, or active life again after they have been seriously ill or in prison;بازپروری کردن
-311;9;4;Delinquent;someone, especially a young person, who breaks the law or behaves in ways their society does not approve of.;مجرم (معمولاً جوان)
-312;9;4;Inducement;a reason for doing something;انگیزه، دلیل
-313;9;5;Habitual criminal/offender;someone who commit crimes from habit, and unable to stop doing it;مجرم که عادت به ارتکاب به جرم دارد
-314;9;5;Perpetrator;someone who does something morally wrong or illegal ;مقصر، مجرم
-315;9;5;Deter someone from;to stop someone from doing something, by making them realize it will be difficult or have bad results;جلوگیری کردن از
-316;9;5;Restrict;to limit or control the size, amount, or range of something;محدود کردن
-317;9;5;Security;things that are done to keep a person, building, or country safe from danger or crime;ایمنی
-318;9;5;High-risk situations;involving a risk of death, injury, failure etc ≠ low-risk;شرایط با ریسک بالا و پرخطر
-319;9;6;Painstaking;very careful and thorough;دقیق و کامل
-320;9;6;Harsh punishment;severe, cruel, or unkind punishment;مجازات سخت
-321;9;6;Disobey;to refuse to do what someone with authority tells you to do, or refuse to obey a rule or law.;نافرمانی کردن
-322;9;6;Pedestrian;someone who is walking, especially along a street or other place used by cars;عابرپیاده
-323;9;6;Tighten control on something;to control a place or situation more strictly;کنترل را برروی چیزی سخت تر کردن
-324;9;6;Offence;an illegal action or a crime.;جرم 
-325;10;1;Athletic;physically strong and good at sport / [only before noun] relating to athletics;ورزشی، دارای بدن و قدرت ورزشی
-326;10;1;Rivalry;a situation in which two or more people, teams, or companies are competing for something, especially over a long period of time, and the feeling of competition between them = competition;رقابت
-327;10;1;Outlet for;a way of expressing or getting rid of strong feelings;راه تخلیه احساسات 
-328;10;1;Contest;a competition or a situation in which two or more people or groups are competing with each other;مسابقه
-329;10;1;Compete;if one company or country competes with another, it tries to get people to buy its goods or services rather than those available from another company or country ;رقابت کردن | competition (رقابت)| competitor (رقیب) | competitive (رقابتی)
-330;10;1;Spectator;someone who is watching an event or game ;تماشاچی ورزشی
-331;10;2;Extreme sports;sports that are very exciting or dangerous, for example white-water rafting, snowboarding, and free climbing.;ورزش های پرخطر
-332;10;2; Fan/Supporter;British English: Supporter, someone who likes a particular sports team, and often goes to watch them play.;طرفدار
-333;10;2;Performance-enhancing drugs;drugs that are used illegally by people competing in sports events to improve their performance;داروهای افزایش دهنده کارایی
-334;10;2;Workout;a period of physical exercise, especially as training for a sport;تمرین ورزشی
-335;10;2;Vigorous/Strenuous exercise;hard physical exercise;تمرین سخت ورزشی
-336;10;2;Gentle/Light exercise;not extreme, or strong exercise;تمرین ورزشی سبک
-337;10;3;To make money;to earn or get money;پول درآوردن
-338;10;3;Payment;an amount of money that has been or must be paid;پرداختی
-339;10;3;Life-threatening;a life-threatening situation, illness, or injury could cause a person to die;تهدید کننده جان 
-340;10;3;Downside;the negative part or disadvantage of something ≠ upside;عیب
-341;10;3;Raise money;to collect money that you can use to do a particular job or help people;پول جمع کردن
-342;10;3;Endorse;if a famous person endorses a product or service, they say in an advertisement that they use and like it;تبلیغ کردن چیزی توسط افراد معروف
-343;10;4;Participate (in);to take part in an activity or event;شرکت کردن در
-344;10;4;Rescue;to save someone who is in a dangerous situation;نجات، نجات دادن 
-345;10;4;Monotony;the quality of being always the same, which makes something boring, especially someone's life or work;یکنواختی
-346;10;4;Sport;a physical activity in which people compete against each other.;ورزش
-347;10;4;A (major) step forward;an action that makes things better;یک قدم (بزرگ) به سمت ...
-348;10;4;Universal interest;something interesting for everyone in the world or in a particular group;علاقه جهانی
-349;11;1;Divert something into/to/(away) from something;to change the use of something such as time or money;چیزی را به سمتی/از سمتی متمایل کردن
-350;11;1;Space exploration;space research;اکتشافات فضایی
-351;11;1;Unprecendeted;never having happened before, or never having happened so much.;غیرقابل پیش بینی
-352;11;1;Re-settlement;moving to a new place;تغییر مکان 
-353;11;1;Shelter;a place to live, considered as one of the basic needs of life ;سنگر، مکان امن
-354;11;1;Platform;a chance for someone to express their opinions ;سکو
-355;11;2;Outer space;far away in space;دوردست در فضا
-356;11;2;Likelihood;probability;امکان
-357;11;2;Feasible;possible;ممکن، میسر
-358;11;2;Abound in/with;if a place, situation etc abounds with things of a particular type, it contains a very large number of them;فراوان داشتن 
-359;11;2;Plentiful;more than enough in quantity;بسیار زیاد
-360;11;2;Distant future;Far in the future;آینده دور
-361;12;1;Unfold;if a series of events unfold, they happen.;رخ دادن، رو به جلو رفتن
-362;12;1;Content;happy and satisfied.;خوشحال و راضی
-363;12;1;Sedentary;spending a lot of time sitting down, and not moving or exercising very much sedentary life/job/lifestyle etc;بی تحرک
-364;12;1;Fierce;done with a lot of energy and strong feelings, and sometimes violent.;شدید و پرانرژی
-365;12;1;Genetic engineering;the science of changing the genetic structure of an animal, plant, or human, usually to make them stronger or healthier.;مهندسی ژنتیک
-366;12;1;Track record;all of a person's or organization's past achievements, successes, or failures, which show how well they have done something in the past and how well they are likely to do in the future.;گذشته یک شخص یا یک چیز
-367;12;2;Blessing;something that you have or something that happens which is good because it improves your life, helps you in some way, or makes you happy.;نعمت
-368;12;2;Arise;if something arises, it is caused or started by that situation. ;پدید آمدن
-369;12;2;Together with something/somebody;in addition to something else;درکنار ...
-370;12;2;Contemporary;Modern;معاصر
-371;12;2;Gather;to get things from different places and put them together in one place.;گردآوری کردن
-372;12;2;Hamper;to make it difficult for someone to do something.;مختل کردن
-373;12;3;Conduct;to carry out a particular activity or process, especially in order to get information or prove facts;هدایت کردن، اجرا کردن
-374;12;3;Bear a resemblance/relation to somebody/something;to be similar to someone or something else.;شباهت داشتن به
-375;12;3;Reproduction;the act or process of producing babies, young animals, or plants;تولید مثل
-376;12;3;Efficiency;the quality of doing something well and effectively, without wasting time, money, or energy;راندمان
-377;12;3;Vastly;very much;بسیار زیاد، گسترده
-378;12;3;Heavy;great in degree and level.;سنگین  و سطح بالا
-379;12;4;Progressive;happening or developing gradually over a period of time;مداوم
-380;12;4;Species;a group of animals or plants whose members are similar and can breed together to produce young animals or plants;گونه گیاهی و جانوری
-381;12;4;Fulfil;to do or provide what is necessary or needed;اجرا کردن
-382;12;4;Utilize;to use something for a particular purpose;استفاده کردن
-383;12;4;Status symbol;something that you have or own that you think shows high social rank or position;نشان شان و مقام
-384;12;4;Appetite;a desire for food or anything else;اشتها
-385;12;5;Justified;having an acceptable explanation or reason.;توجیه شده
-386;12;5;Awareness;knowledge or understanding of a particular subject or situation;آگاهی
-387;12;5;Alert;giving all your attention to what is happening, being said etc.;آگاه، هوشیار
-388;12;5;Pose a threat/danger/risk/hazard;to exist in a way that may cause a problem, danger, difficulty;یک تهدید/خطر را نشان دادن
-389;12;5;Clone;to make an exact copy of a plant or animal by taking a cell from it and developing it artificially;شبیه سازی کردن
-390;12;5;Global warming;a general increase in the temperature of the world, caused by pollution from cars, factories etc;گرم شدن زمین
-391;12;6;Transform;to completely change the appearance, form, or character of something or someone, especially in a way that improves it;تغییر دادن
-392;12;6;Trigger;to make something happen very quickly, especially a series of events;باعث اتفاقی شدن
-393;12;6;Eradicate;to completely get rid of something such as a disease or a social problem;ریشه کن کردن
-394;12;6;Die of;to stop living and become dead.;مردن از
-395;12;6;Breakthrough;an important new discovery in something you are studying, especially one made after trying for a long time;پیشرفت ناگهانی
-396;12;6;Inclusive;including a wide variety of people, things etc ≠ exclusive;جامع و همه گیر
-397;13;1;Cause /noun/;a person, event, or thing that makes something happen;علت
-398;13;1;Effect /noun/;the way in which an event, action, or person changes someone or something.;اثر
-399;13;1;Breed;to cause a particular feeling or condition;بوجود آوردن یک حس یا شرایط بد
-400;13;1;Spell trouble/disaster/danger;if a situation or action spells trouble, it makes you expect trouble.;بوجود آوردن مشکل
-401;13;1;Compelling reason;an argument that makes you feel certain that something is true or that you must do something about it.;دلیل متقاعدکننده
-402;13;1;Dire consequences;extremely serious or terrible;نتایج جدی
-403;13;2;Contributing factor;A factor that helps to make something happen;عامل اثربخش
-404;13;2;Havoc;a situation in which there is a lot of damage or a lack of order, especially so that it is difficult for something to continue in the normal way;شرایط پرخسارت و نامنظم
-405;13;2;Cause /verb/;to make something happen, or make someone do something;باعث شدن
-406;13;2;Lead to;to start a process that later makes something happen;منجر شدن پس از یک دوره زمانی
-407;13;2;Result in;to make something happen, especially something bad;نتیجه دادن
-408;13;2;Create;to make a condition, situation, problem, or feeling start to exist;سبب شدن 
-409;13;3;Bring about;to make something happen, especially a change or an improved situation;موجب شدن (یک اتفاق یا شرایط بهتر)
-410;13;3;Give rise to;used when an event, action etc makes a feeling or problem start to exist;باعث شدن (یک احساس یا یک مشکل)
-411;13;3;Trigger;to make something suddenly start to happen, especially a bad situation such as a crisis or a war, or a medical condition;باعث سریع اتفاقی شدن (خصوصاً یک شرایط بد)
-412;13;3;Result from;to happen because of something else that happened or was done. He said the success of his company was the result of hard work by all the staff.;نتیجه شدن از
-413;13;3;Arise from;if a problem or a serious situation arises from something, it starts to happen because of it.;نتیجه شدن از (در مورد یک مشکل)
-414;13;3;Stem from;if something stems from another thing, it develops from it and there is a direct link with it, even though this link is not always immediately obvious.;نتیجه شدن مستقیم از چیزی
-415;13;4;Play a part;if something plays a part, it is one of several things that causes something to happen;نقش ایفا کردن
-416;13;4;Be a factor;to be one of several things that affect something;عامل چیزی بودن
-417;13;4;Contribute to: verb ;if something contributes to a situation, it is one of the things that cause that situation to happen or become worse, but it is not one of the main causes;باعث شدن (یکی از عوامل چیزی بودن)
-418;13;4;Influence: verb ;if something influences another thing, it has an effect on it, although it does not cause it directly;باعث شدن (غیرمستقیم)
-419;13;4;Source: noun ;something that causes something else to develop, for example a disagreement, a feeling, or an infection;منبع
-420;13;4;Root: noun ;the original and most important cause of something, especially a problem;ریشه
-421;13;5;On the grounds that;because;به خاطر اینکه
-422;13;5;Ensue;to happen after or as a result of something;به خاطر چیزی رخ دادن
-423;13;5;Prompt somebody to do something;to make someone decide to do something;باعث تصمیم گیری کسی شدن
-424;13;5;On account of;because of something else, especially a problem or difficulty;بخاطر (یک مشکل)
-425;13;5;Owing to;because of something;به خاطر...
-426;13;5;So as to;in order to do something;به منظور آنکه
-427;13;6;With the aim of doing something;with the hope to achieve something;به هدف ...
-428;13;6;In order to do something;for the purpose of doing something;به منظور...
-429;13;6;Motive;the reason that makes someone do something, especially when this reason is kept hidden;انگیزه پنهان
-430;13;6;Due to;because of something;به خاطر...
-431;13;6;Consequence of;something that happens as a result of a particular action or set of conditions;نتیجه ...
-432;13;6;Thanks to;because of someone or something good;به شکرانه ...، به خاطر...
+1;1;1;"zuMFuUNKB2E2YOZPPIoyM3GeE25N2/4vcI00m5e6Z5o=
+";"C2Z0q3VEN/tbXgmUwc90A8OemddTSraZ+g6CVnYXIY8Y5qTdA+MS6jveJsGhMllzk6dTZp9J/bi6
+WkTj+69vBCNBVsrdOMBBtfNjnygzs0gPyyRfHifelWE+ZJkQhnpr
+";"7JK4p8rhIkM7Zy7PoL62FMx5fxLCBDfvNFqG6NL0vXpQ8gEI1r8tplJL1TX1jMYDVI0lNnfeq6s/
+szodb0lmPfnSFvG4zsPk/Cl1UWN9ZJM=
+"
+2;1;1;"T9vTuYbaaTO1okRKVRm6l79bwbb8RENgrlO4DGeJPRZUFwUnT3IhkY5kL24Iz+S5
+";"ztMGwlnUHVCbJPajfCBzY+lzaXLVlG8DrTpz85yrH5c7V/GTczBxpxxPdRypxvXroSKc9LJ9KhxB
+iO2kHhHgCw==
+";"mG+iUoKhsKyx3qUOSgAmrmVAhbZUItScYWcpd+dn5Rk=
+"
+3;1;1;"KKijTqFRI2PBYvmZpo9AYg==
+";"KSATnbmmgRQU9t+6T59CXzRy8yErX2fTkeOcv+A7SzrLtSDRV4kVMmNMfr8rc8G6QFBEngzvW0fV
+UssmZQuc6zA5JFdL3aE0bkgOF677o3Y=
+";"4PESmllDaCkY1vP+Q8mxrMyfP1Yy4EHFnXat+g6i8UcWWL35ImE6kVbgexM7saYvaYvhhnQxQTQj
+TUDkESQQNkhvtF1hUnyVlVXfuCDheag=
+"
+4;1;1;"xgkZgh6NoIOhJSS5S3sUfAt7VBT3iD2s0eJ+Um4WkMc=
+";"S4yGjkTsjuSDxpMZmFPNEg==
+";"hZGhgHBRDKv0IqDQMAbD+nEE40mM119KcdMXADgRN2M=
+"
+5;1;1;"1W2pODO4CVqfg47D8HD+QQ==
+";"Ktd5Avm5Qto1yDGupSDJKcj+w+5acHAiyT2ry3AfZGgCPA8G41l19rGdU+RYzMpBk3kylJsryzFe
+S/Wf+ficbg==
+";"bSL5bCNPK+ySwGYz1mDr9vT51lVc7NsUN03H14USggpAkBCPRud6uDRcg4L93Tbq
+"
+6;1;1;"HBk0ug3LihqudYwWHE9b0w==
+";"3nnNlti7Ph6tMjAbhu/ZC6+IL8guUp7mlIMaAHI6f41Uf2xW/4b6X6eWu1zJIBsqp6Osi2duFDyo
+ksjSp7hmh1mwt/7dfy0DOHiqaCzz3Kw=
+";"+XRQ+5U14jBEubX6CXklP3hZHJUVupNYNA2gNtlnmHg=
+"
+7;1;2;"SWSeHY+yPRsgrHxJBJCXIQ8Cu1nQ/vzZkF95i2WCpe4=
+";"wGZKmtZqdTqS0nkSX8rY1/UYtD2dnQXDEpG/LQ0RSnDwNJnZfraAG87Zkn7dC05/WEcUjd5XxJkP
++mezlKWJHtCiMcsgRUWflQAQfDXxVlQZXDECYXYs5GZf81jSGrwEYBf11Y8CyuB6fKzMeVauNg==
+";"H+hfJSmlW4aX6XPH3nEZGKEJWCde9KsomRLolIatVwkP45PPQUr42u1yTpdFS42nIDQ3M9nxm33J
+17EXevTxFvLd/FiG1XW+ZRdbE764b7FHinwyZQRvVWIgswq/qgnM
+"
+8;1;2;"tEyb4bKackFJw+GvW7K+IepuZiMN5rgfFM/9mjbqFpY=
+";"mYWuHJ+gGpi+kb4S5GC1UYTDWPIsXvRjEZegJZfCb8TNPfrUIZGkBR2yN3/x2Bhf7OjX48eFNK7A
+Yvm56cVWmxM+wi5MGxQ34woGIDlJpnA=
+";"LO/o0/2EorCWh6JG1zTUBFl07/EoB6rLaf58trtOFYc=
+"
+9;1;2;"8DDU9OXCu7QExU+Cue3VYw==
+";"UmUDQQTaKfgwQLtF7x4D7aLyQSQ3BhtW/H4Pll1YrQMHSoTD1utNZ0SHENDE77bD2TSLDhCz9Ikw
+rAhHLj8mCZG4SGLdTBO+seLk6ZQCt5hiiXTnN+NeW7BOhq2flHa1
+";"ZHfGQJrN+kUUlJBFZH8Xlw==
+"
+10;1;2;"0QFcwD5B1kuqYFKWKJI7Ag==
+";"MBhDvryRtIVlqMDyn8/7Nj5bMO8CCMgRlMmZBFZ8hkZ/F6IZ0nHsyqSj9A3FkxJC
+";"dqgmsS4ZnyocD+ncJ35ccgKHEhvoJ/kxXvB6JSLmE8o=
+"
+11;1;2;"VlH5UP3d0G3/nrFRX3GZtg==
+";"nx3iHPaaw+WV2Tq8oCqXV8LHYNLYox714DOLLaKz1MsoW4KEvDirx9meRHPN2+cZxI0ZrK2kXu+X
+gW/gHB66fdvJ6IagkJdM6g8aBeMp3bE=
+";"bZ4nhZV4AAivVbQBeVsL4FNClpZ1EzOdzk1/9AcRxhk=
+"
+12;1;2;"wXDhXciEmVpHmC2mzHoXZw==
+";"A/ka9tEaX05n1ov4ACk/NaPOMRc5qTq80a/dKxbzsNQjLQu5P8aJ0eQmW9DLrwuV
+";"qoqN82WVIvi/E9HEoRgSVpzP5lmQf9T4P5/kalmhC8dvuOFS3dB1JGNb7CXNbq6k
+"
+13;1;3;"3ovzVGqc76QvjlyaM1lwJA==
+";"nIcv4I0gGabw2Mv8Fyf4h9LEw1MaaTbPCUfLbq54pwvlmXLj3EyEEJOf2TGkLof34OCRnjsLGJ62
+h9B76xfGJRNwjjlP+/gQaTeEORV1RqtzdQnV5cvxn4hfNNylzdy4
+";"3nLWGfpKOQXN+MqBURqbAcLG3XPfw+Afez8WA3lgBqw=
+"
+14;1;3;"Hr0E+tZa82KWef6cAiLyyg==
+";"rD+wqGLM5uzKtNDVPM5EV/H3Ai9QeZ7uDVCapUyG9uIK5sKPDLUqSl+EXMdqhwi1+k6pnAnsqL2E
+odenw91iNw==
+";"sv4xh7lOfpSMEji+BriRhlZpYwtubDcgRkw/Y9K/brg=
+"
+15;1;3;"LJQjULQ4l25r5F+aHpFdZQ==
+";"rz2ytXMkj9Vvade0+1c1XcG/2poHwnecHk4gX+cDeA2VYB+LIUb/TqLjtLO7/eHY
+";"m97T8HkPLn0baMeXAdoC3T9ButChwwBHh7VJEXNI/t1+PsTVCgk1nuVhAI/bCcsT
+"
+16;1;3;"GYw89A/rYnQbOlRp/8bqPnPfBTpVxuqOuvn1f8HbHK4=
+";"KSATnbmmgRQU9t+6T59CX+1vsjrGmIRSvABk+FDXHu3Gm6zcOw4SYj+grgDEjaUZQLlxwneUPl26
+i+AESMgHsA==
+";"h6ZxsMNaPIE9oFXaw9dGt+sybNJ1kOOCCHtS+dcrba4x1VAnSN9NyOygUrdnu/c+
+"
+17;1;3;"ni7ow7L5PfyHwZsVpPy1h3voOOohvPZfRsLtZUr+gspF5EvlQmxCl8m1Uf/B82Yk
+";"cy3gY4Ezd+2UL9L292HDpqZibleC7YYuhRsKxwTEq2M=
+";"V+QifIyt51oy3u9R06oH/o3KC4YTpOaViri6af8S9tvstYHW8B8kTMVxCsivKzzHSfy8CsbA1eZo
+KvDDjgqBQshGnMqYOKQoWoR6MWF3RpDvDL0jhXrxq/zxGm2XNcJz
+"
+18;1;3;"OUHtNYlTE2mn2PVEjezG3g==
+";"Zbu+gCsI2EgHeOu3Ypx/6QY5b/fuODPwCbnRL5CXDLSKjRUwxrEjBm6uElRFUL2cVMT9N8ZSuGSJ
+8MsYbegQKszx4/9qNqHRrlTUqtOWeWsdwZIlnT3MDqCwEXPphf0b/tCpgYjQnYPs1LyIpzJI3w==
+";"amkfxRO9vhguAYum+ogIH+2X/oBcWV25DJ/67HHT4t0=
+"
+19;1;4;"IpDAHzPdaYgqM38vvB/haA==
+";"krz8gjbobqNEMQkav+7cJfSHozwRehOoi9c8JePLJy8WnlLoB7GUxhNZ6wssW51Z5L8xLL441rSx
+qGstOOYOvmDNBuHZNFFc4UPdXbVksiE=
+";"J2+oDQ4mFIQPgt/kJselI5sbxwXFbBd5oHtGhW98VJVjNEmwUNOHjd0PxkXp6JPRc0UYzCW0+e9q
+6DbC4TfJ2A==
+"
+20;1;4;"yDapFU2r34EdpJ+y6k0TZM++Pz3HfOA/waFh69weRcU+daWt4pcnbIJlwZXy7Ea7
+";"hK/XVmiyP9s70K9w4auAWpU84PCNvteDP0Ow95q9wM2Ek8TD9QHjU+UxzVtNHgw7aRTRFjaE2b2E
+bFnnBUnOf3Ts/vTl0QiCfwKeflIkC/XKNYkan2gawNLjpZLVD7UfRAxxqSVdyegd/IV4qFBpIg==
+";"J3fjKO9fjI/5HwLemsEhD3lUovSfFBYb8JRrM16gdl6P/ullT0qiDc3wsqIRG4EeY0jxIxT0n0Dl
+cUkKze+s5YLfP89c8A7VrbEsKotI98A=
+"
+21;1;4;"zb6OW7FE2dH8V3xYCqn8i/Med1qib26dsWKy7goeimQ=
+";"offZ4lGzOKCSVfaH66SM4graI3d76QoDRR2gbc7IILBxZMFU3vl9W97/Fv9ZdXjL5TpzmNcaqitU
+zR+6MjYr4FnJ4ZYiRzBbzzgzbg7DDs4=
+";"n4cRSEJ0+tJxpPWR6DIDoUr06O/B49u4h4R4jw4jBEcGk+jr2n7rS3VSN4yWo13P
+"
+22;1;4;"qz3yCJPQvOn6etpgpa5wmw==
+";"e69auP+0vVcFNTvtvvPMS+fzICZOZCJv5PX9sD2iZSSU/9nBWqVnWvxKN5aCTmOSYXPwCwRTseIr
+luNL9YJLSUxtSgj+jddjCFzHzu2MuATr/zfY6wHjxBcGVxC9Gj/TzI/i3qaIlbjoVB/IUNbSFA==
+";"86v31pOPCj2lEmOs/4w4EfrVVZNVE6sx0G8srbsMyC0N0/QuGQUqm2Vw9m4AN91eXav6sS5ma3eg
+nqKVQ9NRJnzWSb0JmQGozKSFJCz2wuBW+4Rka5z0A4bdPZx7OSaShXHndy3qZftiMpTHAGEmrw==
+"
+23;1;4;"MOucmdbHsPeagGt+DWKuwQ==
+";"WuhDXS/Z6CDQfq6LTnon0Kwyn2Yps/Q2I6CIBiW8btY=
+";"jKqFnjM5K9kG9CvVCNSdOGjyM9njcwEOH2plv8hGLMxtw7/m3dRosBBwyBZM1cv7
+"
+24;1;4;"khLQG1D4iUOrp+7dGtbSDg==
+";"cWiMsnq6L5R4pAA8EA+nZa8RTu6pGv0APBBFnaDdVA2c5yyvYBx9aG6gC12zEVw8S0r7iw/Vj43u
+suaNAeD1+g==
+";"nXIp4AJF+LzV75v8wxqAwBxvNQ+IDFPWRJtInXlxo0o=
+"
+25;1;5;"tazE61oAqCAcIMK5UAfy4g==
+";"tkFzcwrRr3IYHijSJ5nzoupip/PTpBuDY1gdaQaJTzy0ccNDP6HA9B0SVMhm4VW4z9N4jj4Aa9WH
+luiIVOGkw3dxF/aA64bU+HqsoAI2gRjN/8+Ie5ZpXkqLkGw+teqlTib58P88qn8HJvO51PXhqQ==
+";"sYkCmN5lOHBuYTE+b5QJ6UethO3jdoqOGA9BSKK6NB8=
+"
+26;1;5;"UpGtP1CmsfIRQJkpuHRAVg==
+";"ln2tJ4cKXV4qMGYE6tJuA8vi/yF9UVb5uJArZ9mof1iRy7H6EHrqzOiEWHxvQgIUW/z+RyDGCCF1
+caD9F6J+8Q==
+";"ViCH91wLbymwPlqbT+Ic9pbJb6uDb0/VOPpElvhfYRPtOm6Fq+kzx4cyvQ3iZ1WpT+ng5OF2L8qE
+B9sarqC6Mg==
+"
+27;1;5;"vErTciVhkcr2u+2SPRXK1w==
+";"OEykT6/jOnfep1AN6izvayP+vvqXHyqzRfycjyQxZaRJA30iwxSEa0M4jJIcthCqbyzSag6wQLOa
+hkdCvfgWy+T/gMQeY8OO/9DxvomFyko=
+";"N88X8FP1lJ6xTXYWK216lWYjWIoIDOdgxlCPngnl4sEmuaq0mVxCklbEKAObvQo0Qbwxb9Sc2Gmq
+ZB9l8L/B0achZdOfQHOKhX/i7Nx/Jus=
+"
+28;1;5;"ehkaOr8K9gPOCtuWSaznuw==
+";"ZwTqjG9EbXhLnocfiEgLUHuvKsCc169yj/HKEpBV2HevwtXhtydBESSMhJ4m3TTz
+";"N3rCTyocglFAxf1023DnZA==
+"
+29;1;5;"/gi+WSfGsaSCoVUnfXVMig==
+";"9826RmvrKACUHxACcBsMVlY21apYoZDwgyA8+rKEeZLVZh1KZrh9VC6waqcb10jn
+";"wZqAOCxaWjgcKpY2vEsp3jeQLQMpXEYSVgHJD7KdJkQ=
+"
+30;1;5;"/i2tsvrCD+1THvEvUKWyMA==
+";"3bDsYmucfzSKm8NEPfplQFmBlqALyw0cIugdmoa4SOTiKnEbSLhG34+rOtF+s3iZQ3R6USES1Y8y
+5lYZRKTzrQ==
+";"cg1PnQA8Tv+4xj8WwQhAlw==
+"
+31;1;6;"WY5aWZ5rfCPvr4NvU9XNXD1x9yinWe1Oge2b6m27JoE=
+";"IZBt9r+fyFnVTiJZWss0su3TwgxsJOEUKWG7b4+EdflKdM36EbaJN/k7NEm0fJu0D6ry+uETOlEe
+nd5+JOAqBjKFJYhxwJT7V3dhNoWJqKM=
+";"+Fh+0ahOdmlKHH+Q/89ME9uQ2V4BLQzM2G199hu/J3A=
+"
+32;1;6;"Itn/QLZJyXx8gtuszt0mIA==
+";"P+G6P2DXIc50Ae64NtcWQ1/LhzIgHEFV2uK+ZydGfsnDwc3ugmh56Cdc1TQewdih
+";"vH7E3OvrX/UcpDiwcTCXjumhHk0iCooJwyQefwIbsh8=
+"
+33;1;6;"y0pJJY2+2C7hL1xaRF3Mwg==
+";"zVjv+Ivya4PhDxfMNzDcMM7kzmjip8agnBdrtp5Fa8JcAMk87iF0bCzZ5YSLl1qQ5bmhvjwg+FmN
+MJS0V93BEQ==
+";"vlohpSCKvk8hzhQ3iIJVEOriGOrWyS0ImGhtb3BNOP8=
+"
+34;1;6;"p5ldqFLBYD7/qDBpdtzprg==
+";"7VdZj1CkPqYpl0emLTUgWBdEu1aNHq/hF49tqjBWO00=
+";"ICZnPjtbyfPfZZ/MSZgQWAf1QmSK9okQOWKMu71bxCQ=
+"
+35;1;6;"IkFKNh0qolAGHCWYmh0EoUXI4I1m+9QiWbGlPtlEFZI=
+";"XfQ1gsLHwMXE3SnrWWpIUyFXooUWPcOtSBl6xBuleg1D3Xz/ZNuOijMy79/a5FIg
+";"v6r8vM8ZqtuaYxMK/lEnvfR1WAyKiyjbxmq7bvqDoqQ=
+"
+36;1;6;"wDcRUg2gH71VhRSoaZN2e9HsFnUi5KK17oqwSi5QE10=
+";"4h1adWAr893HHMIje6shig==
+";"hvVoNZStOoNHwd7dqIfTRw==
+"
+37;2;1;"bzOR/o/4wWK6Jr2d7cgUKw==
+";"xIIM0sf8cWjVGlTXpHBsx5Z0GYhsH4iv6mk4iWkBRFM=
+";"6UyQAphrDoOU5zwiR+heJg==
+"
+38;2;1;"n0x6LHaO1zNCBBd1LDHJLQ==
+";"oNP9YRv+dkM2arV7zNJYeRWl2jNgGG3bkPCjCl6+uCMGkLkiWW58NBvhtHyj6QrpI5XmtJxYQF8I
+o33QwoGgxuZf3mu+/TMYwhsrILeYd5yMVknWST2JWshTnQubv7EkPrpId2Sf7hnUeYesZL2vpQ==
+";"tq8JCxtCL2q9rwgDrjDvrYf53iznQGD0wPCqmTEiZ58=
+"
+39;2;1;"iCGA4TjV8zAzwNos6euCBQ==
+";"Nri8Ma4IluvLI+0oKHB9FhaU527xXa0FmVWVnlTsOVXvIOW4rM9fjX4OrxS11TwSmrN4bX+lYFZg
+jHxlfmDjNO8XlpJkqrc/ySvtlHWn23vfvFQtFVK2hKUGf5x1X82/
+";"7DuIF4+G4seI52WOrIKdc5HIOXT9LN2+GmO0OFgLfiU=
+"
+40;2;1;"Zl28Yx1tS6r5bH0qD/UBsTWUtx9ryRuAirxS8Z7+PTY=
+";"dEmCtmUTkKdlV2tWN9C0LO7xF3voCnjFMVR+I7K7Kae/p1f6sgaTuO0ZrYa1j3mK
+";"LgUeIzfmkwBKv6+ta2Dfjg==
+"
+41;2;1;"SROE+UksBB0aSgOB4tAIoA==
+";"y7szxx3Q9vuPwZ+eY16+YZs7B30U/WzvmsDmvxvDBbRCYsUJJi5L0E4ZB6PDG/3KTA1ec/5dIlta
+wEe06scowmYiucM/Ono1wnJv8AZBNjfU/VezQ+LnNaNoxkhcoCIfS8LdvA42a/Bb1my6bEqdeA==
+";"bSLculoPyO50gFx6k2orF8Fh1zW+sIq6rF9/jsddOVU=
+"
+42;2;1;"sOYhN4yrC05fga6QIYd6PQ==
+";"Hh5CjKUBEzNWMfVl/h2n9I4URZ1boeIml7ZJ4I/yt4JFzOZZ/bVRw6cmPgGDQZGFcT1iZOCZ/NJ8
+cdJP+do8uQ==
+";"EyH7rtLNNgWhfAfF25QqBvURtWTu2ckOhDw6rCeWOnw=
+"
+43;2;2;"PfIKLcR2Qc/s20l3iOUMHg==
+";"J4e1uupRuyDcmurQhpgDz4AwIfTg687klZdgEG9KgE0UCvD+RybZG78lGNAW0iKRmgOF6gA7qfZb
+s+iPatAQxRPR99HaFRg/YFQaXg19C3g7Kb6I4FosCAmrEF4lFY5NxdHhPy833Ch5+CYkFJL5MfyF
+D/VjW1tTYsqspCTx19Q=
+";"R/YFPzjcg8PJuLL4XjLuENOiTjC4XdJMM19Nr9JVLE4=
+"
+44;2;2;"dGxNRKGNVYacL0u5J8c1YQ==
+";"JAZwEcQPf6zWwhafkht/I4IXbQiFO7YaUXacbLJY+DYRaxLFWq78BaqMKsTTDLj7
+";"tbc+KjEx1lwNZDds9WrPug==
+"
+45;2;2;"Qan2LKbQWKqUHPLzy0WMaHjcRJB2400SKDQDA2bfLos=
+";"G5vvRF7xzQMQ1G8CkxkV/J1C1BisMSyQloG/OJMGWLzPBRRzLZDcPm/ZErYTKjT7
+";"dekuyQOxsPiwEuWGnGkLJZ89gxpf9UC93ZY/NW8zTayMz6YKAeSc82Adu6pPzeeL
+"
+46;2;2;"wIQ/Tq4Sq2xNBNauGoSx6eS2VTIekw8RihccrGfCfkU=
+";"NwFGLqhCQC3IFdraDC5iNe8Njba7JkVHsxlB2pR+gFl+mArrmnVOEu/muhQ8/RWo
+";"+RirtxEe8kv3X9O1jaaowMtH5Zb31P8QT7RzpgK0yuw=
+"
+47;2;2;"Wtqu890KrKeAwSpkJzCURg==
+";"X+QzJHuz0sb9PAz/BxPDu06nVAmT0nP4GGTiwFuXHoA58Rwa8Z0HKjxNnNul7IA5
+";"p6L/vKwLJRtS2ZGnTSBTrwzHuv2oDlJJD60d1y8/Sas=
+"
+48;2;2;"JvZIrYacAtu9FBmh0DzaBbwKALsoeistL4D7wvCiPAA=
+";"GEYctbZ9Xgz2YAVhUofsnHRXpu2c6z6fuP0/243dSUb1cgzAc3a/WJxU1NtBc+3eRMAAoHJZcsUt
+DwJGANouJbq1OPoprdYLt4LSoZEiOdK1cyu8W94fLZHp/+2gfv3fDzzL0Y336Mmphxxk1hiM9xQW
+y51QVridkleDz12taYM=
+";"Hz4KpePRcQLqUdimEguTKrlXGTj8+8BNccp/cgv2B605xSMK1kelr+DD/PT8w5kTT+X5Rsk/nduU
+1eNc5n4IYpjuQAwYedZ9ezvuvlR36YRLq67F3Z5siTG8/98CgvkXvDXo0txmbUZtwSSmV6lT2L9W
+iBHXZ37edR1sI+vRuaOkSoDSFC5f0oX1dGwR1fwcA0+vRlmM8k9ziXDZ+fj34Q==
+"
+49;2;3;"eIJLyD5u2QzRQNQkON/0DnOc5J8P2UZCxpoXdO0hrGs=
+";"AJ0TjtNd/Cob3a1Lml4t3nAGAzs5fgyY9gy/ZFDYRQUmTXxVARd0SJl9QrGaafgYl9hgExkCTIsB
+lhsCFarZXwBOepFRhuUV5cYoONhDd9H3D9WVgUHNUuYLqiONjbG0JMW9bbyMP7WTTpUapn6zpA==
+";"M64vYcFSewXOAidHZTlJkdadGr9M4AFVaCclZBGUFUTbdFvevGWLuAH8cZmLuLV0OS9e+cqrMweJ
+fzyVZkaeuKFbRiSrbakh5HhiqQflc7k=
+"
+50;2;3;"pm/r+OXMY2DCR+B6GrA4JA==
+";"fOEszERwHKs3YuV7lPMTrEqb3H2z6rG+CnZlyg//nqzgG+JqbfIsAwA6XxCrh/KXLuhMYoAEQ+yB
+gZ4auRGPVg==
+";"MEGz0HOS+MkCihbGIO6cZg==
+"
+51;2;3;"zwKYs0T0cTuC6FVtKzh3lw==
+";"mFwPS8vpOiXtsVcE2mTs+WjkTltqMk06bKmivsEZuNBWdnHhfGxIVDTuRtQi6B8JfiUKq5i5s2N1
+SwugtGb6OA==
+";"GSxxu+yLkiapVlc9WW6y9TNe6knob9AsPd8qmUwV7YQ=
+"
+52;2;3;"9TFcUUCMTcHN5yoN4luDeP0jg2G5GcE3WNBqGDqZpcg=
+";"2/xwzc5zz/xksONJJ+uT15GvGG+6MU8ZHbg8pCWpsmI/FvQQgri+x6vJv/jOr8G09goT47gqZcxi
+Kg92gNslWTFZkcWBiFLWXAw6OgC7ANwSFF6JeV/eMP0D52Elmat5
+";"8plEkz/JGb6Hsg1jNpS0UQ==
+"
+53;2;3;"ZxmgNKvAw8Zzd3vsY6rt+A==
+";"N28PS2n62ZT0w3ZQMuKXVZa5jDQc/rd1UtMe6zkwOKu680pSPQVT3mn5hoGhe9nZ
+";"vnwAGhgTy3OngVXqGnkUnhDgtuvZEA599c8G4sVhEh4=
+"
+54;2;3;"r+VCV2bQ9JPaTLnYTml0ag==
+";"FJyvrusWgbf+jbzTXxRx424ecNRl4rLCFo9oUi6RmuWZ/+MPigU5akEPZFa9kossXyqPbTGEllZT
+AVDKjGGH6Lo9HA0JlKiiLLiC6ENsdkXJFmaQ9e0s3f5xFqCd4LSn3qRfX+q4qicoKQvyUEZl75Q9
+/5Asb6ySvb5Mly+8psM=
+";"Y7uqB+z1RP1r/e6pE4x4FRcFrD0s9wIUS6Tz1ztVo0nC3cETzv3PLZw+RMhPlwDm
+"
+55;2;4;"/Riwh7j6weiU9R+LQ1al5O18u1v4lcweSZXi2pyKyEI=
+";"Fi+SmZ2G8gmku44WXNZghVXrxaSPxsqo3CktWdEFQElBwejdAS4k1K7zWLcm/TrYgVHZARpXJ3MF
+lWKC19u9Y3A2t0ficHyTL4AW+2Fw1WQ=
+";"7zQVMemjtRc58TL/vpP+zBMTUhd49bYYprnaRJDkkcc=
+"
+56;2;4;"YDW2+UkVySzTx+yL5BP4Gg==
+";"MtnEp8UVWYlKSYgXIOm5ZA0SWuviRYo84rqbSFbVy1sJuTS/LDhbcv3oiKW/H08WcNRHnqbGu+wb
+rM7cBxnMKg==
+";"15JvYP79K1oG1Qk631lkZPcVISy7qpS63v86Mi59l5g=
+"
+57;2;4;"aZU/EzlAHYN4KQGH4Ii1xA==
+";"xUOKSMjwFMnts+A7Bpapx9Vr9aemJ6Hop/wKeHwVGy9BX/xisqXG9KkfFSYWu+sJroNPu6oQ8qws
+U84CsbtwMA==
+";"8NqAWM4qE/HQuh04gh7oreBVQ8uUwn9tSXMm+O6OVy6hWbCB9BlK34+rjVgHURoe
+"
+58;2;4;"tKt6KfDHi1sUWDPe/nXDtA==
+";"dR6okUzo4KGuZRbnShMGQDlGLSa64mHahyvZIFsZbYtE5S0D4F2HI6INUif0oaIigy6QI27C8x2v
+zw7mr7H1Wl6InSvT2dILBrLwa1OZ+lrUU4vWm0cK0jlBwDKixlF3GC4TxA9pJ4aF5bTD25CVg75f
++F2DmIC45NiV4SQt+5nwioLjDnbKRklbq+R732p6
+";"MWpxvOWw7U2DRZNOLifWMg==
+"
+59;2;4;"yv+xXJZb83KTdVhLaHwS7g==
+";"o61eOWOma3y+4JOdasFjKZC9kYRTeKfzqpI8Gq8Kd4Ja66CkJDJ5/qVH4jAcqJsEvud438l1Kkls
+CPmIfzPlhPTht2JgWO+YkrRcNIuLdyPGjKFqa9NBkzYaijqzNfLxx9L2IdPmzpmml7JrtF9HCSYz
+FHY1+sE/hE1E58ccaJcGuBp6c79wbio9KWVcjwaTALPaFcirKJ/uVDcCr6r0GG5suCAwpcHU866l
+Agb6JRIC/Ww8woPkeEh7tj8mrzApqg0l9pw/Ii+DJanFl77HeQ==
+";"+Xo6FhtTphvGqAbEVbZpRw==
+"
+60;2;4;"ybMBnFsyinptPpk+zQQicg==
+";"IqlakpFHinBJFrt9hMkFbJElZmOGZUW4LEgEWkyu/M1Eews/AlKnbux3QHCsaLgUqMiUgGaM3oGV
+JGX5GpYbPA==
+";"NvoqcQ39kho4Ie4ZQRXpwg==
+"
+61;2;5;"q9DEfqoora0C+Ek9akZjow==
+";"MRUA/r9fAV2dLFkR6a9gXd/UNFj7gWBXXm3KSW0dCQCjNbZ4HMpyUbVynbS9mvCW9onm1HNBxw3K
+3StoUGry9CDTW92X5TFOth8hEvxa/5xOjlp3w9mj1h34KQHXczza8qFxfPGJmVU7oJ0dOPLFYQkV
+wP7sHWm5butrFvyP/g3gihQ3umvfa17rHxEtVKH06jXgEMAtqKg67sPlLJf5WK/Y4psbfnZdAqwa
+eYBjOof1kqUTMFHNU4L3QhU8Ly6i
+";"U7LctoU+UKvvU1N/KdAjM0lg31oScZinL85fwCAbJR0=
+"
+62;2;5;"CWhcd6+dNrEqubu8Q1HPXg==
+";"HkFhs4twNVvqeKLJ+Ycjp0FJslXSEwOqkvOm7V6PRL74TaFKPbAcrsQSuUH0BLM48oQVdoelaOY0
+MQTXaqiT5Q==
+";"wmTThPAqOue1uXTQchsDmQ==
+"
+63;2;5;"GVHgFX/muZxiXHX+Qy1fgI8asDL44+kDO/9UOXmU+dQ=
+";"TEjyKDkbp06BIP5DWSdB1ctolFvxzOuPIhsvFiMOd/eJ6yhc4BIw5onKMeJ9YXs1aO2NUG6S/flh
+kE+L0qSc8mwZGNtmuWDYrYwzl9p4d3E=
+";"L3UFSTRTUjZ2Gh+AxEZhdMHjjp//pSI9ARjFRrdpsKfEPcpyx/+E9KT9uM7j1R7u6wTmSDRW167A
+yZsRlV72hQ==
+"
+64;2;5;"flncOBTCNAc/XWgwbPzrWQ==
+";"Bjqm4xQDRBMUDZCYTGx904aX8tvmh3+WkLgAwIPah6NqsAouMTfJCvWEonbB16F9IrfHckR0V4ID
+2hzwr/ZZkShp5ywCm3WQfIv7PLOUj3AY1g0kUffire5LNLWap9Q+o8gXDKQsB/Pg7RBPV0PsWw==
+";"GSqQQkxSd5xSRiAlc4TEV/CKQqgJNeDfC4VAUderL4D1w7yXMidlocuUmw1kVJZCp4mC80VQmszR
+TkKj4/8ycQ==
+"
+65;2;5;"BMQMGyXEazWhwbOz5Wuq8UrAQewNdINAg7nVElffby4=
+";"NdwGOyip5x0XsQkIhLHL0L/Jf0M1YDg54HlaqYkB97NIns2jenm4y/8kxIJIYBeDJe3sVujSruve
+pAJeILYeKQ==
+";"dAZbVltYI82HWVfm4Ew8bJxLYIjVVEfYFTL13ROpZ1DKH3Maw5nWZiCGAmG0yjRULVXuqmTbedIH
+HVRjaGewCQ==
+"
+66;2;5;"rpvrbtbB+0/3Oz44fPyC7w==
+";"+ehr5z9qVx+FKrPWtJXnRI41Rw9UthGs2I5r514z7O+/pls+LjmvJ4uuHvrGKCmh
+";"e7NllZYYMwloVSHNZDCZG255fzY9a6UObaI6gGvPzHI=
+"
+67;2;6;"bB6wUOXbb0nFAWwX9enBDg==
+";"9z+Q6l6IcfLBU7wraUiaCBMng99npK5DMrcoOu1AOFCxNWLuuofbnSfSg4QmziKtfk+S67XNF6r1
+ipIFJF9Agw==
+";"jWzWTT2aZ1w6Ow8I7UhGlg==
+"
+68;2;6;"PPaarGy5Z2WFV+U8RbabdA==
+";"iIk6mHoDQ8pDqgKrBR54jvCFV47V7w5vPoNwF+Z/MrgsDuLITccr9e/hop+5mz3Ze8NMv1xPsM2M
+6E3VkHM8in77SuRiHTuYNGqhic/p7Nw=
+";"3EvLc6sc6JdM8FsYR6VJVrdXB0pcK8OWQoNPUthy4FKU6mGvs7b2UuNeFqedEtR1x4zc8IaAZIn3
+Edxv/l5Crg==
+"
+69;2;6;"iwf4Ro04OK5I7aH2di1R5elNwmsd1KvAQaridEFodcM=
+";"KJpFUbcbZ2Xq7JXaB95ZYg7lW4OvLjoApbPXTWGpiXM=
+";"ipQXs72mFOLrNnd7VOSFdab/T7CzJ9PlEgN5EHc68xw=
+"
+70;2;6;"tL6S4QdCQrDhTXHt9NyNEg==
+";"brKNJEhFekQEbUpze6vrrTQOFae7MlVeXsX1lPc/URBFml9ZdTMPtlfOFPE7WtKiBhYy3M5mCzlu
+rHNBuKYTcQ==
+";"EoGY4mHImIu/HmeulhL6HtmCjkO2cvsMyux6U39oTRXs3S7egEsVrVzUpIZVsA5l
+"
+71;2;6;"Az3aD53YpheiScWPbP190A==
+";"S7jyJ4e/ika33Y1c97p7OwOx6pMMK6qB9mOZEmyBPQSRJoP7kPXGXPknhgjSGe4abDxVG+LRXvDT
+o45aOLOZB/hFoNJKvxXC7tF9rUGK/0c=
+";"+oe73Fp8v1tyuaDgeWU0H+EDigXPQc9+dcVXVGVfDbA=
+"
+72;2;6;"yUQXaj76c9HWdgGYIbwLEQ==
+";"MlKuWrzQPsj/iOk/qbvE5vcpJreeyN5bxu6UTtFU4M16dKLFVeVfMrMaKgskxzPlvRXePiI6iFbF
+SYI3jG8Q3Bs+LZvB1qCFZdzr5IGhY6s7dmRFHpkGY5VLjcHQAihi
+";"CPD9x4BLsskue8CvHWnm52zzSLHUeBe7ggyGDYXRs2E=
+"
+73;3;1;"B2SHPzDeKu+QkCstZgnRmQ==
+";"sDlkfll3gB4HxqXwJejs5SBy7iGpHFVB8bUok1N84A1XAbayzDsMtz6DFtgQdHcTty+CiHmUKhyl
+35HzpYyWj1Y5zjF0+YK+0IK5a0jr9E+jEghxU3pHwANJteCmgaVVQj7ctHDYC4wDRB+Y6VHYYMfh
++fyfbvDY1Dn4bvQoR93wem0iML68T3kqXa/uZb/XsTz/sPbA3DufTvb6K1bHGA==
+";"gpXSWLymx0s9MzRHJiLU+Q==
+"
+74;3;1;"yeuFtLpRpZ7TlPqf3R19CQ==
+";"XVfZw8+JagVqFUc3B3IbsqhAtTCEu9jHggHMWxcvUd2ymq0Y7NahdOVzk3L17W2QcMgttdaCpEG8
+5gahwDzuoHnA7jLTm/o50Z3LtxxbpXo=
+";"ZyQqEuMrXhE7KzuaKykX4NzgM2yvPTX3Hc9kkc2c7Ok=
+"
+75;3;1;"oiTdR5w6Mdc0GZyPfQSgDg==
+";"AmfycOM8BgS1DyXqnQHBlNjd7tocGafIzQLZcNdJNzFawlAcyFipm1Uo2UzD+BUJ
+";"SlXHUZrSEBzSBg5xocBD7g==
+"
+76;3;1;"kC218gdmnMBcHc8FzGd9/Q==
+";"h4AUXKMeuv4JxzoCRJHS07ejzCZsmssgEGb8A0zN2h/VjzX7u/4MMKMa8HYrN6+GU4ub83pgJXtt
+B1XlDadN/g==
+";"iYYNi1PQAEuKddQnJcgfGhyNHPxbxogn3QyjTl6bD30fyTGZeLRPlARDCJiu9416
+"
+77;3;1;"yc25f/E2Y80DgNnUL1KtNw==
+";"MAjvF7nRZfUvyfklZ0+e4KehloX4fdfoHUdFnKLKL1uez4Nq7UdI3Njri71Rjdyx
+";"rCwo3gFKBYsoafTfvExcMQ==
+"
+78;3;1;"D9ZhRozlqEhUFfgobuXbrF/v4uQJ8xOfOjZoAVAi09A=
+";"Q26JC+KrdHCwP+Xgoo/xBXZhcF7l2+TlJf/z3Fr0ZNqjhVNfJVKBnk6RgPy2uy58ug+H5SsEm5Ks
+UJxEoFU07g==
+";"AQOva1+848S6kzNfFK/bnjnYFzwKolnnC3mLlKrnmSM=
+"
+79;3;2;"YmNJ8l5cLNxS09qRGJcAnQ==
+";"FAdk24Q9SZnHdeEsvO5n+zIYJsVsTkpr2aqvhb0yeDtu1bfRYtkhRihJRJClmvoHZpXkwzUdong0
+1EtGE/PtrzAJ2qCrBauymcXiasMdqdU=
+";"TBbYbs1JJmEcCj0+jEcWmRVaRFYDg6eTx79IVXEvxZ0=
+"
+80;3;2;"lJuwFMVzFj6lACoxcDtopMWlP+3Ir5RdX7t9gTxuQTU=
+";"LXiH/p2XruDp5wZv3gkvz4Go56rbgK5q+vytmBYlFQ0=
+";"CfO37oB7Zjq8lz7Q+eJ7soNtSkH189GrYNlqrLCEzUgDYCM3xOjKN1BV9513VfQC
+"
+81;3;2;"uE1UUXIpobeh0uN/g+9Jxw==
+";"LVl3z1DABr5dMHMd0Rr4Ig4BwWruSypdpK3pwMyc5OQBbODtBdlmrPGNFo34paYsyVFIgt/hpEmX
+fc/H1cLGLgt4gQt2K9QhbMH14pKSPlkkZUlOo1vFvibYeD/9VXoJ
+";"LUWKpLlkZZ7w5fCNgzH45g==
+"
+82;3;2;"8MP2OT/pntYzPCdKxpeZjw==
+";"BDpSuLnIEcbOWIeD3AxvjrB6XRM0nJ1rSs6NOuE1WbBtmebymSfCbTG3NgDa80klvmEXo1dsCwPH
+4gRP1AU0r1eyx+eN+4og9AMV9EVksvqyf/y0wt3k6ZSGcg9dAOwDsq8nC5YkWOUgKL/42YejMibo
+Qisvctp12sPlPsfvzN1aB8I4e0T5G8GvR7Xd4Z+x
+";"c3M4UcV0H0NrLJO8ccm+3aEoA3qr2c+1qRKSenGz0yM=
+"
+83;3;2;"63vhTMJlJbaFYeSjnbdhSQ==
+";"GnseEyoxdQHfMoHTxhBRAMgqnmXKltct6xq+Tb0HetIxSncM5Jz2teQfS6NmSsSsQTradYQ/TEOe
+MnwCq3TfRUkt11By+5Bb87hv1a+MkPY5DLrSsCqzJLRF0UYJ0HfJljVw8Jn98bleevlotUuj4omP
+C1wT40To4a3jCaE6D6g=
+";"94aUGEShbHKNg/NYYgkoI6ZRfxoLOuxjp6MNaamwbIo=
+"
+84;3;2;"bayVFdkQdfT470hq/3Bq+g==
+";"nKw6qFJ4dfz8OgHQyiCgGlXWCd2FnDOSrIJVkZmo3oyGxksrSFnTfVumePmR+47W
+";"VrlHt4BKvL/0nTVHGVw2g257JlE7gasnGxZNbldCCCDAYpAT2mViHtLVgcrIR1wk98+GDO3dU+Xy
+9Bpsw7eDAQ==
+"
+85;3;3;"U5Kvd6P4AL1gSOdc+lCz6g==
+";"+5koW2JhlN1pclppVpEyf0rlmJHou/pn+mnSCecC6tPhW9Xu7uJF368nBi72ahgb
+";"2BtS8qUiCvn9D/n+PEaF5A==
+"
+86;3;3;"6nIDSK3RSKVqSAgoXkegYg==
+";"T66audbS4g8Y3lsJvFa+a6mQPT1nje6xF9BrSVfx9KM=
+";"JddUlGvxUNrQkG3Z9iXplQ==
+"
+87;3;3;"s1mYEPPi0yiF76RVYm0sLQ==
+";"cZaGJ2fHHAxkGqK9Z5xzje1PTd5m0G/hZtLQMnbXg+Gdepq/CbYEBCd79LmadryUioXc6/9CNFkJ
+zuCg/v/16w==
+";"97581AiCAgxtiKAo4j/pcg==
+"
+88;3;3;"bl2qDlGhCpHHJnNs4Nb++9IJWuLzIsn8lvaxJma2tqA=
+";"+TtBwsIAlpBQ4Hc3H4FLeu7sHChFuwAaw8qNqXEhl4A=
+";"9PIqrpsOUhNHbluhAPSpRi57tAKqjsZoVfgcB1zOZhA=
+"
+89;3;3;"SQq+AiJhkZxFwy4pO3xJjQ==
+";"mIotQ9ov33Zz8kokPXRP3V0ANrrrAj+X4cfM8nx0Qml5Z2+HanN24hz7tFepS/qg0vBXCygqqPMh
+fvIqGjBmFKVym2APpa6mhVsHpUDxspY=
+";"TYH5aqIkZjNhiEaEA9zp9buVE8ogqddIaBgp/jNJl84=
+"
+90;3;3;"vRdlwXo5WPeQtx3GhHS6qw==
+";"voyx3bFTLJSvZXoQgE8ddciZgTgtt2dzd9Y/In19CSf2qrOTyyqLj5kPPlRSwQe0+JAG4tk/kdjn
+OWib4+qkuzLr3W+99pWhdH2aBBEC8/ko6IsMoeZ7rtddgIEjChD6
+";"rZLvfDqE+ec6yhP+TK0o9TyKdcA3WLKqBWapigxp5pk=
+"
+91;3;4;"q2tJfSJLtrfWltWEg21ntw==
+";"7LZjE2Woaqes6j5NNEmF1xfVQ6VQktTKwCjE2muYoVk=
+";"4+5aOrlfZr8SHoM2IspM5PgpmYLCqwKc0SbvXrgoJKI=
+"
+92;3;4;"a+v4MIdxkmf/ko7k80yqlw==
+";"BEedYbujE9jpe+nW253ZWwnWl/qRep3U+dHFxts73+4E9ukkqfkoawaTS+blDdwq3yLd5PFZppAG
+RlYrM4wLuw==
+";"+VVWWM8crs/sP90Vkv98XFAq8wOzRTDvy/PwHZSk5wo=
+"
+93;3;4;"ONQLk/kPXhfNubnrh1v1GA==
+";"WY/uefPaEW4/nfrufjkqsVR43Gr2Nu0MuWCc6PYoVp8csquyHkAI+gzLgZZPq9OsvOkJurH2VVEC
+CnQZZWPV21TJjwSkwdE0519O85R+qCGsxqwuLoD4wGsH/xWR4TVf
+";"sKsU//+pSwMfKd9u7Dye9Q6+cY2dRF0tLw7ZKiCGrK4IM3futmjzwi/P58zAdsAX
+"
+94;3;4;"lQLWYhUfPECTPwrhBfwRd6C72icnVTOmXPQsWAc1dAIuoCI3nsNMt4V/CFhTGi9m
+";"lWnjgsBVwGoU9p+aHu0wRF2uchaCEjiKqbtp5wuZ1wH8cHFuIWtvnKIQ+tqRWYX1eFlkG4VGQv6q
+RN8oexM6hQ==
+";"HMHSFMXeGUrrgckeMaO1MOGj9wAY6bXId+DBGr4ktZ0=
+"
+95;3;4;"7X+ByuYQUJQF5jbMZisGUw==
+";"fkPR1Slz3uyxQjIus7FM8F8eAg725J0oHka+7p/ZwTdm8qLRPBqrlkfTKKuozX0p
+";"GmdT8pDsnsBu9J9C4x8LoCxae5BYAcK5ABcEA7rhh3m+FC+1gp6K3z4XvaX9WnLr
+"
+96;3;4;"tonbqYbo2LH5BbSpKEn1Qu76SpbSc76vSrPxJz2+QTE=
+";"C2HNGgwe/IjzUwG1Np0OMFOAHxL+geSuLk2uWpKsODNNxGQiKFH34qaMm8cuhl6o
+";"kngHnWeFE/OuXM4c7jBLjh1XevbEqrpYv7KmDH3bPIHNUPFEbK2oqdBZjDuyD9W9
+"
+97;3;5;"466rdvGHwjlJirexPoxlE25klDgV9n+iWXo2rpAxKZQ=
+";"Zb1ehZ+6DaISAZNFWib8DQ3vhKjTgc7zcwY743ttbcmXkfcH4AjfgRWB8DkfMThtF/fckjsstizM
+hGBk34qo2P5Fp6Uja0qveVdq/T286R4=
+";"ZI8BEqaXuxXh05iw+ArwBku76s0oKJbNOk5Wfi1CNDI=
+"
+98;3;5;"dFeheCYFZwq+Cybjh5fyhg==
+";"dLgzlXOQlWomQrHxHZkxk2hvbYbobqHNy39QvuMicXE=
+";"Qs56u2rKpAYoxGZ/XzQJpRI4b/yxkbLfAO7IiqAwCQ4=
+"
+99;3;5;"7D/Y3MlgjFuIL6UDFYRbLE+2Cwldlst/WAjCIR+V4e8=
+";"fH+eHPYUpmmzfp3eqkYvUGuntVnXFijDg9hM0nbtg5qdLsFkDRLljFsiDLvFdEYXAsBDUB8yP72v
+kPssuMp3hA==
+";"ugbnxgIr8B7oYw5xN6Y/UNIS4Pw2nG87x+bSN6s4TgGCdiEdrpcNH37EBoA44dufh/vVdZ2DpLoq
+bt4ztgho0A==
+"
+100;3;5;"nL+nFJAzIoBXmpSp1WIs9w==
+";"rhjPFRFEtVzVLKB3I+DLGcXZQQKcB6nEd6SnfcLO3Pn3Lo8C8Hf8ojTezJnTW3GgTAmjoUTmACGq
+uSn4jZFj1yO/GqJUUoTszEQf/fwqcVLiJbzMDQ360zplCSEMrTBB
+";"OosnZ7pBq+PB9VbTT3OVwOrlCg+c2VkhfPEzb29yzJg=
+"
+101;3;5;"iOgvzLWwA1syeRAMZBqYu8YB4BPxN0gfXbc2SN6joPo=
+";"s8JtgF21BZOdDx4JFSwBAErATnGZ4zJl+4pVPr8+/fk=
+";"00N7Z+DPTzamfqR8maLmTUdwdxTvyDVQbGpfcZcNoST0E4XiRdEaTBgFioY4zOee
+"
+102;3;5;"QtT9I4XbTWcQ1KELt5kXDw==
+";"6cSz577kDu4XSjCFpKmutS5TmhcFnwJwiqTeG0tS0LULFsL9QR6w5S5wCdsGr++Y
+";"9kZLtkJjTMBpIkwYHmKou1kHJa6L8BKsBuhhpHjzlnk=
+"
+103;3;6;"0SFKtqREdFjjGBzmlpUd21NdIkYinjSbFZFhdGOjh+E=
+";"1v/tFPEdKKHQnrs5zMuJ/d4Zcs1EKzotrodApGCOL///c0moTvmlWdTvUtdyYSq1EoppWUdtj048
+DyMAMyRFfw==
+";"/55LPtENBWq6BKrSZf3xPMwMNSN7dZGeYQvguZFhmtk=
+"
+104;3;6;"lOHcQ/vrcs0y/POhMl4COg==
+";"mLifD71zCH9XIXywxZrnOLsWji2Cxhv/pPlzRWiXmQ+7RncbHNW6Wh+ffCYKAcfsUf98AoQvwDVS
+dY+AkSmM/PX4MYNl11F32OrgqDVL9Dw=
+";"KV+DvFVUMrhigdel4gc0fX4mq6OF5PeR3Y1i9TgN5xc6eZShpKZmF3CYTz6EQhZu
+"
+105;3;6;"qpb2pOc3QwPRL7NIKsgXLQ==
+";"1XxJp6+3ha11h/n2xC0aop26qK4yEqz5PgF0jknhh0XtyV2K9THKEFrIGyI/O6J1NsNP/fKS++I+
+IEoEkdJK5w==
+";"aKJEjK6y5+vY/8ybINc1/5DWqokGXBNfv55caqa5vq2Ri7nW7aEwnueMHzQnQ3EijLGsgd6jjQ70
+HeOPIaZJnA==
+"
+106;3;6;"cytB7edzEt0TzA/dd+w3t/rCSUxxz+cf3KvQRkSZUzX+jQknIIGA+N24Mdjt2ZI3
+";"f3k7XU/rC+2KsWBrvZoHNVcNM+chqhXDzmE9rXy5a+ZpYTj/0XkgVfkwVgulTV6UOHYY2zCuMDUh
+VeZn8Y2qMg==
+";"0ozh6Wo+leuiGJVgrsw7Pvfunx+C79vVvYQ2cRltp24=
+"
+107;3;6;"gcWKlvSjGkpgDTicZgXT3VSP2o37ubwpsib4abZuiOQ=
+";"8aK2ilbdAW7nYdSzLRZbvxm8QcFs9yvYoQPBUvMWls5rY8g367SitGtRaNheLpUExE4keX5U7QHR
+cvFJoc98lNKbd3twthgorngHD8xZwiqnPtLd8S4nhHnLyTp3vVeEvMi6T0JN24N2DVw81pe9Bw==
+";"1WRQCufx89u10M8TkbilmLFEEUmbUA2xXnx4vdISD0Nn0/LUTYDzXbA8bu5dIQd8
+"
+108;3;6;"b0lHbvBaQapRESiyex3MOQ==
+";"9xfcJ+rGJcsyLDO3Vcr5x3Ahlaur9PSHU+Okf2T9Ad0=
+";"wKBk8ZMI0FYbMXE2Zb+UxnPEsK95z8OWqV0XMhqlDhA=
+"
+109;4;1;"eZ/VSm5Vd0+mB/PC3XV1R5/0UtvMih4Op+cuirYcr9A=
+";"hOE7EzfFOqzQZAfw7ZGZnBKlzWewSJUyzXGdbQ9oisY=
+";"mkZi9iCX0qBcMzBo42Dx498kAAWjnU2cBRn1uHWEvjSGuYVAPSCeLD6i2OQJElHTVoPT5Ouy3m7K
+fiJjc4no9g==
+"
+110;4;1;"q6cL6ptT8Voqoo1GBk0a0w==
+";"Fyu782TF4uSe1ikPsatwPO4lWgM/Qh74mfzi2pbFpTs=
+";"GBemilS9wMKFeRMM0oz3kLEZGktmHnkAO071IebQxsk=
+"
+111;4;1;"iV0eMh2Pty2bRzVVKQbCTsVtLhv8Ezyszbe3+qsS6UE=
+";"Li7QJh6i+VHu16f6V9B3uvA9vIM7O7E86ikvacRvY0gRfubMjvugPHcP4Srw6yXl05gAE57CezMl
+Mx3Lkt/3VaSiwN0qHSJBedqJQBFc3DnAVN/ZIasmFYQv63ahAVgC
+";"i2fP/iHQBMN/wYqQ8ci6K3i0lKHyXOfP0Yy5zsh/otQ=
+"
+112;4;1;"afN5FYyNJAZ0a3h/KgKoGg==
+";"ErkH6JpoEYUrCI+e6vriOOBjwdDstsBBu9l5vETuLAw=
+";"TwZ6wfP9LNnok1W9FaZZQ3O5d391GRjkuKJAAe/L8ka1JdSQEvlbScTcPccNMC+6
+"
+113;4;1;"KSSUWdGw6vzJfgmJASkAxw==
+";"9iuj/2F9LMDSioEY/7GC9xjMSHSksazyRy9g8cVjNh5cANjE42MAC0D5GEPKrrju
+";"0JbYpAtFMW0vJQdwktAiVg==
+"
+114;4;1;"HeBgxIma1kD3VeMjknZMFw==
+";"xUWvNMyiWOamn0PIh6Pj/ptqvpkxt/D9gcwBahUasX+TpR0SR4oikya1JK2UX37+G4AlMZ49TnbU
+W08fh+yYCkELOuczHZfNumBoPVOcyeQ4Sx0lslTnsK8hI+r8/RyKvGneNBEpZVDdBlkC34Po/A==
+";"jJ+poxQ3BZdbtwRL4JGUkw+J8buBcA2Ob8rF4txch3LEXNTdfPOMf0Ebw3cNzvRy
+"
+115;4;2;"bAkhUnxTWd0zxftqglUtPQ==
+";"J/ao5jPHXklfidPJS7hsPymNI8r/gAjBkqXsCRJ7qpu2UyrAydyjQYIdLRDNjxzmEGNn+Vqz83Zh
+i5hmI8gDzQ==
+";"y2bao/3lzcSaFUuVXnCVQAQaM/lD71r2cZZkceK7PqQ=
+"
+116;4;2;"DZufYZR9YDJxadNzUrKJwg==
+";"rkqSuTMSHfQmJYhH6XPPrIbq++E5iTpJ3HnkyBAdeaUmOLTPxJbdIcVcegLIJYM0f8Zl9sXxjaBX
+Zg4iiBv1ZQ==
+";"Pf1WBPCTjIW/KgDQQaI51A==
+"
+117;4;2;"VwWtF5D5PlttSXwnsve/Yg==
+";"AQd2PplA6i1dHueup5U42yYjKn3pX+/Dppl+yy/y42RZBuRepR14TbUzNG+Qx0cuZmMhYsmk3q+2
+cAQX9cQOUvjielrEPSoyWPfupiDQ1Ls=
+";"M71I9y2IExcb77lo0wC2qA==
+"
+118;4;2;"Iot74z7CJ/IMXu56f+wvMZ4siujtyGG7vaduarxiWyE=
+";"CMC0sI3NqcUhBnTDj5xipdQ5yV05wQ1C+J4lHVfl9BUsfz9lx7pAPvCkxhC1a9hz
+";"10pGYsL1c0yJGeXb81FX+wWnJw78WdeHDf4brXSyKv8=
+"
+119;4;2;"3uZf/YGrRb3W/o0fGps26fczzfyi2R+IL5hwqIdOnLQ=
+";"/kLCsensdtI+vsKMX/YjBScbPDlwTjBGRLL9QUXir4If7pMlrH1HH/4fdzlyW/6gLO7YYUV81kpo
+im6y6N+7RykKbQQf+DK/3HhL5i2wnNXBRYYcx3kQVahECgkbecXO
+";"HZ5HHH7CzF6cm5dqFrdll6psgMAA/D3Bhl9sZwL5wKU3cPAAXtbTExLLvpTaIWWk
+"
+120;4;2;"OR7ffUg8eXiKkVBPbdBycg==
+";"ZcpQQyuYIHaVPARde43YqwFAbzJ63S5+kGqi9m9jq8BUlK1JKXlTO9Z/xfzZKoHe+Ht0ZgQ5qQw2
+YmIMXoucTQ==
+";"uWq1WFKjd0mO45OZ+5SWOwGxGC/BtFRgFg6Qqz3A9W4=
+"
+121;4;3;"5KS1i5U2Xjqtem/rBhxd5g==
+";"lDrV9k6g/jYF1MY6uBGQHMXCnlbc/I4ZshFTfKm1VSM3dS3JZ7mrCe423xWSU4oDT3h9jNl+D7Ry
+I0Xbv1i4bQ==
+";"j0NrwuWIz/9O1szJ1kZOQg==
+"
+122;4;3;"ikcCEGHB9y+akWWRvn84XQ==
+";"3EmDlx2m9/wZ7/eyXKCE6AxTRFGuFAsnTKiCoF7sG5FGD1j26HorVnWHOkphRsOxXth6sOXARmsl
+RZiIy4plWQ==
+";"p9wxl+MSiuCxfE74Jd9MWzVQmqWsQ7cpkNPx+GUJbgg=
+"
+123;4;3;"XUAwJoYU2QIK8LRj6yaGgw==
+";"qmcr9NESbI8wJxeNF2ohO1ITNJkTj2BKPPR/01xUkmMSrrsMzHobGdcYTRd5URJqNAVg6bmmqQDw
+P8F3BPjGsHkhF+/vhLRn5pzg2aqSlZU=
+";"s+U0E9YyIQyfUthqTb4HIzzQytOmFiuZ9DZBj8tf0W8=
+"
+124;4;3;"ubKfZ3YIqkof/eTTRVYOkw==
+";"Q7RmxuSM5apna8e52BklG0LHbizOW8y4Cp72WEffZspHL3n2DfYmgTBFEhxgATygO+xbtgUF8o4o
+FSCFjWSIYuLDfgV0l+Kb6LdCN47tvLQJh9G8uKRuu7XWxcK3aZc0
+";"L85QL9udfo4zOwHfl+H5YA==
+"
+125;4;3;"YF7Qzck1v3jjmvqBasiH74x2H9ycdbZPfnDZa+4qKn0=
+";"Vq1t8oqy79MIAyb8TvjM4YMPVXWJOqUQkZFJXDEizmodRGmSMPacieKmSH9/k66SJUne+C7dSVpM
+4kHbm/AViw==
+";"IgaW25M9IKDDCaYhiZ8t6g==
+"
+126;4;3;"9X/LsFsiUN4Vs82RfaTsKQ==
+";"w6oMXu06rE+FW5gjDIiFpLBuZ26KWys5CJqvdMa3NSrb0/Q2xWJHy5kloVwzf350hqknocPjaRpW
+SXxHelJvpR4V7KDv6WomJAmKEnzmBNkmopSnV2q6/hXlG7BwPJqg0GJ84V3UMNTfDw0wHeHacA==
+";"tUWMdxQ16/oM/o0pkUWPig==
+"
+127;4;4;"j8o275QP2KYuut+8u1s7DA==
+";"Sokd4SkQRfg7wCSPsrCypO5EWr6i5Dq821huIvomlBYQqG5v7XxN793T3Pkd+QFxy6MrdYq2ZF1u
+CM5nAzQWHA==
+";"bG96fZD+0ebGm9zpwK6SAw4EQPq1LXpFb6Ij22K3Z+HBRRKwZgZd53IgSe/y31xU
+"
+128;4;4;"q4BOGwHyxFodwjXBv//Fbw==
+";"72Znyg/36zqPtB7WQMZLcctV5Y40832mDhxLVJGilqMLMAqM8QJe/ADxML7iMEov
+";"Imqena+S9XZ4NF+eUR6EZG+71D5cSsOzJhEExFTCjeBms46D7vJ7GyRfbb40x+GB
+"
+129;4;4;"hGMlmoOC5qyFLyFs6yS5OQ==
+";"VZe+HWKXCDWptfp1rOCDbGVIGIUmi3qvT0+p++ItfLfg0njgES0QrZKjoVlbFLhn
+";"L65nYu6EOFkJ9a98t987S62S/nIKhMkI0ANykw3Xy6M=
+"
+130;4;4;"PgfWzwlJM6HLJscYRsdEM+DBGgMhTErMKD4fmGm7mfU=
+";"HJpmHIuNCRA7ph6CwnZFrFEZLHdfwuC6vafBLvTH2W3oGPS6veFtddp7xkX8aq8LiiXmjksLZGD8
+dSmqazWPmvIjXEJ5iS7TT8G6JcWT0pOXTN4UEkHf9d5h+wsSKoM2Lc1wUb5aGBzKFOjtonAR3w==
+";"y8GlhUsf94OxnB4QaPR8Ga6Gw+QUDWopTF+oFNTXacigQ7PlBJ497fwTu0PRiEh7
+"
+131;4;4;"OhVQtOV8MDy5SRSNqjFe+w==
+";"GcdJqV7YdYDMW6/7fJ5pSPSJW1/wHolxI/XNs/szD11rsHEDcJus3Or+stj2XiSHvIvKGXp1OJ/z
+VKpfvCuhYQ==
+";"+pgcmsU/V5Ms9A6RJ60wVXKzBPs+7ceIz5UphfoIhik=
+"
+132;4;4;"UZjDBjvpf6vw1y/oAnJZDg==
+";"amlEze5PFqRAGBnE7bDNqIXxcCEmSxCYPD+008kUl8/GDiSyHWPrp+18XABisIIA9AJiNXX0W4Jz
+TvJhap/3GA==
+";"D0APb1GHFroqp4qgTTGL/NOBEgt2Dc2NepdzqtznHOJxx5Yl/s0j8NK+zqTnZ/tS
+"
+133;4;5;"W0APE/hOJd2yIizPsH67ig==
+";"pfYB72ushnBg50oq0y+WYKyNtU+vj03n/TalxNqNT/tVI6Fb2Y+CG/GcvNQ/wbBRBDP7Rb+851tX
+0Og1teRRXVlxOOJPQWio+9L73Csgv9OwT9ygS1Oy8CziUI6ycq3R5aBt5Bli7+/BvOP79OyxTw==
+";"6B/GbyTwe370uYk4b4jzSUnEAEaCdqHE1SmGuzloRCYn4vT3gkT6IHsGBl2m+hIl
+"
+134;4;5;"RA8JqBu4tN1S5wExWcbasg==
+";"l6kOi4+uODbFxKB6s966Rr+NlDu4qiJLoh52CEF0FiO8KCpIZLTwfaSCgw0YKnrI/Vf2kpoX6hGs
+bNgDa2LVLX/pYJt4yqoybIVkVwaIl42uFfPA0EX0TF+s5jZ1OyQZmvFXqJDwNgqvI2Isw3YU4xxm
+p5UD+sa77XADa5BKAmVWuuJd0RogqkrU73/0j82C
+";"BDqsNhLe9zypPI2O6zoX+MsE6WtNFGrJ+mEJbENyID4=
+"
+135;4;5;"JULyyVUMLEuExtV+5nccOA==
+";"BHXJircxwz3A4Gp1/jc3+boIJozn4Hibr2q97XkD5J3vlpJ/52dPFyxRAvGJcKJgueI/RfZ//VQN
+VpU4VgJuJw==
+";"yfxKJayW9/uxvdmvWh+vZBXuWvJyBg03bgaVWS1/D1hrEtW6sZ4A2IW5kKKcU0WH
+"
+136;4;5;"+4GPfplfEfWgpfLXWlEfYw==
+";"LOIHTi37c3mPvQ8+yF2GvBPyNiHMxhbxntvpQPJpJ5Xgtvz43M4y/g9btQ4t0xXlVjJQ/Y3X2DiY
+xDpQ8RTteg==
+";"kXgZu5cpuJz4ZNS5oxpO4jO2Ap1O3sOQLl+VL/DXkws=
+"
+137;4;5;"9WKMT1l6JKlLT/TXu7WJ8w==
+";"OeuuEBpJfZgU4WV5IofQrOabsghYPsHYi/I2VEfJElJS50iNCnYYl02QlOAquzYX
+";"Eic/mDWRs/W5agNapBe+yXbotiw7UE41OSdIbZ43RbQ=
+"
+138;4;5;"PdbQxwtjTVCyjFGYlpXwgQ==
+";"2R3ZlftRE7GOdda/t9brUIklZlj0S7IX+wfFJiqtkal8UEfIfabVcMKCzLccyhzPxcWx6xwJdlTe
+EukuQ7FHdpRP7OKcypuGIBq91r4MnLroYBAnePFBuZ/BQG8aSmEr
+";"l84fN36BfMBMV5f1mRpjK5teUCtIVXde6u2u9eaC8Ts=
+"
+139;4;6;"nzAiNxjEoGr8aaxNpUMS7A==
+";"Rzs4j8Z6teR2YIz/mVE9buGdrLYnp0/+sSbfmogjW/mvWzSb0YlrYUhMyWbk1NQgTfLzyV8RkSCP
+sSGTOg5fmPxTl/nTRwlcPlgargKPNQA=
+";"2YAm81ENA03hubycmNBhFyW7aRHnSDPmzV1NznjDjdo=
+"
+140;4;6;"i4ueeBEi+6PotmQ83JL4XA==
+";"sN3ERSZVqYhExTvJOWlKOxduyZ3XlnZ4RO4p2muBN8hsBwwWwDUNghDmOs7rJpn29GKW9XH1E/rR
+QMEeVn9WLwM4Gwqb98X9qKWEFRmzoI4=
+";"u52wEXXu471A6oPvkWx9chnvt2PlXg4Ay4XY0iFRXcUZqxobkahJhONpKS2mArDw
+"
+141;4;6;"Z//+B+45hJ9W9cmVE+m2ZQ==
+";"yXM1nefpjRluEmAAhey2ieTFZs6Yz7UXuhRdS8hVPYgT4SbEz88s1qOYO8+w0VN2d0ynczx/U4D/
+3UH2tVvoXUKLibEf9ZLGvVLvaNs8pS4p3Rzk15ZYD3bkWZM8cN1C
+";"niSjxAMIAyhXVN5MDoq96Y5jfdovhfx0O5cYPE7tVVD8qEgz2WBiGdcbvxozYdHdVHxyQwVYjB98
+C5u/ieCbUrSdA+didbskm9jIwXph8tM=
+"
+142;4;6;"glM2ANV8bcO5CfTG0uGat5gIWOQoWsQRXWYyhBDUMKuXx3jXtosHQAE+WK+JIHyP
+";"ao0ygY4syjN5iWCgYYkISHodbjynBFzVdJ5g/SrHUTLu1/gfMAUXsrU2GAArT234
+";"iubOrlbRhh3C6fFDY1xwP6h9Tnr3eNt0lvA8Q8vlQSQ=
+"
+143;4;6;"sVNbqgXi1ZQnzMzFCFZ6cg==
+";"QIp6mPH2LZae7A+ivI9M/Y1FHg6ORCNG8fboXcs+dUmSuRTZAYR+r+0Q7Wpl9G5C
+";"ikasgl02SJDxpHisuQK7eg==
+"
+144;4;6;"5Z6cHbj6JnKQYvHoQCU/eA==
+";"LiA5LzniJgoc209fIe1hUb33E68hdWwoNte49gCx3TRfbZ7cXsgdWZHisA+WxRJHUdXhTLdoPhuV
+HbQc+7hqww==
+";"CUHY1BxVBG2P/jhLx4GTBtK2RaWfk19C6uKa0uBdF/cqmNXV873qKTyZv04duWweFF7LuZdBdECs
+zEvu5LrNLA==
+"
+145;5;1;"5huqIwp25HeKIQQsN/hNGHdcPPiUHc1hJrPgbv+frBE=
+";"uxsslJPlcr2eZNwVfMITACbbDCyXH4OHsbXwGgdbhqUaO73mFuGyAOnumyccjlD4+TDPWgf63FWa
+7PQxVVckXQ==
+";"AxZUfLhfLwkI3050dgb6FKRY4BeJmhvcWkgTwL1+yaaV0plmt4Re7Q6P6OltPIzQ
+"
+146;5;1;"5huqIwp25HeKIQQsN/hNGE4MRZjQtbvmCNf0Xo5M33M=
+";"wmjyJpDIqZPt+bcr21zwGEdAmu9/bKOOgWoa1Uch07A=
+";"9q7Au72YvfBn1/221Rnupun8nsLir+xLRaQkg9M6XOSueH+HyasC4TScDitfjFQq
+"
+147;5;1;"SELkcXkhlTNNc2DPPvUSFQ==
+";"VgvoI9Hrq/gS5Vd+lPxM8iG94bZNNdC6jtLy2t7a8+mKv/JoCcbv0t4aIgy8Hn3s2X0oDFy8/GNr
+J5gvWy2ygwf3LbJIbze+HnCC9+noi18=
+";"WaEhDfdL+i1ZH9iCahgvEn7o4aePjhnGcruWuP8C3Dzz2OKr0etnIXS9GTEn8uTytJnpNUB++q5e
+XCliKGvsug==
+"
+148;5;1;"X7mPqmq9+JxXaXuMvPesbw==
+";"2KVIkMNX+LojHet6d7twjgJYrhl00xr3+r+9PLD6aYK/CLeNQJCon3TsyTdL7xGP
+";"fGfFgwXijbZ8LakEp0wno2V1nncGlVOLs2OjUWJaiAhwzIGJxz5DZQupnBOZ0pJHNc/oDnQ/9j+o
+MUbNAaATRg==
+"
+149;5;1;"oy5nbOhEwpcUt8U6Ib8leQ==
+";"rhjPFRFEtVzVLKB3I+DLGQlwr0P1wGEtFkDKLsTlRBbwv/lHRMjGebajH4yv6eH4K0igEr048sbk
+oYRZMYzq6A==
+";"4T7EeR+IKMYKL7Zhm4dkE/8DZTepbHcDYOtw4XmKRow=
+"
+150;5;1;"NeB1mfTC322w3+Xo1F9jUw==
+";"MFq+ixi3N+UurdiosJcvQQ==
+";"PcPF0UcB/DRdXx3Y8nX9WAZ2JeNL9KCkj/GpksKa61Q=
+"
+151;5;2;"7ZKD4o0E8PY7bWf8flln/Q==
+";"5r4vpazsoEo1TZFy1Emt+G81KtD2QG3msmSevY4jx80=
+";"dGDsskytkQ6NILo/rJZ1gEqZG3TTm+bj7icHacJienfM3ZmBVHcqmfTfTxUnKIip7cvyXquDG2yS
+G9SqSrzk6V2zMa6uf7ys8CBwOQmeI9w=
+"
+152;5;2;"xBh19HinkD/h+Pze36wqvA==
+";"0u3HB5JNHPH7+4Nw/t/yZQUMeTwJ3lYfzbxKXA08Dbq0GK9M9AZMuGDxqNvcFKxFzuULs/MnfQna
+vky8ZhuO3OxU0BUqooM6XVFnLPqAgEP+ObS0jEn+46rjkH0w3xgE
+";"YBt/HioAkvbJAIpzF6S0IYXLfYkztn5y2zhNltDontI=
+"
+153;5;2;"Ql0OtB3LNl0KQIRnmpNbbVfdz6+wG3ffFZLVZqF1pVo=
+";"PjN360B4BBeUjy3cU3o+pChhYwFqL8Ika5RO2RIIjWhXmlaB5xo4c6dZdwrdomRIOENM9lQSunHI
+38qyCScMhOJmn22qWtABGO3HC6GX/10=
+";"KPnUuC3hTM62RL4k5NgDRQ==
+"
+154;5;2;"GdtPG1/q/REPpFsA4OQE6/U6Id+rpw6XnQhZ/0B0coyeL3ICyyFmfZyjJKXQTrgI
+";"V0jPfXNRBq4efVeltxktsdv//WDs7ckQRN2I4SBL6F3dGBwZVwMxlbibQF8FewEpXPMBtHhD3mfh
+xX/imc4w2XDdcPQq+RQXjL0IkX57RDQ2efzIdV43nCYc/awixs8pI62P53uEHafyQVkQgvA7aw==
+";"THj05phAjVEVByXF1fpp9cgzRdD18viLQ84HH07D4J7z/itLtx0NMuh/WRnlkuoDGYgZRl0L729h
+fpAbgHiVpw==
+"
+155;5;2;"1YqWMc0TyFnsGcZtXDV7bg==
+";"DPBHUheIe8EvvNfbHW/Xh++hknGQyLwNWWdFmqZI1Bw=
+";"ZxyZWyUCGbh7ir0wYKP81Q==
+"
+156;5;2;"bS3hikkZdvQTpDXxGqQEVA==
+";"5BxY2L/iE81wiadYj1X8LOZd5phnLjCLSGnSoOj1T3bdutlErGGU+qxp2g/h12bkcuGU8aRd2M8W
+LEHRV3X4Pw==
+";"2DfUOaACNFw0Q7cWNR5WDw==
+"
+157;5;3;"OzF4hYEE8T0IZsZ3yyE7/g==
+";"RckWFDFrVxpwzaktLxfa4tBNJ9kshXbomn5CmPfRZyxHx741qW/z4GuPyMaVET3uiCjDXKAqUSup
+bPs4gzNqCkyQAietepHD2TiAB58upmNppOC9I3t2xNyXfMtn2emKWeZIK4JYkO6RblSxQ85TSZC0
+nB2VCo2AMpbS8CvXoQ4=
+";"URZ6zfb4HIEGm4wlCSb9G7QEJm6v0uUsvKlQYLX0oPU=
+"
+158;5;3;"u5A/tYmmJlCX25OsteL+AQ==
+";"kA9NAaFnl+i6Nh6Gd3yHwzG3WY1yHe3KmYVYAb6OlNQJxRJ1ES+2NWUw4czTr4bSVRHUccS/62aE
+Q1wffAUzR55dBkZDqFtsZBWNAuthDw+/4DVPXacwSzevxF4SaRWg
+";"4UO+/OZTB9Kbv7DHmwjz2z6G1uPcZmYJ7GLxitcYgUo=
+"
+159;5;3;"+NLDOgXkNHzpLTWcYp03ZhJrDPj5QTHMO9Oe4/y9+Y8=
+";"l4eCpgvyMH9N/MT1yMxFrWp0E+WAEic+Qb29XZOM/dW7HDfxgvodI3knfbqvEQ9Eqb6RLh16HsQ0
+AeXpel7vjOnqC+DXrgXo1xWHtbKGvt/KkEIh1Sxw9uw0weBfPan5WVOBoGwPyj8oX53dKibvXw==
+";"YAZdbLBn+CzW7kL8xEjGOACOIjmZ7oQ+rknL5VKY59Y=
+"
+160;5;3;"7fpTUn4kHaU+SAwUB7Ikqg==
+";"N/hm0tmTlzZCUbFEpUcGV1iCMOVAtciDwhx5ifmIbz80Nb9AhmKfUR3n5xr0Wgc9uHhR9eR99B55
+Ty4XuHraSkhyBlBsX2KXkpVaeLfRDZLQ1iAEslB4LBofdFdpM2YoYjDDW0hGRhEiceLwZggp8Q==
+";"lc/AM7sMM9cqaJDzLtbQI1pUpazKC+XTpriAEKcJhpWUN1CNX0gyZvBhciBMWga0
+"
+161;5;3;"mvi1IkEnBHN++lWIiXop4wTjYd7+P6h8JSwyIi9F/WY=
+";"m176nEi2hEcMMmjm9iF9yop4UbL7+n6kwAIeEqD9lpZvNXh1hRTSm+G2CrroX8/n
+";"sYcXvHt7N7bZCNrwD0oOKzwd3GtGWPpXUuh6/TnC3nE0JD18vMCJCB9Nvi65zMid
+"
+162;5;3;"jet8Z42H1CLLSBxz9+M6intDoIMuCgll4VrQgisV9Hg=
+";"oDwkDyOVYDXELVWKyigbKnzgMG2bP0KvuvNwztii2nXb1LJgqQGRPu7lxxxGWf6aiMbrL1lh4kYv
+mvQyGQDSaUTmlkAp5k5NkGtVkWSGE0Q=
+";"ynZqzA2O5q+0NbNH+L/BlIO3QKBbwN8yJaYueIrw15ivG6vHRogyJq6EP3vAXqZGnmfl9SqCMU6U
+/20IpDkCfA==
+"
+163;5;4;"+GMc1VPI8J0K0xw68TAqWqoJndQmN/BInIQqBXauqwY=
+";"KVmvGpMoHjV1wMJfCf+Q2aXVazUVCOZVaId2Rlnx6gmvyydldewihO8OFC1+NzuDKgUiMOR5QH1O
+k5lua89XTA==
+";"lxUrrO0KgI4VsHQbcjQsr/7WR/hcmc/JnljdLnkWOmmS/iekm+gFueS90k2kwu/W
+"
+164;5;4;"ptSZd3EDJ+b+iTEMIS5/vA==
+";"CCfbYGbMJv+s0h+hvuQeOKORSW+0RNSwyzq6Ask8IMnMm4Y4qJLG81Ou1L18lhKin4FWTzpa4CoH
+NPro3y079pCxZ/ZEnuQ3auTXpmOTFW4=
+";"0AdLqMZtjbNIGmn2YbSPhw==
+"
+165;5;4;"jaJzgbye9d/nNRLLRptlig==
+";"l6kOi4+uODbFxKB6s966RuSfQISFc+y7VUUejhRaP1HMbk+hYjhZeC++bHEyfVYBf6a4irLLBahs
+6a/pi6zs9w==
+";"mxNA3TfsBtckL71Ea1wDIw==
+"
+166;5;4;"3gP3yupVf6ahvfVOjomqdA==
+";"9b3uVpG/tANVmYj2COOvXl3fb6GNG2FFu17V+hvUdl7hWAhheCemRSQL1F5Tg0mM
+";"gH4GCHxPGc4CyaEdMDRnSA==
+"
+167;5;4;"P9r46E3JBSyQX4n8kw+Faw==
+";"xD6HaLd7wplvo5AswR/WXD52X20wwy8AkfsGjLQSBip+D+Y7YG5ncNpuZ21ZoDwdYGmiJYiw8JSm
+bMTdAMYejextn0PYLWho3u16ZEpQo3XAz4cNRi5eIGc9hFJuH4Cl+VlkGB4XukdHB+fwVTVzKcUP
+tXxec5bdeayHK9NSWcI=
+";"ATbHfqFtNcR15BaTsGDKjasuF3ooixbEvZNQUekYoCZ7Jbj4DK+QzJyjVbNAMLPK
+"
+168;5;4;"dS4F8HDOul49DVfPU5bGrw==
+";"2R3ZlftRE7GOdda/t9brUOVn6Sz+I9d8dBlPUw7VF32R/B0ofiJ5D7wup0U7FtKORy/bjUyPnqMR
+grN37xC0Aw==
+";"AOmI+QrjdFrd0hxqfo/A8mL+NGnKAiQ+5jTDnguXISPCEuWxVWek1v5bf+8z5wCB
+"
+169;5;5;"AgPawOFpRCDNnmAB0x1IgA==
+";"/Z9EIXrvSmWRULWPWX5MQckc9amcdbC098GMmyzxNDkMllABi8NHU2apv9hlK8Jx
+";"vgtUMLDKi3fAwiJ+nsiKgVjBX74t52UfbmNTFAGkALk=
+"
+170;5;5;"VXzWTt33WIB4HzZe4Mr8tMy6CMQnqkZgt2ixM79TNr4=
+";"ZEIy7DsB6D9TRcl9ZyP9Wu2ttHEPmrmx5GMtchAd4DOifkzM2hNfOXA4z4Ujcr59E1U5+PeTcHoP
+UDvmrJg7vVvZAbc8C3ckETHBNZ/gBg+4FiLi51XUvGlLfddCvcXGJ6D0r8CEtiKQISMZw8nSt7Ed
+nIFjRCJsDx+ZiNwjPGOw//BDSttj5TIoJYV6i3OZ
+";"sUoDQIwcYeTeRQDj+cSz3jwqKQZwaeyogBPTa+UAFUMmyyDyE2M7uLgB/9Vzrqv5
+"
+171;5;5;"5PAeFVCaKF12BZKC4c+exQ==
+";"NwFGLqhCQC3IFdraDC5iNYUCAPdlkt9JjvUC0bOrGr+ceNUN7w5n007R3t9q6P81twmGnm0fphrp
+sZXme/xPjL24Wd9ZyRHYPIVx3z7JgAs7JcIT7Xu3dNFSP8lXTEdVRmCN6oRouT7s4ayxQJ7MQ3M5
+gelccVe8eNxeh3KtsdE=
+";"0a8Yuq0nNyFhOkpreN2qUA==
+"
+172;5;5;"zSlVTR9kdiE7z2z+jrPFjQ==
+";"S5tRmlhyhwBzvDsihGNvU+3xcRg/wGuZ0a4ik8pbt2bVbKUsBD/d4pM8Y20mvaS71JJwIUblhJXx
+Zd1zk+qCTezorewRcqM05VLazCvvBatc/getSBjYe5oNbzoqUuEx69LY85Vi50OPc/k2cLFd9tcB
++0ZQ76W2AMomdG0I4jg=
+";"axDGASpwWJJ+ALD3enWbloXiVLblI3Xmv/pfxrhKrZQ=
+"
+173;5;5;"5U0Wj3ocfds8W+Ezc4O2YA==
+";"NwFGLqhCQC3IFdraDC5iNR239dNE9YpBK9pm3biIyBqFRGKxpQ5Csdo4svS3pQuiiDO1IjQpQqkX
+OcfNy8rXORx8jWgiahp771eNRwDQ8xx/KHyB8kApoZ1ApC2jJlGptaMDiiukug4uhL2MWfqpC0Od
+AtPeYMLfpGCvdHFVig0=
+";"liFc9y7VGc9Cu7uAZkvlGo7ShHAwBLmuHhGhSlwyZwU=
+"
+174;5;5;"SAq1F6qJlDEin6yLrPVtCA==
+";"NwFGLqhCQC3IFdraDC5iNTGqXoT3IehHmTSK0SnFZE2AKcpjc5gFp7/OFjoCNEJzzWIokA8H8PxS
+0tQUTMt0CL4YKSyYYdutaOnxWLe4wqE=
+";"mpkRRv/1S9V/RE1iD2nYS7nwKP0UYRxGoFksSEDSzQrp7ADOgXou48CuP2CVRGly
+"
+175;5;6;"ZzaTcOX7S3QMo2h2OiE0lxHA2dO+bFmeRgeBERbRV8I=
+";"7PzdJAeWmkpqqkHigBFyGgwZWwDkQ8JKt2cy+LV3LQkpQ4KMla+HlG4RrhVBtoIgy/Xq3BSz0JF8
+uL/5+K5NH+vlZbzZwwT8DJtsjEoRoA3OlMmQZsqShonlI3E87k0O1rOauTr0rIIDR/c++ux+BvFc
+Q47AxxxaCQJqzFblOGERPwX/Ztkt5sa2vSoV/R21GHY7k6cW/48bo94stt6Uvw==
+";"KHrC4DX/NAUXFOHWnyzxrAuoHUIvOEUZ7CNIzqS+eDlPvb8TNCaT2rddfocTh8kJ
+"
+176;5;6;"5Dkcu0bwaEfKUGJecagqtA==
+";"k//fB2fGewG3iTijBVCT4RT0758x72SeShkgEgrl4G+mqIHhArhUpgpF4922Y5hpuz/McJfRsrm2
+SSKCp/zjmw==
+";"YCVBuEw65TFi8FjoyV6UGTKwPzkW5kBqGUfDA0JNZGA=
+"
+177;5;6;"EjoU0Mzq8+TRZnAoeP7P3bQ17XZ7CMfwv65RCZ4OEhM=
+";"trGKZkm4gk5LY5vpaoug8b9bULd8nKlKT1RFvZHzYrS98z0tFNFxZhDu0o9D2yeuVfFT74aYWr6w
+R0zGhUKEjaGPSzgX0BdYPu7X0qnNvtw=
+";"YtuUBQvhrNagpIA78iq/7uBK/jWZBEnSrRe/lPYhCW4=
+"
+178;5;6;"OIZ9/RpYuLcmjqK2id/LjQ==
+";"Q+UENlTIX6AGRD2hxAjl6U6psI2yebS/supWUr0qWfY0CT4xS17ELjxqgt50CMe2u27nAVwWM0N5
+60qmjS74Pg==
+";"3G3H+ge0O7QFeouGiebEYw==
+"
+179;5;6;"7OL6BIMl1tdHxLi1wUR1+w==
+";"m4EiGAcGT/e94J/8HvgYuV0h8gi5i+hhm+J8XKelh95QHXvhsG343c+ZpgtK/HkMvlJzkjBjWfHe
+y0aURXDeGz3Gn+iFIRgMf2YyZnm60P0Oe0JAjf0GRJ+xSSiVGDHK
+";"nrP6eps3y5QVo6nJgJCxlQ==
+"
+180;5;6;"Sm2NUBzDAGPaSNsB4nSDfg==
+";"rhjPFRFEtVzVLKB3I+DLGVdb8zcOVAmus1xb18dP3ckdHo8NcQhHzvidxiNnGLPpHiOf3KCs7aaC
+DQGa9m40ESOctG+kAlEJTOwvw5Jnip0=
+";"FQtG7daVkZgu0HI0qlG58h48clEMJA2BlLZ/sdEx3cE=
+"
+181;6;1;"F0SsAwrsiNUMij18XMqqig==
+";"nCavLBpC+uwAvE5D859ZNoWGQHIaUBQeWUtqYlJazDC3fG/0wqsp0S6yPoyAK7VZNsN4vxwYv9XP
+sJofvirbRcmLPXgy3VbxetyYCzMg8WHXB/gLFDsYAu3UtO7ksaie
+";"5alGhbBM6KSL6jNdELaq3lI08j40JjST4rW7rdknqYM=
+"
+182;6;1;"y3HQkG4N1bv3QLAsM97uiQ==
+";"/n6j82jtfgIuhMkz911vDQ==
+";"cXsN+jbId1fa8GgLmF2AtLV0OFjO+e0KfWKtURu+HBI=
+"
+183;6;1;"byA+ZVSSbPYeG63bGo654g==
+";"vcNu7ucjq16PzLq9jFsFI67WjlHMiny77f4tmje7zrNVOE8vF5VMZr7SIFtR8qolK1ILYp/FH60S
+1xc/nbEfk03BXL5TuU/KyHy5sP9Vni0=
+";"6lJoY2A6AWKVhK0revY2rA==
+"
+184;6;1;"Dv9IxBXdSWYIh1twDpCuGQ==
+";"PMI85YSfCJEAiDZCk6AsGADzty9wetJRWj7jUN4THf+Wcwx57YyWKibqZrenkPVtIlsrHY1bB+M1
+61N4Zi8k8TrNf4hR6+iNr7O4ZqJiagG0QflhMIhHyl5MzdwJKaKf
+";"udL8663UI71U/fDHB/m7hi4NkaLkzfjmPwMNU/NUPZk=
+"
+185;6;1;"vdW+xb4thiQL6IR4dwnkmw==
+";"MqIQND63+4ZuXL0u5o9ByIUFcu+7temO5mdaRbTQCDRIKwhtKGKQCEHzJA2Kh++HyJy+4WMBhmjG
+uYAmrqFhIznzQrGtMsoaR8uJbl769eMrFh99zQAmtTRP7ZK40/x9
+";"3h/U4E7wrT5LrMBaNNYrxgE1VJe/ymEIA0lzq7btfq/AzvMVDrmBLG7ctg/O8ctCJ3f5vg0uy1zK
+567/yUI5Fw==
+"
+186;6;1;"vsOqSlKjyGsqKhDFbxIYAxux81enOvmAhNuJuIUx6cq5yfvTPLlnajgMMSDz2ij2
+";"NDwOUL4ZsgaB/QdHH46BBez0EnuoYZ3hJeukqaLgfbgQH/MMqJ6rkCgyxMFvg+Q3KERDTiX9jgkJ
+LY/uJDs7ddRQbWpR3HmihmqnAT+5gcufkQZe+qaqOU/4tOU+Xe/h
+";"PTxU5ojg5ziN+Rjr3SiBdXLXY4KxCHK3Kj8s+reHk1Psfrd5zoxTuasi9InKljmF
+"
+187;6;2;"qKVJPCpZqAxuPoVdzRjdqVS8mmZd5CVwvmEYOdv3a4U=
+";"Zi0czKb6NA8HTsuEOipelMe0747BCUjW+zj8hGcwt/c=
+";"zqf4YtnhJ+XzQjG2At0fvqG2kM53o7lrTeSukWoK0QxAwHED3GkKq6mfwD2Tko7V
+"
+188;6;2;"jqX58asZPWzS2baIWnKwUw==
+";"4vO7briKCimPbKfj5BtEZFAuSyVRatHz+A/xnPgCaD8WOLbrUnvQj+EuNd3uEns6uBSrMCveSUPz
+TIKQe0yZbrUR7CvyyRuePZJbo109g2A=
+";"Smd9oVHsp6MqiMjAolaZ7A==
+"
+189;6;2;"4GQbcOdp/W+6IgVWakMFgQ==
+";"z7ji8BKdVckoOzSSH9Mx/dpcOYGNYscXAQMPArRZ4y16LnpC4Y9SQ28MrTBNhQED
+";"tyj+57nJ6N+3cqNLfNX8og==
+"
+190;6;2;"XFBbE8CYLUx67d/rTFWhdw==
+";"n6SHmTgeeGM0C1b9ScbCEA==
+";"hGPh4UPN13WKGzWkw+m+62m7uv6DZF240icugyICq5E=
+"
+191;6;2;"AU7dX4jOfk+uG9iAZYldr1Ee/35/whG8O6IvLdWRu1uVs88aCmTr5InhJ8fehhFp
+";"offZ4lGzOKCSVfaH66SM4nEoDk/VchxRuBM6knv18HduGp29Beso5nNdhYkSTY0GDI7okRQtyN3h
+G0NbKMufBFGdQTe59paSqMCJImfssPSlbTe/P5jpO89ywOtqyy9vpHfGRM/RqUlNeFbdECZNGg==
+";"9CPXIjKWpYQb8OPzOF6dnqMS4ohBg/3uTEKD7QLjBTCo0mnwm68MCx6dinyK0xKEBkxwM9HsKqc7
+1RORXfdlKBmevzyJOralx5qTm0jxDN0=
+"
+192;6;2;"pn8cmNf7doBEfpRPy6N2qQ==
+";"dR6okUzo4KGuZRbnShMGQFYRErONV6FKsRDKMvK+oCRpvBDqmL2CBO7rxO9dXXYTaeYp7mw6iVu9
+wfVelQ00ZA==
+";"TWmyz9CCQVuOH2fpLMaYYBJzySjYX0Cf8pX1KpIyRg8=
+"
+193;6;3;"/f6gqdY0S9YjClmLdHtQ/g==
+";"LVKEWSG4Nuzuv7A6LvRDQB2BGeJRS4/9xtbQStPCJh6yGTYRNY6qWQXTwquA8fWk
+";"IYzVV6HWiTsHpsWneUR5gw==
+"
+194;6;3;"QIQ/vxtIzYhXIaVGM6xFvJgxHUqY8FCIm9no0HwAcQc=
+";"Ktd5Avm5Qto1yDGupSDJKcJYuH53Uj+PitPCfT4wVCxxWdXSEA9ZPWfHoNPESJcAJtYQ+pvqZHl4
+d0r/GVDKYA==
+";"O52UJBWj95pb2ZUlPh+0OdFdW0D+kfo5yISXbU+4zuI=
+"
+195;6;3;"DmrIpDyWEy2Ueg86+LygaQ==
+";"KDaGa8iUQMY2zqraMfq5gYyDtsDUCT3iwacwm/BrAgYoeR2234PV9K5OHoPhUq8bcGcvgiJg2ITX
+qNWzcgPNw0+DWhPsD2qHmcUHTPZrKe858l44cmRGzADmdTvfjNMo
+";"C0xtzxQ+6HWuhERg35JHKgGTFhm86aoLfmoG+MCBI6DKHEQwZMRn1cjLb490ebbmnHmKPAE+itlm
+NAvVhma7DQ==
+"
+196;6;3;"V/eln1z+wWVW09bcZ5YdLQ==
+";"3AZdl+OMO3aTPgkw17qLU+ntbuHCNn7FO6f16wGLpDzw9TuTa/X6xaJ1LEMQATJQF2qrg8YMWMh4
+8lyLY6lwl4NYhHGYNZfTHH8sVv/1xoNEcQw/+26Bh2d07QjZANGc
+";"whW3ixdweIht9w6lTY7d7g==
+"
+197;6;3;"KtovlyQlKfBRJqQfiVPfTg==
+";"LQ9JOO1K+ERzSAjOqToBWuxAIHcann/zL74jdQ8WM4Zc8Rkfi0HEDDtNF3mEi64/oHkaLHiAE2VA
+7t5fwUIbPhmW8TauSzJiQypc10CxU1MdzPSnzgiFYLptMTaTL+P6
+";"2wqmMruFT8KNJRLDLCr8Vl/BiT0ZetFpDxDdKJagoY8=
+"
+198;6;3;"zhmEHbVNv21uy5AOUxILCA==
+";"QVusm8ufRVBArf8pzZp2rxOVgxGFWXDDlO+3irif38LMlnZPIWMBzpjFA+TLC2kb
+";"QmgFUM+qendSufv3GkDNhhuujFWY/Kbzhzv1jV/aTWPnshLka2sjGJbs+FFlBPf8
+"
+199;6;4;"SKbcsGNOHsTWK/xGS8ZijQ==
+";"nA4r3TDSxMcYS7lfY0JTdlup1ymhO5Cpgx9XcVoY/Yt0xLzUZI2QvzzQ9IIwKaoSyJHZRICvI+S2
+4YNClPwXzDT3/xU4g38xuT/cIzoa41M=
+";"JvKCpcTiHneB14LFSlc+xW/3VSoDpSTmngUQQl8PLTU=
+"
+200;6;4;"+A4waLoGfRfWCu929Jhrdw==
+";"IcUG/I8ai43r+UJmRJOttg==
+";"8hZCO1p1Ac2NjcNx5Ne/WCmAUpMfqkkrZmuekFKOa/4=
+"
+201;6;4;"ojgXfbmJ58fDeDs8CI7cDQ==
+";"IW6Xozm16VQxjzFv6UXJB8aKFx/LjUK0OyWRWrssM1mMM0pyUjOpfkcKr+kje/fophd/m8c2dEdX
+CoPoyCxC7g==
+";"K1BJNxEjJqbA4O0U9P/Acw==
+"
+202;6;4;"z4q3emwf8J16KoBuElRtmQ==
+";"hy4Nx/GhdE9Jlgw60XgycK+RxERYeS6C3BI85Gn+AXptesXw47oPE41oPRvNZIAnphyyuhjz5MKz
++GjASd6dM4CzWhNTXjHoa+cZaFc106k=
+";"58WxGNIiVnJy6N8IiuMhX7lOpBD59F2bZBoy2lObC8w=
+"
+203;6;4;"8NoyOwQhOI5GbWRS2wCLsA==
+";"M2oPpL1mUGiqwm/FejQYm06ffYQIdSeF7N5fxY+ZTe/ZqGNCjDCLaKRRV584jF/w9/nfejLiI8QT
+IVorW1vMzQ==
+";"Y5A9942KhvVKCfPeYRwlHZxB2Iw6h43nTHsNOxpXS/E=
+"
+204;6;4;"atCEiMR0pTsofuPf8Hm7/w==
+";"UiooEoobKH+emvs1wHApzZwovg57jy1py9DOwUILNHq1Tkw05rn+9DgZQHnAWdjZIhCytxr7Ldsm
+AZJ/n3Zzew==
+";"ZDUiCjnEDVoNmiA63LVMAcDM37LXkdJzZ+ZAkW19Ies=
+"
+205;6;5;"I0xUbdX8xauYDl1WPXQqtg==
+";"UTOp1fx1PWj5HyPP8NT/lxSFqxa/lFtGPMb+r1pgS73x78IevjpujmuDfdNlgjst
+";"1xDZa2uY86P2iz2x9Mm90rT/8m7Jz/a1T+J2Jx7ABeU=
+"
+206;6;5;"D8FPiR5hApYbUJuqRuVJFQ==
+";"66qIP8BpaPKYreY+WxlebVaYXTJQcDJU4TKoiz6ZfJerF0aA4XT/Bv8j9OcRk5UIwNLgRXsp3oAT
+be+yIMqUi4+FNBKqutL3hhLVCzPSmpw=
+";"bYVyAq35PYYb9E1h2nTYFbV9UMLoCV3tMa5mmEIXZSbvB8Pz4ceAgvUKLAt7p6xWL/87wg9PYVWP
+Usibq4PW9ijPHxawirr5qW8LkgyUo/4=
+"
+207;6;5;"UkKy0fN6+9X5G8CjS8L5gw==
+";"LVI49ntKiKKyM//uJkFz/JJxa4kLwHRVNVA2VqW/AKqXkwjEhhINKLipg4kxd9bOCEXyIi2fRsfI
+mGduKhtY7g==
+";"gH4+O/WOHjMgMzwsYBN590rO0hAwH4uQPHliCNbfLOw=
+"
+208;6;5;"gBdfi7Xve0f3JALM7nHPDA==
+";"z7Pm/X8wRw7vFZsjOkEucqKdeVTkebI7LtQfeo9envqY0MywJUISJi3XzdyTT9XHroBPZavNlUE8
+V6q4TRVHnQkJbh5MB+w8qd+xxlV+bmNcv8JAJzH0ieOB5vJLNZm3yS0zFUgrkL5QrA21q36YyQ==
+";"WEFqrnURuKwu3q/FW9ZVmq7OZW6ZpnH4MhXKEQoJY88=
+"
+209;6;5;"+03j/roCBRw9uUsFdcVKd9fR2ZyZC9RojN9pxrKOmyo=
+";"WqFIM7eZkQerMy7kOpO09Aw7t8vy8piCPQtd6RQkq9IXwjmB3BdZC2iRC07fvUqflR+4toGGRL0v
+oqS6kSDqAQBZtD5K6NGLef6fMBED8NfDgwE9A9hOs/5M1Np27MZYqxuvHtOGcPqlBtLTdXr1vg==
+";"/b0fyx+8kezjeq/JHzBd0C1WnWNqGQiWvc36JCqwO2RWDo6lQ6czAFOw9BkBTakiP0Se+8pmMBJL
+UrcHD6c0HQ==
+"
+210;6;5;"X91tEBuK54DV5tFSpBQGzg==
+";"OuAoapvU2am4hsfcwf1hw7PXLN5ECpRosXCWiIeSHsUJYnUiPGmMAM29ks5rgdQFs5Ouvh2bsXxN
+oOzzIE43HkKPNYpsSAQUifPdjxxNq4ovHIbhhwokCOSD4/mKMppt
+";"w8iiScCSvFn0tzR4Mele9A27qnkOL0qdibxV5UBC7i8=
+"
+211;6;6;"bDBP4wi43shAMdxCjWnWzkk+rWcs8GN2/uJ3sDVE9F4=
+";"1h2DS15g1EbvAOVew2q/n/07TPJdngwLybCvxXAjN3WYWAJWnNKRmFs2rb7gCWGMv5oP1EaNT8Be
+XOMXGH0aYkUEz2hbIP0YFXXERgXvALTaV74x1kfsl8WFXqhWQChKqtAikWz/xQVonmd92pytSIRj
+qJTyBsheeC2LrEbqOC8=
+";"ZyQqEuMrXhE7KzuaKykX4BPRCZtAnnlcWTA9ZpTE5I4WLZWDrNwi8r+nZz7bVomxFIBSB8LXU+hK
+tF1DvdQpOA==
+"
+212;6;6;"1IQnYr6Y5HwelW9D9ZQzIA==
+";"8yBGsKgtcCKQ2Dduanb/FLlU1asrUb+gZ9do/gVeelj92hqMyLUyGRmKblfMrHNdzYI2ZvuBfO6z
+Z0U1+hfT0fWAYHFXH00/GAK9EO+ATB0=
+";"tdjYUpdTLITpNFqRmDL9Y0zTS/j/CT+JHiUH0s3sCIw=
+"
+213;6;6;"iLkQt7qfnKFujzdDCqabGA==
+";"4gzlvDdQf9h78vTwFYlUE4pluZjx80xtfLOA8OFn/mX7w4EK79/MK4XD3rpyoaEk2Qfz14OO998y
+2nSymV+NAc60lGk9+wUIGcfGzrtSznEqWBb07mnWAH9OKpOHUFmrDizgwATdmHwgh5nDny8wC+4G
+KDEPGdySsHn6FQp7k0U=
+";"2+unX3VC/3lA331KpAqSluy/VcLfcHJTHrRRMBMYwwk=
+"
+214;6;6;"dZ1maAjRGg3i1UJJ3y605HSRp7DQ54ezkBwv3/mhcnk=
+";"Lg2pMf3l6cjzj+LIW59xVkLOUYDRQzudz7jzAwPubATw0tWp6DDb+HXR6GQkhxe+mKJkNum4oHfL
+ctO/mI8HZjMYH1OrXZIgrkFPZAgAqRNYLCX+FrAUGSEXqIvuyfYM
+";"vN7WRNyo7l2gLUEN+BJDqOSael5/z46yt9DTqcw0SO8=
+"
+215;6;6;"fZAjgH42JbKxx79HvrVGAZPpMVgfL2DqM3G77iOAhIs=
+";"9B6MYC2Z7REhBVAE9j/L/MoFTqMfTEKitMpnLytr+TByD2eVAsmsXgfqrVnYZDNie/lKZ3EI5S2w
+M5hEt9BolGRK/UKZEY1qPPw9XngSxvc5htwB8OHF3x1d2wBtcD5NMjXklVu4mwiJYZiiTcgsqLlJ
+P+XrWqVpGsc7WKi7UixxxCL94ohdzN9sGcNV98GtvLQFd4VrQBv72NSlozNzToYcMd3XlyUkxKeT
+K0WaCZA=
+";"hWSr8lLw8p+ABbcQOEta9qF0xQS7R8ixJyB058MFhpg=
+"
+216;6;6;"A8ym+iKO+TqJ+wgrR7Ze2g==
+";"7Qdb/6aCfWme7iCyzPqc0w1GWYx8kQwWE9IvDrgwSTkk9HG/tNV1Ljspi9hw2Liewge2pq0v8c3L
+S4CcydVQUA==
+";"F+5wpv9l8XlzP9KJkCdDIg==
+"
+217;7;1;"IMZpOaGPtg50Hk1DvH9Ybw==
+";"SRVlSMMe2KV9TAJocA4D7m8QSJ28xTt5pDAh1mCwAQjpopo4sPj+jgIZ+cd82pFTKyAOHRb3yeM/
+JGXCN6WQWcyy/0SbcaGnXBvNZ3Ntlie1ft6aPKt29UmHqpv59pLzdbJxJLx+Xx9uBYbil3XVD+MS
+9RMV0ewJxkwAoD+JI/hgaZxdh4ph0DJbQhmELTFk
+";"GENvC0pW2ZCDbPxTQRTE7/DKbwUcMQYDd1asdtI7vVM=
+"
+218;7;1;"5SUmn6dxfCvjLP2JyQ2f9A==
+";"n5mzFza9cIWlKP5Q47Xkugc7z3xepQALsD7b12YXNjLZC81fUkqyDPWvRl2CXjw5jq730RVOGFQN
+XdXVOaPPrPx7dGBjOQChZWRBMUNE6n8=
+";"JTfV7rrNY5Mn5Z6FXBjKl/oSOXamzjdodaftHx6Z6rg=
+"
+219;7;1;"fmM9/VvXqvTbVOzk/5d63g==
+";"KN/olyNpBMPwPUd7iVP3O6l7iJbaqkZeojoSXd4DTRmjH6W1q87zHvbVyeoUUd9VI1KrnKa6Qgwa
+kxC2paRt2Owz8z3GC3OY7FSIYaL5J6Dzbecxtj5oK6UfpFkTrygdA58Enwdx7swFx0z8Do4RAQ==
+";"lYQTYRgPhp6dxB5k/co4TA==
+"
+220;7;1;"8QD5yyq2Naq6JnutODULWQ==
+";"BLGHqfKsGOpoumDD/Bd8pHzO7Ug7RPYF+u3u3pp7PxZN9HNVIkTEFf/ShLtsTR2FifXGtx2D2/Yh
+KrQlyRpIDg==
+";"h4rrjemUEYu4Ed5DnK6sxw==
+"
+221;7;1;"ak0JA9bSGyluj6NrfGpZLPSvnscdmOBVmGdUvPv8IPU=
+";"Zi0czKb6NA8HTsuEOipelMIwNHxOd5a+/EoLZlwjmfyLjHOouT+HBr5JFsOalg4xLSxngt4k9SgZ
+3gEMcbQr7Ebo+Z7WlmrQMC+noa5R++o=
+";"r0m8HMQ7fs1wwy6/r3isoxz9YGD3WIKDhcZQGg3SRCgWcf3zAhXmDDzx5rF+UIow
+"
+222;7;1;"GcZN8UunvjeHldaFqWm0mA==
+";"I6ItwNXan2D6FEQ/yqB6Gh9VJKWoDPJUIDQ68cFL5m3Ref139gaBuG1wUKAug4H4id68WaABUlgB
+ymFha4et6QdYw1yOa9h1WWeEFvJYG0k=
+";"QYB0lZw/dZQT2x/8qa5Ngw==
+"
+223;7;2;"2KJ6oDfphA5RcgO8LX+DUw==
+";"BIhYBdLIOj1CDZVOT59lqDyjHBnNRtqK1dLrFDmtn8YBt3PlxXxdd4WoRqhiRwzfOFDTcUOk0u9+
+L06Itmr84a+AC1ZvFvtUv24Z8k2n+nH9fIf9sVEzRtyFYutMjjL6
+";"BCXVAc6Bcsb2zlFWZd7G7KmOBSi0yun8mC4yBGNUmrU=
+"
+224;7;2;"NaFLASBlJQCdx3mkGXG2wA==
+";"xsiFHyQ1XXGzH38h80yrqSwX+0ntE0TcVufQ02Sn9MRA/Cw+HFCoDYycLgJIGlcmd/WG6RWbWCj1
+jpPRRrKZoVR3QLmp/UuIow9EuM2jDk8=
+";"YBWpRcHNwYsVaTaa1yAI+skmwaIyerKJ4H6MtUwORzY=
+"
+225;7;2;"r3qhR8fPIScAWqhUFWaDaw==
+";"K5pV/P/SZUyKOQ9PWAdQC9Y4vMnziW3P0Q5b5eWzoCM2d49VYCcKXmDYIbFBjcgu
+";"hz/UgHJts8hy/TJvG/MDwxiR8WyctRt094kVMzTekP9uKmUfLNyBk5NFQu7PDte2
+"
+226;7;2;"t0d+LvQYmmIpYW7rEGEy5A==
+";"rGgpkzcPorejE/vdsPaUHYMZJiY2usWotC6RmYszgg74LvOQDApoHbFllPybviRjqQ2Ec1cYq5mU
+CmRdjTIbMg==
+";"uUvdqIiElZ81TxMsnz/igzXSq629hgxibUSg7VLGBR0=
+"
+227;7;2;"+JJo0z4AeEqunjPbu8gtmvlAunPQP9O3CiIGZ57BaDA=
+";"5M3/1nrwDmXjJ1kIBODu+ZlU4NfPk52xiMbk8w2tqXjTpKIg9st1DBXyoSBJcAcJickFVd6M3mRA
+EiPqLAEICbdTvPuMQRppH10SSrgNqGw=
+";"UDs/kQAQSBhO1BOfWbJyEEU+0T68N//BRLf6W2aRWG8qIIGol328mX4mqOXFXqAN
+"
+228;7;2;"TKlRVD4x/3n7WOGL+PQQuA==
+";"T6zLQWMW7Idig1BnTs+JRKfDYk8wEY7AIHZTWix5EvEavnhB0WgFlgQO+OLF908w2JFGmqdQsFkU
+e+TOGSa5Lt7ndXXZa1XwukwB+nJGDto=
+";"j89kCdtB4u692H5T/Kbb3IP7wONMSPDkLl8SH6JR+MQ=
+"
+229;7;3;"Vm5MJ3XMCZkqZN/d0SyxFw==
+";"3UAdyc5ySZWjFrbTmcwZev/7UVDKPhrYhydJnU0dEzuNzlXJGQgX1IcyhLA0AJpzAWh3Ep1yLAn7
+GvYvTrcqb0xXq7yv7aBwtJB1ExMjktg=
+";"ZiYcLrFotIrLjoV6zyFADg==
+"
+230;7;3;"GRy5F1RIqM9MdLzycKIXPg==
+";"BjXqqT+2G0XSL8HPwL44OD6U0rwzoAShou/xeC9Dxb8XHzL0bUKJUYrL37lGDoUL
+";"4cnEyNqxJxvdPHB96X98gw==
+"
+231;7;3;"kr6qJa54z0PEJ8oO9efg8Q==
+";"YuSzB8gXl6kFo5IuQHgkydo/V1e77pwS7Z+ZnjNCyPRFOC0YiyKeCyGT9AyDWWsbG/IOvdpAQvNl
+8IkxsFkupLHCn08DNfrvtaGQfg733mjWkvzpTnDs15uKXgIA7LzvusyD0MBuT3bXhGxPkr0WzJmP
+FGp4NGKJKWuTZQVNQ9A=
+";"UeqWKxKi62ICkV4Vnix7TuUuW5oOVHMBJGGfuLT7LrMZwk/NkVow+MoyFKAsxF+R/SSfBZAV4oAP
+ttSkbWH3aQ==
+"
+232;7;3;"XgaARa156qxU196g+E037g==
+";"Noxzxa51bzYd5broEIBvG1mVqAHucguQ0H6lhJfv9qiGw7H/EVY465lCSaGo+knTv8aUzpDFUWza
+nqANVajX2/Fq4qIlDy7NBGQYR9KOtNSv5QAJo94NQOU7B9uLng/zxOpbBEs19pqocff+Wk3U0f+z
+uqNa/doPy1+yYYbNjj0=
+";"AwMlBY0kA7QFlJ1oBVHTKw==
+"
+233;7;3;"fJwkpoEdYb5aLmyctry/VP+uB6HVA3wir41xJL4iYsY=
+";"CCpish16qRLPkFNlIJUt9VZnRc7hk9VQm3MWcqAF6CWKcM4xZHG6t4vS1QGu6I3rPoeWVFXqL9et
+b2boJFciHEUomxTNoypMj/bj2DpLdr8=
+";"h+WPcmbUuLQ3eYqtM9d7qVeQFpQDJiymPHNrm+7URMQ=
+"
+234;7;3;"QPqcMN9luX2TIuxbg8qQ2w==
+";"akh1UF1kV0fph3Z6nX11k8ia/bNqhSDd7ZbmlbXC/HYZxF7W/By6sQ2zF3gD2uxHZodu2Z1hfGRB
+MkB6TMuHSV2rasHMxtk6HcGR6b40hPssyuweHQjfAIM1UNQumnDeVEfUg9XR+4+Pev3o3ih8mqDg
+h7GeTKZpRxF8Qq48a3A=
+";"UlNJsf6D+EbqnwrEM1oLITtapE8AFT4OycFhOG2JxCQ=
+"
+235;7;4;"GSg6BPQ8FwvPw2vXBHWojg==
+";"7Tj41mNtejoV8TwZF97Y6OV+1EkOlM3aGqihJ6+gAlhsXJRVXuMnmPRA796PxUZwnONpSX5KP21W
+tE/S61bOp5EEfjTC0tqo8BX3IaLGzmQj028ZyD9f+Uld28h/qcqJiVK8UJ0NoMCq5a2gepANE3Gc
+T+IAi1FY73XNjEzlKUSnbs3YciXWc6knfm2sYk+K1YJdX7V4EUjmZmuNQpMOxQ==
+";"17PUncRcjlp4crEblPAPAr+wrGm6A+VCrcm9G1iSTf0=
+"
+236;7;4;"07TYsM9ERgjtLSRul5FJQw==
+";"2Pjff/G60/bMF3NUpoHjznpcc8t6nyLP9Q6oRaVbTUgU3MRT5vFFW5ADHjUfDpj0zXhvtNDCXCnD
+6n+eTr1DEnskav/n/N6tW/K9/vtsQhw=
+";"PbxFUHqHjCT9u+ZFs4HigbDey0KydAGtTlpGb+lPg9YU90sKWa0FXeF8C0M9B1ZFdzvnuOp9kkHL
+jGPrrGHq/w==
+"
+237;7;4;"NU3TvUKrRyiQwJ5bvWkj5Q==
+";"Ki59ZiIyCUfJrx8eNEGzCAhrqEX8Na4kDpsuzBZ5lphXBX8VjZ2M5SKvTf60w0Z2X+r7vraPB685
+gdRDJMt9OVk+ToLh9XRtHxBOeZMhvJ8+y5Es3jYDSO8htw3ZJhO8
+";"PZOaoUz0GV1tanphfjoR0g==
+"
+238;7;4;"BTagFNdqP3E58P/sy8zEZg==
+";"2lw/EtoCb0lS/ia41Lpu841CRnewToXnIJqDOa9Dle/bc2LHv5vMMVf364rfuD33UxAEl5kKzujZ
+rpg9oEOcu6k+yXRRdoA7BEXNdAcFgC8=
+";"HduDq/xVSlLN3j7nPRzEf0IBHOK1xB5PmQJyiqzvxBc=
+"
+239;7;4;"KpMiVXdawjHeF7g1JDCGCg==
+";"HgUtjtluY6ZZ47k/2HNAwehK/PDzKZjh8gNNmLzrc0piPJGKuyKcxlRw9XuITwSWqGQMsR2hMEXz
+4pRT+8QDAg==
+";"phja1BTpRJR+PzsPXovtwg==
+"
+240;7;4;"tISpcOCRZoLP7NQ4QUTZU+zAVQIOjelu8N9NMCW/530=
+";"GuO/zFVUPi6vb5JHkuYHNwKFnWfomdzXs1KYjb0v9cV/65vPtUvZX4u9/j0r6Hdp+r0txvHiURMO
+Xql+z9cEzlZTatv9/LIVKhn85h4QAJE=
+";"qL2UWsRYrbFCKNX++cx2tN1ULJdWW3BmS5GQyl4D8uRn3jy+zr2N86CFBmuWLrAQ
+"
+241;7;5;"CxcdXpB2y9yC3jyZYn9/tQ==
+";"luLCHRurvswStuSSNkQLVg==
+";"6cmqWY7pyaQ5PSU1VHhOYJ9JpxqtX6AkRH507IhtJPs=
+"
+242;7;5;"i9qZCntbDJMj1q3/GlDzbw==
+";"nYnypvFDDgFkBIsNbFHIY5+MsOPWdMMmCZ9blriJ/R0Cwh5gVopFyjB4xwj/U+nK
+";"2o67ByioDdYAZFVLGek/p93dnuyyVzHOC0zHHkRUjruA47w5/f7zHfHIvA6OEi7D
+"
+243;7;5;"Exq8u552ScWwzkqS+i/wmQ==
+";"6uOf9OcIsTToM4TeYurtOLP6AW3UXg6GkKT7TUanYam7l9fcI0Nr0TTPtM7jPgAAN8VvwoqQCNiL
+etIqNlH6jw==
+";"WRfn5ijMl9rs99eANR8BjK/bW2IUb/Zo1GcJqE4+jU0=
+"
+244;7;5;"sC/izXHpZLnufkacyvy0BT+WZbFDWxBNiA6Nx7xR9y0=
+";"bGnFqdl/AWKGamAy8IxZYoGvqee19RymKbWrnV874vOQub1F7mUNlUU8KV6tZ2z3N8Z0Q9uKVAyM
+5ivt7hNvUShwxki41KPOUU5tYidgVEZW7rR0d+w/U9niFqV81+cAR/sqQRU6WzAxFRMHlwTGVl1F
+lF+Ig4fOGn7xYstWbgw=
+";"U52TuoavNIcANJjQoTDKUZ7LhqF7hFR9LG+e/lktYE5sjScuVEhO+Hal8L1OCT5w
+"
+245;7;5;"7ZyDtOkuSrUu5Vbm/DUiZg==
+";"G6eRkgd+N04kL/G56SVFHI8oKdGoQu6p6yhG3DgzBsztEP8RnHA4ixkJPgtRevQLgN+GPTpy2OSV
+3yJZoSBJnA==
+";"zrmiBHTQEk8ikozJgVJ2e8CNIsmw23pNKRpiF/9vm6U=
+"
+246;7;5;"M34HQUzvBet2xKAwmpnscg==
+";"diSVsvB2wXaJJ5v5DdXbUWV4Hh8KrbKwMEr+RLZP4OQ=
+";"JryX2xID852PhcPaXROIcw==
+"
+247;7;6;"5n+37A0K3gbdgMDHOpEDgw==
+";"YAcjFgbMK8ezF/Ba//Ayn8PE1WCuovjzMmoreSRQW/gATXVHfE81Ebm0luOYdz9b3aUJTEth3iXn
+8shgCTDi51G8XxmLao2/4AEkqv5oBTU=
+";"jsnrQID0256D7t2GiQEyT62FVdWPAZUOM/4Fb2EGeHM=
+"
+248;7;6;"qCZgsDhtVc+EU4ebPLDBYBxXUAPBSwBHvLf1Hri9WpM1aBM3qR6HxeFhNeI00nS2
+";"KYz3Mj3tvk8UQXZraz9H3uaCPUGI+AhYvk25gT154x79ORu0dhwjl3/esxtIBYFB4nxB/RdjdJoQ
+z32mogeZ7qsQivn9Y9KV+TrHQV14Wbmf3EXJVZjHunR3W72sx9m8YbZJ7oDzXj3z4YAiWKnh5Ly/
+hNlO/87NDm3AFVVGiVU=
+";"u2hoEM9OJcjE5p8B4ohqaK9kpuihotK3Hn7GODgMxCr+778ZpP0L9YHXWcuEHE04
+"
+249;7;6;"g+lHGOiDvc/P7QsqF5lBYg==
+";"nA4r3TDSxMcYS7lfY0JTdpjGgW0OTr6w03S07V1greccOZ2IXBEwN76hPAVOS63Y
+";"n4cRSEJ0+tJxpPWR6DIDoWNHGwqULerPRLHTj0GMrxfa5zKCJbj8xI0wgWt1gWbc
+"
+250;7;6;"mrhQhDvBH+dXIGiLOhd71gXST2PvCBqvhqP1kycA2S0=
+";"pfZ3PC1BF2Afxnx40NJoVDYrZumJiWWX9BdjaLi9MjRuP3WVB2OHz2MOWcTpDJVeGMk40TjO9tns
+OMm46QYHosb5AD/g/20ex7TAZ9khd11lJaxLw1SP3d4TW3w1SYam
+";"U52TuoavNIcANJjQoTDKUfMhH46VOdbvpmhFns7YlOqkH1sHwH9QGMuY1yykHD6d
+"
+251;7;6;"/YyeyN7rv3wD/MFlS/D/Cots91P6Ot3H/1FSaxo8TyE=
+";"Zn1Gqjsj/kPrCyfW+1JlRhYa3MWBEjQbKX/1kBf9RWb+BuQyZJbuDly43TcBTPj9rN3ACzEn6lJJ
+2P3dMngabOEwzckrl6VJeDiF0AIWWnY=
+";"ZZ6ADPR5yYe6T2KJUPKTZJ/y04ykqX3NpDjttCXzP2mkqvE88M6+tN//WNqxXQI4
+"
+252;7;6;"jL9//G5AeEviVzANffxKPQ==
+";"JztU8d6HgjWdPNB720lJZT/XjzhrqC7NsekYxtkRy7gUxqgLleCMiOt7loD+pxklo66C2U5R4eFU
+GTcHnNK3W38skWhXISwPKr5GxpfWHP7prZoJL1IvZ/T6qON75ur3
+";"V7MNhULn5g8zFBAohOV6Ew==
+"
+253;8;1;"R0O5dncH0hBWD44h/RA3Uu9WrQm9enLy/HczXrLENmM=
+";"cxSV2eDnjZLrcRw206Rh3QUfpGC1pDlNo9lBa63Hlp+Huf4W0Rl2cKU/Y3zQzWXoHs3GnPBD+sMy
+GV5spENzy9SI421fhxKyV98zVs45yWE=
+";"BghSJ/BLqckaIpYqNZxOdGtRVJW/TzWBVD3qzNYcPrk=
+"
+254;8;1;"ReflmFJI0GXrHojbF0sJzG5OaaU68gvSV6xgGMLPs5A=
+";"vHpcbW8NL7Hsh1LDtwhf1y8x0AsEUW4jLrwe6JMw6ikq55+PhU7kQ4U2RFWjxLM4TYPkY6cqPvFK
+JgqWhzu0KOO1lt9A9y9Gh3uEiC9+hXptV3zYnTF2LUTVhCaXisrJ8FD0+hCu7HIC/DnJjOQEMw==
+";"niRhVet6hkJsCwwGmxJxvEUfSiht8nnAzGpki3PERJA=
+"
+255;8;1;"m/EnzFroE92vChHfCyW9Ph79dHnlvmonV1Tq1yZWijQ+WEDonFBvTsFGYSXk9EUz
+";"hWt9nA3R4HYSJA2+GIrQbnYLQ8n6erH9tRCBWXm7GGCLyo5Hsczucq4bofYqqZWFsSRK/YtAnYbl
+TZ58WL6LMnE3oFtR6QIYnZ9JCW/U9Qk=
+";"V8+vRT2f6zknhHyKtpjKln1EOOSqYp2Qfoq4wV8r8efyyKd38H9H60CEWc7vAgzmINVzzPKSdKvH
+5NhAE6gYQ/V2XEJbCTbie0skYr6worE=
+"
+256;8;1;"uwwd7cCIouE70bV40I2H6A==
+";"HO8rl4qE6Rq9VPDnS2k4lDIeX/QAVlKQrIcAdyf87oIQ8aE0f9jnfIkZX2HT8LwvH4WzTUlAy6Zn
+XQOWarnE5EeAerenMyyUR26WwPFM4Ng=
+";"pn3OCn44Tu2+IV+0YyErAg==
+"
+257;8;1;"OtUIx1RX41mMy61sE+gtAA==
+";"Zhy3ePNro9XyS7AciL/PqAMOAbNxT1yOC+l+/w0T8XLduRp19P8TwDuRuTOMIje0
+";"fjJ4HMxlXuQ6LSl/9hBLhg==
+"
+258;8;1;"plgu37RKdoFtaLNtK64KFy+KKCCPagsbjbE/FyZTdAY=
+";"gRQJk2hX+CSuAcQPvK3KjO2L/aJNwRtximeFwNDtRTldqgw4FQp9ZwaYFi7p/nBNDbhCLM3fN8Me
+LinwQYLetw==
+";"DzauUy1rR9JRQXvntWrQkEZTpUBMgkBT+30g6bIYjVU=
+"
+259;8;2;"FqerWnOekVtn0EZ79cy8aPkDxIQU+GkAOyus9koNNfc=
+";"BkOPRv0PK7UtvoPgrs73qYfzcEBQkOiskp7ZgTehLZWO+jOKpKiMSGGdVwJjzOqtiGxhiq2PSmrx
+aawpBrzlLKJXuLKxpt/ZD2rU0pR4tKwbMAy8AgL3DG4tKIwwjh7k
+";"qlHYsbMgGfHrmrv1LcRt71T7vzzgSiaMgzdb7KMUn95+bKrjnFLEFuTUdu8w3cN0
+"
+260;8;2;"NPvNnOtDgfA8xMQ9HYi3/1KhG1UmXbV7uEGkdllaVHyIZAN8CIg2o+yB+LyPD2NI
+";"Y+XNCXKlhD+carqKiF18TV+kskQeGsKNIZLOvav/TJEROt80sgNioyW1Vp5HWwQE
+";"U52TuoavNIcANJjQoTDKUXHsRL6elYT2gsGnR8KBPtOn1pEl9RKiiolpdcikGfvgOEPwzLzs5bdB
+82GWMNwtLQ==
+"
+261;8;2;"392RWkLhp6vXAHpuTQWoICGOuLi5XPhNTd2Pz0fMdrS6UW9/I6wKF42bciA9g+VKdYWsZU6SDjEJ
++CTA2mlmHA==
+";"yN6IKP8uqCU9RE1pKVfjNT3i3LZh6UkR6FM4ADJWqvxFXy0xlpEW355Rb1va+eJfYscjD5Kmmu9w
+9rsXIs5K7w==
+";"U52TuoavNIcANJjQoTDKUXHsRL6elYT2gsGnR8KBPtOn1pEl9RKiiolpdcikGfvgOEPwzLzs5bdB
+82GWMNwtLQ==
+"
+262;8;2;"ZYFUOFPruyXUqTsKLzXoxQ==
+";"D0s2ETFAKDYooFjI5F0s3HyroUNmAEQnaSBNNmvanGIRoSXczXWQ9udEhJ7Bxs7TzSTDrq86mwDV
+NehX2riPhw==
+";"5FlVilFShxB8JeooJ7tohA==
+"
+263;8;2;"jJ0dJvlpUpaeebfBGl9BOw==
+";"I98gKSBiOQpkznYMK3JNK5VMEojCToCFlVV/r2CRKTKhikzCveaRSObNIYo2ZezKEHaMNwMvQQFr
+KB09T8VyNbxvuXXAUA/8U6LiCKk9N0k8GehX7BPai97109s9lhPG
+";"9Ur59ziEtjbmoNcQrqg3zA==
+"
+264;8;2;"3FdHntlqeZTU1nWMPVxwkAZNXu/VVB+6zJqyGApzvWw=
+";"EA3ujYnGreNazZ4bdE5Rr/QdLDCrSAFko/OiMxC6XnsOwANVtKkYSBVtPvR3OKi1kCttIFRKI9fF
+DRfan/PEJzjy0ChFos7gAm2sohGcP6Q=
+";"n9hRsHZPeLJhJZRR7kMFpxfPrkgaaNx00aPN9jJPTy8=
+"
+265;8;3;"5+Qb8q3kkCyNE54rRyHgMQ==
+";"FYdWtFMiotYb5NDrLGUueJjzz51KsEDEXJZPIgnGCg89M488GwzFfthzTdwVheB3lPg/CvR2kiTY
+ZgM8RSdHdoc3G8WfFgQa216+2RBWR7s=
+";"oozndjS6BozQ6S6pA+wjWw==
+"
+266;8;3;"oJt5gaV7hi3okQFeCl+zCA==
+";"pbjrW2zoJXNptQVuzEWdcTBUKPqCXi15sVlrXd8utTxr/nRdobaGbIs5jynp3kXjs3CwEuvWuyMN
+X8wC73jCvXFySwsgx/osB+xy0L8Jh15y3WydS4yGZRPKI59qwEjBqAyH5Dnyj46rzgZpOfYIyQ==
+";"GXwG63aIem7j+fkIox65+Q==
+"
+267;8;3;"yh2mwDZPImiGhI6rlipSXA==
+";"1kfP+bZbgOYPzZuHc1b5QpBhzbJnxrNd8HsJ48G0ey4ZLpyfYQksw9YxYiQx/nV9snB6XudMpIfW
+7DrGdfd3PfoJHcIAchY9WSPwjj20H+1Y7wuUfgdT+dHMmeW2pmpa
+";"N88X8FP1lJ6xTXYWK216lXrFCh5je4BPbs/XubY/8ublpTqJldnp+cEbNLgFTe0F
+"
+268;8;3;"jhtuf3mkovxuvYUbwskuRvUZYC0gu16NHhk8rGopZ2Y=
+";"YRDHLDXECTS8+aoxxMz8I0HSG/8JIHfVhRWdHLqVF5mn1OtPsvALBVD6I3FEKRtne7zN+7aFypWm
+5qWD6Odogg==
+";"q2Y9oHKRK9M2IbKSG+qUe36tR5s9MzSoeagSF37pArg=
+"
+269;8;3;"aAvp49T4iLnb6jWId34EHg==
+";"UXXe3vupEyCfMrKLTsVxAA==
+";"N+Gdg19r+o0nUmqCL0yTsR7GmQYs9BHNpG6ym8Yrie4=
+"
+270;8;3;"+XMfA7xdZOzcuWqtozfriQ==
+";"6WGmV0YgmqccEIozWgJVyI1AlZsFoCrfFpWMwaPigCBePzANqYqv+jpSbn9YS/uZnEt1xdVSfVhk
+AaYoV0ZghEqhorUjab4Q/rD0TgEzyoU=
+";"r7048V8MnZgRliKBc4VuEdUpQSJVGmKdNZPbi7OQANc=
+"
+271;8;4;"vg6GPrOy2R63qK52AIjqCA==
+";"IUsxMDe0sGQGXK40fbdsYIZO67cettj9yYcrXalhYqY=
+";"g76Xt4pOsoNMfBL/YXZJew==
+"
+272;8;4;"3+ZTiU0DQHo+O4Q2EDK60Q==
+";"RfhC8OCYMmffPOQbg5VYvz2LdXQAcVFrPWs952cD1yCXOGLEYE40c35ThJl2ExmAIUwAIvAESny5
+lvIWT+OlO/KOs96Ztdc3IxDXyTJlFh9ClriK9SjoEglPaHuhcbjw5xCtrgpZ46zE29LwzcOpcHHa
+f7hdExyQH1mmTCf6L3A=
+";"80eKXrFbNYdUmOgQWzO2LF3VpO3n3pKXFdChLa5TQluE77A74QWo8QKtj76cQNLb
+"
+273;8;4;"Za349Jn3eSLFHfVcPFPDjg==
+";"Ot1oIZ2V/m1hKcILI4+BiMUqgBjNxjvzga6x1kUYaWZLxH129tZeJ/c4WTcsoz2X+IXSOcrT0ivO
+szWzipeFZLTARiIe7/31qVYAJgI0WgVY5zET5mB5nmB7kEsTTr8dmuNEIRZxIqOGO4PFqeXrLVj3
+6SxKQehCHiBzLhyov8pJwVA5K3cTbiJ0cRiQZlvZ
+";"AYNHkXPUu8c9OFGtxs8KRokbNbZIwY8POxlmL7iZNnk=
+"
+274;8;4;"RCOhbcD3HaV562HFGa+zdg==
+";"x7Y9vbhvmLGqQOwdKEgmbbbB26xTNXBFvx0AO6ccyKHyohxfEf6kttL5/B0Xqu/EQkfIOOtxhLWj
+OHKArcZAow==
+";"QFRr5l1PzW5vht8JbyYxhmbmmziqYTvrrhO1buSNsZo=
+"
+275;8;4;"rQM3IaFkJQ4c4CqQAge5HQ==
+";"O1rckFhUktqgVVsHKibCprdU8YJAF2Hf1KbAajyPgVHgTyPNUryL7LVBRqx9Y4PZ10jQY5jxfasO
+p4P0GmbtZFFSh7jPgMjdQtaC8ZObYaY7BtWntX9BIdFxWFkKxD0gVoEtwa6cV2Ixghg7SX9b3kJx
+nuGhwv7Xkb2MxPdi9Bc=
+";"+CpuMekOEEjQ81TCxPDEbcplbdtxLQKbrXZ4/vpFhyU=
+"
+276;8;4;"UVshsfaeEIciLXfsaEXbpg==
+";"yp34uwansMSwRnom7Fg6HBI0aEGsy4LE8j5DYZ7/mBc2zYrlty8OqLHAMD3WlVdTLG6Z38YojhhY
+SXxW1tCpUg==
+";"nUaz6GPyfRpfH5Vb0oK37g==
+"
+277;8;5;"FCjTYxKFVLFKmEBlVVVuxw==
+";"mIbpHURBPYYrCuAGHOY/E/t/vj38DLqXMq/S14+JxgJkOUA/vbv335PunpzHxtdSvQBAX/8k6KwB
+UWJg6IJNow==
+";"LE/sg7L1o4RN6eZ8y2X9jZ+6mATmc0J+QRNAHUyMoWg=
+"
+278;8;5;"gj/8K3I6FQbyKMvBGace3Q==
+";"pfYB72ushnBg50oq0y+WYMlcKYRC0gr6eqWanF3Hme0ZBEMVnpWU0mjHHu0sABvlfb/IWSShtqrm
+hrjpx07wojh8+I+xYbT4OaZEFTuqJyw=
+";"UlVBr9nhIC8zYdCL7IwiBA==
+"
+279;8;5;"xo9mPx2Z3VABzvMIUfl+pQ==
+";"EzdP9tq9wsZuIeTc8ob/6EVylV3LoRdqQWe4tcyg0Fr+EY4KEgDujTY48MpnrhwdBD+K3TYAjcK/
+Wv6rKG35Zw==
+";"Thz4ZTMdXxOB4wmbx8kRHA==
+"
+280;8;5;"6QfssAoV/+BujDenrj022WYIR3O5sj4k41A8G+NXfTg=
+";"TUizGTokPim1SVkxjJMrsIj+sHls09CgB2tM+0KIj9A=
+";"DO4cSnlcLe+AFv+RSEkAW9S8Dr9KAewd8gOITlll7t8=
+"
+281;8;5;"bODa9EKZpcXLbjTPZizW4g==
+";"LqpyWKieS7jh6fj+GHJjW72P03FpNqegkdYYEoK2k1ytYtDR9ZPK0psMlOc0wVO3clxR9wioDD54
+x1kGQ+GYp+QmOZAzIhuEpmfj2kJEidHbcx7aqaajrhzeoKlvCfEO
+";"EFLS8++0bvs54keUh58HanZ3gmN6zYjeAmXIfjtqxaaz4W6TxG6tZxgTDrz5aXdX
+"
+282;8;5;"Q7e9lWQVxPBupj7H36ruDA==
+";"DjlXyw4Qx7u+F3In0KHUl5n8c+vDdcQh+OV9qdsCyareCgj3LeEaaWVBm0CasNrl47Ttb7f5UuUe
+tbpQyUtwSy2VPi1gAVnefaqcFWHgdxBI/G2hlMFRPTff7is8I23S
+";"G1KuPkNwr6CtMXErLJcdftjdGfgo9vS+NgEB25fHOsc=
+"
+283;8;6;"53redo08gWr2fA3Ii3bveA==
+";"CocTK/2soedLyUBV5aat3gGBPiw0EN+uC74UMuJtivjHwWJKGAlj38YUMm6P4yaWvC0VmFgB2ppR
++7af6yUs0qXQQpeR7tzpW8GLDDHHFjuORauQHE+6EOyGZDoK6nDs
+";"iVhlHtc0GbvPk19+IzEsx+WyDLUlmCCi/kwBTQKK0h+TEZ7nYvdNR6tHSpSrf7F27n2pJNUIEWbn
+g28tYS3y8A==
+"
+284;8;6;"a1CUnwAMvEBWAtgdo5essA==
+";"Wzyo9KfeBcNXeekBmtBRB0LmiVFlEXO/paCLaNSD5aBnLEFPijPbWbeUHVjgG5Yxi3Vwmyqr3L2l
+Orww4tT3LZGALcGxmm6ecErdZUXvPoKYa30NHkq9fJgMtZJ/2sO963SOdA/7ESx0xfYqXTB/GPx8
++aS9hrWIQvzwV/Izd68=
+";"BSM4pUsEHnXZ94cb64ijKT8OSjJxvzdjp6pW2/0+C+Y=
+"
+285;8;6;"pG+m+7gTe9QX0Xr2Ha+CwA==
+";"xccWhwGZAWBNUgcHcBIX7mWUjImQbZc5fkELokbLchSYu2jviErtEtsbyGFHNFnuje8Lzwc68XJD
+4Bcc4bbAfDCHzys/UbqdkFxWSSG2OUgEFp5OGTbqOi64yguyjKa0h1Fw4SHVCXft95Sz+87BRw==
+";"5pAltNoM8UjPoWG5qXP+3g==
+"
+286;8;6;"2ND7WpibkhIoRbvvD8CsZkzHUz3LMvoFtHz7kbyybuU=
+";"NwFGLqhCQC3IFdraDC5iNUc0yuWxuP40KXylQrzQHnHyUZdXNtM0TMZVxV3n4p0SevKwJMs2bqeb
+b04EvJ508y/Liqd1PlfBMW1S9D8g8luIKJ216R9Uq4HRoM1DAFwS7EtKwrlFgtLWtQ+bPWMXxg==
+";"/N7mjZnhVrNU8NdBNKSuRWV3tJtN6546iZ1vX9LOBsBJxOPiKmecpBlUHwf2m51N
+"
+287;8;6;"o/Uiku95aaLYJ+mU5GW9Tg==
+";"m8j0mXSTFIE+xV9UJGgviEZ1JYNfi+1b9HsARzrBf7se9fP6GCUcVHXNMF5/vv6TpU3riOcQ8q5X
+WZaHQsVxztQJOMDO+OMbVFRmK3mFBvPG82WFc6/VFuUpTyxG5ilFA68tStByD5/qJRpiizFl3A==
+";"g84mucemF+PgfPEB2yOffLkzbZxhcYz58M2/wnPQ7YY=
+"
+288;8;6;"+wJ4VhRe1OPkJf9U7Dgfo5Eq/n+tY7u+lqwOTBoPMis/CnjpDUcvCUgUp+11rnCJ
+";"Qg7nKQApf8oEgZjb/ec06j0eHiK6LKZsLYWqktvxIZcX4dJZcxh8AZzoXR/nuMur2qq2pC6c98FR
+nKpkD6AqEw==
+";"iOTyn42ioJoSb8cdAlKxyp4qWPhm7hXjx+Tu1cS7PaQaWmamozBIv/Mj0P+B6xPt
+"
+289;9;1;"HoGBtg9gX9Nj4AmDrmvXtsvcfdvA81FcY4trL3V0FtE=
+";"KhTgiHlrV2PIeOHZeYXOfiftIsoLqquiWoa+P3AFhR4qRvTtl70nzRo2PLUiwy2DTAfDGwuQ0sGJ
+1WeAfQ/PfN+duhBI2uSK/UkjSSlo6G0=
+";"BY0f7TBm94ijmk1iOPvjp96jFAudn3RPDuvIlIvKo5c=
+"
+290;9;1;"8R2BVfEnjjsxbLzOOYBmEQ==
+";"Qj7ZqQ9qR70B0ZPaXrN0F0vy8/0Sv6isIZOi6bPmzrBcnQOxsr5nt/GfsjmP15Cb3KAvyGtZK6fz
+k3/9r0U//3i2WBAP03iL+mxnvpZmRUYL1xOTwKDXW74RAJpUUUbZ
+";"Q6tlGiBkdXwtPf26u5yMMg==
+"
+291;9;1;"R6p0ngBDNl8NIdtcvYxpyA==
+";"w/A83eCVJdHLXLlwAyA2W9g0UWWHZMXV+70ab7fPHmh51VUmbwdwfE3fpGVEkgdGV5bJ1eV1ezLP
+54Z6wwTfVw==
+";"aI3204B2TWROy7IzqgwDtZPWp5TbS77d6e4iA1TlKXc=
+"
+292;9;1;"pLAZRBv+o5HMAft63fczzg==
+";"tlqiHSLnBlh18ygwA4ORPzDaUHDOHpxpK/DWUC2wtjc=
+";"tcg4YMRQcvKK1c0G9w6btHbquNZss2oYNhO1YSxN79E=
+"
+293;9;1;"uB1vhJFK0a03+d+vEg/t2g==
+";"vNlPenTxDjVbBiZf7R4U6Z9rJsH5grDY34FoRgC+4m4=
+";"QPMA7oV5bAMjrdE9PF2zKq0PCbW/ZOrsXsx8p4U4bKI=
+"
+294;9;1;"ae6InytSzGhVXQf3U87MdLE/wqn6B6qfVqREj3UI8+QoAm2WdyETgq7c4VnjPaGMbXelcYGB3Ekq
+p1Xj+1+7PQ==
+";"uwp47GWaiwJFCGBOykYWyehuuAvXzQgN3azvNXHLcRCqDKTJWhwv4o3MrGba8PEkCuUfkFDkN2AG
+uu35PpMSehubUtk/p5HL7k21/S0aVbk=
+";"ifnm34PeVPdP0xFMdjir7uJPl1hW/vdxrb11K+Ym1s31wPbp+cKqokw+LV/8Vtxc7KB7MrtGYtj7
++Y7QsCI7GA==
+"
+295;9;2;"4KGkZ3iQOtBX+O0daop/wA==
+";"XqZrickBFWu/4rlIuv6yU+YfP2LazCqKmqQj+Tcv8sSSN9mN11GrqnSxOw6N8UX1
+";"vAZ3sH4ho7uuNE1eVs1zzg==
+"
+296;9;2;"pBQ6d4DtnNZ+0b/jsFD/aw==
+";"Evp6Xn0HTpVAYDWkPjy5Mta819B3z8zJHdYhWPtOFoCrWLQdgVKTP9Sw+jA8GoQi
+";"G0WP1En7gEPXe1PkmpsmN8/C3sIPtAuA0TIddmA2DwuNCu0p9Pi4UAmF2rtqDAYy
+"
+297;9;2;"YreRWWgFU68JigUMQabTqw==
+";"mj0ExYe43mZ7NkNxrrxi5ir3vfGf9qxSmwETUglxxJpwmzDfxgXtTVtRzLBnOpSjo3qpiL6bXLW+
+pvBKRWwevg==
+";"+tEbwwAV5d5kh5PaOGqnxJHQUvSdUKHSOpkZgr+HeEM=
+"
+298;9;2;"i7qpneYXttzuqc3Yp/8uhQ==
+";"N2+KXK2mLT8QD5awaFc+yl9z9YolMe17C4wBNU1zFBEKqNmIPf0BAqwx/b0pWTpZmD3hPK+4V8IT
+AB1jawYRFytTQGE+qJXC1l7Em5pyCfAlcybqhR0HTPLP7Nc52SU6
+";"sP8X71GqSaR+jwj8QTraT/SgSuZBGxp8D24QCmMeSF8=
+"
+299;9;2;"u6nEHWowcMuzkU2iOi/u2w==
+";"roKfkZylme1UtOlSLCfK/teJ1tOr35/MfaOdn2Peghc=
+";"QPPupyV5wNAtV/Fqr0ZtJw==
+"
+300;9;2;"f7u3GPvO0mKYA0/Lalk8cg==
+";"M68SW5OPt8+5/8s+UsoC0k0ljFNOtXhaJ4seufWdVV0dmg/X6I3B4lt31ygdywQWzvwvyXQiE5Ap
+j1d+B/0Ib9DoZrREy3Ou6vMmtJ/jiIZMOe7DnkAZ8WDyQ/9KbGWW
+";"X4pCsxcd7NAJvko30f4zsA==
+"
+301;9;3;"WRmb1aP1dZP+dHExia5XLQ==
+";"HUyvCpA4UfthYU5Biwy7YD9LJY8LdWEXvnRNa2rVz2Qdtmpv03E3en31KGCcYsI/
+";"4IK0UYPaMYNU00HCurm3i+fzww3ZqHgP+QsOzcuFW+I=
+"
+302;9;3;"Xt/zj6xHA+gi4P107Pr4fA==
+";"nA4r3TDSxMcYS7lfY0JTdv+08GYuGnlBsuoxd59sbF7NevdV0/Cqd4c0eMUrZqVvlmoCQKDflzVC
+atU8CD4tUwyBVtVR6oSIQ2Dqt+Xo+XM=
+";"gr1vk94x9afGEHa4QQN2pg90XBj8WcMCbgzEBfcKQ9Ok8ZplPCc5ykn7/f6vA/zD
+"
+303;9;3;"h22suiBxcuHoPtqEBoDJUvTeEYnoeRn+Uk8++mfpf6A=
+";"offZ4lGzOKCSVfaH66SM4m4jJLX0DuUNFqfMLhnK8wc2/0wMpPeSXp7gL0WpPMgXRcGkJSaVIXZ0
+dVRc2ej7Ow==
+";"SEvyQkNP5PuVp6mnc22uy5h5f71UTkgySrvHFiMx5v5kWGqNT88qs4E7riJjiZJs
+"
+304;9;3;"X2Xch05fjKR7aioMG7CxyOyWmqTQvwfDyecVWvzhRrE=
+";"qvIHp7W5F05cqPS0T3MfM2Sex66Kh+pAgfU73Rf+IHm+M8EPZDxumSY2Qv/6wXAxjXv/ckUFzi9g
+KTiIz9BA6IwMDOd1YCwGOM7M0nIn8HyEbwAsVj+XaF2iLyYTxvWC
+";"3RvuRptR488h/2IzfkTQqb9HvWNvn9z1SBCCqAn+tX8=
+"
+305;9;3;"ChpAecirFViXp13qZYKxze7+lb25U5rJAj/YLpZofU0=
+";"LozJs9yNZGjb6d+F3D2qmJVnEgTT8jSYZapvl7re4Q/NSNgDBT3E7yFt++XG2PFWVNg2Fv5gZAq4
+dTr8KNux8g==
+";"H7VqL1a9A126avKlun8LGh2VfkAFzD4wXvT1JRP3VIYfiRBRymOD3RlirZ+tagao
+"
+306;9;3;"O0560fl+U/QtlPviIt4R4Q==
+";"tA2bSxouiQi4PwdUvtk/OTGao+toFS/Ns/WMCzrrjganGX3fAKkmFK2jjLITyLp6
+";"Pg2lpnrjHqJHPWwIK18kbRoZBBHK8YHFssQ8vB2449g=
+"
+307;9;4;"JK5NDo4zHDUtqdtfdi9/XQ==
+";"iI+pU4FuGiWORXTWcdjgI41Rxu6toLqiZtzKgEdAbDo=
+";"cWjuTiIDjOto7+cRT3b8Vw==
+"
+308;9;4;"yseaq4VNCxyn6KgXmHiUoQ==
+";"hmodH76wPl/zaZn/orqFDdU+gbeDrUtRC/E6AGJ9cfisQocwhMHpq1p+6GJi1ShZ
+";"G6eM8IEeVqZqFlBzk9pxASvalAYzmpqRli32kudrJLI=
+"
+309;9;4;"oV267KD8i/97dcadEi4QFg==
+";"0EbQ4OZVF/rGyF9V49gMy+kHN98FWIxQhAP7a5l+fQ56LCcwE4f3jh1NEeF6RsO4Ihll0E2VsN2S
+9lpK08Gfjg==
+";"Z2hUW5Z8ko1nV3CFjZAlyw==
+"
+310;9;4;"egl0mPx2Uzg6GAC4RcZa6A==
+";"hZtZvCFmASjOaKFuM6kG2rHZ4/9V1J0oQUMYT5RwpLoRVHGIFYYjdkZKX7D7VqBthw9GCo9/7RlZ
+h6nRRmIQt89KkmZuV9yDqPj60Oa/EKHyDW0h8xN3FIfHf6vQOPK/uRGOBQXNOWXKHqRXS6WOdw==
+";"4PmNuZQt84dcFBOqe4how1uFTaOLe7h5e4R+P6GPHtQ=
+"
+311;9;4;"IdjcT/u+FGK1DGrVCJc3Ew==
+";"Bn2xRqqn+g6KOczXiyFu0u1wGsx+cTBtKbFHNcd+YrjkJVV6SaMC/8i9ISIdRENwGecANkSYDyBf
+42ICT57JD8C1TMtLwlExLnTEGiJrairUmKo20O8b5QRPxZw7xq8SVt06OA6YNHIX0H7n06Tjxw==
+";"WugnTrwzEphTE5mjs3KVFaLLMZEcDVGlJbVVwJ74ivw9KymqLb0Rh6V6ye7FWldv
+"
+312;9;4;"MckVJYQHg8SiNLEXL5y1qQ==
+";"scZOW3oaxsQvPFqtYLzq8PwCHITOF8BFm7TTjpLkXwM=
+";"5evtPjxB75Qs6n2HuWwwfuplKUImaGMwp08liDGF7yY=
+"
+313;9;5;"PitaDWA3xWhgtPiNVnh8BzU658f+5KweV38XvnRLjTA=
+";"L+ag5ygkPC2nri7sz1gG32+0/NzayAVhOCWddXRAMCUo48U4SqaDvNwav9nkjWNFamDI6iaFHY9m
+JsK387cgwD9q4Xgc8il6gVpIoQDbnwg=
+";"+9okUN/kzVW6/OArCDjbb18BQ4M0YRBkscSgwfWJ3eW3C//s64MEe1gexswvXQN1NisTnuMZgyJ6
+a4YH/psLvA==
+"
+314;9;5;"LgiCtdlC0k6V/DLJJ+0I2g==
+";"x191Qa581c7OG5hGjTjc4cmGpQxD5Yw3cz8CGWUHUAJr4d/yuWkIwf6a+MBJwHmhXA26TktjHXre
+K3xx/CawoA==
+";"aI3204B2TWROy7IzqgwDtZPWp5TbS77d6e4iA1TlKXc=
+"
+315;9;5;"sSO+i/CkE8SYre/Fw/UH2skcr1gdkSa7tz+UIwMC4/Q=
+";"jjLTjszbnnXLQ8Cn0AnNRBvMYI10eeq49zRRTxst+IDGXPhbuklgPaeVzJ/7EQ7gk7uPe7hqwKgx
+zMI9iCs2aogSuBRol2Xp38h8tjb2DJ2TNfdzj/Fn0WL00Av3kjZ6YWnPlQhK8SDyM3gDBLpWLA==
+";"ONbS0mNT8RG3AQbz7j7PImhjplYdMLW/3ujDoAkDVHo=
+"
+316;9;5;"LNLH5FVFHwTDlimt/ZZ7CQ==
+";"KfXcewl0OHRCQ7F8BzRQDmMQc9LczAXQdh4Qp9Ku0GiltS/xXuQu7aaFWlHtfb9XU4y4Z2mN48re
+rnRbr36EdQ==
+";"VsfA0W0U3+a5CwaFRdl+fAGBPkySaELikuSmdOzxJHo=
+"
+317;9;5;"q3QEyZRNjO+LMtSyZErXiQ==
+";"zvxVfeS/w5k63eOFvmOkHhPxxCj0eZAvJUxKyjfn2lutZvCUDJZwtz2/RO/JlqNiLjprC98U3gtu
+9RDnhO4j/Z82y27Boa0Tvpz6HIHdCB/38kHmtywzc9UPPJdj+SJa
+";"Pgvph0LIDXi6wyeEoaZYEA==
+"
+318;9;5;"adxzXmHgLtHn+Zqd7Z3m9W+UnFsg+4U832wf721bKY8=
+";"yIpF+Ccv31X/G551G+IPx+g1+tZfLIu4RxYqZtoT3EcOdfzhZjL20uPCL9BZ537GgfeZ7EQeCcMh
+Mc/a4Cy+vA==
+";"NIx8rZFp5LAg7FKi4Nyvyjtt5AoyRsQcSc1ANqGdibL7n9FVwk185ixQTLqwOyNs
+"
+319;9;6;"W0CRf0LlgOg0ezgk4Xm41w==
+";"OZw2dp8zZYCyzrocZf+z3h2OgRR1D8RhmxWn7cW+PKM=
+";"gsR49cnzeKeugRooewaF2uBaj7Fx+u2GYjiIWpfi7Os=
+"
+320;9;6;"sZtrMdAjnkitnwVl2bE4cbRgHUKyQzw21rSf36nMO9o=
+";"jXniezUToiA81YXDGArNglUbDX0XrdxUrWDZ/PZndb08hwkZ6ld2p4rFuWPnW5hx
+";"A6HQefs9gbyycfp6XD3c6Jy6lR75OkfS5TAwKCTr8gM=
+"
+321;9;6;"4uHFTnmpmiYnIUXXxSQPOQ==
+";"eUA282xqYlzqjkoAqL2DqzctPOjIvS2oXdZs7s7wtMiH5braIY+NIEFKToEupfD2CUklCiOUqxf4
+RyqKP4UfdCu7EH/FTtd0Fln7gouJGireOWE6FkBgI3SsKJPDCtw2
+";"pQsyl1vjZp4C481w+mBoPWb8Af7TwaKvYkTCYL3+JhA=
+"
+322;9;6;"NGv/M0RuZFbMbltES+I/tA==
+";"NhCOvKUo9hr0DgK7cBixEh/CIPdY8DXsrcC7LzkotaNHk/bfhzRt7PuDW0EspMBnUWwlLV8VBzdi
+O89zRZ8vVHCshtH2M3Y1VpYwIt3LBvU=
+";"y9ZkYA0wLG/B73zOsUoemMPqHSfrYuJl2TPVCLwnZsY=
+"
+323;9;6;"oSWKYuj979wD6t8eRNHbmPVw/bmpO2RKta382RSc+Lo=
+";"O/2bYpdGA9aRtSMkKPBgHJscyaup3KolaUUM0dJYCy4T3qcaiNY8WynDIxzPFkbA
+";"cpt0tFJWpqbjubqcH1XUDPx/XEURcEE3/3MiiCgNPSm5JH2rQ4/maRzCHH7ql0MlCC3iSOlJHulC
+TBlfAa3UAw==
+"
+324;9;6;"Nkdv0IVM5BibHi5vJtIu/Q==
+";"lT1fIIxk9lrUMg6O2nNmzXl0W+PyrL7S687uZdKFf+M=
+";"v1zWfrcEqQIViu7ekuNbww==
+"
+325;10;1;"CRoZo9eO+UjJMcgSCk5tig==
+";"GIVf2L5ryLpoxMPx9NeV5cQF9+s4kJxz4C2Vw7g/FW6SGrN2VYt+QBUpgdah6MZGt11Hi0QT2Dqx
+1e8arcQ6HxY6acEjWPvIX4vPifPfsfw=
+";"jbFb9w7akm7EaJQvIoQhFJpIBx9PdCB53L7vlfJJ88Zt37SaXF+Em0siEcG7L7IdXyr6kb/Uog0W
+mP/xefey7w==
+"
+326;10;1;"2F6i45PvWp/XnqltdKVquQ==
+";"NwFGLqhCQC3IFdraDC5iNf3ZabRxC8fTfZhG5uy6XmQ6sULVllsoDjk/aZg95Yaj1kdpfZF4x4JJ
+vQSolEWHwqm4KoP3n6P9+CTlruWBmUtHaoaC8RB2F56RdQrM2Co+WN2lQGHJkCJ7EStyy+pvol0D
+9CZhoS7TqXP9nNRrshLO1vMjF9tiKd8gcyIofnrhX0cfc5xVwvp4tYZF2bWVvXLI4F2VXARFVu5A
++M3jnhGnhoh+h4WkR3oFeEdu+NGX
+";"MAtYKiFId6M1RGB7qpBaGQ==
+"
+327;10;1;"YrkGbM7FZVai3JhVx4z6Fg==
+";"RS6asw0+cn1Pu3U7sEcn3PiP9UU+BAA+rAYmsxpUOcOvkdX2EJTi1w3TEfK7IBHF4c2vrCUv7WPi
+/uSPZ1eMgQ==
+";"BoeZqPbAFhJ2BwM18ndJj0yKFsUl4jVZ5rU/9zYmf8P7pun6Bt6DDVmciFU7EyWC
+"
+328;10;1;"SbXN4v34x/YcWBRAzu41Mg==
+";"FRXFMZmig3hQ5dm2q0y4YDvMrBeKrPDrNiwx4CnQyma1s2fEg2EJSavOcjKorMIp02Y4HNTwsyF8
+vQYIS2tc7jNkI6uA6zyjiw7+ZgWQJ6UZlG7iE5R8k/PKRxyvAYUTN3lVlUhG/kwudmSnQ+IeRQ==
+";"wUdedMtXjtHWc1Ex7gj6+g==
+"
+329;10;1;"lmnKwygfqiqzqXzl4fYwtg==
+";"2qW1GxVoA7t1o6FLN7R3mdcffopk6wGX9XFusCVxHJIz2D1qW9u/cwmqYQBlXvN5Sc2RKCPMtJNP
+fGGlL/5OAxZHjqP8CcvIKuCh28DJ3H0+p9rD/HKnaeDFQcO4w7Ss/0HzDEoJeg3sg5+d7TD5odsd
+hWfIaiwTgZE+PdOvkmjzwADFrsElVDuT0tt0NhQgMZznThzx3dqD8CWny1T2GW2ctRI68OVeGh/v
+rLgkYcE=
+";"5UTU59SPNfF3SVyzA4m4zCJpYTQYkkwJHWpEayy1MbpSsM88/6Zv1z2Bjqqf5ohYD0FNfgdCDNio
+bsVSLpuYAmiB9jShVBH2zrlX/ez7PxI69EnPdYAhMtftmpCTSZOYjk4rJfY9o+BB5ZW1284kdw==
+"
+330;10;1;"JKMgnC/rLNAGE1AGnvRQqA==
+";"NhCOvKUo9hr0DgK7cBixEkFrEjU28RHmGMZmdZra4za4phtt8LwjDPjYoqFL7qrX
+";"/w/D1mE99n+B05UFZk/hrJyvMOdU+zY4LNvVbrHHFrA=
+"
+331;10;2;"tTjyPB+1Ez4DmAzW2Di20A==
+";"8BgPTUxymKTPepelDrrHKfT2AxUpnboLDia347cgaKz1+6+67Q//GIXMsAVwZDAG5TolGlEjZ2Mh
+AOPcb20RpOa7XoXda5etLZnYoEvqEwVdwJwC/HLjQrNpgjBl17gjNTSb+VA1eimHTAU1WbB8ew==
+";"B9q2s1kZavbvtF+wFkEwxyY53PkEUWz3KDNf4Vdn7KA=
+"
+332;10;2;"PRLNFvBclzSTzhzWmujXpQ==
+";"KdCEISDpLUoVileK1pC/DivOl7ppPzMFi3sqSYnt1kW83GuoKRD3+b0SOIGjBrJLgnv92m6pJdMF
+Kj+sIpMdUNdagxnQi78hDTRajkMorgUR+ss4wgucGBwIbxwLVyObLlxo7Cb5ZQEqvNuO2HFpzg==
+";"H3FHNORNZe9xxupcGAqPVQ==
+"
+333;10;2;"OO5+1kVKPqeqA+cwfiblt2Ti0lOBHyuD4qJd0avcO10=
+";"afyt9ROQkUfrrPVVAtezse0X6LNjD4bxzwv2GsNnp8RxeThRuobYeof9aATpeyHSm+Hjtd7GU+Zx
+OFor1b1Jyw5D2XAKkTD4XmnJ81e80ptIRy4ERSeLaMmupx8l0bpe
+";"ILWi4Lumc125yx0TuvcFzIFdmJk16+xEMXX3pbwNqrJkY+ypBghVCdsMGbMG2STySNdJYxkJDHHQ
+4xJ4eFjxtA==
+"
+334;10;2;"JkCowpikVgxypzFdWcT0Lg==
+";"qA8vYD2EVMpNiOCX+6+2py/4bRWDeVWMLMvB9eyuHfASN6CG7YAetoCDgglnMkXMwPr1XiGwcU77
+54qi/1BNc45TcQ5QkIoZ2UqPJBoQRU0=
+";"Ecy0M22Riex/12f5kJ3fpcdX3pU6avOrinq885jvGKk=
+"
+335;10;2;"gOpwV4esLrDHnQVh+gGJxy4eJ3rQbMXV+/NsQaG/65k=
+";"X0uy5dAeAQ+GboKdOoX6ipnvbF/w/WpYu8luvuc09/g=
+";"o/W+b46zkeJBJkeXO+uxoHbozNzvGrLrApw+siq0mQk=
+"
+336;10;2;"hRIWcQshU/QvOwYf69acrTNUQhxUtee5F+Fr3QjwiUc=
+";"MBmICrKxTWQo9bQg7HlN1MRfE/TX78nMRqkgdLIvJtM=
+";"Ecy0M22Riex/12f5kJ3fpYypWcbY/bdm1G7TT/sgpwU=
+"
+337;10;3;"uiPl0WnmhFfrXfl7pbTZbw==
+";"/1KWIs+sR026n2Z4PiI+batuCkFDxfZ2Tt/kR46IWe8=
+";"P2N9WHyajPYEnyYPXa95UaKIBUF2EbQYkYqQBNG5noc=
+"
+338;10;3;"COtehtM4lUArpwWG6M19zA==
+";"ktE/OJaXoerjIYXqeiNJ9xQsBU8iO29pK6FB5jJ0zFp6i1i8acd1z/6uNGTrSEukdAblYsW9Yqxm
+usCxozboVw==
+";"5fk9ybFaKT0ufl0aGqZi6Q==
+"
+339;10;3;"PD+6+Za1R+gJ0RFhd3QEPHRq/jVx0YFWDkil9gbTEXs=
+";"K34QxuZeZp9wjtauUVUZ3Ng9b/2ITYGzXpyF09g0ECe8EHn9PTyrWNfqH77HgCrNRAEnWpUrrba4
+6oLnHO1BmW9FvzqzIbNo6+z1oxs7Lbc=
+";"sEd5nfuLGgkDdsgqKBwWo9RBoEecD7rLLPUv/ChUgu0=
+"
+340;10;3;"PbZDXGoIRVfBbIKHNz+vOg==
+";"3UhnY6zzc/VFCs2stS1IVQ8mPEytU8rhU25ovOB/WtXDAorTXR4jur4kd+4FIWflnGjj8py878YT
+3sSz0Lka2Q==
+";"k/nH6LKP4Csola6qrSq4rw==
+"
+341;10;3;"HCwtHUfOUNwBWKq7GIogVg==
+";"enOAY/4TCUHNtnOeylJZKh2sP1bov0cywMHHGNd6q9lIJFlvxb4uSnfyNMnTw3/vT7nFYq6ErWX3
+QLOY5KZ8GetXZTpgf9/oNTSYjxYHOIk=
+";"xSAoTrCsRS/cLoey8RZXD01VJKdGwgH67GRZ12gK51k=
+"
+342;10;3;"pDBFT7dV52Q+kkiH6TUQqw==
+";"ku2UNqR0iglvjzkIqfScARh0VXWTKEVTZWHVC3lw3X2kV0If0fYg5n7grW10jyXLgmwhVnqeuyS9
+0eT4ieVtslTLBON6CC6lCESgA25YrJv770RlWqDjP15h7jsYsblLDviXK1SKsH9+1kX0jZQpOg==
+";"+hykwXN7IRUzc4jAYbJoYY9pNe6fGRP/QIWqgvXHheUC5bk+qJRxSrnYpzZNnkZk7er1F0AZ3ALs
+ZyNpA+srTg==
+"
+343;10;4;"FLsaFSYYWPjUsv5BPS0VUW7qT/VZA1Dcvwz9zhYcPQU=
+";"MC/mfvA5p5iTCotCxLnrSmuNG66zr9J7JGJi+EIvXiy2bL85TlZGmUubVzuckYG6
+";"k9IW66QbVjCqrG++IQOQOSmt0fUX/E1HGfUjyuDe6xE=
+"
+344;10;4;"DjUhQpH/POPv98Yo2dl1gg==
+";"Nex3cfZfX7oo55ESqM2WBMO+X2kkNMf6IEoN0qZbW1PMZY3uGG5cmDvPBgssoOz8
+";"svKElfL3JcUKDxWFc3uLeIKj364H//g0gaWFArys8iQ=
+"
+345;10;4;"b0I0dBQ6N68wgRP/PFerDA==
+";"TqdggVCt4ptQ8mqO6A9kdyTpxDLCdQdoBLWV/RXb3dBHFUIO2xVXHKUQly2sznHt0qeC3U6wqQft
+Bx/0pgmAch4i3EgvwKphXu5etOm8S0XWQuLeVpsvC7ePYwFBLgZ8I9vlln7LHKW5cEhX9xp8GQ==
+";"WzfOBvXxvmN/nJ7qT3Wei9sWol41pYHDe3oIFQFUcz4=
+"
+346;10;4;"ZS9x+iAXo8I9MWxJkrAGYQ==
+";"R61USFAMztyl+daoynRzwi68NbtG2OD5SfRskqM0n+1e6ILRYuUuU5zmSn5zCAIYZppHkuC64fFM
+Yh/gIe8Ajg==
+";"xBfsYbtEflUFxVR3cboDmw==
+"
+347;10;4;"Aaj9XTQGGQkVm+xk/3qieKLSfz4ISfgXX4s3YYqi/Dw=
+";"1ZG0Blope2wRk1/mBb8bJP8kAgfKmgDXi14E70h+99Uh6UmWUxbVORKe7ibzYrJh
+";"yenIOY/QaW2pl0TwUVRo2nlTzxGsRyie1y4B4u8gYDDl6dua8lsYVsA6P8l2xTo7
+"
+348;10;4;"xYSme/qJbZwWPstR6l3ncyvSLygIamaMzi8yr4ABr2o=
+";"2wdu58Dyk5J6yIC2uKEoQln3FxNzOGg6Xf1gsRYM+fSY/wTGGkrBVluZBTFinNzlqWjn3WtNilJU
+6zCX990lUCQwVkZnUBDAZ5heZKqPd7M=
+";"j25mkTKaOH25NorBCqS+b8710EXsZWSKpYTS+EzQDHs=
+"
+349;11;1;"aWyS1lKaaKnXiDUhTt5DSOyMJN4lmEEc4Z/FdYAjEzCmiHWNYf/IgtJpE3Y/az/R
+";"pA3BNxwOaobW4Nj1d7jS1ATqbxnpES6DdKrAfNQDmTrBCOes/aidM2TW7MOANzEPNG4IFK3wY+uy
+wTglOMXvaQ==
+";"wo3JmKSxiThI2pfUZ+SkdcfQndzey7LpGIe90/FrXITMhig45qAl5dhuozoU1u5XEI5uear36boP
+MtYtbJrwoA==
+"
+350;11;1;"Ew1DIjT1vlzUwEKI9AvNbKkLy5OWh9KkHzwKaYnq1XU=
+";"l1Jw1/BRHeAZkK87FO75yQ==
+";"RudwB7ptA4oOwXBwc/zxsZuetSsJEJZInB6aUO3tLR4=
+"
+351;11;1;"ENwPj7mi9D2Y8SvVAD+0Ig==
+";"oquUgmH9CtNbTu8qAlqIuGZAUSfncajbcEA3p6pZmbMhIA9zfILDSQ5ZWzvxEiR6GMQUFx7tUm3h
+6v4RMdhkeg==
+";"L65nYu6EOFkJ9a98t987S9vQoZOkTFo9Wlz0JXA8LUI=
+"
+352;11;1;"12F7Ea+3mpxqr9iE2z7gLg==
+";"k19QPQ0FFyhVR4DIAh1v703gKCoExiaKx7sWIYLLHVw=
+";"NXLGe1Cyk7kji3tERyS2jkzru2IwCEY1Li8+vN5E//0=
+"
+353;11;1;"CLvgntjm2IPW02gLdELcrQ==
+";"Z6DhmFpCqUmwfYYKma+R55bFl/6gYNfqupY1+WvdG5tNxInO0ufZ3YAiMXI7mGrtNOrD4vi2YoIb
+oUVB1oQHzA==
+";"/SocnpcimCx2ufXAWw6OASmru/IyOmfwyrbWPtlP/J4=
+"
+354;11;1;"gkDEY/zM7szlLfZKW87P2g==
+";"9Q2MFvSjc2ucEosUSZch9Ib/4DdGF+OHabUiVd9UfMh8i3ARPn3rIUt2FyolWSyr
+";"bV/61oqUW6CZ6JJCtVC2Ng==
+"
+355;11;2;"BNzk+6MwGCmWArEpAJ8lmg==
+";"adOUzaE4puRHVFDy8woPqxYg+FVt5SWPRbFailHkYbg=
+";"/j5n12yoMtTYZNvXW9jTf5o1LkHyta/PlDXubf/avQ8=
+"
+356;11;2;"E2UXL7r2LJ76gy+RsoX8Ig==
+";"l2bTE8Q2h9FTNvMDRifPng==
+";"REja5ojsFCwLp0kwVmLctw==
+"
+357;11;2;"5sBjUSV0TJGu//0FEghjYQ==
+";"K0J3Ga6gKbpPmmNOWPSsVQ==
+";"zI9pP0iGBLciQ8JeLn0VkFWWC/7E7KEOkDx/uG01rK8=
+"
+358;11;2;"pJ3Zbz6L5rm+7bjYv7TqoQ==
+";"bFBvrYV9g4o6wsHdYnb+PV4ZYYjYwGJ2wKKRr90pooBEFUKnTqVI7mOtxKW666+RZ54NOyYqiKPw
+OrHzONa5MtqguPVzkC/2qGzRXx9Qv4RYBUHzztOhEKPsKmZYee+yrnYrTo2J7PMtA7qMstSSrQ==
+";"hl4MX1MB0E9XMFK4UgR83Mh9753DjdM3cOonedZbW34=
+"
+359;11;2;"6xp2HCumG0H1dSh4AYQDBQ==
+";"CyyiTqOQ78OCQCAPc7hbX2HANlc9yeaUr1Pdvn0n/Tc=
+";"zV93qllNMv0ATrc26oqaREV0MeGk7RroULcCfphSxOk=
+"
+360;11;2;"8LFt7c3qYLvnlzFUlrF+Tg==
+";"6KCvE0E+8K+f7uO2GmXLa31Yf2Y2sijPzA2Ly/t91yk=
+";"PG2RfYDyIAJiCeYBaTA1wi546ripwOdJum9bNaC273E=
+"
+361;12;1;"Yplv75r9WzqBs/DRqcz10g==
+";"k390gkCFMplLzE35H71NI93yb9WWT1fGY3ksp337YEO0N6rS2ZJ8vgZaGHozQETS
+";"fKbIda++IDLS9l8enkPZp9plUBcjKOJ0XGXopxFyBAT3gvvDErAnJwPGrMFyiGwn
+"
+362;12;1;"QBlxFiWYB9iHKJ7D8Umkyg==
+";"dLgzlXOQlWomQrHxHZkxk1udCiqJXqs72mHzRIeHwq8=
+";"Qs56u2rKpAYoxGZ/XzQJpeOVdn4YzyaGXDzzyPVl9x4=
+"
+363;12;1;"8bX7t2WxlRbZZ0aRAN71pw==
+";"lPy26kIij9M/ZH9nkQYwNdlIrjL+RY+8W8GyeG39+atSSwjlwFZXF74twc4u4WjjE8SHkS0ztcPt
+47iiumtY8JDQzoyvNkrFypdSuwNYyJNe2nhT/pjNgyqIdUVDJGaxtX+F/LGXbJlKffdbu4bubA==
+";"RoOHCTMLm9NlrlXdyjY7PQ==
+"
+364;12;1;"lGdRwNoJnRvnPzpBUz+87w==
+";"pvmArl7ErqZUlQv3DbmPyR0IvPi2Rxx2oDcIfzucBhHxgR5CsOWdWBiZYievFjLx2sMBtWE9Yv3m
+TwoNezo4A4MyaekKwRo+InaTz0OTuuM=
+";"5EV2STck9mGgbn2nGdH4ZbD5uqgy0ATxny+byKZX6Aw=
+"
+365;12;1;"MEc6JOq2HJnnmAKiLktVxDQzV3xL1hDFHtHlM6bukb4=
+";"wm/xHw89SDFJmZYoT8p0Gc/22YDibAvWf5FjzWIqMvbSId2o2L36kDZ0Kdfd2/CDgSik1/xTucQi
+SparceGTajuc1QpRRafOmkgSRXqQBOAPZ2iWRdm6J7nZYC+tAuKifFU5vxQcRSHlmAWaz8qMDrNh
+NTrAd9i4PedEiEXabgo=
+";"U4/6kPaQQilfr1pK2HVSI2B2K/A1HJKMowgvJTc5/Ww=
+"
+366;12;1;"Nia0XKpQNe2TkaQIaxLv0g==
+";"5vOqYRbH9Q+wlfBk1QDxniLXdt4ZzvWM6PiEQ3vta42gh/z3I5t70OcXWSr37GZejJzVMWbR/oyE
+wwT63bFQ08W3CvBvlHz5F1LjnR/+RyOaAw95BCVid2QzGE97qjHvqJ1blY0aWbwbi0VdEZnLtrwu
+AUZNAqRx9NAOYTF1iXTfsdyKSwSLPhUg8Ag2I6f1Y2dzhILiqX5iU1hk3dbujFK8pOTN4x1VnS2K
+KJetq8nsRhlgyP8OMrUVsNG+PsQy
+";"CFbafj+2oyFq0XASP2jra93NkCQgNjH1BFXKPBqWFblqmMbB7k2M37/nZUzz1VSg
+"
+367;12;2;"XFOc0QDrd+rjXjGHRD9xNg==
+";"oNP9YRv+dkM2arV7zNJYeXCqLe/0xNYPlU90sD2UULb43x1T98I2hvXV3tBb4Rp9pPu6UwPgsCBh
+qUGdYn5nMH0wmuXRESfwQIs7X1f6qF8aPbsX/2z8+UdP0fuGc+L/Mo7YSXj9ydfsFTUZTbMG9+UP
+nNO2qcEj7CYu+GqpeKtj11BdhoIE8+t1HGgMTyVG
+";"TcsKhyjZVs+7k4MavJGRGg==
+"
+368;12;2;"NaFLASBlJQCdx3mkGXG2wA==
+";"mUxyA4yPC4yRMSanaWXkzWqWxZC+z2szJ7cugONFn353mEW+jjHGAWHkEkLkgdNS6mzNoT200nSe
+4b9AXDebqg==
+";"sWi+SqGXkTIs0JOShEHsVaeQ6/ZybfNpn0VLlP6hPUU=
+"
+369;12;2;"ZZZ6wfHDQ7758WAztKITu+JkTNKu50/rgfU0sX0FfbZySkmUzYezhFDQsDiHshec
+";"p7wQH+LKZzBhkv4KrabPx5yBYWD2hX2sYqWSYiyLpxQ=
+";"T5eAzVopf/Cn1q9lOslpX4Vl0lNPYVFdGtsZW8Gv0Ng=
+"
+370;12;2;"pYcvpyGeSNbRgiV+5hSsHw==
+";"ZOO306qnzNVI22ia4xKcYg==
+";"bP/dGw2IhE+WdGMvOtQeKQ==
+"
+371;12;2;"EI2vwwWXtznMktWS8UH6CA==
+";"pMj5Z3tio0mX/Y9KlN6q06MgSzIaV4ScR6rxaFjqBARvKGCQvoih5fM2Pma7LdE8SqdVyQPtUZ3P
+H7i4hMHeaCRu8wnNcBLHfo8LEKk8Vp4=
+";"4MkV7AxKd9NlUSHGmqZh7gGpq8jLrzCzD1nv4yDwgWI=
+"
+372;12;2;"GNMVD4nZvUlAliP440kijQ==
+";"bGnFqdl/AWKGamAy8IxZYoGvqee19RymKbWrnV874vPpzscXb2cVCumOxTnTSY00O8ntB27NVXNm
+iDg7108qxA==
+";"3+lP3ZvMRi9BLgxLED1gcAO8ATntTNNZQDx6z+v2QNQ=
+"
+373;12;3;"FmlbfkY5nFYkI45gGzKYZg==
+";"Kleq8ILmxuJzjjhaxDwbJjXSiq1GDc7x41bwX5fYQQ5tko5DkNeiEWk2EQtsnS4GbbAse+w3+sC2
+UJza4oEU1MVeYBQIFsGzONf1wYJfLAngUcjW8drglqyjhAEuFZelo6ShMUKnRvDzI5oujldTKw==
+";"3jBsclGmxFZd8/3kvyduw5ba8ITUd5o8nZPWcWdlN80agtPnWLv/BtilckT4fuWR
+"
+374;12;3;"/iVtYIC7jMkPGu7sdr/t/UC4skEUaFG+vFxYutNA9Mm+bdcd6f9jBQ8UQQd1N6jvKXfMaRaIG3cB
+t2EvCWLHBw==
+";"o5ksuqy8WMKsysd4aa0x20wsMkrN3LDgyUQu0FF/WVIBLgAjfqKUedu66pkm84DU
+";"bddOsU2QH3y32iHgguh2xskoiUm34fNRz05r/HmZPlc=
+"
+375;12;3;"OQy6cokZFvCWIXnwjL4kXg==
+";"sqM1AMwKxXN0X7ALjGoQQ1TaIbdim5UVPPlioMZjAmdywnACIdjQ7ItDRyh4w0VmysnjkxkD+8Uh
+6Y73n3yIF5gFMq88SmjZAASIzgvHj/Q=
+";"jVvWY7LpCKEXmHIC7ojQ3yacURoVchoxT9hK7UItThk=
+"
+376;12;3;"doMjzSBHiEsdrJ2boPGbQw==
+";"JnbKSUSiRjFUWSFQfbeiiXLcq36h+2njUgOq+bTcdyTOxpKGOCT1xdcc2qlm76WsrR3a/g3BYW+4
+PulYfXrCG0o6MZhx9JIU0s7BWvt1fIsYig0/o80IFagAaJvH3TwZ
+";"MWpxvOWw7U2DRZNOLifWMg==
+"
+377;12;3;"0610onoeZq2IOrp9FQsIzA==
+";"0rXKbICVwFsbFb6lMrTiQQ==
+";"zV93qllNMv0ATrc26oqaREwv5qfTsYtyMEYMnbK/q+ihe/zjvyKw4zNNGU3fMqEq
+"
+378;12;3;"U6WXwDaJVq/gjK0BfDFODw==
+";"pALGgPCH23nh0lXMYbUxGLy+qf/aL3i7jNDLbhufuD8=
+";"7wED3CXLTlZIxZNnmp4zQnq005m9g9ZJCdJscKd0Cas=
+"
+379;12;4;"4vywDKwabPPBAEO/V8UXhQ==
+";"uqeD4zB0HzHVT5d01dQSvvbpqPg6wAYoZeTYBPdY3XxW/nBNbncxtOFzW8AkWCyvkH8dc7mp5EWa
+HK0nVjAGnw==
+";"9b4Q1zbPGcaQpxLsZJF5xg==
+"
+380;12;4;"ISFhp7JThsLL2Sk3o0JsdQ==
+";"yTOaPPp9SM6gNRFP0tLAk/NhA0KUqzklQHERxCCbqAsHdYC+Gl/rx6cRFVIi8N9No/6xDTiXEAW4
+MjwDAWduza+Lyqj1QFhDCwJ00L5E4fbnA4LEnm+TwBHhrT1/kV6clqMo+KLu+aEdxs9/alGItdaO
+W1U3JHARzyHVvfYnt4c=
+";"2XAj0l65sPsSNria/CmDiwJq1Iq4YVk8Y8+7jgOsQ26dgin8cJcV1w3rkVWFePgW
+"
+381;12;4;"0/skBjEe4cPLXua/gIUpDg==
+";"YrkYPXe+oGM62am2G1u7dqMKlG2E0H/1lAtiI9+plBratkqDOfClrUHvTyxDNSD9
+";"tylJWOJqqLa03EdSJ+b0HgAKrb8u3x3e2goVA0XyQe0=
+"
+382;12;4;"pzAHhqnuXergzRrV8Bnfdg==
+";"IKlVqvLeow7499jNJ18l84xI2CHws7H1pzJ+WYEdJvf4t0lkfbKcvI3kxdNfZVmC
+";"l6mLMsBRqcMbHuOym52poIjr7QysiTT7Y106JkuRZYg=
+"
+383;12;4;"xnm7SJRhNk5hWacy0q3NvQ==
+";"oNP9YRv+dkM2arV7zNJYeftgQXmoSiVj4QtO2Dxswbg4RvGpiKbKFU7HABvu+1xafxzGQDvGqG9H
+DElRRmd3bPliTVTS92bJst5/LjbSJGvkuOG17kipER6efPtEMuQ3
+";"SL+YZzg24RsrQWt98FXWz6932f5MTwFWtnALs/Mvzic=
+"
+384;12;4;"7boF5smhYjjX4pm9tYIq3g==
+";"o99jiINUVvmjFN5Vl208ZzTJPq7Hzb9EM+QaPjdC45LYzY9RBONPVjaPpOC6AYEn
+";"RyaOYUfuEuaJCt4ioABxdg==
+"
+385;12;5;"OoU5jn25Ee9RhP/VEvo81A==
+";"s9wCIzTrGUdocusuERRTXOq9qf7EaLSTz474HFmo3ITr6c7cG9oWZudewJG6kfpm
+";"Zg8YcWwrfBniyU42OSze+KFGGGwj24RExWhqejFa5HI=
+"
+386;12;5;"RiCJvy7XZ0H4g5fVtEpKWQ==
+";"0OgxhFSw7/juSLujAts1AjRsSpsRtZs6ZWrFys/wAdbjmig2b5QECrJNPpRl2ZhZxeh6ZPlez4e7
+UadkuM6PBA==
+";"w8+X9Q4vll753eugf6vyoQ==
+"
+387;12;5;"/NAQtOzkWqrFHEtH2Oewqg==
+";"UiooEoobKH+emvs1wHApzZwovg57jy1py9DOwUILNHq1Tkw05rn+9DgZQHnAWdjZu+PoVyMlPomh
+E/T93fcxEQ==
+";"ub/u+OK9VwFaXnTye3Z+gMuesn2PGhnNocdCCRk0WHE=
+"
+388;12;5;"tZs5WNsP7jV5gINACS81ADKlvpYdbB0euye28utse54SF/JcZUllB0PcVH/k2pq6
+";"xiPd2QkfzA9eHR/WYMVBeGzKPbWuDGJXAhkBdgnbsbAMrPWPK/5F+E2o3EmmMOb9dQeZ9EpGUvtf
+f+u8emTk2w==
+";"WwB2Q/ke9xuuSD3xktPL9qA3+6Pxp4JJLnZ9pFs/Xi7k9iyG/9wN3BJEQ3nYCcA+
+"
+389;12;5;"q/8fzhqbT0fd6SsZbimvkg==
+";"NAv6pUPku/Eh7U1AFZUhFdu1dILBZ/OxQj0cC6+u0BAkOO26U/a+xl914tya/JaGVQZ+z0G7a1sZ
+tEPRmFLlJENfDYs7tMzpAe7S+/H/DlsUjI/0kYVeaDbn/sUXCHABpssHwyCKQHJraOGQ51BQVg==
+";"3gpWkj7+sh6eVsJ5CjZr+NEK2P+FaCB1h/WWZqejnZI=
+"
+390;12;5;"2APaaaeCE5cFwrXAwbjuNg==
+";"/3mV8ck3zJ7L7yiA4aptL5wwsUlNSemd+8uNMhx/I+JP+mVc1yBaYFk3s6YzozYazWYosUwu/NRZ
+2WtE+tXcxMR6twUr/t+lp58XRnxI4zCk61V4n/Gn2zYhTO7vKzqMG+jgM8Pm3uT7/0O0MSQCRA==
+";"Nre5m60512gdYWXBAxBAf6heD13wIgVt3Fj9LOTPQXU=
+"
+391;12;6;"LoViHoN+S18lNP59LuRDUg==
+";"SMx8ffwkgMe/OXIjxOqQPfpUTE2Ef4I/Penw/9E5itNvnBrsK+u5YOZC23Z7TGQc/4X8o852A7ZJ
+9ALKJtDiZfcnXrG3bXJNDGwfv1GHF+Pfb4r0sMP3blodw02YR2hDpwCs9/0GAG6nffwXhRjfzb9Z
+GJ3SBvy3Ntoj/ZnMz2Q=
+";"C9Mut3stE7GBq0jyUt23pv4RBckQ6JrWy+a8MFIUhnk=
+"
+392;12;6;"DyfuWzVuvlvciQvTdUSGMA==
+";"nA4r3TDSxMcYS7lfY0JTdo1WLpjuxrULQEvyhZ3VVDXbP91NZG1/BIYVrg+b2OJxQ14uiI2QPNGk
+VXfEAdREcMjSEDfY9RSFKvMWC4XKv7M=
+";"NK9VLxYcAbH7i40kuXwQ+UeCMJvRmJ28Y2Rp9shvu54=
+"
+393;12;6;"tJUaSs95ubnVJiWl864GGg==
+";"t3Jrpotl3Sye4V/9WJ1XTrtUOxQIuenIcjkWMY0Laf24/ww9JT5XTTaHQbSytAcnqwGQ1maMKKgW
+ddsSfYkA6x1/JE9hvLAcTkrtGcnF+Y4=
+";"QYm1ibUNGKsamRGIyEG8fa/SzW7Ll6XUadTBWr5YgZU=
+"
+394;12;6;"O3k5luEhNreekIcSWJAbrg==
+";"kqoA+POlYaA/CInJCWeuOGMxwCBAyr3fvpnMoz4j0MA=
+";"Qofv1ErEv+ra/w4vcjhyMA==
+"
+395;12;6;"i3UNel31cYyWk9zJVo5PgA==
+";"p0tzdXbSKYTgHoi6zwYA5Xy34jXAl85KfyAg9zR4SHMGXIxbm0kWL502ClR8uR9lTsUSLTTIB8hj
+iWtQPI1VdUWd6L7FzKLxLIdQHgDC4G6Nl5Cc53YKgpcsoqIpaD0MZ3z0Mr498I63MYsIUjLleQ==
+";"t2YUZWAs4t4qZ2jKsEtrozNQ7rejpBxNXfWc8fpJ4z0=
+"
+396;12;6;"I1P5bwHezGsdJZg0gfs5OQ==
+";"NcRsIfgBVUc+TBUvIiR6qtVl8HhzrydHWa3hSCb78f2F/rsvINji+71I0i/zEfqqYgAi8IZmByIZ
+ATD3AWV1Lw==
+";"vGlzcCpHTJvqI7cGL5qYfSf2k2qZxUZZeQcJ9oMkOyk=
+"
+397;13;1;"yBWEP7A/MDz1IplnKlKbew==
+";"0qwygx7v3wJ1Qbn2EeqCBu/KSqs4NtMC2RtBNxzAr3pd0J2W2nMeWquSPwlo967KDOh9gPWt6ulG
+1n+dUI/zRw==
+";"4VaUVlGCbwPs0J3sS4vaLA==
+"
+398;13;1;"Zp0RfHYP1l5jjmzDAqnC5g==
+";"XlhKyh9iyFcnaseOxD3oR0mAAgje1veMKoLH4Ntw9zw0T/XP4AfdhbulzCDtq5AmAbSgQowuzfNY
+HcmVwZKZdJEW84mJnKWnLvHbE5bB6w0=
+";"YPPsieuJepD3FFCRAT68WA==
+"
+399;13;1;"N1+PxDr4gMjAuYVGt9zGhw==
+";"RwZfFY/7c0c4CioFsH0wOaj5AdAk4MJbLyFtNEDcNU+0Ni1ZcopMXJHF9wOxqOrq
+";"racoFhcdrqKOX4ZSB0cP2RmV4HmGeIceiAdupKc4KROxc4dbU63V4reO7y+/4fSnIt0twsdyl0re
+lpmSzV628Q==
+"
+400;13;1;"pWWXbW1AhOj/7iCfSE8T1bFGyqQZPgZqyHqjbH+GWKI=
+";"C2BVd4ciisMDdlEHKnnESxyvT8Bdf36OBjovpLhWNkes1FwNYZeG3TEHb+SIEH7vrLMT3IfdBb6H
+zKlSbvB08/tKQCXBEUFuEZZCMWziMK0=
+";"racoFhcdrqKOX4ZSB0cP2ab6WhmSq+c1KxVvMHVzye8=
+"
+401;13;1;"hcvJrulPBTebWGNm2ZtRlqMjEu7mivVKNli9BMYbqBI=
+";"okJYuchIXLoSrk48ZrAwPgeVvOMZMLZ814VCFCSEHs0fQFb70YGpG/RQo6BmBWeHegw1p/OHCFxB
+NYEZpDuhZZGikTYyEtjQIIwpG9u1XgQ6X/alAS6XQNZLCEmpUEtWYn+RjB4/VSfQFoCkWKEZDQ==
+";"fnggNnAIgZAfh55FhMRCTdc8kq4P81JxZeBsGUbB1Lc=
+"
+402;13;1;"MsL3HkIoOaeNC/JZKyo/EXWhDLEDvnuNYNGfwn8IBr8=
+";"z8XZ+8YH7VX9LEJqt1rvxJxhiS7oNfEGYnF9LzBEEnQ=
+";"htI2IVdWruITj62WqDcmGHORcc2A+RvEFJiRM2dDXuc=
+"
+403;13;2;"J3pUTZXoEkbkiXvF+kWs+9Yz0rz/6/VMnwnasKYBJ7o=
+";"vhoETkpdLIuxQRyfLF1lrG+J7TeqzggVuszB/8EFxlBIAN5anb2XpSxDfggI3rId
+";"V2DpE8mgXv3hf/fDy7doJtj7yRSfsOMyxy0nWWoYZ4w=
+"
+404;13;2;"Ag70pddJe+eqv05fugDjWg==
+";"NwFGLqhCQC3IFdraDC5iNVjNQopBWY6dawEQ0IdXrXaPndNdbm/8Kz3tPNGS4whd4/9OPWZ2hPyR
+UWfngCsRzT9mhPImAZ+g72R2qxy5hUBNplBAX3G+VJgpCIP/XnLJhP4mwQ7vIInP4YpCaHYqrDtH
+6GDgsTH4VyE7Z+4V1w6Ud80oeKSzaPjyHweT0xq6DjemHGCnSZL5mruEv+VTsA==
+";"hmIMYxtLI0CYySTZums7ldpeXmo+rorsnyuFqisTXW1fnT8Cwb1coCt4D2m2QnOj
+"
+405;13;2;"480qoAMU1AusIrK0qzK0Rw==
+";"nA4r3TDSxMcYS7lfY0JTdmSKbLCzZOv+n0pjRdQs85B9DNnl4XKxaSvQCCqt0WSeS0NZUyKXL7Zt
++Ji+z/3+zA==
+";"Yv0PlRla5m4xvk9uQGbSZg==
+"
+406;13;2;"mjdYr7jSvYIiMIJN30UzDw==
+";"JGdbqv5yNsv87PJuYGuZfDmt98+w+Q4YkTSyPT0TnNPTV6yAIcWugpo3RA+pFO6JKTYnf6YAIliF
+fcX2+dEE3g==
+";"MfBIZ3jCV6A8rYG/oUw+Xpki5Fwx3HV3XCGvpsCI7vV7nAzgGamv50N0zNFwqqHirpvuHmpnIeD6
+k6CTIFLNHg==
+"
+407;13;2;"jJW7BYBOVyq68dXXEl6PBQ==
+";"nA4r3TDSxMcYS7lfY0JTdpLF3vzQ/HbiJpBDxGFL0h4cZnyOAk9/9F45CFnKoHRiMb6J3/arvCNH
+9iDqk842wQ==
+";"uUvdqIiElZ81TxMsnz/igzXSq629hgxibUSg7VLGBR0=
+"
+408;13;2;"vgJHqfc4mUvpGlb72posmQ==
+";"mSkRg0Gbiaz8pMX/PcQ11fUn/K5EPz2QeVnrjRgZV8Mskh8KBnSKV+uUyUhK9ChebVty5rUDow5S
+kJtC/Etlp7ooswLtQz0D49h6+Zf2nu0=
+";"9zYOOzPXye3nmEgxnvwPzQ==
+"
+409;13;3;"RnO7bgmVEKLBzyt664PMmg==
+";"nA4r3TDSxMcYS7lfY0JTdpLF3vzQ/HbiJpBDxGFL0h48iwjUwhINiO5H1vcWmYAcgoBJZiYpKxsD
+G32AyLR4HC808W7mChBnqN5YqbLTKGc=
+";"OXjMemeAy8KAfKcM97A4AryVtY2U4Zs+t8MxgFPP6NqlUqulGTXRjdjdgL0YO2hNZlx++9ZGZVjL
+8KGwrslfQw==
+"
+410;13;3;"xLsNa8SrhYcux/igp9+8DA==
+";"locmsykK/NpNJLiz2JHJaNo8vrydVL0SuCd8CEP08Xqeq+7dDJ9q1q5v6XwsKae3NtSbDcEE02qz
+Yodfx/iXFA6sdqhg76bkgrd4PdlZrgQ=
+";"+A8laZCjd78WDkYpjM1oVdVwxaDuc20M+/XeO10Ncxjpm0FYhSDgZjZ2T2mok+I9EFjjXryN337B
+4qtCalQhqQ==
+"
+411;13;3;"DyfuWzVuvlvciQvTdUSGMA==
+";"nA4r3TDSxMcYS7lfY0JTdohDul7LXuXd5T9WtvVU/twsbgEd/rP5GjCjUqaOnQInA+xJ7mXPzrK/
+ACf6pTQTlLhe0Hndw0MvlBkPSGAeFaTu9jlI9EJeFedLmC/HhFhauzl1EMLYLCOru9qKkBD1SsdQ
+Z5ij9vzL4LsDUIRioTU=
+";"/DaPyRlWjKaiH99jcIoxWDemz7utCGjkqq/2GDGkKAFG98KJmPhg7AQLPjL8++7g4A/wUsNfQNy2
+4FDD0odjwyvz/0UMmCyfWSSuKaFPqwA=
+"
+412;13;3;"zWKQWVUt11r8KNK3laQA5A==
+";"w+mc3FYMUx/I4olYGeP/NvvEoLLVtqk+o23z5WPSMC5SqvzYtOu8G8px2Qokdpwt5oPBCovwwrWB
+FL24NTAijbvDwnycBsH48xLNKFjZJo002/aXTRlXTdZ74dBY0nC2TY0HagSoXyn2W7lLRNkJBVb7
+upAcoSlUPESrE90FOYnY/CWaJlfR+BWGmsXaOKRe
+";"FDi0mbPP0/sB365c+40Yc0uXasuTfsH4GuZ4OMO8c5s=
+"
+413;13;3;"P8jPe3+EbDkREb+t8ldzrw==
+";"kCm8UIswvfP/o7iFFGFSNoR4G4pJHzsiDMI7LmXvfZ12txRKx/+/lXlHptJO9hKEQxryVumeYYs3
+RRHujHZZhZ4QJtulhkI8qs3k1O5e4NxYOm5ER8GUsO3ZiCNvOG85
+";"FDi0mbPP0/sB365c+40Yc+hPdHgthL/AId1a9ENwQYcUDr86h7HweJ+mvnQP6o0Ts9kkz/oX4nCZ
+SY6cT//DNw==
+"
+414;13;3;"XgzYLz/k3kTaFaamLDd7pQ==
+";"K8w90vN+1vHr2aKJF8A2FNzZh5FP16e7FOX2IGUN3IomkTDginR3Xojj7ldE6j6CErOEHaVPngkY
+oohQ7Vl3slSfZdhSUcOtQxSTc/nh/dn4W6W3yjN58lkgQO+plkP/BFcymnqp8jXy8WsM1/QRyMfw
+bORvxmC+eoZr88BnVh5KsRF60OWQ/mlwt8PMxoYV1XPjd0o7sx3lRtqQtK0pOA==
+";"FDi0mbPP0/sB365c+40Yc4/CC4vXt4W4+nB6swKLvp37ruRsqWeTNBGAhkw6tcbq
+"
+415;13;4;"Y+26W7X6VJg0eEvOrBRqfA==
+";"GfaL7A7CNt/v9VlOMOD1HreyVMnO8bKW71c1NC3i3B8bUgrA5S0njlPhVj/Bxkhnh6r8O4XLw/D2
+Aj/Zj0XLrkNzwHlnbT8EtJP4Xj7KvmltIr0VaTzUD19W5z0QuVvu
+";"4iJdQJYMysZXDflb7vpzRoiUVtjFol0NW0dI4AWxX3I=
+"
+416;13;4;"VGRHvICGbzNnmdDye5sKrg==
+";"kt6+E8cKxnLMlEKxkt9+rY+4nFZktjbmDCb8N56mNbl4lmhts61FNmLeGXpAygw2TwhF7uEbVY61
+XELLW+7lSg==
+";"sNC28bu2ute7t+BGw3xB0W5jQEPpo6HeDDFAKnQI6jw=
+"
+417;13;4;"usrU7GxoHd38GhrFUfN7oa2XoGKszBekCZ1W9QpANx8=
+";"I88R5oglUUu+jFD5K3mbUK3hssESgfug7a+MocFdUBPZRhC5SWYGC3QFOyGOmGkD+hy9sGhUfJ+I
+N5FNiqdEKthw/LUR23Q5bSwWteu8+B6qVkVWgg3oBn5NEKh/FGyn2GsbbiOPeKesCEM18Zyeo97O
+aqBrHXpOz8Sr5xhpRhkjevvaV6/pkvx+L0RijWaC18ouoQZSKZwkMtVzd53XWw==
+";"+A8laZCjd78WDkYpjM1oVVNcmOlCm3X7eu2la8E3286Yg5cBBhQgevnu76DJH+pNGpswxQN/iyZA
+ee3Wv5b4nQ==
+"
+418;13;4;"u9zP1nzV/CuQ1iyT2TE8/A==
+";"q2nFtC7aS1XO+AI18uzakWVmFQl/DHbM/BnCwpO/AIe/qcRQDtEgbLUG5R2OHwA2gLeyIP/0FIo5
+Q36h2CesxcbReyJNCGhk16HUBMRG0uNF+XrwqX347lBW39JjXiSyGFZnyLsk7z9tHY16hnLUvA==
+";"+A8laZCjd78WDkYpjM1oVR3H7Xpvw2qBqBU0a+BxIMzs0LxBYlCgOPS1vxh92Jxo
+"
+419;13;4;"6mR6Yh4CXBBrATALGQbYSA==
+";"q4fduFdJqr94pY+cyVV3rBAO2KF5wcsdFyTNcPO6/xyp5f7FsjN0whnczy+CI+ZQdSw/KxzDkrFh
+iPDD4zmADne9fFQHQYL9NDVDjGXRfycbJbB+Pe+8k5aft7QRN50h3i+JNnBphkwpBG+dEEdUtw==
+";"xJ/yZ6xdSwBDByJ6OOZWyg==
+"
+420;13;4;"NYaF0dwmbaWz82vfh0Nr0Q==
+";"nnn4Pg6SYhKLZvFlqOeXynd2lJY0SpmK0Xnle9uQwLAZgMSv8GHo7ekQzO8AcP0cGmUVlrdMkZM8
+Zo8iM0L1VX/IWK5lHh12cLZjishL5jI=
+";"zKAwF8xWptybtJBTYzo9lg==
+"
+421;13;5;"xZEqD/KDZFye6P/f6TyiQh8dFD3lo2ijci3isnn11FM=
+";"EqVNjzqDAPOzm+JfhheOhg==
+";"MS/AXCTNXM/EvBDzRU/O9PnYEMfp+flfeY4//2PDGdQ=
+"
+422;13;5;"3mt1/v0T0m2X+WTqQB/rdw==
+";"SyTTHFo1mUaL2OG5Az4XECcziZpQcHUBqBHyCHto2uXqkF+dg3vmLWLPpUWe0Kay
+";"3L4BlZGpBcZh/8zJQMqkqjXNiTfEAzq6gc71+BHcgCwruy5Y1XiVZIzEz/JBjHje
+"
+423;13;5;"8RMfr8rrArU01L8tKbc9INuU6zWcvGPY5TqE0CHL6/Q=
+";"offZ4lGzOKCSVfaH66SM4nI5nHbEs58S4aMxPKmSEbhnoWTSBBUgMcyZWlL7cvP2
+";"vXeUCY27xb1jT/EjzBIY73ldZox+GkpTwavGMwbBydF1ocs3V6wVxJinAJSo/6T5
+"
+424;13;5;"IEbKInglzvyuBvZ1FwNoow==
+";"5pwoIALMdzBNNXRcEl4wkHqcBWboXcKxLKaAzN1JPNzbxB/UDvkwbiBVoOkqfJTn+rNqKzyQsHXc
+OaRvKPbS/w==
+";"fjgJWhbrQPBU4IIN4gf4pk0e/BGgLzpfC7slgRH+YYQ=
+"
+425;13;5;"GZC+Zk24sM2R4NYuAPzmzg==
+";"5pwoIALMdzBNNXRcEl4wkAFj2OSsE3K6N1hfOJQ2ouE=
+";"VmDv8ySyIPae/zf5SAIs6jAEPMvhDIusK2Wcol9l7BE=
+"
+426;13;5;"tABoRG0AAAgaTfUoTRcSOA==
+";"X1i9hEPRWARKDmPVzP+BFkzk6gptdJZW1nUeBLGhzgg=
+";"vxSJzIwW/7ePg4kEN39+HV+xzCAeT0P2t4fcW5apqf8=
+"
+427;13;6;"znmb9S85WDcXVJPEefCkxy5VJ5+yM5FBXuuqitC4yMw=
+";"OrjjY+a1GMvJeNvibJMdcA6iF7aid5WjgyhxnDwiDzun9Gwd6MQkgrB0rF3ebvXF
+";"KPbCGyfCxAMbfbwo521FMA==
+"
+428;13;6;"vx5EENvNOgXDhqeS7XmZ6RakPdeJPYSqCgHCWa0qn30=
+";"Ef8Qy3CrUMPrG3Zkc3OwNKfDt85fGfIdQnC+0vHHVdets8Vez9A8uDUIryuibDHP
+";"lM2OsWnWO6XJRNj6HN5187OXX4svwJsjAERatv0ABWw=
+"
+429;13;6;"s/b0Yae3kgXbJ5K1nmv9Bw==
+";"XvCfy0prfoZwwkql4w8Di5wXwyQlHWg2pRFkvCSdSg4lFPU2bNqZoTjbIOPndRXeGT7XkPT7PXGi
+WF+FPS0Sbfj7J67hm8rjU/pbdH6QmPAreQTmVpf4S+xwTdX+t8eJ
+";"hnP0pZZt295bNacl73H3M6t6BXjNda8FB3cqy6ucaoc=
+"
+430;13;6;"8PCMIaJH2RxWDJjKD0lW1g==
+";"5pwoIALMdzBNNXRcEl4wkAFj2OSsE3K6N1hfOJQ2ouE=
+";"VmDv8ySyIPae/zf5SAIs6jAEPMvhDIusK2Wcol9l7BE=
+"
+431;13;6;"Rd1WUkdg55GEeftUY1TAZQ==
+";"Nm61yjm9od62DR0YfhOZ6b0urK6sNcWp/MdK4mCSJ3NLTVoLxDutC9Mtocr6c1MzN2EdIIvxl31c
+M+WXKJWwzawc/E72sj6J18naSzPq0fw=
+";"iubmdyC6bZ5ZmmTdtGfExw==
+"
+432;13;6;"FhB7ZA7TPnfWpGiaD40WWQ==
+";"2kxdWKIGU5G8VS240k6oCgyjTDAT8ICzE/WzDSXpjY7tznmPuLC/IFLBZSOt85O/
+";"9P+FhTKw5FMvkXDCEjyOaex8KgCyewX3UPz33+MksByIRX9R3O0KvZVDSTZr+Rnm
+"

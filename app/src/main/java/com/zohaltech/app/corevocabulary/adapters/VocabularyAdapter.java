@@ -50,7 +50,7 @@ public class VocabularyAdapter extends RecyclerView.Adapter<VocabularyAdapter.Vi
             holder.imgLearned.setVisibility(View.GONE);
         }
 
-        holder.txtVocabulary.setText(vocabulary.getEncVocab());
+        holder.txtVocabulary.setText(vocabulary.getVocabulary());
         holder.layoutVocabulary.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

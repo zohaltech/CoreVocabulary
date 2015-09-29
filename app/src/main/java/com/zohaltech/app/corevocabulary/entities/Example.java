@@ -6,29 +6,29 @@ public class Example {
     private int    id;
     private int    vocabularyId;
     private int    ordinal;
-    private String English;
-    private String Persian;
+    private String english;
+    private String persian;
 
-    private String encEnglish;
-    private String encPersian;
+   // private String encEnglish;
+   // private String encPersian;
 
 
-    public Example(int id, int vocabularyId, int ordinal, String english, String persian,
-                   String encEnglish, String encPersian) {
-        this(vocabularyId, ordinal, english, persian, encEnglish, encPersian);
-        this.id = id;
-    }
+//    public Example(int id, int vocabularyId, int ordinal, String english, String persian,
+//                   String encEnglish, String encPersian) {
+//        this(vocabularyId, ordinal, english, persian, encEnglish, encPersian);
+//        this.id = id;
+//    }
 
-    public Example(int vocabularyId, int ordinal, String english, String persian,
-                   String encEnglish, String encPersian) {
-        setVocabularyId(vocabularyId);
-        setOrdinal(ordinal);
-        setEnglish(english);
-        setPersian(persian);
-
-        setEncPersian(encPersian);
-        setEncEnglish(encEnglish);
-    }
+//    public Example(int vocabularyId, int ordinal, String english, String persian,
+//                   String encEnglish, String encPersian) {
+//        setVocabularyId(vocabularyId);
+//        setOrdinal(ordinal);
+//        setEnglish(english);
+//        setPersian(persian);
+//
+//        setEncPersian(encPersian);
+//        setEncEnglish(encEnglish);
+//    }
 
     public Example(int id, int vocabularyId, int ordinal, String english, String persian) {
         this(vocabularyId, ordinal, english, persian);
@@ -67,42 +67,44 @@ public class Example {
     }
 
     public String getEnglish() {
-        return English;
+        //return english;
+        return CoreSec.decrypt(english);
     }
 
     public void setEnglish(String english) {
-        English = english;
+        this.english = english;
     }
 
     public String getPersian() {
-        return Persian;
+        //return persian;
+        return CoreSec.decrypt(persian);
     }
 
     public void setPersian(String persian) {
-        Persian = persian;
+        this.persian = persian;
     }
 
-    public String getEncEnglish() {
-        return CoreSec.decrypt(encEnglish);
-    }
-
-    public String getEncEnglish1() {
-        return encEnglish;
-    }
-
-    public void setEncEnglish(String encEnglish) {
-        this.encEnglish = encEnglish;
-    }
-
-    public String getEncPersian() {
-        return CoreSec.decrypt(encPersian);
-    }
-
-    public String getEncPersian1() {
-        return encPersian;
-    }
-
-    public void setEncPersian(String encPersian) {
-        this.encPersian = encPersian;
-    }
+//    public String getEncEnglish() {
+//        return CoreSec.decrypt(encEnglish);
+//    }
+//
+//    public String getEncEnglish1() {
+//        return encEnglish;
+//    }
+//
+//    public void setEncEnglish(String encEnglish) {
+//        this.encEnglish = encEnglish;
+//    }
+//
+//    public String getEncPersian() {
+//        return CoreSec.decrypt(encPersian);
+//    }
+//
+//    public String getEncPersian1() {
+//        return encPersian;
+//    }
+//
+//    public void setEncPersian(String encPersian) {
+//        this.encPersian = encPersian;
+//    }
 }

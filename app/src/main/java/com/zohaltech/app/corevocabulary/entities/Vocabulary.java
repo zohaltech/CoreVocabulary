@@ -12,25 +12,25 @@ public class Vocabulary {
     private Boolean learned;
     private Boolean bookmarked;
 
-    private String encVocab;
-    private String encEngDef;
-    private String encPersianDef;
+//    private String encVocab;
+//    private String encEngDef;
+//    private String encPersianDef;
 
 
-    public Vocabulary(int themeId, int day, String vocabulary, String vocabEnglishDef, String vocabPersianDef, Boolean learned, Boolean bookmarked,
-                      String encVocab, String encEngDef, String encPersianDef) {
-        setThemeId(themeId);
-        setDay(day);
-        setVocabulary(vocabulary);
-        setVocabEnglishDef(vocabEnglishDef);
-        setVocabPersianDef(vocabPersianDef);
-        setLearned(learned);
-        setBookmarked(bookmarked);
-
-        setEncVocab(encVocab);
-        setEncEngDef(encEngDef);
-        setEncPersianDef(encPersianDef);
-    }
+//    public Vocabulary(int themeId, int day, String vocabulary, String vocabEnglishDef, String vocabPersianDef, Boolean learned, Boolean bookmarked,
+//                      String encVocab, String encEngDef, String encPersianDef) {
+//        setThemeId(themeId);
+//        setDay(day);
+//        setVocabulary(vocabulary);
+//        setVocabEnglishDef(vocabEnglishDef);
+//        setVocabPersianDef(vocabPersianDef);
+//        setLearned(learned);
+//        setBookmarked(bookmarked);
+//
+//        setEncVocab(encVocab);
+//        setEncEngDef(encEngDef);
+//        setEncPersianDef(encPersianDef);
+//    }
 
     public Vocabulary(int themeId, int day, String vocabulary, String vocabEnglishDef, String vocabPersianDef, Boolean learned, Boolean bookmarked
                      ) {
@@ -44,12 +44,12 @@ public class Vocabulary {
 
     }
 
-    public Vocabulary(int id, int themeId, int day, String vocabulary, String vocabEnglishDef, String vocabPersianDef, Boolean learned, Boolean bookmarked
-            , String encVocab, String encEngDef, String encPersianDef) {
-        this(themeId, day, vocabulary, vocabEnglishDef, vocabPersianDef, learned, bookmarked,
-             encVocab, encEngDef, encPersianDef);
-        this.id = id;
-    }
+//    public Vocabulary(int id, int themeId, int day, String vocabulary, String vocabEnglishDef, String vocabPersianDef, Boolean learned, Boolean bookmarked
+//            , String encVocab, String encEngDef, String encPersianDef) {
+//        this(themeId, day, vocabulary, vocabEnglishDef, vocabPersianDef, learned, bookmarked,
+//             encVocab, encEngDef, encPersianDef);
+//        this.id = id;
+//    }
 
     public Vocabulary(int id, int themeId, int day, String vocabulary, String vocabEnglishDef, String vocabPersianDef, Boolean learned, Boolean bookmarked) {
         this(themeId, day, vocabulary, vocabEnglishDef, vocabPersianDef, learned, bookmarked);
@@ -82,7 +82,8 @@ public class Vocabulary {
     }
 
     public String getVocabulary() {
-        return vocabulary;
+       // return vocabulary;
+        return CoreSec.decrypt(vocabulary);
     }
 
     public void setVocabulary(String vocabulary) {
@@ -90,7 +91,8 @@ public class Vocabulary {
     }
 
     public String getVocabEnglishDef() {
-        return vocabEnglishDef;
+       // return vocabEnglishDef;
+        return CoreSec.decrypt(vocabEnglishDef);
     }
 
     public void setVocabEnglishDef(String vocabEnglishDef) {
@@ -98,7 +100,8 @@ public class Vocabulary {
     }
 
     public String getVocabPersianDef() {
-        return vocabPersianDef;
+        //return vocabPersianDef;
+        return CoreSec.decrypt(vocabPersianDef);
     }
 
     public void setVocabPersianDef(String vocabPersianDef) {
@@ -122,40 +125,40 @@ public class Vocabulary {
     }
 
 
-    public String getEncVocab() {
-        return CoreSec.decrypt(encVocab);
-    }
-
-    public String getEncVocab1() {
-        return encVocab;
-    }
-
-    public void setEncVocab(String encVocab) {
-        this.encVocab = encVocab;
-    }
-
-    public String getEncEngDef() {
-        return CoreSec.decrypt(encEngDef);
-    }
-
-    public String getEncEngDef1() {
-        return encEngDef;
-    }
-
-
-    public void setEncEngDef(String encEngDef) {
-        this.encEngDef = encEngDef;
-    }
-
-    public String getEncPersianDef() {
-        return CoreSec.decrypt(encPersianDef);
-    }
-
-    public String getEncPersianDef1() {
-        return encPersianDef;
-    }
-
-    public void setEncPersianDef(String encPersianDef) {
-        this.encPersianDef = encPersianDef;
-    }
+//    public String getEncVocab() {
+//        return CoreSec.decrypt(encVocab);
+//    }
+//
+//    public String getEncVocab1() {
+//        return encVocab;
+//    }
+//
+//    public void setEncVocab(String encVocab) {
+//        this.encVocab = encVocab;
+//    }
+//
+//    public String getEncEngDef() {
+//        return CoreSec.decrypt(encEngDef);
+//    }
+//
+//    public String getEncEngDef1() {
+//        return encEngDef;
+//    }
+//
+//
+//    public void setEncEngDef(String encEngDef) {
+//        this.encEngDef = encEngDef;
+//    }
+//
+//    public String getEncPersianDef() {
+//        return CoreSec.decrypt(encPersianDef);
+//    }
+//
+//    public String getEncPersianDef1() {
+//        return encPersianDef;
+//    }
+//
+//    public void setEncPersianDef(String encPersianDef) {
+//        this.encPersianDef = encPersianDef;
+//    }
 }

@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.zohaltech.app.corevocabulary.classes.CoreSec;
 import com.zohaltech.app.corevocabulary.classes.MyRuntimeException;
 import com.zohaltech.app.corevocabulary.entities.Vocabulary;
 
@@ -20,9 +21,9 @@ public class Vocabularies {
     static final String Learned    = "Learned";
     static final String Bookmarked = "Bookmarked";
 
-    static final String EncVocab      = "EncVocab";
-    static final String EncEngDef     = "EncEngDef";
-    static final String EncPersianDef = "EncPersianDef";
+    //    static final String EncVocab      = "EncVocab";
+    //    static final String EncEngDef     = "EncEngDef";
+    //    static final String EncPersianDef = "EncPersianDef";
 
 
     static final String CreateTable = "CREATE TABLE " + TableName + " ( " +
@@ -32,9 +33,9 @@ public class Vocabularies {
                                       Vocabulary + " VARCHAR(250), " +
                                       EnglishDef + " VARCHAR(1024)," +
                                       PersianDef + " VARCHAR(1024), " +
-                                      EncVocab + " VARCHAR(1024), " +
-                                      EncEngDef + " VARCHAR(1024), " +
-                                      EncPersianDef + " VARCHAR(1024), " +
+            //                                      EncVocab + " VARCHAR(1024), " +
+            //                                      EncEngDef + " VARCHAR(1024), " +
+            //                                      EncPersianDef + " VARCHAR(1024), " +
                                       Learned + " Boolean DEFAULT (0), " +
                                       Bookmarked + " Boolean DEFAULT (0) );";
 
@@ -58,10 +59,10 @@ public class Vocabularies {
                                                            cursor.getString(cursor.getColumnIndex(EnglishDef)),
                                                            cursor.getString(cursor.getColumnIndex(PersianDef)).replace('|', '\n'),
                                                            cursor.getInt(cursor.getColumnIndex(Learned)) == 1,
-                                                           cursor.getInt(cursor.getColumnIndex(Bookmarked)) == 1,
-                                                           cursor.getString(cursor.getColumnIndex(EncVocab)),
-                                                           cursor.getString(cursor.getColumnIndex(EncEngDef)),
-                                                           cursor.getString(cursor.getColumnIndex(EncPersianDef)));
+                                                           cursor.getInt(cursor.getColumnIndex(Bookmarked)) == 1);
+                    //                                                           cursor.getString(cursor.getColumnIndex(EncVocab)),
+                    //                                                           cursor.getString(cursor.getColumnIndex(EncEngDef)),
+                    //                                                           cursor.getString(cursor.getColumnIndex(EncPersianDef)));
 
                     vocabularies.add(vocabulary);
                 } while (cursor.moveToNext());
@@ -116,6 +117,8 @@ public class Vocabularies {
     }
 
     public static ArrayList<Vocabulary> search(String searchText) {
+      //  searchText="Perk";
+        searchText= CoreSec.encrypt(searchText).replace("\n","");
         String query = "SELECT DISTINCT v.* FROM " + TableName + " v\n" +
                        "INNER JOIN " + Examples.TableName + " e\n" +
                        "ON v.Id=e." + Examples.VocabularyId + "\n" +
@@ -144,10 +147,10 @@ public class Vocabularies {
                                                            cursor.getString(cursor.getColumnIndex(EnglishDef)),
                                                            cursor.getString(cursor.getColumnIndex(PersianDef)),
                                                            cursor.getInt(cursor.getColumnIndex(Learned)) == 1,
-                                                           cursor.getInt(cursor.getColumnIndex(Bookmarked)) == 1,
-                                                           cursor.getString(cursor.getColumnIndex(EncVocab)),
-                                                           cursor.getString(cursor.getColumnIndex(EncEngDef)),
-                                                           cursor.getString(cursor.getColumnIndex(EncPersianDef)));
+                                                           cursor.getInt(cursor.getColumnIndex(Bookmarked)) == 1);
+                    //                                                           cursor.getString(cursor.getColumnIndex(EncVocab)),
+                    //                                                           cursor.getString(cursor.getColumnIndex(EncEngDef)),
+                    //                                                           cursor.getString(cursor.getColumnIndex(EncPersianDef)));
                     vocabularies.add(vocabulary);
                 } while (cursor.moveToNext());
             }
@@ -184,9 +187,9 @@ public class Vocabularies {
         values.put(Bookmarked, vocabulary.getBookmarked());
 
 
-        values.put(EncVocab, vocabulary.getEncVocab1());
-        values.put(EncEngDef, vocabulary.getEncEngDef1());
-        values.put(EncPersianDef, vocabulary.getEncPersianDef1());
+        //        values.put(EncVocab, vocabulary.getEncVocab1());
+        //        values.put(EncEngDef, vocabulary.getEncEngDef1());
+        //        values.put(EncPersianDef, vocabulary.getEncPersianDef1());
         return values;
     }
 

@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteDatabase;
 
 import com.zohaltech.app.corevocabulary.classes.MyRuntimeException;
 import com.zohaltech.app.corevocabulary.entities.Example;
+import com.zohaltech.app.corevocabulary.entities.Note;
 
 import java.util.ArrayList;
 
@@ -17,8 +18,8 @@ public class Examples {
     static final String English      = "English";
     static final String Persian      = "Persian";
 
-    static final String EncEnglish = "EncEnglish";
-    static final String EncPersian = "EncPersian";
+    static final String EncEnglish      = "EncEnglish";
+    static final String EncPersian      = "EncPersian";
 
     static final String CreateTable = "CREATE TABLE " + TableName + " ( " +
                                       Id + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
@@ -46,11 +47,11 @@ public class Examples {
                                                   cursor.getInt(cursor.getColumnIndex(VocabularyId)),
                                                   cursor.getInt(cursor.getColumnIndex(Ordinal)),
                                                   cursor.getString(cursor.getColumnIndex(English)),
-                                                  cursor.getString(cursor.getColumnIndex(Persian)),
-                                                  cursor.getString(cursor.getColumnIndex(EncEnglish)),
-                                                  cursor.getString(cursor.getColumnIndex(EncPersian))
+                                                  cursor.getString(cursor.getColumnIndex(Persian)));
+//                                                  cursor.getString(cursor.getColumnIndex(EncEnglish)),
+//                                                  cursor.getString(cursor.getColumnIndex(EncPersian))
 
-                    );
+
 
                     examples.add(example);
                 } while (cursor.moveToNext());
@@ -88,8 +89,8 @@ public class Examples {
         values.put(English, example.getEnglish());
         values.put(Persian, example.getPersian());
 
-        values.put(EncEnglish, example.getEncEnglish1());
-        values.put(EncPersian, example.getEncPersian1());
+//        values.put(EncEnglish, example.getEncEnglish1());
+//        values.put(EncPersian, example.getEncPersian1());
 
         return values;
     }
