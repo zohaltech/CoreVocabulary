@@ -72,7 +72,7 @@
                         android:gravity="start"
                         android:orientation="horizontal">
 
-                        <widgets.PersianTextView
+                        <widgets.LatinTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Start Vocabulary:"
@@ -105,26 +105,33 @@
                         android:gravity="start"
                         android:orientation="horizontal">
 
-                        <widgets.PersianTextView
+                        <widgets.LatinTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Intervals: "
                             android:textAppearance="?android:attr/textAppearanceMedium"
                             tools:ignore="HardcodedText"/>
 
-                        <widgets.MyEditText
-                            android:id="@+id/edtAlarmIntervals"
-                            android:layout_width="64dp"
+                        <!--<widgets.MyEditText-->
+                            <!--android:id="@+id/edtAlarmIntervals"-->
+                            <!--android:layout_width="64dp"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:gravity="center"-->
+                            <!--android:inputType="number"-->
+                            <!--android:maxLength="3"-->
+                            <!--android:text="30"-->
+                            <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
+                            <!--tools:ignore="HardcodedText"/>-->
+
+                        <android.support.v7.widget.AppCompatSpinner
+                            android:id="@+id/spinnerIntervals"
+                            style="@style/FormButton"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:inputType="number"
-                            android:maxLength="3"
-                            android:text="30"
-                            android:textAppearance="?android:attr/textAppearanceMedium"
-                            tools:ignore="HardcodedText"/>
+                            android:textColor="@color/white"/>
 
 
-                        <widgets.PersianTextView
+                        <widgets.LatinTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
@@ -192,6 +199,7 @@
                             android:id="@+id/chkSu"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:background="?attr/selectableItemBackground"
                             android:button="@null"
                             android:gravity="center"
@@ -199,14 +207,14 @@
                             android:text="SU"
                             android:textAppearance="?android:attr/textAppearanceMedium"
                             android:textColor="@drawable/day"
-                            tools:ignore="HardcodedText"
                             android:textStyle="bold"
-                            android:layout_weight="1"/>
+                            tools:ignore="HardcodedText"/>
 
                         <CheckBox
                             android:id="@+id/chkMo"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:background="?attr/selectableItemBackground"
                             android:button="@null"
                             android:gravity="center"
@@ -214,14 +222,14 @@
                             android:text="MO"
                             android:textAppearance="?android:attr/textAppearanceMedium"
                             android:textColor="@drawable/day"
-                            tools:ignore="HardcodedText"
                             android:textStyle="bold"
-                            android:layout_weight="1"/>
+                            tools:ignore="HardcodedText"/>
 
                         <CheckBox
                             android:id="@+id/chkTu"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:background="?attr/selectableItemBackground"
                             android:button="@null"
                             android:gravity="center"
@@ -229,14 +237,14 @@
                             android:text="TU"
                             android:textAppearance="?android:attr/textAppearanceMedium"
                             android:textColor="@drawable/day"
-                            tools:ignore="HardcodedText"
                             android:textStyle="bold"
-                            android:layout_weight="1"/>
+                            tools:ignore="HardcodedText"/>
 
                         <CheckBox
                             android:id="@+id/chkWe"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:background="?attr/selectableItemBackground"
                             android:button="@null"
                             android:gravity="center"
@@ -244,14 +252,14 @@
                             android:text="WE"
                             android:textAppearance="?android:attr/textAppearanceMedium"
                             android:textColor="@drawable/day"
-                            tools:ignore="HardcodedText"
                             android:textStyle="bold"
-                            android:layout_weight="1"/>
+                            tools:ignore="HardcodedText"/>
 
                         <CheckBox
                             android:id="@+id/chkTh"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:background="?attr/selectableItemBackground"
                             android:button="@null"
                             android:gravity="center"
@@ -259,14 +267,14 @@
                             android:text="TH"
                             android:textAppearance="?android:attr/textAppearanceMedium"
                             android:textColor="@drawable/day"
-                            tools:ignore="HardcodedText"
                             android:textStyle="bold"
-                            android:layout_weight="1"/>
+                            tools:ignore="HardcodedText"/>
 
                         <CheckBox
                             android:id="@+id/chkFr"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:background="?attr/selectableItemBackground"
                             android:button="@null"
                             android:gravity="center"
@@ -274,14 +282,14 @@
                             android:text="FR"
                             android:textAppearance="?android:attr/textAppearanceMedium"
                             android:textColor="@drawable/day"
-                            tools:ignore="HardcodedText"
                             android:textStyle="bold"
-                            android:layout_weight="1"/>
+                            tools:ignore="HardcodedText"/>
 
                         <CheckBox
                             android:id="@+id/chkSa"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:background="?attr/selectableItemBackground"
                             android:button="@null"
                             android:gravity="center"
@@ -289,9 +297,8 @@
                             android:text="SA"
                             android:textAppearance="?android:attr/textAppearanceMedium"
                             android:textColor="@drawable/day"
-                            tools:ignore="HardcodedText"
                             android:textStyle="bold"
-                            android:layout_weight="1"/>
+                            tools:ignore="HardcodedText"/>
 
                     </LinearLayout>
 

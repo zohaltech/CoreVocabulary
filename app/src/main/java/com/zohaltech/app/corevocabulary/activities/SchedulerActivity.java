@@ -6,8 +6,10 @@ import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.support.v7.app.ActionBar;
+import android.support.v7.widget.AppCompatSpinner;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -25,6 +27,7 @@ import com.zohaltech.app.corevocabulary.data.Vocabularies;
 import com.zohaltech.app.corevocabulary.entities.SystemSetting;
 import com.zohaltech.app.corevocabulary.entities.Vocabulary;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -37,9 +40,10 @@ public class SchedulerActivity extends EnhancedActivity {
     CheckBox chkTh;
     CheckBox chkFr;
 
-    EditText edtStartVocabularyNo;
-    EditText edtAlarmIntervals;
-    TextView twAlarmSound;
+    EditText         edtStartVocabularyNo;
+    //EditText edtAlarmIntervals;
+    AppCompatSpinner spinnerIntervals;
+    TextView         twAlarmSound;
 
     Button btnStart;
     Button btnStop;
@@ -50,13 +54,14 @@ public class SchedulerActivity extends EnhancedActivity {
 
     @Override
     void onCreated() {
-        setContentView(R.layout.activity_settings);
+        setContentView(R.layout.activity_scheduler);
         initialise();
     }
 
     private void initialise() {
         edtStartVocabularyNo = (EditText) findViewById(R.id.edtStartVocabularyNo);
-        edtAlarmIntervals = (EditText) findViewById(R.id.edtAlarmIntervals);
+        //edtAlarmIntervals = (EditText) findViewById(R.id.edtAlarmIntervals);
+        spinnerIntervals = (AppCompatSpinner) findViewById(R.id.spinnerIntervals);
         btnStartTime = (Button) findViewById(R.id.btnStartTime);
         twAlarmSound = (TextView) findViewById(R.id.twAlarmSound);
 
@@ -181,7 +186,8 @@ public class SchedulerActivity extends EnhancedActivity {
         Calendar calendar = Calendar.getInstance();
         settings.setReminder(new Reminder(vocabulary.getId(), calendar.getTime(), vocabulary.getVocabulary(), vocabulary.getVocabEnglishDef(), true));
         settings.setStartTime(btnStartTime.getText().toString());
-        settings.setIntervals(Integer.parseInt(edtAlarmIntervals.getText().toString()));
+        //settings.setIntervals(Integer.parseInt(edtAlarmIntervals.getText().toString()));
+        settings.setIntervals((Integer) spinnerIntervals.getSelectedItem());
         settings.setWeekdays(days);
         settings.setStatus(ReminderSettings.Status.RUNNING);
         ReminderManager.setReminderSettings(settings);
@@ -211,7 +217,22 @@ public class SchedulerActivity extends EnhancedActivity {
         }
 
         btnStartTime.setText(settings.getStartTime());
-        edtAlarmIntervals.setText(String.valueOf(settings.getIntervals()));
+        //edtAlarmIntervals.setText(String.valueOf(settings.getIntervals()));
+
+        ArrayList<Integer> intervals = new ArrayList<>();
+
+        intervals.add(1);
+        intervals.add(15);
+        intervals.add(30);
+        intervals.add(45);
+        intervals.add(60);
+        intervals.add(90);
+        intervals.add(120);
+        ArrayAdapter<Integer> intervalAdapter = new ArrayAdapter<>(this, R.layout.spinner_current_item, intervals);
+        intervalAdapter.setDropDownViewResource(R.layout.spinner_item);
+        spinnerIntervals.setAdapter(intervalAdapter);
+        spinnerIntervals.setSelection(intervalAdapter.getPosition(settings.getIntervals()));
+
         if (settings.getReminder() != null) {
             edtStartVocabularyNo.setText(String.valueOf(settings.getReminder().getVocabularyId()));
         }
