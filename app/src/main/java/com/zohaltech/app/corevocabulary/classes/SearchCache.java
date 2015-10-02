@@ -30,24 +30,30 @@ public class SearchCache {
 
     public static ArrayList<Vocabulary> searchFromCache(String searchText) {
         ArrayList<Vocabulary> searchResult = new ArrayList<>();
+        ArrayList<Integer> idList = new ArrayList<>();
         SearchCache searchCache = App.searchCache;
 
         for (Vocabulary vocabulary : searchCache.getVocabularies()) {
             if (vocabulary.getVocabulary().toLowerCase().contains(searchText.toLowerCase())) {
-                searchResult.add(Vocabularies.select(vocabulary.getId()));
+                //searchResult.add(Vocabularies.select(vocabulary.getId()));
+                idList.add(vocabulary.getId());
             } else if (vocabulary.getVocabPersianDef().toLowerCase().contains(searchText.toLowerCase())) {
-                searchResult.add(Vocabularies.select(vocabulary.getId()));
+                //searchResult.add(Vocabularies.select(vocabulary.getId()));
+                idList.add(vocabulary.getId());
             } else if (vocabulary.getVocabEnglishDef().toLowerCase().contains(searchText.toLowerCase())) {
-                searchResult.add(Vocabularies.select(vocabulary.getId()));
+                // searchResult.add(Vocabularies.select(vocabulary.getId()));
+                idList.add(vocabulary.getId());
             }
         }
         for (Example example : searchCache.getExamples()) {
             if (example.getPersian().toLowerCase().contains(searchText.toLowerCase())) {
                 if (!Exist(searchResult, example.getVocabularyId())) {
-                    searchResult.add(Vocabularies.select(example.getVocabularyId()));
+                    //searchResult.add(Vocabularies.select(example.getVocabularyId()));
+                    idList.add(example.getVocabularyId());
                 } else if (example.getEnglish().toLowerCase().contains(searchText.toLowerCase())) {
                     if (!Exist(searchResult, example.getVocabularyId())) {
-                        searchResult.add(Vocabularies.select(example.getVocabularyId()));
+                        //searchResult.add(Vocabularies.select(example.getVocabularyId()));
+                        idList.add(example.getVocabularyId());
                     }
                 }
             }
@@ -55,10 +61,13 @@ public class SearchCache {
         for (Note note : searchCache.getNotes()) {
             if (note.getDescription().toLowerCase().contains(searchText.toLowerCase())) {
                 if (!Exist(searchResult, note.getVocabularyId())) {
-                    searchResult.add(Vocabularies.select(note.getVocabularyId()));
+                    //searchResult.add(Vocabularies.select(note.getVocabularyId()));
+                    idList.add(note.getVocabularyId());
                 }
             }
         }
+        String whereClause = generateWhereCondition(idList);
+        searchResult = Vocabularies.select(whereClause, null, "");
         return searchResult;
     }
 
@@ -92,5 +101,15 @@ public class SearchCache {
                 return true;
         }
         return false;
+    }
+
+    private static String generateWhereCondition(ArrayList<Integer> idList) {
+        String whereCondition = "WHERE ";
+        for (int i = 0; i < idList.size(); i++) {
+            if (i == idList.size() - 1)
+                whereCondition += "Id=" + idList.get(i);
+            else whereCondition += "Id=" + idList.get(i) + " OR ";
+        }
+        return whereCondition;
     }
 }

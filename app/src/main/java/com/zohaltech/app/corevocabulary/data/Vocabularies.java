@@ -41,7 +41,7 @@ public class Vocabularies {
 
     static final String DropTable = "Drop Table If Exists " + TableName;
 
-    private static ArrayList<Vocabulary> select(String whereClause, String[] selectionArgs, String limitClause) {
+    public static ArrayList<Vocabulary> select(String whereClause, String[] selectionArgs, String limitClause) {
         ArrayList<Vocabulary> vocabularies = new ArrayList<>();
         DataAccess da = new DataAccess();
         SQLiteDatabase db = da.getReadableDB();
