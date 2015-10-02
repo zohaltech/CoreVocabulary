@@ -11,14 +11,14 @@ import com.zohaltech.app.corevocabulary.entities.Vocabulary;
 import java.util.ArrayList;
 
 public class Vocabularies {
-    static final String TableName  = "Vocabularies";
-    static final String Id         = "Id";
-    static final String ThemeId    = "ThemeId";
-    static final String Day        = "Day";
+    static final String TableName = "Vocabularies";
+    static final String Id = "Id";
+    static final String ThemeId = "ThemeId";
+    static final String Day = "Day";
     static final String Vocabulary = "Vocabulary";
     static final String EnglishDef = "EnglishDef";
     static final String PersianDef = "PersianDef";
-    static final String Learned    = "Learned";
+    static final String Learned = "Learned";
     static final String Bookmarked = "Bookmarked";
 
     //    static final String EncVocab      = "EncVocab";
@@ -27,17 +27,17 @@ public class Vocabularies {
 
 
     static final String CreateTable = "CREATE TABLE " + TableName + " ( " +
-                                      Id + " INTEGER PRIMARY KEY NOT NULL, " +
-                                      ThemeId + " INTEGER REFERENCES " + Themes.TableName + " (" + Themes.Id + "), " +
-                                      Day + " INTEGER, " +
-                                      Vocabulary + " VARCHAR(250), " +
-                                      EnglishDef + " VARCHAR(1024)," +
-                                      PersianDef + " VARCHAR(1024), " +
+            Id + " INTEGER PRIMARY KEY NOT NULL, " +
+            ThemeId + " INTEGER REFERENCES " + Themes.TableName + " (" + Themes.Id + "), " +
+            Day + " INTEGER, " +
+            Vocabulary + " VARCHAR(250), " +
+            EnglishDef + " VARCHAR(1024)," +
+            PersianDef + " VARCHAR(1024), " +
             //                                      EncVocab + " VARCHAR(1024), " +
             //                                      EncEngDef + " VARCHAR(1024), " +
             //                                      EncPersianDef + " VARCHAR(1024), " +
-                                      Learned + " Boolean DEFAULT (0), " +
-                                      Bookmarked + " Boolean DEFAULT (0) );";
+            Learned + " Boolean DEFAULT (0), " +
+            Bookmarked + " Boolean DEFAULT (0) );";
 
     static final String DropTable = "Drop Table If Exists " + TableName;
 
@@ -53,16 +53,46 @@ public class Vocabularies {
             if (cursor != null && cursor.moveToFirst()) {
                 do {
                     Vocabulary vocabulary = new Vocabulary(cursor.getInt(cursor.getColumnIndex(Id)),
-                                                           cursor.getInt(cursor.getColumnIndex(ThemeId)),
-                                                           cursor.getInt(cursor.getColumnIndex(Day)),
-                                                           cursor.getString(cursor.getColumnIndex(Vocabulary)),
-                                                           cursor.getString(cursor.getColumnIndex(EnglishDef)),
-                                                           cursor.getString(cursor.getColumnIndex(PersianDef)).replace('|', '\n'),
-                                                           cursor.getInt(cursor.getColumnIndex(Learned)) == 1,
-                                                           cursor.getInt(cursor.getColumnIndex(Bookmarked)) == 1);
+                            cursor.getInt(cursor.getColumnIndex(ThemeId)),
+                            cursor.getInt(cursor.getColumnIndex(Day)),
+                            cursor.getString(cursor.getColumnIndex(Vocabulary)),
+                            cursor.getString(cursor.getColumnIndex(EnglishDef)),
+                            cursor.getString(cursor.getColumnIndex(PersianDef)).replace('|', '\n'),
+                            cursor.getInt(cursor.getColumnIndex(Learned)) == 1,
+                            cursor.getInt(cursor.getColumnIndex(Bookmarked)) == 1);
                     //                                                           cursor.getString(cursor.getColumnIndex(EncVocab)),
                     //                                                           cursor.getString(cursor.getColumnIndex(EncEngDef)),
                     //                                                           cursor.getString(cursor.getColumnIndex(EncPersianDef)));
+
+                    vocabularies.add(vocabulary);
+                } while (cursor.moveToNext());
+            }
+        } catch (MyRuntimeException e) {
+            e.printStackTrace();
+        } finally {
+            if (cursor != null && !cursor.isClosed())
+                cursor.close();
+            if (db != null && db.isOpen())
+                db.close();
+        }
+        return vocabularies;
+    }
+
+    public static ArrayList<Vocabulary> selectForCache() {
+        ArrayList<Vocabulary> vocabularies = new ArrayList<>();
+        DataAccess da = new DataAccess();
+        SQLiteDatabase db = da.getReadableDB();
+        Cursor cursor = null;
+
+        try {
+            String query = "Select * From " + TableName;
+            cursor = db.rawQuery(query, null);
+            if (cursor != null && cursor.moveToFirst()) {
+                do {
+                    Vocabulary vocabulary = new Vocabulary(cursor.getInt(cursor.getColumnIndex(Id)),
+                            cursor.getString(cursor.getColumnIndex(Vocabulary)),
+                            cursor.getString(cursor.getColumnIndex(EnglishDef)),
+                            cursor.getString(cursor.getColumnIndex(PersianDef)).replace('|', '\n'));
 
                     vocabularies.add(vocabulary);
                 } while (cursor.moveToNext());
@@ -117,19 +147,17 @@ public class Vocabularies {
     }
 
     public static ArrayList<Vocabulary> search(String searchText) {
-      //  searchText="Perk";
-        searchText= CoreSec.encrypt(searchText).replace("\n","");
         String query = "SELECT DISTINCT v.* FROM " + TableName + " v\n" +
-                       "INNER JOIN " + Examples.TableName + " e\n" +
-                       "ON v.Id=e." + Examples.VocabularyId + "\n" +
-                       "LEFT JOIN " + Notes.TableName + " n\n" +
-                       "ON v.Id=n." + Notes.VocabularyId + "\n" +
-                       "WHERE v." + Vocabulary + " LIKE '%" + searchText + "%'\n" +
-                       "OR v." + EnglishDef + "  LIKE '%" + searchText + "%'\n" +
-                       "OR v." + PersianDef + "  LIKE '%" + searchText + "%'\n" +
-                       "OR e." + Examples.English + " LIKE '%" + searchText + "%'\n" +
-                       "OR e." + Examples.Persian + " LIKE '%" + searchText + "%'\n" +
-                       "OR n." + Notes.Description + " LIKE '%" + searchText + "%'";
+                "INNER JOIN " + Examples.TableName + " e\n" +
+                "ON v.Id=e." + Examples.VocabularyId + "\n" +
+                "LEFT JOIN " + Notes.TableName + " n\n" +
+                "ON v.Id=n." + Notes.VocabularyId + "\n" +
+                "WHERE v." + Vocabulary + " LIKE '%" + searchText + "%'\n" +
+                "OR v." + EnglishDef + "  LIKE '%" + searchText + "%'\n" +
+                "OR v." + PersianDef + "  LIKE '%" + searchText + "%'\n" +
+                "OR e." + Examples.English + " LIKE '%" + searchText + "%'\n" +
+                "OR e." + Examples.Persian + " LIKE '%" + searchText + "%'\n" +
+                "OR n." + Notes.Description + " LIKE '%" + searchText + "%'";
 
         ArrayList<Vocabulary> vocabularies = new ArrayList<>();
         DataAccess da = new DataAccess();
@@ -141,13 +169,13 @@ public class Vocabularies {
             if (cursor != null && cursor.moveToFirst()) {
                 do {
                     Vocabulary vocabulary = new Vocabulary(cursor.getInt(cursor.getColumnIndex(Id)),
-                                                           cursor.getInt(cursor.getColumnIndex(ThemeId)),
-                                                           cursor.getInt(cursor.getColumnIndex(Day)),
-                                                           cursor.getString(cursor.getColumnIndex(Vocabulary)),
-                                                           cursor.getString(cursor.getColumnIndex(EnglishDef)),
-                                                           cursor.getString(cursor.getColumnIndex(PersianDef)),
-                                                           cursor.getInt(cursor.getColumnIndex(Learned)) == 1,
-                                                           cursor.getInt(cursor.getColumnIndex(Bookmarked)) == 1);
+                            cursor.getInt(cursor.getColumnIndex(ThemeId)),
+                            cursor.getInt(cursor.getColumnIndex(Day)),
+                            cursor.getString(cursor.getColumnIndex(Vocabulary)),
+                            cursor.getString(cursor.getColumnIndex(EnglishDef)),
+                            cursor.getString(cursor.getColumnIndex(PersianDef)),
+                            cursor.getInt(cursor.getColumnIndex(Learned)) == 1,
+                            cursor.getInt(cursor.getColumnIndex(Bookmarked)) == 1);
                     //                                                           cursor.getString(cursor.getColumnIndex(EncVocab)),
                     //                                                           cursor.getString(cursor.getColumnIndex(EncEngDef)),
                     //                                                           cursor.getString(cursor.getColumnIndex(EncPersianDef)));
@@ -171,8 +199,12 @@ public class Vocabularies {
     }
 
     public static long update(Vocabulary vocabulary) {
+        ContentValues values = new ContentValues();
+        values.put(Id, vocabulary.getId());
+        values.put(Learned, vocabulary.getLearned());
+        values.put(Bookmarked, vocabulary.getBookmarked());
         DataAccess da = new DataAccess();
-        return da.update(TableName, getContentValues(vocabulary), Id + " = ? ", new String[]{String.valueOf(vocabulary.getId())});
+        return da.update(TableName, values, Id + " = ? ", new String[]{String.valueOf(vocabulary.getId())});
     }
 
     public static ContentValues getContentValues(Vocabulary vocabulary) {

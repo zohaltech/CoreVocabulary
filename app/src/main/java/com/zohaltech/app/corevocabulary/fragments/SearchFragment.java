@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 
 import com.zohaltech.app.corevocabulary.R;
 import com.zohaltech.app.corevocabulary.adapters.VocabularyAdapter;
+import com.zohaltech.app.corevocabulary.classes.SearchCache;
 import com.zohaltech.app.corevocabulary.data.Vocabularies;
 import com.zohaltech.app.corevocabulary.entities.Vocabulary;
 
@@ -43,7 +44,8 @@ public class SearchFragment extends Fragment {
     public void search(String text) {
         vocabularies.clear();
         if (text != null && text.length() > 0) {
-            vocabularies.addAll(Vocabularies.search(text));
+           // vocabularies.addAll(Vocabularies.search(text));
+            vocabularies.addAll(SearchCache.searchFromCache(text));
         }
         adapter.notifyDataSetChanged();
     }

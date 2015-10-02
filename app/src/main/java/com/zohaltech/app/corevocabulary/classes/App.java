@@ -11,36 +11,38 @@ import android.graphics.Typeface;
 import android.os.Handler;
 import android.preference.PreferenceManager;
 
+import java.util.ArrayList;
 import java.util.Locale;
 
 public class App extends Application {
 
     public static final int MARKET_BAZAAR = 1;
-    public static final int MARKET_CANDO  = 2;
-    public static final int MARKET_MYKET  = 3;
-    public static final int MARKET_PLAY   = 4;
+    public static final int MARKET_CANDO = 2;
+    public static final int MARKET_MYKET = 3;
+    public static final int MARKET_PLAY = 4;
 
-    public static Context           context;
-    public static Activity          currentActivity;
+    public static Context context;
+    public static Activity currentActivity;
     public static SharedPreferences preferences;
     //public static Typeface          englishFont;
     //public static Typeface          englishFontBold;
-    public static Typeface          persianFont;
-    public static Typeface          persianFontBold;
-    public static Handler           handler;
-    public static int               screenWidth;
-    public static int               screenHeight;
-    public static Locale            locale;
-    public static int               market;
-    public static String            marketName;
-    public static String            marketPackage;
-    public static String            marketAction;
+    public static Typeface persianFont;
+    public static Typeface persianFontBold;
+    public static Handler handler;
+    public static int screenWidth;
+    public static int screenHeight;
+    public static Locale locale;
+    public static int market;
+    public static String marketName;
+    public static String marketPackage;
+    public static String marketAction;
     //public static String            marketUri;
-    public static String            marketWebsiteUri;
-    public static String            marketDeveloperUri;
-    public static String            marketPollUri;
-    public static String            marketPollIntent;
-    public static String            marketPublicKey;
+    public static String marketWebsiteUri;
+    public static String marketDeveloperUri;
+    public static String marketPollUri;
+    public static String marketPollIntent;
+    public static String marketPublicKey;
+    public static SearchCache searchCache;
 
     public static NotificationManager notificationManager;
 
@@ -66,6 +68,7 @@ public class App extends Application {
         screenWidth = getResources().getDisplayMetrics().widthPixels;
         screenHeight = getResources().getDisplayMetrics().heightPixels;
         setAppLocal();
+        searchCache = SearchCache.initialCache();
 
 
         //todo : set market here and in manifest

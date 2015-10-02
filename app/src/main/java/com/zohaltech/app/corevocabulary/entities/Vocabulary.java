@@ -41,7 +41,6 @@ public class Vocabulary {
         setVocabPersianDef(vocabPersianDef);
         setLearned(learned);
         setBookmarked(bookmarked);
-
     }
 
 //    public Vocabulary(int id, int themeId, int day, String vocabulary, String vocabEnglishDef, String vocabPersianDef, Boolean learned, Boolean bookmarked
@@ -56,6 +55,12 @@ public class Vocabulary {
         this.id = id;
     }
 
+    public Vocabulary(int id, String vocabulary, String vocabEnglishDef, String vocabPersianDef) {
+        setId(id);
+        setVocabulary(vocabulary);
+        setVocabEnglishDef(vocabEnglishDef);
+        setVocabPersianDef(vocabPersianDef);
+    }
 
     public int getId() {
         return id;

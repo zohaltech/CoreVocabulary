@@ -42,6 +42,12 @@ public class Example {
         setPersian(persian);
     }
 
+    public Example(int vocabularyId,String english, String persian) {
+        setVocabularyId(vocabularyId);
+        setEnglish(english);
+        setPersian(persian);
+    }
+
     public int getId() {
         return id;
     }
