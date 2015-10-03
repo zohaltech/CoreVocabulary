@@ -14,7 +14,8 @@ import android.preference.PreferenceManager;
 import java.util.ArrayList;
 import java.util.Locale;
 
-public class App extends Application {
+public class App extends Application
+{
 
     public static final int MARKET_BAZAAR = 1;
     public static final int MARKET_CANDO = 2;
@@ -46,7 +47,8 @@ public class App extends Application {
 
     public static NotificationManager notificationManager;
 
-    public static void setAppLocal() {
+    public static void setAppLocal()
+    {
         locale = new Locale("en");
         Locale.setDefault(locale);
         Configuration config = context.getResources().getConfiguration();
@@ -55,7 +57,8 @@ public class App extends Application {
     }
 
     @Override
-    public void onCreate() {
+    public void onCreate()
+    {
         super.onCreate();
         context = getApplicationContext();
         preferences = PreferenceManager.getDefaultSharedPreferences(context);
@@ -68,8 +71,7 @@ public class App extends Application {
         screenWidth = getResources().getDisplayMetrics().widthPixels;
         screenHeight = getResources().getDisplayMetrics().heightPixels;
         setAppLocal();
-        searchCache = SearchCache.initialCache();
-
+        SearchCache.initialise();
 
         //todo : set market here and in manifest
         //market = MARKET_BAZAAR;
@@ -115,7 +117,8 @@ public class App extends Application {
     }
 
     @Override
-    public void onConfigurationChanged(Configuration newConfig) {
+    public void onConfigurationChanged(Configuration newConfig)
+    {
         super.onConfigurationChanged(newConfig);
         Locale.setDefault(locale);
         Configuration config = new Configuration();

@@ -6,12 +6,11 @@ import android.database.sqlite.SQLiteDatabase;
 
 import com.zohaltech.app.corevocabulary.classes.MyRuntimeException;
 import com.zohaltech.app.corevocabulary.entities.Example;
-import com.zohaltech.app.corevocabulary.entities.Note;
-import com.zohaltech.app.corevocabulary.entities.Vocabulary;
 
 import java.util.ArrayList;
 
-public class Examples {
+public class Examples
+{
     static final String TableName = "Examples";
     static final String Id = "Id";
     static final String VocabularyId = "VocabularyId";
@@ -33,32 +32,45 @@ public class Examples {
 
     static final String DropTable = "Drop Table If Exists " + TableName;
 
-    private static ArrayList<Example> select(String whereClause, String[] selectionArgs) {
+    public static ArrayList<Example> select()
+    {
+        return select("", null);
+    }
+
+    private static ArrayList<Example> select(String whereClause, String[] selectionArgs)
+    {
         ArrayList<Example> examples = new ArrayList<>();
         DataAccess da = new DataAccess();
         SQLiteDatabase db = da.getReadableDB();
         Cursor cursor = null;
 
-        try {
+        try
+        {
             String query = "Select * From " + TableName + " " + whereClause;
             cursor = db.rawQuery(query, selectionArgs);
-            if (cursor != null && cursor.moveToFirst()) {
-                do {
+            if (cursor != null && cursor.moveToFirst())
+            {
+                do
+                {
                     Example example = new Example(cursor.getInt(cursor.getColumnIndex(Id)),
                             cursor.getInt(cursor.getColumnIndex(VocabularyId)),
                             cursor.getInt(cursor.getColumnIndex(Ordinal)),
                             cursor.getString(cursor.getColumnIndex(English)),
                             cursor.getString(cursor.getColumnIndex(Persian)));
-//                                                  cursor.getString(cursor.getColumnIndex(EncEnglish)),
-//                                                  cursor.getString(cursor.getColumnIndex(EncPersian))
+                    //                                                  cursor.getString(cursor.getColumnIndex(EncEnglish)),
+                    //                                                  cursor.getString(cursor.getColumnIndex(EncPersian))
 
 
                     examples.add(example);
                 } while (cursor.moveToNext());
             }
-        } catch (MyRuntimeException e) {
+        }
+        catch (MyRuntimeException e)
+        {
             e.printStackTrace();
-        } finally {
+        }
+        finally
+        {
             if (cursor != null && !cursor.isClosed())
                 cursor.close();
             if (db != null && db.isOpen())
@@ -67,49 +79,20 @@ public class Examples {
         return examples;
     }
 
-    public static ArrayList<Example> selectForCache(String whereClause) {
-        ArrayList<Example> examples = new ArrayList<>();
-        DataAccess da = new DataAccess();
-        SQLiteDatabase db = da.getReadableDB();
-        Cursor cursor = null;
-
-        try {
-            String query = "Select * From " + TableName+ " " + whereClause;;
-            cursor = db.rawQuery(query, null);
-            if (cursor != null && cursor.moveToFirst()) {
-                do {
-                    Example example = new Example(cursor.getInt(cursor.getColumnIndex(VocabularyId)),
-                            cursor.getString(cursor.getColumnIndex(English)),
-                            cursor.getString(cursor.getColumnIndex(Persian)));
-
-                    examples.add(example);
-                } while (cursor.moveToNext());
-            }
-        } catch (MyRuntimeException e) {
-            e.printStackTrace();
-        } finally {
-            if (cursor != null && !cursor.isClosed())
-                cursor.close();
-            if (db != null && db.isOpen())
-                db.close();
-        }
-        return examples;
-    }
-    public static ArrayList<Example> selectForCache() {
-        return selectForCache("");
-    }
-
-    public static long insert(Example example) {
+    public static long insert(Example example)
+    {
         DataAccess da = new DataAccess();
         return da.insert(TableName, getContentValues(example));
     }
 
-    public static long update(Example example) {
+    public static long update(Example example)
+    {
         DataAccess da = new DataAccess();
         return da.update(TableName, getContentValues(example), Id + " =? ", new String[]{String.valueOf(example.getId())});
     }
 
-    public static ContentValues getContentValues(Example example) {
+    public static ContentValues getContentValues(Example example)
+    {
         ContentValues values = new ContentValues();
 
         values.put(VocabularyId, example.getVocabularyId());
@@ -117,14 +100,15 @@ public class Examples {
         values.put(English, example.getEnglish());
         values.put(Persian, example.getPersian());
 
-//        values.put(EncEnglish, example.getEncEnglish1());
-//        values.put(EncPersian, example.getEncPersian1());
+        //        values.put(EncEnglish, example.getEncEnglish1());
+        //        values.put(EncPersian, example.getEncPersian1());
 
         return values;
     }
 
-    public static ArrayList<Example> getExamples(int vocabId) {
-        String whereClause = " WHERE " + VocabularyId + " = " + vocabId;
+    public static ArrayList<Example> getExamples(int vocabId)
+    {
+        String whereClause = " Where " + VocabularyId + " = " + vocabId;
         return select(whereClause, null);
     }
 }

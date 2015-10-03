@@ -9,107 +9,82 @@ import com.zohaltech.app.corevocabulary.entities.Vocabulary;
 
 import java.util.ArrayList;
 
-public class SearchCache {
-    private ArrayList<Vocabulary> vocabularies;
-    private ArrayList<Example> examples;
-    private ArrayList<Note> notes;
+public class SearchCache
+{
+    private static ArrayList<Vocabulary> vocabulariesCache = null;
+    private static ArrayList<Example> exampleCache = null;
+    private static ArrayList<Note> notesCache = null;
 
-    private SearchCache(ArrayList<Vocabulary> vocabularies, ArrayList<Example> examples, ArrayList<Note> notes) {
-        setVocabularies(vocabularies);
-        setExamples(examples);
-        setNotes(notes);
+    public static void initialise()
+    {
+        if (vocabulariesCache == null)
+        {
+            vocabulariesCache = Vocabularies.select();
+        }
+        if (exampleCache == null)
+        {
+            exampleCache = Examples.select();
+        }
+        if (notesCache == null)
+        {
+            notesCache = Notes.select();
+        }
     }
 
-    public static SearchCache initialCache() {
-        ArrayList<Vocabulary> vocabularies = Vocabularies.selectForCache();
-        ArrayList<Example> examples = Examples.selectForCache();
-        ArrayList<Note> notes = Notes.select();
-
-        return new SearchCache(vocabularies, examples, notes);
-    }
-
-    public static ArrayList<Vocabulary> searchFromCache(String searchText) {
+    public static ArrayList<Vocabulary> searchFromCache(String searchText)
+    {
+        searchText = searchText.toLowerCase();
         ArrayList<Vocabulary> searchResult = new ArrayList<>();
-        ArrayList<Integer> idList = new ArrayList<>();
-        SearchCache searchCache = App.searchCache;
 
-        for (Vocabulary vocabulary : searchCache.getVocabularies()) {
-            if (vocabulary.getVocabulary().toLowerCase().contains(searchText.toLowerCase())) {
-                //searchResult.add(Vocabularies.select(vocabulary.getId()));
-                idList.add(vocabulary.getId());
-            } else if (vocabulary.getVocabPersianDef().toLowerCase().contains(searchText.toLowerCase())) {
-                //searchResult.add(Vocabularies.select(vocabulary.getId()));
-                idList.add(vocabulary.getId());
-            } else if (vocabulary.getVocabEnglishDef().toLowerCase().contains(searchText.toLowerCase())) {
-                // searchResult.add(Vocabularies.select(vocabulary.getId()));
-                idList.add(vocabulary.getId());
+        for (int i = 0; i < vocabulariesCache.size(); i++)
+        {
+            Vocabulary vocabulary = vocabulariesCache.get(i);
+            if (vocabulary.getVocabulary().toLowerCase().contains(searchText)
+                    || vocabulary.getVocabPersianDef().toLowerCase().contains(searchText)
+                    || vocabulary.getVocabEnglishDef().toLowerCase().contains(searchText))
+            {
+                searchResult.add(vocabulary);
+                continue;
+            }
+
+            boolean isInExamples = isInExamples(vocabulary.getId(), searchText);
+            if (isInExamples)
+            {
+                searchResult.add(vocabulary);
+                continue;
+            }
+
+            boolean isInNotes = isInNotes(vocabulary.getId(), searchText);
+            if (isInNotes)
+            {
+                searchResult.add(vocabulary);
             }
         }
-        for (Example example : searchCache.getExamples()) {
-            if (example.getPersian().toLowerCase().contains(searchText.toLowerCase())) {
-                if (!Exist(searchResult, example.getVocabularyId())) {
-                    //searchResult.add(Vocabularies.select(example.getVocabularyId()));
-                    idList.add(example.getVocabularyId());
-                } else if (example.getEnglish().toLowerCase().contains(searchText.toLowerCase())) {
-                    if (!Exist(searchResult, example.getVocabularyId())) {
-                        //searchResult.add(Vocabularies.select(example.getVocabularyId()));
-                        idList.add(example.getVocabularyId());
-                    }
-                }
-            }
-        }
-        for (Note note : searchCache.getNotes()) {
-            if (note.getDescription().toLowerCase().contains(searchText.toLowerCase())) {
-                if (!Exist(searchResult, note.getVocabularyId())) {
-                    //searchResult.add(Vocabularies.select(note.getVocabularyId()));
-                    idList.add(note.getVocabularyId());
-                }
-            }
-        }
-        String whereClause = generateWhereCondition(idList);
-        searchResult = Vocabularies.select(whereClause, null, "");
+
         return searchResult;
     }
 
-    private ArrayList<Vocabulary> getVocabularies() {
-        return vocabularies;
-    }
-
-    private void setVocabularies(ArrayList<Vocabulary> vocabularies) {
-        this.vocabularies = vocabularies;
-    }
-
-    private ArrayList<Example> getExamples() {
-        return examples;
-    }
-
-    private void setExamples(ArrayList<Example> examples) {
-        this.examples = examples;
-    }
-
-    private ArrayList<Note> getNotes() {
-        return notes;
-    }
-
-    private void setNotes(ArrayList<Note> notes) {
-        this.notes = notes;
-    }
-
-    private static Boolean Exist(ArrayList<Vocabulary> vocabularies, int vocabId) {
-        for (Vocabulary vocabulary : vocabularies) {
-            if (vocabulary.getId() == vocabId)
+    private static boolean isInExamples(int vocabularyId, String searchText)
+    {
+        for (Example example : exampleCache)
+        {
+            if (example.getId() == vocabularyId && (example.getEnglish().toLowerCase().contains(searchText) || example.getPersian().toLowerCase().contains(searchText)))
+            {
                 return true;
+            }
         }
         return false;
     }
 
-    private static String generateWhereCondition(ArrayList<Integer> idList) {
-        String whereCondition = "WHERE ";
-        for (int i = 0; i < idList.size(); i++) {
-            if (i == idList.size() - 1)
-                whereCondition += "Id=" + idList.get(i);
-            else whereCondition += "Id=" + idList.get(i) + " OR ";
+    private static boolean isInNotes(int vocabularyId, String searchText)
+    {
+        for (Note note : notesCache)
+        {
+            if (note.getId() == vocabularyId && note.getDescription().toLowerCase().contains(searchText))
+            {
+                return true;
+            }
         }
-        return whereCondition;
+        return false;
     }
 }
