@@ -143,10 +143,9 @@ public class ThemeAdapter extends RecyclerView.Adapter<ThemeAdapter.ViewHolder> 
             Picasso.with(context).load(R.drawable.causes).into(holder.imgTheme);
         }
 
-
         //new ImageLoaderTask(holder.imgTheme).execute(imageId);
 
-        holder.txtTheme.setText(theme.getEncName());
+        holder.txtTheme.setText(theme.getName());
 
         SystemSetting setting = SystemSettings.getCurrentSettings();
         if (position == 0 || setting.isPremium()) {
@@ -168,7 +167,6 @@ public class ThemeAdapter extends RecyclerView.Adapter<ThemeAdapter.ViewHolder> 
                 }
             });
         }
-
         //holder.layoutProgressDetail.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 1));
         holder.layoutProgressDetail.setVisibility(View.GONE);
         //collapse(holder.layoutProgressDetail);
@@ -177,7 +175,6 @@ public class ThemeAdapter extends RecyclerView.Adapter<ThemeAdapter.ViewHolder> 
         if (status != null) {
             holder.layoutDivider.setVisibility(View.VISIBLE);
             holder.layoutCircleProgress.setVisibility(View.VISIBLE);
-
             holder.circleProgress.setProgress(status.getProgress());
 
             if (progressDetailStatuses.get(position).visible) {

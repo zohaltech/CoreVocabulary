@@ -9,27 +9,6 @@ public class Example {
     private String english;
     private String persian;
 
-   // private String encEnglish;
-   // private String encPersian;
-
-
-//    public Example(int id, int vocabularyId, int ordinal, String english, String persian,
-//                   String encEnglish, String encPersian) {
-//        this(vocabularyId, ordinal, english, persian, encEnglish, encPersian);
-//        this.id = id;
-//    }
-
-//    public Example(int vocabularyId, int ordinal, String english, String persian,
-//                   String encEnglish, String encPersian) {
-//        setVocabularyId(vocabularyId);
-//        setOrdinal(ordinal);
-//        setEnglish(english);
-//        setPersian(persian);
-//
-//        setEncPersian(encPersian);
-//        setEncEnglish(encEnglish);
-//    }
-
     public Example(int id, int vocabularyId, int ordinal, String english, String persian) {
         this(vocabularyId, ordinal, english, persian);
         this.id = id;

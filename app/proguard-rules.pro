@@ -16,4 +16,8 @@
 #   public *;
 #}
 -keep class com.android.vending.billing
--dontwarn com.squareup.picasso.**
+#-keep com.squareup.okhttp.**
+-dontwarn com.squareup.okhttp.**
+#-dontwarn com.squareup.picasso.**
+#-dontwarn com.astuetz.**
+#-dontwarn com.google.code.gson.**

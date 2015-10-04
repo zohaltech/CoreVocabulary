@@ -39,7 +39,6 @@ public class Themes {
                     Theme theme = new Theme(cursor.getInt(cursor.getColumnIndex(Id)),
                                             cursor.getInt(cursor.getColumnIndex(Level)),
                                             cursor.getString(cursor.getColumnIndex(Name)),
-                                            cursor.getString(cursor.getColumnIndex(EncName)),
                                             cursor.getString(cursor.getColumnIndex(IconName)));
 
                     themeList.add(theme);
@@ -84,7 +83,6 @@ public class Themes {
 
         values.put(Level, theme.getLevel());
         values.put(Name, theme.getName());
-        values.put(EncName, theme.getEncName1());
         values.put(IconName, theme.getIconName());
 
         return values;

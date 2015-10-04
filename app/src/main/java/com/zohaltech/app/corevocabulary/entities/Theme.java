@@ -1,28 +1,12 @@
 package com.zohaltech.app.corevocabulary.entities;
 
-import com.zohaltech.app.corevocabulary.classes.CoreSec;
-
 import java.io.Serializable;
 
 public class Theme implements Serializable {
-    private int    id;
-    private int    level;
+    private int id;
+    private int level;
     private String name;
-
-    private String encName;
     private String iconName;
-
-    public Theme(int id, int level, String name, String encName, String iconName) {
-        this(level, name, encName, iconName);
-        this.id = id;
-    }
-
-    public Theme(int level, String name, String encName, String iconName) {
-        setLevel(level);
-        setName(name);
-        setIconName(iconName);
-        setEncName(encName);
-    }
 
     public Theme(int id, int level, String name, String iconName) {
         this(level, name, iconName);
@@ -65,17 +49,5 @@ public class Theme implements Serializable {
 
     public void setIconName(String iconName) {
         this.iconName = iconName;
-    }
-
-    public String getEncName() {
-        return CoreSec.decrypt(encName);
-    }
-
-    public String getEncName1() {
-        return encName;
-    }
-
-    public void setEncName(String encName) {
-        this.encName = encName;
     }
 }
