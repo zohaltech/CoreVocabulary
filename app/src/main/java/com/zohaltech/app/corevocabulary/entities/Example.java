@@ -73,8 +73,7 @@ public class Example {
     }
 
     public String getEnglish() {
-        //return english;
-        return CoreSec.decrypt(english);
+        return english;
     }
 
     public void setEnglish(String english) {
@@ -82,8 +81,7 @@ public class Example {
     }
 
     public String getPersian() {
-        //return persian;
-        return CoreSec.decrypt(persian);
+        return persian;
     }
 
     public void setPersian(String persian) {
