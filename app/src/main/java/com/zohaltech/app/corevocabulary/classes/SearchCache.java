@@ -9,54 +9,44 @@ import com.zohaltech.app.corevocabulary.entities.Vocabulary;
 
 import java.util.ArrayList;
 
-public class SearchCache
-{
+public class SearchCache {
     private static ArrayList<Vocabulary> vocabulariesCache = null;
     private static ArrayList<Example> exampleCache = null;
     private static ArrayList<Note> notesCache = null;
 
-    public static void initialise()
-    {
-        if (vocabulariesCache == null)
-        {
+    public static void initialise() {
+        if (vocabulariesCache == null) {
             vocabulariesCache = Vocabularies.select();
         }
-        if (exampleCache == null)
-        {
+        if (exampleCache == null) {
             exampleCache = Examples.select();
         }
-        if (notesCache == null)
-        {
+        if (notesCache == null) {
             notesCache = Notes.select();
         }
     }
 
-    public static ArrayList<Vocabulary> searchFromCache(String searchText)
-    {
+    public static ArrayList<Vocabulary> searchFromCache(String searchText) {
         searchText = searchText.toLowerCase();
         ArrayList<Vocabulary> searchResult = new ArrayList<>();
 
-        for (int i = 0; i < vocabulariesCache.size(); i++)
-        {
+        for (int i = 0; i < vocabulariesCache.size(); i++) {
             Vocabulary vocabulary = vocabulariesCache.get(i);
             if (vocabulary.getVocabulary().toLowerCase().contains(searchText)
                     || vocabulary.getVocabPersianDef().toLowerCase().contains(searchText)
-                    || vocabulary.getVocabEnglishDef().toLowerCase().contains(searchText))
-            {
+                    || vocabulary.getVocabEnglishDef().toLowerCase().contains(searchText)) {
                 searchResult.add(vocabulary);
                 continue;
             }
 
             boolean isInExamples = isInExamples(vocabulary.getId(), searchText);
-            if (isInExamples)
-            {
+            if (isInExamples) {
                 searchResult.add(vocabulary);
                 continue;
             }
 
             boolean isInNotes = isInNotes(vocabulary.getId(), searchText);
-            if (isInNotes)
-            {
+            if (isInNotes) {
                 searchResult.add(vocabulary);
             }
         }
@@ -64,24 +54,18 @@ public class SearchCache
         return searchResult;
     }
 
-    private static boolean isInExamples(int vocabularyId, String searchText)
-    {
-        for (Example example : exampleCache)
-        {
-            if (example.getId() == vocabularyId && (example.getEnglish().toLowerCase().contains(searchText) || example.getPersian().toLowerCase().contains(searchText)))
-            {
+    private static boolean isInExamples(int vocabularyId, String searchText) {
+        for (Example example : exampleCache) {
+            if (example.getId() == vocabularyId && (example.getEnglish().toLowerCase().contains(searchText) || example.getPersian().toLowerCase().contains(searchText))) {
                 return true;
             }
         }
         return false;
     }
 
-    private static boolean isInNotes(int vocabularyId, String searchText)
-    {
-        for (Note note : notesCache)
-        {
-            if (note.getId() == vocabularyId && note.getDescription().toLowerCase().contains(searchText))
-            {
+    private static boolean isInNotes(int vocabularyId, String searchText) {
+        for (Note note : notesCache) {
+            if (note.getId() == vocabularyId && note.getDescription().toLowerCase().contains(searchText)) {
                 return true;
             }
         }

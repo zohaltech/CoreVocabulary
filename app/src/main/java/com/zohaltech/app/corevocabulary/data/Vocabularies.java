@@ -10,22 +10,16 @@ import com.zohaltech.app.corevocabulary.entities.Vocabulary;
 
 import java.util.ArrayList;
 
-public class Vocabularies
-{
-    static final String TableName = "Vocabularies";
-    static final String Id = "Id";
-    static final String ThemeId = "ThemeId";
-    static final String Day = "Day";
+public class Vocabularies {
+    static final String TableName  = "Vocabularies";
+    static final String Id         = "Id";
+    static final String ThemeId    = "ThemeId";
+    static final String Day        = "Day";
     static final String Vocabulary = "Vocabulary";
     static final String EnglishDef = "EnglishDef";
     static final String PersianDef = "PersianDef";
-    static final String Learned = "Learned";
+    static final String Learned    = "Learned";
     static final String Bookmarked = "Bookmarked";
-
-    //    static final String EncVocab      = "EncVocab";
-    //    static final String EncEngDef     = "EncEngDef";
-    //    static final String EncPersianDef = "EncPersianDef";
-
 
     static final String CreateTable = "CREATE TABLE " + TableName + " ( " +
             Id + " INTEGER PRIMARY KEY NOT NULL, " +
@@ -34,29 +28,22 @@ public class Vocabularies
             Vocabulary + " VARCHAR(250), " +
             EnglishDef + " VARCHAR(1024)," +
             PersianDef + " VARCHAR(1024), " +
-            //                                      EncVocab + " VARCHAR(1024), " +
-            //                                      EncEngDef + " VARCHAR(1024), " +
-            //                                      EncPersianDef + " VARCHAR(1024), " +
             Learned + " Boolean DEFAULT (0), " +
             Bookmarked + " Boolean DEFAULT (0) );";
 
     static final String DropTable = "Drop Table If Exists " + TableName;
 
-    public static ArrayList<Vocabulary> select(String whereClause, String[] selectionArgs, String limitClause)
-    {
+    public static ArrayList<Vocabulary> select(String whereClause, String[] selectionArgs, String limitClause) {
         ArrayList<Vocabulary> vocabularies = new ArrayList<>();
         DataAccess da = new DataAccess();
         SQLiteDatabase db = da.getReadableDB();
         Cursor cursor = null;
 
-        try
-        {
+        try {
             String query = "Select * From " + TableName + " " + whereClause + " " + limitClause;
             cursor = db.rawQuery(query, selectionArgs);
-            if (cursor != null && cursor.moveToFirst())
-            {
-                do
-                {
+            if (cursor != null && cursor.moveToFirst()) {
+                do {
                     Vocabulary vocabulary = new Vocabulary(cursor.getInt(cursor.getColumnIndex(Id)),
                             cursor.getInt(cursor.getColumnIndex(ThemeId)),
                             cursor.getInt(cursor.getColumnIndex(Day)),
@@ -65,20 +52,13 @@ public class Vocabularies
                             CoreSec.decrypt(cursor.getString(cursor.getColumnIndex(PersianDef)).replace('|', '\n')),
                             cursor.getInt(cursor.getColumnIndex(Learned)) == 1,
                             cursor.getInt(cursor.getColumnIndex(Bookmarked)) == 1);
-                    //                                                           cursor.getString(cursor.getColumnIndex(EncVocab)),
-                    //                                                           cursor.getString(cursor.getColumnIndex(EncEngDef)),
-                    //                                                           cursor.getString(cursor.getColumnIndex(EncPersianDef)));
 
                     vocabularies.add(vocabulary);
                 } while (cursor.moveToNext());
             }
-        }
-        catch (MyRuntimeException e)
-        {
+        } catch (MyRuntimeException e) {
             e.printStackTrace();
-        }
-        finally
-        {
+        } finally {
             if (cursor != null && !cursor.isClosed())
                 cursor.close();
             if (db != null && db.isOpen())
@@ -87,58 +67,45 @@ public class Vocabularies
         return vocabularies;
     }
 
-    public static ArrayList<Vocabulary> select()
-    {
+    public static ArrayList<Vocabulary> select() {
         return select("", null, "");
     }
 
-    public static ArrayList<Vocabulary> selectSiblings(long vocabularyId)
-    {
+    public static ArrayList<Vocabulary> selectSiblings(long vocabularyId) {
         Vocabulary vocabulary = select(vocabularyId);
         assert vocabulary != null;
 
         return select("Where " + ThemeId + " = ? AND " + Day + " = ? ", new String[]{"" + vocabulary.getThemeId(), vocabulary.getDay() + ""}, "");
     }
 
-    public static ArrayList<Vocabulary> selectBookmarks()
-    {
+    public static ArrayList<Vocabulary> selectBookmarks() {
         return select("Where " + Bookmarked + " = ? ", new String[]{"1"}, "");
     }
 
-    public static Vocabulary select(long vocabularyId)
-    {
+    public static Vocabulary select(long vocabularyId) {
         ArrayList<Vocabulary> vocabularies = select("Where " + Id + " = ? ", new String[]{String.valueOf(vocabularyId)}, "");
-        if (vocabularies.size() == 1)
-        {
+        if (vocabularies.size() == 1) {
             return vocabularies.get(0);
-        }
-        else
-        {
+        } else {
             return null;
         }
     }
 
-    public static Vocabulary next(long vocabularyId)
-    {
+    public static Vocabulary next(long vocabularyId) {
         ArrayList<Vocabulary> selectedVocabulary = select("Where " + Id + " > ? ", new String[]{String.valueOf(vocabularyId)}, " Limit 1");
-        if (selectedVocabulary.size() == 0)
-        {
+        if (selectedVocabulary.size() == 0) {
             return null;
-        }
-        else
-        {
+        } else {
             return selectedVocabulary.get(0);
         }
     }
 
-    public static ArrayList<Vocabulary> selectByTheme(long themeId)
-    {
+    public static ArrayList<Vocabulary> selectByTheme(long themeId) {
         String whereClause = " Where " + ThemeId + " = " + themeId;
         return select(whereClause, null, "");
     }
 
-    public static ArrayList<Vocabulary> search(String searchText)
-    {
+    public static ArrayList<Vocabulary> search(String searchText) {
         String query = "SELECT DISTINCT v.* FROM " + TableName + " v\n" +
                 "INNER JOIN " + Examples.TableName + " e\n" +
                 "ON v.Id=e." + Examples.VocabularyId + "\n" +
@@ -156,13 +123,10 @@ public class Vocabularies
         SQLiteDatabase db = da.getReadableDB();
         Cursor cursor = null;
 
-        try
-        {
+        try {
             cursor = db.rawQuery(query, null);
-            if (cursor != null && cursor.moveToFirst())
-            {
-                do
-                {
+            if (cursor != null && cursor.moveToFirst()) {
+                do {
                     Vocabulary vocabulary = new Vocabulary(cursor.getInt(cursor.getColumnIndex(Id)),
                             cursor.getInt(cursor.getColumnIndex(ThemeId)),
                             cursor.getInt(cursor.getColumnIndex(Day)),
@@ -171,19 +135,13 @@ public class Vocabularies
                             cursor.getString(cursor.getColumnIndex(PersianDef)),
                             cursor.getInt(cursor.getColumnIndex(Learned)) == 1,
                             cursor.getInt(cursor.getColumnIndex(Bookmarked)) == 1);
-                    //                                                           cursor.getString(cursor.getColumnIndex(EncVocab)),
-                    //                                                           cursor.getString(cursor.getColumnIndex(EncEngDef)),
-                    //                                                           cursor.getString(cursor.getColumnIndex(EncPersianDef)));
+
                     vocabularies.add(vocabulary);
                 } while (cursor.moveToNext());
             }
-        }
-        catch (MyRuntimeException e)
-        {
+        } catch (MyRuntimeException e) {
             e.printStackTrace();
-        }
-        finally
-        {
+        } finally {
             if (cursor != null && !cursor.isClosed())
                 cursor.close();
             if (db != null && db.isOpen())
@@ -192,14 +150,12 @@ public class Vocabularies
         return vocabularies;
     }
 
-    public static long insert(Vocabulary vocabulary)
-    {
+    public static long insert(Vocabulary vocabulary) {
         DataAccess da = new DataAccess();
         return da.insert(TableName, getContentValues(vocabulary));
     }
 
-    public static long update(Vocabulary vocabulary)
-    {
+    public static long update(Vocabulary vocabulary) {
         ContentValues values = new ContentValues();
         values.put(Id, vocabulary.getId());
         values.put(Learned, vocabulary.getLearned());
@@ -208,8 +164,7 @@ public class Vocabularies
         return da.update(TableName, values, Id + " = ? ", new String[]{String.valueOf(vocabulary.getId())});
     }
 
-    public static ContentValues getContentValues(Vocabulary vocabulary)
-    {
+    public static ContentValues getContentValues(Vocabulary vocabulary) {
         ContentValues values = new ContentValues();
         values.put(Id, vocabulary.getId());
         values.put(ThemeId, vocabulary.getThemeId());
@@ -220,15 +175,10 @@ public class Vocabularies
         values.put(Learned, vocabulary.getLearned());
         values.put(Bookmarked, vocabulary.getBookmarked());
 
-
-        //        values.put(EncVocab, vocabulary.getEncVocab1());
-        //        values.put(EncEngDef, vocabulary.getEncEngDef1());
-        //        values.put(EncPersianDef, vocabulary.getEncPersianDef1());
         return values;
     }
 
-    public static void resetLearnedVocabularies()
-    {
+    public static void resetLearnedVocabularies() {
         ContentValues values = new ContentValues();
         values.put(Learned, 0);
         DataAccess db = new DataAccess();

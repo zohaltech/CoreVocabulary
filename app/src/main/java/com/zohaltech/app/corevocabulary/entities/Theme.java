@@ -3,8 +3,8 @@ package com.zohaltech.app.corevocabulary.entities;
 import java.io.Serializable;
 
 public class Theme implements Serializable {
-    private int id;
-    private int level;
+    private int    id;
+    private int    level;
     private String name;
     private String iconName;
 

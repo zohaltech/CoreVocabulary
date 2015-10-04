@@ -1,7 +1,5 @@
 package com.zohaltech.app.corevocabulary.entities;
 
-import com.zohaltech.app.corevocabulary.classes.CoreSec;
-
 public class Example {
     private int    id;
     private int    vocabularyId;
@@ -21,7 +19,7 @@ public class Example {
         setPersian(persian);
     }
 
-    public Example(int vocabularyId,String english, String persian) {
+    public Example(int vocabularyId, String english, String persian) {
         setVocabularyId(vocabularyId);
         setEnglish(english);
         setPersian(persian);
@@ -66,28 +64,4 @@ public class Example {
     public void setPersian(String persian) {
         this.persian = persian;
     }
-
-//    public String getEncEnglish() {
-//        return CoreSec.decrypt(encEnglish);
-//    }
-//
-//    public String getEncEnglish1() {
-//        return encEnglish;
-//    }
-//
-//    public void setEncEnglish(String encEnglish) {
-//        this.encEnglish = encEnglish;
-//    }
-//
-//    public String getEncPersian() {
-//        return CoreSec.decrypt(encPersian);
-//    }
-//
-//    public String getEncPersian1() {
-//        return encPersian;
-//    }
-//
-//    public void setEncPersian(String encPersian) {
-//        this.encPersian = encPersian;
-//    }
 }

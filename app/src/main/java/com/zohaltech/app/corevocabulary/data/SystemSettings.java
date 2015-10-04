@@ -24,15 +24,15 @@ public class SystemSettings {
 
 
     static final String CreateTable = "CREATE TABLE " + TableName + " (" +
-                                      Id + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
-                                      Installed + " BOOLEAN NOT NULL, " +
-                                      Premium + " BOOLEAN NOT NULL, " +
-                                      PremiumVersion + " VARCHAR(100)," +
-                                      RingingToneUri + " VARCHAR(20)," +
-                                      AlarmRingingTone + " VARCHAR(20)," +
-                                      VibrateInAlarms + " BOOLEAN NOT NULL, " +
-                                      SoundInAlarms + " BOOLEAN NOT NULL " +
-                                      " ); ";
+            Id + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
+            Installed + " BOOLEAN NOT NULL, " +
+            Premium + " BOOLEAN NOT NULL, " +
+            PremiumVersion + " VARCHAR(100)," +
+            RingingToneUri + " VARCHAR(20)," +
+            AlarmRingingTone + " VARCHAR(20)," +
+            VibrateInAlarms + " BOOLEAN NOT NULL, " +
+            SoundInAlarms + " BOOLEAN NOT NULL " +
+            " ); ";
     static final String DropTable   = "Drop Table If Exists " + TableName;
 
     private static ArrayList<SystemSetting> select(String whereClause, String[] selectionArgs) {
@@ -47,13 +47,13 @@ public class SystemSettings {
             if (cursor != null && cursor.moveToFirst()) {
                 do {
                     SystemSetting systemSetting = new SystemSetting(cursor.getInt(cursor.getColumnIndex(Id)),
-                                                                    cursor.getInt(cursor.getColumnIndex(Installed)) == 1,
-                                                                    cursor.getInt(cursor.getColumnIndex(Premium)) == 1,
-                                                                    cursor.getString(cursor.getColumnIndex(PremiumVersion)),
-                                                                    cursor.getString(cursor.getColumnIndex(RingingToneUri)),
-                                                                    cursor.getString(cursor.getColumnIndex(AlarmRingingTone)),
-                                                                    cursor.getInt(cursor.getColumnIndex(VibrateInAlarms)) == 1,
-                                                                    cursor.getInt(cursor.getColumnIndex(SoundInAlarms)) == 1);
+                            cursor.getInt(cursor.getColumnIndex(Installed)) == 1,
+                            cursor.getInt(cursor.getColumnIndex(Premium)) == 1,
+                            cursor.getString(cursor.getColumnIndex(PremiumVersion)),
+                            cursor.getString(cursor.getColumnIndex(RingingToneUri)),
+                            cursor.getString(cursor.getColumnIndex(AlarmRingingTone)),
+                            cursor.getInt(cursor.getColumnIndex(VibrateInAlarms)) == 1,
+                            cursor.getInt(cursor.getColumnIndex(SoundInAlarms)) == 1);
                     settings.add(systemSetting);
                 } while (cursor.moveToNext());
             }
@@ -67,7 +67,6 @@ public class SystemSettings {
         }
         return settings;
     }
-
 
     public static long update(SystemSetting setting) {
         ContentValues values = new ContentValues();

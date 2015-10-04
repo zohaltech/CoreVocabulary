@@ -14,14 +14,12 @@ public class Themes {
     static final String Id        = "Id";
     static final String Level     = "Level";
     static final String Name      = "Name";
-    static final String EncName   = "EncName";
     static final String IconName  = "IconName";
 
     static final String CreateTable = "CREATE TABLE " + TableName + " ( " +
                                       Id + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
                                       Level + " INTEGER , " +
                                       Name + " VARCHAR(50) ," +
-                                      EncName + " VARCHAR(500) ," +
                                       IconName + " VARCHAR(50));";
     static final String DropTable   = "Drop Table If Exists " + TableName;
 

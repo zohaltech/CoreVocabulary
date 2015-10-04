@@ -13,8 +13,8 @@ import com.zohaltech.app.corevocabulary.entities.Theme;
 import java.io.InputStreamReader;
 
 public class DataAccess extends SQLiteOpenHelper {
-    public static final String DATABASE_NAME = "CORE_VOCABULARY";
-    public static final int DATABASE_VERSION = 84;
+    public static final String DATABASE_NAME    = "CORE_VOCABULARY";
+    public static final int    DATABASE_VERSION = 84;
 
     public DataAccess() {
         super(App.context, DATABASE_NAME, null, DATABASE_VERSION);

@@ -1,14 +1,12 @@
 package com.zohaltech.app.corevocabulary.entities;
 
-import com.zohaltech.app.corevocabulary.classes.CoreSec;
-
 public class Vocabulary {
-    private int id;
-    private int themeId;
-    private int day;
-    private String vocabulary;
-    private String vocabEnglishDef;
-    private String vocabPersianDef;
+    private int     id;
+    private int     themeId;
+    private int     day;
+    private String  vocabulary;
+    private String  vocabEnglishDef;
+    private String  vocabPersianDef;
     private Boolean learned;
     private Boolean bookmarked;
 
