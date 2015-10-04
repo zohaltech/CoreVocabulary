@@ -68,7 +68,7 @@ public class SearchCache
     {
         for (Example example : exampleCache)
         {
-            if (example.getId() == vocabularyId && (example.getEnglish().toLowerCase().contains(searchText) || example.getPersian().toLowerCase().contains(searchText)))
+            if (example.getVocabularyId() == vocabularyId && (example.getEnglish().toLowerCase().contains(searchText) || example.getPersian().toLowerCase().contains(searchText)))
             {
                 return true;
             }
@@ -80,7 +80,7 @@ public class SearchCache
     {
         for (Note note : notesCache)
         {
-            if (note.getId() == vocabularyId && note.getDescription().toLowerCase().contains(searchText))
+            if (note.getVocabularyId() == vocabularyId && note.getDescription().toLowerCase().contains(searchText))
             {
                 return true;
             }
