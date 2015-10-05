@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
+import android.provider.Settings;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.AppCompatSpinner;
 import android.view.MenuItem;
@@ -241,7 +242,6 @@ public class SchedulerActivity extends EnhancedActivity {
         spinnerIntervals.setAdapter(intervalAdapter);
         spinnerIntervals.setSelection(intervalAdapter.getPosition(settings.getIntervals()));
 
-
         ArrayList<String> themeNames = new ArrayList<>();
         ArrayList<Theme> themes = Themes.select();
 
@@ -269,6 +269,9 @@ public class SchedulerActivity extends EnhancedActivity {
         chkTh.setChecked(days[4]);
         chkFr.setChecked(days[5]);
         chkSa.setChecked(days[6]);
+
+        SystemSetting setting = SystemSettings.getCurrentSettings();
+        twAlarmSound.setText(setting.getAlarmRingingTone());
     }
 
     @Override

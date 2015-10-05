@@ -31,6 +31,13 @@ public class AlarmReceiver extends BroadcastReceiver {
                         .setColor(App.context.getResources().getColor(R.color.primary))
                         .setAutoCancel(true);
 
+        Intent resultIntent = new Intent(context, VocabularyDetailsActivity.class);
+        resultIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        resultIntent.putExtra(VocabularyDetailsActivity.VOCAB_ID, reminder.getVocabularyId());
+
+        PendingIntent resultPendingIntent = PendingIntent.getActivity(context, 0, resultIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        builder.setContentIntent(resultPendingIntent);
+
         SystemSetting setting = SystemSettings.getCurrentSettings();
         if (setting.getRingingToneUri() == null) {
             builder.setDefaults(Notification.DEFAULT_VIBRATE | Notification.DEFAULT_SOUND);
@@ -39,14 +46,6 @@ public class AlarmReceiver extends BroadcastReceiver {
         if (setting.getRingingToneUri() != null) {
             notification.sound = Uri.parse(setting.getRingingToneUri());
         }
-
-        Intent resultIntent = new Intent(context, VocabularyDetailsActivity.class);
-        resultIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-        resultIntent.putExtra(VocabularyDetailsActivity.VOCAB_ID, reminder.getVocabularyId());
-
-        PendingIntent resultPendingIntent = PendingIntent.getActivity(context, 0, resultIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-        builder.setContentIntent(resultPendingIntent);
-
         //App.notificationManager.notify((int) reminder.getTime().getTime(), builder.build());
         App.notificationManager.notify((int) reminder.getTime().getTime(), notification);
 

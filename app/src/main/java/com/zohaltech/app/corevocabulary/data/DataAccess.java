@@ -3,18 +3,22 @@ package com.zohaltech.app.corevocabulary.data;
 import android.content.ContentValues;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.media.Ringtone;
+import android.media.RingtoneManager;
+import android.provider.Settings;
 
 import com.zohaltech.app.corevocabulary.classes.App;
 import com.zohaltech.app.corevocabulary.classes.CoreSec;
 import com.zohaltech.app.corevocabulary.classes.CsvReader;
 import com.zohaltech.app.corevocabulary.classes.MyRuntimeException;
+import com.zohaltech.app.corevocabulary.entities.SystemSetting;
 import com.zohaltech.app.corevocabulary.entities.Theme;
 
 import java.io.InputStreamReader;
 
 public class DataAccess extends SQLiteOpenHelper {
     public static final String DATABASE_NAME    = "CORE_VOCABULARY";
-    public static final int    DATABASE_VERSION = 84;
+    public static final int    DATABASE_VERSION = 85;
 
     public DataAccess() {
         super(App.context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -47,11 +51,16 @@ public class DataAccess extends SQLiteOpenHelper {
             insertDataFromAsset(db, Examples.TableName, "data/examples.csv", ';');
             insertDataFromAsset(db, Notes.TableName, "data/notes.csv", ';');
 
+
+
+
             ContentValues systemSettingsValues = new ContentValues();
             systemSettingsValues.put(SystemSettings.Installed, 0);
             systemSettingsValues.put(SystemSettings.Premium, 0);
             systemSettingsValues.put(SystemSettings.VibrateInAlarms, 0);
             systemSettingsValues.put(SystemSettings.SoundInAlarms, 0);
+            systemSettingsValues.put(SystemSettings.RingingToneUri, Settings.System.DEFAULT_NOTIFICATION_URI.getPath());
+            systemSettingsValues.put(SystemSettings.AlarmRingingTone,"Default");
             db.insert(SystemSettings.TableName, null, systemSettingsValues);
 
             App.preferences.edit().putBoolean("Encoded", false).apply();
