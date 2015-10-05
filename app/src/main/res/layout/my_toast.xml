@@ -9,7 +9,7 @@
     android:gravity="center"
     android:orientation="horizontal">
 
-    <widgets.MyTextView
+    <widgets.LatinTextView
         android:id="@+id/text"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

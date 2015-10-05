@@ -25,39 +25,42 @@
                 android:layout_height="wrap_content">
 
                 <Button
-                    android:id="@+id/btnStop"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="Stop"
-                    tools:ignore="HardcodedText"/>
-
-                <Button
                     android:id="@+id/btnStart"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:text="Start"
-                    tools:ignore="HardcodedText"/>
+                    tools:ignore="HardcodedText"
+                    android:drawableLeft="@drawable/ic_start"/>
 
                 <Button
                     android:id="@+id/btnPause"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:text="Pause"
-                    tools:ignore="HardcodedText"/>
+                    tools:ignore="HardcodedText"
+                    android:drawableLeft="@drawable/ic_pause"/>
+
+                <Button
+                    android:id="@+id/btnStop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Stop"
+                    tools:ignore="HardcodedText"
+                    android:drawableLeft="@drawable/ic_stop"/>
 
                 <Button
                     android:id="@+id/btnRestart"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:text="RESTART"
-                    tools:ignore="HardcodedText"/>
+                    tools:ignore="HardcodedText"
+                    android:drawableLeft="@drawable/ic_restart"/>
 
             </LinearLayout>
 
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
                 android:background="@color/white">
 
                 <LinearLayout
@@ -69,33 +72,22 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="start"
+                        android:gravity="center|start"
                         android:orientation="horizontal">
 
                         <widgets.LatinTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Start theme:"
+                            android:text="Start theme: "
                             android:textAppearance="?android:attr/textAppearanceMedium"
                             tools:ignore="HardcodedText"/>
-
-                        <!--<widgets.MyEditText-->
-                            <!--android:id="@+id/edtStartVocabularyNo"-->
-                            <!--android:layout_width="64dp"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:gravity="center"-->
-                            <!--android:inputType="number"-->
-                            <!--android:maxLength="3"-->
-                            <!--android:text="1"-->
-                            <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
-                            <!--tools:ignore="HardcodedText"/>-->
 
                         <android.support.v7.widget.AppCompatSpinner
                             android:id="@+id/spinnerStartTheme"
                             style="@style/FormButton"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textColor="@color/white"/>
+                            android:textColor="@drawable/item_text"/>
 
                     </LinearLayout>
 
@@ -109,57 +101,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="start"
-                        android:orientation="horizontal">
-
-                        <widgets.LatinTextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Intervals: "
-                            android:textAppearance="?android:attr/textAppearanceMedium"
-                            tools:ignore="HardcodedText"/>
-
-                        <!--<widgets.MyEditText-->
-                            <!--android:id="@+id/edtAlarmIntervals"-->
-                            <!--android:layout_width="64dp"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:gravity="center"-->
-                            <!--android:inputType="number"-->
-                            <!--android:maxLength="3"-->
-                            <!--android:text="30"-->
-                            <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
-                            <!--tools:ignore="HardcodedText"/>-->
-
-                        <android.support.v7.widget.AppCompatSpinner
-                            android:id="@+id/spinnerIntervals"
-                            style="@style/FormButton"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textColor="@color/white"/>
-
-
-                        <widgets.LatinTextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:text=" minutes"
-                            android:textAppearance="?android:attr/textAppearanceMedium"
-                            tools:ignore="HardcodedText"/>
-
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginBottom="5dp"
-                        android:layout_marginTop="5dp"
-                        android:background="@android:drawable/divider_horizontal_bright"/>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="start"
+                        android:gravity="center|start"
                         android:orientation="horizontal">
 
                         <widgets.LatinTextView
@@ -185,7 +127,8 @@
                             android:layout_height="wrap_content"
                             android:minWidth="72dp"
                             android:text="02:00"
-                            android:textAppearance="?android:attr/textAppearanceMedium"/>
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textColor="@drawable/item_text"/>
 
                     </LinearLayout>
 
@@ -195,6 +138,48 @@
                         android:layout_marginBottom="5dp"
                         android:layout_marginTop="5dp"
                         android:background="@android:drawable/divider_horizontal_bright"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center|start"
+                        android:orientation="horizontal">
+
+                        <widgets.LatinTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Interval: "
+                            android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+                        <android.support.v7.widget.AppCompatSpinner
+                            android:id="@+id/spinnerIntervals"
+                            style="@style/FormButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <widgets.LatinTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text=" minutes"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            tools:ignore="HardcodedText"/>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@android:drawable/divider_horizontal_bright"/>
+
+                    <widgets.LatinTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Week days: "
+                        android:textAppearance="?android:attr/textAppearanceMedium"/>
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -210,7 +195,8 @@
                             android:background="?attr/selectableItemBackground"
                             android:button="@null"
                             android:gravity="center"
-                            android:padding="10dp"
+                            android:paddingBottom="10dp"
+                            android:paddingTop="10dp"
                             android:text="SU"
                             android:textAppearance="?android:attr/textAppearanceMedium"
                             android:textColor="@drawable/day"
@@ -225,7 +211,8 @@
                             android:background="?attr/selectableItemBackground"
                             android:button="@null"
                             android:gravity="center"
-                            android:padding="10dp"
+                            android:paddingBottom="10dp"
+                            android:paddingTop="10dp"
                             android:text="MO"
                             android:textAppearance="?android:attr/textAppearanceMedium"
                             android:textColor="@drawable/day"
@@ -240,7 +227,8 @@
                             android:background="?attr/selectableItemBackground"
                             android:button="@null"
                             android:gravity="center"
-                            android:padding="10dp"
+                            android:paddingBottom="10dp"
+                            android:paddingTop="10dp"
                             android:text="TU"
                             android:textAppearance="?android:attr/textAppearanceMedium"
                             android:textColor="@drawable/day"
@@ -255,7 +243,8 @@
                             android:background="?attr/selectableItemBackground"
                             android:button="@null"
                             android:gravity="center"
-                            android:padding="10dp"
+                            android:paddingBottom="10dp"
+                            android:paddingTop="10dp"
                             android:text="WE"
                             android:textAppearance="?android:attr/textAppearanceMedium"
                             android:textColor="@drawable/day"
@@ -270,7 +259,8 @@
                             android:background="?attr/selectableItemBackground"
                             android:button="@null"
                             android:gravity="center"
-                            android:padding="10dp"
+                            android:paddingBottom="10dp"
+                            android:paddingTop="10dp"
                             android:text="TH"
                             android:textAppearance="?android:attr/textAppearanceMedium"
                             android:textColor="@drawable/day"
@@ -285,7 +275,8 @@
                             android:background="?attr/selectableItemBackground"
                             android:button="@null"
                             android:gravity="center"
-                            android:padding="10dp"
+                            android:paddingBottom="10dp"
+                            android:paddingTop="10dp"
                             android:text="FR"
                             android:textAppearance="?android:attr/textAppearanceMedium"
                             android:textColor="@drawable/day"
@@ -300,7 +291,8 @@
                             android:background="?attr/selectableItemBackground"
                             android:button="@null"
                             android:gravity="center"
-                            android:padding="10dp"
+                            android:paddingBottom="10dp"
+                            android:paddingTop="10dp"
                             android:text="SA"
                             android:textAppearance="?android:attr/textAppearanceMedium"
                             android:textColor="@drawable/day"
@@ -309,20 +301,24 @@
 
                     </LinearLayout>
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@android:drawable/divider_horizontal_bright"/>
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="start"
+                        android:gravity="center|start"
                         android:orientation="horizontal">
 
                         <widgets.LatinTextView
-                            android:id="@+id/twAlarmSound"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="diling-dling.mp3"
-                            android:textAppearance="?android:attr/textAppearanceMedium"
-                            tools:ignore="HardcodedText"/>
+                            android:text="Alarm tone: "
+                            android:textAppearance="?android:attr/textAppearanceMedium"/>
 
                         <widgets.MyButton
                             android:id="@+id/btnSelectTone"
@@ -330,12 +326,11 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:minWidth="72dp"
-                            android:text="Select ringigtone"
-                            android:textAppearance="?android:attr/textAppearanceMedium"/>
-
+                            android:text="Default"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textColor="@drawable/item_text"/>
 
                     </LinearLayout>
-
 
                 </LinearLayout>
 
@@ -345,17 +340,27 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <Button
-                    android:id="@+id/btnGetStatus"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="GET STATUS"
-                    tools:ignore="HardcodedText"/>
+                <!--<Button-->
+                    <!--android:id="@+id/btnGetStatus"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:text="GET STATUS"-->
+                    <!--tools:ignore="HardcodedText"/>-->
+
+                <widgets.LatinTextView
+                    android:id="@+id/txtStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:gravity="center"
+                    android:text="STATUS : RUNNING"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/green"/>
+
             </LinearLayout>
+
         </LinearLayout>
 
-
     </ScrollView>
-
 
 </LinearLayout>

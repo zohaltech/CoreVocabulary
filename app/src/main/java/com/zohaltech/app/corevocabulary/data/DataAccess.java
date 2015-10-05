@@ -5,20 +5,19 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
+import android.net.Uri;
 import android.provider.Settings;
 
 import com.zohaltech.app.corevocabulary.classes.App;
-import com.zohaltech.app.corevocabulary.classes.CoreSec;
 import com.zohaltech.app.corevocabulary.classes.CsvReader;
 import com.zohaltech.app.corevocabulary.classes.MyRuntimeException;
-import com.zohaltech.app.corevocabulary.entities.SystemSetting;
 import com.zohaltech.app.corevocabulary.entities.Theme;
 
 import java.io.InputStreamReader;
 
 public class DataAccess extends SQLiteOpenHelper {
     public static final String DATABASE_NAME    = "CORE_VOCABULARY";
-    public static final int    DATABASE_VERSION = 85;
+    public static final int    DATABASE_VERSION = 88;
 
     public DataAccess() {
         super(App.context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -57,7 +56,8 @@ public class DataAccess extends SQLiteOpenHelper {
             systemSettingsValues.put(SystemSettings.VibrateInAlarms, 0);
             systemSettingsValues.put(SystemSettings.SoundInAlarms, 0);
             systemSettingsValues.put(SystemSettings.RingingToneUri, Settings.System.DEFAULT_NOTIFICATION_URI.getPath());
-            systemSettingsValues.put(SystemSettings.AlarmRingingTone,"Default");
+            Ringtone ringtone = RingtoneManager.getRingtone(App.context, Settings.System.DEFAULT_NOTIFICATION_URI);
+            systemSettingsValues.put(SystemSettings.AlarmRingingTone, ringtone.getTitle(App.context));
             db.insert(SystemSettings.TableName, null, systemSettingsValues);
 
         } catch (MyRuntimeException e) {

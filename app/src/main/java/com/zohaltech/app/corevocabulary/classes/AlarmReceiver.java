@@ -29,6 +29,8 @@ public class AlarmReceiver extends BroadcastReceiver {
                         .setVisibility(lockScreenVisibility)
                         .setDefaults(Notification.DEFAULT_VIBRATE)
                         .setColor(App.context.getResources().getColor(R.color.primary))
+                        //.setLights(0xFFE91E63, 1000, 300)
+                        .setLights(0xFFC2185B, 1000, 300)
                         .setAutoCancel(true);
 
         Intent resultIntent = new Intent(context, VocabularyDetailsActivity.class);
