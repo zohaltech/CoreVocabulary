@@ -34,7 +34,8 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
-public class SchedulerActivity extends EnhancedActivity {
+public class SchedulerActivity extends EnhancedActivity
+{
     CheckBox chkSa;
     CheckBox chkSu;
     CheckBox chkMo;
@@ -57,12 +58,14 @@ public class SchedulerActivity extends EnhancedActivity {
     Button btnSelectTone;
 
     @Override
-    void onCreated() {
+    void onCreated()
+    {
         setContentView(R.layout.activity_scheduler);
         initialise();
     }
 
-    private void initialise() {
+    private void initialise()
+    {
         //edtStartVocabularyNo = (EditText) findViewById(R.id.edtStartVocabularyNo);
         //edtAlarmIntervals = (EditText) findViewById(R.id.edtAlarmIntervals);
         spinnerIntervals = (AppCompatSpinner) findViewById(R.id.spinnerIntervals);
@@ -87,68 +90,90 @@ public class SchedulerActivity extends EnhancedActivity {
         bind();
 
         Button btnGetLastStatus = (Button) findViewById(R.id.btnGetStatus);
-        btnGetLastStatus.setOnClickListener(new View.OnClickListener() {
+        btnGetLastStatus.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
                 ReminderSettings settings = ReminderManager.getReminderSettings();
                 String status = settings.getStatus().toString();
-                if (settings.getReminder() != null) {
+                if (settings.getReminder() != null)
+                {
                     Date time = settings.getReminder().getTime();
                     String remindTime = (time == null ? "Not Set" : time.toString());
                     Toast.makeText(SchedulerActivity.this, "Status:" + status + "\n Alarm Time: " + remindTime, Toast.LENGTH_LONG).show();
-                } else {
+                }
+                else
+                {
                     Toast.makeText(SchedulerActivity.this, "Status:" + status + "\n No Reminder", Toast.LENGTH_LONG).show();
                 }
             }
         });
 
 
-        btnStart.setOnClickListener(new View.OnClickListener() {
+        btnStart.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
                 start();
             }
         });
 
-        btnPause.setOnClickListener(new View.OnClickListener() {
+        btnPause.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
                 ReminderManager.pause();
                 bind();
             }
         });
 
-        btnStop.setOnClickListener(new View.OnClickListener() {
+        btnStop.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
                 ReminderManager.stop();
                 bind();
             }
         });
 
-        btnRestart.setOnClickListener(new View.OnClickListener() {
+        btnRestart.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
                 start();
             }
         });
 
-        btnStartTime.setOnClickListener(new View.OnClickListener() {
+        btnStartTime.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View v) {
-                if (btnStartTime.getText().length() > 0) {
+            public void onClick(View v)
+            {
+                if (btnStartTime.getText().length() > 0)
+                {
                     int hour = Integer.valueOf(btnStartTime.getText().toString().substring(0, 2));
                     int minute = Integer.valueOf(btnStartTime.getText().toString().substring(3, 5));
-                    DialogManager.showTimePickerDialog(App.currentActivity, "", hour, minute, new Runnable() {
+                    DialogManager.showTimePickerDialog(App.currentActivity, "", hour, minute, new Runnable()
+                    {
                         @Override
-                        public void run() {
+                        public void run()
+                        {
                             btnStartTime.setText(DialogManager.timeResult);
                         }
                     });
-                } else {
-                    DialogManager.showTimePickerDialog(App.currentActivity, "", 12, 0, new Runnable() {
+                }
+                else
+                {
+                    DialogManager.showTimePickerDialog(App.currentActivity, "", 12, 0, new Runnable()
+                    {
                         @Override
-                        public void run() {
+                        public void run()
+                        {
                             btnStartTime.setText(DialogManager.timeResult);
                         }
                     });
@@ -156,9 +181,11 @@ public class SchedulerActivity extends EnhancedActivity {
             }
         });
 
-        btnSelectTone.setOnClickListener(new View.OnClickListener() {
+        btnSelectTone.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
                 Intent intent = new Intent(RingtoneManager.ACTION_RINGTONE_PICKER);
                 intent.putExtra(RingtoneManager.EXTRA_RINGTONE_TYPE, RingtoneManager.TYPE_NOTIFICATION);
                 intent.putExtra(RingtoneManager.EXTRA_RINGTONE_TITLE, "Select Tone");
@@ -169,7 +196,8 @@ public class SchedulerActivity extends EnhancedActivity {
 
     }
 
-    private void start() {
+    private void start()
+    {
         ReminderSettings settings = ReminderManager.getReminderSettings();
 
         boolean paused = settings.getStatus() == ReminderSettings.Status.PAUSE;
@@ -187,12 +215,18 @@ public class SchedulerActivity extends EnhancedActivity {
         int startVocabId = Vocabularies.selectByTheme(selectedThemeId).get(0).getId();
         Vocabulary vocabulary = Vocabularies.select(startVocabId);
         //Vocabulary vocabulary = Vocabularies.select(Integer.parseInt(edtStartVocabularyNo.getText().toString()));
-        if (vocabulary == null) {
+        if (vocabulary == null)
+        {
             return;
         }
 
-        Calendar calendar = Calendar.getInstance();
-        settings.setReminder(new Reminder(vocabulary.getId(), calendar.getTime(), vocabulary.getVocabulary(), vocabulary.getVocabEnglishDef(), true));
+        Date reminderTime = Calendar.getInstance().getTime();
+        Reminder garbage = settings.getReminder();
+        if (garbage != null && garbage.getTime() != null)
+        {
+            reminderTime = garbage.getTime();
+        }
+        settings.setReminder(new Reminder(vocabulary.getId(), reminderTime, vocabulary.getVocabulary(), vocabulary.getVocabEnglishDef(), true));
         settings.setStartTime(btnStartTime.getText().toString());
         //settings.setIntervals(Integer.parseInt(edtAlarmIntervals.getText().toString()));
         //  settings.setIntervals();
@@ -206,7 +240,8 @@ public class SchedulerActivity extends EnhancedActivity {
         bind();
     }
 
-    private void bind() {
+    private void bind()
+    {
         ReminderSettings settings = ReminderManager.getReminderSettings();
 
         btnRestart.setVisibility(View.GONE);
@@ -214,14 +249,21 @@ public class SchedulerActivity extends EnhancedActivity {
         btnPause.setVisibility(View.GONE);
         btnStart.setVisibility(View.GONE);
 
-        if (settings.getStatus() == ReminderSettings.Status.STOP) {
+        if (settings.getStatus() == ReminderSettings.Status.STOP)
+        {
             btnStart.setVisibility(View.VISIBLE);
-        } else if (settings.getStatus() == ReminderSettings.Status.RUNNING) {
+        }
+        else if (settings.getStatus() == ReminderSettings.Status.RUNNING)
+        {
             btnStop.setVisibility(View.VISIBLE);
             btnPause.setVisibility(View.VISIBLE);
-        } else if (settings.getStatus() == ReminderSettings.Status.PAUSE) {
+        }
+        else if (settings.getStatus() == ReminderSettings.Status.PAUSE)
+        {
             btnStart.setVisibility(View.VISIBLE);
-        } else if (settings.getStatus() == ReminderSettings.Status.FINISHED) {
+        }
+        else if (settings.getStatus() == ReminderSettings.Status.FINISHED)
+        {
             btnRestart.setVisibility(View.VISIBLE);
         }
 
@@ -245,7 +287,8 @@ public class SchedulerActivity extends EnhancedActivity {
         ArrayList<String> themeNames = new ArrayList<>();
         ArrayList<Theme> themes = Themes.select();
 
-        for (Theme theme : themes) {
+        for (Theme theme : themes)
+        {
             themeNames.add(theme.getName());
         }
 
@@ -254,7 +297,8 @@ public class SchedulerActivity extends EnhancedActivity {
         spinnerStartTheme.setAdapter(themesAdapter);
         spinnerStartTheme.setSelection(0);
 
-        if (settings.getReminder() != null) {
+        if (settings.getReminder() != null)
+        {
             Vocabulary vocabulary = Vocabularies.select(settings.getReminder().getVocabularyId());
             assert vocabulary != null;
             spinnerStartTheme.setSelection(vocabulary.getThemeId() - 1);
@@ -275,18 +319,22 @@ public class SchedulerActivity extends EnhancedActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
         int id = item.getItemId();
-        if (id == android.R.id.home) {
+        if (id == android.R.id.home)
+        {
             onBackPressed();
         }
         return super.onOptionsItemSelected(item);
     }
 
     @Override
-    void onToolbarCreated() {
+    void onToolbarCreated()
+    {
         ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
+        if (actionBar != null)
+        {
             actionBar.setTitle(getString(R.string.title_activity_settings));
             actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setDisplayShowHomeEnabled(true);
@@ -294,10 +342,13 @@ public class SchedulerActivity extends EnhancedActivity {
     }
 
     @Override
-    protected void onActivityResult(final int requestCode, final int resultCode, final Intent intent) {
-        if (resultCode == Activity.RESULT_OK && requestCode == 5) {
+    protected void onActivityResult(final int requestCode, final int resultCode, final Intent intent)
+    {
+        if (resultCode == Activity.RESULT_OK && requestCode == 5)
+        {
             Uri uri = intent.getParcelableExtra(RingtoneManager.EXTRA_RINGTONE_PICKED_URI);
-            if (uri != null) {
+            if (uri != null)
+            {
                 Ringtone ringtone = RingtoneManager.getRingtone(this, uri);
                 String title = ringtone.getTitle(this);
 
@@ -307,7 +358,9 @@ public class SchedulerActivity extends EnhancedActivity {
                 SystemSettings.update(setting);
 
                 twAlarmSound.setText(title);
-            } else {
+            }
+            else
+            {
                 twAlarmSound.setText(null);
             }
         }
