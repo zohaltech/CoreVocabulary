@@ -7,6 +7,7 @@ import android.view.MenuItem;
 
 import com.zohaltech.app.corevocabulary.R;
 import com.zohaltech.app.corevocabulary.classes.App;
+import com.zohaltech.app.corevocabulary.classes.MyUncaughtExceptionHandler;
 
 public abstract class EnhancedActivity extends AppCompatActivity {
 
@@ -18,7 +19,7 @@ public abstract class EnhancedActivity extends AppCompatActivity {
         overridePendingTransition(R.anim.slide_in_from_right, R.anim.slide_out_to_left);
         super.onCreate(savedInstanceState);
 
-        //Thread.setDefaultUncaughtExceptionHandler(new MyUncaughtExceptionHandler());
+        Thread.setDefaultUncaughtExceptionHandler(new MyUncaughtExceptionHandler());
         App.currentActivity = this;
 
         onCreated();

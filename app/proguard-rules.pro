@@ -16,8 +16,5 @@
 #   public *;
 #}
 -keep class com.android.vending.billing
-#-keep com.squareup.okhttp.**
--dontwarn com.squareup.okhttp.**
-#-dontwarn com.squareup.picasso.**
-#-dontwarn com.astuetz.**
-#-dontwarn com.google.code.gson.**
+-dontwarn com.squareup.picasso.**
+-keep class android.support.v7.widget.SearchView { *; }

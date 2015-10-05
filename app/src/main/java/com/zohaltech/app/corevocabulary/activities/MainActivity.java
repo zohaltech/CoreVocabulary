@@ -16,17 +16,9 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.zohaltech.app.corevocabulary.R;
-import com.zohaltech.app.corevocabulary.classes.App;
-import com.zohaltech.app.corevocabulary.classes.CoreSec;
-import com.zohaltech.app.corevocabulary.data.Examples;
-import com.zohaltech.app.corevocabulary.data.Vocabularies;
-import com.zohaltech.app.corevocabulary.entities.Example;
-import com.zohaltech.app.corevocabulary.entities.Vocabulary;
 import com.zohaltech.app.corevocabulary.fragments.DrawerFragment;
 import com.zohaltech.app.corevocabulary.fragments.SearchFragment;
 import com.zohaltech.app.corevocabulary.fragments.ThemesFragment;
-
-import java.util.ArrayList;
 
 import widgets.MySnackbar;
 
@@ -81,7 +73,6 @@ public class MainActivity extends PaymentActivity {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         final SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         MenuItem searchMenuItem = menu.findItem(R.id.action_search);
-
 
         final SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchMenuItem);
         searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
