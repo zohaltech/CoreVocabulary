@@ -23,8 +23,10 @@ import com.zohaltech.app.corevocabulary.classes.Reminder;
 import com.zohaltech.app.corevocabulary.classes.ReminderManager;
 import com.zohaltech.app.corevocabulary.classes.ReminderSettings;
 import com.zohaltech.app.corevocabulary.data.SystemSettings;
+import com.zohaltech.app.corevocabulary.data.Themes;
 import com.zohaltech.app.corevocabulary.data.Vocabularies;
 import com.zohaltech.app.corevocabulary.entities.SystemSetting;
+import com.zohaltech.app.corevocabulary.entities.Theme;
 import com.zohaltech.app.corevocabulary.entities.Vocabulary;
 
 import java.util.ArrayList;
@@ -40,10 +42,11 @@ public class SchedulerActivity extends EnhancedActivity {
     CheckBox chkTh;
     CheckBox chkFr;
 
-    EditText         edtStartVocabularyNo;
+    //EditText edtStartVocabularyNo;
     //EditText edtAlarmIntervals;
     AppCompatSpinner spinnerIntervals;
-    TextView         twAlarmSound;
+    AppCompatSpinner spinnerStartTheme;
+    TextView twAlarmSound;
 
     Button btnStart;
     Button btnStop;
@@ -59,9 +62,10 @@ public class SchedulerActivity extends EnhancedActivity {
     }
 
     private void initialise() {
-        edtStartVocabularyNo = (EditText) findViewById(R.id.edtStartVocabularyNo);
+        //edtStartVocabularyNo = (EditText) findViewById(R.id.edtStartVocabularyNo);
         //edtAlarmIntervals = (EditText) findViewById(R.id.edtAlarmIntervals);
         spinnerIntervals = (AppCompatSpinner) findViewById(R.id.spinnerIntervals);
+        spinnerStartTheme = (AppCompatSpinner) findViewById(R.id.spinnerStartTheme);
         btnStartTime = (Button) findViewById(R.id.btnStartTime);
         twAlarmSound = (TextView) findViewById(R.id.twAlarmSound);
 
@@ -178,7 +182,10 @@ public class SchedulerActivity extends EnhancedActivity {
                 chkFr.isChecked(),
                 chkSa.isChecked()};
 
-        Vocabulary vocabulary = Vocabularies.select(Integer.parseInt(edtStartVocabularyNo.getText().toString()));
+        int selectedThemeId = spinnerStartTheme.getSelectedItemPosition() + 1;
+        int startVocabId = Vocabularies.selectByTheme(selectedThemeId).get(0).getId();
+        Vocabulary vocabulary = Vocabularies.select(startVocabId);
+        //Vocabulary vocabulary = Vocabularies.select(Integer.parseInt(edtStartVocabularyNo.getText().toString()));
         if (vocabulary == null) {
             return;
         }
@@ -187,6 +194,7 @@ public class SchedulerActivity extends EnhancedActivity {
         settings.setReminder(new Reminder(vocabulary.getId(), calendar.getTime(), vocabulary.getVocabulary(), vocabulary.getVocabEnglishDef(), true));
         settings.setStartTime(btnStartTime.getText().toString());
         //settings.setIntervals(Integer.parseInt(edtAlarmIntervals.getText().toString()));
+        //  settings.setIntervals();
         settings.setIntervals((Integer) spinnerIntervals.getSelectedItem());
         settings.setWeekdays(days);
         settings.setStatus(ReminderSettings.Status.RUNNING);
@@ -233,8 +241,24 @@ public class SchedulerActivity extends EnhancedActivity {
         spinnerIntervals.setAdapter(intervalAdapter);
         spinnerIntervals.setSelection(intervalAdapter.getPosition(settings.getIntervals()));
 
+
+        ArrayList<String> themeNames = new ArrayList<>();
+        ArrayList<Theme> themes = Themes.select();
+
+        for (Theme theme : themes) {
+            themeNames.add(theme.getName());
+        }
+
+        ArrayAdapter<String> themesAdapter = new ArrayAdapter<>(this, R.layout.spinner_current_item, themeNames);
+        themesAdapter.setDropDownViewResource(R.layout.spinner_item);
+        spinnerStartTheme.setAdapter(themesAdapter);
+        spinnerStartTheme.setSelection(0);
+
         if (settings.getReminder() != null) {
-            edtStartVocabularyNo.setText(String.valueOf(settings.getReminder().getVocabularyId()));
+            Vocabulary vocabulary = Vocabularies.select(settings.getReminder().getVocabularyId());
+            assert vocabulary != null;
+            spinnerStartTheme.setSelection(vocabulary.getThemeId() - 1);
+            //edtStartVocabularyNo.setText(String.valueOf(settings.getReminder().getVocabularyId()));
         }
         boolean[] days = settings.getWeekdays();
 

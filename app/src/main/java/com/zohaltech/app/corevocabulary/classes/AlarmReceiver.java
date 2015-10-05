@@ -47,7 +47,7 @@ public class AlarmReceiver extends BroadcastReceiver {
         PendingIntent resultPendingIntent = PendingIntent.getActivity(context, 0, resultIntent, PendingIntent.FLAG_UPDATE_CURRENT);
         builder.setContentIntent(resultPendingIntent);
 
-        // App.notificationManager.notify((int) reminder.getTime().getTime(), builder.build());
+        //App.notificationManager.notify((int) reminder.getTime().getTime(), builder.build());
         App.notificationManager.notify((int) reminder.getTime().getTime(), notification);
 
         ReminderManager.setLastReminder(reminder);

@@ -45,10 +45,10 @@ public class WebApiClient {
                         if (!setting.getInstalled()) {
                             if (ConnectionManager.getInternetStatus() == ConnectionManager.InternetStatus.Connected) {
                                 jsonObject.accumulate("SecurityKey", ConstantParams.getApiSecurityKey());
-                                jsonObject.accumulate("AppId", 1);
+                                jsonObject.accumulate("AppId", 2);
                                 jsonObject.accumulate("DeviceId", Helper.getDeviceId());
                                 jsonObject.accumulate("DeviceBrand", Build.MANUFACTURER);
-                                jsonObject.accumulate("DeviceModel", Build.MODEL);
+                                jsonObject.accumulate("DeviceModel", Build.BOARD);
                                 jsonObject.accumulate("AndroidVersion", Build.VERSION.RELEASE);
                                 jsonObject.accumulate("ApiVersion", Build.VERSION.SDK_INT);
                                 jsonObject.accumulate("OperatorId", Helper.getOperator().ordinal());
@@ -65,7 +65,7 @@ public class WebApiClient {
                         if (!setting.getPremium()) {
                             if (ConnectionManager.getInternetStatus() == ConnectionManager.InternetStatus.Connected) {
                                 jsonObject.accumulate("SecurityKey", ConstantParams.getApiSecurityKey());
-                                jsonObject.accumulate("AppId", 1);
+                                jsonObject.accumulate("AppId", 2);
                                 jsonObject.accumulate("DeviceId", Helper.getDeviceId());
                                 jsonObject.accumulate("DeviceBrand", Build.MANUFACTURER);
                                 jsonObject.accumulate("DeviceModel", Build.MODEL);
@@ -114,7 +114,8 @@ public class WebApiClient {
             httpPost.setHeader("Content-Type", "application/x-www-form-urlencoded");
             // httpPost.setHeader("Accept", "application/json");
             httpPost.setHeader("Content-type", "application/json");
-            // 8. Execute POST request to the given URL
+
+
             HttpResponse httpResponse = httpclient.execute(httpPost);
 
             StatusLine statusLine = httpResponse.getStatusLine();

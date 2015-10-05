@@ -75,20 +75,27 @@
                         <widgets.LatinTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Start Vocabulary:"
+                            android:text="Start theme:"
                             android:textAppearance="?android:attr/textAppearanceMedium"
                             tools:ignore="HardcodedText"/>
 
-                        <widgets.MyEditText
-                            android:id="@+id/edtStartVocabularyNo"
-                            android:layout_width="64dp"
+                        <!--<widgets.MyEditText-->
+                            <!--android:id="@+id/edtStartVocabularyNo"-->
+                            <!--android:layout_width="64dp"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:gravity="center"-->
+                            <!--android:inputType="number"-->
+                            <!--android:maxLength="3"-->
+                            <!--android:text="1"-->
+                            <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
+                            <!--tools:ignore="HardcodedText"/>-->
+
+                        <android.support.v7.widget.AppCompatSpinner
+                            android:id="@+id/spinnerStartTheme"
+                            style="@style/FormButton"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:inputType="number"
-                            android:maxLength="3"
-                            android:text="1"
-                            android:textAppearance="?android:attr/textAppearanceMedium"
-                            tools:ignore="HardcodedText"/>
+                            android:textColor="@color/white"/>
 
                     </LinearLayout>
 
