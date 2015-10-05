@@ -51,9 +51,6 @@ public class DataAccess extends SQLiteOpenHelper {
             insertDataFromAsset(db, Examples.TableName, "data/examples.csv", ';');
             insertDataFromAsset(db, Notes.TableName, "data/notes.csv", ';');
 
-
-
-
             ContentValues systemSettingsValues = new ContentValues();
             systemSettingsValues.put(SystemSettings.Installed, 0);
             systemSettingsValues.put(SystemSettings.Premium, 0);
@@ -62,8 +59,6 @@ public class DataAccess extends SQLiteOpenHelper {
             systemSettingsValues.put(SystemSettings.RingingToneUri, Settings.System.DEFAULT_NOTIFICATION_URI.getPath());
             systemSettingsValues.put(SystemSettings.AlarmRingingTone,"Default");
             db.insert(SystemSettings.TableName, null, systemSettingsValues);
-
-            App.preferences.edit().putBoolean("Encoded", false).apply();
 
         } catch (MyRuntimeException e) {
             e.printStackTrace();
