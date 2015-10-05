@@ -13,7 +13,6 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,9 +29,13 @@ import com.zohaltech.app.corevocabulary.entities.SystemSetting;
 import com.zohaltech.app.corevocabulary.entities.Theme;
 import com.zohaltech.app.corevocabulary.entities.Vocabulary;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
+
+import widgets.MyToast;
 
 public class SchedulerActivity extends EnhancedActivity {
     CheckBox chkSa;
@@ -43,11 +46,8 @@ public class SchedulerActivity extends EnhancedActivity {
     CheckBox chkTh;
     CheckBox chkFr;
 
-    //EditText edtStartVocabularyNo;
-    //EditText edtAlarmIntervals;
     AppCompatSpinner spinnerIntervals;
     AppCompatSpinner spinnerStartTheme;
-    TextView twAlarmSound;
 
     Button btnStart;
     Button btnStop;
@@ -55,6 +55,8 @@ public class SchedulerActivity extends EnhancedActivity {
     Button btnRestart;
     Button btnStartTime;
     Button btnSelectTone;
+
+    TextView txtStatus;
 
     @Override
     void onCreated() {
@@ -68,7 +70,6 @@ public class SchedulerActivity extends EnhancedActivity {
         spinnerIntervals = (AppCompatSpinner) findViewById(R.id.spinnerIntervals);
         spinnerStartTheme = (AppCompatSpinner) findViewById(R.id.spinnerStartTheme);
         btnStartTime = (Button) findViewById(R.id.btnStartTime);
-        twAlarmSound = (TextView) findViewById(R.id.twAlarmSound);
 
         chkSa = (CheckBox) findViewById(R.id.chkSa);
         chkSu = (CheckBox) findViewById(R.id.chkSu);
@@ -83,30 +84,14 @@ public class SchedulerActivity extends EnhancedActivity {
         btnPause = (Button) findViewById(R.id.btnPause);
         btnRestart = (Button) findViewById(R.id.btnRestart);
         btnSelectTone = (Button) findViewById(R.id.btnSelectTone);
+        txtStatus = (TextView) findViewById(R.id.txtStatus);
 
         bind();
-
-        Button btnGetLastStatus = (Button) findViewById(R.id.btnGetStatus);
-        btnGetLastStatus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ReminderSettings settings = ReminderManager.getReminderSettings();
-                String status = settings.getStatus().toString();
-                if (settings.getReminder() != null) {
-                    Date time = settings.getReminder().getTime();
-                    String remindTime = (time == null ? "Not Set" : time.toString());
-                    Toast.makeText(SchedulerActivity.this, "Status:" + status + "\n Alarm Time: " + remindTime, Toast.LENGTH_LONG).show();
-                } else {
-                    Toast.makeText(SchedulerActivity.this, "Status:" + status + "\n No Reminder", Toast.LENGTH_LONG).show();
-                }
-            }
-        });
-
-
         btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 start();
+                setViewsStatus();
             }
         });
 
@@ -115,6 +100,7 @@ public class SchedulerActivity extends EnhancedActivity {
             public void onClick(View v) {
                 ReminderManager.pause();
                 bind();
+                setViewsStatus();
             }
         });
 
@@ -123,6 +109,7 @@ public class SchedulerActivity extends EnhancedActivity {
             public void onClick(View v) {
                 ReminderManager.stop();
                 bind();
+                setViewsStatus();
             }
         });
 
@@ -130,6 +117,7 @@ public class SchedulerActivity extends EnhancedActivity {
             @Override
             public void onClick(View v) {
                 start();
+                setViewsStatus();
             }
         });
 
@@ -167,6 +155,28 @@ public class SchedulerActivity extends EnhancedActivity {
             }
         });
 
+        //Button btnGetLastStatus = (Button) findViewById(R.id.btnGetStatus);
+        //btnGetLastStatus.setOnClickListener(new View.OnClickListener()
+        //{
+        //    @Override
+        //    public void onClick(View v)
+        //    {
+        //        ReminderSettings settings = ReminderManager.getReminderSettings();
+        //        String status = settings.getStatus().toString();
+        //        if (settings.getReminder() != null)
+        //        {
+        //            Date time = settings.getReminder().getTime();
+        //            String remindTime = (time == null ? "Not Set" : time.toString());
+        //            Toast.makeText(SchedulerActivity.this, "Status:" + status + "\n Alarm Time: " + remindTime, Toast.LENGTH_LONG).show();
+        //        }
+        //        else
+        //        {
+        //            Toast.makeText(SchedulerActivity.this, "Status:" + status + "\n No Reminder", Toast.LENGTH_LONG).show();
+        //        }
+        //    }
+        //});
+
+        setViewsStatus();
     }
 
     private void start() {
@@ -191,8 +201,12 @@ public class SchedulerActivity extends EnhancedActivity {
             return;
         }
 
-        Calendar calendar = Calendar.getInstance();
-        settings.setReminder(new Reminder(vocabulary.getId(), calendar.getTime(), vocabulary.getVocabulary(), vocabulary.getVocabEnglishDef(), true));
+        Date reminderTime = Calendar.getInstance().getTime();
+        Reminder garbage = settings.getReminder();
+        if (garbage != null && garbage.getTime() != null) {
+            reminderTime = garbage.getTime();
+        }
+        settings.setReminder(new Reminder(vocabulary.getId(), reminderTime, vocabulary.getVocabulary(), vocabulary.getVocabEnglishDef(), true));
         settings.setStartTime(btnStartTime.getText().toString());
         //settings.setIntervals(Integer.parseInt(edtAlarmIntervals.getText().toString()));
         //  settings.setIntervals();
@@ -204,6 +218,10 @@ public class SchedulerActivity extends EnhancedActivity {
         ReminderManager.start(paused);
 
         bind();
+
+        Date time = settings.getReminder().getTime();
+        SimpleDateFormat sdf = new SimpleDateFormat("EEEE HH:mm", Locale.getDefault());
+        MyToast.show("First vocabulary will be notified on " + sdf.format(time), Toast.LENGTH_LONG);
     }
 
     private void bind() {
@@ -220,6 +238,7 @@ public class SchedulerActivity extends EnhancedActivity {
             btnStop.setVisibility(View.VISIBLE);
             btnPause.setVisibility(View.VISIBLE);
         } else if (settings.getStatus() == ReminderSettings.Status.PAUSE) {
+            btnStop.setVisibility(View.VISIBLE);
             btnStart.setVisibility(View.VISIBLE);
         } else if (settings.getStatus() == ReminderSettings.Status.FINISHED) {
             btnRestart.setVisibility(View.VISIBLE);
@@ -230,13 +249,11 @@ public class SchedulerActivity extends EnhancedActivity {
 
         ArrayList<Integer> intervals = new ArrayList<>();
 
-        intervals.add(1);
         intervals.add(15);
         intervals.add(30);
         intervals.add(45);
         intervals.add(60);
         intervals.add(90);
-        intervals.add(120);
         ArrayAdapter<Integer> intervalAdapter = new ArrayAdapter<>(this, R.layout.spinner_current_item, intervals);
         intervalAdapter.setDropDownViewResource(R.layout.spinner_item);
         spinnerIntervals.setAdapter(intervalAdapter);
@@ -271,7 +288,68 @@ public class SchedulerActivity extends EnhancedActivity {
         chkSa.setChecked(days[6]);
 
         SystemSetting setting = SystemSettings.getCurrentSettings();
-        twAlarmSound.setText(setting.getAlarmRingingTone());
+        btnSelectTone.setText(setting.getAlarmRingingTone());
+    }
+
+    private void setViewsStatus() {
+        switch (ReminderManager.getReminderSettings().getStatus()) {
+            case RUNNING:
+                spinnerStartTheme.setEnabled(false);
+                btnStartTime.setEnabled(false);
+                spinnerIntervals.setEnabled(false);
+                chkSu.setEnabled(false);
+                chkMo.setEnabled(false);
+                chkTu.setEnabled(false);
+                chkWe.setEnabled(false);
+                chkTh.setEnabled(false);
+                chkFr.setEnabled(false);
+                chkSa.setEnabled(false);
+                btnSelectTone.setEnabled(false);
+                txtStatus.setText("Status : Running");
+                break;
+            case PAUSE:
+                spinnerStartTheme.setEnabled(false);
+                btnStartTime.setEnabled(true);
+                spinnerIntervals.setEnabled(true);
+                chkSu.setEnabled(true);
+                chkMo.setEnabled(true);
+                chkTu.setEnabled(true);
+                chkWe.setEnabled(true);
+                chkTh.setEnabled(true);
+                chkFr.setEnabled(true);
+                chkSa.setEnabled(true);
+                btnSelectTone.setEnabled(true);
+                txtStatus.setText("Status : Paused");
+                break;
+            case STOP:
+                spinnerStartTheme.setEnabled(true);
+                btnStartTime.setEnabled(true);
+                spinnerIntervals.setEnabled(true);
+                chkSu.setEnabled(true);
+                chkMo.setEnabled(true);
+                chkTu.setEnabled(true);
+                chkWe.setEnabled(true);
+                chkTh.setEnabled(true);
+                chkFr.setEnabled(true);
+                chkSa.setEnabled(true);
+                btnSelectTone.setEnabled(true);
+                txtStatus.setText("Status : Stopped");
+                break;
+            case FINISHED:
+                spinnerStartTheme.setEnabled(true);
+                btnStartTime.setEnabled(true);
+                spinnerIntervals.setEnabled(true);
+                chkSu.setEnabled(true);
+                chkMo.setEnabled(true);
+                chkTu.setEnabled(true);
+                chkWe.setEnabled(true);
+                chkTh.setEnabled(true);
+                chkFr.setEnabled(true);
+                chkSa.setEnabled(true);
+                btnSelectTone.setEnabled(true);
+                txtStatus.setText("Status : Finished");
+                break;
+        }
     }
 
     @Override
@@ -287,7 +365,7 @@ public class SchedulerActivity extends EnhancedActivity {
     void onToolbarCreated() {
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
-            actionBar.setTitle(getString(R.string.title_activity_settings));
+            actionBar.setTitle("Scheduler");
             actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setDisplayShowHomeEnabled(true);
         }
@@ -297,19 +375,20 @@ public class SchedulerActivity extends EnhancedActivity {
     protected void onActivityResult(final int requestCode, final int resultCode, final Intent intent) {
         if (resultCode == Activity.RESULT_OK && requestCode == 5) {
             Uri uri = intent.getParcelableExtra(RingtoneManager.EXTRA_RINGTONE_PICKED_URI);
+            SystemSetting setting = SystemSettings.getCurrentSettings();
             if (uri != null) {
                 Ringtone ringtone = RingtoneManager.getRingtone(this, uri);
                 String title = ringtone.getTitle(this);
-
-                SystemSetting setting = SystemSettings.getCurrentSettings();
                 setting.setRingingToneUri(uri.toString());
                 setting.setAlarmRingingTone(title);
-                SystemSettings.update(setting);
-
-                twAlarmSound.setText(title);
+                btnSelectTone.setText(title);
             } else {
-                twAlarmSound.setText(null);
+                setting.setRingingToneUri(Settings.System.DEFAULT_NOTIFICATION_URI.getPath());
+                Ringtone ringtone = RingtoneManager.getRingtone(App.context, Settings.System.DEFAULT_NOTIFICATION_URI);
+                setting.setAlarmRingingTone(ringtone.getTitle(this));
+                btnSelectTone.setText(ringtone.getTitle(this));
             }
+            SystemSettings.update(setting);
         }
     }
 }
