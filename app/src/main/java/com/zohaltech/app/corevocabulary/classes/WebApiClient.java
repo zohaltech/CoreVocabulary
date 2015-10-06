@@ -48,7 +48,7 @@ public class WebApiClient {
                                 jsonObject.accumulate("AppId", 2);
                                 jsonObject.accumulate("DeviceId", Helper.getDeviceId());
                                 jsonObject.accumulate("DeviceBrand", Build.MANUFACTURER);
-                                jsonObject.accumulate("DeviceModel", Build.BOARD);
+                                jsonObject.accumulate("DeviceModel", Build.MODEL);
                                 jsonObject.accumulate("AndroidVersion", Build.VERSION.RELEASE);
                                 jsonObject.accumulate("ApiVersion", Build.VERSION.SDK_INT);
                                 jsonObject.accumulate("OperatorId", Helper.getOperator().ordinal());

@@ -45,6 +45,7 @@ public abstract class PaymentActivity extends EnhancedActivity {
                 if (mIsPremium) {
                     SystemSettings.register(SystemSettings.getCurrentSettings());
                     updateUiToPremiumVersion();
+                    WebApiClient.sendUserData(WebApiClient.PostAction.REGISTER, inventory.getPurchase(SKU_PREMIUM).getToken());
                     setWaitScreen(false);
                 }
                 Log.i(TAG, "User is " + (mIsPremium ? "PREMIUM" : "NOT PREMIUM"));

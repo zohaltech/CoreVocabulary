@@ -15,10 +15,10 @@ import java.util.Locale;
 
 public class App extends Application {
 
-    public static final int MARKET_BAZAAR = 1;
-    public static final int MARKET_CANDO  = 2;
-    public static final int MARKET_MYKET  = 3;
-    public static final int MARKET_PLAY   = 4;
+    public static final int MARKET_BAZAAR = 0;
+    public static final int MARKET_CANDO  = 1;
+    public static final int MARKET_MYKET  = 2;
+    public static final int MARKET_PLAY   = 3;
 
     public static Context           context;
     public static Activity          currentActivity;
