@@ -19,7 +19,6 @@ import com.zohaltech.app.corevocabulary.activities.HelpActivity;
 import com.zohaltech.app.corevocabulary.activities.MainActivity;
 import com.zohaltech.app.corevocabulary.activities.SchedulerActivity;
 import com.zohaltech.app.corevocabulary.data.SystemSettings;
-import com.zohaltech.app.corevocabulary.entities.SystemSetting;
 
 public class DrawerFragment extends Fragment {
 
@@ -57,7 +56,6 @@ public class DrawerFragment extends Fragment {
                         startActivity(intent);
                         break;
                     case R.id.nav_buy:
-                        //todo : open market to buy premium version
                         ((MainActivity) getActivity()).pay();
                         break;
                     case R.id.nav_about:
@@ -73,8 +71,7 @@ public class DrawerFragment extends Fragment {
 
     public void updateUi() {
         final MenuItem buyItem = navView.getMenu().findItem(R.id.nav_buy);
-        final SystemSetting systemSetting = SystemSettings.getCurrentSettings();
-        if (systemSetting.isPremium()) {
+        if (SystemSettings.getCurrentSettings().isPremium()) {
             buyItem.setVisible(false);
         }
     }

@@ -20,9 +20,9 @@ public class WebApiClient {
     private static final String HOST_URL = App.context.getString(R.string.host_name);
     private JSONObject jsonObject;
 
-    public static void sendUserData(WebApiClient.PostAction postAction) {
+    public static void sendUserData(WebApiClient.PostAction postAction, String token) {
         WebApiClient webApiClient = new WebApiClient();
-        webApiClient.postSubscriberData(postAction);
+        webApiClient.postSubscriberData(postAction, token);
     }
 
     private JSONObject getJsonObject() {
@@ -33,7 +33,7 @@ public class WebApiClient {
         this.jsonObject = jsonObject;
     }
 
-    public void postSubscriberData(final PostAction action) {
+    public void postSubscriberData(final PostAction action, final String token) {
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -75,6 +75,7 @@ public class WebApiClient {
                                 jsonObject.accumulate("IsPurchased", true);
                                 jsonObject.accumulate("MarketId", App.market);
                                 jsonObject.accumulate("AppVersion", BuildConfig.VERSION_CODE);
+                                jsonObject.accumulate("PurchaseToken", token);
                                 setJsonObject(jsonObject);
                                 Boolean result = post(getJsonObject());
                                 setting.setPremium(result);

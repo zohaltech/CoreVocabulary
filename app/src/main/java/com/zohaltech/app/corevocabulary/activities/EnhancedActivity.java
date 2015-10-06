@@ -19,7 +19,7 @@ public abstract class EnhancedActivity extends AppCompatActivity {
         overridePendingTransition(R.anim.slide_in_from_right, R.anim.slide_out_to_left);
         super.onCreate(savedInstanceState);
 
-        //Thread.setDefaultUncaughtExceptionHandler(new MyUncaughtExceptionHandler());
+        Thread.setDefaultUncaughtExceptionHandler(new MyUncaughtExceptionHandler());
         App.currentActivity = this;
 
         onCreated();

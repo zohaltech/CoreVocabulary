@@ -362,7 +362,7 @@ public class SchedulerActivity extends PaymentActivity {
 
     private void showPaymentDialog() {
         destroyPaymentDialog();
-        paymentDialog = DialogManager.getPopupDialog(App.currentActivity,
+        paymentDialog = DialogManager.getPopupDialog(this,
                                                      "Ooops!",
                                                      "To use scheduler features, you should upgrade to premium version.",
                                                      "Upgrade to premium",
@@ -413,6 +413,7 @@ public class SchedulerActivity extends PaymentActivity {
 
     @Override
     protected void onActivityResult(final int requestCode, final int resultCode, final Intent intent) {
+        super.onActivityResult(requestCode, resultCode, intent);
         if (resultCode == Activity.RESULT_OK && requestCode == 5) {
             Uri uri = intent.getParcelableExtra(RingtoneManager.EXTRA_RINGTONE_PICKED_URI);
             SystemSetting setting = SystemSettings.getCurrentSettings();

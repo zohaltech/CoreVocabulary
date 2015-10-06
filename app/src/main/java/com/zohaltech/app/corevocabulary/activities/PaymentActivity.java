@@ -32,13 +32,12 @@ public abstract class PaymentActivity extends EnhancedActivity {
 
     private IabHelper.QueryInventoryFinishedListener mGotInventoryListener = new IabHelper.QueryInventoryFinishedListener() {
         public void onQueryInventoryFinished(IabResult result, Inventory inventory) {
-            //Log.i(TAG, "Query inventory finished.");
+            Log.i(TAG, "Query inventory finished.");
             if (result.isFailure()) {
                 Log.i(TAG, "Failed to query inventory: " + result);
                 //complain("خطا در خرید از " + App.marketName);
-
             } else {
-                //Log.i(TAG, "Query inventory was successful.");
+                Log.i(TAG, "Query inventory was successful.");
                 // does the user have the premium upgrade?
                 mIsPremium = inventory.hasPurchase(SKU_PREMIUM);
 
@@ -48,30 +47,31 @@ public abstract class PaymentActivity extends EnhancedActivity {
                     updateUiToPremiumVersion();
                     setWaitScreen(false);
                 }
-                //Log.i(TAG, "User is " + (mIsPremium ? "PREMIUM" : "NOT PREMIUM"));
+                Log.i(TAG, "User is " + (mIsPremium ? "PREMIUM" : "NOT PREMIUM"));
             }
-            //Log.i(TAG, "Initial inventory query finished; enabling main UI.");
+            Log.i(TAG, "Initial inventory query finished; enabling main UI.");
         }
     };
 
     private IabHelper.OnIabPurchaseFinishedListener mPurchaseFinishedListener = new IabHelper.OnIabPurchaseFinishedListener() {
         public void onIabPurchaseFinished(IabResult result, Purchase purchase) {
             if (result.isFailure()) {
-                //Log.e("PAYMENT", "Error purchasing: " + result);
+                Log.e("PAYMENT", "Error purchasing: " + result);
                 if (!"".equals(responseMessage)) {
                     complain(responseMessage);
                     responseMessage = "ارتقای برنامه با مشکل مواجه شد";
                 }
             } else if (purchase.getSku().equals(SKU_PREMIUM)) {
                 if (!verifyDeveloperPayload(purchase)) {
-                    //Log.e("PAYMENT", "Error purchasing. Authenticity verification failed.");
+                    Log.e("PAYMENT", "Error purchasing. Authenticity verification failed.");
                     complain("خطا در ورود به حساب کاربری " + App.marketName);
                 } else {
                     // give user access to premium content and update the UI
+
                     SystemSettings.register(SystemSettings.getCurrentSettings());
                     MyToast.show(responseMessage, Toast.LENGTH_LONG);
                     updateUiToPremiumVersion();
-                    WebApiClient.sendUserData(WebApiClient.PostAction.REGISTER);
+                    WebApiClient.sendUserData(WebApiClient.PostAction.REGISTER, purchase.getToken());
                 }
             }
             setWaitScreen(false);
@@ -84,21 +84,21 @@ public abstract class PaymentActivity extends EnhancedActivity {
         if (!SystemSettings.getCurrentSettings().isPremium()) {
             try {
                 mHelper = new IabHelper(this, App.marketPublicKey);
-                //Log.d(TAG, "Starting setup.");
+                Log.d(TAG, "Starting setup.");
                 mHelper.startSetup(new IabHelper.OnIabSetupFinishedListener() {
                     public void onIabSetupFinished(IabResult result) {
-                        //Log.d(TAG, "Setup finished.");
+                        Log.d(TAG, "Setup finished.");
 
                         if (!result.isSuccess()) {
                             // Oh noes, there was a problem.
-                            //Log.d(TAG, "Problem setting up In-app Billing: " + result);
+                            Log.d(TAG, "Problem setting up In-app Billing: " + result);
                         }
                         // Hooray, IAB is fully set up!
                         mHelper.queryInventoryAsync(mGotInventoryListener);
                     }
                 });
             } catch (MyRuntimeException e) {
-                //Log.e(TAG, "برنامه " + App.marketName + " نصب نیست");
+                Log.e(TAG, "برنامه " + App.marketName + " نصب نیست");
                 e.printStackTrace();
             }
         }
@@ -109,7 +109,7 @@ public abstract class PaymentActivity extends EnhancedActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        //Log.d(TAG, "onActivityResult(" + requestCode + "," + resultCode + "," + data);
+        Log.d(TAG, "onActivityResult(" + requestCode + "," + resultCode + "," + data);
         if (data != null) {
             if (data.getExtras() != null) {
                 int responseCode = data.getExtras().getInt("RESPONSE_CODE");
@@ -130,7 +130,7 @@ public abstract class PaymentActivity extends EnhancedActivity {
         if (!mHelper.handleActivityResult(requestCode, resultCode, data)) {
             super.onActivityResult(requestCode, resultCode, data);
         } else {
-            //Log.d(TAG, "onActivityResult handled by IABUtil.");
+            Log.d(TAG, "onActivityResult handled by IABUtil.");
         }
     }
 
@@ -163,7 +163,7 @@ public abstract class PaymentActivity extends EnhancedActivity {
         try {
             mHelper.launchPurchaseFlow(this, SKU_PREMIUM, RC_REQUEST, mPurchaseFinishedListener, PAY_LOAD);
         } catch (MyRuntimeException | IllegalStateException e) {
-            //Log.e(TAG, "Error : " + e.getMessage());
+            Log.e(TAG, "Error : " + e.getMessage());
             e.printStackTrace();
             setWaitScreen(false);
             updateUiToTrialVersion();
@@ -175,7 +175,7 @@ public abstract class PaymentActivity extends EnhancedActivity {
         if (wait) {
             progressDialog = new ProgressDialog(this);
             progressDialog.setIndeterminate(true);
-            progressDialog.setMessage("لطفاً کمی صبر کنید...");
+            progressDialog.setMessage("لطفا کمی صبر کنید...");
             progressDialog.setCancelable(false);
             progressDialog.setCanceledOnTouchOutside(false);
             progressDialog.show();
