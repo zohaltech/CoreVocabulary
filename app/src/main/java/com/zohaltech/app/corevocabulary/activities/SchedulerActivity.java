@@ -1,6 +1,7 @@
 package com.zohaltech.app.corevocabulary.activities;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Intent;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
@@ -37,7 +38,7 @@ import java.util.Locale;
 
 import widgets.MyToast;
 
-public class SchedulerActivity extends EnhancedActivity {
+public class SchedulerActivity extends PaymentActivity {
     CheckBox chkSa;
     CheckBox chkSu;
     CheckBox chkMo;
@@ -57,9 +58,11 @@ public class SchedulerActivity extends EnhancedActivity {
     Button btnSelectTone;
 
     TextView txtStatus;
+    Dialog   paymentDialog;
 
     @Override
-    void onCreated() {
+    protected void onCreated() {
+        super.onCreated();
         setContentView(R.layout.activity_scheduler);
         initialise();
     }
@@ -180,48 +183,53 @@ public class SchedulerActivity extends EnhancedActivity {
     }
 
     private void start() {
-        ReminderSettings settings = ReminderManager.getReminderSettings();
+        if (SystemSettings.getCurrentSettings().isPremium()) {
+            ReminderSettings settings = ReminderManager.getReminderSettings();
 
-        boolean paused = settings.getStatus() == ReminderSettings.Status.PAUSE;
+            boolean paused = settings.getStatus() == ReminderSettings.Status.PAUSE;
 
-        boolean[] days = {
-                chkSu.isChecked(),
-                chkMo.isChecked(),
-                chkTu.isChecked(),
-                chkWe.isChecked(),
-                chkTh.isChecked(),
-                chkFr.isChecked(),
-                chkSa.isChecked()};
+            boolean[] days = {
+                    chkSu.isChecked(),
+                    chkMo.isChecked(),
+                    chkTu.isChecked(),
+                    chkWe.isChecked(),
+                    chkTh.isChecked(),
+                    chkFr.isChecked(),
+                    chkSa.isChecked()};
 
-        int selectedThemeId = spinnerStartTheme.getSelectedItemPosition() + 1;
-        int startVocabId = Vocabularies.selectByTheme(selectedThemeId).get(0).getId();
-        Vocabulary vocabulary = Vocabularies.select(startVocabId);
-        //Vocabulary vocabulary = Vocabularies.select(Integer.parseInt(edtStartVocabularyNo.getText().toString()));
-        if (vocabulary == null) {
-            return;
+            int selectedThemeId = spinnerStartTheme.getSelectedItemPosition() + 1;
+            int startVocabId = Vocabularies.selectByTheme(selectedThemeId).get(0).getId();
+            Vocabulary vocabulary = Vocabularies.select(startVocabId);
+            //Vocabulary vocabulary = Vocabularies.select(Integer.parseInt(edtStartVocabularyNo.getText().toString()));
+            if (vocabulary == null) {
+                return;
+            }
+
+            Date reminderTime = Calendar.getInstance().getTime();
+            Reminder garbage = settings.getReminder();
+            if (garbage != null && garbage.getTime() != null) {
+                reminderTime = garbage.getTime();
+            }
+            settings.setReminder(new Reminder(vocabulary.getId(), reminderTime, vocabulary.getVocabulary(), vocabulary.getVocabEnglishDef(), true));
+            settings.setStartTime(btnStartTime.getText().toString());
+            //settings.setIntervals(Integer.parseInt(edtAlarmIntervals.getText().toString()));
+            //  settings.setIntervals();
+            settings.setIntervals((Integer) spinnerIntervals.getSelectedItem());
+            settings.setWeekdays(days);
+            settings.setStatus(ReminderSettings.Status.RUNNING);
+            ReminderManager.setReminderSettings(settings);
+
+            ReminderManager.start(paused);
+
+            bind();
+
+            settings = ReminderManager.getReminderSettings();
+            Date time = settings.getReminder().getTime();
+            SimpleDateFormat sdf = new SimpleDateFormat("EEEE HH:mm", Locale.getDefault());
+            MyToast.show("First vocabulary will be notified on " + sdf.format(time), Toast.LENGTH_LONG);
+        } else {
+            showPaymentDialog();
         }
-
-        Date reminderTime = Calendar.getInstance().getTime();
-        Reminder garbage = settings.getReminder();
-        if (garbage != null && garbage.getTime() != null) {
-            reminderTime = garbage.getTime();
-        }
-        settings.setReminder(new Reminder(vocabulary.getId(), reminderTime, vocabulary.getVocabulary(), vocabulary.getVocabEnglishDef(), true));
-        settings.setStartTime(btnStartTime.getText().toString());
-        //settings.setIntervals(Integer.parseInt(edtAlarmIntervals.getText().toString()));
-        //  settings.setIntervals();
-        settings.setIntervals((Integer) spinnerIntervals.getSelectedItem());
-        settings.setWeekdays(days);
-        settings.setStatus(ReminderSettings.Status.RUNNING);
-        ReminderManager.setReminderSettings(settings);
-
-        ReminderManager.start(paused);
-
-        bind();
-
-        Date time = settings.getReminder().getTime();
-        SimpleDateFormat sdf = new SimpleDateFormat("EEEE HH:mm", Locale.getDefault());
-        MyToast.show("First vocabulary will be notified on " + sdf.format(time), Toast.LENGTH_LONG);
     }
 
     private void bind() {
@@ -255,7 +263,7 @@ public class SchedulerActivity extends EnhancedActivity {
         intervals.add(60);
         intervals.add(90);
         ArrayAdapter<Integer> intervalAdapter = new ArrayAdapter<>(this, R.layout.spinner_current_item, intervals);
-        intervalAdapter.setDropDownViewResource(R.layout.spinner_item);
+        intervalAdapter.setDropDownViewResource(R.layout.spinner_item_center);
         spinnerIntervals.setAdapter(intervalAdapter);
         spinnerIntervals.setSelection(intervalAdapter.getPosition(settings.getIntervals()));
 
@@ -352,6 +360,38 @@ public class SchedulerActivity extends EnhancedActivity {
         }
     }
 
+    private void showPaymentDialog() {
+        destroyPaymentDialog();
+        paymentDialog = DialogManager.getPopupDialog(App.currentActivity,
+                                                     "Ooops!",
+                                                     "To use scheduler features, you should upgrade to premium version.",
+                                                     "Upgrade to premium",
+                                                     "Maybe later",
+                                                     null,
+                                                     new Runnable() {
+                                                         @Override
+                                                         public void run() {
+                                                             pay();
+                                                         }
+                                                     },
+                                                     new Runnable() {
+                                                         @Override
+                                                         public void run() {
+                                                             paymentDialog.dismiss();
+                                                         }
+                                                     });
+        paymentDialog.show();
+    }
+
+    private void destroyPaymentDialog() {
+        if (paymentDialog != null) {
+            if (paymentDialog.isShowing()) {
+                paymentDialog.dismiss();
+            }
+            paymentDialog = null;
+        }
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
@@ -362,7 +402,7 @@ public class SchedulerActivity extends EnhancedActivity {
     }
 
     @Override
-    void onToolbarCreated() {
+    protected void onToolbarCreated() {
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setTitle("Scheduler");
@@ -390,5 +430,15 @@ public class SchedulerActivity extends EnhancedActivity {
             }
             SystemSettings.update(setting);
         }
+    }
+
+    @Override
+    protected void updateUiToPremiumVersion() {
+        destroyPaymentDialog();
+    }
+
+    @Override
+    protected void updateUiToTrialVersion() {
+        //nothing
     }
 }

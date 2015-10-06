@@ -46,7 +46,7 @@ public class VocabularyDetailsActivity extends EnhancedActivity {
     int tabCount = 2;
 
     @Override
-    void onCreated() {
+    protected void onCreated() {
         setContentView(R.layout.activity_vocabulary_details);
 
         layoutRoot = (LinearLayout) findViewById(R.id.layoutRoot);
@@ -133,7 +133,7 @@ public class VocabularyDetailsActivity extends EnhancedActivity {
     }
 
     @Override
-    void onToolbarCreated() {
+    protected void onToolbarCreated() {
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setTitle("Vocabulary Details");

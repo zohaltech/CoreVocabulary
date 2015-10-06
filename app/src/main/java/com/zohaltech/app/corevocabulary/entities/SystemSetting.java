@@ -1,6 +1,8 @@
 package com.zohaltech.app.corevocabulary.entities;
 
 
+import com.zohaltech.app.corevocabulary.classes.Helper;
+
 public class SystemSetting {
     private int     id;
     private Boolean installed;
@@ -95,7 +97,7 @@ public class SystemSetting {
 
     public boolean isPremium() {
         // TODO: 2015/09/27
-        return true;
-        //return getPremiumVersion() != null && getPremiumVersion().equals(Helper.hashString(Helper.getDeviceId()));
+        //return true;
+        return getPremiumVersion() != null && getPremiumVersion().equals(Helper.hashString(Helper.getDeviceId()));
     }
 }

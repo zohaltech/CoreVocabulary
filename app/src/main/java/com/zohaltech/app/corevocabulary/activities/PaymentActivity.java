@@ -2,6 +2,7 @@ package com.zohaltech.app.corevocabulary.activities;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.support.annotation.CallSuper;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -20,9 +21,9 @@ import widgets.MyToast;
 
 public abstract class PaymentActivity extends EnhancedActivity {
 
-    private final String PAY_LOAD    = "SIGMA_ANDROID_APP";
-    private final String TAG         = "SIGMA_TAG";
-    private final String SKU_PREMIUM = "PREMIUM";
+    private final String PAY_LOAD    = "COREVOCABULARY_ANDROID_APP";
+    private final String TAG         = "COREVOCABULARY_TAG";
+    private final String SKU_PREMIUM = "CORE_PREMIUM";
     private final int    RC_REQUEST  = 10001;
     String responseMessage = "ارتقای برنامه با مشکل مواجه شد";
     private ProgressDialog progressDialog;
@@ -78,7 +79,8 @@ public abstract class PaymentActivity extends EnhancedActivity {
     };
 
     @Override
-    void onCreated() {
+    @CallSuper
+    protected void onCreated() {
         if (!SystemSettings.getCurrentSettings().isPremium()) {
             try {
                 mHelper = new IabHelper(this, App.marketPublicKey);
@@ -102,10 +104,6 @@ public abstract class PaymentActivity extends EnhancedActivity {
         }
     }
 
-    @Override
-    void onToolbarCreated() {
-
-    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -189,7 +187,10 @@ public abstract class PaymentActivity extends EnhancedActivity {
         }
     }
 
-    abstract void updateUiToPremiumVersion();
+    @Override
+    protected abstract void onToolbarCreated();
 
-    abstract void updateUiToTrialVersion();
+    protected abstract void updateUiToPremiumVersion();
+
+    protected abstract void updateUiToTrialVersion();
 }

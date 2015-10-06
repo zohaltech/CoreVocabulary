@@ -75,7 +75,6 @@ public class AboutFragment extends Fragment {
         btnProducts.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //todo : go to developers page on market
                 Intent intent = new Intent(Intent.ACTION_VIEW);
                 intent.setData(Uri.parse(App.marketDeveloperUri));
                 if (!myStartActivity(intent)) {

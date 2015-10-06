@@ -59,8 +59,6 @@ public class DrawerFragment extends Fragment {
                     case R.id.nav_buy:
                         //todo : open market to buy premium version
                         ((MainActivity) getActivity()).pay();
-                        //SystemSettings.register(systemSetting);
-                        //buyItem.setVisible(false);
                         break;
                     case R.id.nav_about:
                         intent = new Intent(getActivity(), AboutActivity.class);

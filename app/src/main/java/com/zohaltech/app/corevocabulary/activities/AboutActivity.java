@@ -21,7 +21,7 @@ public class AboutActivity extends EnhancedActivity {
     AboutPagerAdapter    aboutPagerAdapter;
 
     @Override
-    void onCreated() {
+    protected void onCreated() {
         setContentView(R.layout.activity_about);
 
         layoutRoot = (LinearLayout) findViewById(R.id.layoutRoot);
@@ -81,7 +81,7 @@ public class AboutActivity extends EnhancedActivity {
     }
 
     @Override
-    void onToolbarCreated() {
+    protected void onToolbarCreated() {
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setTitle("About");

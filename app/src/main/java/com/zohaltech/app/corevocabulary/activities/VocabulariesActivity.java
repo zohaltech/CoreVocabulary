@@ -19,7 +19,7 @@ public class VocabulariesActivity extends EnhancedActivity {
     private Theme theme;
 
     @Override
-    void onCreated() {
+    protected   void onCreated() {
         setContentView(R.layout.activity_vocabularies);
         RecyclerView recyclerVocabularies = (RecyclerView) findViewById(R.id.recyclerVocabularies);
         recyclerVocabularies.setHasFixedSize(true);
@@ -42,7 +42,7 @@ public class VocabulariesActivity extends EnhancedActivity {
     }
 
     @Override
-    void onToolbarCreated() {
+    protected  void onToolbarCreated() {
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setTitle(theme.getName());

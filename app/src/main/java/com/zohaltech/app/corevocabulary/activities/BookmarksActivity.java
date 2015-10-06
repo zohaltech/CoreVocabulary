@@ -22,7 +22,7 @@ public class BookmarksActivity extends EnhancedActivity {
     VocabularyAdapter adapter;
 
     @Override
-    void onCreated() {
+    protected void onCreated() {
         setContentView(R.layout.activity_bookmarks);
 
         recyclerBookmarks = (RecyclerView) findViewById(R.id.recyclerBookmarks);
@@ -60,7 +60,7 @@ public class BookmarksActivity extends EnhancedActivity {
     }
 
     @Override
-    void onToolbarCreated() {
+    protected void onToolbarCreated() {
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setTitle("Bookmarks");

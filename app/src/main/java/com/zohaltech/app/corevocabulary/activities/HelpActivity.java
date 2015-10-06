@@ -7,12 +7,12 @@ import com.zohaltech.app.corevocabulary.R;
 public class HelpActivity extends EnhancedActivity {
 
     @Override
-    void onCreated() {
+    protected void onCreated() {
         setContentView(R.layout.activity_help);
     }
 
     @Override
-    void onToolbarCreated() {
+    protected void onToolbarCreated() {
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setTitle("Help");

@@ -47,7 +47,7 @@ public class MainActivity extends PaymentActivity {
     }
 
     @Override
-    void onToolbarCreated() {
+    protected void onToolbarCreated() {
         drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
         drawerFragment = (DrawerFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_navigation_drawer);
         drawerFragment.setUp(drawerLayout, toolbar);
@@ -56,7 +56,7 @@ public class MainActivity extends PaymentActivity {
     }
 
     @Override
-    void updateUiToPremiumVersion() {
+    protected  void updateUiToPremiumVersion() {
         if (drawerFragment != null){
             drawerFragment.updateUi();
         }
@@ -64,7 +64,7 @@ public class MainActivity extends PaymentActivity {
     }
 
     @Override
-    void updateUiToTrialVersion() {
+    protected void updateUiToTrialVersion() {
         //nothing
     }
 
