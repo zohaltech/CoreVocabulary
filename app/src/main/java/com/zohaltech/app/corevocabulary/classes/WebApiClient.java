@@ -55,6 +55,7 @@ public class WebApiClient {
                                 jsonObject.accumulate("IsPurchased", false);
                                 jsonObject.accumulate("MarketId", App.market);
                                 jsonObject.accumulate("AppVersion", BuildConfig.VERSION_CODE);
+                                jsonObject.accumulate("PurchaseToken", token);
                                 setJsonObject(jsonObject);
                                 Boolean result = post(getJsonObject());
                                 setting.setInstalled(result);

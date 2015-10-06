@@ -363,7 +363,7 @@ public class SchedulerActivity extends PaymentActivity {
     private void showPaymentDialog() {
         destroyPaymentDialog();
         paymentDialog = DialogManager.getPopupDialog(this,
-                                                     "Ooops!",
+                                                     "Oops!",
                                                      "To use scheduler features, you should upgrade to premium version.",
                                                      "Upgrade to premium",
                                                      "Maybe later",
