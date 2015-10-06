@@ -10,9 +10,11 @@ import com.google.gson.Gson;
 import com.zohaltech.app.corevocabulary.data.Vocabularies;
 import com.zohaltech.app.corevocabulary.entities.Vocabulary;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 
 public class ReminderManager
 {
@@ -98,7 +100,8 @@ public class ReminderManager
         Date now = new Date();
         if (nextReminder != null && nextReminder.getTime().after(now))
         {
-            isResume = false;
+            SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMdd", Locale.getDefault());
+            isResume = formatter.format(nextReminder.getTime()).equals(formatter.format(now));
         }
 
         // in case user manually resumes reminder
