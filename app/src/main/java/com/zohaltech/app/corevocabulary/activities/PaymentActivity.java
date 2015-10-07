@@ -1,5 +1,6 @@
 package com.zohaltech.app.corevocabulary.activities;
 
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.annotation.CallSuper;
@@ -8,6 +9,7 @@ import android.widget.Toast;
 
 import com.zohaltech.app.corevocabulary.R;
 import com.zohaltech.app.corevocabulary.classes.App;
+import com.zohaltech.app.corevocabulary.classes.DialogManager;
 import com.zohaltech.app.corevocabulary.classes.MyRuntimeException;
 import com.zohaltech.app.corevocabulary.classes.WebApiClient;
 import com.zohaltech.app.corevocabulary.data.SystemSettings;
@@ -21,14 +23,17 @@ import widgets.MyToast;
 
 public abstract class PaymentActivity extends EnhancedActivity {
 
-    private final String PAY_LOAD    = "COREVOCABULARY_ANDROID_APP";
-    private final String TAG         = "COREVOCABULARY_TAG";
-    private final String SKU_PREMIUM = "CORE_PREMIUM";
+    private final   String PAY_LOAD    = "COREVOCABULARY_ANDROID_APP";
+    private final   String TAG         = "COREVOCABULARY_TAG";
+    private final   String SKU_PREMIUM = "CORE_PREMIUM";
     protected final int    RC_REQUEST  = 10001;
     String responseMessage = "ارتقای برنامه با مشکل مواجه شد";
     private ProgressDialog progressDialog;
     private boolean mIsPremium = false;
     private IabHelper mHelper;
+
+    Dialog paymentDialog;
+
 
     private IabHelper.QueryInventoryFinishedListener mGotInventoryListener = new IabHelper.QueryInventoryFinishedListener() {
         public void onQueryInventoryFinished(IabResult result, Inventory inventory) {
@@ -185,6 +190,42 @@ public abstract class PaymentActivity extends EnhancedActivity {
                 progressDialog.dismiss();
                 progressDialog = null;
             }
+        }
+    }
+
+    public void showPaymentDialog()
+    {
+        destroyPaymentDialog();
+        paymentDialog = DialogManager.getPopupDialog(this,
+                                                     "Oops!",
+                                                     "To use full feature of Core Vocabulary, you should upgrade to premium version.",
+                                                     "UPGRADE TO PREMIUM",
+                                                     "MAYBE LATER",
+                                                     null,
+                                                     new Runnable() {
+                                                         @Override
+                                                         public void run() {
+                                                             pay();
+                                                         }
+                                                     },
+                                                     new Runnable() {
+                                                         @Override
+                                                         public void run() {
+                                                             paymentDialog.dismiss();
+                                                         }
+                                                     });
+        paymentDialog.show();
+    }
+
+    public void destroyPaymentDialog()
+    {
+        if (paymentDialog != null)
+        {
+            if (paymentDialog.isShowing())
+            {
+                paymentDialog.dismiss();
+            }
+            paymentDialog = null;
         }
     }
 

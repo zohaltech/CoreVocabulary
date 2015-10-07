@@ -62,6 +62,7 @@ public class MainActivity extends PaymentActivity {
         if (drawerFragment != null) {
             drawerFragment.updateUi();
         }
+        destroyPaymentDialog();
         displayView(0);
     }
 

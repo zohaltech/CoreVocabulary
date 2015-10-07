@@ -59,7 +59,6 @@ public class SchedulerActivity extends PaymentActivity
     Button btnSelectTone;
 
     TextView txtStatus;
-    Dialog paymentDialog;
 
     @Override
     protected void onCreated()
@@ -403,46 +402,6 @@ public class SchedulerActivity extends PaymentActivity
                 btnSelectTone.setEnabled(true);
                 txtStatus.setText("Status : Finished");
                 break;
-        }
-    }
-
-    private void showPaymentDialog()
-    {
-        destroyPaymentDialog();
-        paymentDialog = DialogManager.getPopupDialog(this,
-                "Oops!",
-                "To use full feature of Core Vocabulary, you should upgrade to premium version.",
-                "UPGRADE TO PREMIUM",
-                "MAYBE LATER",
-                null,
-                new Runnable()
-                {
-                    @Override
-                    public void run()
-                    {
-                        pay();
-                    }
-                },
-                new Runnable()
-                {
-                    @Override
-                    public void run()
-                    {
-                        paymentDialog.dismiss();
-                    }
-                });
-        paymentDialog.show();
-    }
-
-    private void destroyPaymentDialog()
-    {
-        if (paymentDialog != null)
-        {
-            if (paymentDialog.isShowing())
-            {
-                paymentDialog.dismiss();
-            }
-            paymentDialog = null;
         }
     }
 

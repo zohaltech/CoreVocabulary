@@ -17,7 +17,7 @@ import java.io.InputStreamReader;
 
 public class DataAccess extends SQLiteOpenHelper {
     public static final String DATABASE_NAME    = "CORE_VOCABULARY";
-    public static final int    DATABASE_VERSION = 88;
+    public static final int    DATABASE_VERSION = 1;
 
     public DataAccess() {
         super(App.context, DATABASE_NAME, null, DATABASE_VERSION);

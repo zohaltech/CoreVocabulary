@@ -1,8 +1,7 @@
 package com.zohaltech.app.corevocabulary.adapters;
 
-import android.content.Context;
+import android.app.Activity;
 import android.content.Intent;
-import android.support.design.widget.Snackbar;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +15,7 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 import com.zohaltech.app.corevocabulary.R;
+import com.zohaltech.app.corevocabulary.activities.MainActivity;
 import com.zohaltech.app.corevocabulary.activities.VocabulariesActivity;
 import com.zohaltech.app.corevocabulary.classes.App;
 import com.zohaltech.app.corevocabulary.classes.LearningStatus;
@@ -26,19 +26,18 @@ import com.zohaltech.app.corevocabulary.entities.Theme;
 import java.util.ArrayList;
 
 import widgets.CircleProgress;
-import widgets.MySnackbar;
 
 public class ThemeAdapter extends RecyclerView.Adapter<ThemeAdapter.ViewHolder> {
 
     private static final long DURATION = 300;
 
-    Context                         context;
+    Activity                        activity;
     ArrayList<Theme>                themes;
     ArrayList<ProgressDetailStatus> progressDetailStatuses;
     //ImageLoader                     imageLoader;
 
-    public ThemeAdapter(Context context, ArrayList<Theme> themes) {
-        this.context = context;
+    public ThemeAdapter(Activity activity, ArrayList<Theme> themes) {
+        this.activity = activity;
         this.themes = themes;
         this.progressDetailStatuses = new ArrayList<>();
         for (int i = 0; i < themes.size(); i++) {
@@ -103,7 +102,7 @@ public class ThemeAdapter extends RecyclerView.Adapter<ThemeAdapter.ViewHolder> 
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.adapter_theme, parent, false);
+        View view = LayoutInflater.from(activity).inflate(R.layout.adapter_theme, parent, false);
         return new ViewHolder(view);
     }
 
@@ -112,35 +111,35 @@ public class ThemeAdapter extends RecyclerView.Adapter<ThemeAdapter.ViewHolder> 
         final Theme theme = themes.get(position);
         holder.imgTheme.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, App.screenHeight / 3));
 
-        //final int imageId = context.getResources().getIdentifier(theme.getIconName(), "drawable", context.getPackageName());
-        //Picasso.with(context).load(imageId).into(holder.imgTheme);
+        //final int imageId = activity.getResources().getIdentifier(theme.getIconName(), "drawable", activity.getPackageName());
+        //Picasso.with(activity).load(imageId).into(holder.imgTheme);
 
         if (position == 0) {
-            Picasso.with(context).load(R.drawable.education).into(holder.imgTheme);
+            Picasso.with(activity).load(R.drawable.education).into(holder.imgTheme);
         } else if (position == 1) {
-            Picasso.with(context).load(R.drawable.job).into(holder.imgTheme);
+            Picasso.with(activity).load(R.drawable.job).into(holder.imgTheme);
         } else if (position == 2) {
-            Picasso.with(context).load(R.drawable.media).into(holder.imgTheme);
+            Picasso.with(activity).load(R.drawable.media).into(holder.imgTheme);
         } else if (position == 3) {
-            Picasso.with(context).load(R.drawable.health).into(holder.imgTheme);
+            Picasso.with(activity).load(R.drawable.health).into(holder.imgTheme);
         } else if (position == 4) {
-            Picasso.with(context).load(R.drawable.environment).into(holder.imgTheme);
+            Picasso.with(activity).load(R.drawable.environment).into(holder.imgTheme);
         } else if (position == 5) {
-            Picasso.with(context).load(R.drawable.advertising).into(holder.imgTheme);
+            Picasso.with(activity).load(R.drawable.advertising).into(holder.imgTheme);
         } else if (position == 6) {
-            Picasso.with(context).load(R.drawable.foreign_language).into(holder.imgTheme);
+            Picasso.with(activity).load(R.drawable.foreign_language).into(holder.imgTheme);
         } else if (position == 7) {
-            Picasso.with(context).load(R.drawable.urbanisation).into(holder.imgTheme);
+            Picasso.with(activity).load(R.drawable.urbanisation).into(holder.imgTheme);
         } else if (position == 8) {
-            Picasso.with(context).load(R.drawable.law).into(holder.imgTheme);
+            Picasso.with(activity).load(R.drawable.law).into(holder.imgTheme);
         } else if (position == 9) {
-            Picasso.with(context).load(R.drawable.sport).into(holder.imgTheme);
+            Picasso.with(activity).load(R.drawable.sport).into(holder.imgTheme);
         } else if (position == 10) {
-            Picasso.with(context).load(R.drawable.space).into(holder.imgTheme);
+            Picasso.with(activity).load(R.drawable.space).into(holder.imgTheme);
         } else if (position == 11) {
-            Picasso.with(context).load(R.drawable.science).into(holder.imgTheme);
+            Picasso.with(activity).load(R.drawable.science).into(holder.imgTheme);
         } else if (position == 12) {
-            Picasso.with(context).load(R.drawable.causes).into(holder.imgTheme);
+            Picasso.with(activity).load(R.drawable.causes).into(holder.imgTheme);
         }
 
         //new ImageLoaderTask(holder.imgTheme).execute(imageId);
@@ -163,7 +162,8 @@ public class ThemeAdapter extends RecyclerView.Adapter<ThemeAdapter.ViewHolder> 
             holder.layoutRoot.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    MySnackbar.show(v, "Please buy premium version", Snackbar.LENGTH_SHORT);
+                    //MySnackbar.show(v, "Please buy premium version", Snackbar.LENGTH_SHORT);
+                    ((MainActivity)activity).showPaymentDialog();
                 }
             });
         }
@@ -284,7 +284,7 @@ public class ThemeAdapter extends RecyclerView.Adapter<ThemeAdapter.ViewHolder> 
     //    @Override
     //    protected Bitmap doInBackground(Integer... params) {
     //        //return decodeSampledBitmapFromResource(activity.getResources(), params[0], App.screenWidth, App.screenHeight / 3);
-    //        return BitmapFactory.decodeResource(context.getResources(), params[0]);
+    //        return BitmapFactory.decodeResource(activity.getResources(), params[0]);
     //    }
     //
     //    @Override
