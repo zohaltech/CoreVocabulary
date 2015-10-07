@@ -38,7 +38,8 @@ import java.util.Locale;
 
 import widgets.MyToast;
 
-public class SchedulerActivity extends PaymentActivity {
+public class SchedulerActivity extends PaymentActivity
+{
     CheckBox chkSa;
     CheckBox chkSu;
     CheckBox chkMo;
@@ -58,16 +59,18 @@ public class SchedulerActivity extends PaymentActivity {
     Button btnSelectTone;
 
     TextView txtStatus;
-    Dialog   paymentDialog;
+    Dialog paymentDialog;
 
     @Override
-    protected void onCreated() {
+    protected void onCreated()
+    {
         super.onCreated();
         setContentView(R.layout.activity_scheduler);
         initialise();
     }
 
-    private void initialise() {
+    private void initialise()
+    {
         //edtStartVocabularyNo = (EditText) findViewById(R.id.edtStartVocabularyNo);
         //edtAlarmIntervals = (EditText) findViewById(R.id.edtAlarmIntervals);
         spinnerIntervals = (AppCompatSpinner) findViewById(R.id.spinnerIntervals);
@@ -90,56 +93,73 @@ public class SchedulerActivity extends PaymentActivity {
         txtStatus = (TextView) findViewById(R.id.txtStatus);
 
         bind();
-        btnStart.setOnClickListener(new View.OnClickListener() {
+        btnStart.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
                 start();
                 setViewsStatus();
             }
         });
 
-        btnPause.setOnClickListener(new View.OnClickListener() {
+        btnPause.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
                 ReminderManager.pause();
                 bind();
                 setViewsStatus();
             }
         });
 
-        btnStop.setOnClickListener(new View.OnClickListener() {
+        btnStop.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
                 ReminderManager.stop();
                 bind();
                 setViewsStatus();
             }
         });
 
-        btnRestart.setOnClickListener(new View.OnClickListener() {
+        btnRestart.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
                 start();
                 setViewsStatus();
             }
         });
 
-        btnStartTime.setOnClickListener(new View.OnClickListener() {
+        btnStartTime.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View v) {
-                if (btnStartTime.getText().length() > 0) {
+            public void onClick(View v)
+            {
+                if (btnStartTime.getText().length() > 0)
+                {
                     int hour = Integer.valueOf(btnStartTime.getText().toString().substring(0, 2));
                     int minute = Integer.valueOf(btnStartTime.getText().toString().substring(3, 5));
-                    DialogManager.showTimePickerDialog(App.currentActivity, "", hour, minute, new Runnable() {
+                    DialogManager.showTimePickerDialog(App.currentActivity, "", hour, minute, new Runnable()
+                    {
                         @Override
-                        public void run() {
+                        public void run()
+                        {
                             btnStartTime.setText(DialogManager.timeResult);
                         }
                     });
-                } else {
-                    DialogManager.showTimePickerDialog(App.currentActivity, "", 12, 0, new Runnable() {
+                }
+                else
+                {
+                    DialogManager.showTimePickerDialog(App.currentActivity, "", 12, 0, new Runnable()
+                    {
                         @Override
-                        public void run() {
+                        public void run()
+                        {
                             btnStartTime.setText(DialogManager.timeResult);
                         }
                     });
@@ -147,9 +167,11 @@ public class SchedulerActivity extends PaymentActivity {
             }
         });
 
-        btnSelectTone.setOnClickListener(new View.OnClickListener() {
+        btnSelectTone.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
                 Intent intent = new Intent(RingtoneManager.ACTION_RINGTONE_PICKER);
                 intent.putExtra(RingtoneManager.EXTRA_RINGTONE_TYPE, RingtoneManager.TYPE_NOTIFICATION);
                 intent.putExtra(RingtoneManager.EXTRA_RINGTONE_TITLE, "Select Tone");
@@ -182,8 +204,10 @@ public class SchedulerActivity extends PaymentActivity {
         setViewsStatus();
     }
 
-    private void start() {
-        if (SystemSettings.getCurrentSettings().isPremium()) {
+    private void start()
+    {
+        if (SystemSettings.getCurrentSettings().isPremium())
+        {
             ReminderSettings settings = ReminderManager.getReminderSettings();
 
             boolean paused = settings.getStatus() == ReminderSettings.Status.PAUSE;
@@ -199,17 +223,25 @@ public class SchedulerActivity extends PaymentActivity {
 
             int selectedThemeId = spinnerStartTheme.getSelectedItemPosition() + 1;
             int startVocabId = Vocabularies.selectByTheme(selectedThemeId).get(0).getId();
-            Vocabulary vocabulary = Vocabularies.select(startVocabId);
-            //Vocabulary vocabulary = Vocabularies.select(Integer.parseInt(edtStartVocabularyNo.getText().toString()));
-            if (vocabulary == null) {
-                return;
-            }
 
             Date reminderTime = Calendar.getInstance().getTime();
             Reminder garbage = settings.getReminder();
-            if (garbage != null && garbage.getTime() != null) {
-                reminderTime = garbage.getTime();
+            if (garbage != null)
+            {
+                if (garbage.getTime() != null)
+                {
+                    reminderTime = garbage.getTime();
+                }
+
+                startVocabId = garbage.getVocabularyId();
             }
+            Vocabulary vocabulary = Vocabularies.select(startVocabId);
+            if (vocabulary == null)
+            {
+                return;
+            }
+
+
             settings.setReminder(new Reminder(vocabulary.getId(), reminderTime, vocabulary.getVocabulary(), vocabulary.getVocabEnglishDef(), true));
             settings.setStartTime(btnStartTime.getText().toString());
             //settings.setIntervals(Integer.parseInt(edtAlarmIntervals.getText().toString()));
@@ -227,12 +259,15 @@ public class SchedulerActivity extends PaymentActivity {
             Date time = settings.getReminder().getTime();
             SimpleDateFormat sdf = new SimpleDateFormat("EEEE HH:mm", Locale.getDefault());
             MyToast.show("First vocabulary will be notified on " + sdf.format(time), Toast.LENGTH_LONG);
-        } else {
+        }
+        else
+        {
             showPaymentDialog();
         }
     }
 
-    private void bind() {
+    private void bind()
+    {
         ReminderSettings settings = ReminderManager.getReminderSettings();
 
         btnRestart.setVisibility(View.GONE);
@@ -240,15 +275,22 @@ public class SchedulerActivity extends PaymentActivity {
         btnPause.setVisibility(View.GONE);
         btnStart.setVisibility(View.GONE);
 
-        if (settings.getStatus() == ReminderSettings.Status.STOP) {
+        if (settings.getStatus() == ReminderSettings.Status.STOP)
+        {
             btnStart.setVisibility(View.VISIBLE);
-        } else if (settings.getStatus() == ReminderSettings.Status.RUNNING) {
+        }
+        else if (settings.getStatus() == ReminderSettings.Status.RUNNING)
+        {
             btnStop.setVisibility(View.VISIBLE);
             btnPause.setVisibility(View.VISIBLE);
-        } else if (settings.getStatus() == ReminderSettings.Status.PAUSE) {
+        }
+        else if (settings.getStatus() == ReminderSettings.Status.PAUSE)
+        {
             btnStop.setVisibility(View.VISIBLE);
             btnStart.setVisibility(View.VISIBLE);
-        } else if (settings.getStatus() == ReminderSettings.Status.FINISHED) {
+        }
+        else if (settings.getStatus() == ReminderSettings.Status.FINISHED)
+        {
             btnRestart.setVisibility(View.VISIBLE);
         }
 
@@ -257,7 +299,6 @@ public class SchedulerActivity extends PaymentActivity {
 
         ArrayList<Integer> intervals = new ArrayList<>();
 
-        intervals.add(1);
         intervals.add(15);
         intervals.add(30);
         intervals.add(45);
@@ -271,7 +312,8 @@ public class SchedulerActivity extends PaymentActivity {
         ArrayList<String> themeNames = new ArrayList<>();
         ArrayList<Theme> themes = Themes.select();
 
-        for (Theme theme : themes) {
+        for (Theme theme : themes)
+        {
             themeNames.add(theme.getName());
         }
 
@@ -280,7 +322,8 @@ public class SchedulerActivity extends PaymentActivity {
         spinnerStartTheme.setAdapter(themesAdapter);
         spinnerStartTheme.setSelection(0);
 
-        if (settings.getReminder() != null) {
+        if (settings.getReminder() != null)
+        {
             Vocabulary vocabulary = Vocabularies.select(settings.getReminder().getVocabularyId());
             assert vocabulary != null;
             spinnerStartTheme.setSelection(vocabulary.getThemeId() - 1);
@@ -300,8 +343,10 @@ public class SchedulerActivity extends PaymentActivity {
         btnSelectTone.setText(setting.getAlarmRingingTone());
     }
 
-    private void setViewsStatus() {
-        switch (ReminderManager.getReminderSettings().getStatus()) {
+    private void setViewsStatus()
+    {
+        switch (ReminderManager.getReminderSettings().getStatus())
+        {
             case RUNNING:
                 spinnerStartTheme.setEnabled(false);
                 btnStartTime.setEnabled(false);
@@ -361,32 +406,40 @@ public class SchedulerActivity extends PaymentActivity {
         }
     }
 
-    private void showPaymentDialog() {
+    private void showPaymentDialog()
+    {
         destroyPaymentDialog();
         paymentDialog = DialogManager.getPopupDialog(this,
-                                                     "Oops!",
-                                                     "To use full feature of Core Vocabulary, you should upgrade to premium version.",
-                                                     "UPGRADE TO PREMIUM",
-                                                     "MAYBE LATER",
-                                                     null,
-                                                     new Runnable() {
-                                                         @Override
-                                                         public void run() {
-                                                             pay();
-                                                         }
-                                                     },
-                                                     new Runnable() {
-                                                         @Override
-                                                         public void run() {
-                                                             paymentDialog.dismiss();
-                                                         }
-                                                     });
+                "Oops!",
+                "To use full feature of Core Vocabulary, you should upgrade to premium version.",
+                "UPGRADE TO PREMIUM",
+                "MAYBE LATER",
+                null,
+                new Runnable()
+                {
+                    @Override
+                    public void run()
+                    {
+                        pay();
+                    }
+                },
+                new Runnable()
+                {
+                    @Override
+                    public void run()
+                    {
+                        paymentDialog.dismiss();
+                    }
+                });
         paymentDialog.show();
     }
 
-    private void destroyPaymentDialog() {
-        if (paymentDialog != null) {
-            if (paymentDialog.isShowing()) {
+    private void destroyPaymentDialog()
+    {
+        if (paymentDialog != null)
+        {
+            if (paymentDialog.isShowing())
+            {
                 paymentDialog.dismiss();
             }
             paymentDialog = null;
@@ -394,18 +447,22 @@ public class SchedulerActivity extends PaymentActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
         int id = item.getItemId();
-        if (id == android.R.id.home) {
+        if (id == android.R.id.home)
+        {
             onBackPressed();
         }
         return super.onOptionsItemSelected(item);
     }
 
     @Override
-    protected void onToolbarCreated() {
+    protected void onToolbarCreated()
+    {
         ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
+        if (actionBar != null)
+        {
             actionBar.setTitle("Scheduler");
             actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setDisplayShowHomeEnabled(true);
@@ -413,35 +470,44 @@ public class SchedulerActivity extends PaymentActivity {
     }
 
     @Override
-    protected void onActivityResult(final int requestCode, final int resultCode, final Intent intent) {
-        if (resultCode == Activity.RESULT_OK && requestCode == 5) {
+    protected void onActivityResult(final int requestCode, final int resultCode, final Intent intent)
+    {
+        if (resultCode == Activity.RESULT_OK && requestCode == 5)
+        {
             Uri uri = intent.getParcelableExtra(RingtoneManager.EXTRA_RINGTONE_PICKED_URI);
             SystemSetting setting = SystemSettings.getCurrentSettings();
-            if (uri != null) {
+            if (uri != null)
+            {
                 Ringtone ringtone = RingtoneManager.getRingtone(this, uri);
                 String title = ringtone.getTitle(this);
                 setting.setRingingToneUri(uri.toString());
                 setting.setAlarmRingingTone(title);
                 btnSelectTone.setText(title);
-            } else {
+            }
+            else
+            {
                 setting.setRingingToneUri(Settings.System.DEFAULT_NOTIFICATION_URI.getPath());
                 Ringtone ringtone = RingtoneManager.getRingtone(App.context, Settings.System.DEFAULT_NOTIFICATION_URI);
                 setting.setAlarmRingingTone(ringtone.getTitle(this));
                 btnSelectTone.setText(ringtone.getTitle(this));
             }
             SystemSettings.update(setting);
-        } else if (requestCode == RC_REQUEST) {
+        }
+        else if (requestCode == RC_REQUEST)
+        {
             super.onActivityResult(requestCode, resultCode, intent);
         }
     }
 
     @Override
-    protected void updateUiToPremiumVersion() {
+    protected void updateUiToPremiumVersion()
+    {
         destroyPaymentDialog();
     }
 
     @Override
-    protected void updateUiToTrialVersion() {
+    protected void updateUiToTrialVersion()
+    {
         //nothing
     }
 }
