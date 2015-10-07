@@ -36,7 +36,7 @@ public class DrawerFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         navView = (NavigationView) view.findViewById(R.id.navView);
 
-        updateUi();
+        //updateUi();
 
         navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -74,6 +74,12 @@ public class DrawerFragment extends Fragment {
         if (SystemSettings.getCurrentSettings().isPremium()) {
             buyItem.setVisible(false);
         }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        updateUi();
     }
 
     public void setUp(DrawerLayout drawerLayout, final Toolbar toolbar) {

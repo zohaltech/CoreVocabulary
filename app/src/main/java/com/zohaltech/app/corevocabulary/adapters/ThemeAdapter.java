@@ -163,7 +163,7 @@ public class ThemeAdapter extends RecyclerView.Adapter<ThemeAdapter.ViewHolder> 
             holder.layoutRoot.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    MySnackbar.show(v, "Pleas buy premium version", Snackbar.LENGTH_SHORT);
+                    MySnackbar.show(v, "Please buy premium version", Snackbar.LENGTH_SHORT);
                 }
             });
         }
