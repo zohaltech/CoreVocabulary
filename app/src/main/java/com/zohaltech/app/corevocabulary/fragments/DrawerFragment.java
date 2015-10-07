@@ -18,6 +18,7 @@ import com.zohaltech.app.corevocabulary.activities.BookmarksActivity;
 import com.zohaltech.app.corevocabulary.activities.HelpActivity;
 import com.zohaltech.app.corevocabulary.activities.MainActivity;
 import com.zohaltech.app.corevocabulary.activities.SchedulerActivity;
+import com.zohaltech.app.corevocabulary.classes.App;
 import com.zohaltech.app.corevocabulary.data.SystemSettings;
 
 public class DrawerFragment extends Fragment {
@@ -63,7 +64,11 @@ public class DrawerFragment extends Fragment {
                         startActivity(intent);
                         break;
                 }
-                drawerLayout.closeDrawers();
+                App.handler.postDelayed(new Runnable() {
+                    public void run() {
+                        drawerLayout.closeDrawers();
+                    }
+                }, 500);
                 return false;
             }
         });

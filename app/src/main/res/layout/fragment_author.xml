@@ -45,10 +45,12 @@
     </ScrollView>
 
     <LinearLayout
+        android:id="@+id/layoutVip"
+        style="@style/BorderlessButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
         android:gravity="center"
-        android:orientation="vertical"
         android:padding="10dp">
 
         <ImageView
