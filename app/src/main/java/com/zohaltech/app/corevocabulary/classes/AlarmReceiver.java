@@ -6,6 +6,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.support.v4.app.NotificationCompat;
 
 import com.zohaltech.app.corevocabulary.R;
 import com.zohaltech.app.corevocabulary.activities.VocabularyDetailsActivity;
@@ -15,10 +16,9 @@ import com.zohaltech.app.corevocabulary.entities.SystemSetting;
 public class AlarmReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
-        int lockScreenVisibility = android.support.v4.app.NotificationCompat.VISIBILITY_SECRET;
         Reminder reminder = (Reminder) intent.getSerializableExtra("reminder");
 
-        android.support.v4.app.NotificationCompat.Builder builder =
+        NotificationCompat.Builder builder =
                 new android.support.v4.app.NotificationCompat.Builder(context)
                         .setSmallIcon(R.drawable.ic_notification)
                         .setContentTitle(reminder.getTitle())
@@ -26,10 +26,8 @@ public class AlarmReceiver extends BroadcastReceiver {
                         .setShowWhen(true)
                         .setOngoing(false)
                         .setPriority(android.support.v4.app.NotificationCompat.PRIORITY_DEFAULT)
-                        .setVisibility(lockScreenVisibility)
                         .setDefaults(Notification.DEFAULT_VIBRATE)
                         .setColor(App.context.getResources().getColor(R.color.primary))
-                        //.setLights(0xFFE91E63, 1000, 300)
                         .setLights(0xFFC2185B, 1000, 300)
                         .setAutoCancel(true);
 

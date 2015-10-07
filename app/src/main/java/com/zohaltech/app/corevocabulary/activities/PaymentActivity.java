@@ -24,7 +24,7 @@ public abstract class PaymentActivity extends EnhancedActivity {
     private final String PAY_LOAD    = "COREVOCABULARY_ANDROID_APP";
     private final String TAG         = "COREVOCABULARY_TAG";
     private final String SKU_PREMIUM = "CORE_PREMIUM";
-    private final int    RC_REQUEST  = 10001;
+    protected final int    RC_REQUEST  = 10001;
     String responseMessage = "ارتقای برنامه با مشکل مواجه شد";
     private ProgressDialog progressDialog;
     private boolean mIsPremium = false;

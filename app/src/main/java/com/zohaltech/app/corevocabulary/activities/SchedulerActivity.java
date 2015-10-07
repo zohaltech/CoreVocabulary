@@ -257,6 +257,7 @@ public class SchedulerActivity extends PaymentActivity {
 
         ArrayList<Integer> intervals = new ArrayList<>();
 
+        intervals.add(1);
         intervals.add(15);
         intervals.add(30);
         intervals.add(45);
@@ -364,9 +365,9 @@ public class SchedulerActivity extends PaymentActivity {
         destroyPaymentDialog();
         paymentDialog = DialogManager.getPopupDialog(this,
                                                      "Oops!",
-                                                     "To use scheduler features, you should upgrade to premium version.",
-                                                     "Upgrade to premium",
-                                                     "Maybe later",
+                                                     "To use full feature of Core Vocabulary, you should upgrade to premium version.",
+                                                     "UPGRADE TO PREMIUM",
+                                                     "MAYBE LATER",
                                                      null,
                                                      new Runnable() {
                                                          @Override
@@ -413,7 +414,6 @@ public class SchedulerActivity extends PaymentActivity {
 
     @Override
     protected void onActivityResult(final int requestCode, final int resultCode, final Intent intent) {
-        super.onActivityResult(requestCode, resultCode, intent);
         if (resultCode == Activity.RESULT_OK && requestCode == 5) {
             Uri uri = intent.getParcelableExtra(RingtoneManager.EXTRA_RINGTONE_PICKED_URI);
             SystemSetting setting = SystemSettings.getCurrentSettings();
@@ -430,6 +430,8 @@ public class SchedulerActivity extends PaymentActivity {
                 btnSelectTone.setText(ringtone.getTitle(this));
             }
             SystemSettings.update(setting);
+        } else if (requestCode == RC_REQUEST) {
+            super.onActivityResult(requestCode, resultCode, intent);
         }
     }
 
