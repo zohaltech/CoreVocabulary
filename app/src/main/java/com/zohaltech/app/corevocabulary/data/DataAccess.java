@@ -5,7 +5,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
-import android.net.Uri;
 import android.provider.Settings;
 
 import com.zohaltech.app.corevocabulary.classes.App;
@@ -57,7 +56,11 @@ public class DataAccess extends SQLiteOpenHelper {
             systemSettingsValues.put(SystemSettings.SoundInAlarms, 0);
             systemSettingsValues.put(SystemSettings.RingingToneUri, Settings.System.DEFAULT_NOTIFICATION_URI.getPath());
             Ringtone ringtone = RingtoneManager.getRingtone(App.context, Settings.System.DEFAULT_NOTIFICATION_URI);
-            systemSettingsValues.put(SystemSettings.AlarmRingingTone, ringtone.getTitle(App.context));
+            if (ringtone != null) {
+                systemSettingsValues.put(SystemSettings.AlarmRingingTone, ringtone.getTitle(App.context));
+            } else {
+                systemSettingsValues.put(SystemSettings.AlarmRingingTone, "Default");
+            }
             db.insert(SystemSettings.TableName, null, systemSettingsValues);
 
         } catch (MyRuntimeException e) {

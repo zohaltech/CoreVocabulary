@@ -70,16 +70,16 @@ public class App extends Application {
         SearchCache.initialise();
 
         //todo : set market here and in manifest
-        market = MARKET_BAZAAR;
-        marketName = "بازار";
-        marketPackage = "com.farsitel.bazaar";
-        marketAction = "ir.cafebazaar.pardakht.InAppBillingService.BIND";
-        //marketUri = "bazaar://details?id=" + getPackageName();
-        marketWebsiteUri = "http://cafebazaar.ir/app/" + getPackageName();
-        marketDeveloperUri = "bazaar://collection?slug=by_author&aid=zohaltech";
-        marketPollUri = "bazaar://details?id=" + getPackageName();
-        marketPollIntent = Intent.ACTION_EDIT;
-        marketPublicKey = ConstantParams.getBazaarPublicKey();
+        //market = MARKET_BAZAAR;
+        //marketName = "بازار";
+        //marketPackage = "com.farsitel.bazaar";
+        //marketAction = "ir.cafebazaar.pardakht.InAppBillingService.BIND";
+        ////marketUri = "bazaar://details?id=" + getPackageName();
+        //marketWebsiteUri = "http://cafebazaar.ir/app/" + getPackageName();
+        //marketDeveloperUri = "bazaar://collection?slug=by_author&aid=zohaltech";
+        //marketPollUri = "bazaar://details?id=" + getPackageName();
+        //marketPollIntent = Intent.ACTION_EDIT;
+        //marketPublicKey = ConstantParams.getBazaarPublicKey();
 
         //market = MARKET_CANDO;
         //marketName = "کندو";
@@ -92,16 +92,16 @@ public class App extends Application {
         //marketPollIntent = Intent.ACTION_VIEW;
         //marketPublicKey = ConstantParams.getCandoPublicKey();
 
-        //market = MARKET_MYKET;
-        //marketName = "مایکت";
-        //marketPackage = "ir.mservices.market";
-        //marketAction = "ir.mservices.market.InAppBillingService.BIND";
-        ////marketUri = "myket://application/#Intent;scheme=myket;package= + getPackageName() + ;end";
-        //marketWebsiteUri = "http://myket.ir/Appdetail.aspx?id=" + getPackageName();
-        //marketDeveloperUri = "http://myket.ir/DeveloperApps.aspx?Packagename=" + getPackageName();
-        //marketPollUri = "myket://comment/#Intent;scheme=comment;package=" + getPackageName() + ";end";
-        //marketPollIntent = Intent.ACTION_VIEW;
-        //marketPublicKey = ConstantParams.getMyketPublicKey();
+        market = MARKET_MYKET;
+        marketName = "مایکت";
+        marketPackage = "ir.mservices.market";
+        marketAction = "ir.mservices.market.InAppBillingService.BIND";
+        //marketUri = "myket://application/#Intent;scheme=myket;package= + getPackageName() + ;end";
+        marketWebsiteUri = "http://myket.ir/Appdetail.aspx?id=" + getPackageName();
+        marketDeveloperUri = "http://myket.ir/DeveloperApps.aspx?Packagename=" + getPackageName();
+        marketPollUri = "myket://comment/#Intent;scheme=comment;package=" + getPackageName() + ";end";
+        marketPollIntent = Intent.ACTION_VIEW;
+        marketPublicKey = ConstantParams.getMyketPublicKey();
 
         //market = MARKET_PLAY;
         //marketName = "Google Play";
