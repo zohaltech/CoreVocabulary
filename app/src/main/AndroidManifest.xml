@@ -46,7 +46,7 @@
             android:name=".activities.SchedulerActivity"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".activities.HelpActivity"
+            android:name=".activities.IntroductionActivity"
             android:screenOrientation="portrait"/>
         <activity
             android:name=".activities.BookmarksActivity"

@@ -15,7 +15,7 @@ import android.view.ViewGroup;
 import com.zohaltech.app.corevocabulary.R;
 import com.zohaltech.app.corevocabulary.activities.AboutActivity;
 import com.zohaltech.app.corevocabulary.activities.BookmarksActivity;
-import com.zohaltech.app.corevocabulary.activities.HelpActivity;
+import com.zohaltech.app.corevocabulary.activities.IntroductionActivity;
 import com.zohaltech.app.corevocabulary.activities.MainActivity;
 import com.zohaltech.app.corevocabulary.activities.SchedulerActivity;
 import com.zohaltech.app.corevocabulary.classes.App;
@@ -53,7 +53,7 @@ public class DrawerFragment extends Fragment {
                         startActivity(intent);
                         break;
                     case R.id.nav_help:
-                        intent = new Intent(getActivity(), HelpActivity.class);
+                        intent = new Intent(getActivity(), IntroductionActivity.class);
                         startActivity(intent);
                         break;
                     case R.id.nav_buy:

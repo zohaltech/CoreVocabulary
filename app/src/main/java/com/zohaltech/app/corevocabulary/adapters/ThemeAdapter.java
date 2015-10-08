@@ -147,7 +147,7 @@ public class ThemeAdapter extends RecyclerView.Adapter<ThemeAdapter.ViewHolder> 
         holder.txtTheme.setText(theme.getName());
 
         SystemSetting setting = SystemSettings.getCurrentSettings();
-        if (position == 0 || setting.isPremium()) {
+        if (position < 2 || setting.isPremium()) {
             holder.imgPremium.setVisibility(View.GONE);
             holder.layoutRoot.setOnClickListener(new View.OnClickListener() {
                 @Override
