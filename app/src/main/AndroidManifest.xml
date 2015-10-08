@@ -51,7 +51,6 @@
         <activity
             android:name=".activities.BookmarksActivity"
             android:screenOrientation="portrait"/>
-
         <receiver android:name=".classes.AlarmReceiver"/>
         <receiver
             android:name=".classes.BootReceiver"

@@ -198,7 +198,7 @@ public abstract class PaymentActivity extends EnhancedActivity {
         destroyPaymentDialog();
         paymentDialog = DialogManager.getPopupDialog(this,
                                                      "Oops!",
-                                                     "To use full feature of Core Vocabulary, you should upgrade to premium version.",
+                                                     "To use full feature Core Vocabulary, you should upgrade to premium version.",
                                                      "UPGRADE TO PREMIUM",
                                                      "MAYBE LATER",
                                                      null,
