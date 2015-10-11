@@ -149,34 +149,34 @@ public final class Helper {
         return null;
     }
 
-    public static void serializeReminderSettings(ReminderSettings reminderSettings) {
-        try {
-            String fileName = new File(App.context.getExternalFilesDir(Environment.DIRECTORY_ALARMS), "/reminder_settings").getAbsolutePath();
-            FileOutputStream fos = App.context.openFileOutput(fileName, Context.MODE_PRIVATE);
-            ObjectOutputStream os = null;
-            os = new ObjectOutputStream(fos);
-            os.writeObject(reminderSettings);
-            os.close();
-            fos.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public static ReminderSettings deserializeReminderSettings() {
-        ReminderSettings reminderSettings = null;
-        try {
-            String fileName = new File(App.context.getExternalFilesDir(Environment.DIRECTORY_ALARMS), "/reminder_settings").getAbsolutePath();
-            FileInputStream fis = App.context.openFileInput(fileName);
-            ObjectInputStream is = new ObjectInputStream(fis);
-            reminderSettings = (ReminderSettings) is.readObject();
-            is.close();
-            fis.close();
-        } catch (IOException | ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        return reminderSettings;
-    }
+    //public static void serializeReminderSettings(ReminderSettings reminderSettings) {
+    //    try {
+    //        String fileName = new File(App.context.getExternalFilesDir(Environment.DIRECTORY_ALARMS), "/reminder_settings").getAbsolutePath();
+    //        FileOutputStream fos = App.context.openFileOutput(fileName, Context.MODE_PRIVATE);
+    //        ObjectOutputStream os = null;
+    //        os = new ObjectOutputStream(fos);
+    //        os.writeObject(reminderSettings);
+    //        os.close();
+    //        fos.close();
+    //    } catch (IOException e) {
+    //        e.printStackTrace();
+    //    }
+    //}
+    //
+    //public static ReminderSettings deserializeReminderSettings() {
+    //    ReminderSettings reminderSettings = null;
+    //    try {
+    //        String fileName = new File(App.context.getExternalFilesDir(Environment.DIRECTORY_ALARMS), "/reminder_settings").getAbsolutePath();
+    //        FileInputStream fis = App.context.openFileInput(fileName);
+    //        ObjectInputStream is = new ObjectInputStream(fis);
+    //        reminderSettings = (ReminderSettings) is.readObject();
+    //        is.close();
+    //        fis.close();
+    //    } catch (IOException | ClassNotFoundException e) {
+    //        e.printStackTrace();
+    //    }
+    //    return reminderSettings;
+    //}
 
     public enum Operator {
         MCI,
