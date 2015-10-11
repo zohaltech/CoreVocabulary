@@ -1,4 +1,4 @@
-package com.zohaltech.app.corevocabulary.classes;
+package com.zohaltech.app.corevocabulary.serializables;
 
 import java.io.Serializable;
 import java.util.Date;

@@ -1,6 +1,9 @@
-package com.zohaltech.app.corevocabulary.classes;
+package com.zohaltech.app.corevocabulary.serializables;
 
-public class ReminderSettings {
+import java.io.Serializable;
+
+public class ReminderSettings implements Serializable {
+
     public enum Status {
         STOP, RUNNING, PAUSE, FINISHED
     }

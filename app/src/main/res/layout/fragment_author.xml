@@ -51,7 +51,9 @@
         android:layout_height="wrap_content"
         android:background="?attr/selectableItemBackground"
         android:gravity="center"
-        android:padding="10dp">
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:visibility="gone">
 
         <ImageView
             android:layout_width="64dp"

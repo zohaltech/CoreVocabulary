@@ -5,9 +5,18 @@ import android.content.Intent;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
+import android.os.Environment;
 import android.os.Vibrator;
 import android.telephony.TelephonyManager;
 
+import com.zohaltech.app.corevocabulary.serializables.ReminderSettings;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.math.BigDecimal;
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -19,13 +28,6 @@ import java.util.Locale;
 
 
 public final class Helper {
-
-    public enum Operator {
-        MCI,
-        IRANCELL,
-        RIGHTELL,
-        NO_SIM
-    }
 
     public static Operator getOperator() {
         Operator operator = Operator.NO_SIM;
@@ -88,7 +90,6 @@ public final class Helper {
         return date;
     }
 
-
     public static BigDecimal round(float d, int decimalPlace) {
         BigDecimal bd = new BigDecimal(Float.toString(d));
         bd = bd.setScale(decimalPlace, BigDecimal.ROUND_HALF_UP);
@@ -146,5 +147,41 @@ public final class Helper {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public static void serializeReminderSettings(ReminderSettings reminderSettings) {
+        try {
+            String fileName = new File(App.context.getExternalFilesDir(Environment.DIRECTORY_ALARMS), "/reminder_settings").getAbsolutePath();
+            FileOutputStream fos = App.context.openFileOutput(fileName, Context.MODE_PRIVATE);
+            ObjectOutputStream os = null;
+            os = new ObjectOutputStream(fos);
+            os.writeObject(reminderSettings);
+            os.close();
+            fos.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static ReminderSettings deserializeReminderSettings() {
+        ReminderSettings reminderSettings = null;
+        try {
+            String fileName = new File(App.context.getExternalFilesDir(Environment.DIRECTORY_ALARMS), "/reminder_settings").getAbsolutePath();
+            FileInputStream fis = App.context.openFileInput(fileName);
+            ObjectInputStream is = new ObjectInputStream(fis);
+            reminderSettings = (ReminderSettings) is.readObject();
+            is.close();
+            fis.close();
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return reminderSettings;
+    }
+
+    public enum Operator {
+        MCI,
+        IRANCELL,
+        RIGHTELL,
+        NO_SIM
     }
 }

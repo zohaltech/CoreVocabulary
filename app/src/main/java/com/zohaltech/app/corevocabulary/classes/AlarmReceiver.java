@@ -12,6 +12,7 @@ import com.zohaltech.app.corevocabulary.R;
 import com.zohaltech.app.corevocabulary.activities.VocabularyDetailsActivity;
 import com.zohaltech.app.corevocabulary.data.SystemSettings;
 import com.zohaltech.app.corevocabulary.entities.SystemSetting;
+import com.zohaltech.app.corevocabulary.serializables.Reminder;
 
 public class AlarmReceiver extends BroadcastReceiver {
     @Override

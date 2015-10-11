@@ -3,6 +3,8 @@ package com.zohaltech.app.corevocabulary.classes;
 
 import com.zohaltech.app.corevocabulary.data.Vocabularies;
 import com.zohaltech.app.corevocabulary.entities.Vocabulary;
+import com.zohaltech.app.corevocabulary.serializables.Reminder;
+import com.zohaltech.app.corevocabulary.serializables.ReminderSettings;
 
 import java.util.ArrayList;
 

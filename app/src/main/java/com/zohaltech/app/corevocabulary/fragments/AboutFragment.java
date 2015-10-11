@@ -14,6 +14,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.zohaltech.app.corevocabulary.BuildConfig;
 import com.zohaltech.app.corevocabulary.R;
 import com.zohaltech.app.corevocabulary.classes.App;
 import com.zohaltech.app.corevocabulary.classes.Helper;
@@ -53,11 +54,7 @@ public class AboutFragment extends Fragment {
         btnRate = (Button) view.findViewById(R.id.btnRate);
         layoutWebsite = (LinearLayout) view.findViewById(R.id.layoutWebsite);
 
-        //final String marketWebsiteUri = "http://cafebazaar.ir/app/" + App.context.getPackageName();
-        final String email = "info@zohaltech.com";
-        //final String marketUri = "bazaar://details?id=" + App.context.getPackageName();
-
-        //        txtVersion.setText(getString(R.string.version) + BuildConfig.VERSION_NAME);
+        txtVersion.setText("Version " + BuildConfig.VERSION_NAME);
 
         btnShare.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,7 +83,7 @@ public class AboutFragment extends Fragment {
         btnFeedback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto", email, null));
+                Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto", "info@zohaltech.com", null));
                 intent.putExtra(Intent.EXTRA_SUBJECT, getResources().getString(R.string.feedback_subject));
                 startActivity(Intent.createChooser(intent, getResources().getString(R.string.feedback_title)));
             }
