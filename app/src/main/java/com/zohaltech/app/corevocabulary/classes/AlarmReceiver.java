@@ -36,7 +36,7 @@ public class AlarmReceiver extends BroadcastReceiver {
         resultIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
         resultIntent.putExtra(VocabularyDetailsActivity.VOCAB_ID, reminder.getVocabularyId());
 
-        PendingIntent resultPendingIntent = PendingIntent.getActivity(context, 0, resultIntent, PendingIntent.FLAG_CANCEL_CURRENT);
+        PendingIntent resultPendingIntent = PendingIntent.getActivity(context, 0, resultIntent, PendingIntent.FLAG_UPDATE_CURRENT);
         builder.setContentIntent(resultPendingIntent);
 
         SystemSetting setting = SystemSettings.getCurrentSettings();
@@ -48,7 +48,7 @@ public class AlarmReceiver extends BroadcastReceiver {
             notification.sound = Uri.parse(setting.getRingingToneUri());
         }
         //App.notificationManager.notify((int) reminder.getTime().getTime(), builder.build());
-        App.notificationManager.notify((int) reminder.getTime().getTime(), notification);
+        App.notificationManager.notify(reminder.getVocabularyId(), notification);
 
         ReminderManager.setLastReminder(reminder);
         ReminderManager.setImmediateReminder(reminder.getVocabularyId(), reminder.doesTriggersNext());
