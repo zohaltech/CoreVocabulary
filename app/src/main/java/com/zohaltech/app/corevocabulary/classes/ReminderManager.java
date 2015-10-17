@@ -134,7 +134,7 @@ public class ReminderManager
                     calendar.add(Calendar.SECOND, 1);
                     Date time = calendar.getTime();
 
-                    if (elapsedMinutes < startTime + (j * settings.getIntervals()))
+                    if (elapsedMinutes <= startTime + (j * settings.getIntervals()))
                     {
                         time = getTime(nextDayOffset, startTime + j * settings.getIntervals());
                     }
