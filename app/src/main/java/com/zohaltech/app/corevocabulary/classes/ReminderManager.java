@@ -157,6 +157,8 @@ public class ReminderManager
                         settings.setReminder(reminder);
                         addAlarm(App.context, reminder);
                         ReminderManager.setReminderSettings(settings);
+
+                        return;
                     }
                 }
             }
