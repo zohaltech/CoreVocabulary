@@ -110,7 +110,7 @@ public class ReminderManager
         }
 
         // in case user manually resumes reminder
-        if (isResume && settings.getWeekdays()[today - 1] && elapsedMinutes > startTime)
+        if (isResume && settings.getWeekdays()[today - 1] && elapsedMinutes >= startTime)
         {
             Reminder lastReminder = getLastReminder();
             Vocabulary lastVocabulary = null;
@@ -134,7 +134,7 @@ public class ReminderManager
                     calendar.add(Calendar.SECOND, 1);
                     Date time = calendar.getTime();
 
-                    if (elapsedMinutes <= startTime + (j * settings.getIntervals()))
+                    if (elapsedMinutes < startTime + (j * settings.getIntervals()))
                     {
                         time = getTime(nextDayOffset, startTime + j * settings.getIntervals());
                     }
