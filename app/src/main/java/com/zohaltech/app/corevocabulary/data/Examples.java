@@ -18,15 +18,10 @@ public class Examples {
     static final String English      = "English";
     static final String Persian      = "Persian";
 
-    static final String EncEnglish = "EncEnglish";
-    static final String EncPersian = "EncPersian";
-
     static final String CreateTable = "CREATE TABLE " + TableName + " ( " +
             Id + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
             VocabularyId + " INTEGER , " +
             Ordinal + " INTEGER , " +
-            EncEnglish + " VARCHAR(1024) , " +
-            EncPersian + " VARCHAR(1024) , " +
             English + " VARCHAR(1024) , " +
             Persian + " VARCHAR(1024));";
 
