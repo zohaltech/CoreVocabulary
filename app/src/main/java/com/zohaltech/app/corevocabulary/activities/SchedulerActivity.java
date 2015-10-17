@@ -267,7 +267,7 @@ public class SchedulerActivity extends PaymentActivity {
         //edtAlarmIntervals.setText(String.valueOf(settings.getIntervals()));
 
         ArrayList<Integer> intervals = new ArrayList<>();
-        intervals.add(1);
+     //   intervals.add(1);
         intervals.add(15);
         intervals.add(30);
         intervals.add(45);
