@@ -32,10 +32,16 @@ public class LearningStatus {
                 Vocabulary currentVocab = Vocabularies.select(currentVocabId);
                 assert currentVocab != null;
 
+                if (currentVocab.getThemeId() > themeId) {
+
+
+                }
+
                 // int vocabIndex = vocabularies.indexOf(currentVocab) + 1;
                 int vocabIndex = indexOf(currentVocab, vocabularies) + 1;
 
-                if (settings.getStatus() == ReminderSettings.Status.FINISHED) {
+                if (settings.getStatus() == ReminderSettings.Status.FINISHED ||
+                    currentVocab.getThemeId() > themeId) {
                     learningStatus.setProgress(100);
                     learningStatus.setDayIndex(vocabCount / 6);
                     learningStatus.setDayCount(vocabCount / 6);
