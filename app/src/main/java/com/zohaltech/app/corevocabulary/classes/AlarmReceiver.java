@@ -42,7 +42,6 @@ public class AlarmReceiver extends BroadcastReceiver {
         PendingIntent resultPendingIntent = PendingIntent.getActivity(context, reminder.getVocabularyId(), resultIntent, PendingIntent.FLAG_CANCEL_CURRENT);
         builder.setContentIntent(resultPendingIntent);
 
-
         SystemSetting setting = SystemSettings.getCurrentSettings();
         if (setting.getRingingToneUri() == null) {
             builder.setDefaults(Notification.DEFAULT_VIBRATE | Notification.DEFAULT_SOUND);

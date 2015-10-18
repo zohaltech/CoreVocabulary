@@ -134,11 +134,6 @@ public class VocabularyDetailsActivity extends EnhancedActivity {
     }
 
     @Override
-    protected void onNewIntent(Intent intent) {
-        super.onNewIntent(intent);
-    }
-
-    @Override
     protected void onToolbarCreated() {
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
