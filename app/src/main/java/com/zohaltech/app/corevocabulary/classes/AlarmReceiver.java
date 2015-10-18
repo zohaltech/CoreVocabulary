@@ -16,6 +16,7 @@ import com.zohaltech.app.corevocabulary.entities.SystemSetting;
 import com.zohaltech.app.corevocabulary.serializables.Reminder;
 
 public class AlarmReceiver extends BroadcastReceiver {
+
     @Override
     public void onReceive(Context context, Intent intent) {
         Reminder reminder = (Reminder) intent.getSerializableExtra("reminder");
@@ -35,25 +36,10 @@ public class AlarmReceiver extends BroadcastReceiver {
 
         Intent resultIntent = new Intent(context, VocabularyDetailsActivity.class);
         resultIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+        //resultIntent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         resultIntent.putExtra(VocabularyDetailsActivity.VOCAB_ID, reminder.getVocabularyId());
 
-
-        //// Creates an explicit intent for an Activity in your app
-        ////Intent resultIntent = new Intent(this, ResultActivity.class);
-        //
-        //// The stack builder object will contain an artificial back stack for the
-        //// started Activity.
-        //// This ensures that navigating backward from the Activity leads out of
-        //// your application to the Home screen.
-        //TaskStackBuilder stackBuilder = TaskStackBuilder.create(context);
-        //// Adds the back stack for the Intent (but not the Intent itself)
-        ////stackBuilder.addParentStack(ResultActivity.class);
-        //// Adds the Intent that starts the Activity to the top of the stack
-        //stackBuilder.addNextIntent(resultIntent);
-        //PendingIntent resultPendingIntent = stackBuilder.getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT);
-
-
-        PendingIntent resultPendingIntent = PendingIntent.getActivity(context, 0, resultIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent resultPendingIntent = PendingIntent.getActivity(context, reminder.getVocabularyId(), resultIntent, PendingIntent.FLAG_CANCEL_CURRENT);
         builder.setContentIntent(resultPendingIntent);
 
 

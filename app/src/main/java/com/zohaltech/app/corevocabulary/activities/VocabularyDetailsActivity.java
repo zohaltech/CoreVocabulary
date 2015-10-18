@@ -1,6 +1,7 @@
 package com.zohaltech.app.corevocabulary.activities;
 
 
+import android.content.Intent;
 import android.support.design.widget.Snackbar;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
@@ -130,6 +131,11 @@ public class VocabularyDetailsActivity extends EnhancedActivity {
             onBackPressed();
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
     }
 
     @Override
