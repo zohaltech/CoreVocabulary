@@ -5,6 +5,7 @@ import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.TaskStackBuilder;
@@ -31,7 +32,7 @@ public class AlarmReceiver extends BroadcastReceiver {
                         .setPriority(android.support.v4.app.NotificationCompat.PRIORITY_DEFAULT)
                         .setDefaults(Notification.DEFAULT_VIBRATE)
                         .setColor(App.context.getResources().getColor(R.color.primary))
-                        .setLights(0xFFC2185B, 1000, 300)
+                        .setLights(Color.MAGENTA, 1000, 300)
                         .setAutoCancel(true);
 
         Intent resultIntent = new Intent(context, VocabularyDetailsActivity.class);
