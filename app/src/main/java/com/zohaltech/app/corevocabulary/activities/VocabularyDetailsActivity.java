@@ -83,7 +83,7 @@ public class VocabularyDetailsActivity extends EnhancedActivity {
         notes = Notes.getNotes(vocabularyId);
 
         ArrayList<String> tabTitles = new ArrayList<>();
-        tabTitles.add("Definition");
+        tabTitles.add("Meaning");
         tabTitles.add("Examples");
         if (notes.size() > 0) {
             tabTitles.add("Notes");
