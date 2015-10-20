@@ -273,7 +273,7 @@ public class ReminderManager
         AlarmManager alarmManager = (AlarmManager) App.context.getSystemService(Context.ALARM_SERVICE);
 
         Intent intent = new Intent(App.context, AlarmReceiver.class);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(App.context, ((int) vocabularyId) * App.APP_ID, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(App.context, ((int) vocabularyId) , intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
         alarmManager.cancel(pendingIntent);
     }

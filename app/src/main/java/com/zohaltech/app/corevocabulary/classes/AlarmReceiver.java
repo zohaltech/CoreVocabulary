@@ -16,10 +16,12 @@ import com.zohaltech.app.corevocabulary.data.SystemSettings;
 import com.zohaltech.app.corevocabulary.entities.SystemSetting;
 import com.zohaltech.app.corevocabulary.serializables.Reminder;
 
-public class AlarmReceiver extends BroadcastReceiver {
+public class AlarmReceiver extends BroadcastReceiver
+{
 
     @Override
-    public void onReceive(Context context, Intent intent) {
+    public void onReceive(Context context, Intent intent)
+    {
         Reminder reminder = (Reminder) intent.getSerializableExtra("reminder");
 
         NotificationCompat.Builder builder =
@@ -40,19 +42,21 @@ public class AlarmReceiver extends BroadcastReceiver {
         //resultIntent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         resultIntent.putExtra(VocabularyDetailsActivity.VOCAB_ID, reminder.getVocabularyId());
 
-        PendingIntent resultPendingIntent = PendingIntent.getActivity(context, reminder.getVocabularyId() * App.APP_ID, resultIntent, PendingIntent.FLAG_CANCEL_CURRENT);
+        PendingIntent resultPendingIntent = PendingIntent.getActivity(context, reminder.getVocabularyId(), resultIntent, PendingIntent.FLAG_CANCEL_CURRENT);
         builder.setContentIntent(resultPendingIntent);
 
         SystemSetting setting = SystemSettings.getCurrentSettings();
-        if (setting.getRingingToneUri() == null) {
+        if (setting.getRingingToneUri() == null)
+        {
             builder.setDefaults(Notification.DEFAULT_VIBRATE | Notification.DEFAULT_SOUND);
         }
         Notification notification = builder.build();
-        if (setting.getRingingToneUri() != null) {
+        if (setting.getRingingToneUri() != null)
+        {
             notification.sound = Uri.parse(setting.getRingingToneUri());
         }
         //App.notificationManager.notify((int) reminder.getTime().getTime(), builder.build());
-        App.notificationManager.notify(reminder.getVocabularyId(), notification);
+        App.notificationManager.notify((int)(reminder.getTime().getTime()), notification);
 
         ReminderManager.setLastReminder(reminder);
         ReminderManager.setImmediateReminder(reminder.getVocabularyId(), reminder.doesTriggersNext());
