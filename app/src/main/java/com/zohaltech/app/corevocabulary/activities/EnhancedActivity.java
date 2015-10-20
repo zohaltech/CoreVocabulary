@@ -12,13 +12,16 @@ import com.zohaltech.app.corevocabulary.classes.MyUncaughtExceptionHandler;
 public abstract class EnhancedActivity extends AppCompatActivity {
 
     Toolbar toolbar;
-    //TextView txtToolbarTitle;
 
     @Override
     protected final void onCreate(Bundle savedInstanceState) {
         overridePendingTransition(R.anim.slide_in_from_right, R.anim.slide_out_to_left);
         super.onCreate(savedInstanceState);
 
+        initialize();
+    }
+
+    private void initialize() {
         Thread.setDefaultUncaughtExceptionHandler(new MyUncaughtExceptionHandler());
         App.currentActivity = this;
 

@@ -17,6 +17,7 @@
 #}
 -keep class com.android.vending.billing
 -dontwarn com.squareup.picasso.**
+-dontwarn com.rey.material.**
 -keep class android.support.v7.widget.SearchView { *; }
 -keepattributes Signature
 -keep public class com.google.gson.stream.** { *; }

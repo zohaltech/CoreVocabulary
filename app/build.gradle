@@ -8,7 +8,7 @@ android {
     defaultConfig {
         applicationId "com.zohaltech.app.corevocabulary"
         minSdkVersion 9
-        targetSdkVersion 23
+        targetSdkVersion 22
         versionCode 104
         versionName "1.04"
         multiDexEnabled true

@@ -36,6 +36,7 @@ public class MainActivity extends PaymentActivity {
         super.onCreated();
         setContentView(R.layout.activity_main);
         startTime = System.currentTimeMillis() - 5000;
+
         //        SystemSetting setting=SystemSettings.getCurrentSettings();
         //        SystemSettings.register(setting);
         //

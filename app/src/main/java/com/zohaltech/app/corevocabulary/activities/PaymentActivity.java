@@ -23,18 +23,15 @@ import widgets.MyToast;
 
 public abstract class PaymentActivity extends EnhancedActivity {
 
+    protected final int    RC_REQUEST  = 10001;
     private final   String PAY_LOAD    = "COREVOCABULARY_ANDROID_APP";
     private final   String TAG         = "COREVOCABULARY_TAG";
     private final   String SKU_PREMIUM = "CORE_PREMIUM";
-    protected final int    RC_REQUEST  = 10001;
     String responseMessage = "ارتقای برنامه با مشکل مواجه شد";
+    Dialog paymentDialog;
     private ProgressDialog progressDialog;
     private boolean mIsPremium = false;
     private IabHelper mHelper;
-
-    Dialog paymentDialog;
-
-
     private IabHelper.QueryInventoryFinishedListener mGotInventoryListener = new IabHelper.QueryInventoryFinishedListener() {
         public void onQueryInventoryFinished(IabResult result, Inventory inventory) {
             Log.i(TAG, "Query inventory finished.");
@@ -84,27 +81,77 @@ public abstract class PaymentActivity extends EnhancedActivity {
         }
     };
 
+    //@Override
+    //public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+    //    super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    //    switch (requestCode) {
+    //        case 1: {
+    //            // If request is cancelled, the result arrays are empty.
+    //            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+    //
+    //                // permission was granted, yay! Do the
+    //                // contacts-related task you need to do.
+    //
+    //            } else {
+    //
+    //                // permission denied, boo! Disable the
+    //                // functionality that depends on this permission.
+    //            }
+    //            return;
+    //        }
+    //
+    //        // other 'case' lines to check for other
+    //        // permissions this app might request
+    //    }
+    //}
+
     @Override
     @CallSuper
     protected void onCreated() {
         if (!SystemSettings.getCurrentSettings().isPremium()) {
             try {
+                //
+                //ActivityCompat.requestPermissions(this, new String[]{"android.permission.WRITE_EXTERNAL_STORAGE",
+                //                                                     "com.farsitel.bazaar.permission.PAY_THROUGH_BAZAAR",
+                //                                                     "android.permission.READ_PHONE_STATE"}, 1);
+                //// Here, thisActivity is the current activity
+                //if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                //
+                //    // Should we show an explanation?
+                //    if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.READ_CONTACTS)) {
+                //
+                //        // Show an expanation to the user *asynchronously* -- don't block
+                //        // this thread waiting for the user's response! After the user
+                //        // sees the explanation, try again to request the permission.
+                //
+                //    } else {
+                //
+                //        // No explanation needed, we can request the permission.
+                //
+                //        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_CONTACTS}, 1);
+                //
+                //        // MY_PERMISSIONS_REQUEST_READ_CONTACTS is an
+                //        // app-defined int constant. The callback method gets the
+                //        // result of the request.
+                //    }
+                //}
+
                 mHelper = new IabHelper(this, App.marketPublicKey);
-                Log.d(TAG, "Starting setup.");
+                //Log.d(TAG, "Starting setup.");
                 mHelper.startSetup(new IabHelper.OnIabSetupFinishedListener() {
                     public void onIabSetupFinished(IabResult result) {
-                        Log.d(TAG, "Setup finished.");
+                        //Log.d(TAG, "Setup finished.");
 
                         if (!result.isSuccess()) {
                             // Oh noes, there was a problem.
-                            Log.d(TAG, "Problem setting up In-app Billing: " + result);
+                            //Log.d(TAG, "Problem setting up In-app Billing: " + result);
                         }
                         // Hooray, IAB is fully set up!
                         mHelper.queryInventoryAsync(mGotInventoryListener);
                     }
                 });
             } catch (MyRuntimeException e) {
-                Log.e(TAG, "برنامه " + App.marketName + " نصب نیست");
+                //Log.e(TAG, "برنامه " + App.marketName + " نصب نیست");
                 e.printStackTrace();
             }
         }
@@ -192,8 +239,7 @@ public abstract class PaymentActivity extends EnhancedActivity {
         }
     }
 
-    public void showPaymentDialog()
-    {
+    public void showPaymentDialog() {
         destroyPaymentDialog();
         paymentDialog = DialogManager.getPopupDialog(this,
                                                      "Oops!",
@@ -216,12 +262,9 @@ public abstract class PaymentActivity extends EnhancedActivity {
         paymentDialog.show();
     }
 
-    public void destroyPaymentDialog()
-    {
-        if (paymentDialog != null)
-        {
-            if (paymentDialog.isShowing())
-            {
+    public void destroyPaymentDialog() {
+        if (paymentDialog != null) {
+            if (paymentDialog.isShowing()) {
                 paymentDialog.dismiss();
             }
             paymentDialog = null;
