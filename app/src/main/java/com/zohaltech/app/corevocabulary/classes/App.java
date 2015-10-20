@@ -15,6 +15,7 @@ import java.util.Locale;
 
 public class App extends Application {
 
+    public static final int APP_ID = 3;
     public static final int MARKET_BAZAAR = 0;
     public static final int MARKET_CANDO  = 1;
     public static final int MARKET_MYKET  = 2;
