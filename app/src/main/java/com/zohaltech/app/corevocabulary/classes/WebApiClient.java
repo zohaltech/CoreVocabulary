@@ -1,19 +1,12 @@
 package com.zohaltech.app.corevocabulary.classes;
 
 import android.os.Build;
-import android.util.Log;
 
 import com.zohaltech.app.corevocabulary.BuildConfig;
 import com.zohaltech.app.corevocabulary.R;
 import com.zohaltech.app.corevocabulary.data.SystemSettings;
 import com.zohaltech.app.corevocabulary.entities.SystemSetting;
 
-import org.apache.http.HttpResponse;
-import org.apache.http.StatusLine;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.StringEntity;
-import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONObject;
 
 import java.io.IOException;
@@ -23,11 +16,6 @@ import java.net.URL;
 
 public class WebApiClient {
     private static final String HOST_URL = App.context.getString(R.string.host_name);
-
-    public enum PostAction {
-        INSTALL,
-        REGISTER
-    }
 
     public static void sendUserData(final PostAction action, final String token) {
         Thread thread = new Thread(new Runnable() {
@@ -115,5 +103,10 @@ public class WebApiClient {
             }
         }
         return false;
+    }
+
+    public enum PostAction {
+        INSTALL,
+        REGISTER
     }
 }
