@@ -300,7 +300,11 @@ public class SchedulerActivity extends PaymentActivity
             if (settings.getReminder() != null)
             {
                 Reminder reminder = settings.getReminder();
-                MyToast.show("Next alarm: " + reminder.getTime().toString(), Toast.LENGTH_LONG);
+                if (reminder.getTime() != null)
+                {
+                    SimpleDateFormat sdf = new SimpleDateFormat("EEEE HH:mm", Locale.getDefault());
+                    MyToast.show("Next alarm: " + sdf.format(reminder.getTime().toString()), Toast.LENGTH_LONG);
+                }
             }
         }
         else if (settings.getStatus() == ReminderSettings.Status.PAUSE)
