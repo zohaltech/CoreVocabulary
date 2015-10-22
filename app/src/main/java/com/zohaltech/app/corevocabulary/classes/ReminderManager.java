@@ -23,7 +23,7 @@ public class ReminderManager
     private static String LAST_REMINDER = "last_reminder";
 
     // this method is meant to be called just by AlarmReceiver class!
-    public static void setImmediateReminder(int currentVocabularyId, boolean doesTriggersNext)
+    public static void registerNextReminder(int currentVocabularyId, boolean doesTriggersNext)
     {
         Vocabulary current = Vocabularies.select(currentVocabularyId);
         if (current == null)
@@ -52,6 +52,7 @@ public class ReminderManager
         }
 
         Reminder reminder = new Reminder(next.getId(), null, next.getVocabulary(), next.getVocabEnglishDef(), true);
+
         if (current.getDay() == next.getDay())
         {
             Calendar calendar = Calendar.getInstance();
@@ -59,9 +60,9 @@ public class ReminderManager
 
             reminder.setTime(calendar.getTime());
             settings.setReminder(reminder);
-            addAlarm(App.context, reminder);
-
             setReminderSettings(settings);
+
+            addAlarm(reminder);
         }
         else
         {
@@ -147,7 +148,7 @@ public class ReminderManager
                         reminder.setTriggerNext(true);
 
                         settings.setReminder(reminder);
-                        addAlarm(App.context, reminder);
+                        addAlarm(reminder);
                         ReminderManager.setReminderSettings(settings);
 
                         return;
@@ -155,7 +156,7 @@ public class ReminderManager
                     else
                     {
                         settings.setReminder(reminder);
-                        addAlarm(App.context, reminder);
+                        addAlarm(reminder);
                         ReminderManager.setReminderSettings(settings);
                     }
                 }
@@ -178,7 +179,7 @@ public class ReminderManager
         settings.getReminder().setTime(alarmTime);
         ReminderManager.setReminderSettings(settings);
 
-        addAlarm(App.context, new Reminder(vocabulary.getId(), alarmTime, vocabulary.getVocabulary(), vocabulary.getVocabEnglishDef(), true));
+        addAlarm(new Reminder(vocabulary.getId(), alarmTime, vocabulary.getVocabulary(), vocabulary.getVocabEnglishDef(), true));
     }
 
     public static void pause()
@@ -192,7 +193,6 @@ public class ReminderManager
         if (settings.getReminder() != null)
         {
             removeAlarm(settings.getReminder().getVocabularyId());
-            //settings.getReminder().setTime(null);
         }
 
         settings.setStatus(ReminderSettings.Status.PAUSE);
@@ -251,13 +251,13 @@ public class ReminderManager
 
     public static void setLastReminder(Reminder reminder)
     {
-        //        Vocabularies.update(reminder.getVocabularyId());
         Gson gson = new Gson();
         App.preferences.edit().putString(LAST_REMINDER, gson.toJson(reminder)).apply();
     }
 
-    private static void addAlarm(Context context, Reminder reminder)
+    private static void addAlarm(Reminder reminder)
     {
+        Context context = App.context;
         AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
 
         Intent intent = new Intent(context, AlarmReceiver.class);
@@ -265,15 +265,15 @@ public class ReminderManager
 
         PendingIntent pendingIntent = PendingIntent.getBroadcast(context, reminder.getVocabularyId(), intent, PendingIntent.FLAG_UPDATE_CURRENT);
         alarmManager.set(AlarmManager.RTC_WAKEUP, reminder.getTime().getTime(), pendingIntent);
-
     }
 
     private static void removeAlarm(long vocabularyId)
     {
-        AlarmManager alarmManager = (AlarmManager) App.context.getSystemService(Context.ALARM_SERVICE);
+        Context context = App.context;
+        AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
 
-        Intent intent = new Intent(App.context, AlarmReceiver.class);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(App.context, ((int) vocabularyId) , intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        Intent intent = new Intent(context, AlarmReceiver.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(context, ((int) vocabularyId), intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
         alarmManager.cancel(pendingIntent);
     }

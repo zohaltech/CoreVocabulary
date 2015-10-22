@@ -8,7 +8,6 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
 import android.support.v4.app.NotificationCompat;
-import android.support.v4.app.TaskStackBuilder;
 
 import com.zohaltech.app.corevocabulary.R;
 import com.zohaltech.app.corevocabulary.activities.VocabularyDetailsActivity;
@@ -59,6 +58,6 @@ public class AlarmReceiver extends BroadcastReceiver
         App.notificationManager.notify((int)(reminder.getTime().getTime()), notification);
 
         ReminderManager.setLastReminder(reminder);
-        ReminderManager.setImmediateReminder(reminder.getVocabularyId(), reminder.doesTriggersNext());
+        ReminderManager.registerNextReminder(reminder.getVocabularyId(), reminder.doesTriggersNext());
     }
 }
