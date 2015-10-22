@@ -2,6 +2,7 @@ package com.zohaltech.app.corevocabulary.activities;
 
 import android.app.SearchManager;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -15,7 +16,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.zohaltech.app.corevocabulary.BuildConfig;
 import com.zohaltech.app.corevocabulary.R;
+import com.zohaltech.app.corevocabulary.classes.App;
+import com.zohaltech.app.corevocabulary.classes.ReminderManager;
 import com.zohaltech.app.corevocabulary.classes.WebApiClient;
 import com.zohaltech.app.corevocabulary.fragments.DrawerFragment;
 import com.zohaltech.app.corevocabulary.fragments.SearchFragment;
@@ -25,6 +29,8 @@ import widgets.MySnackbar;
 
 
 public class MainActivity extends PaymentActivity {
+
+    private final String APP_VERSION = "APP_VERSION";
 
     long startTime;
     private DrawerLayout   drawerLayout;
@@ -46,6 +52,14 @@ public class MainActivity extends PaymentActivity {
 
         //if (App.preferences.getBoolean("Encoded", false))
         // EncryptVocabs();
+
+        if (App.preferences.getInt(APP_VERSION, 0) != BuildConfig.VERSION_CODE) {
+            SharedPreferences.Editor editor = App.preferences.edit();
+            editor.putString(ReminderManager.REMINDER_SETTINGS, null);
+            editor.putInt(APP_VERSION, BuildConfig.VERSION_CODE);
+            editor.apply();
+        }
+
         WebApiClient.sendUserData(WebApiClient.PostAction.INSTALL, null);
     }
 

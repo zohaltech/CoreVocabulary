@@ -49,6 +49,8 @@ public abstract class PaymentActivity extends EnhancedActivity {
                     updateUiToPremiumVersion();
                     WebApiClient.sendUserData(WebApiClient.PostAction.REGISTER, inventory.getPurchase(SKU_PREMIUM).getToken());
                     setWaitScreen(false);
+                    responseMessage = "شما قبلا نسخه کامل را خریده اید و به نسخه کامل ارتقا یافتید";
+                    MyToast.show(responseMessage, Toast.LENGTH_LONG);
                 }
                 Log.i(TAG, "User is " + (mIsPremium ? "PREMIUM" : "NOT PREMIUM"));
             }
@@ -136,17 +138,21 @@ public abstract class PaymentActivity extends EnhancedActivity {
                 //    }
                 //}
 
-                mHelper = new IabHelper(this, App.marketPublicKey);
-                //Log.d(TAG, "Starting setup.");
                 mHelper.startSetup(new IabHelper.OnIabSetupFinishedListener() {
                     public void onIabSetupFinished(IabResult result) {
-                        //Log.d(TAG, "Setup finished.");
+                        Log.d(TAG, "Setup finished.");
 
                         if (!result.isSuccess()) {
                             // Oh noes, there was a problem.
-                            //Log.d(TAG, "Problem setting up In-app Billing: " + result);
+                            //complain("Problem setting up in-app billing: " + result);
+                            return;
                         }
-                        // Hooray, IAB is fully set up!
+
+                        // Have we been disposed of in the meantime? If so, quit.
+                        if (mHelper == null) return;
+
+                        // IAB is fully set up. Now, let's get an inventory of stuff we own.
+                        Log.d(TAG, "Setup successful. Querying inventory.");
                         mHelper.queryInventoryAsync(mGotInventoryListener);
                     }
                 });

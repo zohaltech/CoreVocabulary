@@ -9,8 +9,8 @@ android {
         applicationId "com.zohaltech.app.corevocabulary"
         minSdkVersion 9
         targetSdkVersion 22
-        versionCode 104
-        versionName "1.04"
+        versionCode 105
+        versionName "1.05"
         multiDexEnabled true
     }
     buildTypes {

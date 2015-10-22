@@ -19,7 +19,7 @@ import java.util.Locale;
 
 public class ReminderManager
 {
-    private static String REMINDER_SETTINGS = "reminder_settings";
+    public static String REMINDER_SETTINGS = "reminder_settings";
     private static String LAST_REMINDER = "last_reminder";
 
     // this method is meant to be called just by AlarmReceiver class!
