@@ -303,7 +303,7 @@ public class SchedulerActivity extends PaymentActivity
                 if (reminder.getTime() != null)
                 {
                     SimpleDateFormat sdf = new SimpleDateFormat("EEEE HH:mm", Locale.getDefault());
-                    MyToast.show("Next alarm: " + sdf.format(reminder.getTime().toString()), Toast.LENGTH_LONG);
+                    MyToast.show("Next alarm: " + sdf.format(reminder.getTime().getTime()), Toast.LENGTH_LONG);
                 }
             }
         }
