@@ -61,7 +61,6 @@ public class SchedulerActivity extends PaymentActivity
     Button btnSelectTone;
 
     TextView txtStatus;
-    TextView txtNextAlarmTime;
 
     @Override
     protected void onCreated()
@@ -94,7 +93,6 @@ public class SchedulerActivity extends PaymentActivity
         layoutRingtone = (LinearLayout) findViewById(R.id.layoutRingtone);
         btnSelectTone = (Button) findViewById(R.id.btnSelectTone);
         txtStatus = (TextView) findViewById(R.id.txtStatus);
-        txtNextAlarmTime = (TextView) findViewById(R.id.txtNextAlarmTime);
 
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB)
         {
@@ -221,9 +219,10 @@ public class SchedulerActivity extends PaymentActivity
 
             boolean paused = settings.getStatus() == ReminderSettings.Status.PAUSE;
 
-            if ((!chkSu.isChecked() || chkMo.isChecked() || chkTu.isChecked() || chkWe.isChecked() || chkTh.isChecked() || chkFr.isChecked() || chkSa.isChecked()))
+            if (!(chkSu.isChecked() || chkMo.isChecked() || chkTu.isChecked() || chkWe.isChecked() || chkTh.isChecked() || chkFr.isChecked() || chkSa.isChecked()))
             {
-
+                Toast.makeText(SchedulerActivity.this, "At least one day should be selected.", Toast.LENGTH_LONG).show();
+                return;
             }
             boolean[] days = {
                     chkSu.isChecked(),
@@ -301,7 +300,7 @@ public class SchedulerActivity extends PaymentActivity
             if (settings.getReminder() != null)
             {
                 Reminder reminder = settings.getReminder();
-                txtNextAlarmTime.setText(reminder.getTime().toString());
+                MyToast.show("Next alarm: " + reminder.getTime().toString(), Toast.LENGTH_LONG);
             }
         }
         else if (settings.getStatus() == ReminderSettings.Status.PAUSE)
