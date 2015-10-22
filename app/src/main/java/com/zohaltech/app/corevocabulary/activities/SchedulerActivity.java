@@ -221,6 +221,10 @@ public class SchedulerActivity extends PaymentActivity
 
             boolean paused = settings.getStatus() == ReminderSettings.Status.PAUSE;
 
+            if ((!chkSu.isChecked() || chkMo.isChecked() || chkTu.isChecked() || chkWe.isChecked() || chkTh.isChecked() || chkFr.isChecked() || chkSa.isChecked()))
+            {
+
+            }
             boolean[] days = {
                     chkSu.isChecked(),
                     chkMo.isChecked(),
@@ -229,6 +233,7 @@ public class SchedulerActivity extends PaymentActivity
                     chkTh.isChecked(),
                     chkFr.isChecked(),
                     chkSa.isChecked()};
+
 
             int selectedThemeId = spinnerStartTheme.getSelectedItemPosition() + 1;
             int startVocabId = Vocabularies.selectByTheme(selectedThemeId).get(0).getId();

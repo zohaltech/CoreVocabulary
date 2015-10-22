@@ -4,6 +4,7 @@ import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 
 import com.google.gson.Gson;
 import com.zohaltech.app.corevocabulary.data.Vocabularies;
@@ -264,7 +265,14 @@ public class ReminderManager
         intent.putExtra("reminder", reminder);
 
         PendingIntent pendingIntent = PendingIntent.getBroadcast(context, reminder.getVocabularyId(), intent, PendingIntent.FLAG_UPDATE_CURRENT);
-        alarmManager.set(AlarmManager.RTC_WAKEUP, reminder.getTime().getTime(), pendingIntent);
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT)
+        {
+            alarmManager.set(AlarmManager.RTC_WAKEUP, reminder.getTime().getTime(), pendingIntent);
+        }
+        else
+        {
+            alarmManager.setExact(AlarmManager.RTC_WAKEUP, reminder.getTime().getTime(), pendingIntent);
+        }
     }
 
     private static void removeAlarm(long vocabularyId)
