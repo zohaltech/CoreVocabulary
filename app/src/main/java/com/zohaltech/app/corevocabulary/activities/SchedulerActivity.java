@@ -63,9 +63,9 @@ public class SchedulerActivity extends PaymentActivity {
 
     @Override
     protected void onCreated() {
-        super.onCreated();
         setContentView(R.layout.activity_scheduler);
         initialise();
+        super.onCreated();
     }
 
     private void initialise() {

@@ -138,6 +138,8 @@ public abstract class PaymentActivity extends EnhancedActivity {
                 //    }
                 //}
 
+                mHelper = new IabHelper(this, App.marketPublicKey);
+                //Log.d(TAG, "Starting setup.");
                 mHelper.startSetup(new IabHelper.OnIabSetupFinishedListener() {
                     public void onIabSetupFinished(IabResult result) {
                         Log.d(TAG, "Setup finished.");

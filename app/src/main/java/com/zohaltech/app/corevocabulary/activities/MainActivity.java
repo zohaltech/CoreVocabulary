@@ -39,7 +39,6 @@ public class MainActivity extends PaymentActivity {
 
     @Override
     protected void onCreated() {
-        super.onCreated();
         setContentView(R.layout.activity_main);
         startTime = System.currentTimeMillis() - 5000;
 
@@ -61,6 +60,8 @@ public class MainActivity extends PaymentActivity {
         }
 
         WebApiClient.sendUserData(WebApiClient.PostAction.INSTALL, null);
+
+        super.onCreated();
     }
 
     @Override
