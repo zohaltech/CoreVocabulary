@@ -267,11 +267,6 @@ public class SchedulerActivity extends PaymentActivity
             ReminderManager.start(paused);
 
             bind();
-
-            settings = ReminderManager.getReminderSettings();
-            Date time = settings.getReminder().getTime();
-            SimpleDateFormat sdf = new SimpleDateFormat("EEEE HH:mm", Locale.getDefault());
-            MyToast.show("First vocabulary will be notified on " + sdf.format(time), Toast.LENGTH_LONG);
         }
         else
         {
