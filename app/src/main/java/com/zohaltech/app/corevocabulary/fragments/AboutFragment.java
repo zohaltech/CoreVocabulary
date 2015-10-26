@@ -4,7 +4,6 @@ import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,7 +18,6 @@ import com.zohaltech.app.corevocabulary.R;
 import com.zohaltech.app.corevocabulary.classes.App;
 import com.zohaltech.app.corevocabulary.classes.Helper;
 
-import widgets.MySnackbar;
 import widgets.MyToast;
 
 
@@ -75,7 +73,8 @@ public class AboutFragment extends Fragment {
                 Intent intent = new Intent(Intent.ACTION_VIEW);
                 intent.setData(Uri.parse(App.marketDeveloperUri));
                 if (!myStartActivity(intent)) {
-                    MySnackbar.show(layoutWebsite, getString(R.string.could_not_open_market), Snackbar.LENGTH_SHORT);
+                    //MySnackbar.show(layoutWebsite, getString(R.string.could_not_open_market), Snackbar.LENGTH_SHORT);
+                    MyToast.show(String.format(getString(R.string.could_not_open_market), App.marketName, App.marketName), Toast.LENGTH_SHORT);
                 }
             }
         });
@@ -92,15 +91,7 @@ public class AboutFragment extends Fragment {
         btnRate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(App.marketPollIntent);
-                intent.setData(Uri.parse(App.marketPollUri));
-                intent.setPackage(App.marketPackage);
-                if (!myStartActivity(intent)) {
-                    intent.setData(Uri.parse(App.marketWebsiteUri));
-                    if (!myStartActivity(intent)) {
-                        MyToast.show(String.format(getResources().getString(R.string.could_not_open_market), App.marketName, App.marketName), Toast.LENGTH_SHORT);
-                    }
-                }
+                Helper.rateApp(getActivity());
             }
         });
 

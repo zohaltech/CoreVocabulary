@@ -47,7 +47,9 @@ public abstract class PaymentActivity extends EnhancedActivity {
                 if (mIsPremium) {
                     SystemSettings.register(SystemSettings.getCurrentSettings());
                     updateUiToPremiumVersion();
-                    WebApiClient.sendUserData(WebApiClient.PostAction.REGISTER, inventory.getPurchase(SKU_PREMIUM).getToken());
+                    App.preferences.edit().putString("PURCHASE_TOKEN", inventory.getPurchase(SKU_PREMIUM).getToken()).apply();
+                    Log.i("LOG", "sendUserData from inventory, token : " + inventory.getPurchase(SKU_PREMIUM).getToken());
+                    WebApiClient.sendUserData();
                     setWaitScreen(false);
                     responseMessage = "شما قبلا نسخه کامل را خریده اید و به نسخه کامل ارتقا یافتید";
                     MyToast.show(responseMessage, Toast.LENGTH_LONG);
@@ -76,7 +78,9 @@ public abstract class PaymentActivity extends EnhancedActivity {
                     SystemSettings.register(SystemSettings.getCurrentSettings());
                     MyToast.show(responseMessage, Toast.LENGTH_LONG);
                     updateUiToPremiumVersion();
-                    WebApiClient.sendUserData(WebApiClient.PostAction.REGISTER, purchase.getToken());
+                    App.preferences.edit().putString("PURCHASE_TOKEN", purchase.getToken()).apply();
+                    Log.i("LOG", "sendUserData from purchase, token : " + purchase.getToken());
+                    WebApiClient.sendUserData();
                 }
             }
             setWaitScreen(false);
@@ -151,7 +155,8 @@ public abstract class PaymentActivity extends EnhancedActivity {
                         }
 
                         // Have we been disposed of in the meantime? If so, quit.
-                        if (mHelper == null) return;
+                        if (mHelper == null)
+                            return;
 
                         // IAB is fully set up. Now, let's get an inventory of stuff we own.
                         Log.d(TAG, "Setup successful. Querying inventory.");

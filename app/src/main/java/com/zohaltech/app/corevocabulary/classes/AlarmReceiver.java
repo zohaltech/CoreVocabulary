@@ -15,12 +15,10 @@ import com.zohaltech.app.corevocabulary.data.SystemSettings;
 import com.zohaltech.app.corevocabulary.entities.SystemSetting;
 import com.zohaltech.app.corevocabulary.serializables.Reminder;
 
-public class AlarmReceiver extends BroadcastReceiver
-{
+public class AlarmReceiver extends BroadcastReceiver {
 
     @Override
-    public void onReceive(Context context, Intent intent)
-    {
+    public void onReceive(Context context, Intent intent) {
         Reminder reminder = (Reminder) intent.getSerializableExtra("reminder");
 
         NotificationCompat.Builder builder =
@@ -45,17 +43,15 @@ public class AlarmReceiver extends BroadcastReceiver
         builder.setContentIntent(resultPendingIntent);
 
         SystemSetting setting = SystemSettings.getCurrentSettings();
-        if (setting.getRingingToneUri() == null)
-        {
+        if (setting.getRingingToneUri() == null) {
             builder.setDefaults(Notification.DEFAULT_VIBRATE | Notification.DEFAULT_SOUND);
         }
         Notification notification = builder.build();
-        if (setting.getRingingToneUri() != null)
-        {
+        if (setting.getRingingToneUri() != null) {
             notification.sound = Uri.parse(setting.getRingingToneUri());
         }
         //App.notificationManager.notify((int) reminder.getTime().getTime(), builder.build());
-        App.notificationManager.notify((int)(reminder.getTime().getTime()), notification);
+        App.notificationManager.notify((int) (reminder.getTime().getTime()), notification);
 
         ReminderManager.setLastReminder(reminder);
         ReminderManager.registerNextReminder(reminder.getVocabularyId(), reminder.doesTriggersNext());

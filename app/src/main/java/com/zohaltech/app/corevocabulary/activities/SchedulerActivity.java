@@ -7,6 +7,7 @@ import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Build;
 import android.provider.Settings;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.AppCompatSpinner;
 import android.view.MenuItem;
@@ -37,6 +38,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
+import widgets.MySnackbar;
 import widgets.MyToast;
 
 public class SchedulerActivity extends PaymentActivity
@@ -221,7 +223,8 @@ public class SchedulerActivity extends PaymentActivity
 
             if (!(chkSu.isChecked() || chkMo.isChecked() || chkTu.isChecked() || chkWe.isChecked() || chkTh.isChecked() || chkFr.isChecked() || chkSa.isChecked()))
             {
-                Toast.makeText(SchedulerActivity.this, "At least one day should be selected.", Toast.LENGTH_LONG).show();
+                //Toast.makeText(SchedulerActivity.this, "At least one day should be selected.", Toast.LENGTH_LONG).show();
+                MySnackbar.show(txtStatus,"At least one day should be selected.", Snackbar.LENGTH_SHORT);
                 return;
             }
             boolean[] days = {
@@ -268,10 +271,10 @@ public class SchedulerActivity extends PaymentActivity
 
             bind();
 
-            settings = ReminderManager.getReminderSettings();
-            Date time = settings.getReminder().getTime();
-            SimpleDateFormat sdf = new SimpleDateFormat("EEEE HH:mm", Locale.getDefault());
-            MyToast.show("First vocabulary will be notified on " + sdf.format(time), Toast.LENGTH_LONG);
+            //settings = ReminderManager.getReminderSettings();
+            //Date time = settings.getReminder().getTime();
+            //SimpleDateFormat sdf = new SimpleDateFormat("EEEE HH:mm", Locale.getDefault());
+            //MyToast.show("First vocabulary will be notified on " + sdf.format(time), Toast.LENGTH_LONG);
         }
         else
         {

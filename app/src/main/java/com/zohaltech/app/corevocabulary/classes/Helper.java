@@ -1,5 +1,7 @@
 package com.zohaltech.app.corevocabulary.classes;
 
+import android.app.Activity;
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.media.Ringtone;
@@ -8,13 +10,18 @@ import android.net.Uri;
 import android.os.Environment;
 import android.os.Vibrator;
 import android.telephony.TelephonyManager;
+import android.widget.Toast;
 
+import com.zohaltech.app.corevocabulary.R;
 import com.zohaltech.app.corevocabulary.serializables.ReminderSettings;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.math.BigDecimal;
@@ -25,6 +32,8 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
+
+import widgets.MyToast;
 
 
 public final class Helper {
@@ -177,6 +186,46 @@ public final class Helper {
     //    }
     //    return reminderSettings;
     //}
+
+    public static String inputStreamToString(InputStream inputStream) {
+        StringBuilder out = new StringBuilder();
+        try {
+            BufferedReader br = new BufferedReader(new InputStreamReader(inputStream));
+            for (String line = br.readLine(); line != null; line = br.readLine()) {
+                out.append(line);
+                out.append("\n");
+            }
+            br.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return out.toString();
+    }
+
+    public static void rateApp(Activity activity) {
+        App.preferences.edit().putBoolean("RATED", true).apply();
+        Intent intent = new Intent(App.marketPollIntent);
+        intent.setData(Uri.parse(App.marketPollUri));
+        intent.setPackage(App.marketPackage);
+        if (!myStartActivity(activity, intent)) {
+            intent.setData(Uri.parse(App.marketWebsiteUri));
+            if (!myStartActivity(activity, intent)) {
+                MyToast.show(String.format(activity.getString(R.string.could_not_open_market), App.marketName, App.marketName), Toast.LENGTH_SHORT);
+            }
+        }
+    }
+
+    public static boolean myStartActivity(Activity activity, Intent intent) {
+        try {
+            activity.startActivity(intent);
+            return true;
+        } catch (ActivityNotFoundException e) {
+            return false;
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            return false;
+        }
+    }
 
     public enum Operator {
         MCI,

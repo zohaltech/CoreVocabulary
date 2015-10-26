@@ -8,6 +8,7 @@ public class ConnectivityStateReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        WebApiClient.sendUserData(WebApiClient.PostAction.INSTALL, null);
+        WebApiClient.sendUserData();
+        WebApiClient.checkForUpdate();
     }
 }

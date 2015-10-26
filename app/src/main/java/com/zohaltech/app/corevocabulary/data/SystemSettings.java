@@ -90,7 +90,7 @@ public class SystemSettings {
 
     public static long delete(SystemSetting setting) {
         DataAccess db = new DataAccess();
-        return db.delete(TableName, Id + " =? ", new String[]{String.valueOf(setting.getId())});
+        return db.delete(TableName, Id + " = ? ", new String[]{String.valueOf(setting.getId())});
     }
 
     public static SystemSetting getCurrentSettings() {

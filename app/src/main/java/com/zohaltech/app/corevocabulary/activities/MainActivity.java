@@ -1,5 +1,6 @@
 package com.zohaltech.app.corevocabulary.activities;
 
+import android.app.Dialog;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -19,8 +20,12 @@ import android.view.View;
 import com.zohaltech.app.corevocabulary.BuildConfig;
 import com.zohaltech.app.corevocabulary.R;
 import com.zohaltech.app.corevocabulary.classes.App;
+import com.zohaltech.app.corevocabulary.classes.DialogManager;
+import com.zohaltech.app.corevocabulary.classes.Helper;
 import com.zohaltech.app.corevocabulary.classes.ReminderManager;
 import com.zohaltech.app.corevocabulary.classes.WebApiClient;
+import com.zohaltech.app.corevocabulary.data.SystemSettings;
+import com.zohaltech.app.corevocabulary.entities.SystemSetting;
 import com.zohaltech.app.corevocabulary.fragments.DrawerFragment;
 import com.zohaltech.app.corevocabulary.fragments.SearchFragment;
 import com.zohaltech.app.corevocabulary.fragments.ThemesFragment;
@@ -53,13 +58,21 @@ public class MainActivity extends PaymentActivity {
         // EncryptVocabs();
 
         if (App.preferences.getInt(APP_VERSION, 0) != BuildConfig.VERSION_CODE) {
+            SystemSetting setting = SystemSettings.getCurrentSettings();
+            setting.setInstalled(false);
+            setting.setPremium(false);
             SharedPreferences.Editor editor = App.preferences.edit();
             editor.putString(ReminderManager.REMINDER_SETTINGS, null);
             editor.putInt(APP_VERSION, BuildConfig.VERSION_CODE);
             editor.apply();
         }
 
-        WebApiClient.sendUserData(WebApiClient.PostAction.INSTALL, null);
+        WebApiClient.sendUserData();
+        WebApiClient.checkForUpdate();
+
+        if (App.preferences.getBoolean("RATED", false) == false) {
+            App.preferences.edit().putInt("APP_RUN_COUNT", App.preferences.getInt("APP_RUN_COUNT", 0) + 1).apply();
+        }
 
         super.onCreated();
     }
@@ -71,6 +84,28 @@ public class MainActivity extends PaymentActivity {
         drawerFragment.setUp(drawerLayout, toolbar);
         drawerFragment.setMenuVisibility(true);
         displayView(0);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        int runCount = App.preferences.getInt("APP_RUN_COUNT", 0);
+        boolean rated = App.preferences.getBoolean("RATED", false);
+        if (runCount != 0 && runCount % 6 == 0 && rated == false) {
+            App.preferences.edit().putInt("APP_RUN_COUNT", App.preferences.getInt("APP_RUN_COUNT", 0) + 1).apply();
+            Dialog dialog = DialogManager.getPopupDialog(this, "Rate App", "If Core Vocabulary is useful to you, would you like to rate?", "Yes, I rate it", "Not now!", null, new Runnable() {
+                @Override
+                public void run() {
+                    Helper.rateApp(MainActivity.this);
+                }
+            }, new Runnable() {
+                @Override
+                public void run() {
+                    //do nothing
+                }
+            });
+            dialog.show();
+        }
     }
 
     @Override
