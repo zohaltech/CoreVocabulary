@@ -31,17 +31,20 @@ public class LearningStatus {
                 //            return null;
                 Vocabulary currentVocab = Vocabularies.select(currentVocabId);
                 assert currentVocab != null;
+                int vocabIndex = 0;
+                if (currentVocab.getThemeId() != themeId) {
+                    for (Vocabulary vocabulary : vocabularies) {
+                        if (vocabulary.getLearned())
+                            vocabIndex++;
+                    }
 
-                if (currentVocab.getThemeId() > themeId) {
-
-
-                }
+                } else
+                    vocabIndex = indexOf(currentVocab, vocabularies) + 1;
 
                 // int vocabIndex = vocabularies.indexOf(currentVocab) + 1;
-                int vocabIndex = indexOf(currentVocab, vocabularies) + 1;
 
-                if (settings.getStatus() == ReminderSettings.Status.FINISHED ||
-                    currentVocab.getThemeId() > themeId) {
+
+                if (settings.getStatus() == ReminderSettings.Status.FINISHED) {
                     learningStatus.setProgress(100);
                     learningStatus.setDayIndex(vocabCount / 6);
                     learningStatus.setDayCount(vocabCount / 6);
