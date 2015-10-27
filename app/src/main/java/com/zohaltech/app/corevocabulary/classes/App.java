@@ -69,7 +69,7 @@ public class App extends Application {
         //SearchCache.initialise();
 
         //todo : set market here and in manifest
-        setTargetMarket(MARKET_BAZAAR);
+        setTargetMarket(MARKET_MYKET);
     }
 
     private void setTargetMarket(int marketId) {

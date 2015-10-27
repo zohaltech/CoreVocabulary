@@ -33,9 +33,6 @@ public class WebApiClient {
 
                     String token = App.preferences.getString("PURCHASE_TOKEN", null);
 
-                    Log.i("LOG", "PremiumVersion : " + setting.getPremiumVersion());
-                    Log.i("LOG", "Installed : " + setting.getInstalled());
-                    Log.i("LOG", "Premium : " + setting.getPremium());
                     if (setting.isPremium() == false) {
                         if (!setting.getInstalled()) {
                             if (ConnectionManager.getInternetStatus() == ConnectionManager.InternetStatus.Connected) {
@@ -55,7 +52,6 @@ public class WebApiClient {
                                 if (result) {
                                     setting.setInstalled(true);
                                     SystemSettings.update(setting);
-                                    Log.i("LOG", "Installed updated to true");
                                 }
                             }
                         }
@@ -77,12 +73,9 @@ public class WebApiClient {
                             if (result) {
                                 setting.setPremium(true);
                                 SystemSettings.update(setting);
-                                Log.i("LOG", "Premium updated to true");
                             }
                         }
                     }
-                    Log.i("LOG", "Now Installed is : " + setting.getInstalled());
-                    Log.i("LOG", "Now Premium is : " + setting.getPremium());
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
