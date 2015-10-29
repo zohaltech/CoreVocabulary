@@ -23,7 +23,7 @@ public class WebApiClient {
     private static final String HOST_UPDATE         = App.context.getString(R.string.host_update);
     private static final String UPDATE_QUERY_STRING = App.context.getString(R.string.update_query_string);
 
-    public static void sendUserData() {
+    public static void sendUserData(final boolean checkForUpdate) {
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -76,6 +76,9 @@ public class WebApiClient {
                             }
                         }
                     }
+                    if (checkForUpdate){
+                        checkForUpdate();
+                    }
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -85,7 +88,7 @@ public class WebApiClient {
         thread.start();
     }
 
-    public static void checkForUpdate() {
+    private static void checkForUpdate() {
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {

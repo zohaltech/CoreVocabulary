@@ -67,8 +67,9 @@ public class MainActivity extends PaymentActivity {
             editor.apply();
         }
 
-        WebApiClient.sendUserData();
-        WebApiClient.checkForUpdate();
+        //WebApiClient.sendUserData();
+        //WebApiClient.checkForUpdate();
+        WebApiClient.sendUserData(true);
 
         if (App.preferences.getBoolean("RATED", false) == false) {
             App.preferences.edit().putInt("APP_RUN_COUNT", App.preferences.getInt("APP_RUN_COUNT", 0) + 1).apply();
